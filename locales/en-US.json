@@ -1,0 +1,82 @@
+{
+    "default": {
+        "seo": {
+            "title": "Elinor",
+            "description": "",
+            "keywords": "",
+            "og-image": ""
+        }
+    },
+    "pages": {
+        "home": {
+            "title": "Home",
+            "slug": "home",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        },
+        "assessments": {
+            "title": "Assessments",
+            "slug": "assessments",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        },
+        "managed-areas": {
+            "title": "Managed Areas",
+            "slug": "managed-areas",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        },
+        "map": {
+            "title": "Map",
+            "slug": "map",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        },
+        "users-access": {
+            "title": "Users & Access",
+            "slug": "users-access",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        },
+        "help-guides": {
+            "title": "Help & Guides",
+            "slug": "help-guides",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        },
+        "insights": {
+            "title": "Insights",
+            "slug": "insights",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og-image": ""
+            }
+        }
+    }
+}

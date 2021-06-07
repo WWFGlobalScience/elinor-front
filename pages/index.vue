@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      
       <h1 class="title">
-        Elinor
+        {{ $t( 'pages.home.title' ) }}
       </h1>
       <div class="links">
         <a
@@ -28,7 +28,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+    computed: {
+        pages() {
+            return this.$store.state.pages
+        }
+    }
+}
 </script>
 
 <style>

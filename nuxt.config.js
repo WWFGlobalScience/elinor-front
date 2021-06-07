@@ -1,12 +1,7 @@
-export default {
-    // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+export default {    
     ssr: false,
     components: true,
-
-    // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
-
-    // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'Elinor',
         htmlAttrs: {
@@ -21,33 +16,35 @@ export default {
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
-
-    // Global CSS: https://go.nuxtjs.dev/config-css
     css: ['~/assets/scss/app.scss'],
-
-    // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
     ],
-
-    // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
-
-    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
-        // https://go.nuxtjs.dev/tailwindcss
         '@nuxtjs/tailwindcss',
-    ],
-
-    // Modules: https://go.nuxtjs.dev/config-modules
+    ],    
     modules: [
-        // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        ['nuxt-i18n', {
+            baseUrl: 'https://my-nuxt-app.com',
+            strategy: 'prefix_except_default',
+            defaultLocale: 'en',
+            fallbackLocale: 'en',
+            lazy: true,
+            langDir: 'locales/',
+            seo: true,
+            detectBrowserLanguage: false,
+            locales: [
+                {
+                    code: 'en',
+                    iso: 'en-US',
+                    name: 'English',
+                    file: 'en-US.json'
+                }                
+            ]
+        }]
     ],
-
-    // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
-
-    // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
     }
 }
