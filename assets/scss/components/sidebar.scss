@@ -1,0 +1,27 @@
+.sidebar__main {
+    margin-top: -69px;
+    .sidebar__wrap {
+        @apply bg-turqy h-screen sticky top-0 z-30;
+        > * {
+            @apply px-5;
+            @apply pr-8;
+        }
+        .brand {
+            @apply border-b border-turqy-darker py-5;
+        }
+        .nav__main {
+            @apply mt-10;
+            ul {
+                li {
+                    @apply mb-6;
+                    a {
+                        @apply text-grayy text-[14px];
+                        span {
+                            @apply pl-7;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

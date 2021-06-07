@@ -1,0 +1,51 @@
+.form {
+    @apply mt-20; 
+    .form__group {
+        .form__row {
+            @apply mb-6;
+            .input {
+                input, textarea {
+                    @apply w-full px-6 py-7 bg-white border border-solid border-grayy-border text-grayy text-xs font-medium;
+                    &::placeholder {
+                        @apply text-grayy-lighter;
+                    }
+                }
+                textarea {
+                    @apply h-28 resize-none;
+                }
+                .input__tooltip {
+                    @apply w-[22px] h-[22px] border-[2px] border-solid border-turqy border-radius--50 absolute right-6 top-7 flex items-center justify-center text-xs text-turqy cursor-pointer transition hover:opacity-60;
+                }
+                &.input--pr {
+                    input, textarea {
+                        @apply pr-16;
+                    }
+                }
+                &.input--checkbox {
+                    @apply flex items-center;
+                    .checkbox {
+                        @apply w-[25px] h-[25px] border-radius--50 border border-solid border-turqy bg-white;
+                        img {
+                            @apply center-both opacity-0;
+                        }
+                        input {
+                            @apply w-[25px] h-[25px] opacity-0 z-10 transition cursor-pointer;;
+                            &:checked {
+                                & + img {
+                                    @apply opacity-100 transition;
+                                }
+                            }
+                        }
+                    }
+                    label {
+                        @apply ml-2 text-grayy-lighter text-xs cursor-pointer;
+                    }
+                }
+            }
+            &.form__row--separator {
+                @apply mt-6 w-full h-px bg-grayy-border;
+            }
+            
+        }
+    }
+}

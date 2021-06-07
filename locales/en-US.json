@@ -4,18 +4,23 @@
             "title": "Elinor",
             "description": "",
             "keywords": "",
-            "og-image": ""
+            "og_image": ""
+        },
+        "feedback": {
+            "progress": "Saving data...",
+            "ok": "ok",
+            "error": "Oops! Something is wrong. Please, try again after a few minutes"
         }
     },
     "pages": {
         "home": {
             "title": "Home",
-            "slug": "home",
+            "slug": "/",
             "seo": {
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
             }
         },
         "assessments": {
@@ -25,7 +30,7 @@
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
             }
         },
         "managed-areas": {
@@ -35,7 +40,7 @@
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
             }
         },
         "map": {
@@ -45,27 +50,27 @@
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
             }
         },
         "users-access": {
             "title": "Users & Access",
-            "slug": "users-access",
+            "slug": "users-and-access",
             "seo": {
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
             }
         },
         "help-guides": {
             "title": "Help & Guides",
-            "slug": "help-guides",
+            "slug": "help-and-guides",
             "seo": {
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
             }
         },
         "insights": {
@@ -75,7 +80,44 @@
                 "title": "",
                 "description": "",
                 "keywords": "",
-                "og-image": ""
+                "og_image": ""
+            }
+        },
+        "sign-in": {
+            "title": "Sign In",
+            "slug": "sign-in",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og_image": ""
+            },
+            "content": {
+                "header": {
+                    "title": "Create an account",
+                    "subtitle": "Lorem ipsum dolor aemet"
+                },
+                "form": {
+                    "inputs": {
+                        "email": "E-mail",
+                        "password": "Password",
+                        "name": "Name",
+                        "username": "Username",
+                        "affiliation": "Affiliation",
+                        "contact-details": "Contact details",
+                        "terms-of-service": "I agree with the terms of service",
+                        "submit": "Create an account"
+                    },
+                    "tooltips": {
+                        "affiliation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus.",
+                        "contact-details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus."
+                    },
+                    "feedback": {
+                        "progress": "Creating account",
+                        "ok": "Your account has been created successfullty",
+                        "error": "Oops! Error. Please, try again"
+                    }
+                }
             }
         }
     }

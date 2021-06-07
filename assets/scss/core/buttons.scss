@@ -1,0 +1,31 @@
+button {
+    outline: 0!important;
+}
+.btn--opacity {
+    @apply transition hover:opacity-60;
+}
+.btn--opacity--child {
+    .btn--opacity__target {
+        @apply transition;
+    }
+    &:hover {
+        .btn--opacity__target {
+            @apply opacity-60;
+        }
+    }
+}
+.btn {
+    @apply flex items-center bg-turqy text-sm text-white border-radius--40 px-10 py-5 cursor-pointer;
+    span {
+        @apply mr-3;
+    }
+    img {
+        @apply transition;
+        transform: translateX(0);
+    }
+    &:hover {
+        img {
+            transform: translateX(5px);
+        }
+    }
+}

@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+    <div id="app">
+        <Header/>
+        <main role="main">
+            <Sidebar/>
+            <Nuxt />
+        </main>
+    </div>
 </template>
