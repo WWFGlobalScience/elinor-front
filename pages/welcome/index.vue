@@ -13,26 +13,26 @@
                 </header>
                 <ul class="assesments__list">
                     <li>
-                        <div class="assessment-ivitation-badge ui-rounded-border">
-                            <ul>
-                                <li class="assessment-ivitation-badge__avatar">
-                                    <div class="avatar avatar--red">
+                        <div class="elinor__badge ui-rounded-border">
+                            <ul class="sublist">
+                                <li class="avatar">
+                                    <div class="elinor__avatar elinor__avatar--red">
                                         <span>X</span>
                                     </div>
                                 </li>
-                                <li  class="assessment-ivitation-badge__role">
-                                    <span class="assessment-ivitation-badge__label">{{ $t( 'pages.welcome.content.assessments.labels.role' ) }}</span>
-                                    <span class="assessment-ivitation-badge__data">Admin</span>
+                                <li  class="role">
+                                    <span class="label">{{ $t( 'pages.welcome.content.assessments.labels.role' ) }}</span>
+                                    <span class="data">Admin</span>
                                 </li>
-                                <li class="assessment-ivitation-badge__owner">
-                                    <span class="assessment-ivitation-badge__label">Name Admin</span>
-                                    <span class="assessment-ivitation-badge__data">Name Assessment lorem ipsum dolor sid amet </span>
+                                <li class="owner">
+                                    <span class="label">Name Admin</span>
+                                    <span class="data">Name Assessment lorem ipsum dolor sid amet </span>
                                 </li>
-                                <li class="assessment-ivitation-badge__invited-by">
-                                    <span class="assessment-ivitation-badge__label">{{ $t( 'pages.welcome.content.assessments.labels.invited-by' ) }}</span>
-                                    <span class="assessment-ivitation-badge__data">Name invitator</span>
+                                <li class="invited-by">
+                                    <span class="label">{{ $t( 'pages.welcome.content.assessments.labels.invited-by' ) }}</span>
+                                    <span class="data">Name invitator</span>
                                 </li>
-                                <li class="assessment-ivitation-badge__url">
+                                <li class="view">
                                     <nuxt-link to="" class="btn--ico btn--opacity">
                                         <img src="~/assets/img/ico-eye-turqy-light.svg">
                                     </nuxt-link>
@@ -43,7 +43,7 @@
                 </ul>
             </div>
         </section>
-        <section class="section welcome__ctas">
+        <section class="section section--welcome__ctas">
             <div class="container">
                 <header>
                     <h2 class="mb-5">{{ $t( 'pages.welcome.content.ctas.header.title' ) }}</h2>

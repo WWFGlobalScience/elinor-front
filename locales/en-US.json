@@ -10,7 +10,23 @@
             "progress": "Saving data...",
             "ok": "ok",
             "error": "Oops! Something is wrong. Please, try again after a few minutes"
-        }
+        },
+        "filters": {
+            "button": "Filters",
+            "popup": {
+                "title": "Add filters",
+                "select": "Select filters",
+                "selected": "Filters",
+                "apply": "Apply filters"
+            },
+            "by": "Filter by"
+        },
+        "order": {
+            "button": "Order",
+            "by": "Order by"
+        },
+        "showing": "Showing",
+        "view": "View"
     },
     "pages": {
         "home": {
@@ -41,6 +57,25 @@
                 "description": "",
                 "keywords": "",
                 "og_image": ""
+            },
+            "content": {
+                "header": {
+                    "title": "MANAGED AREAS"
+                },
+                "create": "Create Managed Area",
+                "search": "Search by Managed Area, Country, Admin",
+                "showing": {
+                    "managed-areas": "Managed areas",
+                    "managed-area": "Managed area"
+                },
+                "ma": {
+                    "labels": {
+                        "role": "My role",
+                        "ha": "Hectareas",
+                        "assessments": "Assessments",
+                        "countries": "Countries"
+                    }
+                }
             }
         },
         "map": {

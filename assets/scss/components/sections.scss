@@ -1,9 +1,36 @@
 .section {
     @apply mt-20;
     /*
+        MODIFIERS
+    */
+    &.section--mt-0 {
+        @apply mt-0;
+    }
+    &.section--button {
+        .container {
+            @apply flex justify-end;
+        }
+    }
+    &.section--mt-medium {
+        @apply mt-10;
+    }
+    &.section--filters {
+        ul {
+            @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border;
+            li {
+                &:first-child {
+                    @apply flex-1;
+                }
+            }
+            .form {
+                @apply mt-0;
+            }
+        }
+    }
+    /*
         PAGE: Welcome
     */
-    &.welcome__ctas {
+    &.section--welcome__ctas {
         ul {
             @apply flex space-x-5;
             li {
@@ -17,4 +44,13 @@
             }
         }
     }
+     /*
+        PAGE: Managed areas
+    */
+    &.section--ma-results {
+        .ma__results {
+            @apply mt-10;
+        }
+    }
+
 }

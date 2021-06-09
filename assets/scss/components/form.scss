@@ -5,7 +5,7 @@
             @apply mb-6;
             .input {
                 input, textarea {
-                    @apply w-full px-6 py-7 bg-white border border-solid border-grayy-border text-grayy text-xs font-medium;
+                    @apply w-full px-6 py-7 bg-white border border-solid border-grayy-border text-grayy text-xs font-medium focus:border-grayy-lighter;
                     &::placeholder {
                         @apply text-grayy-lighter;
                     }
@@ -41,9 +41,20 @@
                         @apply ml-2 text-grayy-lighter text-xs cursor-pointer;
                     }
                 }
+                &.input--ico {
+                    .input__ico {
+                        @apply flex items-center center-v right-6;
+                        span {
+                            @apply w-[1px] h-[10px] bg-grayy-border mr-3;
+                        }
+                    }
+                }
             }
             &.form__row--separator {
                 @apply mt-6 w-full h-px bg-grayy-border;
+            }
+            &:last-child {
+                @apply mb-0;
             }
             
         }

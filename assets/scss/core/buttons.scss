@@ -29,6 +29,21 @@ button {
         }
     }
 }
+.btn--border-turqy {
+    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy;
+    span {
+        @apply mr-3;
+    }
+    img {
+        @apply transition;
+        transform: translateX(0);
+    }
+    &:hover {
+        img {
+            transform: translateX(5px);
+        }
+    }
+}
 .btn--ico {
     @apply w-[38px] h-[38px] flex items-center justify-center border-radius--50 border border-turqy;
 }

@@ -1,3 +1,11 @@
 .header--main {
     @apply bg-turqy-lighter h-[70px] sticky top-0 z-20;
 }
+.header--page {
+    h1 {
+        @apply flex items-center;
+        img {
+            @apply mr-2;
+        }
+    }
+}
