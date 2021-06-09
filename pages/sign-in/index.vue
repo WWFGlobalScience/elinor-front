@@ -2,7 +2,7 @@
     <article class="page page--signin">
         <header class="header--page">
             <div class="container--sm">
-                <h1>{{ $t( 'pages.sign-in.content.header.title' ) }}</h1>
+                <h1 class="mb-3">{{ $t( 'pages.sign-in.content.header.title' ) }}</h1>
                 <p v-html="$t( 'pages.sign-in.content.header.subtitle' )"></p>
             </div>
         </header>
@@ -50,7 +50,7 @@
                             <div class="form__row">
                                 <div class="input input--checkbox">
                                     <div class="checkbox">
-                                        <input type="checkbox" id="terms-of-service" name="terms-of-service">
+                                        <input type="checkbox" id="terms-of-service" name="terms-of-service" required>
                                         <img src="~/assets/img/ico-checkbox.svg">
                                     </div>
                                     <label for="terms-of-service">{{ $t( 'pages.sign-in.content.form.inputs.terms-of-service' ) }}</label>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="form__row form__row--separator"></div>
                             <div class="form__row flex justify-end mt-10">
-                                <button type="submit" form="form--signin" class="btn btn--opacity--child" @click="submit">
+                                <button type="submit" form="form--signin" class="btn btn--opacity--child" @submit="submit">
                                     <span class="btn--opacity__target">{{ $t( 'pages.sign-in.content.form.inputs.submit' ) }}</span>
                                     <img src="~/assets/img/ico-button-arrow.svg">
                                 </button>

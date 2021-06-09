@@ -99,13 +99,13 @@
                 },
                 "form": {
                     "inputs": {
-                        "email": "E-mail",
-                        "password": "Password",
-                        "name": "Name",
-                        "username": "Username",
-                        "affiliation": "Affiliation",
-                        "contact-details": "Contact details",
-                        "terms-of-service": "I agree with the terms of service",
+                        "email": "E-mail*",
+                        "password": "Password*",
+                        "name": "Name*",
+                        "username": "Username*",
+                        "affiliation": "Affiliation*",
+                        "contact-details": "Contact details*",
+                        "terms-of-service": "I agree with the terms of service*",
                         "submit": "Create an account"
                     },
                     "tooltips": {
@@ -116,6 +116,53 @@
                         "progress": "Creating account",
                         "ok": "Your account has been created successfullty",
                         "error": "Oops! Error. Please, try again"
+                    }
+                }
+            }
+        },
+        "welcome":  {
+            "title": "Welcome to Elinor",
+            "slug": "welcome",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og_image": ""
+            },
+            "content": {
+                "header": {
+                    "title": "WELCOME TO ELINOR",
+                    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                "assessments": {
+                    "header": {
+                        "title": "Assessments you have been invited"
+                    },
+                    "labels": {
+                        "role": "Role",
+                        "invited-by": "Invited by"
+                    }
+                },
+                "ctas": {
+                    "header": {
+                        "title": "What can I do from here?"
+                    },
+                    "items": {
+                        "create": {
+                            "title": "Create an assessment",
+                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
+                            "button": "Create an assessment"
+                        },
+                        "invite": {
+                            "title": "Invite others to join",
+                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
+                            "button": "Invite users"
+                        },
+                        "help": {
+                            "title": "Learn more about how to use create",
+                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
+                            "button": "Help & guides"
+                        }
                     }
                 }
             }

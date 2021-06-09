@@ -1,9 +1,0 @@
-@layer components {
-    .center-v {
-        @apply absolute top-1/2;
-        transform: translateY(-50%);
-    }
-    .border-radius--50 {
-        border-radius: 50%;
-    }
-}

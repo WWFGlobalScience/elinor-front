@@ -1,7 +1,5 @@
 export const state = () => ({
-    session: {
-        started: false
-    },
+    user: null,
     pages: [
         {
             config: {

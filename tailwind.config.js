@@ -42,6 +42,9 @@ module.exports = {
                     DEFAULT: '#585858',
                     lighter: '#9E9E9E',
                     border: '#E5E5E5',
+                },
+                redy: {
+                    DEFAULT: '#F37871'
                 }
             },
             fontFamily: {
@@ -91,6 +94,9 @@ module.exports = {
               },
               '.border-radius--40': {
                 borderRadius: '40px'
+              },
+              '.border-radius--20': {
+                borderRadius: '20px'
               },
             }
             addUtilities( customUtilities )
