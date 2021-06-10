@@ -17,7 +17,9 @@ export default {
         ]
     },
     css: ['~/assets/scss/app.scss'],
-    plugins: ["~/plugins/vue-tippy.js"],
+    plugins: [
+        "~/plugins/vue-tippy.js"
+    ],
     components: true,
     buildModules: [
         '@nuxtjs/tailwindcss',

@@ -8,4 +8,29 @@
             @apply mr-2;
         }
     }
+    h2 {
+        &.ma__name {
+            @apply mt-2 text-[36px];
+        }
+    }
+}
+.header--ma-data {
+    @apply mb-8;
+    &.header--ma-data--stripped {
+        h3 {
+            @apply z-10 bg-white inline-block pr-5;
+        }
+        &:after {
+            content: '';
+            @apply w-full h-px absolute top-1/2 left-0 bg-grayy-border;
+        }
+    }
+}
+.header--map {
+    @apply bg-turqy-lighter py-3;
+    p {
+        &:first-child{
+            @apply text-[12px];
+        }
+    }
 }

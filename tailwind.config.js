@@ -42,6 +42,7 @@ module.exports = {
                     DEFAULT: '#585858',
                     lighter: '#9E9E9E',
                     border: '#E5E5E5',
+                    badge: 'rgba(0, 0, 0, .02)'
                 },
                 redy: {
                     DEFAULT: '#F37871'

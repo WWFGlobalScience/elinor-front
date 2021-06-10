@@ -57,11 +57,11 @@
                     {{ $t( 'default.showing' ) }} - 206 {{ $t( 'pages.managed-areas.content.showing.managed-areas' )}}
                 </div>
                 <ul class="ma__results">
-                    <li class="elinor__badge ui-rounded-border">
+                    <li v-for="(ma, index) in mas" class="elinor__badge ui-rounded-border">
                         <header class="header">
                             <div class="left">
-                                <span class="title">User Name Owner</span>
-                                <span class="subtitle">Name Managed Area lorem ipsum dolor sid amet </span>
+                                <span class="title">{{ ma.owner }}</span>
+                                <span class="subtitle">{{ ma.name }}</span>
                             </div>
                         </header>
                         <ul class="sublist">
@@ -76,92 +76,23 @@
                             </li>
                             <li class="ha">
                                 <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.ha' ) }}</span>
-                                <span class="data">89.566</span>
+                                <span class="data">{{ ma.size }}</span>
                             </li>
                             <li class="assessments">
                                 <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.assessments' ) }}</span>
-                                <span class="data">3</span>
+                                <span class="data">{{ ma.assessments.length }}</span>
                             </li>
                             <li class="countries">
                                 <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.countries' ) }}</span>
-                                <span class="data">Lorem ipsum doloe aemet</span>
+                                <span class="data">
+                                    <span v-for="(country, index) in ma.countries">
+                                        <span v-if="index != ma.countries.length - 1">{{ country }}, </span>
+                                        <span v-else>{{ country }}</span>
+                                    </span>
+                                </span>
                             </li>
                             <li class="view">
-                                <nuxt-link to="" class="btn--border-turqy btn--opacity--child">
-                                    <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>
-                                    <img src="~/assets/img/ico-button-arrow-turqy.svg">
-                                </nuxt-link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="elinor__badge ui-rounded-border">
-                        <header class="header">
-                            <div class="left">
-                                <span class="title">User Name Owner</span>
-                                <span class="subtitle">Name Managed Area lorem ipsum dolor sid amet </span>
-                            </div>
-                        </header>
-                        <ul class="sublist">
-                            <li class="avatar">
-                                <div class="elinor__avatar elinor__avatar--red">
-                                    <span>X</span>
-                                </div>
-                            </li>
-                            <li class="role">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.role' ) }}</span>
-                                <span class="data">Admin</span>
-                            </li>
-                            <li class="ha">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.ha' ) }}</span>
-                                <span class="data">89.566</span>
-                            </li>
-                            <li class="assessments">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.assessments' ) }}</span>
-                                <span class="data">3</span>
-                            </li>
-                            <li class="countries">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.countries' ) }}</span>
-                                <span class="data">Lorem ipsum doloe aemet</span>
-                            </li>
-                            <li class="view">
-                                <nuxt-link to="" class="btn--border-turqy btn--opacity--child">
-                                    <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>
-                                    <img src="~/assets/img/ico-button-arrow-turqy.svg">
-                                </nuxt-link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="elinor__badge ui-rounded-border">
-                        <header class="header">
-                            <div class="left">
-                                <span class="title">User Name Owner</span>
-                                <span class="subtitle">Name Managed Area lorem ipsum dolor sid amet </span>
-                            </div>
-                        </header>
-                        <ul class="sublist">
-                            <li class="avatar">
-                                <div class="elinor__avatar elinor__avatar--red">
-                                    <span>X</span>
-                                </div>
-                            </li>
-                            <li class="role">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.role' ) }}</span>
-                                <span class="data">Admin</span>
-                            </li>
-                            <li class="ha">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.ha' ) }}</span>
-                                <span class="data">89.566</span>
-                            </li>
-                            <li class="assessments">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.assessments' ) }}</span>
-                                <span class="data">3</span>
-                            </li>
-                            <li class="countries">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.countries' ) }}</span>
-                                <span class="data">Lorem ipsum doloe aemet</span>
-                            </li>
-                            <li class="view">
-                                <nuxt-link to="" class="btn--border-turqy btn--opacity--child">
+                                <nuxt-link :to="`/managed-areas/${ma.id}`" class="btn--border-turqy btn--opacity--child">
                                     <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>
                                     <img src="~/assets/img/ico-button-arrow-turqy.svg">
                                 </nuxt-link>
@@ -173,3 +104,24 @@
         </section>
     </article>
 </template>
+
+<script>
+import { mapState } from "vuex"
+import { mapActions } from "vuex"
+export default {
+    name: 'ManagedAreas',
+    computed: {
+        mas() {
+            return this.$store.state.ma.mas
+        }
+    },
+    methods: {
+        ...mapActions({
+            get: 'ma/getMas'
+        })
+    },
+    mounted() {
+        this.get()
+    }
+}
+</script>

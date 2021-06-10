@@ -1,3 +1,3 @@
 export const state = () => ({
-    date: new Date()
+    user: null
 })

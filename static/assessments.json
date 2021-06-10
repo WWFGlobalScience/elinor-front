@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "Assessment name",
+        "mas": [ "1", "2", "3"],
+        "year": "20201",
+        "countries": [ "Lorem", "Ipsum" ]
+    },
+    {
+        "id": "2",
+        "name": "Assessment name",
+        "mas": [ "1", "2", "3"],
+        "year": "20201",
+        "countries": [ "Lorem", "Ipsum" ]
+    }
+]

@@ -1,206 +1,256 @@
 {
-    "default": {
-        "seo": {
-            "title": "Elinor",
-            "description": "",
-            "keywords": "",
-            "og_image": ""
-        },
-        "feedback": {
-            "progress": "Saving data...",
-            "ok": "ok",
-            "error": "Oops! Something is wrong. Please, try again after a few minutes"
-        },
-        "filters": {
-            "button": "Filters",
-            "popup": {
-                "title": "Add filters",
-                "select": "Select filters",
-                "selected": "Filters",
-                "apply": "Apply filters"
-            },
-            "by": "Filter by"
-        },
-        "order": {
-            "button": "Order",
-            "by": "Order by"
-        },
-        "showing": "Showing",
-        "view": "View"
-    },
-    "pages": {
-        "home": {
-            "title": "Home",
-            "slug": "/",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            }
-        },
-        "assessments": {
-            "title": "Assessments",
-            "slug": "assessments",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            }
-        },
-        "managed-areas": {
-            "title": "Managed Areas",
-            "slug": "managed-areas",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            },
+	"default": {
+		"seo": {
+			"title": "Elinor",
+			"description": "",
+			"keywords": "",
+			"og_image": ""
+		},
+		"feedback": {
+			"progress": "Saving data...",
+			"ok": "ok",
+			"error": "Oops! Something is wrong. Please, try again after a few minutes"
+		},
+		"filters": {
+			"button": "Filters",
+			"popup": {
+				"title": "Add filters",
+				"select": "Select filters",
+				"selected": "Filters",
+				"apply": "Apply filters"
+			},
+			"by": "Filter by"
+		},
+		"order": {
+			"button": "Order",
+			"by": "Order by"
+		},
+		"showing": "Showing",
+		"view": "View"
+	},
+	"pages": {
+		"home": {
+			"title": "Home",
+			"slug": "",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			}
+		},
+		"assessments": {
+			"title": "Assessments",
+			"slug": "assessments",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			},
             "content": {
-                "header": {
-                    "title": "MANAGED AREAS"
-                },
-                "create": "Create Managed Area",
-                "search": "Search by Managed Area, Country, Admin",
-                "showing": {
-                    "managed-areas": "Managed areas",
-                    "managed-area": "Managed area"
-                },
-                "ma": {
+                "assessment": {
                     "labels": {
-                        "role": "My role",
-                        "ha": "Hectareas",
-                        "assessments": "Assessments",
+                        "year": "Year",
                         "countries": "Countries"
                     }
                 }
             }
-        },
-        "map": {
-            "title": "Map",
-            "slug": "map",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            }
-        },
-        "users-access": {
-            "title": "Users & Access",
-            "slug": "users-and-access",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            }
-        },
-        "help-guides": {
-            "title": "Help & Guides",
-            "slug": "help-and-guides",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            }
-        },
-        "insights": {
-            "title": "Insights",
-            "slug": "insights",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            }
-        },
-        "sign-in": {
-            "title": "Sign In",
-            "slug": "sign-in",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            },
-            "content": {
-                "header": {
-                    "title": "Create an account",
-                    "subtitle": "Lorem ipsum dolor aemet"
-                },
-                "form": {
-                    "inputs": {
-                        "email": "E-mail*",
-                        "password": "Password*",
-                        "name": "Name*",
-                        "username": "Username*",
-                        "affiliation": "Affiliation*",
-                        "contact-details": "Contact details*",
-                        "terms-of-service": "I agree with the terms of service*",
-                        "submit": "Create an account"
-                    },
-                    "tooltips": {
-                        "affiliation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus.",
-                        "contact-details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus."
-                    },
-                    "feedback": {
-                        "progress": "Creating account",
-                        "ok": "Your account has been created successfullty",
-                        "error": "Oops! Error. Please, try again"
-                    }
-                }
-            }
-        },
-        "welcome":  {
-            "title": "Welcome to Elinor",
-            "slug": "welcome",
-            "seo": {
-                "title": "",
-                "description": "",
-                "keywords": "",
-                "og_image": ""
-            },
-            "content": {
-                "header": {
-                    "title": "WELCOME TO ELINOR",
-                    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                },
-                "assessments": {
-                    "header": {
-                        "title": "Assessments you have been invited"
-                    },
-                    "labels": {
-                        "role": "Role",
-                        "invited-by": "Invited by"
-                    }
-                },
-                "ctas": {
-                    "header": {
-                        "title": "What can I do from here?"
-                    },
-                    "items": {
-                        "create": {
-                            "title": "Create an assessment",
-                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
-                            "button": "Create an assessment"
-                        },
-                        "invite": {
-                            "title": "Invite others to join",
-                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
-                            "button": "Invite users"
-                        },
-                        "help": {
-                            "title": "Learn more about how to use create",
-                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
-                            "button": "Help & guides"
-                        }
-                    }
-                }
-            }
-        }
-    }
+		},
+		"managed-areas": {
+			"title": "Managed Areas",
+			"slug": "managed-areas",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			},
+			"content": {
+				"header": {
+					"title": "MANAGED AREAS"
+				},
+				"create": "Create Managed Area",
+				"search": "Search by Managed Area, Country, Admin",
+				"showing": {
+					"managed-areas": "Managed areas",
+					"managed-area": "Managed area"
+				},
+				"ma": {
+					"labels": {
+						"role": "My role",
+						"ha": "Hectareas",
+						"assessments": "Assessments",
+						"countries": "Countries"
+					},
+					"tabs": {
+						"info": {
+							"tab": "Info",
+							"data": {
+								"header": {
+                                    "title": "Info"
+                                },
+                                "labels": {
+                                    "name": "Name of Managment Area",
+                                    "pa-ca-name": "Name of the larger PA/CA this MA is contained",
+                                    "establishment": "Date of formal establishment",
+                                    "size": "Size of Managed Area",
+                                    "pa-ca-name-focal": "What is the name of the larger PA/CA this focal area is contained within?*",
+                                    "management-unit": "This assessment is specific to a particular management unit within a broader protected or conserved area?",
+                                    "management-unit-definition": "Managment unit definition",
+                                    "governance-type": "MA Governance type",
+                                    "authority-name": "Name of managment authority",
+                                    "rights": "The rights of the MA formally recognized at the...",
+                                    "stakeholder-groups": "Key stakeholder groups",
+                                    "support": "The MA management authority receive technical, financial or other types of support from the following groups or organizations",
+                                    "wdpa-id": " ID inthe World Database on Protected Areas (WDPA)",
+                                    "countries": "Countries",
+                                    "provinces": "Provinces",
+                                    "access-level": "Level of access",
+                                    "access-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                },
+								"map": {
+									"header": {
+										"title": "Map or Spatial File of the MA",
+										"subtitle": "Geospatial information lorem ipsum dolor"
+									}
+								},
+								"assessments": {
+									"header": {
+										"title": "ASSESSMENTS"
+									}
+								}
+							}
+						},
+						"edit": "Edit Managed Area",
+						"contributors": "Contributors"
+					}
+				}
+			}
+		},
+		"map": {
+			"title": "Map",
+			"slug": "map",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			}
+		},
+		"users-access": {
+			"title": "Users & Access",
+			"slug": "users-and-access",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			}
+		},
+		"help-guides": {
+			"title": "Help & Guides",
+			"slug": "help-and-guides",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			}
+		},
+		"insights": {
+			"title": "Insights",
+			"slug": "insights",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			}
+		},
+		"sign-in": {
+			"title": "Sign In",
+			"slug": "sign-in",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			},
+			"content": {
+				"header": {
+					"title": "Create an account",
+					"subtitle": "Lorem ipsum dolor aemet"
+				},
+				"form": {
+					"inputs": {
+						"email": "E-mail*",
+						"password": "Password*",
+						"name": "Name*",
+						"username": "Username*",
+						"affiliation": "Affiliation*",
+						"contact-details": "Contact details*",
+						"terms-of-service": "I agree with the terms of service*",
+						"submit": "Create an account"
+					},
+					"tooltips": {
+						"affiliation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus.",
+						"contact-details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus."
+					},
+					"feedback": {
+						"progress": "Creating account",
+						"ok": "Your account has been created successfullty",
+						"error": "Oops! Error. Please, try again"
+					}
+				}
+			}
+		},
+		"welcome": {
+			"title": "Welcome to Elinor",
+			"slug": "welcome",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			},
+			"content": {
+				"header": {
+					"title": "WELCOME TO ELINOR",
+					"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+				},
+				"assessments": {
+					"header": {
+						"title": "Assessments you have been invited"
+					},
+					"labels": {
+						"role": "Role",
+						"invited-by": "Invited by"
+					}
+				},
+				"ctas": {
+					"header": {
+						"title": "What can I do from here?"
+					},
+					"items": {
+						"create": {
+							"title": "Create an assessment",
+							"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
+							"button": "Create an assessment"
+						},
+						"invite": {
+							"title": "Invite others to join",
+							"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
+							"button": "Invite users"
+						},
+						"help": {
+							"title": "Learn more about how to use create",
+							"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
+							"button": "Help & guides"
+						}
+					}
+				}
+			}
+		}
+	}
 }

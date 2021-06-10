@@ -6,6 +6,9 @@
     &.section--mt-0 {
         @apply mt-0;
     }
+    &.section--mt-10 {
+        @apply mt-10;
+    }
     &.section--button {
         .container {
             @apply flex justify-end;
@@ -27,6 +30,17 @@
             }
         }
     }
+    &.section--tab {
+        li {
+            @apply flex;
+            .btn--tab { 
+                @apply border-l-0; 
+            }
+            &:first-child {
+                .btn--tab { @apply border-l; }
+            }
+        }
+    }
     /*
         PAGE: Welcome
     */
@@ -44,13 +58,19 @@
             }
         }
     }
-     /*
+    /*
         PAGE: Managed areas
     */
     &.section--ma-results {
         .ma__results {
             @apply mt-10;
         }
+    }
+    /*
+        PAGE: Managed area
+    */
+    &.section--ma-data {
+        
     }
 
 }

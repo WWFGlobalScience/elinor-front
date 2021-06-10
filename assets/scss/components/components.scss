@@ -1,5 +1,5 @@
 .elinor__badge {
-    @apply mb-8;
+    @apply mb-8 transition hover:bg-grayy-badge;
     .header {
         @apply flex items-center justify-between border-b border-grayy-border pb-7 mb-5;
         span {
@@ -53,6 +53,38 @@
         @apply bg-redy;
     }
 }
+.elinor__tabs {
+    @apply flex border-b border-grayy-border;
+}
+.elinor__data-grid {
+    @apply flex flex-wrap;
+    margin: -1.25rem;
+    .elinor__data-sublock {
+        @apply w-1/2 p-5;
+    }
+    .elinor__data-sublist {
+        @apply p-3;
+    }
+    .elinor__data { 
+        @apply flex flex-col w-1/2 p-5;
+        .title {
+            @apply mb-1 text-[12px] text-grayy-lighter;
+        }
+        &.elinor__data--full {
+            @apply w-full;
+        }
+    }
+    &.elinor__data-grid--3-5 {
+        @apply w-3/5;
+    }
+}
+.elinor__data-separator {
+    @apply w-full h-px bg-grayy-border my-10;
+}
+.elinor__map {
+    @apply h-[55vh];
+}
 .search__results {
     @apply text-grayy-lighter;
 }
+

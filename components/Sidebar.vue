@@ -7,7 +7,7 @@
             <nav class="nav__main">
                 <ul>
                     <li v-for="(page, index) in pages">
-                        <NuxtLink :to="$t( page.slug )" class="btn--opacity--child">
+                        <NuxtLink :to="`/${$t( page.slug )}`" class="btn--opacity--child">
                             <img v-if="page.icons.gray" :src="page.icons.gray" :alt="$t(page.title)" class="center-v">   
                             <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
                         </NuxtLink>
@@ -21,9 +21,10 @@
 
 <script>
     export default {
+        name: 'Sidebar',
         computed: {
             pages() {
-                return this.$store.state.pages
+                return this.$store.state.pages.list
             }
         }
     }
