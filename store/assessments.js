@@ -22,7 +22,7 @@ export const actions = {
     async getAssessment( state, id ) {
         const response = await fetch(`https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1//assessments/${id}`)
         const assessment = await response.json()
-
+        console.log( assessment )
         state.commit( 'setAssessment', assessment )
     }
 }

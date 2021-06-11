@@ -39,6 +39,12 @@
             &:first-child {
                 .btn--tab { @apply border-l; }
             }
+            &.elinor__tab--end {
+                @apply flex-1 justify-end;
+                .btn--tab {
+                    @apply border-l border-solid;
+                }
+            }
         }
     }
     /*

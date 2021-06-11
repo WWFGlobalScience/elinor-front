@@ -24,7 +24,7 @@
                             <div class="form__group">
                                 <div class="form__row">
                                     <div class="input input--ico">
-                                        <input type="text" :placeholder="$t( 'pages.managed-areas.content.search' )">
+                                        <input type="text" :placeholder="$t( 'default.search' )">
                                         <div class="input__ico">
                                             <span></span>
                                             <button type="submit" form="form--search">
@@ -54,9 +54,12 @@
         <section class="section section--mt-medium section--ma-results">
             <div class="container">
                 <div class="search__results">
-                    {{ $t( 'default.showing' ) }} - 206 {{ $t( 'pages.managed-areas.content.showing.managed-areas' )}}
+                    <span>{{ $t( 'default.showing' ) }}</span> - 
+                    <span>{{ mas.length }}</span> 
+                    <span v-if="mas.length > 1 || mas.length == 0">{{ $t( 'pages.managed-areas.content.showing.plural' )}}</span>
+                    <span v-if="mas.length == 1">{{ $t( 'pages.managed-areas.content.showing.singular' )}}</span>
                 </div>
-                <ul class="ma__results">
+                <ul class="ma__results" v-if="mas.length >= 1">
                     <li v-for="(ma, index) in mas" class="elinor__badge ui-rounded-border">
                         <header class="header">
                             <div class="left">
@@ -98,6 +101,15 @@
                                 </nuxt-link>
                             </li>
                         </ul>
+                    </li>
+                </ul>
+                <ul class="ma__results" v-else>
+                    <li class="elinor__badge ui-rounded-border elinor__badge--empty">
+                        <header class="header">
+                            <div class="left">
+                                <span class="title">{{ $t( 'pages.managed-areas.content.showing.empty' ) }}</span>
+                            </div>
+                        </header>
                     </li>
                 </ul>
             </div>

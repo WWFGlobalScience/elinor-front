@@ -25,6 +25,7 @@
 			"button": "Order",
 			"by": "Order by"
 		},
+        "search": "Search by Managed Area, Country, Admin",
 		"showing": "Showing",
 		"view": "View"
 	},
@@ -49,10 +50,75 @@
 				"og_image": ""
 			},
             "content": {
+                "header": {
+                    "title": "ASSESSMENTS"
+                },
+                "create": "Create Assessment",
+                "showing": {
+					"plural": "Assessments",
+					"singular": "Assessment",
+                    "empty": "No Assessments created yet"
+				},
                 "assessment": {
                     "labels": {
+                        "role": "My role",
                         "year": "Year",
                         "countries": "Countries"
+                    },
+                    "tabs": {
+                        "info": {
+                            "tab": "Info",
+                            "data": {
+                                "header": {
+                                    "title": "Info"
+                                },
+                                "labels": {
+                                    "name": "Name of Managment Area",
+                                    "pa-ca-name": "Name of the larger PA/CA this MA is contained",
+                                    "establishment": "Date of formal establishment",
+                                    "size": "Size of Managed Area",
+                                    "pa-ca-name-focal": "What is the name of the larger PA/CA this focal area is contained within?*",
+                                    "management-unit": "This assessment is specific to a particular management unit within a broader protected or conserved area?",
+                                    "management-unit-definition": "Managment unit definition",
+                                    "governance-type": "MA Governance type",
+                                    "authority-name": "Name of managment authority",
+                                    "rights": "The rights of the MA formally recognized at the...",
+                                    "stakeholder-groups": "Key stakeholder groups",
+                                    "support": "The MA management authority receive technical, financial or other types of support from the following groups or organizations",
+                                    "wdpa-id": " ID inthe World Database on Protected Areas (WDPA)",
+                                    "countries": "Countries",
+                                    "provinces": "Provinces",
+                                    "access-level": "Level of access",
+                                    "access-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                                    "people-consulted": {
+                                        "title": "People consulted",
+                                        "labels": {
+                                            "manager": "MA manager",
+                                            "ma-personnel": "MA personnel",
+                                            "government-personnel": "Government Personnel",
+                                            "local-members": "Members of local community",
+                                            "leaders": "Community leaders",
+                                            "total": "Total people consulted"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "survey": {
+                            "tab": "The Survey",
+                            "data": {
+
+                            }
+                        },
+                        "ma": {
+                            "tab": "Edit Management Area"
+                        },
+                        "collaborators": {
+                            "tab": "Collaborators"
+                        },
+                        "publish": {
+                            "tab": "Edit publish settings"
+                        }
                     }
                 }
             }
@@ -70,11 +136,11 @@
 				"header": {
 					"title": "MANAGED AREAS"
 				},
-				"create": "Create Managed Area",
-				"search": "Search by Managed Area, Country, Admin",
+				"create": "Create Managed Area",	
 				"showing": {
-					"managed-areas": "Managed areas",
-					"managed-area": "Managed area"
+					"plural": "Managed areas",
+					"singular": "Managed area",
+                    "empty": "No Managed Areas created yet"
 				},
 				"ma": {
 					"labels": {

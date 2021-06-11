@@ -42,6 +42,16 @@
             @apply mb-0;
         }
     }
+    &.elinor__badge--empty {
+        header {
+            @apply border-0 mb-0 pb-0;
+            span {
+                &.title {
+                    @apply mb-0;
+                }
+            }
+        }
+    }
    
 }
 .elinor__avatar {

@@ -6,7 +6,7 @@
                     <img src="~/assets/img/ico-managed-areas-turqy.svg">
                     <span>{{ $t( 'pages.managed-areas.content.header.title' ) }}</span>
                 </h1>
-                <h2 class="ma__name">{{ ma.name }}</h2>
+                <h2 class="ma__name">{{ ma["name"] }}</h2>
             </div>
         </header>
         <section class="section section--tab section--mt-10">
