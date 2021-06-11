@@ -1,9 +1,15 @@
 <template>
     <div id="app">
-        <Header/>
+        <default-header></default-header>
         <main role="main">
-            <Sidebar/>
+            <default-sidebar></default-sidebar>
             <Nuxt />
         </main>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'layout-default'
+}
+</script>

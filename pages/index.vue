@@ -29,6 +29,7 @@
 
 <script>
 export default {
+    name: 'Home',
     computed: {
         pages() {
             return this.$store.state.pages

@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        name: 'Sidebar',
+        name: 'default-sidebar',
         computed: {
             pages() {
                 return this.$store.state.pages.list

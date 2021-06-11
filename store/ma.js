@@ -32,6 +32,7 @@ export const actions = {
     async getFirstMa( state ) {
         const response = await fetch("https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas")
         const mas = await response.json()
+        console.log( mas[0])
         state.commit( 'setMas', mas[0] )
     }
 }

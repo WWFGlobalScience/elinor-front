@@ -9,8 +9,13 @@
         }
     }
     h2 {
-        &.ma__name {
+        &.ma__name, &.assessment__name {
             @apply mt-2 text-[36px];
+        }
+    }
+    p {
+        &.assessment__year {
+            @apply text-[20px] text-grayy-lighter;
         }
     }
 }

@@ -49,7 +49,7 @@ button {
 }
 .btn--tab {
     @apply flex items-center border border-solid border-turqy-lighter border-b-[5px] px-8 py-4 text-turqy text-[12px] transition hover:bg-turqy-lighter;
-    &.is--active {
+    &.nuxt-link-exact-active {
         @apply border-turqy pointer-events-none;
     }
     .num {

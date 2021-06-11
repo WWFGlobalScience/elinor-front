@@ -91,7 +91,7 @@
                                 </span>
                             </li>
                             <li class="view">
-                                <nuxt-link :to="`/assessments/${assessment.id}`" class="btn--border-turqy btn--opacity--child">
+                                <nuxt-link :to="`/assessments/${assessment.id}/info`" class="btn--border-turqy btn--opacity--child">
                                     <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>
                                     <img src="~/assets/img/ico-button-arrow-turqy.svg">
                                 </nuxt-link>

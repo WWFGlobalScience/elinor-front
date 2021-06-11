@@ -30,6 +30,53 @@
 		"view": "View"
 	},
 	"pages": {
+        "sign-in": {
+			"title": "Sign In",
+			"slug": "sign-in",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			}
+		},
+        "sign-up": {
+			"title": "Create account",
+			"slug": "create-account",
+			"seo": {
+				"title": "",
+				"description": "",
+				"keywords": "",
+				"og_image": ""
+			},
+			"content": {
+				"header": {
+					"title": "Create an account",
+					"subtitle": "Lorem ipsum dolor aemet"
+				},
+				"form": {
+					"inputs": {
+						"email": "E-mail*",
+						"password": "Password*",
+						"name": "Name*",
+						"username": "Username*",
+						"affiliation": "Affiliation*",
+						"contact-details": "Contact details*",
+						"terms-of-service": "I agree with the terms of service*",
+						"submit": "Create an account"
+					},
+					"tooltips": {
+						"affiliation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus.",
+						"contact-details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus."
+					},
+					"feedback": {
+						"progress": "Creating account",
+						"ok": "Your account has been created successfullty",
+						"error": "Oops! Error. Please, try again"
+					}
+				}
+			}
+		},
 		"home": {
 			"title": "Home",
 			"slug": "",
@@ -60,6 +107,9 @@
                     "empty": "No Assessments created yet"
 				},
                 "assessment": {
+                    "header": {
+                        "year": "Year"
+                    },
                     "labels": {
                         "role": "My role",
                         "year": "Year",
@@ -189,7 +239,7 @@
 							}
 						},
 						"edit": "Edit Managed Area",
-						"contributors": "Contributors"
+						"collaborators": "Collaborators"
 					}
 				}
 			}
@@ -232,43 +282,6 @@
 				"description": "",
 				"keywords": "",
 				"og_image": ""
-			}
-		},
-		"sign-in": {
-			"title": "Sign In",
-			"slug": "sign-in",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			},
-			"content": {
-				"header": {
-					"title": "Create an account",
-					"subtitle": "Lorem ipsum dolor aemet"
-				},
-				"form": {
-					"inputs": {
-						"email": "E-mail*",
-						"password": "Password*",
-						"name": "Name*",
-						"username": "Username*",
-						"affiliation": "Affiliation*",
-						"contact-details": "Contact details*",
-						"terms-of-service": "I agree with the terms of service*",
-						"submit": "Create an account"
-					},
-					"tooltips": {
-						"affiliation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus.",
-						"contact-details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus."
-					},
-					"feedback": {
-						"progress": "Creating account",
-						"ok": "Your account has been created successfullty",
-						"error": "Oops! Error. Please, try again"
-					}
-				}
 			}
 		},
 		"welcome": {

@@ -90,3 +90,9 @@
         </section>
     </article>
 </template>
+
+<script>
+export default {
+    name: 'welcome'
+}
+</script>
