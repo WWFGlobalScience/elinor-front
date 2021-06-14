@@ -43,7 +43,10 @@
             [-67.79035, 47.06624],
             [-67.79141, 45.70258],
             [-67.13734, 45.13745]
-        ]
+        ],
+        "zone-name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "zone-restrictions": "Yes",
+        "zone-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
         "id": "2",
@@ -89,7 +92,10 @@
             [-67.79035, 47.06624],
             [-67.79141, 45.70258],
             [-67.13734, 45.13745]
-        ]
+        ],
+        "zone-name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "zone-restrictions": "Yes",
+        "zone-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
         "id": "3",
@@ -135,6 +141,9 @@
             [-67.79035, 47.06624],
             [-67.79141, 45.70258],
             [-67.13734, 45.13745]
-        ]
+        ],
+        "zone-name": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "zone-restrictions": "Yes",
+        "zone-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   ]

@@ -88,6 +88,27 @@
         @apply w-3/5;
     }
 }
+.elinor__data-wrap {
+    @apply flex justify-between;
+}
+.elinor__people {
+    @apply min-w-[270px] self-start sticky top-[90px];
+    li {
+        @apply my-4;
+        &.elinor__people-header {
+            @apply mt-0;
+        }
+        &.elinor__people-data {
+            @apply flex items-center text-[12px] text-grayy-lighter;
+            span {
+                @apply text-[16px] text-grayy w-[20px];
+            }
+        }
+        &:last-child {
+            @apply border-t border-grayy-border pt-4 mb-0;
+        }
+    }
+}
 .elinor__data-separator {
     @apply w-full h-px bg-grayy-border my-10;
 }

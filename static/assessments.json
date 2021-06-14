@@ -4,13 +4,23 @@
         "name": "Assessment name",
         "mas": [ "1", "2", "3"],
         "year": "20201",
-        "countries": [ "Lorem", "Ipsum" ]
+        "countries": [ "Lorem", "Ipsum" ],
+        "people-manager": 1,
+        "people-personnel": 8,
+        "people-government-personnel": 1,
+        "people-community-members": 1,
+        "people-community-leaders": 1
     },
     {
         "id": "2",
         "name": "Assessment name",
         "mas": [ "1", "2", "3"],
         "year": "20201",
-        "countries": [ "Lorem", "Ipsum" ]
+        "countries": [ "Lorem", "Ipsum" ],
+        "people-manager": 1,
+        "people-personnel": 8,
+        "people-government-personnel": 1,
+        "people-community-members": 1,
+        "people-community-leaders": 1
     }
 ]
