@@ -1,3 +1,9 @@
+.app__content {
+    @apply transition;
+    &.is--overlay {
+        filter: blur(4px);
+    }
+}
 main {
     @apply flex flex-wrap;
     .page {

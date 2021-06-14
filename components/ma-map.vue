@@ -97,6 +97,9 @@ export default {
         mapDisableScroll() {
             this.map.scrollZoom.disable();
         }
+    },
+    mounted() {
+        Object.keys( this.ma ).length != 0 ? this.mapCreate() : null
     }
 }
 

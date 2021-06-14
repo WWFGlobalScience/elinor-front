@@ -97,4 +97,39 @@
 .search__results {
     @apply text-grayy-lighter;
 }
-
+.elinor__loader {
+    @apply w-screen h-screen fixed top-0 left-0 z-40;
+    .loader__group {
+        @apply flex flex-col items-center justify-center center-both z-10;
+        svg {
+            @apply mb-2;
+        } 
+    }
+    .loader__bg {
+        @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
+    }
+}
+.elinor__popup {
+    @apply w-screen h-screen fixed top-0 left-0 z-40;
+    .popup__overlay {
+        @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
+    }
+    .popup__box {
+        @apply w-[1000px] center-both z-10 shadow-xl;
+        .popup__header {
+            @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl;
+            span {
+                @apply text-[22px];
+            }
+        }
+        .popup__content {
+            @apply bg-white px-20 py-10 rounded-b-xl;
+        }
+    }
+}
+.elinor-fade-enter-active, .elinor-fade-leave-active {
+    @apply transition;
+}
+.elinor-fade-enter, .elinor-fade-leave-to {
+    @apply opacity-0;
+}

@@ -106,6 +106,9 @@
 					"singular": "Assessment",
                     "empty": "No Assessments created yet"
 				},
+                "filters": {
+                    "title": "Add filters to assessments"
+                },
                 "assessment": {
                     "header": {
                         "year": "Year"

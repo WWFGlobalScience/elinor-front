@@ -84,6 +84,11 @@ module.exports = {
                 top: '50%',
                 transform: 'translateY(-50%)'
               },
+              '.center-h': {
+                position: 'absolute',
+                left: '50%',
+                transform: 'translateX(-50%)'
+              },
               '.center-both': {
                 position: 'absolute',
                 top: '50%',

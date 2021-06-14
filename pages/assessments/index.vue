@@ -37,7 +37,8 @@
                         </form>
                     </li>
                     <li>
-                        <button type="button" class="btn--border-turqy btn--opacity--child">
+                        <button type="button" class="btn--border-turqy btn--opacity--child" 
+                        @click="popupState( { component : 'popup-assessments-filter', title: 'pages.assessments.content.filters.title' })">
                             <span class="btn--opacity__target">{{ $t( 'default.filters.button' ) }}</span>
                             <img src="~/assets/img/ico-filters-turqy.svg">
                         </button>
@@ -105,7 +106,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
 import { mapActions } from "vuex"
 export default {
     name: 'Assessments',
@@ -116,11 +116,13 @@ export default {
     },
     methods: {
         ...mapActions({
-            get: 'assessments/getAssessments'
+            getAssessments: 'assessments/getAssessments',
+            loaderState: 'loader/loaderState',
+            popupState: 'popup/popupState'
         })
     },
     mounted() {
-        this.get()
+        this.getAssessments()
     }
 }
 </script>
