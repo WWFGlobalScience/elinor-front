@@ -15,12 +15,14 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.0.1",
+    "gsap": "file:gsap-bonus.tgz",
     "mapbox-gl": "^2.3.0",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",
     "nuxt-i18n": "^6.27.0",
     "postcss": "^8.2.8",
     "sass-loader": "^10.1.0",
+    "vue-scrollto": "^2.20.0",
     "vue-tippy": "^4.10.1"
   }
 }

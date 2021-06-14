@@ -18,7 +18,7 @@ export default {
     },
     css: ['~/assets/scss/app.scss'],
     plugins: [
-        "~/plugins/vue-tippy.js"
+        "~/plugins/vue-tippy.js",
     ],
     components: true,
     buildModules: [
@@ -43,7 +43,16 @@ export default {
                     file: 'en-US.json'
                 }                
             ]
-        }]
+        }],
+        [
+            'vue-scrollto/nuxt',
+            // Or if you have custom options...
+            ['vue-scrollto/nuxt', { 
+                duration: 500,
+                offset: -70 
+            }],
+        ]
+        
     ],
     axios: {},
     build: {

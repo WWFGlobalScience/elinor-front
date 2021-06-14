@@ -154,3 +154,40 @@
 .elinor-fade-enter, .elinor-fade-leave-to {
     @apply opacity-0;
 }
+.elinor__survey-navigator {
+    @apply flex justify-between items-center border-b border-grayy-border py-10;
+    li {
+        @apply flex-1 flex justify-center;
+        a {
+            @apply w-[12px] h-[12px] bg-turqy border-radius--50 z-10;
+        }
+    }
+    &:after {
+        content: '';
+        @apply center-v w-full h-px bg-grayy-border;
+    }
+}
+.elinor__survey-list {
+    @apply mt-10;
+    .elinor__survey-question {
+        @apply flex flex-wrap justify-between mb-8;
+        .question {
+            @apply text-[20px] leading-[30px] font-bold;
+        }
+        .txt {
+            @apply text-[12px] text-grayy-lighter mb-2;
+            &.txt--explanation {
+                @apply mt-8;
+            }
+        }
+        .answer {
+            @apply leading-[26px];
+        }
+        .left {
+            @apply w-1/2 pr-8;
+        }
+        .right {
+            @apply w-1/2 border-l border-grayy-border pl-8;
+        }
+    }
+}

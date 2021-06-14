@@ -140,8 +140,346 @@
                         },
                         "survey": {
                             "tab": "The Survey",
+                            "header": {
+                                "title": "The survey"
+                            },
                             "data": {
-
+                                "questions": {
+                                    "default": {
+                                        "explanation": "Explanation",
+                                        "answer": "Answer",
+                                        "answer-question": "Answer question",
+                                        "score": "Score",
+                                        "question": "Question",
+                                        "completed": "Completed",
+                                        "out-of": "Out of",
+                                        "select": "Select answer",
+                                        "help": "Need help? See below",
+                                        "edit": "Edit",
+                                        "not-completed": "Not completed",
+                                        "unknown": "Don’t know"
+                                    },
+                                    "categories": {
+                                        "rights-decision": "Clearly defined rights and decision making"
+                                    },
+                                    "items": {
+                                        "1": {
+                                            "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "2": {
+                                            "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "3": {
+                                            "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "4": {
+                                            "question": "Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "5": {
+                                            "question": "Is there legislation in place to enable resource management by local communities?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "6": {
+                                            "question": "Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "7": {
+                                            "question": "Are local stakeholders able to exercise their rights to natural resources?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "8": {
+                                            "question": "Is there an effective strategy or guideline for ensuring benefits from the MA are shared equitably among local stakeholders?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "9": {
+                                            "question": "To what extent are local stakeholders affected by the rules able to play a role in making changes to the rules?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "10": {
+                                            "question": "Are those responsible for governance of the MA held to account if they do not perform their role?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "11": {
+                                            "question": "Do local stakeholders receive information from MA authorities in a timely manner?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "12": {
+                                            "question": "To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity or frequency of the offence?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "13": {
+                                            "question": "How often are the penalties for breaking resource use rules administered?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "14": {
+                                            "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the ecological impacts of the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "15": {
+                                            "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the social impacts of the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "16": {
+                                            "question": "Do local stakeholders have access to effective conflict resolution mechanisms?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "17": {
+                                            "question": "Do different levels of management exist within the MA that function as a cohesive unit?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "18": {
+                                            "question": "Do networks exist that develop social relations and support mutual learning among stakeholders?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "19": {
+                                            "question": "Are appropriate regulations in place to control natural resource based activities in the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "20": {
+                                            "question": "Do those responsible for managing the MA (e.g., staff/community associations/ management group) have the capacity to enforce the rules and regulations?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "21": {
+                                            "question": "Is the boundary known by all local stakeholder groups?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "22": {
+                                            "question": "Is the boundary clearly defined?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "23": {
+                                            "question": "Is there a management plan for the MA and is it being implemented?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "24": {
+                                            "question": "To what extent do you feel the ecological outcomes are being achieved?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "25": {
+                                            "question": "To what extent do you feel the social outcomes are being achieved?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "26": {
+                                            "question": "Do those responsible for managing the MA integrate different types of knowledge into management decisions?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "27": {
+                                            "question": "Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "28": {
+                                            "question": "Are there enough people employed or engaged to manage the MA?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "29": {
+                                            "question": "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "30": {
+                                            "question": "Is the current budget or funds used to support MA activities sufficient?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "31": {
+                                            "question": "Is the budget or funding secure?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "32": {
+                                            "question": "Is equipment sufficient for management needs?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "33": {
+                                            "question": "Is information on climate change being used to inform strategies to build resilience to climate change for local stakeholders?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "34": {
+                                            "question": "Is the MA consciously managed to adapt to climate change?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        },
+                                        "35": {
+                                            "question": "Are systems in place to monitor and document impacts of climate change?",
+                                            "answers": {
+                                                "1": "There are no regulations for controlling marine based activities in the MA.",
+                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         },
                         "ma": {
