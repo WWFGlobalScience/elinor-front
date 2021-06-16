@@ -2,7 +2,9 @@ import qs from 'qs'
 
 export const state = () => ({
     list: [],
-    assessment: {},
+    assessment: {
+        survey: []
+    },
     edit: {
         data: true,
         ma: false,

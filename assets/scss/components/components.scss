@@ -155,6 +155,23 @@
         @apply flex-1 flex justify-center;
         a {
             @apply w-[12px] h-[12px] bg-turqy border-radius--50 z-10;
+            &.is--uncomplete {
+                @apply bg-grayy-border;
+            }
+        }
+        &.elinor__survey-complete {
+            @apply flex items-center bg-white z-10;
+            .index {
+                @apply min-w-[42px] min-h-[42px] flex items-center justify-center border-radius--50 border border-grayy-border mr-2;
+            }
+            .text {
+                span {
+                    @apply leading-[16px];
+                    &:last-child {
+                        @apply text-base text-[12px] leading-[12px] text-grayy-lighter;
+                    }
+                }
+            }
         }
     }
     &:after {
@@ -170,9 +187,12 @@
             @apply text-[20px] leading-[30px] font-bold;
         }
         .txt {
-            @apply text-[12px] text-grayy-lighter mb-2;
+            @apply flex items-center text-[12px] text-grayy-lighter mb-2;
             &.txt--explanation {
                 @apply mt-8;
+            }
+            .txt__mark {
+                @apply w-[12px] h-[12px] bg-turqy border-radius--50 mr-2;
             }
         }
         .answer {
@@ -183,6 +203,22 @@
         }
         .right {
             @apply w-1/2 border-l border-grayy-border pl-8;
+        }
+        &.is--uncomplete {
+            .txt {
+                .txt__mark {
+                    @apply bg-grayy-border
+                }
+            }
+        }
+        .uncompleted {
+            @apply flex flex-col;
+        }
+        .txt__uncomplete {
+            @apply text-redy;
+        }
+        .btn--uncomplete {
+            @apply mt-8 self-start;
         }
     }
 }

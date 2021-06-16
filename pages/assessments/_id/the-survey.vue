@@ -9,7 +9,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-    name: 'Assessment',
+    name: 'assessment-survey',
     layout: 'assessment',
     computed: {
         assessment() {

@@ -41,6 +41,10 @@
                 "select": "Select a file",
                 "clear": "Clear"
             }
+        },
+        "survey": {
+            "out-of": "Out of",
+            "completed": "Completed"
         }
 	},
 	"pages": {
