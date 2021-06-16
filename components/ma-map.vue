@@ -31,6 +31,7 @@ export default {
     },
     methods: {
         mapCreate() {
+            this.map != null ? this.map.remove() : null
             this.map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',

@@ -10,8 +10,10 @@
         </header>
         <section class="section section--mt-0 section--button">
             <div class="container">
-                <button type="button" class="btn btn--opacity--child">
-                    <span class="btn--opacity__target">{{ $t( 'pages.assessments.content.create' ) }}</span>
+                <button type="button" class="btn btn--opacity--child"
+                @click="popupState( { component: 'popup-assessment-create', title: 'pages.assessments.content.assessment-edit.create.title' })"
+                >
+                    <span class="btn--opacity__target">{{ $t( 'pages.assessments.content.assessment-edit.create.labels.create' ) }}</span>
                     <img src="~/assets/img/ico-button-arrow.svg">
                 </button>
             </div>

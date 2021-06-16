@@ -19,10 +19,11 @@ export default {
     css: ['~/assets/scss/app.scss'],
     plugins: [
         "~/plugins/vue-tippy.js",
+        "~/plugins/formDataStringify.js"
     ],
     components: true,
     buildModules: [
-        '@nuxtjs/tailwindcss',
+        '@nuxtjs/tailwindcss'
     ],    
     modules: [
         '@nuxtjs/axios',
@@ -51,7 +52,8 @@ export default {
                 duration: 500,
                 offset: -70 
             }],
-        ]
+        ],
+        'nuxt-vue-multiselect'
         
     ],
     axios: {},

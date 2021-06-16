@@ -7,8 +7,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-    popupState( state, { component, title } ) {
-        state.popup.active = !state.popup.active
+    popupState( state, { active, component, title } ) {
+        state.popup.active = active
         if (state.popup.active ) {
             state.popup.component = component
             state.popup.title = title
@@ -20,8 +20,9 @@ export const mutations = {
 }
 
 export const actions = {
-    popupState( state, { component, title } ) {
-        state.commit( 'popupState', { 
+    popupState( state, { active, component, title } ) {
+        state.commit( 'popupState', {
+            active: active, 
             component: component,
             title: title
         })

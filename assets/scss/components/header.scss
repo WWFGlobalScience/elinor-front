@@ -18,6 +18,15 @@
             @apply text-[20px] text-grayy-lighter;
         }
     }
+    .header__save {
+        @apply flex flex-col justify-end;
+        button {
+            @apply self-end mb-1;
+        }
+        p {
+            @apply text-right text-[12px] text-grayy-lighter;
+        }
+    }
 }
 .header--ma-data {
     @apply mb-8;

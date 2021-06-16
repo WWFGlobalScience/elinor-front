@@ -25,7 +25,7 @@ export default {
             return this.$store.state.assessments.assessment
         },
         ma() {
-            return this.$store.state.ma.mas
+            return this.$store.state.ma.ma
         }
     }
 }

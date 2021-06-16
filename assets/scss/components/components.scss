@@ -119,15 +119,15 @@
     @apply text-grayy-lighter;
 }
 .elinor__loader {
-    @apply w-screen h-screen fixed top-0 left-0 z-40;
+    @apply w-screen fixed bottom-0 left-0 z-20 text-grayy-lighter text-[12px] py-2;
     .loader__group {
-        @apply flex flex-col items-center justify-center center-both z-10;
+        @apply flex items-center justify-center z-10;
         svg {
-            @apply mb-2;
+            @apply w-4 mr-2 mb-0;
         } 
     }
     .loader__bg {
-        @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
+        @apply w-full h-full absolute top-0 left-0 bg-grayy-border;
     }
 }
 .elinor__popup {
@@ -148,12 +148,7 @@
         }
     }
 }
-.elinor-fade-enter-active, .elinor-fade-leave-active {
-    @apply transition;
-}
-.elinor-fade-enter, .elinor-fade-leave-to {
-    @apply opacity-0;
-}
+
 .elinor__survey-navigator {
     @apply flex justify-between items-center border-b border-grayy-border py-10;
     li {
@@ -190,4 +185,21 @@
             @apply w-1/2 border-l border-grayy-border pl-8;
         }
     }
+}
+.elinor__notifications {
+    @apply fixed bottom-0 w-full bg-grayy text-white z-50 text-center text-[12px] py-2;
+    transform: translateY(100%);
+}
+
+.elinor-fade-enter-active, .elinor-fade-leave-active {
+    @apply transition;
+}
+.elinor-fade-enter, .elinor-fade-leave-to {
+    @apply opacity-0;
+}
+.elinor-slide-up-enter-active, .elinor-slide-up-leave-active {
+    @apply transition;
+}
+.elinor-slide-up-enter, .elinor-slide-up-leave-to {
+    transform: translateY(100%);
 }

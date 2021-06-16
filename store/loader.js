@@ -6,14 +6,17 @@ export const state = () => ({
 })
 
 export const mutations = {
-    loaderState( state, text ) {
-        state.loader.active = !state.loader.active
+    loaderState( state, { active, text } ) {
+        state.loader.active = active
         state.loader.text = text
     }
 }
 
 export const actions = {
-    loaderState( state, text  ) {
-        state.commit( 'loaderState', text )
+    loaderState( state, { active, text }  ) {
+        state.commit( 'loaderState', { 
+            active: active,
+            text: text
+        })
     }
 }

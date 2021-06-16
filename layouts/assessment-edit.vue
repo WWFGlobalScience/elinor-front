@@ -4,9 +4,9 @@
             <default-header></default-header>
             <main role="main">
                 <default-sidebar></default-sidebar>
-                <article class="page page--assessment">
-                    <assessment-header :assessment="assessment"></assessment-header>
-                    <assessment-tabs :id="id"></assessment-tabs>
+                <article class="page page--assessment-edit">
+                    <assessment-edit-header :assessment="assessment"></assessment-edit-header>
+                    <assessment-edit-tabs :id="id"></assessment-edit-tabs>
                     <Nuxt />
                 </article>
             </main>
@@ -19,7 +19,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-    name: 'layout-assessment',
+    name: 'layout-assessment-edit',
     data() {
         return {
             id: this.$route.params.id
@@ -38,13 +38,11 @@ export default {
     },
     methods: {
         ...mapActions({
-            getAssessment: 'assessments/getAssessment',
-            getFirstMa: 'ma/getFirstMa'
+            getAssessment: 'assessments/getAssessment'
         })
     },
     created() {
         this.getAssessment( this.id )
-        this.getFirstMa()
     }
 }
 </script>

@@ -24,10 +24,24 @@
 		"order": {
 			"button": "Order",
 			"by": "Order by"
-		},
+        },
+        "yes": "Yes",
+        "no": "No",
         "search": "Search by Managed Area, Country, Admin",
 		"showing": "Showing",
-		"view": "View"
+		"view": "View",
+        "noresults": "No results for this query.",
+        "save": {
+            "button": "Save",
+            "autosave": "Data autosaved a few seconds ago"
+        },
+        "upload-file": {
+            "placeholder": "Drag and drop a PDF file here",
+            "buttons": {
+                "select": "Select a file",
+                "clear": "Clear"
+            }
+        }
 	},
 	"pages": {
         "sign-in": {
@@ -100,7 +114,7 @@
                 "header": {
                     "title": "ASSESSMENTS"
                 },
-                "create": "Create Assessment",
+                
                 "showing": {
 					"plural": "Assessments",
 					"singular": "Assessment",
@@ -490,6 +504,52 @@
                         },
                         "publish": {
                             "tab": "Edit publish settings"
+                        }
+                    }
+                },
+                "assessment-edit": {
+                    "create": {
+                        "title": "New Assessment",
+                        "labels": {
+                            "create": "Create Assessment",
+                            "year": "Select Year",
+                            "name": "Name of assessment"
+                        },
+                        "legends": {
+                            "name": "Criteria for names Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+                        }
+                    },
+                    "tabs": {
+                        "data": {
+                            "tab": "Assessment data",
+                            "labels": {
+                                "year": "Select Year",
+                                "name": "Name of assessment",
+                                "institution": "Name of institution associated with this Assessment",
+                                "role": "Role of the person responsible to complete this Assessment",
+                                "people": {
+                                    "title": "Number of people consulted",
+                                    "manager": "MA manager",
+                                    "personnel": "MA personnel",
+                                    "government-personnel": "Government Personnel",
+                                    "community-members": "Members of local community / indigenous committees",
+                                    "community-leaders": "Community leaders / reprentatives"
+                                },
+                                "authority": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
+                                "ma-file": "Upload a Managment Plan File"
+                            }
+                        },
+                        "ma": {
+                            "tab": "Managed Area"
+                        },
+                        "survey": {
+                            "tab": "The survey"
+                        },
+                        "collaborators": {
+                            "tab": "Collaborators"
+                        },
+                        "publish": {
+                            "tab": "Prepare for publish"
                         }
                     }
                 }

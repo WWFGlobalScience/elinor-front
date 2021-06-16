@@ -19,7 +19,7 @@
                 </li>
                 <li>
                     <nuxt-link :to="`/assessments/${id}/collaborators`" class="btn--tab">
-                        <span class="num">3</span>
+                        <span class="bullet">3</span>
                         <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.collaborators.tab' ) }}</span>
                     </nuxt-link>
                 </li>

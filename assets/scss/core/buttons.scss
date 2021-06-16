@@ -30,10 +30,7 @@ button {
     }
 }
 .btn--border-turqy {
-    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy;
-    span {
-        @apply mr-3;
-    }
+    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3;
     img {
         @apply transition;
         transform: translateX(0);
@@ -52,7 +49,20 @@ button {
     &.nuxt-link-exact-active {
         @apply border-turqy pointer-events-none;
     }
-    .num {
+    .bullet {
         @apply w-[20px] h-[20px] border border-solid border-turqy flex items-center justify-center text-[10px] text-center border-radius--50 mr-1;
+    }
+    &.btn--error {
+        .bullet {
+            @apply border-redy text-redy;
+        }
+    }
+    &.btn--tab-percent {
+        .bullet {
+            @apply w-[30px] h-[30px];
+        }
+    }
+    &.btn--tab-disabled {
+        @apply text-grayy-lighter pointer-events-none;
     }
 }

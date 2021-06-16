@@ -1,10 +1,11 @@
 <template>
     <div id="app">
-        <div :class="[ 'app__content', { 'is--overlay': loader.active || popup.active } ]">
+        <div :class="[ 'app__content', { 'is--overlay': popup.active } ]">
             <default-header></default-header>
             <main role="main">
                 <default-sidebar></default-sidebar>
                 <Nuxt />
+                <default-notification></default-notification>
             </main>
         </div>
         <default-loader></default-loader>
