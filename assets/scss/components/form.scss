@@ -12,7 +12,7 @@
                     }
                 }
                 textarea {
-                    @apply h-28 resize-none;
+                    @apply h-[200px] resize-none;
                 }
                 .label {
                     @apply block text-[12px] mb-3;
@@ -67,6 +67,20 @@
                             }
                             .label {
                                 @apply m-0 ml-4 text-[14px] cursor-pointer;
+                            }
+                        }
+                    }
+                    &.input--radios-question {
+                        @apply flex items-start;
+                        .radios__wrap {
+                            @apply mr-4;
+                        }
+                        .label {
+                            @apply text-[16px] mb-0 pl-4;
+                            span {
+                                &:first-child {
+                                    @apply absolute font-semibold left-0 top-0;
+                                }
                             }
                         }
                     }

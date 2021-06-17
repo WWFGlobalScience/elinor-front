@@ -1,11 +1,11 @@
 <template>
     <transition name="elinor-fade">
         <div class="elinor__popup" v-show="popup.active">
-            <div class="popup__overlay" @click="popupState( '', '' )"></div>
+            <div class="popup__overlay" @click="popupState( false, '', '' )"></div>
             <div class="popup__box">
                 <header class="popup__header">
                     <span>{{ $t( popup.title ) }}</span>
-                    <button type="button" class="btn--opacity" @click="popupState( '', '' )">
+                    <button type="button" class="btn--opacity" @click="popupState( false, '', '' )">
                         <img src="~/assets/img/ico-close-popup.svg">
                     </button>
                 </header>

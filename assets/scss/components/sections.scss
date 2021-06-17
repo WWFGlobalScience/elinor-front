@@ -35,7 +35,7 @@
             @apply flex;
             .btn--tab { 
                 @apply border-l-0; 
-                &.nuxt-link-exact-active {
+                &.nuxt-link-active {
                     @apply border-l;
                 }
             }

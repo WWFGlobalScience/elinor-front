@@ -11,7 +11,7 @@
         <section class="section section--mt-0 section--button">
             <div class="container">
                 <button type="button" class="btn btn--opacity--child"
-                @click="popupState( { component: 'popup-assessment-create', title: 'pages.assessments.content.assessment-edit.create.title' })"
+                @click="popupState( { active: true, component: 'popup-assessment-create', title: 'pages.assessments.content.assessment-edit.create.title' })"
                 >
                     <span class="btn--opacity__target">{{ $t( 'pages.assessments.content.assessment-edit.create.labels.create' ) }}</span>
                     <img src="~/assets/img/ico-button-arrow.svg">
@@ -121,7 +121,10 @@ export default {
             getAssessments: 'assessments/getAssessments',
             loaderState: 'loader/loaderState',
             popupState: 'popup/popupState'
-        })
+        }),
+        fake() {
+            console.log( 'Clicked' )
+        }
     },
     mounted() {
         this.getAssessments()

@@ -41,10 +41,6 @@
                 "select": "Select a file",
                 "clear": "Clear"
             }
-        },
-        "survey": {
-            "out-of": "Out of",
-            "completed": "Completed"
         }
 	},
 	"pages": {
@@ -175,7 +171,10 @@
                                         "help": "Need help? See below",
                                         "edit": "Edit",
                                         "not-completed": "Not completed",
-                                        "unknown": "Don’t know"
+                                        "unknown": "Don’t know",
+                                        "back": "Back to resume",
+                                        "prev": "Prev",
+                                        "next": "Next"
                                     },
                                     "categories": {
                                         "rights-decision": "Clearly defined rights and decision making"

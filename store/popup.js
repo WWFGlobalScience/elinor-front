@@ -21,6 +21,7 @@ export const mutations = {
 
 export const actions = {
     popupState( state, { active, component, title } ) {
+        console.log( 'Click' )
         state.commit( 'popupState', {
             active: active, 
             component: component,
