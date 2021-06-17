@@ -48,6 +48,30 @@
         }
     }
 }
+.header--map--flexy {
+    @apply bg-turqy-lighter py-8;
+    p, span {
+        @apply text-grayy-lighter text-[12px];
+    }
+    .left {
+        p {
+            &:first-child {
+                @apply text-grayy mb-6;
+            }
+        }
+    }
+    ul {
+        li {
+            @apply flex items-center mb-3;
+            .pic__wrap {
+                @apply w-[30px];
+            }
+        }
+    }
+    .container--lg {
+        @apply flex justify-between space-x-10;
+    }
+}
 .header--back {
     @apply flex items-center space-x-2;
 }

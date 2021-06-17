@@ -3,7 +3,7 @@
         <div class="container">
             <ul class="elinor__survey-navigator">
                 <li v-for="(question, index) in assessment.survey">
-                    <nuxt-link :to="`./${index + 1}`" :class="[ 'btn--opacity', { 'is--uncomplete': question.answer == null } ]">
+                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/${index + 1}`" :class="[ 'btn--opacity', { 'is--uncomplete': question.answer == null } ]">
                     </nuxt-link>
                     </a>
                 </li>
@@ -24,7 +24,7 @@
 <script>
 export default {
     name: 'assessment-edit-survey-question-navigator',
-    props: [ 'assessment', 'qid' ],
+    props: [ 'assessment', 'qid', 'id' ],
     computed: {
         completedQuestions() {
             return this.assessment.survey.filter( ( item ) => {

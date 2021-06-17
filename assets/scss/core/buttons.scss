@@ -41,6 +41,16 @@ button {
         }
     }
 }
+.btn--arrow-down {
+    img {
+        transform: translate(0, 0);
+    }
+    &:hover {
+        img {
+            transform: translate(0, 5px);
+        }
+    }
+}
 .btn--ico {
     @apply w-[38px] h-[38px] flex items-center justify-center border-radius--50 border border-turqy;
 }

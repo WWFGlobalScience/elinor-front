@@ -19,7 +19,8 @@ export default {
     css: ['~/assets/scss/app.scss'],
     plugins: [
         "~/plugins/vue-tippy.js",
-        "~/plugins/formDataStringify.js"
+        "~/plugins/formDataStringify.js",
+        "~/plugins/vue-date-picker.js"
     ],
     components: true,
     buildModules: [

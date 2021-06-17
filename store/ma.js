@@ -1,6 +1,13 @@
 export const state = () => ({
     mas: [],
     ma: {},
+    edit: {
+        maOrigin: null,
+        maSelector: {
+            value: null,
+            options: [ 'Management Area 1', 'Management Area 2', 'Management Area 3' ]
+        }
+    }
 })
 
 export const mutations = {
@@ -12,6 +19,13 @@ export const mutations = {
     },
     setFirstMa( state, payload ) {
         state.ma = payload
+    },
+    maSelectorChange( state, payload ) {
+        state.edit.maSelector.value = payload
+        state.edit.maSelector.value == null ? state.edit.maOrigin = 'new' : state.edit.maOrigin = 'old'
+    },
+    maSelectorNew( state ) {
+        state.edit.maOrigin = 'new'
     }
 }
 
@@ -37,5 +51,12 @@ export const actions = {
         const mas = await response.json()
         console.log( mas[0])
         state.commit( 'setFirstMa', mas[0] )
+    },
+    maSelectorChange( state, value ) {
+        state.commit( 'maSelectorChange', value )
+    },
+    maSelectorNew( state ) {
+        state.commit( 'maSelectorNew' )
+        this.dispatch( 'ma/maSelectorChange', null )
     }
 }

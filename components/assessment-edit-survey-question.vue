@@ -1,7 +1,7 @@
 <template>
-    <section id="question" class="section section--assessment-edit-survey-question elinor__question">
+    <section  class="section section--assessment-edit-survey-question elinor__question">
         <div class="container">
-            <header class="header--back">
+            <header id="question" class="header--back">
                 <h1>{{ $t( 'pages.assessments.content.assessment.tabs.survey.header.title' ) }}</h1>
                 <nuxt-link to="./" class="elinor__back btn--opacity">
                     <img src="~/assets/img/ico-arrow-back-turqy.svg">
@@ -121,13 +121,13 @@
                 <nav class="question__nav">
                     <ul>
                         <li>
-                            <nuxt-link v-if="questionId > 1" :to="`../${questionId - 1}/#question`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="questionId > 1" :to="`/assessments/edit/${id}/the-survey/${questionId - 1}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <img src="~/assets/img/ico-arrow-back-turqy.svg">
                                 <span>Prev</span>
                             </nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link v-if="questionId < assessment.survey.length" :to="`../${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="questionId < assessment.survey.length" :to="`/assessments/edit/${id}/the-survey/${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <span>Next</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>

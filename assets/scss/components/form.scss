@@ -16,6 +16,15 @@
                 }
                 .label {
                     @apply block text-[12px] mb-3;
+                    &.label--stripped {
+                        span {
+                            @apply bg-white z-10 pr-10;
+                        }
+                        &:after {
+                            content: '';
+                            @apply center-v left-0 w-full h-px bg-grayy-border;
+                        }
+                    }
                 }
                 .legend {
                     @apply block text-[12px] text-grayy-lighter;
@@ -26,6 +35,11 @@
                 &.input--pr {
                     input, textarea {
                         @apply pr-16;
+                    }
+                }
+                &.input--button {
+                    button {
+                        @apply mt-8;
                     }
                 }
                 &.input--checkbox {
@@ -136,9 +150,35 @@
                 &.input--1-5 {
                     @apply w-1/5;
                 }
+                &.input--date {
+                    .date__caret {
+                        @apply center-v right-3 border-l border-grayy-border pl-3 pointer-events-none z-10;
+                    }
+                    .vdp-datepicker__calendar .cell:hover{
+                        @apply bg-transparent;
+                    } 
+                    .vdp-datepicker__calendar .cell{
+                        @apply text-[12px] text-grayy-lighter;
+                    }  
+                    .vdp-datepicker__calendar .cell.day:hover{
+                        @apply border-turqy;
+                    }  
+                    .vdp-datepicker__calendar .cell.today{
+                        @apply bg-transparent border border-turqy;
+                    } 
+                    .vdp-datepicker__calendar .cell.selected{
+                        @apply bg-turqy text-white;
+                    } 
+                    .vdp-datepicker__calendar .day__month_btn.up {
+                        @apply text-[14px] text-grayy;
+                    }
+                }
                 &.input--multiselect {
                     .multiselect {
                         @apply min-h-0;
+                    }
+                    .multiselect__placeholder {
+                        @apply text-grayy-lighter;
                     }
                     .multiselect__select {
                         @apply hidden;
@@ -160,6 +200,20 @@
                     }
                     .multiselect__caret {
                         @apply center-v right-3 border-l border-grayy-border pl-3 pointer-events-none z-10;
+                    }
+                    .multiselect__tags-wrap {
+                        @apply flex flex-wrap;
+                    }
+                    .multiselect__tag {
+                        @apply bg-white text-grayy-lighter border border-grayy-border mb-1 mr-1 px-2 py-3 pr-10;
+                        border-radius: 20px;
+                    }
+                    .multiselect__tag-icon:after {
+                        @apply text-grayy-lighter text-[26px] center-both font-light;
+                    }
+                    .multiselect__tag-icon {
+                        border-radius: 0;
+                        @apply hover:bg-grayy-border;
                     }
 
                 }

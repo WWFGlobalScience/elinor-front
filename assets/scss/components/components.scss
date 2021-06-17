@@ -114,6 +114,9 @@
 }
 .elinor__map {
     @apply h-[55vh];
+    .map__legend {
+        @apply absolute left-[20px] bottom-[20px] bg-turqy-lighter p-4 z-10;
+    }
 }
 .search__results {
     @apply text-grayy-lighter;
