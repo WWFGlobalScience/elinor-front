@@ -2,7 +2,10 @@
     <aside class="sidebar__main">
         <div class="sidebar__wrap">
             <div class="brand">
-                <NuxtLink to="/"><img src="~/assets/img/elinor.svg"></NuxtLink>
+                <NuxtLink to="/" class="flex items-center">
+                <img src="~/assets/img/elinor-icon.svg">
+                <img src="~/assets/img/elinor.svg" class="sm:hidden">
+                </NuxtLink>
             </div>
             <nav class="nav__main">
                 <ul>

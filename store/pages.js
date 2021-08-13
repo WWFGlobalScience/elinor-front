@@ -3,13 +3,13 @@ export const state = () => ({
         {
             config: {
                 display: {
-                    sidebar: true
+                    sidebar: false
                 }
             },
             title: 'pages.home.title',
             slug: 'pages.home.slug',
             icons: {
-                gray: require( '~/assets/img/ico-home-gray.svg')
+                gray: false
             },
             seo: {
                 title: 'pages.home.seo.title',
@@ -24,16 +24,16 @@ export const state = () => ({
                     sidebar: true
                 }
             },
-            title: 'pages.assessments.title',
-            slug: 'pages.assessments.slug',
+            title: 'pages.insights.title',
+            slug: 'pages.insights.slug',
             icons: {
-                gray: require( '~/assets/img/ico-assessments-gray.svg')
+                gray: require('~/assets/img/ico-home-white.svg')
             },
             seo: {
-                title: 'pages.assessments.seo.title',
-                description: 'pages.assessments.seo.description',
-                keywords: 'pages.assessments.seo.keywords',
-                og_image: 'pages.assessments.seo.og_image',
+                title: 'pages.insights.seo.title',
+                description: 'pages.insights.seo.description',
+                keywords: 'pages.insights.seo.keywords',
+                og_image: 'pages.insights.seo.og_image',
             }
         },
         {
@@ -42,18 +42,19 @@ export const state = () => ({
                     sidebar: true
                 }
             },
-            title: 'pages.managed-areas.title',
-            slug: 'pages.managed-areas.slug',
+            title: 'pages.assessments.title',
+            slug: 'pages.assessments.slug',
             icons: {
-                gray: require( '~/assets/img/ico-managed-areas-gray.svg')
+                gray: require('~/assets/img/ico-assessments-white.svg')
             },
             seo: {
-                title: 'pages.managed-areas.seo.title',
-                description: 'pages.managed-areas.seo.description',
-                keywords: 'pages.managed-areas.seo.keywords',
-                og_image: 'pages.managed-areas.seo.og_image',
+                title: 'pages.assessments.seo.title',
+                description: 'pages.assessments.seo.description',
+                keywords: 'pages.assessments.seo.keywords',
+                og_image: 'pages.assessments.seo.og_image',
             }
         },
+
         {
             config: {
                 display: {
@@ -63,7 +64,7 @@ export const state = () => ({
             title: 'pages.map.title',
             slug: 'pages.map.slug',
             icons: {
-                gray: require( '~/assets/img/ico-map-gray.svg')
+                gray: require('~/assets/img/ico-map-white.svg')
             },
             seo: {
                 title: 'pages.map.seo.title',
@@ -78,10 +79,46 @@ export const state = () => ({
                     sidebar: true
                 }
             },
+            title: 'pages.sign-in.title',
+            slug: 'pages.sign-in.slug',
+            icons: {
+                gray: require('~/assets/img/ico-signin-white.svg')
+            },
+            seo: {
+                title: 'pages.sign-in.seo.title',
+                description: 'pages.sign-in.seo.description',
+                keywords: 'pages.sign-in.seo.keywords',
+                og_image: 'pages.sign-in.seo.og_image',
+            }
+        },
+        {
+            config: {
+                display: {
+                    sidebar: true
+                }
+            },
+            title: 'pages.managed-areas.title',
+            slug: 'pages.managed-areas.slug',
+            icons: {
+                gray: require('~/assets/img/ico-managed-areas-gray.svg')
+            },
+            seo: {
+                title: 'pages.managed-areas.seo.title',
+                description: 'pages.managed-areas.seo.description',
+                keywords: 'pages.managed-areas.seo.keywords',
+                og_image: 'pages.managed-areas.seo.og_image',
+            }
+        },
+        {
+            config: {
+                display: {
+                    sidebar: true
+                }
+            },
             title: 'pages.users-access.title',
             slug: 'pages.users-access.slug',
             icons: {
-                gray: require( '~/assets/img/ico-users-access-gray.svg')
+                gray: require('~/assets/img/ico-users-access-gray.svg')
             },
             seo: {
                 title: 'pages.users-access.seo.title',
@@ -114,35 +151,11 @@ export const state = () => ({
                     sidebar: true
                 }
             },
-            title: 'pages.insights.title',
-            slug: 'pages.insights.slug',
+            title: 'Minimize',
+            slug: false,
             icons: {
-                gray: false
+                gray: require('~/assets/img/ico-minimize-white.svg')
             },
-            seo: {
-                title: 'pages.insights.seo.title',
-                description: 'pages.insights.seo.description',
-                keywords: 'pages.insights.seo.keywords',
-                og_image: 'pages.insights.seo.og_image',
-            }
-        },
-        {
-            config: {
-                display: {
-                    sidebar: true
-                }
-            },
-            title: 'pages.sign-in.title',
-            slug: 'pages.sign-in.slug',
-            icons: {
-                gray: false
-            },
-            seo: {
-                title: 'pages.sign-in.seo.title',
-                description: 'pages.sign-in.seo.description',
-                keywords: 'pages.sign-in.seo.keywords',
-                og_image: 'pages.sign-in.seo.og_image',
-            }
         },
     ],
 })

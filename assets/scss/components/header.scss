@@ -1,58 +1,99 @@
 .header--main {
     @apply bg-turqy-lighter h-[70px] sticky top-0 z-20;
+
+    .header--main__wrapper {
+        @apply h-full;
+
+        ul {
+            @apply h-full flex items-center justify-end py-5 pr-16;
+
+            li {
+                @apply text-turqy text-sm pl-2;
+
+                &::after {
+                    content: "|";
+                    @apply pl-2;
+                }
+
+                &:last-child {
+                    &::after {
+                        @apply hidden;
+                    }
+                }
+            }
+        }
+    }
 }
+
 .header--page {
     h1 {
         @apply flex items-center;
+
         img {
             @apply mr-2;
         }
     }
+
     h2 {
-        &.ma__name, &.assessment__name {
+
+        &.ma__name,
+        &.assessment__name {
             @apply mt-2 text-[36px];
         }
     }
+
     p {
         &.assessment__year {
             @apply text-[20px] text-grayy-lighter;
         }
     }
+
     .header__save {
         @apply flex flex-col justify-end;
+
         button {
             @apply self-end mb-1;
         }
+
         p {
             @apply text-right text-[12px] text-grayy-lighter;
         }
     }
 }
+
 .header--ma-data {
     @apply mb-8;
+
     &.header--ma-data--stripped {
         h3 {
             @apply z-10 bg-white inline-block pr-5;
         }
+
         &:after {
             content: '';
             @apply w-full h-px absolute top-1/2 left-0 bg-grayy-border;
         }
     }
 }
+
 .header--map {
     @apply bg-turqy-lighter py-3;
+
     p {
-        &:first-child{
+        &:first-child {
             @apply text-[12px];
         }
     }
 }
+
 .header--map--flexy {
     @apply bg-turqy-lighter py-8;
-    p, span {
+
+    p,
+    span {
         @apply text-grayy-lighter text-[12px];
     }
+
     .left {
         p {
             &:first-child {
@@ -60,18 +101,22 @@
             }
         }
     }
+
     ul {
         li {
             @apply flex items-center mb-3;
+
             .pic__wrap {
                 @apply w-[30px];
             }
         }
     }
+
     .container--lg {
         @apply flex justify-between space-x-10;
     }
 }
+
 .header--back {
     @apply flex items-center space-x-2;
 }

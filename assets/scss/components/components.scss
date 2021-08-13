@@ -301,3 +301,16 @@
 .elinor-slide-up-enter, .elinor-slide-up-leave-to {
     transform: translateY(100%);
 }
+//cards
+.card{
+    &.card--sign-in{
+        @apply bg-white p-8 ml-32 border-radius--20;
+
+        .card--sign-in__info{
+            @apply flex items-center justify-between;
+        }
+        .card--sign-in__separator{
+            @apply mt-8 mb-11 w-96;
+        }
+    }
+}

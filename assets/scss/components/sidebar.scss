@@ -13,9 +13,9 @@
             @apply mt-10;
             ul {
                 li {
-                    @apply mb-6;
+                    @apply mb-6 text-whitey;
                     a {
-                        @apply text-grayy text-[14px];
+                        @apply text-[14px];
                         span {
                             @apply pl-7;
                         }

@@ -1,72 +1,92 @@
 .section {
     @apply mt-20;
+
     /*
         MODIFIERS
     */
     &.section--mt-0 {
         @apply mt-0;
     }
+
     &.section--mt-10 {
         @apply mt-10;
     }
+
     &.section--button {
         .container {
             @apply flex justify-end;
         }
     }
+
     &.section--mt-medium {
         @apply mt-10;
     }
+
     &.section--filters {
         ul {
             @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border;
+
             li {
                 &:first-child {
                     @apply flex-1;
                 }
             }
+
             .form {
                 @apply mt-0;
             }
         }
     }
+
     &.section--tab {
         li {
             @apply flex;
-            .btn--tab { 
-                @apply border-l-0; 
+
+            .btn--tab {
+                @apply border-l-0;
+
                 &.nuxt-link-active {
                     @apply border-l;
                 }
             }
+
             &:first-child {
-                .btn--tab { @apply border-l; }
+                .btn--tab {
+                    @apply border-l;
+                }
             }
+
             &.elinor__tab--end {
                 @apply flex-1 justify-end;
+
                 .btn--tab {
                     @apply border-l border-solid;
                 }
             }
         }
     }
+
     /*
         PAGE: Welcome
     */
     &.section--welcome__ctas {
         ul {
             @apply flex space-x-5;
+
             li {
                 @apply flex flex-col;
+
                 h4 {
                     @apply text-[18px] font-bold mb-5;
-                } 
+                }
+
                 footer {
                     @apply mt-16 flex items-end flex-1;
                 }
             }
         }
     }
+
     /*
         PAGE: Managed areas
     */
@@ -75,11 +95,22 @@
             @apply mt-10;
         }
     }
+
     /*
         PAGE: Managed area
     */
-    &.section--ma-data {
-        
+    &.section--ma-data {}
+
+    &.section--sign-in {
+        @apply relative flex items-center;
+    }
+
+    .section__full-background {
+        @apply absolute bottom-0 left-0 w-screen h-screen overflow-hidden z-0;
+
+        img {
+            @apply h-full w-full object-cover;
+        }
     }
 
 }
