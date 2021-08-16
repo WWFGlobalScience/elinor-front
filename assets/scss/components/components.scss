@@ -308,6 +308,19 @@
 
         .card--sign-in__info{
             @apply flex items-center justify-between;
+            &.info-start{
+                @apply items-start;
+            }
+            .input.input--radios {
+                label{
+                    @apply mt-1;
+                    span{
+                        &:first-child{
+                            @apply text-xs font-normal text-grayy-lighter whitespace-nowrap;
+                        }
+                    }
+                }
+            }
         }
         .card--sign-in__separator{
             @apply mt-8 mb-11 w-96;

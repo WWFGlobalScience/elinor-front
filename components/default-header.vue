@@ -14,11 +14,6 @@
         </li>
         <li>
           <NuxtLink to="/" class="btn--opacity--child">
-            <span class="btn--opacity__target">About</span>
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/" class="btn--opacity--child">
             <span class="btn--opacity__target">Methodology</span>
           </NuxtLink>
         </li>

@@ -101,15 +101,39 @@
     */
     &.section--ma-data {}
 
+    /*
+        PAGE: SIGN IN
+    */
     &.section--sign-in {
-        @apply relative flex items-center;
+        @apply relative flex items-center mt-0;
+        height: calc(100vh - 70px);
     }
 
     .section__full-background {
-        @apply absolute bottom-0 left-0 w-screen h-screen overflow-hidden z-0;
+        @apply absolute bottom-0 left-0 w-screen h-full overflow-hidden z-0;
 
         img {
             @apply h-full w-full object-cover;
+        }
+    }
+
+    .section__title {
+        @apply text-5xl w-7/12 mb-12;
+    }
+
+    .section__title--block {
+        @apply text-xl mb-12;
+    }
+
+    &.section--intro {
+        @apply bg-turqy-lighter mt-0 pt-14 pb-24;
+
+        .container {
+            @apply flex flex-col items-center justify-center;
+        }
+
+        .section--intro__info {
+            @apply text-xl text-grayy text-center leading-9 pt-9 pb-14 w-8/12 md:w-full;
         }
     }
 

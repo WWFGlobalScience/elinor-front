@@ -144,18 +144,6 @@ export const state = () => ({
                 keywords: 'pages.help-guides.seo.keywords',
                 og_image: 'pages.help-guides.seo.og_image',
             }
-        },
-        {
-            config: {
-                display: {
-                    sidebar: true
-                }
-            },
-            title: 'Minimize',
-            slug: false,
-            icons: {
-                gray: require('~/assets/img/ico-minimize-white.svg')
-            },
-        },
+        }
     ],
 })

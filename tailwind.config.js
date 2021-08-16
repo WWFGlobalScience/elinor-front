@@ -46,9 +46,6 @@ module.exports = {
                 },
                 redy: {
                     DEFAULT: '#F37871'
-                },
-                whitey: {
-                    DEFAULT: '#FFFFFF'
                 }
             },
             fontFamily: {

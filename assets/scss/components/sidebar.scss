@@ -13,7 +13,7 @@
             @apply mt-10;
             ul {
                 li {
-                    @apply mb-6 text-whitey;
+                    @apply mb-6 text-white;
                     a {
                         @apply text-[14px];
                         span {
@@ -22,6 +22,9 @@
                     }
                 }
             } 
+        }
+        .nav__main--bottom{
+            @apply border-t border-turqy-darker py-5;
         }
     }
 }

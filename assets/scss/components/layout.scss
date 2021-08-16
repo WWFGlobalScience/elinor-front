@@ -10,5 +10,8 @@ main {
     @apply flex flex-wrap;
     .page {
         @apply flex-1 py-16;
+        &.page--signin{
+            @apply py-0;
+        }
     }
 }

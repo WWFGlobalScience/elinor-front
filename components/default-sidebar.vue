@@ -17,6 +17,16 @@
                     </li>
                 </ul>
             </nav>
+            <div class="nav__main nav__main--bottom">
+                <ul>
+                    <li>
+                        <NuxtLink to="/" class="btn--opacity--child">
+                        <img src="../assets/img/ico-minimize-white.svg" alt="minimize" class="center-v">
+                        <span class="btn--opacity__target">Minimize</span>
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </div>
         </div>
     </aside>
 </template>
