@@ -35,7 +35,7 @@
                 @apply mr-3;
             }
             &.view {
-               @apply flex-1 items-end mr-0; 
+               @apply flex-1 items-end mr-0;
             }
         }
         &:last-child {
@@ -52,7 +52,7 @@
             }
         }
     }
-   
+
 }
 .elinor__avatar {
     @apply w-[36px] h-[36px] flex items-center justify-center border-radius--50;
@@ -75,7 +75,7 @@
     .elinor__data-sublist {
         @apply p-3;
     }
-    .elinor__data { 
+    .elinor__data {
         @apply flex flex-col w-1/2 p-5;
         .title {
             @apply mb-1 text-[12px] text-grayy-lighter;
@@ -101,7 +101,7 @@
         &.elinor__people-data {
             @apply flex items-center text-[12px] text-grayy-lighter;
             span {
-                @apply text-[16px] text-grayy w-[20px];
+                @apply text-[16px] text-grayy w-[30px];
             }
         }
         &:last-child {
@@ -122,15 +122,16 @@
     @apply text-grayy-lighter;
 }
 .elinor__loader {
-    @apply w-screen fixed bottom-0 left-0 z-20 text-grayy-lighter text-[12px] py-2;
+    @apply flex justify-center items-center w-screen h-screen fixed bottom-0 left-0 z-20 text-grayy-lighter text-[14px] py-2;
+    background-color: rgba(255, 255, 255, .75);
     .loader__group {
         @apply flex items-center justify-center z-10;
         svg {
             @apply w-4 mr-2 mb-0;
-        } 
+        }
     }
     .loader__bg {
-        @apply w-full h-full absolute top-0 left-0 bg-grayy-border;
+        @apply w-full h-full absolute top-0 left-0;
     }
 }
 .elinor__popup {
@@ -148,6 +149,26 @@
         }
         .popup__content {
             @apply bg-white px-20 py-10 rounded-b-xl;
+            .popup__grid {
+                @apply flex items-center;
+                .left {
+                    @apply h-full flex-1 pr-10 border-r border-grayy-border;
+                    .form {
+                        @apply mt-0;
+                    }
+                }
+                .right {
+                    @apply flex-1 pl-10 h-full;
+                    .description {
+                        h4 {
+                            @apply text-[18px] font-bold mb-6;
+                        }
+                        p {
+                            @apply text-[16px];
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -226,8 +247,10 @@
     }
 }
 .elinor__notifications {
-    @apply fixed bottom-0 w-full bg-grayy text-white z-50 text-center text-[12px] py-2;
-    transform: translateY(100%);
+    @apply flex items-center justify-center fixed top-0 left-0 w-screen h-screen  z-50 text-center text-[14px] text-grayy-lighter bg-white;
+    .container {
+        @apply flex flex-col items-center justify-center;
+    }
 }
 .elinor__question {
     .question {
@@ -240,7 +263,7 @@
         }
         .question__title {
             @apply mt-5 text-[20px] leading-[30px] font-bold;
-        } 
+        }
     }
     .answers {
         @apply mt-10;
@@ -287,6 +310,37 @@
     @apply flex items-center space-x-2;
     span {
         @apply text-[12px] leading-[12px] text-turqy;
+    }
+}
+.elinor__map-upload {
+    @apply bg-turqy-lighter py-20;
+    .block {
+        p {
+            @apply text-[12px];
+        }
+        .upload__grid {
+            @apply flex items-center;
+            > * {
+                @apply flex-1 py-10;
+            }
+        }
+        .right {
+            p {
+                @apply text-grayy-lighter;
+            }
+        }
+        .form {
+            @apply mt-6;
+        }
+    }
+    .separator {
+        span {
+            @apply bg-turqy-lighter pr-6 z-10;
+        }
+        &:after {
+            content: '';
+            @apply w-full h-[1px] bg-turqy center-both;
+        }
     }
 }
 .elinor-fade-enter-active, .elinor-fade-leave-active {

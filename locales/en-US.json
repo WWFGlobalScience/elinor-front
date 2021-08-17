@@ -1,29 +1,33 @@
 {
-    "default": {
-        "seo": {
-            "title": "Elinor",
-            "description": "",
-            "keywords": "",
-            "og_image": ""
-        },
-        "feedback": {
-            "progress": "Saving data...",
-            "ok": "ok",
-            "error": "Oops! Something is wrong. Please, try again after a few minutes"
-        },
-        "filters": {
-            "button": "Filters",
-            "popup": {
-                "title": "Add filters",
-                "select": "Select filters",
-                "selected": "Filters",
-                "apply": "Apply filters"
-            },
-            "by": "Filter by"
-        },
-        "order": {
-            "button": "Order",
-            "by": "Order by"
+	"default": {
+		"seo": {
+			"title": "Elinor",
+			"description": "",
+			"keywords": "",
+			"og_image": ""
+		},
+    "error": {
+      "text": "Oops! Something is wrong. Please, try to reload data after a few seconds",
+      "button": "Reload data"
+    },
+		"feedback": {
+			"progress": "Saving data...",
+			"ok": "ok",
+			"error": "Oops! Something is wrong. Please, try again after a few minutes"
+		},
+		"filters": {
+			"button": "Filters",
+			"popup": {
+				"title": "Add filters",
+				"select": "Select filters",
+				"selected": "Filters",
+				"apply": "Apply filters"
+			},
+			"by": "Filter by"
+		},
+		"order": {
+			"button": "Order",
+			"by": "Order by"
         },
         "yes": "Yes",
         "no": "No",
@@ -41,9 +45,66 @@
                 "select": "Select a file",
                 "clear": "Clear"
             }
-        }
+        },
+        "select-single": "Select or search option",
+        "select-multiple": "Select or search options",
+        "no-options": "No options yey"
+    },"popups": {
+  "spatialfile": {
+    "title": "Upload Map Area File",
+    "labels": {
+      "shapefile-placeholder": "Drag and drop a geojson or Shapefile here"
     },
-    "pages": {
+    "descriptions": {
+      "file": "<h4>What file to upload?</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis viverra finibus. Fusce vitae nisi eget nisi varius semper ut sed odio. <a href='https://en.wikipedia.org/wiki/GeoJSON' target='_blank'>Geojson</a> elementum id nunc nec tempor. Morbi eget vestibulum libero. Morbi consectetur eros massa, vel dapibus odio imperdiet quis. Sed diam mi, luctus condimentum dignissim ut, mattis nec massa.</p>"
+    }
+  }
+},
+  "managementarea": {
+    "headers": {
+      "related": "Are there there other Managment Areas related to this?",
+      "create": "Create New Management Area",
+      "edit": "Edit Management Area"
+    },
+    "labels": {
+      "parent": "Are there there other Managment Areas related to this?",
+      "date_established": "Date of formal establishment",
+      "reported_size": "Size of Managed Area"
+    },
+    "data": {
+      "recognition_level_local": "Local level",
+      "recognition_level_national": "National level"
+    },
+    "map": {
+      "map-spatial": "Map or Spatial File of the MA",
+      "geospatial-info": "Geospatial information lorem ipsum dolor",
+      "boundaries": "Indicate the boundaries of the Managed Area",
+      "tools": "Use the tools over the map to create a Polygon over the Managed Area",
+      "polygon_create": "Click over the Map to create a Polygon",
+      "polygon_close": "To Close a Polygon click over a created Point",
+      "polygon_new": "Create a new Polygon",
+      "polygon_delete": "Delete selected Polygon"
+    }
+  },
+  "assessments": {
+    "categories": {
+      "1": "Clearly defined rights and decision making",
+      "2": "Inclusive and equitable management",
+      "3": "Transparency and accountability",
+      "4": "Monitoring and enforcement",
+      "5": "Clear and congruent regulations",
+      "6": "Operational capacity",
+      "7": "Resource boundaries",
+      "8": "Perceived outcomes",
+      "9": "Capacity for adaptive management"
+    }
+  },
+  "loading": {
+    "assessments": "Loading assessments...",
+    "assessment": "Loading assessment...",
+    "updating": "Updating data..."
+  },
+  "pages": {
         "sign-in": {
             "title": "Sign In",
             "slug": "sign-in",
@@ -71,8 +132,10 @@
                 "form": {
                     "inputs": {
                         "email": "E-mail*",
-                        "password": "Password*",
-                        "name": "Name*",
+                        "password1": "Password*",
+                        "password2": "Password*",
+                        "first_name": "First name*",
+                        "last_name": "Last name*",
                         "username": "Username*",
                         "affiliation": "Affiliation*",
                         "contact-details": "Contact details*",

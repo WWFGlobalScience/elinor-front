@@ -5,19 +5,19 @@
                 <h1>{{ $t( 'pages.assessments.content.assessment.tabs.survey.header.title' ) }}</h1>
             </header>
             <div class="elinor__survey-list">
-                <div v-for="(question, index) in assessment.survey" :id="`question-${ index + 1 }`" class="elinor__survey-question ui-rounded-border">
+                <div v-for="(question, index) in survey" :id="`question-${ index + 1 }`" class="elinor__survey-question ui-rounded-border">
                     <div class="left">
                         <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.question' ) }} {{ index + 1 }}</div>
                         <div class="question" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.question`)"></div>
                     </div>
                     <div class="right">
-                        <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer' ) }} | {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.score' ) }}: 4</div>
+                        <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer' ) }} | {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.score' ) }}: {{ assessment[ question.code ] }} </div>
                         <div class="answer">
-                            <span v-if="question.answer != 5" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.answers.${question.answer}`)"></span>
+                            <span v-if="assessment[ question.code ] != 5" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.answers.${assessment[ question.code ]}`)"></span>
                             <span v-else>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.unknown' ) }}</span>
                         </div>
-                        <div class="txt txt--explanation">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation' ) }}</div>
-                        <div class="answer" v-html="question.explanation"></div>
+                        <div class="txt txt--explanation" v-if="assessment[ question.code + '_text' ] != ''">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation' ) }}</div>
+                        <div class="answer" v-if="assessment[ question.code + '_text' ] != ''" v-html="assessment[ question.code + '_text' ]"></div>
                     </div>
                 </div>
             </div>
@@ -28,6 +28,7 @@
 <script>
 export default {
     name: 'assessment-survey-list',
-    props: [ 'assessment' ]
+    props: [ 'assessment', 'survey' ],
+   
 }
 </script>

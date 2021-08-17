@@ -30,7 +30,7 @@ button {
     }
 }
 .btn--border-turqy {
-    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3;
+    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3 bg-white;
     img {
         @apply transition;
         transform: translateX(0);

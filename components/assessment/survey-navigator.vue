@@ -2,7 +2,7 @@
     <section class="section section--assessment-survey section--mt-0">
         <div class="container">
             <ul class="elinor__survey-navigator">
-                <li v-for="(question, index) in assessment.survey">
+                <li v-for="(question, index) in survey">
                     <a href="#" class="btn--opacity" 
                     v-scroll-to="{
                         el: `#question-${index + 1}`,
@@ -18,6 +18,6 @@
 <script>
 export default {
     name: 'assessment-survey-navigator',
-    props: [ 'assessment' ]
+    props: [ 'survey' ]
 }
 </script>

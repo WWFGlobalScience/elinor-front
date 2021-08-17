@@ -93,6 +93,7 @@
 
 <script>
 export default {
-    name: 'welcome'
+    name: 'welcome',
+    auth: false
 }
 </script>

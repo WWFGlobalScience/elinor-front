@@ -11,6 +11,7 @@
                 </header>
                 <popup-assessments-filter v-if="popup.component == 'popup-assessments-filter'"></popup-assessments-filter>
                 <popup-assessment-create v-if="popup.component == 'popup-assessment-create'"></popup-assessment-create>
+                <popup-map-spatialfile v-if="popup.component == 'popup-map-spatialfile'"></popup-map-spatialfile>
             </div>
         </div>
     </transition>

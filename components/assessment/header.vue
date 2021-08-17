@@ -5,8 +5,8 @@
                 <img src="~/assets/img/ico-assessments-turqy.svg">
                 <span>{{ $t( 'pages.assessments.content.header.title' ) }}</span>
             </h1>
-            <h2 class="assessment__name">{{ assessment[ 'name' ] }}</h2>
-            <p class="assessment__year">{{ $t( 'pages.assessments.content.assessment.header.year' ) }} {{ assessment[ 'year' ]}}</p>
+            <h2 class="assessment__name">{{ assessment.name }}</h2>
+            <p class="assessment__year">{{ $t( 'pages.assessments.content.assessment.header.year' ) }} {{ assessment.year }}</p>
         </div>
     </header>
 </template>
@@ -14,6 +14,10 @@
 <script>
 export default {
     name: 'assessment-header',
-    props: [ 'assessment' ]
+    computed: {
+        assessment() {
+            return this.$store.state.assessments.assessment
+        }
+    }
 }
 </script>

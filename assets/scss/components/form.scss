@@ -1,11 +1,11 @@
 .form {
-    @apply mt-20; 
+    @apply mt-20;
     .form__group {
         .form__row {
             @apply flex space-x-5 mb-6;
             .input {
                 @apply w-full;
-                input, textarea {
+                input:not(.vs__search), textarea:not(.vs__search) {
                     @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium focus:border-grayy-lighter;
                     &::placeholder {
                         @apply text-grayy-lighter;
@@ -154,21 +154,24 @@
                     .date__caret {
                         @apply center-v right-3 border-l border-grayy-border pl-3 pointer-events-none z-10;
                     }
+                    .vdp-datepicker__calendar header {
+                        @apply z-10;
+                    }
                     .vdp-datepicker__calendar .cell:hover{
                         @apply bg-transparent;
-                    } 
+                    }
                     .vdp-datepicker__calendar .cell{
                         @apply text-[12px] text-grayy-lighter;
-                    }  
+                    }
                     .vdp-datepicker__calendar .cell.day:hover{
                         @apply border-turqy;
-                    }  
+                    }
                     .vdp-datepicker__calendar .cell.today{
                         @apply bg-transparent border border-turqy;
-                    } 
+                    }
                     .vdp-datepicker__calendar .cell.selected{
                         @apply bg-turqy text-white;
-                    } 
+                    }
                     .vdp-datepicker__calendar .day__month_btn.up {
                         @apply text-[14px] text-grayy;
                     }
@@ -184,7 +187,7 @@
                         @apply hidden;
                     }
                     .multiselect__tags {
-                        @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium min-h-0 rounded-none focus:border-grayy-lighter;
+                        @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium min-h-0 rounded-none pr-[50px] focus:border-grayy-lighter text-[12px];
                         input {
                             @apply p-0 border-0 mb-0 min-h-0 focus:border-grayy-lighter;
                         }
@@ -205,11 +208,11 @@
                         @apply flex flex-wrap;
                     }
                     .multiselect__tag {
-                        @apply bg-white text-grayy-lighter border border-grayy-border mb-1 mr-1 px-2 py-3 pr-10;
+                        @apply bg-white text-grayy-lighter border border-grayy-border mb-1 mr-1 px-2 py-[5px] pr-10;
                         border-radius: 20px;
                     }
                     .multiselect__tag-icon:after {
-                        @apply text-grayy-lighter text-[26px] center-both font-light;
+                        @apply text-grayy-lighter text-[20px] center-both font-light;
                     }
                     .multiselect__tag-icon {
                         border-radius: 0;
@@ -233,7 +236,7 @@
             &:last-child {
                 @apply mb-0;
             }
-            
+
         }
     }
     &.form--mt-0 {

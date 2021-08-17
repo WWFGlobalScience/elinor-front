@@ -10,8 +10,14 @@ main {
     @apply flex flex-wrap;
     .page {
         @apply flex-1 py-16;
+        &.is--overlay {
+            filter: blur(4px);
+            max-height: 100vh;
+            overflow: hidden;
+        }
         &.page--signin{
             @apply py-0;
         }
     }
 }
+

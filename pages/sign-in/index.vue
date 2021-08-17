@@ -2,38 +2,59 @@
   <article class="page page--signin">
     <section class="section section--sign-in">
       <div class="section__full-background">
-        <img src="~/assets/img/signin-background.jpg" />
+        <img src="~/assets/img/signin-background.jpg"/>
       </div>
       <div class="card card--sign-in">
         <NuxtLink to="/" class="flex justify-center">
-          <img src="~/assets/img/elinor-logo.svg" />
+          <img src="~/assets/img/elinor-logo.svg"/>
         </NuxtLink>
-        <hr class="card--sign-in__separator" />
+        <hr class="card--sign-in__separator"/>
         <div class="card--sign-in__info">
           <div>
             <p class="text-xl mb-1.5">SIGN IN</p>
           </div>
           <div>
-            <p class="mb-0 text-grayy-lighter">
+            <p class="mb-0 text-grayy-lighter"
+               v-if="!alerts.emailVerificationRequired && !alerts.emailVerificationSent">
               or
-              <NuxtLink to="/" class="text-turqy text-sm"
-                >create an account</NuxtLink
-              >
+              <NuxtLink to="/create-account" class="text-turqy text-sm">create an account</NuxtLink>
+            </p>
+            <p class="mb-0 text-grayy-lighter" v-if="alerts.emailVerificationRequired || alerts.emailVerificationSent">
+              <a class="text-turqy text-sm">Resend email</a>
             </p>
           </div>
         </div>
-        <p class="text-base">Lorem ipsum dolor sit amet.</p>
 
-        <form id="form--signin" action="" class="form form--sign-in">
+        <p class="text-base">{{ $t('pages.auth.content.sign-in.subtitle') }}</p>
+
+        <div v-if="alerts.invalidCredentials"
+             class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Invalid credentials!</strong>
+          <span class="block sm:inline">Do not remember the password? Try the forgot password</span>
+        </div>
+
+        <div v-if="alerts.emailVerificationRequired"
+             class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Email verification required!</strong>
+          <span class="block sm:inline">Have you not received the verification email? If not resend it again</span>
+        </div>
+
+        <div v-if="alerts.emailVerificationSent"
+             class="bg-green-100 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Email verification sent!</strong>
+          <span class="block sm:inline">You will receive a massage to verify your email</span>
+        </div>
+
+        <form id="form--signin" @submit="submit" class="form form--sign-in">
           <div class="form__group">
             <div class="form__row">
               <div class="input">
-                <input type="email" :placeholder="'E-mail'" />
+                <input type="text" :placeholder="'Username'" v-model="username" required/>
               </div>
             </div>
             <div class="form__row">
               <div class="input">
-                <input type="password" :placeholder="'Password'" />
+                <input type="password" :placeholder="'Password'" v-model="password" required/>
               </div>
             </div>
           </div>
@@ -50,9 +71,8 @@
                           name="answer"
                           id="answer-1"
                           value="1"
-                          @change="submit"
                         />
-                        <img src="~/assets/img/ico-ok.svg" />
+                        <img src="~/assets/img/ico-ok.svg"/>
                       </div>
                     </div>
                   </div>
@@ -68,7 +88,7 @@
                 class="btn--border-turqy btn--opacity--child"
               >
                 <span class="btn--opacity__target"> Sign in </span>
-                <img src="~/assets/img/ico-signin-turqy.svg" />
+                <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
             </div>
           </div>
@@ -93,7 +113,7 @@
         </p>
         <button type="button" class="btn btn--opacity--child">
           <span class="btn--opacity__target">Crate an account</span>
-          <img src="~/assets/img/ico-button-arrow.svg" />
+          <img src="~/assets/img/ico-button-arrow.svg"/>
         </button>
       </div>
     </section>
@@ -113,13 +133,13 @@
             </p>
           </div>
           <div class="flex justify-end">
-            <img src="~/assets/img/elinor-hand-icon.svg" />
+            <img src="~/assets/img/elinor-hand-icon.svg"/>
           </div>
         </div>
       </div>
       <div class="mt-12 grid grid-cols-2 gap-16">
         <div>
-          <img class="w-full" src="~/assets/img/tracking.png" />
+          <img class="w-full" src="~/assets/img/tracking.png"/>
         </div>
         <div>
           <h4 class="section__title--block">TRACKING CHANGE</h4>
@@ -141,7 +161,47 @@
 </template>
 
 <script>
+import {mapActions, mapState} from "vuex";
+
 export default {
-  name: "sign-in",
-};
+  name: 'sign-in',
+  auth: 'guest',
+  data() {
+    return {
+      username: null,
+      password: null,
+    }
+  },
+  computed: {
+    ...mapState({
+      alerts: state => state.authentication.alerts
+    })
+  },
+  mounted() {
+    if (this.$route.params.verification === 'email-verification-sent') {
+      this.$store.commit('authentication/setAlert', {name: 'emailVerificationSent', value: true});
+    }
+
+    if (this.$route.params.verification === 'email-verification-required') {
+      this.$store.commit('authentication/setAlert', {name: 'emailVerificationRequired', value: true});
+    }
+
+    if (this.$route.params.verification === 'password-changed-successfully') {
+      this.$store.commit('authentication/setAlert', {name: 'passwordChangedSuccessfully', value: true});
+    }
+  },
+  methods: {
+    ...mapActions({
+      signIn: 'authentication/signIn',
+      resendEmail: 'authentication/resendEmail'
+    }),
+    submit(event) {
+      event.preventDefault();
+      this.signIn({username: this.username, password: this.password});
+    },
+    resend() {
+      this.resendEmail(this.email)
+    }
+  }
+}
 </script>
