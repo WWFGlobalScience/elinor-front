@@ -78,7 +78,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section class="section section--intro">
+    <section class="section section--intro section--turqy-light">
       <div class="container">
         <img
           src="~/assets/img/elinor-illustration.svg"
@@ -98,31 +98,33 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--text section--img-text">
       <div class="container">
-        <div class="grid grid-cols-2 gap-16">
-          <div>
+        <div class="section--img-text__block">
+          <div class="section--img-text__block-text">
             <h1 class="section__title">WHY SHOULD I USE IT?</h1>
             <p>
               Elinor can be applied as either a field-based assessment with a
               trained facilitator or as a desk-based tool that harnesses local
-              and practitioner knowledge. The questions within Elinor are
+              and practitioner knowledge. 
+            </p>
+            <p>The questions within Elinor are
               high-level, covering a broad range of topics and have been
               designed to supplement and not replace in-depth research exploring
-              issues like equity, governance, gender and climate change.
-            </p>
+              issues like equity, governance, gender and climate change.</p>
           </div>
-          <div class="flex justify-end">
-            <img src="~/assets/img/elinor-hand-icon.svg" />
+          <div class="flex justify-end items-center">
+            <img class="h-64" src="~/assets/img/elinor-hand-icon.svg" />
           </div>
         </div>
       </div>
-      <div class="mt-12 grid grid-cols-2 gap-16">
+      <div class="section--img-text__block is-flushed">
         <div>
-          <img class="w-full" src="~/assets/img/tracking.png" />
+          <img class="w-full" src="~/assets/img/tracking.jpg" />
         </div>
-        <div>
-          <h4 class="section__title--block">TRACKING CHANGE</h4>
+        <div class="container">
+          <div class="section--img-text__block-text">
+          <h4 class="section__title--sm">TRACKING CHANGE</h4>
           <p>
             Elinor has been designed primarily to help track changes over time,
             thus can be used at any stage in the project cycle to
@@ -134,6 +136,72 @@
               implementation efforts.
             </li>
           </ul>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--text section--turqy-light">
+      <div class="container">
+        <div class="grid grid-cols-2 gap-4 items-center lg:grid-cols-1">
+          <div class="text-center lg:order-2">
+            <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
+            <blockquote class="sentence mx-auto">
+              “Little by little, bit by bit, family by family, so much good can be done on so many levels.”
+              <span class="sentence__name">
+                ELINOR OSTROM
+              </span>
+            </blockquote>
+          </div>
+          <div class="lg:order-1">
+            <h3 class="section__epi">In Honor</h3>
+            <h4 class="section__title">Elinor “Lin” Ostrom</h4>
+            <p>Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation. 
+            </p>
+            <p>
+            Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems. 
+            </p>
+            <p>
+            Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--text section--img-text">
+      <div class="section--img-text__block is-flushed items-center">
+        <div class="container">
+          <div class="section--img-text__block-text">
+          <h4 class="section__title--block">FAQ’s</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <button type="button" class="btn btn--opacity--child">
+            <span class="btn--opacity__target">Go to FAQ’s</span>
+            <img src="~/assets/img/ico-button-arrow.svg" />
+          </button>
+        </div>
+        </div>
+        <div>
+          <img class="w-full" src="~/assets/img/faq.jpg" />
+        </div>
+      </div>
+      <div class="section--img-text__block is-flushed items-center">
+        <div>
+          <img class="w-full" src="~/assets/img/methodology.jpg" />
+        </div>
+        <div class="container">
+          <div class="section--img-text__block-text">
+            <h4 class="section__title--block">METHODOLOGY</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <button type="button" class="btn btn--opacity--child">
+              <span class="btn--opacity__target">Go to Methodology</span>
+              <img src="~/assets/img/ico-button-arrow.svg" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
 <template>
-    <aside class="sidebar__main">
+    <aside class="sidebar__main" v-bind:class="{'hidden': !showMenu, 'flex': showMenu}">
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
-                <img src="~/assets/img/elinor-icon.svg">
-                <img src="~/assets/img/elinor.svg" class="sm:hidden">
+                <img src="~/assets/img/elinor-icon-white.svg">
+                <img src="~/assets/img/elinor.svg">
                 </NuxtLink>
             </div>
             <nav class="nav__main">

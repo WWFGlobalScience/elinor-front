@@ -304,7 +304,7 @@
 //cards
 .card{
     &.card--sign-in{
-        @apply bg-white p-8 ml-32 border-radius--20;
+        @apply bg-white p-8 ml-32 border-radius--20 lg:mx-auto;
 
         .card--sign-in__info{
             @apply flex items-center justify-between;
@@ -325,5 +325,31 @@
         .card--sign-in__separator{
             @apply mt-8 mb-11 w-96;
         }
+    }
+}
+
+//list
+.list-inside{
+    @apply pl-5 relative;
+    li{
+        &::before{
+            content: "";
+            @apply absolute -left-4 top-2 w-1 h-1 bg-grayy;
+        }
+    }
+    &.list-disc {
+        li{
+            &::before{
+                @apply rounded-full;
+            }
+        }
+    }
+}
+
+//sentence
+.sentence{
+    @apply font-light text-turqy w-5/12 text-base text-center pt-12 pb-3 lg:w-8/12;
+    .sentence__name{
+        @apply font-bold text-xs uppercase block pt-3;
     }
 }

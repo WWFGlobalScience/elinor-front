@@ -1,6 +1,13 @@
 <template>
   <header class="header--main">
     <nav class="header--main__wrapper">
+      <!-- Mobile menu button -->
+      <div class="hidden lg:block" v-on:click="toggleNavbar()">
+        <button class="outline-none mobile-menu-button">
+          <img src="~/assets/img/elinor-icon-turqy.svg">
+        </button>
+      </div>
+      
       <ul>
         <li>
           <NuxtLink to="/" class="btn--opacity--child">

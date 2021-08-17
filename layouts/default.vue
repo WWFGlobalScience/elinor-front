@@ -6,6 +6,7 @@
                 <default-sidebar></default-sidebar>
                 <Nuxt />
                 <default-notification></default-notification>
+                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>
@@ -24,5 +25,17 @@ export default {
             return this.$store.state.popup.popup
         }
     } 
+    ,
+    name: "pink-navbar",
+    data() {
+        return {
+        showMenu: false
+        }
+    },
+    methods: {
+        toggleNavbar: function(){
+        this.showMenu = !this.showMenu;
+        }
+    }
 }
 </script>
