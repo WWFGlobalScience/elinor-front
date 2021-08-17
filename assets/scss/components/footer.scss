@@ -1,0 +1,27 @@
+.footer--main{
+    @apply absolute w-full bg-turqy-lighter bottom-0 py-10 text-turqy flex flex-col items-center justify-center;
+    .footer--main__wrapper{
+        @apply pb-6 text-center;
+        img{
+            @apply mx-auto block;
+        }
+        ul{
+            @apply flex items-center justify-center pt-3;
+            li{
+                @apply relative px-2 text-sm;
+                &::after{
+                    content: "-";
+                    @apply absolute top-0 bottom-0 my-auto px-1;
+                }
+                &:last-child{
+                    &::after{
+                        @apply hidden;
+                    }
+                }
+            }
+        }
+    }
+    .footer--main__bottom{
+        @apply text-center text-sm w-2/12 lg:w-8/12;
+    }
+}

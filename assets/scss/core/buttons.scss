@@ -15,7 +15,7 @@ button {
     }
 }
 .btn {
-    @apply flex items-center bg-turqy text-sm text-white border-radius--40 px-10 py-5 cursor-pointer;
+    @apply flex items-center bg-turqy text-sm text-white border-radius--40 px-10 py-5 cursor-pointer lg:px-5;
     span {
         @apply mr-3;
     }

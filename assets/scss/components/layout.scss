@@ -1,7 +1,8 @@
 .app__content {
     @apply transition;
     &.is--overlay {
-        filter: blur(4px);
+        -webkit-filter: blur(4px);
+                filter: blur(4px);
         max-height: 100vh;
         overflow: hidden;
     }
@@ -9,14 +10,9 @@
 main {
     @apply flex flex-wrap;
     .page {
-        @apply flex-1 py-16;
-        &.is--overlay {
-            filter: blur(4px);
-            max-height: 100vh;
-            overflow: hidden;
-        }
+        @apply flex-1 pt-16 pb-56;
         &.page--signin{
-            @apply py-0;
+            @apply pt-0;
         }
     }
 }

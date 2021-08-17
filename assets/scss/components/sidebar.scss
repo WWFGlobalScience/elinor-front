@@ -1,5 +1,6 @@
 .sidebar__main {
     margin-top: -69px;
+    @apply lg:absolute lg:-left-20 lg:mt-0;
     .sidebar__wrap {
         @apply bg-turqy h-screen sticky top-0 z-30;
         > * {
@@ -24,7 +25,7 @@
             } 
         }
         .nav__main--bottom{
-            @apply border-t border-turqy-darker py-5;
+            @apply border-t border-turqy-darker py-5 absolute w-full bottom-20;
         }
     }
 }
