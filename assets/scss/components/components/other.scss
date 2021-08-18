@@ -1,0 +1,77 @@
+//data 
+.elinor__data-grid {
+    @apply flex flex-wrap;
+    margin: -1.25rem;
+    .elinor__data-sublock {
+        @apply w-1/2 p-5;
+    }
+    .elinor__data-sublist {
+        @apply p-3;
+    }
+    .elinor__data { 
+        @apply flex flex-col w-1/2 p-5;
+        .title {
+            @apply mb-1 text-[12px] text-grayy-lighter;
+        }
+        &.elinor__data--full {
+            @apply w-full;
+        }
+    }
+    &.elinor__data-grid--3-5 {
+        @apply w-3/5;
+    }
+}
+.elinor__data-wrap {
+    @apply flex justify-between;
+}
+
+.elinor__data-separator {
+    @apply w-full h-px bg-grayy-border my-10;
+}
+
+//map
+.elinor__map {
+    @apply h-[55vh];
+    .map__legend {
+        @apply absolute left-[20px] bottom-[20px] bg-turqy-lighter p-4 z-10;
+    }
+}
+
+//search
+.search__results {
+    @apply text-grayy-lighter;
+}
+
+//loader
+.elinor__loader {
+    @apply w-screen fixed bottom-0 left-0 z-20 text-grayy-lighter text-[12px] py-2;
+    .loader__group {
+        @apply flex items-center justify-center z-10;
+        svg {
+            @apply w-4 mr-2 mb-0;
+        } 
+    }
+    .loader__bg {
+        @apply w-full h-full absolute top-0 left-0 bg-grayy-border;
+    }
+}
+
+//people
+.elinor__people {
+    @apply min-w-[270px] self-start sticky top-[90px];
+    li {
+        @apply my-4;
+        &.elinor__people-header {
+            @apply mt-0;
+        }
+        &.elinor__people-data {
+            @apply flex items-center text-[12px] text-grayy-lighter;
+            span {
+                @apply text-[16px] text-grayy w-[20px];
+            }
+        }
+        &:last-child {
+            @apply border-t border-grayy-border pt-4 mb-0;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+//text
+.c-title {
+    @apply text-5xl w-6/12 mb-12 xl:w-8/12 uppercase;
+}
+.c-epi{
+    @apply text-2xl text-grayy uppercase;
+}
+.c-title--block {
+    @apply text-4xl mb-6;
+}
+.c-title--sm {
+    @apply text-xl mb-12;
+}
+.c-title--main{
+    @apply text-huge text-grayy border-b border-grayy-border pb-6;
+}

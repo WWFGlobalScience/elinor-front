@@ -3,7 +3,7 @@
         <div :class="[ 'app__content', { 'is--overlay': popup.active } ]">
             <default-header></default-header>
             <main role="main">
-                <default-sidebar></default-sidebar>
+                    <default-sidebar></default-sidebar>
                 <Nuxt />
                 <default-notification></default-notification>
                 <default-footer></default-footer>
@@ -24,18 +24,9 @@ export default {
         popup() {
             return this.$store.state.popup.popup
         }
-    } 
-    ,
-    name: "pink-navbar",
-    data() {
-        return {
-        showMenu: false
-        }
-    },
-    methods: {
-        toggleNavbar: function(){
-        this.showMenu = !this.showMenu;
-        }
     }
-}
+};
 </script>
+
+
+

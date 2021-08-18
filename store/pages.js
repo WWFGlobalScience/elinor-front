@@ -27,7 +27,9 @@ export const state = () => ({
             title: 'pages.insights.title',
             slug: 'pages.insights.slug',
             icons: {
-                gray: require('~/assets/img/ico-home-white.svg')
+                gray: require('~/assets/img/ico-home-gray.svg'),
+                white: require('~/assets/img/ico-home-white.svg'),
+                turqy: require('~/assets/img/ico-home-turqy.svg')
             },
             seo: {
                 title: 'pages.insights.seo.title',
@@ -45,7 +47,9 @@ export const state = () => ({
             title: 'pages.assessments.title',
             slug: 'pages.assessments.slug',
             icons: {
-                gray: require('~/assets/img/ico-assessments-white.svg')
+                gray: require('~/assets/img/ico-assessments-gray.svg'),
+                white: require('~/assets/img/ico-assessments-white.svg'),
+                turqy: require('~/assets/img/ico-assessments-turqy.svg')
             },
             seo: {
                 title: 'pages.assessments.seo.title',
@@ -64,7 +68,9 @@ export const state = () => ({
             title: 'pages.map.title',
             slug: 'pages.map.slug',
             icons: {
-                gray: require('~/assets/img/ico-map-white.svg')
+                gray: require('~/assets/img/ico-map-gray.svg'),
+                white: require('~/assets/img/ico-map-white.svg'),
+                //turqy: require('~/assets/img/ico-map-turqy.svg')
             },
             seo: {
                 title: 'pages.map.seo.title',
@@ -82,7 +88,9 @@ export const state = () => ({
             title: 'pages.sign-in.title',
             slug: 'pages.sign-in.slug',
             icons: {
-                gray: require('~/assets/img/ico-signin-white.svg')
+                // gray: require('~/assets/img/ico-signin-gray.svg'),
+                white: require('~/assets/img/ico-signin-white.svg'),
+                turqy: require('~/assets/img/ico-signin-turqy.svg')
             },
             seo: {
                 title: 'pages.sign-in.seo.title',
@@ -100,7 +108,9 @@ export const state = () => ({
             title: 'pages.managed-areas.title',
             slug: 'pages.managed-areas.slug',
             icons: {
-                gray: require('~/assets/img/ico-managed-areas-gray.svg')
+                gray: require('~/assets/img/ico-managed-areas-gray.svg'),
+                // white: require('~/assets/img/ico-managed-areas-white.svg'),
+                turqy: require('~/assets/img/ico-managed-areas-turqy.svg')
             },
             seo: {
                 title: 'pages.managed-areas.seo.title',
@@ -118,7 +128,9 @@ export const state = () => ({
             title: 'pages.users-access.title',
             slug: 'pages.users-access.slug',
             icons: {
-                gray: require('~/assets/img/ico-users-access-gray.svg')
+                gray: require('~/assets/img/ico-users-access-gray.svg'),
+                //white: require('~/assets/img/ico-users-access-white.svg'),
+                //turqy: require('~/assets/img/ico-users-access-turqy.svg')
             },
             seo: {
                 title: 'pages.users-access.seo.title',
@@ -143,6 +155,24 @@ export const state = () => ({
                 description: 'pages.help-guides.seo.description',
                 keywords: 'pages.help-guides.seo.keywords',
                 og_image: 'pages.help-guides.seo.og_image',
+            }
+        },
+        {
+            config: {
+                display: {
+                    sidebar: false
+                }
+            },
+            title: 'pages.faq.title',
+            slug: 'pages.faq.slug',
+            icons: {
+                gray: false
+            },
+            seo: {
+                title: 'pages.faq.seo.title',
+                description: 'pages.faq.seo.description',
+                keywords: 'pages.faq.seo.keywords',
+                og_image: 'pages.faq.seo.og_image',
             }
         }
     ],

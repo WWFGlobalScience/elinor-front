@@ -69,6 +69,9 @@ module.exports = {
                 'sm': '640px',
                 'xs': '375px',
             },
+            fontSize: {
+                'huge':'2.5rem'
+            }
         },
     },
     variants: {

@@ -9,7 +9,7 @@
                     </NuxtLink>
                 </li>
                 <li class="btn--opacity--child">
-                    <NuxtLink to="'/'" class="btn--opacity__target">
+                    <NuxtLink :to="`/faq/`" class="btn--opacity__target">
                         FAQs
                     </NuxtLink>
                 </li>

@@ -1,5 +1,7 @@
 .footer--main{
-    @apply absolute w-full bg-turqy-lighter bottom-0 py-10 text-turqy flex flex-col items-center justify-center;
+    @apply absolute bg-turqy-lighter bottom-0 py-10 text-turqy flex flex-col items-center justify-center;
+    width: 90%;
+    left: 10%;
     .footer--main__wrapper{
         @apply pb-6 text-center;
         img{

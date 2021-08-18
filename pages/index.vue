@@ -1,5 +1,7 @@
 <template>
-  <div class="container">
+  <article class="page">
+    <section class="section">
+      <div class="container">
     <div>
       
       <h1 class="title">
@@ -25,6 +27,8 @@
       </div>
     </div>
   </div>
+    </section>
+  </article>
 </template>
 
 <script>
