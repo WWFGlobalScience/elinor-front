@@ -11,7 +11,7 @@ main {
     @apply flex flex-wrap;
     .page {
         @apply flex-1 pt-16 pb-56;
-        &.page--signin{
+        &.page--flushed{
             @apply pt-0;
         }
     }

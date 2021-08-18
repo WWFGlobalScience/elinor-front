@@ -1,0 +1,5 @@
+//notifications
+.elinor__notifications {
+    @apply fixed bottom-0 w-full bg-grayy text-white z-50 text-center text-[12px] py-2;
+    transform: translateY(100%);
+}

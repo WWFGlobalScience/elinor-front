@@ -164,6 +164,16 @@
                 "og_image": ""
             }
         },
+        "faq": {
+            "title": "Faq",
+            "slug": "faq",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og_image": ""
+            }
+        },
         "assessments": {
             "title": "Assessments",
             "slug": "assessments",

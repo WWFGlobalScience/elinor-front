@@ -1,15 +1,15 @@
 <template>
-  <article class="page page--signin">
+  <article class="page page--flushed">
     <section class="section section--sign-in">
-      <div class="section__full-background">
-        <img src="~/assets/img/signin-background.jpg"/>
-      </div>
-      <div class="card card--sign-in">
+      <picture class="section__full-background">
+        <img src="~/assets/img/signin-background.jpg" />
+      </picture>
+      <div class="elinor__card elinor__card--sign-in">
         <NuxtLink to="/" class="flex justify-center">
           <img src="~/assets/img/elinor-logo.svg"/>
         </NuxtLink>
-        <hr class="card--sign-in__separator"/>
-        <div class="card--sign-in__info">
+        <hr class="elinor__card--sign-in__separator" />
+        <div class="elinor__card--sign-in__info">
           <div>
             <p class="text-xl mb-1.5">SIGN IN</p>
           </div>
@@ -59,7 +59,7 @@
             </div>
           </div>
 
-          <div class="card--sign-in__info info-start mt-9">
+          <div class="elinor__card--sign-in__info info-start mt-9">
             <div class="form__group">
               <div class="form__row">
                 <div class="input input--radios input--radios-question">
@@ -122,7 +122,7 @@
       <div class="container">
         <div class="section--img-text__block">
           <div class="section--img-text__block-text">
-            <h1 class="section__title">WHY SHOULD I USE IT?</h1>
+            <h1 class="c-title">WHY SHOULD I USE IT?</h1>
             <p>
               Elinor can be applied as either a field-based assessment with a
               trained facilitator or as a desk-based tool that harnesses local
@@ -144,7 +144,7 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-          <h4 class="section__title--sm">TRACKING CHANGE</h4>
+          <h4 class="c-title--sm">TRACKING CHANGE</h4>
           <p>
             Elinor has been designed primarily to help track changes over time,
             thus can be used at any stage in the project cycle to
@@ -166,16 +166,16 @@
         <div class="grid grid-cols-2 gap-4 items-center lg:grid-cols-1">
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
-            <blockquote class="sentence mx-auto">
+            <blockquote class="elinor__sentence mx-auto">
               “Little by little, bit by bit, family by family, so much good can be done on so many levels.”
-              <span class="sentence__name">
+              <span class="elinor__sentence__name">
                 ELINOR OSTROM
               </span>
             </blockquote>
           </div>
           <div class="lg:order-1">
-            <h3 class="section__epi">In Honor</h3>
-            <h4 class="section__title">Elinor “Lin” Ostrom</h4>
+            <h3 class="c-epi">In Honor</h3>
+            <h4 class="c-title">Elinor “Lin” Ostrom</h4>
             <p>Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.
             </p>
             <p>
@@ -193,7 +193,7 @@
       <div class="section--img-text__block is-flushed items-center">
         <div class="container">
           <div class="section--img-text__block-text">
-          <h4 class="section__title--block">FAQ’s</h4>
+          <h4 class="c-title--block">FAQ’s</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
@@ -213,7 +213,7 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-            <h4 class="section__title--block">METHODOLOGY</h4>
+            <h4 class="c-title--block">METHODOLOGY</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>

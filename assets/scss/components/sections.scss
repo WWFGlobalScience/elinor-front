@@ -124,18 +124,6 @@
         }
     }
 
-    .section__title {
-        @apply text-5xl w-6/12 mb-12 xl:w-8/12 uppercase;
-    }
-    .section__epi{
-        @apply text-2xl text-grayy uppercase;
-    }
-    .section__title--block {
-        @apply text-4xl mb-6;
-    }
-    .section__title--sm {
-        @apply text-xl mb-12;
-    }
 
     &.section--intro {
         @apply mt-0 pt-14 pb-24;
@@ -174,6 +162,12 @@
             .btn{
                 @apply mt-24;
             }
+        }
+    }
+    &.section--main{
+        @apply h-64 flex flex-col justify-center items-center mt-0;
+        img{
+            @apply h-full w-full object-cover;
         }
     }
 }

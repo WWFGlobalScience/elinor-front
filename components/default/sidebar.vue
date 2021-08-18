@@ -1,16 +1,16 @@
 <template>
-    <aside class="sidebar__main" v-bind:class="{'hidden': !showMenu, 'flex': showMenu}">
+    <aside class="sidebar__main" id="elinor__sidebar" v-bind:class="[!isSidebarOpened ? 'sidebar__main--min' : null]">
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
-                <img src="~/assets/img/elinor-icon-white.svg">
-                <img src="~/assets/img/elinor.svg">
+                <img src="~/assets/img/elinor-icon-white.svg" class="brand__icon">
+                <img src="~/assets/img/elinor.svg" class="brand__text">
                 </NuxtLink>
             </div>
             <nav class="nav__main">
                 <ul>
                     <li v-for="(page, index) in pages">
-                        <NuxtLink :to="`/${$t( page.slug )}`" class="btn--opacity--child">
+                        <NuxtLink :to="`/${$t( page.slug )}`" class="btn--opacity--child nav__main__link">
                             <img v-if="page.icons.gray" :src="page.icons.gray" :alt="$t(page.title)" class="center-v">
                             <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
                         </NuxtLink>
@@ -19,11 +19,11 @@
             </nav>
             <div class="nav__main nav__main--bottom">
                 <ul>
-                    <li>
-                        <NuxtLink to="/" class="btn--opacity--child">
-                        <img src="../assets/img/ico-minimize-white.svg" alt="minimize" class="center-v">
-                        <span class="btn--opacity__target">Minimize</span>
-                        </NuxtLink>
+                    <li class="btn--opacity--child" @click="toggleSidebar">
+                        <div class="nav__main__link">
+                            <img src="../assets/img/ico-minimize-white.svg" alt="minimize" class="center-v">
+                            <span class="btn--opacity__target">Minimize</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -33,12 +33,21 @@
 
 
 <script>
+    import { mapActions } from 'vuex'
     export default {
         name: 'default-sidebar',
         computed: {
             pages() {
                 return this.$store.state.pages.list
+            },
+            isSidebarOpened(){
+                return this.$store.state.layout.sidebar
             }
+        },
+        methods:{
+            ...mapActions({
+                toggleSidebar: 'layout/toggleSidebar'
+            }),
         }
     }
 </script>

@@ -1,31 +1,57 @@
 .sidebar__main {
     margin-top: -69px;
-    @apply lg:absolute lg:-left-20 lg:mt-0;
+    // @apply lg:absolute lg:-left-20 lg:mt-0;
     .sidebar__wrap {
-        @apply bg-turqy h-screen sticky top-0 z-30;
+        @apply bg-turqy h-screen sticky top-0 z-30 flex flex-col;
         > * {
-            @apply px-5;
-            @apply pr-8;
+            @apply px-3;
         }
         .brand {
-            @apply border-b border-turqy-darker py-5;
+            @apply border-b border-turqy-darker py-5 flex-none;
         }
         .nav__main {
-            @apply mt-10;
+            @apply mt-10 flex-1;
             ul {
                 li {
-                    @apply mb-6 text-white;
-                    a {
-                        @apply text-[14px];
+                    @apply mb-3 text-white;
+                    .nav__main__link {
+                        @apply text-[14px] p-3 font-semibold flex items-center cursor-pointer;
                         span {
                             @apply pl-7;
+                        }
+                        &.nuxt-link-active{
+                            @apply bg-turqy-lighter rounded-full text-turqy;
                         }
                     }
                 }
             } 
         }
         .nav__main--bottom{
-            @apply border-t border-turqy-darker py-5 absolute w-full bottom-20;
+            @apply border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto;
+        }
+    }
+    &.sidebar__main--min{
+        @apply w-12;
+        .sidebar__wrap {
+            .brand{
+                @apply px-2;
+                .brand__text{
+                    @apply hidden
+                }
+            }
+            .nav__main{
+                @apply px-2 flex flex-col justify-center;
+                ul{
+                    li{
+                        a{
+                            @apply justify-center h-8 w-8;
+                        }
+                        span{
+                            @apply hidden;
+                        }
+                    }
+                }
+            }
         }
     }
 }
