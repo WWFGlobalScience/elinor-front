@@ -144,7 +144,7 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-          <h4 class="c-title--sm">TRACKING CHANGE</h4>
+          <h4 class="c-title--sm">Tracking change</h4>
           <p>
             Elinor has been designed primarily to help track changes over time,
             thus can be used at any stage in the project cycle to

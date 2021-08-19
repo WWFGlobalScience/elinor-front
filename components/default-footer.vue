@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer--main">
+    <footer class="footer--main" v-bind:class="[!isSidebarOpen ? 'footer--main--max' : null]">
         <nav class="footer--main__wrapper">
             <img src="~/assets/img/elinor-icon-turqy.svg" alt="elinor-icon turqy">
             <ul>
@@ -14,7 +14,7 @@
                     </NuxtLink>
                 </li>
                 <li class="btn--opacity--child">
-                    <NuxtLink to="'/'" class="btn--opacity__target">
+                    <NuxtLink :to="`/methodology/`" class="btn--opacity__target">
                         Methodology
                     </NuxtLink>
                 </li>
@@ -31,12 +31,21 @@
     </footer>
 </template>
 <script>
+ import { mapActions } from 'vuex'
     export default {
         name: 'default-footer',
         computed: {
             pages() {
                 return this.$store.state.pages.list
+            },
+            isSidebarOpen(){
+                return this.$store.state.layout.sidebar
             }
+        },
+        methods:{
+            ...mapActions({
+                toggleSidebar: 'layout/toggleSidebar'
+            }),
         }
     }
 </script>

@@ -1,6 +1,5 @@
 .sidebar__main {
     margin-top: -69px;
-    // @apply lg:absolute lg:-left-20 lg:mt-0;
     .sidebar__wrap {
         @apply bg-turqy h-screen sticky top-0 z-30 flex flex-col;
         > * {
@@ -54,4 +53,14 @@
             }
         }
     }
+
+   &:not(.sidebar__main--min){
+    @apply lg:fixed z-30;
+    // &::after{
+    //     content: "";
+    //     -webkit-backdrop-filter: blur(10px);
+    //             backdrop-filter: blur(10px);
+    //     @apply lg:fixed lg:bg-white lg:bg-opacity-25 lg:inset-0 lg:m-auto  z-10;
+    // }
+   } 
 }
