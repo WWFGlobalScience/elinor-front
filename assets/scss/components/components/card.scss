@@ -82,3 +82,27 @@
         }
     }
 }
+
+
+//elinor card question
+
+.elinor-card--question{
+    @apply flex items-start pt-12 pb-6;
+    .elinor-card--question__number{
+        @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
+    }
+    .elinor-card--question__info{
+        @apply flex-1;
+
+        [class*='c-title--']{
+            @apply mb-8;
+        }
+
+        p{@apply mb-6}
+    }
+}
+
+//elinor card detail
+.elinor-card__detail{
+    @apply bg-turqy-lighter text-turqy text-4xl text-center rounded-huge p-6 leading-9;
+}

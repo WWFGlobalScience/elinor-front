@@ -1,6 +1,6 @@
 <template>
 
-    <aside class="sidebar__main" id="elinor__sidebar" v-bind:class="[!isSidebarOpened ? 'sidebar__main--min' : null]">
+    <aside class="sidebar__main" id="elinor__sidebar" v-bind:class="[!isSidebarOpen ? 'sidebar__main--min' : null]">
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
@@ -22,7 +22,8 @@
                 <ul>
                     <li class="btn--opacity--child" @click="toggleSidebar">
                         <div class="nav__main__link">
-                            <img src="../assets/img/ico-minimize-white.svg" alt="minimize" class="center-v">
+                            <img v-if="isSidebarOpen" src="../assets/img/ico-minimize-white.svg" alt="minimize" class="center-v">
+                            <img v-else src="../assets/img/ico-maximize-white.svg" alt="maximize" class="center-v w-4 btn--opacity__target">
                             <span class="btn--opacity__target">Minimize</span>
                         </div>
                     </li>
@@ -41,7 +42,7 @@
             pages() {
                 return this.$store.state.pages.list
             },
-            isSidebarOpened(){
+            isSidebarOpen(){
                 return this.$store.state.layout.sidebar
             }
         },
@@ -52,4 +53,3 @@
         }
     }
 </script>
-

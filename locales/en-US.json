@@ -111,6 +111,16 @@
                 "og_image": ""
             }
         },
+        "methodology": {
+            "title": "Methodology",
+            "slug": "methodology",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og_image": ""
+            }
+        },
         "assessments": {
             "title": "Assessments",
             "slug": "assessments",

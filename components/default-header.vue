@@ -1,11 +1,6 @@
 <template>
   <header class="header--main">
     <nav class="header--main__wrapper">
-      <!-- Mobile menu button -->
-      <!-- <div class="hidden lg:block" id="mobile-menu">
-          <img src="../assets/img/elinor-icon-turqy.svg">
-      </div> -->
-      
       <ul>
         <li>
           <NuxtLink to="/" class="btn--opacity--child">
@@ -18,7 +13,7 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/" class="btn--opacity--child">
+          <NuxtLink :to="`/methodology/`" class="btn--opacity--child">
             <span class="btn--opacity__target">Methodology</span>
           </NuxtLink>
         </li>

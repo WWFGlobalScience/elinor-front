@@ -36,7 +36,8 @@ module.exports = {
                 turqy: {
                     DEFAULT: '#43A0BD',
                     lighter: '#EDF4F6',
-                    darker: '#2E8D88'
+                    darker: '#2E8D88',
+                    border: '#43A0BD',
                 },
                 grayy: {
                     DEFAULT: '#585858',
@@ -71,6 +72,9 @@ module.exports = {
             },
             fontSize: {
                 'huge':'2.5rem'
+            },
+            borderRadius:{
+                'huge': '1.25rem'
             }
         },
     },

@@ -8,9 +8,13 @@
 .c-title--block {
     @apply text-4xl mb-6;
 }
+.c-title--md{
+    @apply text-xl font-bold;
+}
 .c-title--sm {
-    @apply text-xl mb-12;
+    @apply text-xl mb-12 uppercase;
 }
 .c-title--main{
     @apply text-huge text-grayy border-b border-grayy-border pb-6;
 }
+

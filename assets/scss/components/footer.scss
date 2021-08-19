@@ -1,7 +1,10 @@
 .footer--main{
-    @apply absolute bg-turqy-lighter bottom-0 py-10 text-turqy flex flex-col items-center justify-center;
-    width: 90%;
-    left: 10%;
+    padding-left: 188px;
+    @apply absolute w-full bg-turqy-lighter bottom-0 py-10 text-turqy flex flex-col items-center justify-center lg:pl-0;
+    
+    &.footer--main--max{
+        padding-left:48px; 
+    }
     .footer--main__wrapper{
         @apply pb-6 text-center;
         img{
