@@ -19,7 +19,7 @@
                     </NuxtLink>
                 </li>
                 <li class="btn--opacity--child">
-                    <NuxtLink to="'/'" class="btn--opacity__target">
+                    <NuxtLink :to="`/create-account/`" class="btn--opacity__target">
                         Create Account
                     </NuxtLink>
                 </li>

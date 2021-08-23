@@ -123,7 +123,7 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-          <h4 class="c-title--sm">Tracking change</h4>
+          <h4 class="c-title--sm mb-12">Tracking change</h4>
           <p>
             Elinor has been designed primarily to help track changes over time,
             thus can be used at any stage in the project cycle to
@@ -176,10 +176,12 @@
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
+          <NuxtLink :to="`/faq/`">
           <button type="button" class="btn btn--opacity--child">
             <span class="btn--opacity__target">Go to FAQ’s</span>
             <img src="~/assets/img/ico-button-arrow.svg" />
           </button>
+          </NuxtLink>
         </div>
         </div>
         <div>
@@ -196,10 +198,12 @@
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
+            <NuxtLink :to="`/methodology/`">
             <button type="button" class="btn btn--opacity--child">
               <span class="btn--opacity__target">Go to Methodology</span>
               <img src="~/assets/img/ico-button-arrow.svg" />
             </button>
+            </NuxtLink> 
           </div>
         </div>
       </div>

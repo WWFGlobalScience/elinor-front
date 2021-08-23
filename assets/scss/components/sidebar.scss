@@ -47,7 +47,7 @@
                 }
             }
             .nav__main{
-                @apply px-2 flex flex-col justify-center;
+                @apply px-2 flex flex-col justify-start;
                 &.nav__main--bottom{
                     @apply md:hidden;
                 }

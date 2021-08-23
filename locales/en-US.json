@@ -121,6 +121,16 @@
                 "og_image": ""
             }
         },
+        "create-account": {
+            "title": "Create Account",
+            "slug": "create-account",
+            "seo": {
+                "title": "",
+                "description": "",
+                "keywords": "",
+                "og_image": ""
+            }
+        },
         "assessments": {
             "title": "Assessments",
             "slug": "assessments",
