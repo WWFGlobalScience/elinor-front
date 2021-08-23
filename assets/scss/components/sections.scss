@@ -26,7 +26,9 @@
         @apply sm:mt-6;
         ul {
             @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border sm:flex-wrap;
-
+            & > :not([hidden]) ~ :not([hidden]){
+                @apply sm:mx-0 sm:flex-auto;
+            }
             li {
                 &:first-child {
                     @apply flex-1 sm:flex-auto sm:mb-6;

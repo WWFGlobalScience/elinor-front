@@ -11,10 +11,11 @@
             <nav class="nav__main">
                 <ul>
                     <li v-for="(page, index) in pages">
-                        <NuxtLink :to="`/${$t( page.slug )}`" v-slot="{ isExactActive }" exact class="btn--opacity--child nav__main__link">
-                            <img v-if="page.icons.white && isExactActive" :src="page.icons.white" :alt="$t(page.title)" class="center-v">
-                            <img v-if="page.icons.white && !isExactActive" :src="page.icons.turqy" :alt="$t(page.title)" class="center-v">
-                            <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
+                        <NuxtLink v-slot="{ href, route, navigate, isActive, isExactActive }" v-if="page.config.display.auth === null || page.config.display.auth === isUserAuthenticated" :to="`/${$t( page.slug )}`">
+                            <a @click="navigate" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': page.slug === '' ? isExactActive : isActive}">
+                                <img v-if="page.icons.turqy" :src="isActive ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
+                                <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
+                            </a>
                         </NuxtLink>
                     </li>
                 </ul>
