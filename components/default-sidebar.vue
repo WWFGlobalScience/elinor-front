@@ -1,6 +1,6 @@
 <template>
-
-    <aside class="sidebar__main" id="elinor__sidebar" v-bind:class="[!isSidebarOpen ? 'sidebar__main--min' : null]">
+    <aside class="sidebar__main" id="elinor__sidebar" 
+    v-bind:class="[!isSidebarOpen ?'sidebar__main--min' : null]">
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
@@ -35,7 +35,7 @@
 
 
 <script>
-    import { mapActions } from 'vuex'
+    import { mapActions } from 'vuex';
     export default {
         name: 'default-sidebar',
         computed: {
@@ -44,12 +44,12 @@
             },
             isSidebarOpen(){
                 return this.$store.state.layout.sidebar
-            }
+            },
         },
         methods:{
             ...mapActions({
-                toggleSidebar: 'layout/toggleSidebar'
+                toggleSidebar: 'layout/toggleSidebar',
             }),
-        }
     }
+}
 </script>

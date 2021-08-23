@@ -2,6 +2,11 @@
     margin-top: -69px;
     .sidebar__wrap {
         @apply bg-turqy h-screen sticky top-0 z-30 flex flex-col;
+        width: 188px;
+        @media(max-width:768px){
+            left: -188px;
+            @apply fixed top-0 bottom-0 transition-all duration-500;
+        }
         > * {
             @apply px-3;
         }
@@ -26,12 +31,12 @@
             } 
         }
         .nav__main--bottom{
-            @apply border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto;
+            @apply border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto md:hidden;
         }
     }
     &.sidebar__main--min{
-        @apply w-12;
         .sidebar__wrap {
+            @apply w-12;
             .brand{
                 @apply px-2;
                 .brand__text{
@@ -40,6 +45,9 @@
             }
             .nav__main{
                 @apply px-2 flex flex-col justify-center;
+                &.nav__main--bottom{
+                    @apply md:hidden;
+                }
                 ul{
                     li{
                         a{
@@ -51,16 +59,29 @@
                     }
                 }
             }
+
+                @media(max-width:768px){
+                    width: 188px;
+                    @apply fixed top-0 left-0 bottom-0 transition-all duration-500;
+                    .brand{
+                        .brand__text{
+                            @apply block
+                        }
+                    }
+                    .nav__main{
+                        @apply justify-start;
+                        ul{
+                            li{
+                                a{
+                                    @apply justify-start h-auto w-auto;
+                                }
+                                span{
+                                    @apply block;
+                                }
+                            }
+                        }
+                    }
+                }
         }
     }
-
-   &:not(.sidebar__main--min){
-    @apply lg:fixed z-30;
-    // &::after{
-    //     content: "";
-    //     -webkit-backdrop-filter: blur(10px);
-    //             backdrop-filter: blur(10px);
-    //     @apply lg:fixed lg:bg-white lg:bg-opacity-25 lg:inset-0 lg:m-auto  z-10;
-    // }
-   } 
 }
