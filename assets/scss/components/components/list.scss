@@ -14,12 +14,20 @@
             }
         }
     }
+    &.list--small{
+        li{
+            @apply text-sm leading-7 text-grayy;
+        }
+    }
 }
 
 //survey list
 
 .elinor__survey-list {
     @apply mt-10;
+    p{
+        @apply mb-0
+    }
     .elinor__survey-question {
         @apply flex flex-wrap justify-between mb-8;
         .question {
@@ -38,10 +46,10 @@
             @apply leading-[26px];
         }
         .left {
-            @apply w-1/2 pr-8;
+            @apply w-1/2 pr-8 sm:w-full;
         }
         .right {
-            @apply w-1/2 border-l border-grayy-border pl-8;
+            @apply w-1/2 border-l border-grayy-border pl-8 sm:w-full sm:border-l-0 sm:border-t sm:pt-8 sm:pl-0 sm:mt-8;
         }
         &.is--uncomplete {
             .txt {
@@ -58,6 +66,22 @@
         }
         .btn--uncomplete {
             @apply mt-8 self-start;
+        }
+    }
+    &.elinor__survey-list--row{
+        .left{
+            @apply flex items-start;
+            .txt{
+                @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
+            }
+        }
+        .right{
+            .right__item{
+                @apply flex items-start mb-6;
+                .txt{
+                    @apply w-8 mr-4
+                }
+            }
         }
     }
 }

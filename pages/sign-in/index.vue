@@ -113,7 +113,7 @@
               issues like equity, governance, gender and climate change.</p>
           </div>
           <div class="flex justify-end items-center">
-            <img class="h-64" src="~/assets/img/elinor-hand-icon.svg" />
+            <img class="h-64 sm:h-48" src="~/assets/img/elinor-hand-icon.svg" />
           </div>
         </div>
       </div>

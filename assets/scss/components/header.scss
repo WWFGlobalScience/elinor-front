@@ -8,7 +8,7 @@
             @apply h-full flex items-center justify-end py-5 pr-16 md:px-6;
 
             li {
-                @apply text-turqy text-sm pl-2;
+                @apply text-turqy text-sm pl-2 sm:text-xs;
 
                 &::after {
                     content: "|";

@@ -15,6 +15,9 @@
         }
         .nav__main {
             @apply mt-10 flex-1;
+            &:not(.nav__main--bottom){
+                @apply h-full overflow-auto;
+            }
             ul {
                 li {
                     @apply mb-3 text-white;
@@ -31,7 +34,7 @@
             } 
         }
         .nav__main--bottom{
-            @apply border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto md:hidden;
+            @apply mt-0 border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto md:hidden;
         }
     }
     &.sidebar__main--min{
