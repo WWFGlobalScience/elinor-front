@@ -9,7 +9,9 @@ export const state = () => ({
             title: 'pages.home.title',
             slug: 'pages.home.slug',
             icons: {
-                gray: false
+                gray: require('~/assets/img/ico-home-gray.svg'),
+                white: require('~/assets/img/ico-home-white.svg'),
+                turqy: require('~/assets/img/ico-home-turqy.svg')
             },
             seo: {
                 title: 'pages.home.seo.title',
@@ -70,7 +72,7 @@ export const state = () => ({
             icons: {
                 gray: require('~/assets/img/ico-map-gray.svg'),
                 white: require('~/assets/img/ico-map-white.svg'),
-                //turqy: require('~/assets/img/ico-map-turqy.svg')
+                turqy: require('~/assets/img/ico-map-turqy.svg')
             },
             seo: {
                 title: 'pages.map.seo.title',
@@ -109,7 +111,7 @@ export const state = () => ({
             slug: 'pages.managed-areas.slug',
             icons: {
                 gray: require('~/assets/img/ico-managed-areas-gray.svg'),
-                // white: require('~/assets/img/ico-managed-areas-white.svg'),
+                white: require('~/assets/img/ico-managed-areas-white.svg'),
                 turqy: require('~/assets/img/ico-managed-areas-turqy.svg')
             },
             seo: {
@@ -129,8 +131,8 @@ export const state = () => ({
             slug: 'pages.users-access.slug',
             icons: {
                 gray: require('~/assets/img/ico-users-access-gray.svg'),
-                //white: require('~/assets/img/ico-users-access-white.svg'),
-                //turqy: require('~/assets/img/ico-users-access-turqy.svg')
+                white: require('~/assets/img/ico-users-access-white.svg'),
+                turqy: require('~/assets/img/ico-users-access-turqy.svg')
             },
             seo: {
                 title: 'pages.users-access.seo.title',
