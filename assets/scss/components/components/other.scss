@@ -75,3 +75,12 @@
         }
     }
 }
+
+//info block
+.info-block{
+    @apply pt-12 pb-6;
+    [class*='c-title--']{
+        @apply mb-8;
+    }
+    p{@apply mb-6}
+}

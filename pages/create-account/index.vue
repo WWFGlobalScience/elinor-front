@@ -2,7 +2,7 @@
   <article class="page page--create-account">
     <header class="header--page">
       <div class="container--sm">
-        <h1 class="mb-3">{{ $t('pages.sign-up.content.header.title') }}</h1>
+        <h1 class="c-title--sm">{{ $t('pages.sign-up.content.header.title') }}</h1>
         <p v-html="$t( 'pages.sign-up.content.header.subtitle' )"></p>
       </div>
     </header>

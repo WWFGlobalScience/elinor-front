@@ -1,5 +1,6 @@
 <template>
-    <aside class="sidebar__main" id="elinor__sidebar" v-bind:class="[!isSidebarOpened ? 'sidebar__main--min' : null]">
+    <aside class="sidebar__main" id="elinor__sidebar"
+    v-bind:class="[!isSidebarOpen ?'sidebar__main--min' : null]">
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
@@ -10,8 +11,9 @@
             <nav class="nav__main">
                 <ul>
                     <li v-for="(page, index) in pages">
-                        <NuxtLink :to="`/${$t( page.slug )}`" class="btn--opacity--child nav__main__link">
-                            <img v-if="page.icons.gray" :src="page.icons.gray" :alt="$t(page.title)" class="center-v">
+                        <NuxtLink :to="`/${$t( page.slug )}`" v-slot="{ isExactActive }" exact class="btn--opacity--child nav__main__link">
+                            <img v-if="page.icons.white && isExactActive" :src="page.icons.white" :alt="$t(page.title)" class="center-v">
+                            <img v-if="page.icons.white && !isExactActive" :src="page.icons.turqy" :alt="$t(page.title)" class="center-v">
                             <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
                         </NuxtLink>
                     </li>
@@ -34,7 +36,7 @@
 
 
 <script>
-    import { mapActions } from 'vuex'
+    import { mapActions } from 'vuex';
     export default {
         name: 'default-sidebar',
         computed: {

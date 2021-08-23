@@ -14,7 +14,7 @@
 
     &.section--button {
         .container {
-            @apply flex justify-end;
+            @apply flex justify-end sm:justify-start sm:mt-6;
         }
     }
 
@@ -23,12 +23,13 @@
     }
 
     &.section--filters {
+        @apply sm:mt-6;
         ul {
-            @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border;
+            @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border sm:flex-wrap;
 
             li {
                 &:first-child {
-                    @apply flex-1;
+                    @apply flex-1 sm:flex-auto sm:mb-6;
                 }
             }
 
@@ -133,7 +134,7 @@
         }
 
         .section--intro__info {
-            @apply text-xl text-grayy text-center leading-9 pt-9 pb-14 w-8/12 lg:w-full;
+            @apply text-xl text-grayy text-center leading-9 pt-9 pb-14 w-8/12 lg:w-full sm:text-lg;
         }
     }
 
@@ -146,7 +147,12 @@
             }
             
             img{
-                @apply lg:mx-auto lg:block lg:mb-4;
+                    @apply lg:mx-auto lg:block lg:mb-4;
+                }
+            .btn{
+                img{
+                        @apply m-auto
+                }
             }
 
             &.is-flushed{

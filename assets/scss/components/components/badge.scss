@@ -14,9 +14,12 @@
         }
     }
     .sublist {
-        @apply flex items-center;
+        @apply flex items-center sm:flex-wrap;
         li {
-            @apply flex flex-col mr-10;
+            @apply flex flex-col mr-10 sm:mb-3 sm:mr-auto;
+            &:not(.role):not(.avatar){
+                @apply sm:flex-auto sm:w-full;
+            }
             span {
                 &.label {
                     @apply mb-2 text-[12px] text-grayy-lighter;

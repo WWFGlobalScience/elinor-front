@@ -36,7 +36,8 @@ module.exports = {
                 turqy: {
                     DEFAULT: '#43A0BD',
                     lighter: '#EDF4F6',
-                    darker: '#2E8D88',
+                    middle:  '#BDDADE',
+                    darker: '#3A90AB',
                     border: '#43A0BD',
                 },
                 grayy: {

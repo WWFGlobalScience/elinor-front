@@ -8,9 +8,10 @@
     }
 }
 main {
-    @apply flex flex-wrap;
+    @apply flex;
+    min-height: 93vh;
     .page {
-        @apply flex-1 pt-16 pb-56;
+        @apply flex-1 pt-16 pb-64;
         &.page--flushed{
             @apply pt-0;
         }

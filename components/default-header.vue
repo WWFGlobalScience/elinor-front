@@ -18,9 +18,13 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/" class="btn--opacity--child">
+          <NuxtLink :to="`/create-account/`" class="btn--opacity--child">
             <span class="btn--opacity__target">Create Account</span>
           </NuxtLink>
+        </li>
+        <li class="btn--opacity--child header--main__toggle-btn" @click="toggleSidebar">
+            <img v-if="isSidebarOpen" src="../assets/img/ico-maximize-turqy.svg" alt="maximize" class="center-v w-12">
+            <img v-else src="../assets/img/ico-minimize-turqy.svg" alt="minimize" class="center-v w-12 btn--opacity__target">
         </li>
       </ul>
     </nav>
@@ -28,7 +32,21 @@
 </template>
 
 <script>
-export default {
-  name: "default-header",
-};
+import { mapActions } from 'vuex'
+    export default {
+      name: "default-header",
+        computed: {
+            pages() {
+                return this.$store.state.pages.list
+            },
+            isSidebarOpen(){
+                return this.$store.state.layout.sidebar
+            }
+        },
+        methods:{
+            ...mapActions({
+                toggleSidebar: 'layout/toggleSidebar'
+            })
+        }
+    }
 </script>

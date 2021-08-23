@@ -156,42 +156,6 @@ export const state = () => ({
                 keywords: 'pages.help-guides.seo.keywords',
                 og_image: 'pages.help-guides.seo.og_image',
             }
-        },
-        {
-            config: {
-                display: {
-                    sidebar: false
-                }
-            },
-            title: 'pages.faq.title',
-            slug: 'pages.faq.slug',
-            icons: {
-                gray: false
-            },
-            seo: {
-                title: 'pages.faq.seo.title',
-                description: 'pages.faq.seo.description',
-                keywords: 'pages.faq.seo.keywords',
-                og_image: 'pages.faq.seo.og_image',
-            }
-        },
-        {
-            config: {
-                display: {
-                    sidebar: false
-                }
-            },
-            title: 'pages.methodology.title',
-            slug: 'pages.methodology.slug',
-            icons: {
-                gray: false
-            },
-            seo: {
-                title: 'pages.methodology.seo.title',
-                description: 'pages.methodology.seo.description',
-                keywords: 'pages.methodology.seo.keywords',
-                og_image: 'pages.methodology.seo.og_image',
-            }
         }
     ],
 });

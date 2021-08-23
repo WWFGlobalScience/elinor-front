@@ -36,4 +36,23 @@
         content: '';
         @apply center-v w-full h-px bg-grayy-border;
     }
+
+    &.elinor__survey-navigator--no-border{
+        @apply border-b-0;
+    }
+}
+
+//elinor__navigator-category
+.elinor__navigator-category{
+    @apply relative flex items-center justify-end;
+    &::after{
+        content: "";
+        @apply h-px absolute inset-0 bg-grayy-border w-full m-auto;
+    }
+    .elinor__navigator-category__link{
+@apply bg-white z-10 px-3 flex items-center;
+    }
+    .elinor__navigator-category__text{
+        @apply text-base text-turqy pr-3 ;
+    }
 }

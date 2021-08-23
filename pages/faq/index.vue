@@ -7,7 +7,7 @@
       <div class="container">
         <h1 class="c-title--main">FAQ's</h1>
         <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-4">
+          <div class="col-span-4 md:col-span-5">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 1 </span>
               <div class="elinor-card--question__info">
@@ -43,11 +43,11 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1"></div>
+          <div class="col-span-1 md:col-span-5"></div>
         </div>
 
         <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-4">
+          <div class="col-span-4 md:col-span-5">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 2 </span>
               <div class="elinor-card--question__info">
@@ -74,7 +74,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1"></div>
+          <div class="col-span-1 md:col-span-5"></div>
         </div>
         <!--atention: here the grid changes-->
         <div class="grid grid-cols-5 gap-14 flex items-center">
@@ -117,7 +117,7 @@
         </div>
 
         <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-4">
+          <div class="col-span-4 md:col-span-5">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 4 </span>
               <div class="elinor-card--question__info">
@@ -149,7 +149,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1"></div>
+          <div class="col-span-1 md:col-span-5"></div>
         </div>
       </div>
     </section>
