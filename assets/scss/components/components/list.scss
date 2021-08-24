@@ -19,6 +19,15 @@
             @apply text-sm leading-7 text-grayy;
         }
     }
+    &.list--light{
+        li{
+            @apply text-xs leading-6 text-grayy-lighter;
+            &::before{
+                content: "";
+                @apply bg-grayy-lighter -left-2 w-2px h-2px;
+            }
+        }
+    }
 }
 
 //survey list
