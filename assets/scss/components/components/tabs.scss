@@ -1,4 +1,7 @@
 //tabs
 .elinor__tabs {
-    @apply flex border-b border-grayy-border;
+    @apply flex border-b border-grayy-border sm:flex-wrap;
+    li{
+        @apply sm:flex-auto sm:w-full
+    }
 }

@@ -84,3 +84,8 @@
     }
     p{@apply mb-6}
 }
+
+//rounded number
+.rounded-number{
+    @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-small mr-2;
+}

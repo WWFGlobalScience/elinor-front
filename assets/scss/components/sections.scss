@@ -46,16 +46,19 @@
             @apply flex;
 
             .btn--tab {
-                @apply border-l-0;
+                @apply border-l-0 sm:w-full sm:border-l;
 
                 &.nuxt-link-active {
-                    @apply border-l;
+                    @apply border-l  sm:border-b sm:border-l-4;
                 }
             }
 
             &:first-child {
                 .btn--tab {
                     @apply border-l;
+                    &.nuxt-link-active {
+                        @apply sm:border-b sm:border-l-4;
+                    }
                 }
             }
 
@@ -63,7 +66,7 @@
                 @apply flex-1 justify-end;
 
                 .btn--tab {
-                    @apply border-l border-solid;
+                    @apply border-l border-solid sm:w-full sm:border-b sm:border-l-4;
                 }
             }
         }

@@ -1,11 +1,11 @@
 .sidebar__main {
     margin-top: -69px;
     .sidebar__wrap {
-        @apply bg-turqy h-screen sticky top-0 z-30 flex flex-col;
+        @apply bg-turqy h-screen sticky top-0 z-30 flex flex-col transition-all duration-500;
         width: 188px;
         @media(max-width:768px){
             left: -188px;
-            @apply fixed top-0 bottom-0 transition-all duration-500;
+            @apply fixed top-0 bottom-0;
         }
         > * {
             @apply px-3;
@@ -39,7 +39,7 @@
     }
     &.sidebar__main--min{
         .sidebar__wrap {
-            @apply w-12;
+            @apply w-12 transition-all duration-500;
             .brand{
                 @apply px-2;
                 .brand__text{
@@ -65,7 +65,7 @@
 
                 @media(max-width:768px){
                     width: 188px;
-                    @apply fixed top-0 left-0 bottom-0 transition-all duration-500;
+                    @apply fixed top-0 left-0 bottom-0;
                     .brand{
                         .brand__text{
                             @apply block

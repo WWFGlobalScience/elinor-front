@@ -40,6 +40,9 @@ module.exports = {
                     darker: '#3A90AB',
                     border: '#43A0BD',
                 },
+                yellowy:{
+                    DEFAULT:'#F2994A'
+                },
                 grayy: {
                     DEFAULT: '#585858',
                     lighter: '#9E9E9E',
@@ -53,6 +56,9 @@ module.exports = {
             fontFamily: {
                 'montserrat': ['Montserrat', 'sans-serif']
             },
+            height:{
+                '2px':'2px'
+            },
             width: {
                 '3xl': '1680px',
                 '2xl': '1366px',
@@ -61,6 +67,7 @@ module.exports = {
                 'md': '768px',
                 'sm': '640px',
                 'xs': '375px',
+                '2px': '2px'
             },
             maxWidth: {
                 '3xl': '1680px',
@@ -72,7 +79,9 @@ module.exports = {
                 'xs': '375px',
             },
             fontSize: {
-                'huge':'2.5rem'
+                'small': '0.625rem',
+                'medium': '1.375rem',
+                'huge':'2.5rem',
             },
             borderRadius:{
                 'huge': '1.25rem'
