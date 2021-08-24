@@ -108,7 +108,7 @@
 
       <div class="elinor__data-separator"></div>
       <div class="container-lg--responsive">
-        <div class="grid grid-cols-4 sm:grid-cols-1 items-center">
+        <div class="grid grid-cols-4 sm:grid-cols-1 gap-14 items-center">
           <div class="col-span-1">
             <button
               type="button"
@@ -116,7 +116,7 @@
               @click="
                 popupState({
                   active: true,
-                  component: 'popup-assessment-create',
+                  component: 'popup-assessment-publish',
                   title: 'Publish Assessment',
                 })
               "
@@ -139,8 +139,14 @@
 </template>
 
 <script>
+import { mapActions } from "vuex"
 export default {
   name: "assessment-edit-publish-settings",
   layout: "assessment",
+  methods: {
+        ...mapActions({
+            popupState: 'popup/popupState'
+        }),
+    },
 };
 </script>
