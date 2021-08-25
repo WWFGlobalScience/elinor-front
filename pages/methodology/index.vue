@@ -1,7 +1,7 @@
 <template>
   <article class="page page--flushed">
     <section class="section section--main">
-      <img src="~/assets/img/faq-section.jpg" />
+      <img src="~/assets/img/methodology-section.jpg" />
     </section>
     <section class="section">
       <div class="container">
