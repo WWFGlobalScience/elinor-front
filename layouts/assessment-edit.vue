@@ -9,6 +9,7 @@
                     <assessment-edit-tabs :id="id"></assessment-edit-tabs>
                     <Nuxt />
                 </article>
+                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>

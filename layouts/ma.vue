@@ -9,6 +9,7 @@
                     <ma-tabs :id="id"></ma-tabs>
                     <Nuxt />
                 </article>
+                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>
