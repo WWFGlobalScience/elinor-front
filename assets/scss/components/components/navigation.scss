@@ -8,7 +8,7 @@
 
 //survey navigator
 .elinor__survey-navigator {
-    @apply flex justify-between items-center border-b border-grayy-border py-10 sm:w-full sm:overflow-auto;
+    @apply flex justify-between items-center border-b border-grayy-border py-10 sm:w-90 sm:overflow-auto;
     li {
         @apply flex-1 flex justify-center sm:mx-1;
         a {
