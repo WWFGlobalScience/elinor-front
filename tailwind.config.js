@@ -51,7 +51,11 @@ module.exports = {
                     badge: 'rgba(0, 0, 0, .02)'
                 },
                 redy: {
-                    DEFAULT: '#F37871'
+                    DEFAULT: '#F37871',
+                    lighter:'#EA5C65'
+                },
+                bluy:{
+                    DEFAULT:'#5CD0EA'
                 }
             },
             fontFamily: {
