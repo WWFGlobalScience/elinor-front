@@ -1,16 +1,17 @@
 <template>
     <section class="section section--assessment-collaborators">
-
-        <button
-            @click="popupState({active: true, component: 'popup-collaborator-add', title: 'Add collaborator'})">
-            Add collaborator
-        </button>
-
         <div class="container">
-            Collaborators
-
+            <h1 class="c-title--lg">Collaborators</h1>
+            <button
+            class="btn--border-turqy btn--opacity--child mt-12"
+            @click="popupState({active: true, component: 'popup-collaborator-add', title: 'Add collaborator'})">
+             <span class="btn--opacity__target">Add collaborator</span>
+            <img src="~/assets/img/addcollaborator.svg" alt="add collaborator">
+            </button>
         </div>
+        <div class="mt-12">
         <assessment-collaborators-list></assessment-collaborators-list>
+        </div>
     </section>
 </template>
 
