@@ -8,7 +8,7 @@
 
 
 <script>
-import { mapActions } from 'vuex'
+import {mapActions, mapState} from 'vuex'
 
 export default {
     name: 'assessment-survey-question',
@@ -20,11 +20,12 @@ export default {
         }
     },
     computed: {
-        assessment() {
-            return this.$store.state.assessments.assessment
-        },
+        ...mapState({
+            assessment: state => state.assessments.assessment,
+            survey: state => state.assessments.survey
+        }),
         question() {
-            return this.assessment.survey[ this.qid - 1 ]
+            return this.survey[ this.qid - 1 ]
         }
     }
 }

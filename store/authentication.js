@@ -25,12 +25,6 @@ export const actions = {
     })
 
     try {
-      console.log({
-        data: {
-          username: credentials.username,
-          password: credentials.password
-        },
-      });
       await this.$auth.loginWith('local', {
         data: {
           username: credentials.username,
@@ -74,7 +68,7 @@ export const actions = {
           accept_tor: form.accept_tor,
         })
         .then((response) => {
-          window.location.replace(`/sign-in/email-verification-sent`);
+          this.$router.push(`/status/email-verification-sent`)
         })
         .catch((error) => {
           state.commit('setError', error.response);
@@ -94,7 +88,7 @@ export const actions = {
     await this.$axios
       .$post('rest-auth/registration/resend-verification-email/', {email})
       .then((response) => {
-        window.location.replace(`/sign-in/email-verification-sent`);
+        this.$router.push(`/status/email-verification-sent`)
       })
       .catch((error) => {
         state.commit('setError', error.response);
@@ -121,7 +115,7 @@ export const actions = {
         new_password2: password2,
       })
       .then((response) => {
-        window.location.replace(`/sign-in/password-changed-successfully`);
+        this.$router.push(`/status/password-changed-successfully`)
       })
       .catch((error) => {
         state.commit('setError', true);
@@ -132,7 +126,7 @@ export const actions = {
     await this.$axios
       .$get('rest-auth/registration/account-confirm-email/' + token + '/' )
       .then((response) => {
-        window.location.replace(`/sign-in/email-confirmed-successfully`);
+        this.$router.push(`/status/email-confirmed-successfully`)
       })
       .catch((error) => {
         state.commit('setError', true);

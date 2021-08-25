@@ -1,13 +1,16 @@
 export const state = () => ({
     list: [
         {
+            path: '/',
             config: {
                 display: {
-                    sidebar: false
+                    sidebar: false,
+                    auth: null,
+                    header: 'home'
                 }
             },
             title: 'pages.home.title',
-            slug: 'pages.home.slug',
+            slug: '',
             icons: {
                 gray: require('~/assets/img/ico-home-gray.svg'),
                 white: require('~/assets/img/ico-home-white.svg'),
@@ -20,10 +23,13 @@ export const state = () => ({
                 og_image: 'pages.home.seo.og_image',
             }
         },
-        {
+        /*{
+            path: '/insights',
             config: {
                 display: {
-                    sidebar: true
+                    sidebar: true,
+                    auth: true,
+                    header: 'page'
                 }
             },
             title: 'pages.insights.title',
@@ -39,11 +45,14 @@ export const state = () => ({
                 keywords: 'pages.insights.seo.keywords',
                 og_image: 'pages.insights.seo.og_image',
             }
-        },
+        },*/
         {
+            path: '/assessments',
             config: {
                 display: {
-                    sidebar: true
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
                 }
             },
             title: 'pages.assessments.title',
@@ -60,11 +69,13 @@ export const state = () => ({
                 og_image: 'pages.assessments.seo.og_image',
             }
         },
-
-        {
+        /*
+            path: '/map',
             config: {
                 display: {
-                    sidebar: true
+                    sidebar: true,
+                    auth: false,
+                    header: 'page'
                 }
             },
             title: 'pages.map.title',
@@ -80,31 +91,14 @@ export const state = () => ({
                 keywords: 'pages.map.seo.keywords',
                 og_image: 'pages.map.seo.og_image',
             }
-        },
+        },*/
         {
+            path: '/managed-areas',
             config: {
                 display: {
-                    sidebar: true
-                }
-            },
-            title: 'pages.sign-in.title',
-            slug: 'pages.sign-in.slug',
-            icons: {
-                // gray: require('~/assets/img/ico-signin-gray.svg'),
-                white: require('~/assets/img/ico-signin-white.svg'),
-                turqy: require('~/assets/img/ico-signin-turqy.svg')
-            },
-            seo: {
-                title: 'pages.sign-in.seo.title',
-                description: 'pages.sign-in.seo.description',
-                keywords: 'pages.sign-in.seo.keywords',
-                og_image: 'pages.sign-in.seo.og_image',
-            }
-        },
-        {
-            config: {
-                display: {
-                    sidebar: true
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
                 }
             },
             title: 'pages.managed-areas.title',
@@ -122,9 +116,12 @@ export const state = () => ({
             }
         },
         {
+            path: '/users-and-access',
             config: {
                 display: {
-                    sidebar: true
+                    sidebar: true,
+                    auth: true,
+                    header: 'page'
                 }
             },
             title: 'pages.users-access.title',
@@ -142,9 +139,12 @@ export const state = () => ({
             }
         },
         {
+            path: '/help-and-guides',
             config: {
                 display: {
-                    sidebar: true
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
                 }
             },
             title: 'pages.help-guides.title',
@@ -157,6 +157,47 @@ export const state = () => ({
                 description: 'pages.help-guides.seo.description',
                 keywords: 'pages.help-guides.seo.keywords',
                 og_image: 'pages.help-guides.seo.og_image',
+            }
+        },
+        {
+            path: '/faq',
+            config: {
+                display: {
+                    sidebar: false,
+                    auth: null,
+                    header: 'page'
+                }
+            },
+            title: 'pages.faq.title',
+            slug: 'pages.faq.slug',
+            icons: {
+                gray: false
+            },
+            seo: {
+                title: 'pages.faq.seo.title',
+                description: 'pages.faq.seo.description',
+                keywords: 'pages.faq.seo.keywords',
+                og_image: 'pages.faq.seo.og_image',
+            }
+        },
+        {
+            path: '/methodology',
+            config: {
+                display: {
+                    sidebar: false,
+                    header: 'page'
+                }
+            },
+            title: 'pages.methodology.title',
+            slug: 'pages.methodology.slug',
+            icons: {
+                gray: false
+            },
+            seo: {
+                title: 'pages.methodology.seo.title',
+                description: 'pages.methodology.seo.description',
+                keywords: 'pages.methodology.seo.keywords',
+                og_image: 'pages.methodology.seo.og_image',
             }
         }
     ],

@@ -24,8 +24,7 @@ export const actions = {
             url: 'v1/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
-            console.log(response)
-            window.location.replace(`/assessments/${data.assessment}/collaborators/`)
+            this.$router.push(`/assessments/edit/${data.assessment}/collaborators/`)
         }).catch(error => console.log(error))
     },
 

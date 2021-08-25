@@ -245,6 +245,7 @@
 <script>
 export default {
   name: "methodology",
+  auth: false,
   data: function () {
     return {
       items: [

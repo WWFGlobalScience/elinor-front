@@ -6,23 +6,29 @@
                     <img src="~/assets/img/ico-assessments-turqy.svg">
                     <span>{{ $t( 'pages.assessments.content.header.title' ) }}</span>
                 </h1>
-                <h2 class="assessment__name">{{ assessment[ 'name' ] }}</h2>
-                <p class="assessment__year">{{ $t( 'pages.assessments.content.assessment.header.year' ) }} {{ assessment[ 'year' ]}}</p>
+                <h2 class="assessment__name">{{ assessment.name }}</h2>
+                <p class="assessment__year">{{ $t( 'pages.assessments.content.assessment.header.year' ) }} {{ assessment.year }}</p>
             </div>
             <div class="header__save">
                 <button type="submit" form="form--assessment-edit" class="btn btn--opacity--child">
                     <span class="btn--opacity__target">{{ $t( 'default.save.button' ) }}</span>
                     <img src="~/assets/img/ico-save-white.svg">
                 </button>
-                <p>{{ $t( 'default.save.autosave' ) }}</p>
+                <p v-if="assessment.last_edit"> {{ $t( 'default.save.autosave' ) + ' ' + assessment.last_edit.fromNow() }}</p>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
     name: 'assessment-edit-header',
-    props: [ 'assessment' ],
+    computed: {
+        ...mapState({
+            assessment: state => state.assessments.assessment
+        })
+    },
 }
 </script>

@@ -3,9 +3,8 @@
         <div :class="[ 'app__content', { 'is--overlay': popup.active } ]">
             <default-header></default-header>
             <main role="main">
-                    <default-sidebar></default-sidebar>
+                <default-sidebar></default-sidebar>
                 <Nuxt keep-alive />
-                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>

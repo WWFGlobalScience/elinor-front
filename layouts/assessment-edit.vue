@@ -5,7 +5,7 @@
             <main role="main">
                 <default-sidebar></default-sidebar>
                 <article class="page page--assessment-edit">
-                    <assessment-edit-header :assessment="assessment"></assessment-edit-header>
+                    <assessment-edit-header></assessment-edit-header>
                     <assessment-edit-tabs :id="id"></assessment-edit-tabs>
                     <Nuxt />
                 </article>
@@ -39,11 +39,11 @@ export default {
     },
     methods: {
         ...mapActions({
-            getAssessment: 'assessments/getAssessment'
+            fetchAssessment: 'assessments/fetchAssessment'
         })
     },
     created() {
-        this.getAssessment( this.id )
+        this.fetchAssessment( this.id )
     }
 }
 </script>

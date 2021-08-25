@@ -1,58 +1,50 @@
 <template>
-  <div class="container">
-    <!--<article class="page page--assessments">
-      <div class="container">
-        <button type="button" class="btn--border-turqy btn--opacity--child"
-                @click="popupState( { active: true, component: 'popup-map-spatialfile', title: 'popups.spatialfile.title' })"
-        >
-          <span class="btn--opacity__target">Upload map image</span>
-          <img src="~/assets/img/ico-button-arrow-turqy.svg">
-        </button>
-      </div>
-    </article>-->
-    <div>
-
-      <h1 class="title">
-        {{ $t( 'pages.home.title' ) }}
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <article class="page page--flushed">
+    <home-public v-if="!$auth.loggedIn"></home-public>
+    <home-private v-if="$auth.loggedIn"></home-private>
+  </article>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import {mapActions, mapState} from "vuex";
+
 export default {
-    name: 'Home',
-    auth: false,
-    computed: {
-      pages() {
-        return this.$store.state.pages
-      }
+  name: 'home',
+  auth: false,
+  data() {
+    return {
+      username: null,
+      password: null,
+    }
+  },
+  computed: {
+    ...mapState({
+      alerts: state => state.authentication.alerts
+    })
+  },
+  mounted() {
+    const status = this.$route.params.status;
+
+    if(status) {
+      this.$store.commit('authentication/setAlert', {name: this.toCamelCase(status), value: true});
+    }
+  },
+  methods: {
+    ...mapActions({
+      signIn: 'authentication/signIn',
+      resendEmail: 'authentication/resendEmail'
+    }),
+    submit(event) {
+      event.preventDefault();
+      this.signIn({username: this.username, password: this.password});
     },
-    methods: {
-        ...mapActions({
-            popupState: 'popup/popupState'
-        })
+    resend() {
+      this.resendEmail(this.email)
+    },
+    toCamelCase(str) {
+      return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
     }
 
 }
+}
 </script>
-

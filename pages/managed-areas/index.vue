@@ -54,8 +54,8 @@
         <section class="section section--mt-medium section--ma-results">
             <div class="container">
                 <div class="search__results">
-                    <span>{{ $t( 'default.showing' ) }}</span> - 
-                    <span>{{ mas.length }}</span> 
+                    <span>{{ $t( 'default.showing' ) }}</span> -
+                    <span>{{ mas.length }}</span>
                     <span v-if="mas.length > 1 || mas.length == 0">{{ $t( 'pages.managed-areas.content.showing.plural' )}}</span>
                     <span v-if="mas.length == 1">{{ $t( 'pages.managed-areas.content.showing.singular' )}}</span>
                 </div>
@@ -122,6 +122,7 @@ import { mapState } from "vuex"
 import { mapActions } from "vuex"
 export default {
     name: 'ManagedAreas',
+    auth: false,
     computed: {
         mas() {
             return this.$store.state.ma.mas

@@ -3,28 +3,28 @@
     <nav class="header--main__wrapper">
       <ul>
         <li>
-          <NuxtLink to="/" class="btn--opacity--child">
-            <span class="btn--opacity__target">About</span>
-          </NuxtLink>
+          <a role="button" class="btn--opacity--child" v-scroll-to="'#about'">
+            <span class="btn--opacity__target" >About</span>
+          </a>
         </li>
         <li>
-          <NuxtLink :to="`/faq/`" class="btn--opacity--child">
+          <a role="button" class="btn--opacity--child" v-scroll-to="'#faqs'">
             <span class="btn--opacity__target">Faqs</span>
-          </NuxtLink>
+          </a>
         </li>
         <li>
-          <NuxtLink :to="`/methodology/`" class="btn--opacity--child">
+          <a role="button" class="btn--opacity--child" v-scroll-to="'#methodology'">
             <span class="btn--opacity__target">Methodology</span>
-          </NuxtLink>
+          </a>
         </li>
         <li>
-          <NuxtLink :to="`/create-account/`" class="btn--opacity--child">
+          <a role="button" class="btn--opacity--child" v-scroll-to="'#create-account'">
             <span class="btn--opacity__target">Create Account</span>
-          </NuxtLink>
+          </a>
         </li>
         <li class="btn--opacity--child header--main__toggle-btn" @click="toggleSidebar">
-            <img v-if="isSidebarOpen" src="../assets/img/ico-maximize-turqy.svg" alt="maximize" class="center-v w-12">
-            <img v-else src="../assets/img/ico-minimize-turqy.svg" alt="minimize" class="center-v w-12 btn--opacity__target">
+            <img v-if="isSidebarOpen" src="~/assets/img/ico-maximize-turqy.svg" alt="maximize" class="center-v w-12">
+            <img v-else src="~/assets/img/ico-minimize-turqy.svg" alt="minimize" class="center-v w-12 btn--opacity__target">
         </li>
       </ul>
     </nav>
@@ -34,7 +34,7 @@
 <script>
 import { mapActions } from 'vuex'
     export default {
-      name: "default-header",
+      name: "default-header-home",
         computed: {
             pages() {
                 return this.$store.state.pages.list

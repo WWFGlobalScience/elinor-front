@@ -3,8 +3,8 @@
         <div class="container">
             <ul class="elinor__survey-navigator">
                 <li v-for="(question, index) in survey">
-                    <a href="#" class="btn--opacity" 
-                    v-scroll-to="{
+                    <a href="#" :class="[ 'btn--opacity', { 'is--uncomplete': assessment[question] === null } ]"
+                       v-scroll-to="{
                         el: `#question-${index + 1}`,
                         offset: -70
                     }">
@@ -16,8 +16,15 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
     name: 'assessment-survey-navigator',
-    props: [ 'survey' ]
+    computed: {
+        ...mapState({
+            assessment: state => state.assessments.assessment,
+            survey: state => state.assessments.survey
+        })
+    }
 }
 </script>

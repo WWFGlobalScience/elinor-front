@@ -2,8 +2,8 @@
     <section class="section section--assessment-survey section--mt-0">
         <div class="container">
             <ul class="elinor__survey-navigator">
-                <li v-for="(question, index) in assessment.survey">
-                    <a href="#" :class="[ 'btn--opacity', { 'is--uncomplete': question.answer == null } ]" 
+                <li v-for="(question, index) in survey">
+                    <a href="#" :class="[ 'btn--opacity', { 'is--uncomplete': assessment[question] === null} ]"
                     v-scroll-to="{
                         el: `#question-${index + 1}`,
                         offset: -70
@@ -16,7 +16,7 @@
                     </div>
                     <div class="text">
                         <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.completed' ) }}</span>
-                        <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.out-of' ) }} {{ assessment.survey.length }}</span>
+                        <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.out-of' ) }} {{ survey.length }}</span>
                     </div>
                 </li>
             </ul>
@@ -25,18 +25,23 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
     name: 'assessment-edit-survey-navigator',
-    props: [ 'assessment' ],
     computed: {
+        ...mapState({
+            assessment: state => state.assessments.assessment,
+            survey: state => state.assessments.survey
+        }),
         completedQuestions() {
-            return this.assessment.survey.filter( ( item ) => {
-                if ( item.answer != null ) {
-                    return true
-                } else {
-                    return false
+            let completed = 0;
+            this.survey.forEach((question) => {
+                if(this.assessment[question]) {
+                    completed++;
                 }
-            }).length
+            });
+            return completed;
         }
     }
 }

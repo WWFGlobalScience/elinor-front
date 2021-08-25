@@ -1,14 +1,5 @@
 <template>
     <section class="elinor__collaborators">
-        <!--        <div class="container">-->
-        <!--            <div class="thead">-->
-        <!--                <div class="th">Name</div>-->
-        <!--                <div class="th">Status</div>-->
-        <!--                <div class="th">Admin</div>-->
-        <!--                <div class="th">Contributor</div>-->
-        <!--                <div class="th">Observer</div>-->
-        <!--            </div>-->
-        <!--        </div>-->
         <table>
             <thead>
             <tr>
@@ -39,6 +30,29 @@
             </tr>
             </tbody>
         </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </section>
 </template>
 

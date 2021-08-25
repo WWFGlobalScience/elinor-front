@@ -98,7 +98,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section class="section section--intro section--turqy-light">
+    <section id="create-account" class="section section--intro section--turqy-light">
       <div class="container">
         <img
           src="~/assets/img/elinor-illustration.svg"
@@ -111,14 +111,14 @@
           visualization for information on management, governance, and equity
           while also allowing flexibility on how data is gathered.
         </p>
-        <button type="button" class="btn btn--opacity--child">
-          <span class="btn--opacity__target">Crate an account</span>
+        <NuxtLink to="/create-account" class="btn btn--opacity--child">
+          <span class="btn--opacity__target">Create an account</span>
           <img src="~/assets/img/ico-button-arrow.svg"/>
-        </button>
+        </NuxtLink>
       </div>
     </section>
 
-    <section class="section section--text section--img-text">
+    <section id="about" class="section section--text section--img-text">
       <div class="container">
         <div class="section--img-text__block">
           <div class="section--img-text__block-text">
@@ -134,7 +134,7 @@
               issues like equity, governance, gender and climate change.</p>
           </div>
           <div class="flex justify-end items-center">
-            <img class="h-64 sm:h-48" src="~/assets/img/elinor-hand-icon.svg" />
+            <img class="h-64" src="~/assets/img/elinor-hand-icon.svg" />
           </div>
         </div>
       </div>
@@ -144,26 +144,26 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-          <h4 class="c-title--sm mb-12">Tracking change</h4>
-          <p>
-            Elinor has been designed primarily to help track changes over time,
-            thus can be used at any stage in the project cycle to
-          </p>
-          <ul class="list-disc list-inside">
-            <li>Indicate the suitability of a site for conservation</li>
-            <li>
-              Highlight areas that require more focused interventions to enhance
-              implementation efforts.
-            </li>
-          </ul>
-        </div>
+            <h4 class="c-title--sm">TRACKING CHANGE</h4>
+            <p>
+              Elinor has been designed primarily to help track changes over time,
+              thus can be used at any stage in the project cycle to
+            </p>
+            <ul class="list-disc list-inside">
+              <li>Indicate the suitability of a site for conservation</li>
+              <li>
+                Highlight areas that require more focused interventions to enhance
+                implementation efforts.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section section--text section--turqy-light">
       <div class="container">
-        <div class="g-grid--2-1-lg items-center">
+        <div class="grid grid-cols-2 gap-4 items-center lg:grid-cols-1">
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
             <blockquote class="elinor__sentence mx-auto">
@@ -179,37 +179,35 @@
             <p>Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.
             </p>
             <p>
-            Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.
+              Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.
             </p>
             <p>
-            Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.
+              Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--text section--img-text">
+    <section id="faqs" class="section section--text section--img-text">
       <div class="section--img-text__block is-flushed items-center">
         <div class="container">
           <div class="section--img-text__block-text">
-          <h4 class="c-title--block">FAQ’s</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <NuxtLink :to="`/faq/`">
-          <button type="button" class="btn btn--opacity--child">
-            <span class="btn--opacity__target">Go to FAQ’s</span>
-            <img src="~/assets/img/ico-button-arrow.svg" />
-          </button>
-          </NuxtLink>
-        </div>
+            <h4 class="c-title--block">FAQ’s</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <NuxtLink to="/faq" class="btn btn--opacity--child">
+              <span class="btn--opacity__target">Go to FAQ’s</span>
+              <img src="~/assets/img/ico-button-arrow.svg" />
+            </NuxtLink>
+          </div>
         </div>
         <div>
           <img class="w-full" src="~/assets/img/faq.jpg" />
         </div>
       </div>
-      <div class="section--img-text__block is-flushed items-center">
+      <div id="methodology" class="section--img-text__block is-flushed items-center">
         <div>
           <img class="w-full" src="~/assets/img/methodology.jpg" />
         </div>
@@ -219,17 +217,15 @@
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <NuxtLink :to="`/methodology/`">
-            <button type="button" class="btn btn--opacity--child">
+            <NuxtLink to="/methodology" class="btn btn--opacity--child">
               <span class="btn--opacity__target">Go to Methodology</span>
               <img src="~/assets/img/ico-button-arrow.svg" />
-            </button>
             </NuxtLink>
           </div>
         </div>
       </div>
     </section>
-    <default-footer></default-footer>
+    <default-footer ></default-footer>
   </article>
 </template>
 
@@ -237,8 +233,7 @@
 import {mapActions, mapState} from "vuex";
 
 export default {
-  name: 'sign-in',
-  auth: 'guest',
+  name: 'home-public',
   data() {
     return {
       username: null,

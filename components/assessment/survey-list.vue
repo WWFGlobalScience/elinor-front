@@ -11,13 +11,13 @@
                         <div class="question" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.question`)"></div>
                     </div>
                     <div class="right">
-                        <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer' ) }} | {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.score' ) }}: {{ assessment[ question.code ] }} </div>
+                        <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer' ) }} | {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.score' ) }}: {{ assessment[ question ] }} </div>
                         <div class="answer">
-                            <span v-if="assessment[ question.code ] != 5" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.answers.${assessment[ question.code ]}`)"></span>
+                            <span v-if="assessment[ question ] !== 5" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.answers.${assessment[ question ]}`)"></span>
                             <span v-else>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.unknown' ) }}</span>
                         </div>
-                        <div class="txt txt--explanation" v-if="assessment[ question.code + '_text' ] != ''">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation' ) }}</div>
-                        <div class="answer" v-if="assessment[ question.code + '_text' ] != ''" v-html="assessment[ question.code + '_text' ]"></div>
+                        <div class="txt txt--explanation" v-if="assessment[ question + '_text' ] !== ''">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation' ) }}</div>
+                        <div class="answer" v-if="assessment[ question + '_text' ] !== ''" v-html="assessment[ question + '_text' ]"></div>
                     </div>
                 </div>
             </div>
@@ -26,9 +26,15 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
     name: 'assessment-survey-list',
-    props: [ 'assessment', 'survey' ],
-   
+    computed: {
+        ...mapState({
+            assessment: state => state.assessments.assessment,
+            survey: state => state.assessments.survey
+        })
+    }
 }
 </script>

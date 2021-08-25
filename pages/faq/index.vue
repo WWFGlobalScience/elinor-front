@@ -159,5 +159,6 @@
 <script>
 export default {
   name: "faq",
+  auth: false
 };
 </script>
