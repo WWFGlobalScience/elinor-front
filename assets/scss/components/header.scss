@@ -15,6 +15,12 @@
                     @apply pl-2;
                 }
 
+                &:nth-last-child(-n+2){
+                    &::after {
+                        @apply hidden md:inline-block;
+                    }
+                }
+
                 &:last-child {
                     &::after {
                         @apply hidden;
