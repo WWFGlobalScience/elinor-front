@@ -15,5 +15,19 @@
         .popup__content {
             @apply bg-white px-20 py-10 rounded-b-xl sm:px-4;
         }
+
+        &.popup__box--min{
+           @apply w-3/12 2xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-full 
+        }
+        @media only screen 
+            and (max-device-width: 823px)
+            and (-webkit-min-device-pixel-ratio: 2)
+            and (orientation: landscape) {
+            width: 100%!important;
+            @apply h-full;
+            .popup__content{
+                @apply h-3/4 overflow-auto;
+            }
+        }
     }
 }

@@ -22,7 +22,7 @@
 
       <div class="container-lg--responsive py-12">
         <form action="" class="form form--mt-0">
-          <div class="form__group grid grid-cols-3 md:grid-cols-1 gap-14">
+          <div class="form__group g-grid--3-1-md">
             <div class="form__row">
               <div class="input input--radios input--radios-question">
                 <div class="radios__wrap">
@@ -108,8 +108,8 @@
 
       <div class="elinor__data-separator"></div>
       <div class="container-lg--responsive">
-        <div class="grid grid-cols-4 sm:grid-cols-1 gap-14 items-center">
-          <div class="col-span-1">
+        <div class="g-grid--4-1-sm items-center">
+          <div class="g-colspan--1-2-lg">
             <button
               type="button"
               class="btn btn--opacity--child"
@@ -125,9 +125,9 @@
               <img src="~/assets/img/ico-button-arrow.svg" />
             </button>
           </div>
-          <div class="col-span-2">
+          <div class="g-colspan--2">
             <p>
-              <span class="c-color-warning c-text--base">Warning!!</span> Once
+              <span class="c-text--warning c-text--base">Warning!!</span> Once
               publicated you can not edit the Survey or Assessment Data, so
               publish only when you finish your Assessment
             </p>
@@ -142,7 +142,7 @@
 import { mapActions } from "vuex"
 export default {
   name: "assessment-edit-publish-settings",
-  layout: "assessment",
+  layout: "assessment-publish",
   methods: {
         ...mapActions({
             popupState: 'popup/popupState'

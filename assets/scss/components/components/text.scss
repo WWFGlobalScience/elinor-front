@@ -23,9 +23,18 @@
 .c-title--base, .c--text-base{
     @apply text-base text-grayy;
 }
+.c-title--modal{
+    @apply text-lg font-bold;
+    &.c-title--modal--alert{
+        @apply text-yellowy-lighter;
+    }
+}
 
 //text color
-.c-color-warning{
+.c-text--warning{
     @apply text-yellowy;
+}
+.c-text--warning-secondary{
+    @apply text-yellowy-lighter;
 }
 

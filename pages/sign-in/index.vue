@@ -163,7 +163,7 @@
 
     <section class="section section--text section--turqy-light">
       <div class="container">
-        <div class="grid grid-cols-2 gap-4 items-center lg:grid-cols-1">
+        <div class="g-grid--2-1-lg items-center">
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
             <blockquote class="elinor__sentence mx-auto">

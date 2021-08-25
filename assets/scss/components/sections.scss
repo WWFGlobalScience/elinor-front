@@ -120,6 +120,13 @@
     &.section--sign-in {
         @apply relative flex items-center mt-0;
         height: calc(100vh - 70px);
+        @media only screen 
+            and (max-device-width: 823px)
+            and (-webkit-min-device-pixel-ratio: 2)
+            and (orientation: landscape) {
+            height: auto;
+            @apply items-start py-6;
+        }
     }
 
     .section__full-background {
@@ -176,7 +183,19 @@
         }
     }
     &.section--main{
-        @apply h-64 flex flex-col justify-center items-center mt-0;
+        @apply h-64 flex flex-col justify-center items-center mt-0 sm:h-32;
+        & + .section{
+            @apply sm:mt-6;
+        }
+        @media only screen 
+            and (max-device-width: 823px)
+            and (-webkit-min-device-pixel-ratio: 2)
+            and (orientation: landscape) {
+                @apply h-24;
+                & + .section{
+                    @apply mt-6;
+                }
+            }
         img{
             @apply h-full w-full object-cover;
         }

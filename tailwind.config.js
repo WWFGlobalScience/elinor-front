@@ -41,7 +41,8 @@ module.exports = {
                     border: '#43A0BD',
                 },
                 yellowy:{
-                    DEFAULT:'#F2994A'
+                    DEFAULT:'#F2994A',
+                    lighter:'#EABA5C'
                 },
                 grayy: {
                     DEFAULT: '#585858',
@@ -67,7 +68,8 @@ module.exports = {
                 'md': '768px',
                 'sm': '640px',
                 'xs': '375px',
-                '2px': '2px'
+                '2px': '2px',
+                '90' : '90vw'
             },
             maxWidth: {
                 '3xl': '1680px',

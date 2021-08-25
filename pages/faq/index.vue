@@ -6,8 +6,8 @@
     <section class="section">
       <div class="container">
         <h1 class="c-title--main">FAQ's</h1>
-        <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-4 md:col-span-5">
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 1 </span>
               <div class="elinor-card--question__info">
@@ -43,11 +43,11 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1 md:col-span-5"></div>
+          <div class="g-colspan--1-full-md"></div>
         </div>
 
-        <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-4 md:col-span-5">
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 2 </span>
               <div class="elinor-card--question__info">
@@ -74,11 +74,11 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1 md:col-span-5"></div>
+          <div class="g-colspan--1-full-md"></div>
         </div>
         <!--atention: here the grid changes-->
-        <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-3 md:col-span-5">
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--3-full-md">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 3 </span>
               <div class="elinor-card--question__info">
@@ -104,7 +104,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-2 md:col-span-5">
+          <div class="g-colspan--2-full-md">
             <div class="elinor-card__detail">
               <p>
                 Consultation is a prerequisite to success! Consulting with a
@@ -116,8 +116,8 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-4 md:col-span-5">
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 4 </span>
               <div class="elinor-card--question__info">
@@ -149,7 +149,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1 md:col-span-5"></div>
+          <div class="g-colspan--1-full-md"></div>
         </div>
       </div>
     </section>
