@@ -88,12 +88,12 @@ export default {
     methods: {
         getAssessmentUser(value) {
             console.log(this.users);
-            if (!this.users) return '';
-            return this.users.find(user => user.id == value).username
+            // if (!this.users) return '';
+            // return this.users.find(user => user.id == value).username
         },
         getAssessmentCountries(assessment) {
-            if (!this.mas.versions || this.mas.versions.length === 0) return '';
-            return this.mas.versions.find(version => version.id == assessment.management_area_version).countries
+            // if (!this.mas.versions || this.mas.versions.length === 0) return '';
+            // return this.mas.versions.find(version => version.id == assessment.management_area_version).countries
 
         }
     }
