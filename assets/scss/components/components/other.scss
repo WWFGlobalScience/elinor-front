@@ -3,7 +3,7 @@
     @apply flex flex-wrap;
     margin: -1.25rem;
     .elinor__data-sublock {
-        @apply w-1/2 p-5;
+        @apply w-1/2 p-5 sm:w-full;
     }
     .elinor__data-sublist {
         @apply p-3;
@@ -18,11 +18,11 @@
         }
     }
     &.elinor__data-grid--3-5 {
-        @apply w-3/5;
+        @apply w-3/5 md:w-11/12 sm:w-full;
     }
 }
 .elinor__data-wrap {
-    @apply flex justify-between;
+    @apply flex justify-between sm:flex-wrap;
 }
 
 .elinor__data-separator {
@@ -58,7 +58,7 @@
 
 //people
 .elinor__people {
-    @apply min-w-[270px] self-start sticky top-[90px];
+    @apply min-w-[270px] self-start sticky top-[90px] sm:w-full sm:mt-8;
     li {
         @apply my-4;
         &.elinor__people-header {
@@ -67,7 +67,7 @@
         &.elinor__people-data {
             @apply flex items-center text-[12px] text-grayy-lighter;
             span {
-                @apply text-[16px] text-grayy w-[20px];
+                @apply text-[16px] text-grayy w-[25px] mr-2;
             }
         }
         &:last-child {

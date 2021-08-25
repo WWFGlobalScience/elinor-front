@@ -41,7 +41,8 @@ module.exports = {
                     border: '#43A0BD',
                 },
                 yellowy:{
-                    DEFAULT:'#F2994A'
+                    DEFAULT:'#F2994A',
+                    lighter:'#EABA5C'
                 },
                 grayy: {
                     DEFAULT: '#585858',

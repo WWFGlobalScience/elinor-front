@@ -6,8 +6,8 @@
     <section class="section">
       <div class="container">
         <h1 class="c-title--main">Methodology</h1>
-        <div class="grid grid-cols-5 gap-14 flex items-center">
-          <div class="col-span-3 md:col-span-5">
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--3-full-md">
             <div class="info-block">
               <h4 class="c-title--md">What is the main purpose of the tool?</h4>
               <p>
@@ -25,12 +25,12 @@
               </p>
             </div>
           </div>
-          <div class="col-span-4 md:col-span-5">
+          <div class="g-colspan--4-full-md">
             <div class="elinor-card__icons">
               <h4 class="elinor-card__icons-title">
                 <span class="elinor-card__icons-title-info">Assessment</span>
               </h4>
-              <div class="grid grid-cols-3 sm:grid-cols-1 gap-14 flex items-stretch">
+              <div class="g-grid--3-1-sm flex items-stretch">
                 <div class="elinor-card__icons__item">
                   <p class="elinor-card__icons__item-title">
                     Background information
@@ -53,7 +53,7 @@
               </div>
             </div>
           </div>
-          <div class="col-span-3 md:col-span-5">
+          <div class="g-colspan--3-full-md">
             <div class="info-block">
               <h4 class="c-title--md">Background information collected</h4>
               <ul class="list-disc list-inside list--small">
@@ -82,7 +82,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-span-5">
+          <div class="col-span-full">
             <div class="info-block">
               <h4 class="c-title--md">Survey questions</h4>
               <ul class="elinor__survey-navigator elinor__survey-navigator--no-border">

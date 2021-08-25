@@ -8,9 +8,9 @@
 
 //survey navigator
 .elinor__survey-navigator {
-    @apply flex justify-between items-center border-b border-grayy-border py-10;
+    @apply flex justify-between items-center border-b border-grayy-border py-10 sm:w-full sm:overflow-auto;
     li {
-        @apply flex-1 flex justify-center;
+        @apply flex-1 flex justify-center sm:mx-1;
         a {
             @apply w-[12px] h-[12px] bg-turqy border-radius--50 z-10;
             &.is--uncomplete {
