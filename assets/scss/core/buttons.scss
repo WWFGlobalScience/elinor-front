@@ -29,6 +29,9 @@ button {
         }
     }
 }
+.btn--circle{
+    @apply w-10 h-10 rounded-full border border-solid border-turqy-border flex items-center justify-center;
+}
 .btn--border-turqy {
     @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3 bg-white;
     img {

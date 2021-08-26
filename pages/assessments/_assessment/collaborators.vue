@@ -2,6 +2,11 @@
     <section class="section section--assessment-collaborators">
         <div class="container">
             <h1 class="c-title--lg">Collaborators</h1>
+            <p class="c-text--base">
+                Explanation about collaborators Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna.
+            </p>
             <button
             class="btn--border-turqy btn--opacity--child mt-12"
             @click="popupState({active: true, component: 'popup-collaborator-add', title: 'Add collaborator'})">

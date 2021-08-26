@@ -68,6 +68,14 @@
                             </div>
                         </div>
                     </td>
+                    <td>
+                        <button type="button" class="btn--circle btn--opacity--child"
+                            @click="popupState( { active: true, component: 'popup-assessment-delete', title: 'Deleting Collaborator' })"
+                            >
+                                <span class="sr-only">delete</span>
+                                <img class="btn--opacity__target" src="~/assets/img/ico-trash.svg">
+                        </button>
+                    </td>
                 </tr>
                 </tbody>
             </table>

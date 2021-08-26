@@ -10,7 +10,10 @@
             left: -10vw;
         }
         th{
-            @apply text-xs text-grayy font-normal text-left z-10;
+            @apply text-xs text-grayy font-normal text-left z-10 w-16;
+            &.c-data-table__main-cell{
+                @apply w-7/12;
+            }
         }
     }
 
@@ -20,9 +23,7 @@
         }
     }
 
-    .c-data-table__main-cell{
-        @apply w-7/12;
-    }
+    
 
     .c-data-table__initial{
         @apply w-9 h-9 rounded-full mr-3 inline-flex items-center justify-center text-sm text-white;

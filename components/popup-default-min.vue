@@ -10,6 +10,7 @@
                     </button>
                 </header>
                 <popup-assessment-publish v-if="popup.component == 'popup-assessment-publish'"></popup-assessment-publish>
+                <popup-assessment-delete v-if="popup.component == 'popup-assessment-delete'"></popup-assessment-delete>
             </div>
         </div>
     </transition>
