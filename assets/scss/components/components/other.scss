@@ -89,3 +89,14 @@
 .rounded-number{
     @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-small mr-2;
 }
+
+//message detail
+.message-detail{
+    @apply border-l border-grayy-border pl-6 sm:border-t sm:border-l-0 sm:pl-0 sm:pt-6;
+    .message-detail__title{
+        @apply text-base;
+    }
+    .message-detail__text{
+        @apply text-sm;
+    }
+}

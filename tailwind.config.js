@@ -84,6 +84,9 @@ module.exports = {
                 'sm': '640px',
                 'xs': '375px',
             },
+            maxHeight:{
+                '75screen' : '75vh'
+            },
             fontSize: {
                 'small': '0.625rem',
                 'medium': '1.375rem',

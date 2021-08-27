@@ -5,7 +5,7 @@
         @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
     }
     .popup__box {
-        @apply w-[1000px] center-both z-10 shadow-xl sm:w-full sm:h-full;
+        @apply w-[1000px] center-both z-10 shadow-xl max-h-75screen overflow-auto md:w-11/12 sm:w-full sm:h-full sm:max-h-screen;
         .popup__header {
             @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8;
             span {

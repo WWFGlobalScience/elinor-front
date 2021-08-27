@@ -84,10 +84,14 @@
     */
     &.section--welcome__ctas {
         ul {
-            @apply flex space-x-5;
+            @apply flex space-x-5 md:flex-col;
+
+            & > :not([hidden]) ~ :not([hidden]){
+                @apply md:mx-0;
+            }
 
             li {
-                @apply flex flex-col;
+                @apply flex flex-col md:my-3 md:mx-0;
 
                 h4 {
                     @apply text-[18px] font-bold mb-5;

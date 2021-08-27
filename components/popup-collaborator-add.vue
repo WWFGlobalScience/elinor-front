@@ -19,7 +19,7 @@
       />
       <div class="form__group">
         <div class="form__row">
-          <div class="input input--multiselect input--1-4">
+          <div class="input input--multiselect input--3-4">
             <label class="label"> Collaborator </label>
             <div class="multiselect__wrap">
               <multiselect
@@ -133,31 +133,35 @@
         </div>
         <div class="elinor__data-separator"></div>
         <div class="g-grid--4-1-sm items-center">
-          <div class="form__row g-colspan--2">
-            <div class="input">
-              <button
-                type="submit"
-                class="btn--border-turqy btn--opacity--child"
-              >
-                <span class="btn--opacity__target">Add collaborator</span>
-                <img
-                  src="~/assets/img/addcollaborator.svg"
-                  alt="add collaborator"
-                />
-              </button>
+          <div class="g-colspan--2">
+            <div class="form__row">
+              <div class="input">
+                <button
+                  type="submit"
+                  class="btn--border-turqy btn--opacity--child"
+                >
+                  <span class="btn--opacity__target">Add collaborator</span>
+                  <img
+                    src="~/assets/img/addcollaborator.svg"
+                    alt="add collaborator"
+                  />
+                </button>
+              </div>
             </div>
           </div>
-          <div class="g-colspan--2 border-l border-grayy-border pl-6">
-            <p>
-              Didn’t  you find your Collaborator?
-            </p>
-            <p class="text-sm btn--opacity--child">
-                If you don’t find your collaborator you can 
+          <div class="g-colspan--2">
+            <div class="message-detail">
+              <p class="message-detail__title">
+                Didn’t you find your Collaborator?
+              </p>
+              <p class="message-detail__text btn--opacity--child">
+                If you don’t find your collaborator you can
                 <NuxtLink to="" class="text-turqy btn--opacity__target">
-                    send an invitation
+                  send an invitation
                 </NuxtLink>
-                 to the app, you will be notified once joins
-            </p>
+                to the app, you will be notified once joins
+              </p>
+            </div>
           </div>
         </div>
       </div>
