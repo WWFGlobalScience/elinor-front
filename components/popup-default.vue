@@ -2,7 +2,7 @@
     <transition name="elinor-fade">
         <div class="elinor__popup" v-show="popup.active">
             <div class="popup__overlay" @click="popupState( false, '', '' )"></div>
-            <div class="popup__box">
+            <div class="popup__box" :class="{'popup__box--min': popup.type ==='confirmation'}">
                 <header class="popup__header">
                     <span>{{ $t( popup.title ) }}</span>
                     <button type="button" class="btn--opacity" @click="popupState( false, '', '' )">

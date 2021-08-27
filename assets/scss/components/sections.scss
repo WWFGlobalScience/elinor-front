@@ -166,8 +166,9 @@
                     @apply lg:mx-auto lg:block lg:mb-4;
                 }
             .btn{
+                @apply inline-flex;
                 img{
-                        @apply m-auto
+                     @apply m-auto
                 }
             }
 

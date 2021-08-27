@@ -6,7 +6,7 @@
                 <thead>
                 <tr>
                     <th class="c-data-table__main-cell">Name</th>
-                    <th>Status</th>
+                    <!-- <th>Status</th> -->
                     <th>Admin</th>
                     <th>Contributor</th>
                     <th>Observer</th>
@@ -16,7 +16,7 @@
                 <tbody>
                 <tr v-for="collaborator in collaborators">
                     <td class="c-data-table__main-cell"><span class="c-data-table__initial admin">N</span>{{ collaborator.user_obj.username }}</td>
-                    <td>TODO</td>
+                    <!-- <td>TODO</td> -->
                     <td>
                         <div class="form__group">
                             <div class="form__row">
@@ -70,7 +70,7 @@
                     </td>
                     <td>
                         <button type="button" class="btn--circle btn--opacity--child"
-                            @click="popupState( { active: true, component: 'popup-assessment-delete', title: 'Deleting Collaborator' })"
+                            @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-delete', title: 'Deleting Collaborator' })"
                             >
                                 <span class="sr-only">delete</span>
                                 <img class="btn--opacity__target" src="~/assets/img/ico-trash.svg">
@@ -92,7 +92,8 @@ export default {
     methods: {
         ...mapActions({
             fetchCollaborators: 'collaborators/fetchCollaborators',
-            updateCollaborator: 'collaborators/updateCollaborator'
+            updateCollaborator: 'collaborators/updateCollaborator',
+            popupState: 'popup/popupState'
         }),
         updateColl(role, collaborator){
             this.updateCollaborator({role, collaborator})

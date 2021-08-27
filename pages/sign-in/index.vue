@@ -6,9 +6,9 @@
       </picture>
       <div class="elinor__card elinor__card--sign-in">
         <NuxtLink to="/" class="flex justify-center">
-          <img src="~/assets/img/elinor-logo.svg"/>
+          <img src="~/assets/img/elinor-sign-up-circle.svg" class="elinor__card--sign-in__logo"/>
         </NuxtLink>
-        <hr class="elinor__card--sign-in__separator" />
+
         <div class="elinor__card--sign-in__info">
           <div>
             <p class="text-xl mb-1.5">SIGN IN</p>

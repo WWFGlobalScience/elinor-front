@@ -116,6 +116,7 @@
               @click="
                 popupState({
                   active: true,
+                  type:'confirmation',
                   component: 'popup-assessment-publish',
                   title: 'Publish Assessment',
                 })
@@ -142,7 +143,7 @@
 import { mapActions } from "vuex"
 export default {
   name: "assessment-edit-publish-settings",
-  layout: "assessment-publish",
+  layout: "assessment-edit",
   methods: {
         ...mapActions({
             popupState: 'popup/popupState'

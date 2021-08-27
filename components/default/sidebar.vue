@@ -19,6 +19,7 @@
                         </NuxtLink>
                     </li>
                 </ul>
+                <img class="nav__main__bottom-brand" src="~/assets/img/elinor-sidebar-circle.svg" alt="elinor-sidebar-circle">
             </nav>
             <div class="nav__main nav__main--bottom">
                 <ul>

@@ -27,6 +27,12 @@
         }
         .brand {
             @apply border-b border-turqy-darker py-5 flex-none;
+            .brand__icon{
+                @apply hidden;
+            }
+            .brand__text{
+                @apply text-center block mx-auto;
+            }
         }
         .nav__main {
             @apply mt-10 flex-1;
@@ -48,6 +54,9 @@
                 }
             } 
         }
+        .nav__main__bottom-brand{
+            @apply absolute left-0 right-0 bottom-4 mx-auto;
+        }
         .nav__main--bottom{
             @apply mt-0 border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto md:hidden;
         }
@@ -57,6 +66,9 @@
             @apply w-12 transition-all duration-500;
             .brand{
                 @apply px-2;
+                .brand__icon{
+                    @apply block md:hidden
+                }
                 .brand__text{
                     @apply hidden
                 }
@@ -75,6 +87,9 @@
                             @apply hidden;
                         }
                     }
+                }
+                .nav__main__bottom-brand{
+                    @apply hidden md:block;
                 }
             }
 

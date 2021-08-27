@@ -1,8 +1,11 @@
 //cards
 .elinor__card{
     &.elinor__card--sign-in{
-        @apply bg-white p-8 ml-32 border-radius--20 lg:mx-auto sm:w-11/12;
-
+        min-width: 31rem;
+        @apply bg-white p-8 ml-32 border-radius--20 lg:mx-auto sm:w-11/12 sm:min-w-0;
+        .elinor__card--sign-in__logo{
+            @apply -mt-14 mb-6;
+        }
         .elinor__card--sign-in__info{
             @apply flex items-center justify-between;
             &.info-start{

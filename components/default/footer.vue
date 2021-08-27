@@ -1,7 +1,7 @@
 <template>
     <footer class="footer--main" v-bind:class="[!isSidebarOpen ? 'footer--main--max' : null]">
         <nav class="footer--main__wrapper">
-            <img src="~/assets/img/elinor-icon-turqy.svg" alt="elinor-icon turqy">
+            <img src="~/assets/img/elinor-sidebar-circle.svg" alt="elinor-icon turqy">
             <ul>
                 <li class="btn--opacity--child">
                     <NuxtLink to="'/'" class="btn--opacity__target">
