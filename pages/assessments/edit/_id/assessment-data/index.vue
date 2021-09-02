@@ -43,7 +43,7 @@
                         <div class="input input--multiselect">
                             <label class="label">{{ $t( 'pages.assessments.content.assessment-edit.tabs.data.labels.role' ) }}*</label>
                             <div class="multiselect__wrap">
-                                <multiselect :value="assessment.person_responsible_role" :options="roles" label="name" track-by="id" :multiple="false" :searchable="false" :showLabels="false" :allow-empty="false" :hide-selected="false" @input="save('person_responsible_role', $event.id)">
+                                <multiselect :value="parseInt(assessment.person_responsible_role)" :options="roles" label="name" track-by="id" :multiple="false" :searchable="false" :showLabels="false" :allow-empty="false" :hide-selected="false" @input="save('person_responsible_role', $event.id)">
                                     <template slot="singleLabel" slot-scope="{ option }">{{ option.name }}</template>
                                     <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                                 </multiselect>

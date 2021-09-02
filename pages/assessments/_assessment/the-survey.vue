@@ -7,6 +7,7 @@
 
 <script>
 export default {
-    name: 'assessment-survey'
+    name: 'assessment-survey',
+    auth: false,
 }
 </script>

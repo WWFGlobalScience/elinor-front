@@ -10,6 +10,7 @@
 
 export default {
     name: 'info',
+    auth: false,
     data() {
         return {
             mapedit: false

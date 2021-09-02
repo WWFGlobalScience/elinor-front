@@ -23,7 +23,7 @@
     </div>
 
     <div class="mt-12">
-        <assessment-collaborators-list></assessment-collaborators-list>
+        <assessment-edit-collaborators-list></assessment-edit-collaborators-list>
     </div>
   </section>
 </template>

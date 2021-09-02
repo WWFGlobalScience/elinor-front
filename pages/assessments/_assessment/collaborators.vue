@@ -25,6 +25,7 @@ import {mapActions, mapState} from 'vuex'
 
 export default {
     name: 'assessment-collaborators',
+    auth: false,
     methods: {
         ...mapActions({
             popupState: 'popup/popupState'

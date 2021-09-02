@@ -8,12 +8,12 @@
         </p>
         <div class="g-grid--2">
             <div>
-                <button type="button" class="btn--border-turqy btn--opacity--child">
+                <button @click="popup.onConfirm()" type="button" class="btn--border-turqy btn--opacity--child">
                      <span class="btn--opacity__target">Yes</span>
                 </button>
             </div>
             <div>
-                <button type="button" class="btn--border-turqy btn--opacity--child">
+                <button @click="cancel()" type="button" class="btn--border-turqy btn--opacity--child">
                      <span class="btn--opacity__target">No</span>
                 </button>
             </div>
@@ -23,7 +23,19 @@
 
 <script>
 
+import {mapState} from "vuex";
+
 export default {
-    name: 'popup-assessment-publish' 
+    name: 'popup-assessment-publish',
+    methods: {
+        cancel() {
+            this.$store.dispatch('popup/popupState', {active: false})
+        }
+    },
+    computed: {
+        ...mapState({
+            popup: state => state.popup.popup
+        })
+    }
 }
 </script>

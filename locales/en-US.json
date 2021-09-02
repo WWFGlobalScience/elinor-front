@@ -133,7 +133,7 @@
                     "inputs": {
                         "email": "E-mail*",
                         "password1": "Password*",
-                        "password2": "Password*",
+                        "password2": "Password verification*",
                         "first_name": "First name*",
                         "last_name": "Last name*",
                         "username": "Username*",
@@ -678,10 +678,10 @@
                     },
                     "tabs": {
                         "info": {
-                            "tab": "Info",
+                            "tab": "InDatafo",
                             "data": {
                                 "header": {
-                                    "title": "Info"
+                                    "title": "Data"
                                 },
                                 "labels": {
                                     "name": "Name of Managment Area",

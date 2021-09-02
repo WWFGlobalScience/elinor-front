@@ -8,6 +8,7 @@
 <script>
 export default {
     name: 'management-area-edit',
+    auth: false,
     data() {
         return {
             mapedit: true

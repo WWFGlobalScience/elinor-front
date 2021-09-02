@@ -35,7 +35,7 @@ export default {
         },
         popup() {
             return this.$store.state.popup.popup
-        }   
+        }
     },
     methods: {
         ...mapActions({

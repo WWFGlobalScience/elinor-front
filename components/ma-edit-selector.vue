@@ -12,8 +12,16 @@
                         <div class="input input--multiselect">
                             <label class="label">Select a Managed Area*</label>
                             <div class="multiselect__wrap">
-                                <multiselect :value="maSelector.value" :options="maSelector.options" :multiple="false" :searchable="true" :showLabels="false" :allow-empty="false" :hide-selected="true" @input="maSelectorChange">
-                                    <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
+                                <multiselect
+                                    :value="instance.parent"
+                                    track-by="id"
+                                    label="name"
+                                    :options="managementAreas"
+                                    :multiple="false" :searchable="true" :showLabels="false"
+                                    :allow-empty="false" :hide-selected="true"
+                                    @input="onManagementAreaSelect"
+                                    @search-change="fetchManagementAreas">
+                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
@@ -25,7 +33,7 @@
                     <div class="form__row">
                         <div class="input input--button">
                             <label class="label label--stripped"><span>OR CREATE A NEW ONE</span></label>
-                            <button type="button" class="btn--border-turqy btn--opacity--child btn--arrow-down" @click="maSelectorNew">
+                            <button type="button" class="btn--border-turqy btn--opacity--child btn--arrow-down" @click="onManagementAreaNew(assessment)">
                                 <span>Create New Managed Area</span>
                                 <img src="~/assets/img/ico-arrow-bottom-turqy.svg">
                             </button>
@@ -38,15 +46,25 @@
 </template>
 
 <script>
-import { mapActions } from "vuex"
+import {mapActions, mapState} from "vuex"
 export default {
-    name: 'ma-edit-selector',
-    props: [ 'maSelector', 'maOrigin' ],
+    name: 'management-area-edit-selector',
+    computed: {
+        ...mapState({
+            assessment: state => state.assessments.assessment,
+            managementAreas: state => state.managementareas.list,
+            instance: state => state.managementareas.instance,
+        })
+    },
     methods: {
         ...mapActions({
-            maSelectorChange: 'ma/maSelectorChange',
-            maSelectorNew: 'ma/maSelectorNew'
-        })
+            fetchManagementAreas: 'managementareas/fetchManagementAreas',
+            onManagementAreaNew: 'managementareas/onManagementAreaNew',
+            onManagementAreaSelected: 'managementareas/onManagementAreaSelected'
+        }),
+        onManagementAreaSelect(managementArea) {
+            this.onManagementAreaSelected({managementArea, assessmentId: this.assessment.id})
+        }
     }
 
 }

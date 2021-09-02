@@ -92,7 +92,7 @@ export const state = () => ({
                 og_image: 'pages.map.seo.og_image',
             }
         },*/
-        {
+        /*{
             path: '/managed-areas',
             config: {
                 display: {
@@ -114,8 +114,8 @@ export const state = () => ({
                 keywords: 'pages.managed-areas.seo.keywords',
                 og_image: 'pages.managed-areas.seo.og_image',
             }
-        },
-        {
+        },*/
+        /*{
             path: '/users-and-access',
             config: {
                 display: {
@@ -137,8 +137,8 @@ export const state = () => ({
                 keywords: 'pages.users-access.seo.keywords',
                 og_image: 'pages.users-access.seo.og_image',
             }
-        },
-        {
+        },*/
+        /*{
             path: '/help-and-guides',
             config: {
                 display: {
@@ -158,7 +158,7 @@ export const state = () => ({
                 keywords: 'pages.help-guides.seo.keywords',
                 og_image: 'pages.help-guides.seo.og_image',
             }
-        },
+        },*/
         {
             path: '/faq',
             config: {

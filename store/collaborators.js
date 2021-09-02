@@ -8,6 +8,16 @@ export const mutations = {
     setCollaborators(state, payload) {
         state.collaborators = payload
     },
+    updateCollaborator(state, payload) {
+        const {id, role} = payload;
+        const collaborators = state.collaborators.map((collaborator) => {
+            if(collaborator.id === id) {
+                collaborator.role = role;
+            }
+            return collaborator;
+        });
+        state.collaborators = collaborators;
+    },
 }
 
 export const actions = {
@@ -17,14 +27,14 @@ export const actions = {
             text: 'Creating collaborator...'
         })
 
-        const data = this.$formDataStringify(form)
+        const data = this.$formDataStringify(form);
 
         this.$axios({
             method: 'post',
             url: 'v1/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
-            this.$router.push(`/assessments/edit/${data.assessment}/collaborators/`)
+            this.$router.push(`/assessments/edit/${data.assessment.id}/collaborators/`)
         }).catch(error => console.log(error))
     },
 
@@ -40,13 +50,7 @@ export const actions = {
                 url: 'v1/collaborators/?assessment=' + assessmentId,
             });
 
-            const collaborators = []
-            for (let collaborator of response.data.results) {
-                collaborator.user_obj = await this.$axios.$get('v1/users/' + collaborator.user);
-                collaborators.push(collaborator);
-            }
-
-            state.commit('setCollaborators', collaborators)
+            state.commit('setCollaborators', response.data.results)
 
             this.dispatch('loader/loaderState', {active: true})
         } catch (e) {
@@ -66,13 +70,12 @@ export const actions = {
             url: `v1/collaborators/${collaborator.id}/`,
             data: {
                 role: role,
-                assessment: collaborator.assessment,
-                user: collaborator.user
+                assessment: collaborator.assessment.id,
+                user: collaborator.user.id
             }
         }).then(response => {
-            console.log(response)
             this.dispatch('loader/loaderState', {active: true})
-            return response.data;
+            state.commit('updateCollaborator', {id: collaborator.id, role})
         }).catch(error => console.log(error))
     },
 }

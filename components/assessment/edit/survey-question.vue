@@ -34,7 +34,7 @@
                 </header>
                 <form class="form" refs="editAssessmentSurvey">
                     <div class="form__group">
-                        <div v-for="answer in [10,20,30,40,50]" class="form__row">
+                        <div v-for="(answer, index) in [10,20,30,40,50]" class="form__row">
                             <div class="input input--radios input--radios-question">
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
@@ -46,7 +46,7 @@
                                 </div>
                                 <label :for="'answer-'+ answer" class="label">
                                     <span>{{ answer }}</span>
-                                    <span v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${qid}.answers.${answer}` )"></span>
+                                    <span v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${qid}.answers.${index + 1}` )"></span>
                                 </label>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
 import {mapActions, mapState} from 'vuex'
 export default {
     name: 'assessment-edit-survey-question',
-    props: [ 'assessment', 'question', 'qid' ],
+    props: ['qid'],
     data() {
         return {
             questionId: parseInt( this.qid ),
@@ -109,7 +109,8 @@ export default {
         },
         saveExplanation(value) {
             const field = this.survey[parseInt(this.qid) - 1] + '_text';
-            this.editAssessmentField( {field, value, id: this.assessment.id});        }
+            this.editAssessmentField( {field, value, id: this.assessment.id});
+        }
     }
 }
 </script>

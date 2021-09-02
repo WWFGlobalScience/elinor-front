@@ -11,25 +11,25 @@
                         <li>
                             <div class="pic__wrap">
                                 <img src="~/assets/img/ico-map-pointer.svg">
-                            </div>                            
+                            </div>
                             <span>Click over the Map to create a Polygon</span>
                         </li>
                         <li>
                             <div class="pic__wrap">
                                 <img src="~/assets/img/ico-map-closer.svg">
-                             </div>    
+                             </div>
                             <span>To Close a Polygon click over a created Point</span>
                         </li>
                         <li>
                             <div class="pic__wrap">
                                 <img src='data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20">%3Cpath d="m15 12.3v-4.6c.6-.3 1-1 1-1.7 0-1.1-.9-2-2-2-.7 0-1.4.4-1.7 1h-4.6c-.3-.6-1-1-1.7-1-1.1 0-2 .9-2 2 0 .7.4 1.4 1 1.7v4.6c-.6.3-1 1-1 1.7 0 1.1.9 2 2 2 .7 0 1.4-.4 1.7-1h4.6c.3.6 1 1 1.7 1 1.1 0 2-.9 2-2 0-.7-.4-1.4-1-1.7zm-8-.3v-4l1-1h4l1 1v4l-1 1h-4z"/>%3C/svg>' alt="">
-                             </div>    
+                             </div>
                             <span>Create a new Polygon</span>
                         </li>
                         <li>
                             <div class="pic__wrap">
                                 <img src='data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20">%3Cpath d="M10,3.4 c-0.8,0-1.5,0.5-1.8,1.2H5l-1,1v1h12v-1l-1-1h-3.2C11.5,3.9,10.8,3.4,10,3.4z M5,8v7c0,1,1,2,2,2h6c1,0,2-1,2-2V8h-2v5.5h-1.5V8h-3 v5.5H7V8H5z"/>%3C/svg>' alt="">
-                             </div>    
+                             </div>
                             <span>Delete selected Polygon</span>
                         </li>
                     </ul>
@@ -56,29 +56,39 @@ import mapboxgl from 'mapbox-gl'
 import MapboxDraw from '@mapbox/mapbox-gl-draw'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
+import {mapActions, mapState} from "vuex";
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ'
+import * as turf from '@turf/turf'
 
 export default {
     name: 'ma-map',
-    props: [ 'ma' ],
     data() {
         return {
             map: null,
-            mapD: null,
+            polygonDrawer: null,
             area: null
         }
     },
     computed: {
-        maOrigin() {
-            return this.$store.state.ma.edit.maOrigin
+        ...mapState({
+            managementArea: state => state.managementareas.instance
+        })
+    },
+    mounted() {
+        if(this.managementArea) {
+            this.mapCreate()
         }
     },
     watch: {
-        maOrigin() {
+        managementArea() {
             this.mapCreate()
         }
     },
     methods: {
+        ...mapActions({
+            removePolygon: 'managementareas/removePolygon',
+            setPolygon: 'managementareas/setPolygon'
+        }),
         mapCreate() {
             this.map != null ? this.map.remove() : null
             this.map = new mapboxgl.Map({
@@ -87,48 +97,66 @@ export default {
                 center: [-68.137343, 45.137451],
                 zoom: 5
             })
-            var draw = new MapboxDraw({
-                    displayControlsDefault: false,
-                    controls: {
+            const options = {
+                displayControlsDefault: false,
+                controls: {
                     polygon: true,
                     trash: true
-                    },
-                    defaultMode: 'draw_polygon'
-                    });
-            this.map.addControl(draw);
+                }
+            };
+
+            if(!this.managementArea.polygon) {
+                options.defaultMode = 'draw_polygon'
+            }
+
+            this.polygonDrawer = new MapboxDraw(options);
+
+            this.map.addControl(this.polygonDrawer);
             this.mapAddControls()
             this.mapDisableScroll()
-        },
-        mapAddLayers() {
+
+            this.map.on('draw.create', this.onDrawCreate);
+            this.map.on('draw.delete', this.onDrawDelete);
+            this.map.on('draw.update', this.onDrawUpdate);
             this.map.on( 'load', () => {
-                this.mapAddSource()
-            })
-        },
-        mapDraw() {
-            this.mapD= new MapboxDraw({
-                    displayControlsDefault: false,
-                    controls: {
-                    polygon: true,
-                    trash: true
-                },
-                defaultMode: 'draw_polygon'
+                this.managementArea.polygon.coordinates.forEach((coords) => {
+                    this.polygonDrawer.add({type: 'MultiPolygon', coordinates: [coords]});
+                });
+                console.log(this.polygonDrawer.getAll());
             })
         },
         mapAddControls() {
             this.map.addControl( new mapboxgl.NavigationControl() )
-            this.map.addControl( new mapboxgl.FullscreenControl({
-                container: document.documentElement
-                }) 
-            )
-            
+            this.map.addControl( new mapboxgl.FullscreenControl({container: document.documentElement}))
+
         },
         mapDisableScroll() {
             this.map.scrollZoom.disable();
         },
-        mounted() {
-            if ( this.map == null ) {
-                this.mapCreate()
-            }
+        onDrawCreate(event) {
+            const data = this.polygonDrawer.getAll();
+            console.log(data);
+            let type = 'MultiPolygon';
+            const coordinates = data.features.map((feature) => feature.geometry.coordinates);
+            this.setPolygon({type, coordinates});
+
+            const area = turf.area(data);
+            this.area = Math.round(area * 100) / 100;
+        },
+        onDrawDelete(event) {
+            this.area = null;
+            this.removePolygon();
+        },
+        onDrawUpdate(event) {
+            const data = this.polygonDrawer.getAll();
+            console.log(data);
+            let type = 'MultiPolygon';
+            const coordinates = data.features.map((feature) => feature.geometry.coordinates);
+            this.setPolygon({type, coordinates});
+            console.log(coordinates);
+            const area = turf.area(data);
+            this.area = Math.round(area * 100) / 100;
+
         }
     }
 }

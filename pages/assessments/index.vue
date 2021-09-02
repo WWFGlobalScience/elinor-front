@@ -18,11 +18,9 @@ export default {
             loaded: false
         }
     },
-    async fetch () {
+    async mounted() {
         await this.$store.dispatch( 'loader/loaderState', 'Loading assessments' )
         await this.$store.dispatch( 'assessments/fetchAssessments' )
-        await this.$store.dispatch( 'users/fetchUsers' )
-        await this.$store.dispatch( 'managementareas/fetchMasVersions' )
         await this.$store.dispatch( 'loader/loaderState', '' )
         this.loaded = true
 

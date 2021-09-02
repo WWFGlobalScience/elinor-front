@@ -15,6 +15,7 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
     name: 'assessment',
+    auth: false,
     data() {
         return {
             id: this.$route.params.assessment,
@@ -26,21 +27,12 @@ export default {
         await this.$store.dispatch( 'loader/loaderState', 'Loading assessment' )
 
         await this.$store.dispatch( 'assessments/fetchAssessment', this.id )
-        // await this.$store.dispatch( 'assessments/fetchCollaborators' )
-        // await this.$store.dispatch( 'managementareas/fetchMasVersions' )
-        // await this.$store.dispatch( 'managementareas/setMaVersion', this.assessment.management_area_version )
-        // await this.$store.dispatch( 'managementareas/fetchMasRoots' )
-        // await this.$store.dispatch( 'managementareas/setMaRoot', this.ma.version.management_area )
-        // await this.$store.dispatch( 'managementareas/fetchMasPas' )
-        // await this.$store.dispatch( 'managementareas/setMaPa', this.ma.version.protected_area )
-        // await this.$store.dispatch( 'managementareas/fetchMasGtypes' )
-        // await this.$store.dispatch( 'managementareas/setMaGtype', this.ma.version.governance_type )
-        // await this.$store.dispatch( 'managementareas/fetchMasAuthorities' )
-        // await this.$store.dispatch( 'managementareas/setMaAuthority', this.ma.version.management_authority )
-        // await this.$store.dispatch( 'managementareas/fetchMasStakeholdergroups' )
-        // await this.$store.dispatch( 'managementareas/setMaStakeholdergroups', this.ma.version.stakeholder_groups )
-        // await this.$store.dispatch( 'managementareas/fetchMasSs' )
-        // await this.$store.dispatch( 'managementareas/setMaSs', this.ma.version.support_sources )
+        await this.$store.dispatch( 'managementareas/fetchManagementArea', this.assessment.management_area)
+        await this.$store.dispatch( 'supportsources/fetchSupportSources')
+        await this.$store.dispatch( 'stakeholdergroups/fetchStakeholderGroups')
+        await this.$store.dispatch( 'governancetypes/fetchGovernanceTypes')
+        await this.$store.dispatch( 'regions/fetchRegions')
+        await this.$store.dispatch( 'collaborators/fetchCollaborators', this.id)
         await this.$store.dispatch( 'loader/loaderState', '' )
         this.loaded = true
     },
@@ -48,8 +40,6 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            mas: state => state.managementareas.mas,
-            ma: state => state.managementareas.ma
         })
     },
     mounted() {
