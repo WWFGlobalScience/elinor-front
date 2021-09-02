@@ -221,7 +221,22 @@
                         border-radius: 0;
                         @apply hover:bg-grayy-border;
                     }
-
+                    .multiselect__wrap{
+                        &.multiselect__wrap--1-3{
+                            @apply w-1/3 sm:w-1/2;
+                        }
+                    }
+                    .multiselect__extra{
+                        @apply mt-8 ;
+    
+                    }
+                    .multiselect__form{
+                        @apply relative ml-8 pl-14 pt-4 border-l border-grayy-border;
+                        &:before{
+                            content:'';
+                            @apply absolute top-14 left-0 block w-12 h-px bg-grayy-border;
+                        }
+                    }
                 }
             }
             &.form__row--separator {
@@ -233,11 +248,17 @@
                     @apply mt-20;
                 }
             }
+            &.form__row--mt-8 {
+                @apply mt-8;
+            }
             &.form__row--mt-16 {
                 @apply mt-16;
             }
             &:last-child {
                 @apply mb-0;
+            }
+            &.form__row--mt-24{
+                @apply mt-24
             }
 
         }
@@ -245,6 +266,7 @@
     &.form--mt-0 {
         @apply mt-0;
     }
+
     &.form--sign-in{
         @apply mt-11;
     }

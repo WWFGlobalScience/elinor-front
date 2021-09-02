@@ -47,6 +47,11 @@
                 </div>
             </div>
         </div>
+        <footer class="footer--map">
+            <div class="container--lg">
+                <p>Indicate the boundaries of the Managed Area</p>
+            </div>
+        </footer>
     </section>
 </template>
 

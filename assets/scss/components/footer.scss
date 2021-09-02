@@ -31,3 +31,26 @@
         @apply text-center text-sm w-2/12 lg:w-8/12;
     }
 }
+
+.footer--map {
+    @apply bg-turqy-lighter py-14;
+
+    p {
+        &:first-child {
+            @apply text-[12px];
+        }
+    }
+}
+
+.footer--map--flexy {
+    @apply bg-turqy-lighter py-8;
+
+    p,
+    span {
+        @apply text-grayy-lighter text-[12px];
+    }
+
+    .container--lg {
+        @apply flex justify-between space-x-10;
+    }
+}

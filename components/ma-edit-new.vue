@@ -2,7 +2,7 @@
     <section class="section section--ma-edit-selector">
         <div class="container">
             <header>
-                <h2>Edit Managed Area</h2>
+                <h2>Edit Managed Areaaaa</h2>
             </header>
         </div>
         <form class="form form--ma-selector">
@@ -99,7 +99,7 @@
                         <div class="input input--multiselect">
                             <label class="label">Are the rights of the MA formally recognized at the ...</label>
                             <div class="multiselect__wrap">
-                                <multiselect
+                                <multiselect class="multiselect--num"
                                     :value="managementArea.management_authority"
                                     track-by="id"
                                     label="name"
@@ -213,8 +213,131 @@
                     </div>
                 </div>
             </div>
+
+            <ma-map-edit></ma-map-edit>
+
+            <div class="form__group">
+                <div class="container--sm">
+                    <div class="form__row form__row--mt-24">
+                        <div class="input input--radios">
+                            <label class="label">Does this MA have zones?</label>
+                            <div class="radios__wrap">
+                                <div class="radio__wrap">
+                                    <div class="radio">
+                                        <input type="radio" name="consent_given" id="zone-yes" checked>
+                                        <img src="~/assets/img/ico-ok.svg">
+                                    </div>
+                                    <label for="zone-yes" class="label">Yes</label>
+                                </div>
+                                <div class="radio__wrap">
+                                    <div class="radio">
+                                        <input type="radio" name="consent_given" id="zone-no">
+                                        <img src="~/assets/img/ico-ok.svg">
+                                    </div>
+                                    <label for="zone-no" class="label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row form__row--mt-16">
+                        <div class="input input--multiselect">
+                            <label class="label">How many zones does the MA have?</label>
+                            <div class="multiselect__wrap multiselect__wrap--1-3">
+                                <multiselect
+                                    :value="managementArea.countries"
+                                    track-by="id"
+                                    label="name"
+                                    :options="countries"
+                                    :multiple="true" :searchable="true" :showLabels="false"
+                                    :allow-empty="false" :hide-selected="true"
+                                    @input="onSelectChanged('countries', $event)"
+                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            
+                            <div class="multiselect__extra">
+
+                                <div class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                                    <div class="form__row form__row--mt-8">
+                                        <div class="input">
+                                            <label class="label">Name of the zone 1</label>
+                                            <input type="text" name="name" placeholder="Zone name 1">
+                                        </div>
+                                    </div>
+                                    <div class="form__row form__row--mt-8">
+                                        <div class="input input--multiselect">
+                                            <label class="label">Select the level of access the best describes this zone?</label>
+                                            <div class="multiselect__wrap">
+                                                <multiselect
+                                                    :value="managementArea.countries"
+                                                    track-by="id"
+                                                    label="name"
+                                                    :options="countries"
+                                                    :multiple="true" :searchable="true" :showLabels="false"
+                                                    :allow-empty="false" :hide-selected="true"
+                                                    @input="onSelectChanged('countries', $event)"
+                                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                                </multiselect>
+                                                <div class="multiselect__caret">
+                                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__row form__row--mt-8">
+                                        <div class="input input--pr">
+                                            <div class="label">Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?</div>
+                                            <textarea name="explanation" placeholder="Text here"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                                    <div class="form__row form__row--mt-8">
+                                        <div class="input">
+                                            <label class="label">Name of the zone 2</label>
+                                            <input type="text" name="name" placeholder="Zone name 2">
+                                        </div>
+                                    </div>
+                                    <div class="form__row form__row--mt-8">
+                                        <div class="input input--multiselect">
+                                            <label class="label">Select the level of access the best describes this zone?</label>
+                                            <div class="multiselect__wrap">
+                                                <multiselect
+                                                    :value="managementArea.countries"
+                                                    track-by="id"
+                                                    label="name"
+                                                    :options="countries"
+                                                    :multiple="true" :searchable="true" :showLabels="false"
+                                                    :allow-empty="false" :hide-selected="true"
+                                                    @input="onSelectChanged('countries', $event)"
+                                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                                </multiselect>
+                                                <div class="multiselect__caret">
+                                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__row form__row--mt-8">
+                                        <div class="input input--pr">
+                                            <div class="label">Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?</div>
+                                            <textarea name="explanation" placeholder="Text here"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </form>
-        <ma-map-edit></ma-map-edit>
+        
     </section>
 </template>
 
