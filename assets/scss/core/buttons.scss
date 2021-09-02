@@ -79,3 +79,6 @@ button {
         @apply text-grayy-lighter pointer-events-none;
     }
 }
+.btn--between{
+    @apply justify-between;
+}

@@ -50,6 +50,44 @@
         <footer class="footer--map">
             <div class="container--lg">
                 <p>Indicate the boundaries of the Managed Area</p>
+                <div class="g-grid--3-1-sm mt-10">
+                    <div>
+                        <nuxt-link :to="`#`" class="btn btn--border-turqy btn--opacity--child btn--between">
+                            <span class="btn--opacity__target">Upload spatial area file</span>
+                            <img src="~/assets/img/ico-button-arrow-turqy.svg">
+                        </nuxt-link>
+                    </div>
+                    <div>
+                        <p>PREFERED METHOD</p>
+                        <p>Upload a Spatial file in Shapefile format or GeoJSON  </p>
+                    </div>
+                </div>
+                <div class="divider">
+                    <span>OR</span>
+                </div> 
+                <div class="g-grid--3-1-sm">
+                    <div>
+                        <nuxt-link :to="`#`" class="btn btn--border-turqy btn--opacity--child btn--between">
+                            <span class="btn--opacity__target">Upload map image</span>
+                            <img src="~/assets/img/ico-button-arrow-turqy.svg">
+                        </nuxt-link>
+                    </div>
+                    
+                    <div>
+                        <p>PREFERED METHOD</p>
+                        <p>Upload a Spatial file in Shapefile format or GeoJSON  </p>
+                    </div>
+                </div> 
+                <div class="w-2/3 sm:w-full">
+                    <div class="form__group">
+                        <div class="form__row form__row--mt-8">
+                            <div class="input input--pr">
+                                <div class="label">Please list the source of the geospatial information</div>
+                                <textarea name="explanation" placeholder="Text here"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
     </section>

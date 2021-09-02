@@ -100,3 +100,15 @@
         @apply text-sm;
     }
 }
+
+//divider
+.divider{
+    @apply flex justify-between items-center w-full my-12;
+    span{
+        @apply pl-8 pr-2;
+    }
+    &:after{
+        content:'';
+        @apply block w-full h-px pl-2 bg-turqy-middle;
+    }
+}
