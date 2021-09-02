@@ -10,6 +10,10 @@
             li {
                 @apply text-turqy text-sm pl-2 sm:text-xs;
 
+                .avatar{
+                    @apply w-[36px] h-[36px] flex items-center justify-center border-radius--50 bg-turqy text-white;
+                }
+
                 &::after {
                     content: "|";
                     @apply pl-2;

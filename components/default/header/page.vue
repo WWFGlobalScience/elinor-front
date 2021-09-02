@@ -1,14 +1,7 @@
 <template>
     <ul v-if="$auth.loggedIn">
       <li>
-        <NuxtLink to="/" class="btn--opacity--child">
-          <span class="btn--opacity__target">Select</span>
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink :to="`/faq/`" class="btn--opacity--child">
-          <span class="btn--opacity__target">Avatar</span>
-        </NuxtLink>
+        <span class="avatar">J</span>
       </li>
       <li class="btn--opacity--child header--main__toggle-btn" @click="toggleSidebar">
         <img v-if="isSidebarOpen" src="~/assets/img/ico-maximize-turqy.svg" alt="maximize" class="center-v w-12">
