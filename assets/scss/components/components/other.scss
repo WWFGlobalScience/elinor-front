@@ -103,12 +103,25 @@
 
 //divider
 .divider{
-    @apply flex justify-between items-center w-full my-12;
+    @apply flex justify-between items-center w-2/3 lg:w-full my-12;
     span{
         @apply pl-8 pr-2;
     }
     &:after{
         content:'';
         @apply block w-full h-px pl-2 bg-turqy-middle;
+    }
+}
+
+//btn option
+.options__wrap{
+    @apply flex justify-start items-center w-2/3 lg:w-full flex-row sm:flex-col;
+
+    .option__btn{
+        @apply w-1/2 md:w-full pr-10 sm:pr-0;
+    }
+
+    .option__info{
+        @apply w-1/2 md:w-full sm:mt-5;
     }
 }
