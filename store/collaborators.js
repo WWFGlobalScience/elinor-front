@@ -24,6 +24,7 @@ export const actions = {
             url: 'v1/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
+            console.log(response);
             this.$router.push(`/assessments/edit/${data.assessment}/collaborators/`)
         }).catch(error => console.log(error))
     },
@@ -55,7 +56,7 @@ export const actions = {
     },
 
     async updateCollaborator(state, {role, collaborator}) {
-        console.log(role,collaborator);
+        console.log(role, collaborator);
         this.dispatch('loader/loaderState', {
             active: true,
             text: 'Updating collaborator...'
@@ -70,9 +71,20 @@ export const actions = {
                 user: collaborator.user
             }
         }).then(response => {
-            console.log(response)
             this.dispatch('loader/loaderState', {active: true})
             return response.data;
         }).catch(error => console.log(error))
+    },
+
+    async deleteCollaborator(state, id) {
+        console.log(id);
+        this.dispatch('loader/loaderState', {active: true, text: 'Deleting collaborator...'});
+
+        this.$axios({
+            method: 'delete',
+            url: 'v1/collaborators/' + id,
+        }).then(response => {
+            this.$router.push(`/assessments/edit/${id}/collaborators/`)
+        }).catch(error => console.log(error));
     },
 }

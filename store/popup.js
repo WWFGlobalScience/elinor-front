@@ -3,18 +3,20 @@ export const state = () => ({
         active: false,
         component: '',
         title: 'default.filters.popup.title',
-        type:'default'
-    }  
+        type: 'default',
+        props: null
+    }
 })
 
 export const mutations = {
-    popupState( state, { active, type, component, title } ) {
+    popupState(state, {active, type, component, title, props}) {
         state.popup.active = active
-        if (state.popup.active ) {
+        if (state.popup.active) {
             state.popup.component = component
             state.popup.title = title
             state.popup.type = type
-        }  else {
+            state.popup.props = props
+        } else {
             state.popup.component = state.popup.component
             state.popup.title = state.popup.title
             state.popup.type = 'default'
@@ -23,13 +25,7 @@ export const mutations = {
 }
 
 export const actions = {
-    popupState( state, { active, type, component, title } ) {
-        console.log( 'Click' )
-        state.commit( 'popupState', {
-            active: active, 
-            component: component,
-            title: title,
-            type: type
-        })
+    popupState(state, {active, type, component, title, props}) {
+        state.commit('popupState', {active, type, component, title, props});
     }
 }

@@ -3,57 +3,74 @@
         <div class="container">
             <ul class="elinor__tabs">
                 <li>
-                    <nuxt-link :to="`/assessments/edit/${id}/assessment-data/`" :class="[ 'btn--tab btn--ok', { 'btn--error': !edit.data } ]">
+                    <nuxt-link :to="`/assessments/edit/${id}/assessment-data/`"
+                               :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.data.complete } ]">
                         <span class="bullet bullet--status">
-                            <img v-if="edit.data" src="~/assets/img/ico-ok.svg" >
-                            <img v-else src="~/assets/img/ico-error.svg" >
+                            <img v-if="progress.data.complete" src="~/assets/img/ico-ok.svg">
+                            <img v-else src="~/assets/img/ico-error.svg">
                         </span>
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment-edit.tabs.data.tab' ) }}</span>
+                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.data.tab') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link :to="`/assessments/edit/${id}/managed-area`" :class="[ 'btn--tab btn--ok', { 'btn--error': !edit.ma } ]">
+                    <nuxt-link :to="`/assessments/edit/${id}/managed-area`"
+                               :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.managed_area.complete } ]">
                         <span class="bullet bullet--status">
-                            <img v-if="edit.ma" src="~/assets/img/ico-ok.svg" >
-                            <img v-else src="~/assets/img/ico-error.svg" >
+                            <img v-if="progress.managed_area.complete" src="~/assets/img/ico-ok.svg">
+                            <img v-else src="~/assets/img/ico-error.svg">
                         </span>
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment-edit.tabs.ma.tab' ) }}</span>
+                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.ma.tab') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/`" :class="[ 'btn--tab btn--ok', { 'btn--error': !edit.survey } ]">
+                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/`"
+                               :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.survey.complete } ]">
                         <span class="bullet bullet--status">
-                            <img v-if="edit.survey" src="~/assets/img/ico-ok.svg" >
-                            <img v-else src="~/assets/img/ico-error.svg" >
+                            <img v-if="progress.survey.complete" src="~/assets/img/ico-ok.svg">
+                            <img v-else src="~/assets/img/ico-error.svg">
                         </span>
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment-edit.tabs.survey.tab' ) }}</span>
+                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.survey.tab') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link :to="`/assessments/edit/${id}/collaborators`" :class="[ 'btn--tab', { 'btn--error': !edit.collaborators } ]">
-                        <span class="bullet">3</span>
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment-edit.tabs.collaborators.tab' ) }}</span>
+                    <nuxt-link :to="`/assessments/edit/${id}/collaborators`"
+                               :class="[ 'btn--tab', { 'btn--error': !progress.collaborators.complete } ]">
+                        <span class="bullet">{{ progress.collaborators.filled }}</span>
+                        <span class="txt">
+                            {{ $t('pages.assessments.content.assessment-edit.tabs.collaborators.tab') }}
+                        </span>
                     </nuxt-link>
                 </li>
                 <li class="elinor__tab--end">
-                    <nuxt-link :to="`/assessments/edit/${id}/prepare-for-publish`" :class="[ 'btn--tab btn--tab-percent', { 'btn--error': !edit.publish, 'btn--tab-disabled': edit.percent != 100 } ]">
-                        <span class="bullet">{{ edit.percent }}%</span>
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment-edit.tabs.publish.tab' ) }}</span>
+                    <nuxt-link :to="`/assessments/edit/${id}/prepare-for-publish`"
+                               :class="[ 'btn--tab btn--tab-percent', { 'btn--error': !progress.published, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
+                        <span class="bullet">{{ Math.floor(progress.overall_percentage) }}%</span>
+                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.publish.tab') }}</span>
                     </nuxt-link>
                 </li>
             </ul>
-        </div> 
+        </div>
     </section>
 </template>
 
 <script>
+import {mapActions, mapState} from "vuex";
+
 export default {
     name: 'assessment-edit-tab',
-    props: [ 'id' ],
+    props: ['id'],
+    methods: {
+        ...mapActions({
+            updateAssessmentProgress: 'assessments/updateAssessmentProgress'
+        }),
+    },
     computed: {
-        edit() {
-            return this.$store.state.assessments.edit
-        }
+        ...mapState({
+            progress: state => state.assessments.progress
+        })
+    },
+    mounted() {
+        this.updateAssessmentProgress(this.id);
     }
 }
 </script>
