@@ -7,6 +7,9 @@
         @media(max-width:768px){
             left: -188px;
             @apply fixed top-0 bottom-0;
+            .nav__main__bottom-brand{
+                @apply relative w-12 bottom-1;
+            }
         }
         @media only screen 
             and (max-device-width: 823px)
@@ -19,6 +22,9 @@
                 }
                 &.nav__main--bottom{
                     @apply py-1
+                }
+                .nav__main__bottom-brand{
+                    @apply relative w-12 bottom-1;
                 }
             }
         }
