@@ -78,4 +78,15 @@ export const actions = {
             state.commit('updateCollaborator', {id: collaborator.id, role})
         }).catch(error => console.log(error))
     },
+
+    async deleteCollaborator(state, id) {
+        this.dispatch('loader/loaderState', {active: true, text: 'Deleting collaborator...'});
+
+        this.$axios({
+            method: 'delete',
+            url: 'v1/collaborators/' + id,
+        }).then(response => {
+            this.$router.push(`/assessments/edit/${id}/collaborators/`)
+        }).catch(error => console.log(error));
+    },
 }
