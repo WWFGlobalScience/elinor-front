@@ -153,6 +153,9 @@
                 &.input--1-5 {
                     @apply w-1/5;
                 }
+                &.input--1-6 {
+                    @apply w-1/6;
+                }
                 &.input--date {
                     .date__caret {
                         @apply center-v right-3 border-l border-grayy-border pl-3 pointer-events-none z-10;

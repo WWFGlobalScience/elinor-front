@@ -85,15 +85,7 @@
                                 <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.assessments' ) }}</span>
                                 <span class="data">{{ ma.assessments.length }}</span>
                             </li>
-                            <li class="countries">
-                                <span class="label">{{ $t( 'pages.managed-areas.content.ma.labels.countries' ) }}</span>
-                                <span class="data">
-                                    <span v-for="(country, index) in ma.countries">
-                                        <span v-if="index != ma.countries.length - 1">{{ country }}, </span>
-                                        <span v-else>{{ country }}</span>
-                                    </span>
-                                </span>
-                            </li>
+    
                             <li class="view">
                                 <nuxt-link :to="`/managed-areas/${ma.id}/info`" class="btn--border-turqy btn--opacity--child">
                                     <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>

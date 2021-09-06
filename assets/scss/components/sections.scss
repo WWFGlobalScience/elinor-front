@@ -40,6 +40,28 @@
             }
         }
     }
+    &.section--tags {
+        @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
+
+        ul {
+            @apply flex items-center justify-start;
+
+            li {
+                @apply flex items-center justify-between bg-turqy-lighter border-radius--20 px-4 py-3 mr-3;    
+                &:last-child{
+                    @apply mr-0;
+                }    
+                
+                .tag__item{
+                    @apply text-[14px] mr-2;
+                    
+                }
+                .tag__close{
+                    @apply transition hover:opacity-60 w-3;
+                }
+            }
+        }
+    }
 
     &.section--tab {
         li {
