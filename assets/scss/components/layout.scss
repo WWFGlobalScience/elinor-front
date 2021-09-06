@@ -15,6 +15,17 @@ main {
         &.page--flushed{
             @apply pt-0;
         }
+        .page--assessments__top{
+            @apply flex items-center mb-48 sm:flex-col sm:mb-6 sm:items-start;
+
+            &>*{
+                @apply flex-1;
+            }
+
+            .page--assessments__top-img{
+                @apply absolute inset-0 w-full h-52 object-contain z-0 mx-auto sm:relative sm:mb-6;
+            }
+        }
     }
 }
 

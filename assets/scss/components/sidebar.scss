@@ -115,6 +115,10 @@
                         }
                     }
                 }
+
+                @media(max-width:767px){
+                    @apply w-8/12;
+                }
         }
     }
 }
