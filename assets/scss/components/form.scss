@@ -2,9 +2,12 @@
     @apply mt-20;
     .form__group {
         .form__row {
-            @apply flex space-x-5 mb-6;
+            @apply flex space-x-5 mb-6 sm:flex-col sm:mb-0;
+            & > :not([hidden]) ~ :not([hidden]){
+                @apply sm:mx-0;
+            }
             .input {
-                @apply w-full;
+                @apply w-full sm:mb-3;
                 input:not(.vs__search), textarea:not(.vs__search) {
                     @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium focus:border-grayy-lighter;
                     &::placeholder {
@@ -139,22 +142,22 @@
                     }
                 }
                 &.input--1-2 {
-                    @apply w-1/2;
+                    @apply w-1/2 sm:w-full;
                 }
                 &.input--1-3 {
-                    @apply w-1/3;
+                    @apply w-1/3 sm:w-full;
                 }
                 &.input--1-4 {
-                    @apply w-1/4;
+                    @apply w-1/4 md:w-2/4 sm:w-full;
                 }
                 &.input--3-4 {
-                    @apply w-3/4;
+                    @apply w-3/4 md:w-2/4 sm:w-full;
                 }
                 &.input--1-5 {
-                    @apply w-1/5;
+                    @apply w-1/5 md:w-2/4 sm:w-full;
                 }
                 &.input--1-6 {
-                    @apply w-1/6;
+                    @apply w-1/6 md:w-2/4 sm:w-full;
                 }
                 &.input--date {
                     .date__caret {
