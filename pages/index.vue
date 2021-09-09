@@ -1,8 +1,9 @@
 <template>
-  <article class="page page--flushed">
+<main role="main">
     <home-public v-if="!$auth.loggedIn"></home-public>
     <home-private v-if="$auth.loggedIn"></home-private>
-  </article>
+    <default-footer></default-footer>
+</main>
 </template>
 
 <script>

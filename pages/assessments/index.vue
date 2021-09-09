@@ -1,8 +1,11 @@
 <template>
     <article class="page page--assessments" v-if="loaded">
-        <assessments-header></assessments-header>
-        <assessments-create v-if="$auth.loggedIn"></assessments-create>
-        <!--<assessments-filters></assessments-filters>-->
+        <div class="page--assessments__top">
+            <img src="~/assets/img/assessment-bg.svg" alt="assessment top bg" class="page--assessments__top-img">
+            <assessments-header></assessments-header>
+            <assessments-create v-if="$auth.loggedIn"></assessments-create> 
+        </div>
+        <assessments-filters></assessments-filters>
         <assessments-results></assessments-results>
     </article>
 </template>

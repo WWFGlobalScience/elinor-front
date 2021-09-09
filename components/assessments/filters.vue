@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <button type="button" class="btn--border-turqy btn--opacity--child" 
-                    @click="popupState( { component : 'popup-assessments-filter', title: 'pages.assessments.content.filters.title' })">
+                    @click="popupState( {active: true, component : 'popup-assessments-filter', title: 'pages.assessments.content.filters.title' })">
                         <span class="btn--opacity__target">{{ $t( 'default.filters.button' ) }}</span>
                         <img src="~/assets/img/ico-filters-turqy.svg">
                     </button>

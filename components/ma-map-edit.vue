@@ -50,14 +50,14 @@
         <footer class="footer--map">
             <div class="container--lg">
                 <p>Indicate the boundaries of the Managed Area</p>
-                <div class="g-grid--3-1-sm mt-10">
-                    <div>
+                <div class="options__wrap mt-10">
+                    <div class="option__btn">
                         <nuxt-link :to="`#`" class="btn btn--border-turqy btn--opacity--child btn--between">
                             <span class="btn--opacity__target">Upload spatial area file</span>
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
                         </nuxt-link>
                     </div>
-                    <div>
+                    <div class="option__info">
                         <p>PREFERED METHOD</p>
                         <p>Upload a Spatial file in Shapefile format or GeoJSON  </p>
                     </div>
@@ -65,15 +65,14 @@
                 <div class="divider">
                     <span>OR</span>
                 </div> 
-                <div class="g-grid--3-1-sm">
-                    <div>
+                <div class="options__wrap">
+                    <div class="option__btn">
                         <nuxt-link :to="`#`" class="btn btn--border-turqy btn--opacity--child btn--between">
                             <span class="btn--opacity__target">Upload map image</span>
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
                         </nuxt-link>
                     </div>
-                    
-                    <div>
+                    <div class="option__info">
                         <p>PREFERED METHOD</p>
                         <p>Upload a Spatial file in Shapefile format or GeoJSON  </p>
                     </div>
