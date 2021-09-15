@@ -112,7 +112,7 @@
           while also allowing flexibility on how data is gathered.
         </p>
         <button type="button" class="btn btn--opacity--child">
-          <span class="btn--opacity__target">Crate an account</span>
+          <span class="btn--opacity__target">Create an account</span>
           <img src="~/assets/img/ico-button-arrow.svg"/>
         </button>
       </div>

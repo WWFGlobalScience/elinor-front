@@ -15,6 +15,11 @@
                             <a @click="navigate" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': page.slug === '' ? isExactActive : isActive}">
                                 <img v-if="page.icons.turqy" :src="isActive ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
                                 <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
+                                <div
+                                    class="input__tooltip"
+                                    :content="$t( page.title )"
+                                    v-tippy='{ placement : "right" }'>&nbsp;
+                                </div>
                             </a>
                         </NuxtLink>
                     </li>

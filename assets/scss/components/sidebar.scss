@@ -42,6 +42,9 @@
         }
         .nav__main {
             @apply mt-10 flex-1;
+            .input__tooltip{
+                @apply hidden;
+            }
             &:not(.nav__main--bottom){
                 @apply h-full overflow-auto;
             }
@@ -81,6 +84,9 @@
             }
             .nav__main{
                 @apply px-2 flex flex-col justify-start;
+                .input__tooltip{
+                    @apply block w-12 h-12 fixed left-0 sm:hidden;
+                }
                 &.nav__main--bottom{
                     @apply md:hidden;
                 }
