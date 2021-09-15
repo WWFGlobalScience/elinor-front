@@ -3,7 +3,7 @@
     <section class="section section--main">
       <img src="~/assets/img/faq-section.jpg" />
     </section>
-    <section class="section">
+    <section class="section section--text">
       <div class="container">
         <h1 class="c-title--main">FAQ's</h1>
         <div class="g-grid--5 flex items-center">
@@ -151,6 +151,86 @@
           </div>
           <div class="g-colspan--1-full-md"></div>
         </div>
+
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
+            <div class="elinor-card--question">
+              <span class="elinor-card--question__number"> 5 </span>
+              <div class="elinor-card--question__info">
+                <h4 class="c-title--md">
+                  How will the data be analysed and presented?
+                </h4>
+                <p>
+                  The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="g-colspan--1-full-md"></div>
+        </div>
+
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
+            <div class="elinor-card--question">
+              <span class="elinor-card--question__number"> 6 </span>
+              <div class="elinor-card--question__info">
+                <h4 class="c-title--md">
+                  I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?
+                </h4>
+                <p>
+                  No! This tool was designed to complement in-depth, field-based data collection. If you currently collect data using field-based surveys or focus groups, you can use the data you already collect to inform the answers to the questions asked in Elinor. Conversely, information gathered using this tool can help you understand what topics require more in-depth field-based surveys.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="g-colspan--1-full-md"></div>
+        </div>
+
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
+            <div class="elinor-card--question">
+              <span class="elinor-card--question__number"> 7 </span>
+              <div class="elinor-card--question__info">
+                <h4 class="c-title--md">
+                  What are some things I should keep in mind when I’m making my decision about using Elinor?
+                </h4>
+                <p>
+                  No one tool does every job. It’s important to remember that:
+                </p>
+                <ul class="list-inside list-disc">
+                  <li><strong>This tool does not gather in-depth data.</strong> This tool does not replace the need for working with communities on an in-depth assessment of the issues identified by the tool </li>
+                  <li><strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed to track indicators commonly recognized as being important for management and governance of coastal managed and conserved areas. It does not measure specific changes in laws and regulations, which may have great impacts on conservation activities in any given place. </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="g-colspan--1-full-md"></div>
+        </div>
+
+        <div class="g-grid--5 flex items-center">
+          <div class="g-colspan--4-full-md">
+            <div class="elinor-card--question">
+              <span class="elinor-card--question__number"> 8 </span>
+              <div class="elinor-card--question__info">
+                <h4 class="c-title--md">
+                 OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?
+                </h4>
+                <p>
+                 his depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas.
+                </p>
+                <p>Therefore, the user of this tool may decide to conduct this assessment on:</p>
+                <ul class="list-inside list-disc">
+                  <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area. </li>
+                  <li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li>
+                </ul>
+                <p>It is important to specify this decision in the background section of the survey. </p>
+              </div>
+            </div>
+          </div>
+          <div class="g-colspan--1-full-md"></div>
+        </div>
+
+
       </div>
     </section>
   </article>
