@@ -1,0 +1,29 @@
+name: Deploy dev app to AWS S3
+on:
+    push:
+        branches:
+            - dev
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Configure AWS Credentials
+                uses: aws-actions/configure-aws-credentials@v1
+                with:
+                    aws-access-key-id: ${{ secrets.AWS_S3_ACCESS_KEY_ID }}
+                    aws-secret-access-key: ${{ secrets.AWS_S3_SECRET_ACCESS_KEY }}
+                    aws-region: ${{ secrets.AWS_REGION }}
+            -   name: Build static site
+                run: yarn install && yarn build && yarn generate
+            -   name: Deploy static site to S3 bucket
+                run: aws s3 sync ./dist/ ${{ secrets.AWS_S3_DEV_BUCKET_NAME }} --delete
+            -   name: Configure AWS Credentials for Cloudfront
+                uses: aws-actions/configure-aws-credentials@v1
+                with:
+                    aws-access-key-id: ${{ secrets.AWS_CLOUDFRONT_ACCESS_KEY_ID }}
+                    aws-secret-access-key: ${{ secrets.AWS_CLOUDFRONT_SECRET_ACCESS_KEY }}
+                    aws-region: ${{ secrets.AWS_REGION }}
+            -   name: Invalidate cloudfront
+                run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DEV_DISTRIBUTION_ID }} --paths "/"
