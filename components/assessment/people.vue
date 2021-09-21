@@ -4,7 +4,7 @@
             {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.title' ) }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_manager }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.manager' ) }} 
+            <span>{{ assessment.count_manager }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.manager' ) }}
         </li>
         <li class="elinor__people-data">
             <span>{{ assessment.count_personnel }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.ma-personnel' ) }}
@@ -25,16 +25,16 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 export default {
     name: 'assessment-people',
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment
         }),
-        ...mapGetters({
-            assessmentPeople: 'assessments/assessmentPeople'
-        })
+        total() {
+            return assessment.count_manager + assessment.count_personnel + assessment.count_government + assessment.count_committee + assessment.count_community;
+        }
     }
 }
 </script>

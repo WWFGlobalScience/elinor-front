@@ -18,7 +18,7 @@
                         Methodology
                     </NuxtLink>
                 </li>
-                <li class="btn--opacity--child">
+                <li v-if="!$auth.loggedIn" class="btn--opacity--child">
                     <NuxtLink :to="`/create-account/`" class="btn--opacity__target">
                         Create Account
                     </NuxtLink>
@@ -31,21 +31,12 @@
     </footer>
 </template>
 <script>
- import { mapActions } from 'vuex'
     export default {
         name: 'default-footer',
         computed: {
-            pages() {
-                return this.$store.state.pages.list
-            },
             isSidebarOpen(){
                 return this.$store.state.layout.sidebar
             }
-        },
-        methods:{
-            ...mapActions({
-                toggleSidebar: 'layout/toggleSidebar'
-            }),
         }
     }
 </script>

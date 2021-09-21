@@ -7,12 +7,6 @@
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna.
             </p>
-            <button
-            class="btn--border-turqy btn--opacity--child mt-12"
-            @click="popupState({active: true, component: 'popup-collaborator-add', title: 'Add collaborator'})">
-             <span class="btn--opacity__target">Add collaborator</span>
-            <img src="~/assets/img/addcollaborator.svg" alt="add collaborator">
-            </button>
         </div>
         <div class="mt-12">
         <assessment-collaborators-list></assessment-collaborators-list>

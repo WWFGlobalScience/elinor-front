@@ -13,19 +13,9 @@
                     </nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link :to="`/assessments/${id}/management-area`" class="btn--tab">
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.ma.tab' ) }}</span>
-                    </nuxt-link>
-                </li>
-                <li>
                     <nuxt-link :to="`/assessments/${id}/collaborators`" class="btn--tab">
                         <span class="bullet">3</span>
                         <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.collaborators.tab' ) }}</span>
-                    </nuxt-link>
-                </li>
-                <li class="elinor__tab--end">
-                    <nuxt-link :to="`/assessments/${id}/edit-publish-settings`" class="btn--tab">
-                       <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.publish.tab' ) }}</span>
                     </nuxt-link>
                 </li>
             </ul>

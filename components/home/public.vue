@@ -1,10 +1,10 @@
 <template>
   <article class="page page--flushed">
-    <section class="section section--sign-in">
+    <section :class="{'section--sign-in--logged-in': $auth.loggedIn}" class="section section--sign-in">
       <picture class="section__full-background">
         <img src="~/assets/img/signin-background.jpg" />
       </picture>
-      <div class="elinor__card elinor__card--sign-in">
+      <div v-if="!$auth.loggedIn" class="elinor__card elinor__card--sign-in">
         <NuxtLink to="/" class="flex justify-center">
           <img src="~/assets/img/elinor-sign-up-circle.svg" class="elinor__card--sign-in__logo"/>
         </NuxtLink>
@@ -110,7 +110,7 @@
           visualization for information on management, governance, and equity
           while also allowing flexibility on how data is gathered.
         </p>
-        <NuxtLink to="/create-account" class="btn btn--opacity--child">
+        <NuxtLink v-if="!$auth.loggedIn" to="/create-account" class="btn btn--opacity--child">
           <span class="btn--opacity__target">Create an account</span>
           <img src="~/assets/img/ico-button-arrow.svg"/>
         </NuxtLink>

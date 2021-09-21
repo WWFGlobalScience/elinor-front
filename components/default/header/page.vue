@@ -1,17 +1,17 @@
 <template>
   <ul v-if="$auth.loggedIn">
-   
+
     <div class="elinor__dropdown">
       <div class="elinor__dropdown-toggle">
         <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
-          <span>J</span>
+          <span>{{ user.username.charAt(0).toUpperCase() }}</span>
         </div>
       </div>
       <ul
         class="elinor__dropdown-menu"
         v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
       >
-          <li class="elinor__dropdown-menu__item"><NuxtLink to="">Sign out<img src="~assets/img/ico-signout-turqy.svg" alt="Sign out"></NuxtLink></li>
+          <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">Sign out<img src="~assets/img/ico-signout-turqy.svg" alt="Sign out"></a></li>
       </ul>
     </div>
 
@@ -50,11 +50,15 @@ export default {
     isDropdownOpen() {
       return this.$store.state.dropdown.dropdown;
     },
+    user() {
+      return this.$store.state.auth.user;
+    },
   },
   methods: {
     ...mapActions({
       toggleSidebar: "layout/toggleSidebar",
       toggleDropdown: "dropdown/toggleDropdown",
+      logout: "authentication/logout",
     }),
   },
 };

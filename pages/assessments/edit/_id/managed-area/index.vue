@@ -14,12 +14,14 @@
 export default {
     name: 'assessment-management-area',
     layout: 'assessment-edit',
+    mounted() {
+        this.$store.dispatch('managementareas/fetchAuthorities', '');
+        this.$store.dispatch('stakeholdergroups/fetchStakeholderGroups', '');
+        this.$store.dispatch('supportsources/fetchSupportSources', '');
+        this.$store.dispatch('governancetypes/fetchGovernanceTypes', '');
+    },
     computed: {
         assessment() {
-            const assessment = this.$store.state.assessments.assessment;
-            if(assessment && assessment.management_area && assessment.management_area.id) {
-                this.$store.dispatch('managementareas/fetchManagementArea', assessment.management_area.id)
-            }
             return this.$store.state.assessments.assessment
         }
     }

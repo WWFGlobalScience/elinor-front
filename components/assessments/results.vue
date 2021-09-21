@@ -14,44 +14,40 @@
                 <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
                     <header class="header">
                         <div class="left">
-                            <span class="title">{{ getAssessmentUser(assessment.person_responsible) }}</span>
+                            <span class="title">{{ assessment.person_responsible.username }}</span>
                             <span class="subtitle">{{ assessment.name }}</span>
                         </div>
                     </header>
                     <ul class="sublist">
                         <li class="avatar">
                             <div class="elinor__avatar elinor__avatar--red">
-                                <span>{{ getAssessmentUser(assessment.person_responsible) | capitalizeFirstLetter }}</span>
+                                <span>{{ assessment.person_responsible.username | capitalizeFirstLetter }}</span>
                             </div>
                         </li>
-                        <li class="role">
+                        <li v-if="isAssessmentCollaborator($auth, assessment)" class="role">
                             <span class="label">{{ $t('pages.assessments.content.assessment.labels.role') }}</span>
-                            <span class="data">Admin</span>
+                            <span class="data">{{ $t('default.roles.' + getMyRole($auth, assessment)) }}</span>
                         </li>
                         <li class="ha">
                             <span class="label">{{ $t('pages.assessments.content.assessment.labels.year') }}</span>
                             <span class="data">{{ assessment.year }}</span>
                         </li>
-                        <li class="countries">
+                        <li class="countries" v-if="assessment.management_area && assessment.management_area.countries">
                             <span class="label">{{ $t('pages.assessments.content.assessment.labels.countries') }}</span>
-
                             <span class="data">
-                                <span v-for="(country, index) in getAssessmentCountries( assessment ) ">
-                                    <span v-if="index != getAssessmentCountries( assessment ).length - 1">{{
-                                        country
-                                      }}, </span>
-                                    <span v-else>{{ country }}</span>
+                                <span v-for="(country, index) in assessment.management_area.countries">
+                                    {{ country }}
                                 </span>
                             </span>
                         </li>
-                        <li class="view" v-if="!$auth.loggedIn || assessment.status === 10">
+                        <li class="view" v-if="!$auth.loggedIn || assessment.status === 10 || isAssessmentObserver($auth, assessment)">
                             <nuxt-link :to="`/assessments/${assessment.id}/info/`"
                                        class="btn--border-turqy btn--opacity--child">
                                 <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
                         </li>
-                        <li class="view" v-if="$auth.loggedIn && assessment.status !== 10">
+                        <li class="view" v-if="$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver($auth, assessment)">
                             <nuxt-link :to="`/assessments/edit/${assessment.id}/assessment-data/`"
                                        class="btn--border-turqy btn--opacity--child">
                                 <span class="btn--opacity__target">{{ $t( 'default.edit' ) }}</span>
@@ -67,15 +63,20 @@
 
 <script>
 import {mapState} from 'vuex'
+import {isAssessmentObserver, getMyRole, isAssessmentCollaborator} from "~/config/assessment-roles";
 
 export default {
     name: 'assessments-results',
     computed: {
         ...mapState({
             assessments: state => state.assessments.list,
-            mas: state => state.managementareas.mas,
             users: state => state.users.users
         })
+    },
+    methods: {
+        isAssessmentCollaborator: isAssessmentCollaborator,
+        isAssessmentObserver: isAssessmentObserver,
+        getMyRole: getMyRole,
     },
     filters: {
         capitalizeFirstLetter: (value) => {
@@ -83,18 +84,6 @@ export default {
                 return ''
             }
             return value.charAt(0).toUpperCase()
-        }
-    },
-    methods: {
-        getAssessmentUser(value) {
-            console.log(this.users);
-            // if (!this.users) return '';
-            // return this.users.find(user => user.id == value).username
-        },
-        getAssessmentCountries(assessment) {
-            // if (!this.mas.versions || this.mas.versions.length === 0) return '';
-            // return this.mas.versions.find(version => version.id == assessment.management_area_version).countries
-
         }
     }
 }

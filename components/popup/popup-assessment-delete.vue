@@ -9,7 +9,7 @@
         <div class="g-grid--2">
             <div>
                 <button type="button" class="btn--border-turqy btn--opacity--child"
-                        @click="deleteCollaborator(collaboratorId)">
+                        @click="popup.onConfirm()">
                     Yes
                 </button>
             </div>
@@ -24,26 +24,19 @@
 </template>
 
 <script>
-import {mapActions} from "vuex";
+import {mapActions, mapState} from "vuex";
 
 export default {
     name: 'popup-assessment-delete',
-    props: {
-        props: null
-    },
-    data() {
-        return {
-            collaboratorId: null,
-        }
+    computed: {
+        ...mapState({
+            popup: state => state.popup.popup,
+        })
     },
     methods: {
         ...mapActions({
-            deleteCollaborator: 'collaborators/deleteCollaborator',
             popupState: 'popup/popupState',
         }),
-    },
-    mounted() {
-        this.collaboratorId = this.props.collaboratorId;
     }
 }
 </script>

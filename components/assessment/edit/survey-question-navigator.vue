@@ -5,7 +5,6 @@
                 <li v-for="(question, index) in survey">
                     <nuxt-link :to="`/assessments/edit/${id}/the-survey/${index + 1}`" :class="[ 'btn--opacity', { 'is--uncomplete': assessment[question] === null } ]">
                     </nuxt-link>
-                    </a>
                 </li>
                 <li class="elinor__survey-complete">
                     <div class="index">

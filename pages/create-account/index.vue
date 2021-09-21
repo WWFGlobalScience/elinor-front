@@ -13,47 +13,47 @@
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                              role="alert">
                             <strong class="font-bold">Error</strong>
-                            <span class="block sm:inline">Bad request</span>
+                            <span v-for="field in Object.keys(error)" class="block sm:inline"><strong>{{ field }}:</strong> {{ error[field].join(', ')}}</span>
                             <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 20 20"><title>Close</title><path
-                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-              </span>
+                                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20"><title>Close</title><path
+                                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                            </span>
                         </div>
                     </div>
                     <div class="form__group">
                         <div class="form__row">
-                            <div class="input">
+                            <div class="input" :class="{'border-red-500': error && error.email && error.email.length}">
                                 <input v-model="form.email" type="email" name="email"
                                        :placeholder="$t( 'pages.sign-up.content.form.inputs.email' )" required>
                             </div>
                         </div>
                         <div class="form__row">
-                            <div class="input">
+                            <div class="input" :class="{'border-red-500': error && error.password1 && error.password1.length}">
                                 <input v-model="form.password1" type="password" name="password1"
                                        :placeholder="$t( 'pages.sign-up.content.form.inputs.password1' )" required>
                             </div>
                         </div>
                         <div class="form__row">
-                            <div class="input">
+                            <div class="input" :class="{'border-red-500': error && error.password2 && error.password2.length}">
                                 <input v-model="form.password2" type="password" name="password2"
                                        :placeholder="$t( 'pages.sign-up.content.form.inputs.password2' )" required>
                             </div>
                         </div>
                         <div class="form__row">
-                            <div class="input">
+                            <div class="input" :class="{'border-red-500': error && error.first_name}">
                                 <input v-model="form.first_name" type="text" name="first_name"
                                        :placeholder="$t( 'pages.sign-up.content.form.inputs.first_name' )" required>
                             </div>
                         </div>
                         <div class="form__row">
-                            <div class="input">
+                            <div class="input" :class="{'border-red-500': error && error.last_name}">
                                 <input v-model="form.last_name" type="text" name="last_name"
                                        :placeholder="$t( 'pages.sign-up.content.form.inputs.last_name' )" required>
                             </div>
                         </div>
                         <div class="form__row">
-                            <div class="input">
+                            <div class="input" :class="{'border-red-500': error && error.username}">
                                 <input v-model="form.username" type="text" name="username"
                                        :placeholder="$t( 'pages.sign-up.content.form.inputs.username' )" required>
                             </div>
@@ -160,7 +160,7 @@ export default {
             createOrganization: 'organizations/createOrganization'
         }),
         onOrganizationSelected(organization) {
-           this.form.affiliation = organization.id;
+           this.form.affiliation = organization;
         },
         submit(event) {
             event.preventDefault();

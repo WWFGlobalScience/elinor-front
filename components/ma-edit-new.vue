@@ -2,7 +2,7 @@
     <section class="section section--ma-edit-selector">
         <div class="container">
             <header>
-                <h2>Edit Managed Areaaaa</h2>
+                <h2>Edit Managed Area</h2>
             </header>
         </div>
         <form class="form form--ma-selector">
@@ -19,14 +19,14 @@
                             <label class="label">What is the name of the larger PA/CA this MA is contained within?*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
-                                    :value="managementArea.protected_area"
+                                    :value="managementArea.containedby"
                                     track-by="id"
                                     label="name"
-                                    :options="protectedAreas"
+                                    :options="managementAreas"
                                     :multiple="false" :searchable="true" :showLabels="false"
                                     :allow-empty="false" :hide-selected="true"
-                                    @input="onSelectChanged('protected_area', $event)"
-                                    @search-change="onSelectSearch('protectedareas/fetchProtectedAreas', $event)">
+                                    @input="onSelectChanged('containedby', $event)"
+                                    @search-change="onSelectSearch('managementareas/fetchManagementAreas', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
@@ -64,9 +64,24 @@
                         </div>
                     </div>
                     <div class="form__row">
-                        <div class="input">
-                            <label class="label">Name of managment authority</label>
-                            <input type="text" name="name" placeholder="Protected Area">
+                        <div class="input input--multiselect">
+                            <label class="label">Name of management authority</label>
+                            <div class="multiselect__wrap">
+                                <multiselect
+                                    :value="managementArea.management_authority"
+                                    track-by="id"
+                                    label="name"
+                                    :options="authorities"
+                                    :multiple="false" :searchable="true" :showLabels="false"
+                                    :allow-empty="false" :hide-selected="true"
+                                    @input="onSelectChanged('management_authority', $event)"
+                                    @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
+                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form__row">
@@ -128,7 +143,7 @@
                                     :multiple="true" :searchable="true" :showLabels="false"
                                     :allow-empty="false" :hide-selected="true"
                                     @input="onSelectChanged('stakeholder_groups', $event)"
-                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                    @search-change="onSelectSearch('stakeholdergroups/fetchStakeholderGroups', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
@@ -175,13 +190,12 @@
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.countries"
-                                    track-by="id"
+                                    track-by="code"
                                     label="name"
                                     :options="countries"
-                                    :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
-                                    @input="onSelectChanged('countries', $event)"
-                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                    :multiple="true" :searchable="false" :showLabels="false"
+                                    :allow-empty="true" :hide-selected="true"
+                                    @input="onSelectChanged('countries', $event.map(country => country.code))">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
@@ -224,14 +238,14 @@
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="zone-yes" checked>
+                                        <input type="radio" name="consent_given" id="zone-yes" @change="onShowZones" :checked="showZones === true" :value="true">
                                         <img src="~/assets/img/ico-ok.svg">
                                     </div>
                                     <label for="zone-yes" class="label">Yes</label>
                                 </div>
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="zone-no">
+                                        <input type="radio" name="consent_given" id="zone-no" @change="onShowZones" :checked="showZones === false" :value="false">
                                         <img src="~/assets/img/ico-ok.svg">
                                     </div>
                                     <label for="zone-no" class="label">No</label>
@@ -239,32 +253,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form__row form__row--mt-16">
+                    <div class="form__row form__row--mt-16" v-if="showZones">
                         <div class="input input--multiselect">
                             <label class="label">How many zones does the MA have?</label>
                             <div class="multiselect__wrap multiselect__wrap--1-3">
                                 <multiselect
-                                    :value="managementArea.countries"
-                                    track-by="id"
-                                    label="name"
-                                    :options="countries"
-                                    :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
-                                    @input="onSelectChanged('countries', $event)"
-                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                    :value="numZones"
+                                    :options="[1,2,3,4,5,6,7,8,9,10]"
+                                    :multiple="false" :searchable="false" :showLabels="false"
+                                    :allow-empty="false"
+                                    @input="onNumZonesChanged($event)">
                                 </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
                                 </div>
                             </div>
-                            
-                            <div class="multiselect__extra">
 
-                                <div class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                            <div v-if="numZones > 0" class="multiselect__extra">
+                                <div v-for="(num, index) in numZones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
                                             <label class="label">Name of the zone 1</label>
-                                            <input type="text" name="name" placeholder="Zone name 1">
+                                            <input type="text" name="name" placeholder="Zone name 1" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
                                     <div class="form__row form__row--mt-8">
@@ -272,14 +282,13 @@
                                             <label class="label">Select the level of access the best describes this zone?</label>
                                             <div class="multiselect__wrap">
                                                 <multiselect
-                                                    :value="managementArea.countries"
+                                                    :value="zones[index] && zones[index].access_level"
+                                                    :options="accessLevels"
                                                     track-by="id"
                                                     label="name"
-                                                    :options="countries"
-                                                    :multiple="true" :searchable="true" :showLabels="false"
-                                                    :allow-empty="false" :hide-selected="true"
-                                                    @input="onSelectChanged('countries', $event)"
-                                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
+                                                    :multiple="false" :searchable="false" :showLabels="false"
+                                                    :allow-empty="false"
+                                                    @input="onZoneFieldChanged('access_level', index, $event.id)">
                                                 </multiselect>
                                                 <div class="multiselect__caret">
                                                     <img src="~/assets/img/ico-select-turqy.svg">
@@ -290,46 +299,10 @@
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--pr">
                                             <div class="label">Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?</div>
-                                            <textarea name="explanation" placeholder="Text here"></textarea>
+                                            <textarea name="explanation" placeholder="Text here" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zones[index] && zones[index].description }}</textarea>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
-                                    <div class="form__row form__row--mt-8">
-                                        <div class="input">
-                                            <label class="label">Name of the zone 2</label>
-                                            <input type="text" name="name" placeholder="Zone name 2">
-                                        </div>
-                                    </div>
-                                    <div class="form__row form__row--mt-8">
-                                        <div class="input input--multiselect">
-                                            <label class="label">Select the level of access the best describes this zone?</label>
-                                            <div class="multiselect__wrap">
-                                                <multiselect
-                                                    :value="managementArea.countries"
-                                                    track-by="id"
-                                                    label="name"
-                                                    :options="countries"
-                                                    :multiple="true" :searchable="true" :showLabels="false"
-                                                    :allow-empty="false" :hide-selected="true"
-                                                    @input="onSelectChanged('countries', $event)"
-                                                    @search-change="onSelectSearch('countries/fetchCountries', $event)">
-                                                </multiselect>
-                                                <div class="multiselect__caret">
-                                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__row form__row--mt-8">
-                                        <div class="input input--pr">
-                                            <div class="label">Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?</div>
-                                            <textarea name="explanation" placeholder="Text here"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -337,7 +310,7 @@
             </div>
 
         </form>
-        
+
     </section>
 </template>
 
@@ -346,9 +319,32 @@ import {mapActions, mapState} from "vuex";
 
 export default {
     name: 'ma-edit-new',
+    data() {
+        return {
+            showZones: null,
+            numZones: null,
+            accessLevels: [
+                { id: 90, name: this.$t('managementarea.zones.acccess_Level.OPEN_ACCESS') },
+                { id: 50, name: this.$t('managementarea.zones.acccessLevel.PARTIALLY_RESTRICTED') },
+                { id: 10, name: this.$t('managementarea.zones.acccessLevel.FULLY_RESTRICTED') }
+            ]
+        }
+    },
+    mounted() {
+        this.numZones = this.zones.length;
+        this.showZones = this.zones.length > 0;
+    },
+    watch: {
+        zones() {
+            this.numZones = this.zones.length;
+            this.showZones = this.zones.length > 0;
+        }
+    },
     computed: {
         ...mapState({
+            assessment: state => state.assessments.assessment,
             managementArea: state => state.managementareas.instance,
+            managementAreas: state => state.managementareas.list,
             governanceTypes: state => state.governancetypes.list,
             authorities: state => state.managementareas.authorities,
             stakeholderGroups: state => state.stakeholdergroups.list,
@@ -356,24 +352,36 @@ export default {
             countries: state => state.countries.list,
             regions: state => state.regions.list,
             protectedAreas: state => state.protectedareas.list,
+            zones: state => state.managementareas.zones,
         })
     },
     methods: {
         save(field, value) {
-            this.editManagementAreaField( {field, value, id: this.managementArea.id});
+            this.editManagementAreaField( {field, value, id: this.managementArea.id, assessmentId: this.assessment.id});
         },
         onSelectSearch(action, search) {
             this.$store.dispatch(action, search)
         },
         onSelectChanged(field, value) {
-            this.editManagementAreaField({field, value, id: this.managementArea.id});
+            this.editManagementAreaField({field, value, id: this.managementArea.id, assessmentId: this.assessment.id});
         },
         onDateEstablishmentSelected(value) {
             const date = this.$moment(value);
-            this.editManagementAreaField({field: 'date_established', value: date.format('YYYY-MM-DD'), id: this.managementArea.id});
+            this.editManagementAreaField({field: 'date_established', value: date.format('YYYY-MM-DD'), id: this.managementArea.id, assessmentId: this.assessment.id});
+        },
+        onShowZones(value) {
+            this.showZones = value;
+        },
+        onNumZonesChanged(value) {
+            this.showZones = value > 0;
+            this.numZones = value;
+        },
+        onZoneFieldChanged(field, index, value) {
+            this.editZoneField({field, index, value})
         },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
+            editZoneField: 'managementareas/editZoneField',
         })
     }
 }

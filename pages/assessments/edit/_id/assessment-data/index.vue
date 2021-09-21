@@ -45,7 +45,23 @@
                             <label class="label">{{
                                     $t('pages.assessments.content.assessment-edit.tabs.data.labels.institution')
                                 }}*</label>
-                            <input type="text" name="institution" :value="assessment.institution" @change="submit">
+                            <div class="multiselect__wrap">
+                                <multiselect
+                                    select-label="Enter doesn’t work here!"
+                                    :value="assessment.organization"
+                                    track-by="id"
+                                    label="name"
+                                    :options="organizations"
+                                    :multiple="false" :searchable="true" :showLabels="false"
+                                    :allow-empty="false" :hide-selected="true"
+                                    @input="onOrganizationSelected"
+                                    @search-change="fetchOrganizations">
+                                    <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> <button @click="$event.preventDefault();$event.stopPropagation(); createOrganization(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">{{ $t('default.create') }}</button></span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form__row">
@@ -54,7 +70,7 @@
                                     $t('pages.assessments.content.assessment-edit.tabs.data.labels.role')
                                 }}*</label>
                             <div class="multiselect__wrap">
-                                <multiselect :value="assessment.person_responsible_role" :options="roles" label="name"
+                                <multiselect :value="person_responsible_role" :options="roles" label="name"
                                              track-by="id" :multiple="false" :searchable="false" :showLabels="false"
                                              :allow-empty="false" :hide-selected="false"
                                              @input="save('person_responsible_role', $event.id)">
@@ -86,7 +102,7 @@
                             <div class="multiselect__wrap">
                                 <input type="hidden" name="count_manager" class="input__dummy"
                                        :value="assessment.count_manager">
-                                <multiselect placeholder="00" :value="assessment.count_manager" :options="counts"
+                                <multiselect placeholder="" :value="assessment.count_manager" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
                                              :allow-empty="false" :hide-selected="true"
                                              @input="save('count_manager', $event)">
@@ -104,7 +120,7 @@
                             <div class="multiselect__wrap">
                                 <input type="hidden" name="count_personnel" class="input__dummy"
                                        :value="assessment.count_personnel">
-                                <multiselect placeholder="00" :value="assessment.count_personnel" :options="counts"
+                                <multiselect placeholder="" :value="assessment.count_personnel" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
                                              :allow-empty="false" :hide-selected="true"
                                              @input="save('count_personnel', $event)">
@@ -124,7 +140,7 @@
                             <div class="multiselect__wrap">
                                 <input type="hidden" name="count_government" class="input__dummy"
                                        :value="assessment.count_government">
-                                <multiselect placeholder="00" :value="assessment.count_government" :options="counts"
+                                <multiselect placeholder="" :value="assessment.count_government" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
                                              :allow-empty="false" :hide-selected="true"
                                              @input="save('count_government', $event)">
@@ -142,7 +158,7 @@
                             <div class="multiselect__wrap">
                                 <input type="hidden" name="count_community" class="input__dummy"
                                        :value="assessment.count_community">
-                                <multiselect placeholder="00" :value="assessment.count_community" :options="counts"
+                                <multiselect placeholder="" :value="assessment.count_community" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
                                              :allow-empty="false" :hide-selected="true"
                                              @input="save('count_community', $event)">
@@ -162,7 +178,7 @@
                             <div class="multiselect__wrap">
                                 <input type="hidden" name="count_committee" class="input__dummy"
                                        :value="assessment.count_committee">
-                                <multiselect placeholder="00" :value="assessment.count_committee" :options="counts"
+                                <multiselect placeholder="" :value="assessment.count_committee" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
                                              :allow-empty="false" :hide-selected="true"
                                              @input="save('count_committee', $event)">
@@ -219,22 +235,31 @@
                             <label class="label">{{
                                     $t('pages.assessments.content.assessment-edit.tabs.data.labels.ma-file')
                                 }}</label>
-                            <div class="file">
-                                <div class="file__drag">
-                                    <input type="hidden" name="management-plan">
-                                    <input type="file" name="management-plan-file" ref="managementFile">
-                                    <img src="~/assets/img/ico-file-drag-turqy.svg">
-                                    <span>{{ $t('default.upload-file.placeholder') }}</span>
-                                </div>
+
+
+                            <div v-if="assessment" class="file">
+                                <dropzone id="management_plan"
+                                          ref="managementPlan"
+                                          :options="dropzone"
+                                          :useStyling="false"
+                                          :destroyDropzone="true"
+                                          :useCustomSlot="true"
+                                          @vdropzone-file-added="onManagementPlanAdded"
+                                >
+                                    <div class="file__drag">
+                                        <img src="~/assets/img/ico-file-drag-turqy.svg">
+                                        <span v-if="!assessment.management_plan_file">{{ $t('default.upload-file.placeholder') }}</span>
+                                        <span v-else><a @click.stop :href="assessment.management_plan_file" target="_blank">{{ assessment.management_plan_file }}</a></span>
+                                    </div>
+                                </dropzone>
                                 <div class="file__buttons">
-                                    <button type="button" class="btn--border-turqy btn--opacity--child"
-                                            @click="managementUploadTrigger">
+                                    <button @click="managementUploadTrigger" type="button" class="btn--border-turqy btn--opacity--child">
                                         <img src="~/assets/img/ico-file-turqy.svg">
                                         <span class="btn--opacity__target">{{
                                                 $t('default.upload-file.buttons.select')
                                             }}</span>
                                     </button>
-                                    <button type="button" class="btn--border-turqy btn--opacity--child">
+                                    <button v-if="assessment.management_plan_file" @click="clearManagementPlan" type="button" class="btn--border-turqy btn--opacity--child">
                                         <img src="~/assets/img/ico-clear-turqy.svg">
                                         <span class="btn--opacity__target">{{
                                                 $t('default.upload-file.buttons.clear')
@@ -251,15 +276,19 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import {mapActions, mapState} from 'vuex'
+import Dropzone from 'nuxt-dropzone'
 
 export default {
     name: 'assessment-edit-data',
     layout: 'assessment-edit',
+    components: {
+        Dropzone
+    },
     data() {
         return {
             id: this.$route.params.id,
-            years: ['2020', '2021', '2030'],
+            years: ['2019', '2020', '2021'],
             roles: [
                 {id: 10, name: 'Non profit'},
                 {id: 20, name: 'Manager'},
@@ -268,22 +297,61 @@ export default {
                 {id: 50, name: 'Committee'},
                 {id: 60, name: 'Community'}
             ],
-            counts: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+            counts: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            dropzone: {
+                url: 'none',
+                previewTemplate: this.template(),
+                uploadMultiple: false,
+                acceptedFiles: '.pdf',
+                autoQueue: false
+            }
         }
+    },
+    mounted() {
+        this.$store.dispatch('organizations/fetchOrganizations', '');
+        /*if(this.assessment && this.assessment.management_plan_file) {
+            console.log('mounted')
+            const path = this.assessment.management_plan_file.split('/');
+            const name = path[path.length - 1];
+            const url = this.assessment.management_plan_file;
+            const file = { name, type: 'application/pdf', size: 12345 };
+            console.log(file);
+            this.$refs.managementPlan.removeAllFiles();
+            this.$refs.managementPlan.manuallyAddFile(file, url);
+        }*/
     },
     computed: {
         assessment() {
-            return this.$store.state.assessments.assessment
-        }
+            return this.$store.state.assessments.assessment;
+        },
+        person_responsible_role() {
+            return this.roles.filter(role => role.id === this.assessment.person_responsible_role);
+        },
+        managementPlanFile() {
+            if(this.assessment.management_plan_file) {
+                const path = this.assessment.management_plan_file.split('/');
+                return path[path.length - 1];
+            }
+        },
+        ...mapState({
+            organizations: state => state.organizations.list
+        })
     },
     methods: {
         ...mapActions({
             editAssessment: 'assessments/editAssessment',
             editAssessmentField: 'assessments/editAssessmentField',
-            updateAssessmentProgress: 'assessments/updateAssessmentProgress'
+            updateAssessmentProgress: 'assessments/updateAssessmentProgress',
+            editAssessmentFileField: 'assessments/editAssessmentFileField',
+            fetchOrganizations: 'organizations/fetchOrganizations',
+            createOrganization: 'organizations/createOrganization'
         }),
         managementUploadTrigger() {
-            this.$refs.managementFile.click()
+           this.$refs.managementPlan.$el.click();
+        },
+        clearManagementPlan() {
+            this.$refs.managementPlan.removeAllFiles();
+            this.editAssessmentField({field: 'management_plan_file', value: null, id: this.id});
         },
         save(field, value) {
             this.editAssessmentField({field, value, id: this.id});
@@ -294,6 +362,15 @@ export default {
                 form: this.$refs.editAssessment,
                 id: this.id
             });
+        },
+        onOrganizationSelected(organization) {
+            this.editAssessmentField({field: 'organization', value: organization, id: this.id});
+        },
+        onManagementPlanAdded(file) {
+            this.editAssessmentFileField({field: 'management_plan_file', file, id: this.id});
+        },
+        template() {
+            return `<div></div>`;
         }
     }
 }

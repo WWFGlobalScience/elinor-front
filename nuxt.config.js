@@ -1,5 +1,6 @@
 export default {
     ssr: false,
+    loading: false,
     components: true,
     target: 'static',
     head: {
@@ -95,13 +96,16 @@ export default {
             },
         },
         redirect: {
-            login: '/',
+            login: '/assessments',
             logout: '/',
-            home: '/'
+            home: '/assessments'
         }
     },
+    /*axios: {
+        baseUrl: 'https://elinor-dev.eba-3jiy2caq.us-east-1.elasticbeanstalk.com/'
+    },*/
     axios: {
-        baseUrl: 'http://elinor-dev.eba-3jiy2caq.us-east-1.elasticbeanstalk.com/'
+        baseUrl: 'https://dev-api.elinordata.org/'
     },
     router: {
         middleware: ['auth'],

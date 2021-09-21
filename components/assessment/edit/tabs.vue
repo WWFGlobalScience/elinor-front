@@ -41,9 +41,9 @@
                         </span>
                     </nuxt-link>
                 </li>
-                <li class="elinor__tab--end">
-                    <nuxt-link :to="`/assessments/edit/${id}/prepare-for-publish`"
-                               :class="[ 'btn--tab btn--tab-percent', { 'btn--error': !progress.published, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
+                <li class="elinor__tab--end" v-if="!progress.published">
+                    <nuxt-link :to="`/assessments/edit/${id}/publish-settings`"
+                               :class="[ 'btn--tab btn--tab-percent', { 'btn--error': progress.overall_percentage < 100, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
                         <span class="bullet">{{ Math.floor(progress.overall_percentage) }}%</span>
                         <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.publish.tab') }}</span>
                     </nuxt-link>

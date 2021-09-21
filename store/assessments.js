@@ -13,10 +13,22 @@ let required_fields = {
         'count_committee',
         'count_community',
         'consent_given',
-        'management_plan_file',
+        'organization',
+        //'management_plan_file',
     ],
     managed_area: [
-        'management_area_version_id'
+        'countries',
+        'date_established',
+        'governance_type',
+        'management_authority',
+        'name',
+        'polygon',
+        'protected_area',
+        'recognition_level',
+        'regions',
+        'reported_size',
+        'stakeholder_groups',
+        'support_sources'
     ],
     survey: survey
 };
@@ -211,6 +223,21 @@ export const mutations = {
     },
     setProgress(state, payload) {
         state.progress = payload;
+    },
+    addCollaborator(state, payload) {
+        state.assessment.collaborators.push(payload)
+    },
+    removeCollaborator(state, payload) {
+        state.assessment.collaborators = state.collaborators.filter(collaborator => collaborator.id !== payload);
+    },
+    updateCollaborator(state, payload) {
+        const {id, role} = payload;
+        state.assessment.collaborators = state.collaborators.map((collaborator) => {
+            if(collaborator.id === id) {
+                collaborator.role = role;
+            }
+            return collaborator;
+        });
     }
 }
 
@@ -247,8 +274,9 @@ export const actions = {
         })
             .then((response) => {
                 const assessment = response.data;
+                console.log(assessment)
                 if(assessment.management_area) {
-                    state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
+                    state.dispatch('managementareas/fetchManagementArea', assessment.management_area.id, { root: true })
                 }
                 state.commit('setAssessment', assessment)
             })
@@ -318,7 +346,7 @@ export const actions = {
             method: 'patch',
             url: `/v1/assessments/${id}/`,
             data: {
-                [field]: value
+                [field]: value && value.id || value
             }
         })
         .then((response) => {
@@ -344,10 +372,11 @@ export const actions = {
 
         //DATA
         const assessment = (await this.$axios.get('v1/assessments/' + id)).data;
+        const managementArea = assessment.management_area ? (await this.$axios.get('v1/managementareas/' + assessment.management_area.id)).data : {};
 
         progress.data.filled = 0;
         for (let field of required_fields.data) {
-            if (assessment[field]) progress.data.filled++;
+            if (assessment[field] !== null) progress.data.filled++;
         }
 
         progress.data.percentage = progress.data.filled / progress.data.required * 100;
@@ -359,7 +388,8 @@ export const actions = {
         //MANAGED AREA
         progress.managed_area.filled = 0;
         for (let field of required_fields.managed_area) {
-            if (assessment[field]) progress.managed_area.filled++;
+            if (managementArea[field]) progress.managed_area.filled++;
+            else console.log(field);
         }
 
         progress.managed_area.percentage = progress.managed_area.filled / progress.managed_area.required * 100;
@@ -387,22 +417,25 @@ export const actions = {
         progress.collaborators.percentage = progress.collaborators.percentage < 100 ? progress.collaborators.percentage : 100;
         progress.collaborators.complete = progress.collaborators.percentage === 100;
         progress.overall_percentage += 25 * progress.collaborators.percentage / 100;
-
+console.log(progress);
         state.commit('setProgress', progress)
-
-        console.log(state.state.progress);
+    },
+    async editAssessmentFileField(state, {field, file, id}) {
+        let formData = new FormData()
+        formData.append(field, file,file.name)
+        this.$axios({
+            method: 'patch',
+            url: `/v1/assessments/${id}/`,
+            data:  formData,
+            config: {headers: {'Content-Type': 'multipart/form-data'}}
+        })
             .then((response) => {
-                state.commit('setAssessmentField', {field, value})
+                console.log(response);
+                state.commit('setAssessmentField', {field, value: response.filename})
                 state.commit('setLastEdit');
             })
             .catch((error) => {
                 console.log(error)
-            })
-            .finally(() => {
-                this.dispatch('loader/loaderState', {
-                    active: false,
-                    text: ''
-                })
             })
     },
 
@@ -431,5 +464,8 @@ export const actions = {
                     text: ''
                 })
             })
+    },
+    reset(state) {
+        state.dispatch('fetchAssessments');
     }
 }

@@ -7,28 +7,28 @@
                         <div class="form__row">
                             <div class="input input--file">
                                 <div class="file">
-                                    <dropzone id="import_file"
-                                              ref="importFile"
+                                    <dropzone id="map_image"
+                                              ref="mapImage"
                                               :options="dropzone"
                                               :useStyling="false"
                                               :destroyDropzone="true"
                                               :useCustomSlot="true"
-                                              @vdropzone-file-added="onImportFileAdded"
+                                              @vdropzone-file-added="onMapImageAdded"
                                     >
                                         <div class="file__drag">
                                             <img src="~/assets/img/ico-file-drag-turqy.svg">
-                                            <span v-if="!managementArea.import_file">{{ $t('default.upload-file.placeholder') }}</span>
-                                            <span v-else><a @click.stop :href="managementArea.import_file" target="_blank">{{ managementArea.import_file }}</a></span>
+                                            <span v-if="!managementArea.map_image">{{ $t('default.upload-file.placeholder') }}</span>
+                                            <span v-else><a @click.stop :href="managementArea.map_image" target="_blank">{{ managementArea.map_image }}</a></span>
                                         </div>
                                     </dropzone>
                                     <div class="file__buttons">
-                                        <button @click="importFileTrigger" type="button" class="btn--border-turqy btn--opacity--child">
+                                        <button @click="mapImageTrigger" type="button" class="btn--border-turqy btn--opacity--child">
                                             <img src="~/assets/img/ico-file-turqy.svg">
                                             <span class="btn--opacity__target">{{
                                                     $t('default.upload-file.buttons.select')
                                                 }}</span>
                                         </button>
-                                        <button v-if="managementArea.import_file" @click="clearImportFile" type="button" class="btn--border-turqy btn--opacity--child">
+                                        <button v-if="managementArea.map_image" @click="clearMapImage" type="button" class="btn--border-turqy btn--opacity--child">
                                             <img src="~/assets/img/ico-clear-turqy.svg">
                                             <span class="btn--opacity__target">{{
                                                     $t('default.upload-file.buttons.clear')
@@ -81,15 +81,15 @@ export default {
             editManagementAreaField: 'managementareas/editManagementAreaField',
             editManagementAreaFileField: 'managementareas/editManagementAreaFileField',
         }),
-        importFileTrigger() {
-            this.$refs.importFile.$el.click();
+        mapImageTrigger() {
+            this.$refs.mapImage.$el.click();
         },
-        clearImportFile() {
-            this.$refs.importFile.removeAllFiles();
-            this.editManagementAreaField({field: 'import_file', value: null, id: this.managementArea.id});
+        clearMapImage() {
+            this.$refs.mapImage.removeAllFiles();
+            this.editManagementAreaField({field: 'map_image', value: null, id: this.managementArea.id});
         },
-        onImportFileAdded(file) {
-            this.editManagementAreaFileField({field: 'import_file', file, id: this.managementArea.id});
+        onMapImageAdded(file) {
+            this.editManagementAreaFileField({field: 'map_image', file, id: this.managementArea.id});
         },
         template() {
             return '<div></div>';

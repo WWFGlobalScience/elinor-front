@@ -1,7 +1,7 @@
 <template>
 <main role="main">
-    <home-public v-if="!$auth.loggedIn"></home-public>
-    <home-private v-if="$auth.loggedIn"></home-private>
+    <home-public v-if="true"></home-public>
+    <home-private v-if="false"></home-private>
     <default-footer></default-footer>
 </main>
 </template>

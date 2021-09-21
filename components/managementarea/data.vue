@@ -63,7 +63,7 @@
                         <li class="elinor__data elinor__data--full">
                             <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.stakeholder-groups' ) }}</span>
                             <span class="data">
-                                <span v-for="(stakeholder, index) in managementArea.stakeholder_groups">
+                                <span v-if="managementArea.stakeholder_groups" v-for="(stakeholder, index) in managementArea.stakeholder_groups">
                                     {{ stakeholder.name}}<span v-if="index !== (managementArea.stakeholder_groups.length - 1)">, </span>
                                 </span>
                             </span>
@@ -72,7 +72,7 @@
                         <li class="elinor__data elinor__data--full">
                             <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.support' ) }}</span>
                             <span class="data">
-                                <span v-html="managementArea.support_sources.map((supportSource) => supportSource.name).join('<span>, </span>')"></span>
+                                <span v-if="managementArea.support_sources" v-html="managementArea.support_sources.map((supportSource) => supportSource.name).join('<span>, </span>')"></span>
                             </span>
                         </li>
                         <li class="elinor__data elinor__data--full">

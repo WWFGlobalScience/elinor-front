@@ -31,6 +31,8 @@ export const actions = {
           password: credentials.password
         },
       })
+      await this.dispatch('assessments/reset');
+      this.$router.push('/assessments');
     } catch (error) {
       if (error.response.data.non_field_errors) {
         if (error.response.data.non_field_errors[0] === 'E-mail is not verified.') {
@@ -64,14 +66,14 @@ export const actions = {
           password2: form.password2,
           first_name: form.first_name,
           last_name: form.last_name,
-          affiliation: form.affiliation,
+          affiliation: form.affiliation && form.affiliation.id,
           accept_tor: form.accept_tor,
         })
         .then((response) => {
           this.$router.push(`/status/email-verification-sent`)
         })
         .catch((error) => {
-          state.commit('setError', error.response);
+          state.commit('setError', error.response.data);
         });
     }
     this.dispatch('loader/loaderState', {
@@ -122,14 +124,19 @@ export const actions = {
       });
   },
   async confirmEmail(state, token) {
-    console.log(token);
     await this.$axios
-      .$get('rest-auth/registration/account-confirm-email/' + token + '/' )
+      .$post('rest-auth/account-confirm-email/', {key: token})
       .then((response) => {
         this.$router.push(`/status/email-confirmed-successfully`)
       })
       .catch((error) => {
         state.commit('setError', true);
       });
+  },
+  async logout(state) {
+      await this.$auth.logout();
+      await this.dispatch('assessments/reset');
+      this.dispatch('dropdown/toggleDropdown');
+      this.$router.push(`/`);
   }
 }

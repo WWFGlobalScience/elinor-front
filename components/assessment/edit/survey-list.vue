@@ -10,17 +10,19 @@
                         <div class="txt">
                             <span class="txt__mark"></span>
                             {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.question' ) }} {{ index + 1 }} / {{ survey.length }}</div>
-                        <div class="question" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.question`)"></div>
+                        <div class="question" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.question`)"></div>
                     </div>
                     <div class="right">
-                        <div v-if="assessment[question] != null" class="completed">
-                            <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer' ) }} | {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.score' ) }}: 4</div>
+                        <div v-if="assessment[question] !== null" class="completed">
+                            <div class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer' ) }} | {{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.score' ) }}: {{ assessment[question] }}</div>
                             <div class="answer">
-                                <span v-if="assessment[question] !== 50" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${index + 1}.answers.${assessment[question]}`)"></span>
+                                <span v-if="assessment[question] !== 50" v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.answers.${parseInt(assessment[question]) / 10}`)"></span>
                                 <span v-else>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.unknown' ) }}</span>
                             </div>
-                            <div class="txt txt--explanation">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation' ) }}</div>
-                            <div class="answer" v-html="assessment[question + '_text']"></div>
+                            <template v-if="assessment[question + '_text']">
+                                <div class="txt txt--explanation">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation' ) }}</div>
+                                <div class="answer" v-html="assessment[question + '_text']"></div>
+                            </template>
                         </div>
                         <div v-else class="uncompleted">
                             <div class="txt__uncomplete">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.not-completed' ) }}</div>
@@ -46,7 +48,21 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             survey: state => state.assessments.survey
-        })
+        }),
+        questions() {
+            const questions = [];
+            const translatedQuestions = this.$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items`);
+            for(const key in translatedQuestions) {
+                const question = translatedQuestions[key]
+                questions.push(question);
+            }
+            console.log();
+            return this.$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items`);
+        }
+    },
+    mounted() {
+        console.log(this.$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items`));
+
     }
 
 }

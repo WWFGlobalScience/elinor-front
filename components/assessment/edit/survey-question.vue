@@ -15,7 +15,7 @@
                         <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.question' ) }} {{ questionId }} / {{ survey.length }}</span>
                     </div>
                     <div class="question__title">
-                        {{ $t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${qid}.question` ) }}
+                        {{ $t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.question` ) }}
                     </div>
                 </div>
             </div>
@@ -45,8 +45,8 @@
                                     </div>
                                 </div>
                                 <label :for="'answer-'+ answer" class="label">
-                                    <span>{{ answer }}</span>
-                                    <span v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${qid}.answers.${index + 1}` )"></span>
+                                    <span></span>
+                                    <span v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.answers.${index + 1}` )"></span>
                                 </label>
                             </div>
                         </div>
@@ -104,11 +104,11 @@ export default {
             editAssessmentField: 'assessments/editAssessmentField'
         }),
         save(value) {
-            const field = this.survey[parseInt(this.qid) - 1];
+            const field = this.question;
             this.editAssessmentField( {field, value, id: this.assessment.id});
         },
         saveExplanation(value) {
-            const field = this.survey[parseInt(this.qid) - 1] + '_text';
+            const field = this.question + '_text';
             this.editAssessmentField( {field, value, id: this.assessment.id});
         }
     }

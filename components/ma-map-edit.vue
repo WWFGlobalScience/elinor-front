@@ -52,10 +52,10 @@
                 <p>Indicate the boundaries of the Managed Area</p>
                 <div class="options__wrap mt-10">
                     <div class="option__btn">
-                        <nuxt-link :to="`#`" class="btn btn--border-turqy btn--opacity--child btn--between">
+                        <a role="button" @click="popupState( { active: true, component: 'popup-map-spatialfile', title: 'popups.spatialfile.title' })" class="btn btn--border-turqy btn--opacity--child btn--between">
                             <span class="btn--opacity__target">Upload spatial area file</span>
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
-                        </nuxt-link>
+                        </a>
                     </div>
                     <div class="option__info">
                         <p>PREFERED METHOD</p>
@@ -64,25 +64,25 @@
                 </div>
                 <div class="divider">
                     <span>OR</span>
-                </div> 
+                </div>
                 <div class="options__wrap">
                     <div class="option__btn">
-                        <nuxt-link :to="`#`" class="btn btn--border-turqy btn--opacity--child btn--between">
+                        <a role="button" @click="popupState( { active: true, component: 'popup-map-imagefile', title: 'popups.imagefile.title' })" class="btn btn--border-turqy btn--opacity--child btn--between">
                             <span class="btn--opacity__target">Upload map image</span>
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
-                        </nuxt-link>
+                        </a>
                     </div>
                     <div class="option__info">
                         <p>PREFERED METHOD</p>
-                        <p>Upload a Spatial file in Shapefile format or GeoJSON  </p>
+                        <p>Upload a image file</p>
                     </div>
-                </div> 
+                </div>
                 <div class="w-2/3 sm:w-full">
                     <div class="form__group">
                         <div class="form__row form__row--mt-8">
                             <div class="input input--pr">
                                 <div class="label">Please list the source of the geospatial information</div>
-                                <textarea name="explanation" placeholder="Text here"></textarea>
+                                <textarea name="explanation" placeholder="Text here" @change="save('geospatial_sources', $event.target.value)">{{ managementArea.geospatial_sources }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,8 @@ export default {
     },
     computed: {
         ...mapState({
-            managementArea: state => state.managementareas.instance
+            managementArea: state => state.managementareas.instance,
+            assessment: state => state.assessments.assessment,
         })
     },
     mounted() {
@@ -128,9 +129,14 @@ export default {
     },
     methods: {
         ...mapActions({
+            editManagementAreaField: 'managementareas/editManagementAreaField',
             removePolygon: 'managementareas/removePolygon',
-            setPolygon: 'managementareas/setPolygon'
+            setPolygon: 'managementareas/setPolygon',
+            popupState: 'popup/popupState'
         }),
+        save(field, value) {
+            this.editManagementAreaField( {field, value, id: this.managementArea.id, assessmentId: this.assessment.id});
+        },
         mapCreate() {
             this.map != null ? this.map.remove() : null
             this.map = new mapboxgl.Map({

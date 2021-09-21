@@ -8,6 +8,12 @@ export const mutations = {
     setCollaborators(state, payload) {
         state.collaborators = payload
     },
+    addCollaborator(state, payload) {
+        state.collaborators.push(payload)
+    },
+    removeCollaborator(state, payload) {
+        state.collaborators = state.collaborators.filter(collaborator => collaborator.id !== payload);
+    },
     updateCollaborator(state, payload) {
         const {id, role} = payload;
         const collaborators = state.collaborators.map((collaborator) => {
@@ -34,7 +40,14 @@ export const actions = {
             url: 'v1/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
-            this.$router.push(`/assessments/edit/${data.assessment.id}/collaborators/`)
+            state.commit('assessments/addCollaborator', response.data, {root: true});
+            this.dispatch('popup/popupState', {
+                active: false
+            })
+            this.dispatch('loader/loaderState', {
+                active: true,
+                text: 'Creating collaborator...'
+            })
         }).catch(error => console.log(error))
     },
 
@@ -58,7 +71,7 @@ export const actions = {
         }
     },
 
-    async updateCollaborator(state, {role, collaborator}) {
+    async updateCollaborator(state, {role, collaborator, assessmentId}) {
         console.log(role,collaborator);
         this.dispatch('loader/loaderState', {
             active: true,
@@ -70,12 +83,12 @@ export const actions = {
             url: `v1/collaborators/${collaborator.id}/`,
             data: {
                 role: role,
-                assessment: collaborator.assessment.id,
+                assessment: assessmentId,
                 user: collaborator.user.id
             }
         }).then(response => {
             this.dispatch('loader/loaderState', {active: true})
-            state.commit('updateCollaborator', {id: collaborator.id, role})
+            state.commit('assessments/updateCollaborator', {id: collaborator.id, role}, {root: true});
         }).catch(error => console.log(error))
     },
 
@@ -86,7 +99,10 @@ export const actions = {
             method: 'delete',
             url: 'v1/collaborators/' + id,
         }).then(response => {
-            this.$router.push(`/assessments/edit/${id}/collaborators/`)
+            state.commit('assessments/removeCollaborator', id, {root: true});
+            this.dispatch('popup/popupState', {
+                active: false
+            })
         }).catch(error => console.log(error));
     },
 }
