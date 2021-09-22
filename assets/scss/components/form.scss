@@ -116,7 +116,7 @@
                             @apply absolute w-full h-full z-10 opacity-0;
                         }
                         .file__drag {
-                            @apply w-full h-[220px] flex items-center justify-center border border-dashed border-black mb-6;
+                            @apply w-full h-[220px] flex items-center justify-center border border-dashed border-black mb-10;
                             img {
                                 @apply center-both;
                             }

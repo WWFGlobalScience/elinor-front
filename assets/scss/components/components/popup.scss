@@ -5,7 +5,8 @@
         @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
     }
     .popup__box {
-        @apply w-[1000px] center-both z-10 shadow-xl xl:max-h-75screen xl:overflow-auto md:w-11/12 sm:w-full sm:h-full sm:max-h-screen;
+        @apply w-[1000px] center-both z-10 shadow-xl overflow-auto xl:max-h-75screen md:w-11/12 sm:w-full sm:h-full sm:max-h-screen;
+        max-height:75vh;
         .popup__header {
             @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8;
             span {
@@ -14,6 +15,16 @@
         }
         .popup__content {
             @apply bg-white px-20 py-10 rounded-b-xl sm:px-4;
+            
+            .popup__map{
+                @apply relative flex justify-center items-center flex-col mt-16 -mx-20;
+                &>div{@apply w-full px-20 sm:px-4}
+                .header--map{
+                    @apply flex justify-between items-center;
+                    .form__row{@apply items-end}
+                }
+
+            }
         }
 
         &.popup__box--min{
@@ -31,3 +42,5 @@
         }
     }
 }
+
+

@@ -63,7 +63,7 @@
                 "shapefile-placeholder": "Drag and drop a geojson or Shapefile here"
             },
             "descriptions": {
-                "file": "<h4>What file to upload?</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis viverra finibus. Fusce vitae nisi eget nisi varius semper ut sed odio. <a href='https://en.wikipedia.org/wiki/GeoJSON' target='_blank'>Geojson</a> elementum id nunc nec tempor. Morbi eget vestibulum libero. Morbi consectetur eros massa, vel dapibus odio imperdiet quis. Sed diam mi, luctus condimentum dignissim ut, mattis nec massa.</p>"
+                "file": "<h4>What file to upload?</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis viverra finibus. </p><br><p>Fusce vitae nisi eget nisi varius semper ut sed odio. <a href='https://en.wikipedia.org/wiki/GeoJSON' target='_blank'>Geojson</a> elementum id nunc nec tempor.</p><br><p> Morbi eget vestibulum libero. Morbi consectetur eros massa. </p>"
             }
         }
     },

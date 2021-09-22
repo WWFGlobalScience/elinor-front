@@ -2,7 +2,7 @@
     <div class="popup__content">
         <div class="popup__grid">
             <div class="left">
-                <form class="form">
+                <form class="form form--mt-0">
                     <div class="form__group">
                         <div class="form__row">
                             <div class="input input--file">
@@ -23,16 +23,16 @@
                                     </dropzone>
                                     <div class="file__buttons">
                                         <button @click="importFileTrigger" type="button" class="btn--border-turqy btn--opacity--child">
-                                            <img src="~/assets/img/ico-file-turqy.svg">
                                             <span class="btn--opacity__target">{{
                                                     $t('default.upload-file.buttons.select')
                                                 }}</span>
+                                            <img src="~/assets/img/ico-file-turqy.svg">
                                         </button>
                                         <button v-if="managementArea.import_file" @click="clearImportFile" type="button" class="btn--border-turqy btn--opacity--child">
-                                            <img src="~/assets/img/ico-clear-turqy.svg">
                                             <span class="btn--opacity__target">{{
                                                     $t('default.upload-file.buttons.clear')
                                                 }}</span>
+                                            <img src="~/assets/img/ico-clear-turqy.svg">
                                         </button>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                 </form>
             </div>
             <div class="right">
-                <div class="description" v-html="$t( 'popups.spatialfile.descriptions.file' )"></div>
+                <div class="description" v-html="$t( 'popups.spatialfile.descriptions.file' )"></div> 
             </div>
         </div>
     </div>
