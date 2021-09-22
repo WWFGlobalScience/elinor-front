@@ -32,7 +32,7 @@
                                 :multiple="false"
                                 :searchable="true"
                                 :showLabels="false"
-                                :allow-empty="false"
+                                :allow-empty="false" open-direction="bottom"
                                 :hide-selected="true"
                                 v-model="selectedUser"
                                 @search-change="findUsers"
@@ -48,7 +48,7 @@
                 </div>
                 <h4 class="c-title--modal mb-6">Select role & permissions</h4>
                 <div class="form__group g-grid--3-1-md">
-                    <div v-if="isAdmin()" class="form__row">
+                    <div v-if="isAdmin($auth, assessment)" class="form__row">
                         <div class="input input--radios input--radios-question">
                             <div class="radios__wrap">
                                 <div class="radio__wrap">

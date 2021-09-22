@@ -23,8 +23,8 @@ export const isAssessmentCollaborator = (auth, assessment) => {
 }
 
 const findAssessmentCollaboratorUser = (auth, assessment) => {
-    if(auth.loggedIn) {
-        return assessment.collaborators.filter(collaborator => collaborator.user.id === auth.user.id)[0];
+    if(auth && auth.loggedIn) {
+        return assessment.collaborators && assessment.collaborators.filter(collaborator => collaborator.user.id === auth.user.id)[0];
     }
 }
 

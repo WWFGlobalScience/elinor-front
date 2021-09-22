@@ -101,9 +101,6 @@ export const mutations = {
         const {field, value} = payload;
         state.instance[field] = value;
     },
-    setInstanceLastEdit(state) {
-        state.instance.last_edit = this.$moment();
-    },
     setPolygon(state, polygon) {
         state.instance.polygon = polygon
     },
@@ -158,7 +155,7 @@ export const actions = {
             })
         }
         state.commit('setInstanceField', {field, value})
-        state.commit('setInstanceLastEdit');
+        state.commit('assessments/setLastEdit', {}, {root: true});
         state.dispatch('assessments/updateAssessmentProgress', assessmentId, {root: true});
     },
     async editManagementAreaFileField(state, {field, file, id}) {
@@ -172,7 +169,7 @@ export const actions = {
         })
             .then((response) => {
                 state.commit('setManagementAreaField', {field, value: response.filename})
-                state.commit('setLastEdit');
+                state.commit('assessments/setLastEdit', {}, {root: true});
             })
             .catch((error) => {
                 console.log(error)
@@ -200,8 +197,7 @@ export const actions = {
         state.dispatch('createManagementArea', {form, assessmentId: assessment.id})
     },
     async onManagementAreaSelected(state, {managementArea, assessmentId}) {
-        const form = {...managementArea, parent: managementArea.id};
-        console.log('dispatch');
+        const form = {...managementArea, import_file: null, parent: managementArea.id};
         state.dispatch('createManagementArea', {form, assessmentId})
     },
     async onDateEstablishmentSelected(state, date) {

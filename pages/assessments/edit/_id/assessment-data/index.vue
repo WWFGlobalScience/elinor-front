@@ -15,7 +15,7 @@
                                 }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect :value="assessment.year" :options="years" :multiple="false"
-                                             :searchable="true" :showLabels="false" :allow-empty="false"
+                                             :searchable="true" :showLabels="false" :allow-empty="false" open-direction="bottom"
                                              :hide-selected="true" @input="save('year', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>
@@ -53,7 +53,7 @@
                                     label="name"
                                     :options="organizations"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onOrganizationSelected"
                                     @search-change="fetchOrganizations">
                                     <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> <button @click="$event.preventDefault();$event.stopPropagation(); createOrganization(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">{{ $t('default.create') }}</button></span>
@@ -72,7 +72,7 @@
                             <div class="multiselect__wrap">
                                 <multiselect :value="person_responsible_role" :options="roles" label="name"
                                              track-by="id" :multiple="false" :searchable="false" :showLabels="false"
-                                             :allow-empty="false" :hide-selected="false"
+                                             :allow-empty="false" open-direction="bottom" :hide-selected="false"
                                              @input="save('person_responsible_role', $event.id)">
                                     <template slot="singleLabel" slot-scope="{ option }">{{ option.name }}</template>
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
@@ -104,7 +104,7 @@
                                        :value="assessment.count_manager">
                                 <multiselect placeholder="" :value="assessment.count_manager" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" :hide-selected="true"
+                                             :allow-empty="false" open-direction="bottom"
                                              @input="save('count_manager', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>
@@ -122,7 +122,7 @@
                                        :value="assessment.count_personnel">
                                 <multiselect placeholder="" :value="assessment.count_personnel" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" :hide-selected="true"
+                                             :allow-empty="false" open-direction="bottom"
                                              @input="save('count_personnel', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>
@@ -142,7 +142,7 @@
                                        :value="assessment.count_government">
                                 <multiselect placeholder="" :value="assessment.count_government" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" :hide-selected="true"
+                                             :allow-empty="false" open-direction="bottom"
                                              @input="save('count_government', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>
@@ -160,7 +160,7 @@
                                        :value="assessment.count_community">
                                 <multiselect placeholder="" :value="assessment.count_community" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" :hide-selected="true"
+                                             :allow-empty="false" open-direction="bottom"
                                              @input="save('count_community', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>
@@ -180,7 +180,7 @@
                                        :value="assessment.count_committee">
                                 <multiselect placeholder="" :value="assessment.count_committee" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" :hide-selected="true"
+                                             :allow-empty="false" open-direction="bottom"
                                              @input="save('count_committee', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>

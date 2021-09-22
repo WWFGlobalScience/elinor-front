@@ -63,7 +63,7 @@
                 <div class="container--full container--turqy-lighter mt-14">
                     <div class="container--sm py-14">
                         <div class="form__group">
-                            <div class="form__row">
+                            <!--<div class="form__row">
                                 <div class="input input--pr input--multiselect">
                                     <div class="multiselect__wrap">
                                         <multiselect
@@ -73,7 +73,7 @@
                                             label="name"
                                             :options="organizations"
                                             :multiple="false" :searchable="true" :showLabels="false"
-                                            :allow-empty="false" :hide-selected="true"
+                                            :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                             @input="onOrganizationSelected"
                                             @search-change="fetchOrganizations">
                                             <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> <button @click="$event.preventDefault();$event.stopPropagation(); createOrganization(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">{{ $t('default.create') }}</button></span>
@@ -87,7 +87,7 @@
                                          v-tippy='{ placement : "top-start" }'>?
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!--<div class="form__row">
                               <div class="input input--pr">
                                 <textarea name="contact-details"
@@ -142,26 +142,20 @@ export default {
                 password2: null,
                 first_name: null,
                 last_name: null,
-                affiliation: 1,
+                affiliation: null,
                 accept_tor: false,
             }
         }
     },
     computed: {
         ...mapState({
-            error: state => state.authentication.error,
-            organizations: state => state.organizations.list
+            error: state => state.authentication.error
         })
     },
     methods: {
         ...mapActions({
-            signUp: 'authentication/signUp',
-            fetchOrganizations: 'organizations/fetchOrganizations',
-            createOrganization: 'organizations/createOrganization'
+            signUp: 'authentication/signUp'
         }),
-        onOrganizationSelected(organization) {
-           this.form.affiliation = organization;
-        },
         submit(event) {
             event.preventDefault();
             this.signUp(this.form);

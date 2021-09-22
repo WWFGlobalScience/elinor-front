@@ -18,11 +18,11 @@
                     <td>
                         <div class="form__group">
                             <div class="form__row">
-                                <div class="input input--radios input--radios-question">
+                                <div v-if="permissionToCollaboratorRoleEdit(collaborator, 70)" class="input input--radios input--radios-question">
                                     <div class="radios__wrap">
                                         <div class="radio__wrap">
                                         <div class="radio">
-                                            <input :disabled="!isAdmin()" type="radio" :name="'role-' + collaborator.id" value="70" :checked="collaborator.role == 70"
+                                            <input :disabled="!isAdmin($auth, assessment)" type="radio" :name="'role-' + collaborator.id" value="70" :checked="collaborator.role === 70"
                                             @input="updateColl(70, collaborator)"/>
                                             <img src="~/assets/img/ico-ok.svg"/>
                                         </div>
@@ -35,11 +35,11 @@
                     <td>
                     <div class="form__group">
                         <div class="form__row">
-                            <div class="input input--radios input--radios-question">
+                            <div v-if="permissionToCollaboratorRoleEdit(collaborator, 40)" class="input input--radios input--radios-question">
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                     <div class="radio">
-                                        <input :disabled="!isAdmin()" type="radio" :name="'role-' + collaborator.id" value="40" :checked="collaborator.role == 40"
+                                        <input :disabled="!isAdmin($auth, assessment)" type="radio" :name="'role-' + collaborator.id" value="40" :checked="collaborator.role == 40"
                                         @input="updateColl(40, collaborator)"/>
                                         <img src="~/assets/img/ico-ok.svg"/>
                                     </div>
@@ -52,11 +52,11 @@
                     <td>
                         <div class="form__group">
                             <div class="form__row">
-                                <div class="input input--radios input--radios-question">
+                                <div v-if="permissionToCollaboratorRoleEdit(collaborator, 10)" class="input input--radios input--radios-question">
                                     <div class="radios__wrap">
                                         <div class="radio__wrap">
                                         <div class="radio">
-                                            <input :disabled="!isAdmin()" type="radio" :name="'role-' + collaborator.id" value="10" :checked="collaborator.role == 10"
+                                            <input :disabled="!isAdmin($auth, assessment)" type="radio" :name="'role-' + collaborator.id" value="10" :checked="collaborator.role == 10"
                                             @input="updateColl(10, collaborator)"/>
                                             <img src="~/assets/img/ico-ok.svg"/>
                                         </div>
@@ -67,7 +67,7 @@
                         </div>
                     </td>
                     <td>
-                        <button v-if="!isLastAdmin() && isAdmin()" type="button" class="btn--circle btn--opacity--child"
+                        <button v-if="!isLastAdmin() && isAdmin($auth, assessment)" type="button" class="btn--circle btn--opacity--child"
                                 @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-delete', title: 'Deleting Collaborator', onConfirm: onConfirmDelete(collaborator.id) })"
                         >
                             <span class="sr-only">delete</span>
@@ -84,9 +84,15 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
+import {isAssessmentAdmin} from "~/config/assessment-roles";
 
 export default {
     name: 'assessment-edit-collaborators-list',
+    computed: {
+        ...mapState({
+            assessment: state => state.assessments.assessment
+        })
+    },
     methods: {
         ...mapActions({
             updateCollaborator: 'collaborators/updateCollaborator',
@@ -104,15 +110,10 @@ export default {
         isLastAdmin() {
             return this.assessment.collaborators.filter(collaborator => collaborator.role !== 70).length === 1;
         },
-        isAdmin() {
-            const user = this.assessment.collaborators.filter(collaborator => collaborator.user.id === this.$auth.user.id)[0];
-            return user.role === 70;
-        }
-    },
-    computed: {
-        ...mapState({
-            assessment: state => state.assessments.assessment
-        })
+        permissionToCollaboratorRoleEdit(collaborator, role) {
+           return collaborator.role === role || this.isAdmin(this.$auth, this.assessment);
+        },
+        isAdmin: isAssessmentAdmin
     }
 }
 </script>

@@ -32,13 +32,9 @@
                             <span class="label">{{ $t('pages.assessments.content.assessment.labels.year') }}</span>
                             <span class="data">{{ assessment.year }}</span>
                         </li>
-                        <li class="countries" v-if="assessment.management_area && assessment.management_area.countries">
+                        <li class="countries" v-if="assessment.management_area_countries && assessment.management_area_countries.countries">
                             <span class="label">{{ $t('pages.assessments.content.assessment.labels.countries') }}</span>
-                            <span class="data">
-                                <span v-for="(country, index) in assessment.management_area.countries">
-                                    {{ country }}
-                                </span>
-                            </span>
+                            <span class="data" v-html="assessment.management_area_countries.countries.join(', ')"></span>
                         </li>
                         <li class="view" v-if="!$auth.loggedIn || assessment.status === 10 || isAssessmentObserver($auth, assessment)">
                             <nuxt-link :to="`/assessments/${assessment.id}/info/`"

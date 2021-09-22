@@ -34,17 +34,13 @@ export const actions = {
         }
     },
     async createOrganization(state, name) {
-        this.dispatch('loader/loaderState', {
-            active: true,
-            text: 'Creating collaborator...'
-        })
-
-        this.$axios({
+        const response = await this.$axios({
             method: 'post',
             url: 'v1/organizations/',
             data: { name }
-        }).then(response => {
-            state.commit('addToList', response.data)
-        }).catch(error => console.log(error))
+        })
+        const organization = response.data;
+        state.commit('addToList', organization);
+        return organization;
     },
 }

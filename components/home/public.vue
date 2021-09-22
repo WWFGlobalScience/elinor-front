@@ -27,21 +27,27 @@
         <p class="text-base">{{ $t('pages.auth.content.sign-in.subtitle') }}</p>
 
         <div v-if="alerts.invalidCredentials"
-             class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+             class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
           <strong class="font-bold">Invalid credentials!</strong>
           <span class="block sm:inline">Do not remember the password? Try the forgot password</span>
         </div>
 
         <div v-if="alerts.emailVerificationRequired"
-             class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+             class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
           <strong class="font-bold">Email verification required!</strong>
           <span class="block sm:inline">Have you not received the verification email? If not resend it again</span>
         </div>
 
         <div v-if="alerts.emailVerificationSent"
-             class="bg-green-100 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+             class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
           <strong class="font-bold">Email verification sent!</strong>
           <span class="block sm:inline">You will receive a message to verify your email</span>
+        </div>
+
+        <div v-if="alerts.passwordChangedSuccessfully"
+             class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Password changed successfully!</strong>
+          <span class="block sm:inline">Now you can access with the new password.</span>
         </div>
 
         <form id="form--signin" @submit="submit" class="form form--sign-in">
@@ -243,19 +249,6 @@ export default {
     ...mapState({
       alerts: state => state.authentication.alerts
     })
-  },
-  mounted() {
-    if (this.$route.params.verification === 'email-verification-sent') {
-      this.$store.commit('authentication/setAlert', {name: 'emailVerificationSent', value: true});
-    }
-
-    if (this.$route.params.verification === 'email-verification-required') {
-      this.$store.commit('authentication/setAlert', {name: 'emailVerificationRequired', value: true});
-    }
-
-    if (this.$route.params.verification === 'password-changed-successfully') {
-      this.$store.commit('authentication/setAlert', {name: 'passwordChangedSuccessfully', value: true});
-    }
   },
   methods: {
     ...mapActions({

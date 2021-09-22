@@ -18,11 +18,11 @@
                         <td>
                             <div class="form__group">
                                 <div class="form__row">
-                                    <div class="input input--radios input--radios-question">
+                                    <div v-if="collaborator.role === 70" class="input input--radios input--radios-question">
                                         <div class="radios__wrap">
                                             <div class="radio__wrap">
                                                 <div class="radio">
-                                                    <input type="radio" :disabled="true" :name="'role-' + collaborator.id" value="70" :checked="collaborator.role == 70" />
+                                                    <input type="radio" :disabled="true" :name="'role-' + collaborator.id" value="70" :checked="collaborator.role === 70" />
                                                     <img src="~/assets/img/ico-ok.svg"/>
                                                 </div>
                                             </div>
@@ -34,11 +34,11 @@
                         <td>
                             <div class="form__group">
                                 <div class="form__row">
-                                    <div class="input input--radios input--radios-question">
+                                    <div v-if="collaborator.role === 40" class="input input--radios input--radios-question">
                                         <div class="radios__wrap">
                                             <div class="radio__wrap">
                                                 <div class="radio">
-                                                    <input type="radio" :disabled="true"  :name="'role-' + collaborator.id" value="40" :checked="collaborator.role == 40"/>
+                                                    <input type="radio" :disabled="true"  :name="'role-' + collaborator.id" value="40" :checked="collaborator.role === 40"/>
                                                     <img src="~/assets/img/ico-ok.svg"/>
                                                 </div>
                                             </div>
@@ -50,11 +50,11 @@
                         <td>
                             <div class="form__group">
                                 <div class="form__row">
-                                    <div class="input input--radios input--radios-question">
+                                    <div v-if="collaborator.role === 10" class="input input--radios input--radios-question">
                                         <div class="radios__wrap">
                                             <div class="radio__wrap">
                                                 <div class="radio">
-                                                    <input type="radio" :disabled="true" :name="'role-' + collaborator.id" value="10" :checked="collaborator.role == 10"/>
+                                                    <input type="radio" :disabled="true" :name="'role-' + collaborator.id" value="10" :checked="collaborator.role === 10"/>
                                                     <img src="~/assets/img/ico-ok.svg"/>
                                                 </div>
                                             </div>

@@ -6,7 +6,7 @@
                     <div class="input input--multiselect input--1-4">
                         <label class="label">{{ $t( 'pages.assessments.content.assessment-edit.create.labels.year' ) }}*</label>
                         <div class="multiselect__wrap">
-                            <multiselect placeholder="0000" select-label="Enter doesn’t work here!" :value="selectYear.value" :options="selectYear.options" :multiple="false" :searchable="true" :showLabels="false" :allow-empty="false" :hide-selected="true" @input="onSelectYearChange" >
+                            <multiselect placeholder="0000" select-label="Enter doesn’t work here!" :value="selectYear.value" :options="selectYear.options" :multiple="false" :searchable="true" :showLabels="false" :allow-empty="false" open-direction="bottom" :hide-selected="true" @input="onSelectYearChange" >
                                 <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
@@ -46,7 +46,7 @@ export default {
     name: 'popup-assessment-create',
     data () {
         return {
-            selectYear: {               
+            selectYear: {
                 tocuhed: false,
                 value: null,
                 options: [ '2021', '2020' ]

@@ -18,7 +18,7 @@
                                     label="name"
                                     :options="managementAreas"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onManagementAreaSelect"
                                     @search-change="fetchManagementAreas">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>

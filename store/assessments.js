@@ -69,7 +69,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {},
+    assessment: {last_edit: null},
     edit: {
         data: true,
         ma: false,
@@ -276,7 +276,7 @@ export const actions = {
                 const assessment = response.data;
                 console.log(assessment)
                 if(assessment.management_area) {
-                    state.dispatch('managementareas/fetchManagementArea', assessment.management_area.id, { root: true })
+                    state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
                 }
                 state.commit('setAssessment', assessment)
             })
@@ -372,7 +372,7 @@ export const actions = {
 
         //DATA
         const assessment = (await this.$axios.get('v1/assessments/' + id)).data;
-        const managementArea = assessment.management_area ? (await this.$axios.get('v1/managementareas/' + assessment.management_area.id)).data : {};
+        const managementArea = assessment.management_area ? (await this.$axios.get('v1/managementareas/' + assessment.management_area)).data : {};
 
         progress.data.filled = 0;
         for (let field of required_fields.data) {

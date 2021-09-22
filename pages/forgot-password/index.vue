@@ -17,13 +17,13 @@
         <p class="text-base">{{ $t('pages.auth.content.forgot-password.subtitle') }}</p>
 
         <div v-if="alerts.forgotPasswordEmailSent"
-             class="bg-green-100 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+             class="bg-green-100 mt-10 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
           <strong class="font-bold">Forgot password email sent!</strong>
           <span class="block sm:inline">We have generated a link to reset your password</span>
         </div>
 
         <form id="form--signin" class="form form--sign-in" @submit="submit">
-          <div class="form__group">
+          <div v-if="!alerts.forgotPasswordEmailSent" class="form__group">
             <div class="form__row">
               <div class="input">
                 <input type="email" :placeholder="$t('pages.auth.content.forgot-password.email-placeholder')"
@@ -34,8 +34,12 @@
 
           <div class="elinor__card--sign-in__info mt-9">
             <div>
-              <button type="submit" class="btn--border-turqy btn--opacity--child">
+              <button v-if="!alerts.forgotPasswordEmailSent" type="submit" class="btn--border-turqy btn--opacity--child">
                 <span class="btn--opacity__target">Send email</span>
+                <img src="~/assets/img/ico-signin-turqy.svg"/>
+              </button>
+              <button v-if="alerts.forgotPasswordEmailSent" @click.prevent.stop="reset" type="button" class="btn--border-turqy btn--opacity--child">
+                <span class="btn--opacity__target">Try again</span>
                 <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
             </div>
@@ -57,19 +61,23 @@ export default {
       email: null
     }
   },
-  computed: {
+    computed: {
     ...mapState({
       alerts: state => state.authentication.alerts
     })
   },
   methods: {
     ...mapActions({
-      forgotPassword: 'authentication/forgotPassword'
+      forgotPassword: 'authentication/forgotPassword',
+      resetForgotPassword: 'authentication/resetForgotPassword'
     }),
     submit(event) {
       event.preventDefault();
       this.forgotPassword(this.email);
     },
+      reset() {
+        this.resetForgotPassword();
+      }
   }
 }
 </script>

@@ -24,7 +24,7 @@
                                     label="name"
                                     :options="managementAreas"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('containedby', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchManagementAreas', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -73,7 +73,7 @@
                                     label="name"
                                     :options="authorities"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('management_authority', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -94,7 +94,7 @@
                                     label="name"
                                     :options="governanceTypes"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('governance_type', $event)"
                                     @search-change="onSelectSearch('governancetypes/fetchGovernanceTypes', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -120,7 +120,7 @@
                                     label="name"
                                     :options="authorities"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('management_authority', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -141,7 +141,7 @@
                                     label="name"
                                     :options="stakeholderGroups"
                                     :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('stakeholder_groups', $event)"
                                     @search-change="onSelectSearch('stakeholdergroups/fetchStakeholderGroups', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -162,7 +162,7 @@
                                     label="name"
                                     :options="supportSources"
                                     :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('support_sources', $event)"
                                     @search-change="onSelectSearch('supportsources/fetchSupportSources', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -176,7 +176,7 @@
                     <div class="form__row">
                         <div class="input input--1-2">
                             <label class="label">If this managed area is associated with an id in the World Database on Protected Areas (WDPA), please enter that id?</label>
-                            <input type="text" name="id" placeholder="00000 Id">
+                            <input type="text" :value="managementArea.wdpa_protected_area" name="id" placeholder="00000 Id"  @change="save('wdpa_protected_area', $event.target.value)">
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@
                                     label="name"
                                     :options="regions"
                                     :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('regions', $event)"
                                     @search-change="onSelectSearch('regions/fetchRegions', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -261,7 +261,7 @@
                                     :value="numZones"
                                     :options="[1,2,3,4,5,6,7,8,9,10]"
                                     :multiple="false" :searchable="false" :showLabels="false"
-                                    :allow-empty="false"
+                                    :allow-empty="false" open-direction="bottom"
                                     @input="onNumZonesChanged($event)">
                                 </multiselect>
                                 <div class="multiselect__caret">
@@ -287,7 +287,7 @@
                                                     track-by="id"
                                                     label="name"
                                                     :multiple="false" :searchable="false" :showLabels="false"
-                                                    :allow-empty="false"
+                                                    :allow-empty="false" open-direction="bottom"
                                                     @input="onZoneFieldChanged('access_level', index, $event.id)">
                                                 </multiselect>
                                                 <div class="multiselect__caret">

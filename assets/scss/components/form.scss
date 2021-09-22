@@ -234,7 +234,7 @@
                     }
                     .multiselect__extra{
                         @apply mt-8 ;
-    
+
                     }
                     .multiselect__form{
                         @apply relative ml-8 pl-14 pt-4 border-l border-grayy-border;
@@ -275,5 +275,9 @@
 
     &.form--sign-in{
         @apply mt-11;
+    }
+
+    &.form--organization{
+        @apply mt-1;
     }
 }

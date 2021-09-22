@@ -36,6 +36,7 @@
         "view": "View",
         "edit": "Edit",
         "noresults": "No results for this query.",
+        "create": "Create",
         "save": {
             "button": "Save",
             "autosave": "Data autosaved"

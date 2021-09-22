@@ -14,7 +14,7 @@
                     <span class="btn--opacity__target">{{ $t( 'default.save.button' ) }}</span>
                     <img src="~/assets/img/ico-save-white.svg">
                 </button>
-                <p v-if="assessment.last_edit"> {{ $t( 'default.save.autosave' ) + ' ' + assessment.last_edit.fromNow() }}</p>
+                <p v-if="assessment.last_edit !== null && assessment.last_edit !== undefined"> {{ $t( 'default.save.autosave' ) + ' ' + assessment.last_edit.fromNow() }}</p>
             </div>
         </div>
     </header>
