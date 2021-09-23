@@ -258,7 +258,7 @@ export const mutations = {
 export const actions = {
     async fetchAssessments(state) {
         let params;
-        if(state.search) {
+        if(state.state.search) {
             params = {search: state.state.search};
         }
 

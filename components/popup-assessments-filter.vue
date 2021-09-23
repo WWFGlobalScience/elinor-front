@@ -164,7 +164,7 @@
                     <span class="btn--opacity__target">{{ $t( 'default.filters.reset' ) }}</span>
                 </button>
                 <button type="button" @click="popupState({active: false})" class="btn--border-turqy btn--opacity--child">
-                    <span class="btn--opacity__target">{{ $t( 'default.filters.button' ) }}</span>
+                    <span class="btn--opacity__target">{{ $t( 'default.filters.apply' ) }}</span>
                     <img src="~/assets/img/ico-filters-turqy.svg">
                 </button>
             </section>

@@ -44,11 +44,8 @@ export default {
     methods: {
         ...mapActions({
             popupState: 'popup/popupState',
-            fetchAssessments: 'assessments/fetchAssessments'
-        }),
-        search(text) {
-            this.fetchAssessments({search: text});
-        }
+            search: 'assessments/search'
+        })
     }
 }
 </script>

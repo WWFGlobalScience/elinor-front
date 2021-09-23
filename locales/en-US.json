@@ -16,7 +16,8 @@
             "error": "Oops! Something is wrong. Please, try again after a few minutes"
         },
         "filters": {
-            "button": "Apply",
+            "button": "Filters",
+            "apply": "Apply",
             "reset": "Reset",
             "popup": {
                 "title": "Add filters",
