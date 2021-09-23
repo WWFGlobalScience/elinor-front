@@ -40,6 +40,7 @@
             }
         }
     }
+    
     &.section--tags {
         @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
 
@@ -164,6 +165,10 @@
         img {
             @apply h-full w-full object-cover;
         }
+    }
+
+    .section__bottom{
+        @apply w-full mt-8 flex justify-end border-t border-grayy-border pt-8 mt-12 sm:mt-8 sm:justify-start
     }
 
 

@@ -26,6 +26,19 @@
         <div class="mt-12">
             <assessment-edit-collaborators-list></assessment-edit-collaborators-list>
         </div>
+         <div class="container">
+            <div class="section__bottom">
+                <button
+                    class="btn btn--opacity--child"
+                >
+                    <span class="btn--opacity__target">Next step</span>
+                    <img
+                        src="~/assets/img/ico-button-arrow.svg"
+                        alt="Next step"
+                    />
+                </button>
+            </div>
+        </div>
     </section>
 </template>
 
