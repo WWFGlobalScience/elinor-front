@@ -1,8 +1,8 @@
 <template>
   <div class="popup__content">
+    <form class="form form--mt-0">
     <div class="popup__grid">
       <div class="left">
-        <form class="form form--mt-0">
           <div class="form__group">
             <div class="form__row">
               <div class="input input--file">
@@ -58,7 +58,6 @@
               </div>
             </div>
           </div>
-        </form>
       </div>
       <div class="right">
         <div
@@ -70,7 +69,6 @@
     <div class="popup__map">
       <div class="header--map header--map--flexy">
         <div class="left">
-          <form class="form form--mt-0">
             <div class="form__group">
               <div class="form__row">
                 <div class="input input--1-2">
@@ -86,9 +84,7 @@
                   (e.g 40.741895,-73.989308)
                 </p>
               </div>
-              
             </div>
-          </form>
         </div>
         <div class="right">
           <p>You can Drag the icon in the map to select the coordinates</p>
@@ -96,9 +92,23 @@
       </div>
       <img src="~/assets/img/map.jpg" alt="map" />
     </div>
-    <div class="">
-<!--buttons-->
+    <div class="popup__footer">
+      <button     
+                      type="button"
+                      class="btn--border-turqy btn--opacity--child"
+                    >
+                      <span class="btn--opacity__target">Cancel</span>
+                      <img src="~/assets/img/ico-close-turqy.svg" />
+                    </button>
+                    <button     
+                      type="button"
+                      class="btn btn--opacity--child"
+                    >
+                      <span class="btn--opacity__target">Accept</span>
+                      <img src="~/assets/img/ico-ok-white.svg" />
+                    </button>
     </div>
+    </form>
   </div>
 </template>
 

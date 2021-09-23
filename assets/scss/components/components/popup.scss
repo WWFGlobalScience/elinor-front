@@ -25,6 +25,12 @@
                 }
 
             }
+            .popup__footer{
+                @apply flex justify-end pt-11;
+                &>*{
+                    @apply ml-4;
+                }
+            }
         }
 
         &.popup__box--min{
