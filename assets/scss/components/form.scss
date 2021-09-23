@@ -28,6 +28,9 @@
                             @apply center-v left-0 w-full h-px bg-grayy-border;
                         }
                     }
+                    &.label--bold{
+                        @apply font-bold;
+                    }
                 }
                 .legend {
                     @apply block text-[12px] text-grayy-lighter;
@@ -124,9 +127,9 @@
                                 @apply text-[12px];
                             }
                         }
-                        .file__buttons {
-                            @apply flex justify-between items-center;
-                        }
+                    }
+                    .file__buttons {
+                        @apply flex justify-between items-center mt-4;
                     }
                 }
                 &.input--flexy {

@@ -79,25 +79,28 @@ main {
  .popup__grid{
      @apply grid grid-cols-2 sm:grid-cols-1 gap-10;
 
-     .left{}
+     .description{
+        img{
+            @apply mb-5 w-8
+        }
+        h4{
+            @apply text-grayy text-lg mb-2 font-bold leading-relaxed;
+        }
+
+        p{
+            @apply text-base text-grayy leading-relaxed;
+        }
+
+        a{
+            @apply text-turqy cursor-pointer;
+        }
+     }
      .right{
          .description{
-            @apply pl-10 relative;
+            @apply pl-10 relative sm:pl-0 sm:pt-10;
             &::after{
                 content: "";
-                @apply absolute inset-y-0 left-0 h-64 border-r border-grayy-border;
-            }
-
-            h4{
-                @apply text-grayy text-lg mb-2 font-bold leading-relaxed;
-            }
-
-            p{
-                @apply text-base text-grayy leading-relaxed;
-            }
-
-            a{
-                @apply text-turqy cursor-pointer;
+                @apply absolute inset-y-0 left-0 h-64 border-r border-grayy-border sm:w-full sm:border-t sm:border-r-0;
             }
          }
      }

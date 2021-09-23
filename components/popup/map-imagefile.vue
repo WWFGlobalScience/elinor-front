@@ -31,7 +31,8 @@
                       >
                     </div>
                   </dropzone>
-                  <div class="file__buttons">
+                </div>
+                <div class="file__buttons">
                     <button
                       @click="mapImageTrigger"
                       type="button"
@@ -54,7 +55,6 @@
                       <img src="~/assets/img/ico-clear-turqy.svg" />
                     </button>
                   </div>
-                </div>
               </div>
             </div>
           </div>

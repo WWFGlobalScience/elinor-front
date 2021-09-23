@@ -5,8 +5,19 @@
         @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
     }
     .popup__box {
-        @apply w-[1000px] center-both z-10 shadow-xl overflow-auto xl:max-h-75screen md:w-11/12 sm:w-full sm:h-full sm:max-h-screen;
-        max-height:75vh;
+        @apply w-[1000px] center-both z-10 shadow-xl overflow-auto md:w-11/12 sm:w-full sm:h-screen sm:max-h-screen;
+        @media only screen 
+        and (min-device-width: 768px)  
+        and (-webkit-min-device-pixel-ratio: 1) {
+            max-height:75vh;
+        }
+        @media only screen 
+        and (min-device-width: 320px) 
+        and (max-device-width: 823px) 
+        and (-webkit-min-device-pixel-ratio: 3)
+        and (orientation: landscape) { 
+            max-height:100vh;
+        }
         .popup__header {
             @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8;
             span {
@@ -15,15 +26,22 @@
         }
         .popup__content {
             @apply bg-white px-20 py-10 rounded-b-xl sm:px-4;
-            
+            .file{
+                @apply h-64 flex flex-col justify-center;
+            }
+            .popup__map-img{   
+                top: 6.563rem;
+                height: calc(100% - 6.563rem);  
+                @apply fixed right-0 w-6/12 object-cover sm:relative sm:w-full sm:top-0 sm:h-auto;
+                
+            }
             .popup__map{
                 @apply relative flex justify-center items-center flex-col mt-16 -mx-20;
                 &>div{@apply w-full px-20 sm:px-4}
                 .header--map{
-                    @apply flex justify-between items-center;
-                    .form__row{@apply items-end}
+                    @apply flex justify-between items-center sm:flex-col sm:px-4 sm:w-screen sm:items-start;
+                    .form__row{@apply items-end sm:items-start sm:mb-4}
                 }
-
             }
             .popup__footer{
                 @apply flex justify-end pt-11;
