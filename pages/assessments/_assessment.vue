@@ -29,13 +29,13 @@ export default {
             assessment: state => state.assessments.assessment,
         })
     },
-    async mounted() {
-        await this.$store.dispatch( 'assessments/fetchAssessment', this.id )
-        await this.$store.dispatch( 'supportsources/fetchSupportSources')
-        await this.$store.dispatch( 'stakeholdergroups/fetchStakeholderGroups')
-        await this.$store.dispatch( 'governancetypes/fetchGovernanceTypes')
-        await this.$store.dispatch( 'regions/fetchRegions')
-        await this.$store.dispatch( 'collaborators/fetchCollaborators', this.id)
+    mounted() {
+        this.$store.dispatch( 'assessments/fetchAssessment', this.id )
+        this.$store.dispatch( 'supportsources/fetchSupportSources')
+        this.$store.dispatch( 'stakeholdergroups/fetchStakeholderGroups')
+        this.$store.dispatch( 'governancetypes/fetchGovernanceTypes')
+        this.$store.dispatch( 'regions/fetchRegions')
+        this.$store.dispatch( 'collaborators/fetchCollaborators', this.id)
         this.loaded = true;
     }
 

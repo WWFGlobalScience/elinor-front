@@ -16,17 +16,16 @@ export default {
     name: 'assessments',
     auth: false,
     data() {
-        return {
-            loaderText: this.$t( 'loading.assessments' ),
-            loaded: false
-        }
+        return {loaded: false}
     },
     async mounted() {
-        await this.$store.dispatch( 'loader/loaderState', 'Loading assessments' )
+        this.$store.dispatch( 'loader/loaderState', {
+            active: true,
+            text: 'Loading assessments...'
+        } )
         await this.$store.dispatch( 'assessments/fetchAssessments' )
-        await this.$store.dispatch( 'loader/loaderState', '' )
-        this.loaded = true
-
+        this.$store.dispatch( 'loader/loaderState', {active: false} )
+        this.loaded = true;
     },
     fetchOnServer: false,
     computed: {

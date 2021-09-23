@@ -23,7 +23,7 @@ export const actions = {
 
             state.commit('setList', response.data.results)
 
-            this.dispatch('loader/loaderState', {active: true})
+            this.dispatch('loader/loaderState', {active: false})
         } catch (e) {
             console.error(e);
         }
