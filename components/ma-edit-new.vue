@@ -57,26 +57,6 @@
                         </div>
                     </div>
                     <div class="form__row">
-                        <div class="input input--multiselect">
-                            <label class="label">Recognition level</label>
-                            <div class="multiselect__wrap">
-                                <multiselect
-                                    :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('managementarea.recognition_levels.' + recognitionLevel) }})"
-                                    track-by="id"
-                                    label="name"
-                                    :options="recognitionLevels"
-                                    :multiple="true" :searchable="false" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom"
-                                    @input="onSelectChanged('recognition_level', $event.map(recognitionLevel => recognitionLevel.id))">
-                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form__row">
                         <div class="input input-1-2 input--date">
                             <label class="label">Date of formal establishment</label>
                             <div class="date__wrap">
@@ -140,17 +120,16 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">Are the rights of the MA formally recognized at the ...</label>
+                            <label class="label">Are the rights of the MA formally recognized at the level ...</label>
                             <div class="multiselect__wrap">
-                                <multiselect class="multiselect--num"
-                                    :value="managementArea.management_authority"
+                                <multiselect
+                                    :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('managementarea.recognition_levels.' + recognitionLevel) }})"
                                     track-by="id"
                                     label="name"
-                                    :options="authorities"
-                                    :multiple="false" :searchable="true" :showLabels="false"
+                                    :options="recognitionLevels"
+                                    :multiple="true" :searchable="false" :showLabels="false"
                                     :allow-empty="false" open-direction="bottom"
-                                    @input="onSelectChanged('management_authority', $event)"
-                                    @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
+                                    @input="onSelectChanged('recognition_level', $event.map(recognitionLevel => recognitionLevel.id))">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
