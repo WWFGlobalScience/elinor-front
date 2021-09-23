@@ -1,14 +1,14 @@
 export const state = () => ({
     loader: {
-        active: false,
+        active: 0,
         text: ''
     }
 })
 
 export const mutations = {
-    loaderState( state, text ) {
-        state.loader.active = !state.loader.active
-        state.loader.active ? state.loader.text = text : state.loader.text = text
+    loaderState( state, {active, text}) {
+        state.loader.active = active ? state.loader.active + 1 : state.loader.active - 1;
+        state.loader.text = text || ''
     }
 }
 

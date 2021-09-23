@@ -73,7 +73,7 @@ const mapToForm = (state, data) => {
                 name: state.rootState.countries.list.filter(c => c.code === country)[0].name
             }
         }),
-        recognition_level: data.recognition_level && data.recognition_level[0] || []
+        recognition_level: data.recognition_level || []
     };
 }
 

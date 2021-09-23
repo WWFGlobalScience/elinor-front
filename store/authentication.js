@@ -65,12 +65,12 @@ export const actions = {
         })
     },
     async signUp(state, form) {
-        this.dispatch('loader/loaderState', {
-            active: true,
-            text: 'Registering...'
-        })
 
         if (form.accept_tor) {
+            this.dispatch('loader/loaderState', {
+                active: true,
+                text: 'Registering...'
+            })
             await this.$axios
                 .$post('rest-auth/registration/', {
                     username: form.username,
@@ -87,12 +87,14 @@ export const actions = {
                 })
                 .catch((error) => {
                     state.commit('setError', error.response.data);
+                })
+                .finally(() => {
+                    this.dispatch('loader/loaderState', {
+                        active: false,
+                        text: ''
+                    })
                 });
         }
-        this.dispatch('loader/loaderState', {
-            active: false,
-            text: ''
-        })
     },
     async setUserOrganization(state, organizationId) {
         await this.$axios

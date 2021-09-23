@@ -253,7 +253,8 @@ export default {
   methods: {
     ...mapActions({
       signIn: 'authentication/signIn',
-      resendEmail: 'authentication/resendEmail'
+      resendEmail: 'authentication/resendEmail',
+      getProtectedAreas: 'managementareas/getProtectedAreas',
     }),
     submit(event) {
       event.preventDefault();

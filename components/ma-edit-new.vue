@@ -24,7 +24,7 @@
                                     label="name"
                                     :options="managementAreas"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom"
                                     @input="onSelectChanged('containedby', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchManagementAreas', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -35,19 +35,47 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="form__row">
+                    <div class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">Are there there other Managment Areas related to this?</label>
                             <div class="multiselect__wrap">
-                                <multiselect :value="selectRelatedMas.value" :options="selectRelatedMas.options" :multiple="true" :searchable="true" :showLabels="false" :allow-empty="true" :hide-selected="true" @input="selectRelatedMasChange">
-                                    <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
+                                <multiselect
+                                    :value="managementArea.containedby"
+                                    track-by="id"
+                                    label="name"
+                                    :options="managementAreas"
+                                    :multiple="false" :searchable="true" :showLabels="false"
+                                    :allow-empty="false" open-direction="bottom"
+                                    @input="onSelectChanged('containedby', $event)"
+                                    @search-change="onSelectSearch('managementareas/fetchManagementAreas', $event)">
+                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
+                    <div class="form__row">
+                        <div class="input input--multiselect">
+                            <label class="label">Recognition level</label>
+                            <div class="multiselect__wrap">
+                                <multiselect
+                                    :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('managementarea.recognition_levels.' + recognitionLevel) }})"
+                                    track-by="id"
+                                    label="name"
+                                    :options="recognitionLevels"
+                                    :multiple="true" :searchable="false" :showLabels="false"
+                                    :allow-empty="false" open-direction="bottom"
+                                    @input="onSelectChanged('recognition_level', $event.map(recognitionLevel => recognitionLevel.id))">
+                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form__row">
                         <div class="input input-1-2 input--date">
                             <label class="label">Date of formal establishment</label>
@@ -73,7 +101,7 @@
                                     label="name"
                                     :options="authorities"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom"
                                     @input="onSelectChanged('management_authority', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -94,7 +122,7 @@
                                     label="name"
                                     :options="governanceTypes"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom"
                                     @input="onSelectChanged('governance_type', $event)"
                                     @search-change="onSelectSearch('governancetypes/fetchGovernanceTypes', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -120,7 +148,7 @@
                                     label="name"
                                     :options="authorities"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
+                                    :allow-empty="false" open-direction="bottom"
                                     @input="onSelectChanged('management_authority', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -327,6 +355,11 @@ export default {
                 { id: 90, name: this.$t('managementarea.zones.acccess_Level.OPEN_ACCESS') },
                 { id: 50, name: this.$t('managementarea.zones.acccessLevel.PARTIALLY_RESTRICTED') },
                 { id: 10, name: this.$t('managementarea.zones.acccessLevel.FULLY_RESTRICTED') }
+            ],
+            recognitionLevels: [
+                {id: 'local', name: this.$t('managementarea.recognition_levels.local')},
+                {id: 'national', name: this.$t('managementarea.recognition_levels.national')},
+                {id: 'international', name: this.$t('managementarea.recognition_levels.international')}
             ]
         }
     },

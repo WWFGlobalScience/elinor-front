@@ -45,7 +45,7 @@ export const actions = {
                 active: false
             })
             this.dispatch('loader/loaderState', {
-                active: true,
+                active: false,
                 text: 'Creating collaborator...'
             })
         }).catch(error => console.log(error))
@@ -65,7 +65,7 @@ export const actions = {
 
             state.commit('setCollaborators', response.data.results)
 
-            this.dispatch('loader/loaderState', {active: true})
+            this.dispatch('loader/loaderState', {active: false})
         } catch (e) {
             console.error(e);
         }
@@ -87,7 +87,7 @@ export const actions = {
                 user: collaborator.user.id
             }
         }).then(response => {
-            this.dispatch('loader/loaderState', {active: true})
+            this.dispatch('loader/loaderState', {active: false})
             state.commit('assessments/updateCollaborator', {id: collaborator.id, role}, {root: true});
         }).catch(error => console.log(error))
     },

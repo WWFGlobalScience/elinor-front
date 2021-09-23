@@ -338,10 +338,6 @@ export const actions = {
     },
 
     async editAssessmentField(state, {field, value, id}) {
-        this.dispatch('loader/loaderState', {
-            active: true,
-            text: 'Saving assessment data...'
-        })
         this.$axios({
             method: 'patch',
             url: `/v1/assessments/${id}/`,
@@ -356,12 +352,6 @@ export const actions = {
         })
         .catch((error) => {
             console.log(error)
-        })
-        .finally(() => {
-            this.dispatch('loader/loaderState', {
-                active: false,
-                text: ''
-            })
         })
     },
 
