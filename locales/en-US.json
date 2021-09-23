@@ -16,7 +16,8 @@
             "error": "Oops! Something is wrong. Please, try again after a few minutes"
         },
         "filters": {
-            "button": "Filters",
+            "button": "Apply",
+            "reset": "Reset",
             "popup": {
                 "title": "Add filters",
                 "select": "Select filters",
@@ -107,6 +108,11 @@
         }
     },
     "assessments": {
+        "statuses": {
+            "90": "Open",
+            "80": "Test",
+            "10": "Published"
+        },
         "categories": {
             "1": "Clearly defined rights and decision making",
             "2": "Inclusive and equitable management",

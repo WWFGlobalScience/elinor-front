@@ -11,15 +11,15 @@
                         <label class="label">by Countries</label>
                         <div class="multiselect__wrap">
                             <multiselect placeholder="Countries"
-                                select-label="Enter doesn’t work here!"
-                                :value="selectCountries.value"
-                                :options="selectCountries.options"
+                                :value="getCountryByCode(filters.country)"
+                                track-by="code"
+                                label="name"
+                                :options="countries"
                                 :multiple="false"
-                                :searchable="true"
+                                :searchable="false"
                                 :showLabels="false"
                                 :allow-empty="false" open-direction="bottom"
-                                :hide-selected="true"
-                                @input="onselectCountriesChange" >
+                                @input="onFilterChanged('country', $event.code)" >
                                 <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
@@ -31,16 +31,14 @@
                     <div class="input input--multiselect input--1-6">
                         <label class="label">by Year</label>
                         <div class="multiselect__wrap">
-                            <multiselect placeholder="2020"
-                                select-label="Enter doesn’t work here!"
-                                :value="selectYear.value"
-                                :options="selectYear.options"
+                            <multiselect
+                                :value="filters['year']"
+                                :options="years"
                                 :multiple="false"
-                                :searchable="true"
+                                :searchable="false"
                                 :showLabels="false"
-                                :allow-empty="false" open-direction="bottom"
-                                :hide-selected="true"
-                                @input="onselectYearChange" >
+                                :allow-empty="true" open-direction="bottom"
+                                @input="onFilterChanged('year', $event)" >
                                 <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
@@ -49,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="input input--multiselect input--1-6">
+                    <!--<div class="input input--multiselect input--1-6">
                         <label class="label">by Score</label>
                         <div class="multiselect__wrap">
                             <multiselect placeholder="100"
@@ -68,9 +66,9 @@
                                 <img src="~/assets/img/ico-select-turqy.svg">
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
-                    <div class="input input--multiselect input--1-6">
+                    <!--<div class="input input--multiselect input--1-6">
                         <label class="label">by Completation</label>
                         <div class="multiselect__wrap">
                             <multiselect placeholder="50%"
@@ -89,10 +87,10 @@
                                 <img src="~/assets/img/ico-select-turqy.svg">
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="form__row">
-                    <div class="input input--multiselect input--1-4">
+                    <!--<div class="input input--multiselect input--1-4">
                         <label class="label">by My Role</label>
                         <div class="multiselect__wrap">
                             <multiselect placeholder="Myrole"
@@ -111,21 +109,20 @@
                                 <img src="~/assets/img/ico-select-turqy.svg">
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="input input--multiselect input--1-4">
                         <label class="label">by Publication</label>
                         <div class="multiselect__wrap">
-                            <multiselect placeholder="2020"
-                                select-label="Enter doesn’t work here!"
-                                :value="selectPublication.value"
-                                :options="selectPublication.options"
+                            <multiselect
+                                :value="getStatusById(filters.status)"
+                                 track-by="id"
+                                 label="name"
+                                :options="statuses"
                                 :multiple="false"
-                                :searchable="true"
                                 :showLabels="false"
-                                :allow-empty="false" open-direction="bottom"
-                                :hide-selected="true"
-                                @input="onselectPublicationChange" >
+                                :allow-empty="true" open-direction="bottom"
+                                @input="onFilterChanged('status', $event.id)" >
                                 <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
@@ -137,7 +134,7 @@
                 </div>
             </div>
 
-            <section class="section section--tags">
+            <!--<section class="section section--tags">
                 <h4 class="c-title--modal mb-6">
                     Filters
                 </h4>
@@ -161,9 +158,12 @@
                         </a>
                     </li>
                 </ul>
-            </section>
+            </section>-->
             <section class="mt-10">
-                <button type="button" class="btn--border-turqy btn--opacity--child">
+                <button type="button" @click="resetFilters" class="btn--border-turqy btn--opacity--child">
+                    <span class="btn--opacity__target">{{ $t( 'default.filters.reset' ) }}</span>
+                </button>
+                <button type="button" @click="popupState({active: false})" class="btn--border-turqy btn--opacity--child">
                     <span class="btn--opacity__target">{{ $t( 'default.filters.button' ) }}</span>
                     <img src="~/assets/img/ico-filters-turqy.svg">
                 </button>
@@ -178,37 +178,42 @@ import {mapActions, mapState} from "vuex";
 
 export default {
     name: 'popup-assessments-filter',
-        data () {
+    data() {
         return {
-            selectCountries: {
-                tocuhed: false,
-                value: null,
-                options: ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"],
-            },
-            selectYear: {
-                tocuhed: false,
-                value: null,
-                options: [ '2021', '2020' ]
-            },
-            selectScore: {
-                tocuhed: false,
-                value: null,
-                options: [ '' ]
-            },
-            selectCompletation: {
-                tocuhed: false,
-                value: null,
-                options: [ '' ]
-            },
-            selectMyrole: {
-                tocuhed: false,
-                value: null,
-                options: [ 'Admin', 'Collaborator', 'Observer' ]
-            },
-            selectPublication: {
-                tocuhed: false,
-                value: null,
-                options: [ '2021', '2020' ]
+            years: ['2020', '2021'],
+            statuses: [
+                {id: 90, name: this.$t('assessments.statuses.90')},
+                {id: 80, name: this.$t('assessments.statuses.80')},
+                {id: 10, name: this.$t('assessments.statuses.10')}
+            ]
+        }
+    },
+    computed: {
+        ...mapState({
+            filters: state => state.assessments.filters,
+            countries: state => state.countries.list,
+        })
+    },
+    methods: {
+        ...mapActions({
+            popupState: 'popup/popupState',
+            resetFilters: 'assessments/resetFilters',
+            filter: 'assessments/filter',
+            removeFilter: 'assessments/removeFilter'
+        }),
+        onFilterChanged(name, value) {
+            if(value) {
+                this.filter({name, value});
+            } else {
+                this.removeFilter(name);
+            }
+        },
+        getCountryByCode(code) {
+            return this.countries.filter(country => country.code === code)[0];
+        },
+        getStatusById(id) {
+            if(id) {
+                return this.statuses.filter(status => status.id === id)[0]
             }
         }
     }

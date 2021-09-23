@@ -5,6 +5,7 @@ export const state = () => ({
     instance: {},
     authorities: [],
     zones: [],
+    importFileError: null,
 })
 
 export const getters = {
@@ -112,6 +113,12 @@ export const mutations = {
             state.zones[index] = {};
         }
         state.zones[index][field] = value
+    },
+    setImportFileError(state, error) {
+        state.importFileError = error;
+    },
+    resetImportFileError(state) {
+        state.importFileError = null;
     }
 }
 
@@ -158,21 +165,17 @@ export const actions = {
         state.commit('assessments/setLastEdit', {}, {root: true});
         state.dispatch('assessments/updateAssessmentProgress', assessmentId, {root: true});
     },
-    async editManagementAreaFileField(state, {field, file, id}) {
+    async editManagementAreaFileField(state, {field, file, onUploadProgress, id}) {
         let formData = new FormData()
         formData.append(field, file,file.name)
-        this.$axios({
-            method: 'patch',
-            url: `/v1/managementareas/${id}/`,
-            data:  formData,
-            config: {headers: {'Content-Type': 'multipart/form-data'}}
-        })
+        const config = { onUploadProgress, headers: {'Content-Type': 'multipart/form-data'}};
+        this.$axios.$patch(`/v1/managementareas/${id}/`, formData, config)
             .then((response) => {
-                state.commit('setManagementAreaField', {field, value: response.filename})
+                state.commit('setInstanceField', {field, value: response.filename})
                 state.commit('assessments/setLastEdit', {}, {root: true});
             })
             .catch((error) => {
-                console.log(error)
+                state.commit('setImportFileError', error.response.data);
             })
     },
     async fetchZones(state, id) {
@@ -241,5 +244,9 @@ export const actions = {
             }
         }
         state.commit('setZoneField', {field, index, value})
+    },
+
+    async resetImportFileError(state) {
+        state.commit('resetImportFileError');
     }
 }

@@ -64,6 +64,8 @@ let progress = {
 
 export const state = () => ({
     list: [],
+    search: null,
+    filters: {country: null, status: null, year: null},
     pagination: {
         count: 0,
         next: null,
@@ -238,28 +240,51 @@ export const mutations = {
             }
             return collaborator;
         });
+    },
+    setSearch(state, payload) {
+        state.search = payload;
+    },
+    addFilter(state, payload) {
+        state.filters[payload.name] = payload.value;
+    },
+    removeFilter(state, payload) {
+        state.filters[payload] = undefined;
+    },
+    resetFilters(state) {
+        state.filters = {};
     }
 }
 
 export const actions = {
     async fetchAssessments(state) {
-        this.dispatch('loader/loaderState', {
-            active: true,
-            text: 'Getting assessments...'
-        })
+        let params;
+        if(state.search) {
+            params = {search: state.state.search};
+        }
 
-        this.$axios({
-            method: 'get',
-            url: 'v1/assessments/',
-        })
+        if(Object.keys(state.state.filters).length) {
+            if(!params) params = {};
+            params = {...params, ...state.state.filters};
+        }
+
+        if(!params) {
+            this.dispatch('loader/loaderState', {
+                active: true,
+                text: 'Getting assessments...'
+            })
+        }
+
+        this.$axios.get('v1/assessments/', {params})
         .then((response) => {
             state.commit('setAssessments', response.data)
         })
         .finally(() => {
-            this.dispatch('loader/loaderState', {
-                active: false,
-                text: ''
-            })
+            if(!params) {
+                this.dispatch('loader/loaderState', {
+                    active: false,
+                    text: ''
+                })
+            }
         })
     },
     async fetchAssessment(state, id) {
@@ -407,7 +432,7 @@ export const actions = {
         progress.collaborators.percentage = progress.collaborators.percentage < 100 ? progress.collaborators.percentage : 100;
         progress.collaborators.complete = progress.collaborators.percentage === 100;
         progress.overall_percentage += 25 * progress.collaborators.percentage / 100;
-console.log(progress);
+
         state.commit('setProgress', progress)
     },
     async editAssessmentFileField(state, {field, file, id}) {
@@ -420,7 +445,6 @@ console.log(progress);
             config: {headers: {'Content-Type': 'multipart/form-data'}}
         })
             .then((response) => {
-                console.log(response);
                 state.commit('setAssessmentField', {field, value: response.filename})
                 state.commit('setLastEdit');
             })
@@ -456,6 +480,22 @@ console.log(progress);
             })
     },
     reset(state) {
+        state.dispatch('fetchAssessments');
+    },
+    filter(state, {name, value}) {
+        state.commit('addFilter', {name, value})
+        state.dispatch('fetchAssessments');
+    },
+    removeFilter(state, filterName) {
+        state.commit('addFilter', filterName)
+        state.dispatch('fetchAssessments');
+    },
+    search(state, search) {
+        state.commit('setSearch', search)
+        state.dispatch('fetchAssessments');
+    },
+    resetFilters(state) {
+        state.commit('resetFilters')
         state.dispatch('fetchAssessments');
     }
 }
