@@ -248,5 +248,49 @@ export const actions = {
 
     async resetImportFileError(state) {
         state.commit('resetImportFileError');
+    },
+
+    async setRegion(state, result) {
+        const name = result.text;
+        const regionsResponse = await this.$axios({
+            method: 'get',
+            url: `/v1/regions/?search=${name}`
+        });
+
+        const region = regionsResponse.data.results[0];
+        let regionIdToAssociate;
+        if(!region) {
+            const country = result.context[0].short_code;
+            const createdRegionResponse = await this.$axios({
+                method: 'post',
+                url: `/v1/regions/`,
+                data: {name, country: country.toUpperCase()}
+            });
+            const createdRegion = createdRegionResponse.data;
+            regionIdToAssociate = createdRegion.id;
+        } else {
+            regionIdToAssociate = region.id;
+        }
+
+        const regions = state.state.instance.regions.map(region => region.id);
+        if(regions.indexOf(regionIdToAssociate) === -1) {
+            regions.push(regionIdToAssociate);
+            const response = await this.$axios({
+                method: 'patch',
+                url: `/v1/managementareas/${state.state.instance.id}/`,
+                data: {regions}
+            });
+            state.commit('setInstanceField', {field: 'regions', value: response.data.regions})
+        }
+    },
+    async removeRegion(state, regionId) {
+        const regions = state.state.instance.regions.filter(region => region.id !== regionId).map(region => region.id);
+        const response = await this.$axios({
+            method: 'patch',
+            url: `/v1/managementareas/${state.state.instance.id}/`,
+            data: {regions}
+        });
+
+        state.commit('setInstanceField', {field: 'regions', value: response.data.regions})
     }
 }

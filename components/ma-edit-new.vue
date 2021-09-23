@@ -214,21 +214,16 @@
                     <div class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">MA States / Provinces</label>
-                            <div class="multiselect__wrap">
-                                <multiselect
-                                    :value="managementArea.regions"
-                                    track-by="id"
-                                    label="name"
-                                    :options="regions"
-                                    :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
-                                    @input="onSelectChanged('regions', $event)"
-                                    @search-change="onSelectSearch('regions/fetchRegions', $event)">
-                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                </div>
+                            <div id="geocoder"></div>
+                            <div class="section section--tags">
+                                <ul>
+                                    <li v-for="region in managementArea.regions">
+                                        <div class="tag__item">{{ region.name }}</div>
+                                        <a @click="removeRegion(region.id)" role="button" class="tag__close">
+                                            <img src="~/assets/img/ico-close-popup.svg">
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -337,11 +332,20 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
+import mapboxgl from 'mapbox-gl'
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ'
 
 export default {
     name: 'ma-edit-new',
     data() {
         return {
+            geocoder: new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                types: 'country,region',
+                language: 'en-US'
+            }),
             showZones: null,
             numZones: null,
             accessLevels: [
@@ -359,6 +363,12 @@ export default {
     mounted() {
         this.numZones = this.zones.length;
         this.showZones = this.zones.length > 0;
+
+        this.geocoder.addTo('#geocoder');
+        this.geocoder.on('result', (e) => {
+            this.$store.dispatch('managementareas/setRegion', e.result);
+            this.geocoder.clear();
+        });
     },
     watch: {
         zones() {
@@ -408,6 +418,7 @@ export default {
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
             editZoneField: 'managementareas/editZoneField',
+            removeRegion: 'managementareas/removeRegion',
         })
     }
 }
