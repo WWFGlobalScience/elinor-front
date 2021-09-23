@@ -26,9 +26,15 @@
         }
         .popup__content {
             @apply bg-white px-20 py-10 rounded-b-xl sm:px-4;
-            .file{
-                @apply h-64 flex flex-col justify-center;
+            .input.input--file{
+                .file{
+                    @apply h-64 flex flex-col justify-center;
+                }
+                .file__buttons{
+                    @apply sm:flex-col sm:items-start;
+                }
             }
+            
             .popup__map-img{   
                 top: 6.563rem;
                 height: calc(100% - 6.563rem);  

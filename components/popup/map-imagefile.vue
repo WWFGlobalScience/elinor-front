@@ -54,6 +54,7 @@
                       }}</span>
                       <img src="~/assets/img/ico-clear-turqy.svg" />
                     </button>
+                    <p class="msg msg--error">This format is not supported</p>
                   </div>
               </div>
             </div>

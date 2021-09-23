@@ -135,3 +135,11 @@
         @apply w-1/2 md:w-full sm:mt-5;
     }
 }
+
+//msg
+.msg{
+    @apply text-xs my-4 px-2;
+    &.msg--error{
+        @apply text-redy;
+    }
+}

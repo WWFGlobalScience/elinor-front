@@ -7,7 +7,7 @@
             <div class="form__row">
               <div class="input input--file">
                 <div class="file">
-                  <!--STEP 1 - DROPZONE-->
+                  <!--STEP 1 - DROPZONE-->     
                   <dropzone
                     id="import_file"
                     ref="importFile"
@@ -32,6 +32,7 @@
                       >
                     </div>
                   </dropzone>
+                  
                   <!--// STEP 1 - DROPZONE-->
 
                   <!--STEP 2 - FILE UPLOAD-->
@@ -98,6 +99,7 @@
                     }}</span>
                     <img src="~/assets/img/ico-clear-turqy.svg" />
                   </button>
+                  <p class="msg msg--error">This format is not supported</p>
                   <!--//STEP 1 - DROPZONE-->
                   <!--STEP 2 - FILE UPLOAD-->
                   <!-- <button
