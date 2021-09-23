@@ -69,6 +69,11 @@
         }
     },
     "managementarea": {
+        "recognition_levels": {
+            "local": "Local",
+            "national": "National",
+            "international": "International"
+        },
         "headers": {
             "related": "Are there there other Managment Areas related to this?",
             "create": "Create New Management Area",
