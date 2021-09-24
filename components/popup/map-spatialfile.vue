@@ -78,6 +78,7 @@
                                     </button>
                                     <!--<p class="msg msg--error">This format is not supported</p>-->
                                     <!--//STEP 1 - DROPZONE-->
+                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">This format is not supported</p>
 
                                     <!--STEP 2 - FILE UPLOAD-->
                                     <button
@@ -150,6 +151,7 @@ export default {
         return {
             fileAdded: false,
             progress: 0,
+            dropzoneAccepted: null,
             dropzone: {
                 url: "none",
                 previewTemplate: this.template(),
@@ -182,13 +184,20 @@ export default {
             this.$refs.importFile.removeAllFiles();
         },
         onImportFileAdded(file) {
-            this.editManagementAreaFileField({
-                field: "import_file",
-                file,
-                id: this.managementArea.id,
-                onUploadProgress: this.onImportFileProgress
+            this.$nextTick(() => {
+                if(file.status === "error") {
+                    this.dropzoneAccepted = false;
+                } else {
+                    this.dropzoneAccepted = true;
+                    this.editManagementAreaFileField({
+                        field: "import_file",
+                        file,
+                        id: this.managementArea.id,
+                        onUploadProgress: this.onImportFileProgress
+                    });
+                    this.fileAdded = true;
+                }
             });
-            this.fileAdded = true;
         },
         onImportFileProgress(progressEvent) {
             this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
