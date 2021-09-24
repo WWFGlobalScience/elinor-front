@@ -343,7 +343,7 @@ export default {
         return {
             geocoder: new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
-                types: 'country,region',
+                types: 'region',
                 language: 'en-US'
             }),
             showZones: null,
