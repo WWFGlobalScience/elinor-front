@@ -49,7 +49,10 @@
                 @apply flex-wrap;
 
                 li{
-                    @apply mt-2
+                    @apply mt-2;
+                    .tag__item{
+                        @apply text-xs;
+                    }
                 }
             }
         }
