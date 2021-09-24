@@ -129,7 +129,7 @@
                     v-html="$t('popups.spatialfile.descriptions.file')"
                 ></div>
                 <!--STEP 3 - SUCCESS -->
-                <img v-if="fileAdded && progress === 100 && !importFileError" class="popup__map-img" src="~/assets/img/map-zone.jpg"/> -->
+                <img v-if="fileAdded && progress === 100 && !importFileError" class="popup__map-img" src="~/assets/img/map-zone.jpg"/>
                 <!--//STEP 3 - SUCCESS-->
             </div>
         </div>

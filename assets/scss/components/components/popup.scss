@@ -1,31 +1,27 @@
 //popup
 .elinor__popup {
-    @apply w-screen h-screen fixed top-0 left-0 z-40;
+    @apply w-screen h-screen fixed top-0 left-0 z-40 flex items-center m-auto overflow-auto py-8 sm:p-0;
+    @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 823px) 
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape) { 
+        @apply p-0;
+    }
     .popup__overlay {
-        @apply w-full h-full absolute top-0 left-0 bg-white opacity-50;
+        @apply w-full h-full fixed top-0 left-0 bg-white opacity-50;
     }
     .popup__box {
-        @apply w-[1000px] center-both z-10 shadow-xl overflow-auto md:w-11/12 sm:w-full sm:h-screen sm:max-h-screen;
-        @media only screen 
-        and (min-device-width: 768px)  
-        and (-webkit-min-device-pixel-ratio: 1) {
-            max-height:75vh;
-        }
-        @media only screen 
-        and (min-device-width: 320px) 
-        and (max-device-width: 823px) 
-        and (-webkit-min-device-pixel-ratio: 3)
-        and (orientation: landscape) { 
-            max-height:100vh;
-        }
+        @apply w-[1000px] z-10 shadow-xl m-auto md:w-11/12 sm:w-full;
+       
         .popup__header {
-            @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8;
+            @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8 sm:rounded-none;
             span {
                 @apply text-[22px];
             }
         }
         .popup__content {
-            @apply bg-white px-20 py-10 rounded-b-xl sm:px-4;
+            @apply bg-white px-20 py-10 rounded-b-xl sm:px-4 sm:rounded-none;
             .input.input--file{
                 .file{
                     @apply h-64 flex flex-col justify-center;
