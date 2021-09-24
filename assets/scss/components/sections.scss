@@ -43,7 +43,16 @@
     
     &.section--tags {
         @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
+        &.section--tags-filter{
+            @apply mt-0 py-4 border-t-0;
+            ul{
+                @apply flex-wrap;
 
+                li{
+                    @apply mt-2
+                }
+            }
+        }
         ul {
             @apply flex items-center justify-start;
 

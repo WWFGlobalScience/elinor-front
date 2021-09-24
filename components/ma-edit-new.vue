@@ -10,13 +10,13 @@
                 <div class="container--sm">
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">Name of new managed area*</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.name-new' ) }}</label>
                             <input type="text" name="name" placeholder="Name here" :value="managementArea.name" @change="save('name', $event.target.value)">
                         </div>
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">What is the name of the larger PA/CA this MA is contained within?*</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.pa-ca-name-ma' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.containedby"
@@ -37,7 +37,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">Are there there other Managment Areas related to this?</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.management-related' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.containedby"
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input-1-2 input--date">
-                            <label class="label">Date of formal establishment</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.date' ) }}</label>
                             <div class="date__wrap">
                                 <date-picker placeholder="MM/DD/YYYY" format="MM/dd/yyyy" :value="managementArea.date_established" @selected="onDateEstablishmentSelected" />
                                 <div class="date__caret">
@@ -67,13 +67,13 @@
                             </div>
                         </div>
                         <div class="input input-1-2">
-                            <label class="label">Size of Managed Area</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.size' ) }}</label>
                             <input type="number" name="ha" placeholder="0000 Ha" :value="managementArea.reported_size" @change="save('reported_size', $event.target.value)">
                         </div>
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">Name of management authority</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.name-authority' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.management_authority"
@@ -94,7 +94,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">MA Governance type</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.governance-type' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.governance_type"
@@ -120,7 +120,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">Are the rights of the MA formally recognized at the level ...</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.rights-ma' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('managementarea.recognition_levels.' + recognitionLevel) }})"
@@ -140,7 +140,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">Key stakeholder groups</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.stakeholder-groups' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.stakeholder_groups"
@@ -161,7 +161,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.support-question' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.support_sources"
@@ -182,7 +182,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--1-2">
-                            <label class="label">If this managed area is associated with an id in the World Database on Protected Areas (WDPA), please enter that id?</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.wdpa-id-question' ) }}</label>
                             <input type="text" :value="managementArea.wdpa_protected_area" name="id" placeholder="00000 Id"  @change="save('wdpa_protected_area', $event.target.value)">
                         </div>
                     </div>
@@ -193,7 +193,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">MA Countries</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.countries-ma' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.countries"
@@ -213,9 +213,9 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">MA States / Provinces</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.provinces-ma' ) }}</label>
                             <div id="geocoder"></div>
-                            <div class="section section--tags">
+                            <div class="section section--tags section--tags-filter">
                                 <ul>
                                     <li v-for="region in managementArea.regions">
                                         <div class="tag__item">{{ region.name }}</div>
@@ -236,7 +236,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-24">
                         <div class="input input--radios">
-                            <label class="label">Does this MA have zones?</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zones' ) }}</label>
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
@@ -257,7 +257,7 @@
                     </div>
                     <div class="form__row form__row--mt-16" v-if="showZones">
                         <div class="input input--multiselect">
-                            <label class="label">How many zones does the MA have?</label>
+                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zones-quantity' ) }}</label>
                             <div class="multiselect__wrap multiselect__wrap--1-3">
                                 <multiselect
                                     :value="numZones"
@@ -275,13 +275,13 @@
                                 <div v-for="(num, index) in numZones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
-                                            <label class="label">Name of the zone 1</label>
+                                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-name' ) }}</label>
                                             <input type="text" name="name" placeholder="Zone name 1" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--multiselect">
-                                            <label class="label">Select the level of access the best describes this zone?</label>
+                                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-level' ) }}</label>
                                             <div class="multiselect__wrap">
                                                 <multiselect
                                                     :value="zones[index] && zones[index].access_level"
@@ -300,7 +300,7 @@
                                     </div>
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--pr">
-                                            <div class="label">Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?</div>
+                                            <div class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-description' ) }}</div>
                                             <textarea name="explanation" placeholder="Text here" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zones[index] && zones[index].description }}</textarea>
                                         </div>
                                     </div>
