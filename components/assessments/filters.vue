@@ -3,7 +3,7 @@
         <div class="container">
             <ul>
                 <li>
-                    <form id="form--search" action="" class="form">
+                    <form id="form--search" @submit="$event.preventDefault()" class="form">
                         <div class="form__group">
                             <div class="form__row">
                                 <div class="input input--ico">

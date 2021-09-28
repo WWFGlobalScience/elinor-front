@@ -824,7 +824,7 @@
                                     "establishment": "Date of formal establishment",
                                     "size": "Size of Managed Area",
                                     "pa-ca-name-focal": "What is the name of the larger PA/CA this focal area is contained within?*",
-                                    "pa-ca-name-ma" : "What is the name of the larger PA/CA this MA is contained within?*",
+                                    "pa-ca-name-ma" : "What is the WDPA ID of the larger PA/CA this MA is contained within?*",
                                     "management-unit": "This assessment is specific to a particular management unit within a broader protected or conserved area?",
                                     "management-unit-definition": "Managment unit definition",
                                     "management-related":"Are there there other Managment Areas related to this?",

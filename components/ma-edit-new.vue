@@ -15,22 +15,16 @@
                         </div>
                     </div>
                     <div class="form__row">
-                        <div class="input input--multiselect">
+                        <div class="input">
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.pa-ca-name-ma' ) }}</label>
-                            <div class="multiselect__wrap">
-                                <multiselect
-                                    :value="managementArea.containedby"
-                                    track-by="id"
-                                    label="name"
-                                    :options="managementAreas"
-                                    :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom"
-                                    @input="onSelectChanged('containedby', $event)"
-                                    @search-change="onSelectSearch('managementareas/fetchManagementAreas', $event)">
-                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                            <div v-if="editWdpaId || !managementArea.protected_area" class="input input--1-3">
+                                <input type="text" :value="managementArea.protected_area && managementArea.protected_area.wdpa_id" placeholder="00000 Id" @change="protectedAreaByWdpaId({wdpaId: $event.target.value, managementAreaId: managementArea.id, assessmentId: assessment.id})">
+                                <p v-if="editWdpaIdError" class="msg msg--error">WDPA ID not found at protected planet api. <a target="_blank" href="https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA">Click here to search</a></p>
+                            </div>
+                            <div v-if="!editWdpaId && managementArea.protected_area" class="input input--2-3">
+                                <input :disabled="true" type="text" :value="managementArea.protected_area.name">
+                                <div @click="clearProtectedArea()" role="button" class="date__caret">
+                                    <img src="~/assets/img/ico-close-turqy.svg">
                                 </div>
                             </div>
                         </div>
@@ -313,7 +307,7 @@
 
             <div class="container">
                     <div class="section__bottom">
-                        <button
+                        <NuxtLink @click.prevent :to="`/assessments/edit/${id}/survey`"
                             class="btn btn--opacity--child"
                         >
                             <span class="btn--opacity__target">Next step</span>
@@ -321,7 +315,7 @@
                                 src="~/assets/img/ico-button-arrow.svg"
                                 alt="Next step"
                             />
-                        </button>
+                        </NuxtLink>
                     </div>
                 </div>
 
@@ -341,6 +335,7 @@ export default {
     name: 'ma-edit-new',
     data() {
         return {
+            id: this.$route.params.id,
             geocoder: new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
                 types: 'region',
@@ -389,6 +384,8 @@ export default {
             regions: state => state.regions.list,
             protectedAreas: state => state.protectedareas.list,
             zones: state => state.managementareas.zones,
+            editWdpaId: state => state.managementareas.editWdpaId,
+            editWdpaIdError: state => state.managementareas.editWdpaIdError,
         })
     },
     methods: {
@@ -419,6 +416,8 @@ export default {
             editManagementAreaField: 'managementareas/editManagementAreaField',
             editZoneField: 'managementareas/editZoneField',
             removeRegion: 'managementareas/removeRegion',
+            protectedAreaByWdpaId: 'managementareas/protectedAreaByWdpaId',
+            clearProtectedArea: 'managementareas/clearProtectedArea',
         })
     }
 }
