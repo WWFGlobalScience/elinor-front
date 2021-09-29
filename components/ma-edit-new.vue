@@ -23,7 +23,7 @@
                             </div>
                             <div v-if="!editWdpaId && managementArea.protected_area" class="input input--2-3">
                                 <input :disabled="true" type="text" :value="managementArea.protected_area.name">
-                                <div @click="clearProtectedArea()" role="button" class="date__caret">
+                                <div @click="clearProtectedArea()" role="button" class="btn--protected-area__clear">
                                     <img src="~/assets/img/ico-close-turqy.svg">
                                 </div>
                             </div>
