@@ -149,7 +149,7 @@ export default {
                 this.map != null ? this.map.remove() : null
 
                 let center;
-                if(this.managementArea.polygon) {
+                if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length) {
                     const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
                     center = turf.centroid(polygon);
                 } else if(this.managementArea.point) {
@@ -191,7 +191,7 @@ export default {
                 this.map.on('draw.delete', this.onDrawDelete);
                 this.map.on('draw.update', this.onDrawUpdate);
                 this.map.on('load', () => {
-                    if(this.managementArea.polygon) {
+                    if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length) {
                         const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
                         this.polygonDrawer.add(polygon);
                     }
@@ -207,7 +207,7 @@ export default {
             this.map.scrollZoom.disable();
         },
         mapFitBounds() {
-            if(this.managementArea.polygon) {
+            if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length) {
                 const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
                 const bbox = turf.bbox(polygon)
                 this.map.fitBounds(bbox)
