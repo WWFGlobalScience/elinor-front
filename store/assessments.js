@@ -22,7 +22,7 @@ let required_fields = {
         'governance_type',
         'management_authority',
         'name',
-        'polygon',
+        //'polygon',
         'protected_area',
         'recognition_level',
         'regions',
@@ -299,7 +299,6 @@ export const actions = {
         })
             .then((response) => {
                 const assessment = response.data;
-                console.log(assessment)
                 if(assessment.management_area) {
                     state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
                 }

@@ -140,7 +140,6 @@ export const actions = {
         state.commit('setList', managementAreas)
     },
     async fetchManagementArea(state, id) {
-        console.log(id);
         const response = await this.$axios.$get(`v1/managementareas/${id}/`)
         const managementArea = mapToForm(state, response)
         state.commit('setInstance', managementArea)
@@ -177,17 +176,17 @@ export const actions = {
         state.dispatch('assessments/updateAssessmentProgress', assessmentId, {root: true});
     },
     async editManagementAreaFileField(state, {field, file, onUploadProgress, id}) {
+        const responseField = field === 'import_file' ? 'polygon' : 'map_image';
         let formData = new FormData()
         formData.append(field, file,file.name)
         const config = { onUploadProgress, headers: {'Content-Type': 'multipart/form-data'}};
-        this.$axios.$patch(`/v1/managementareas/${id}/`, formData, config)
-            .then((response) => {
-                state.commit('setInstanceField', {field, value: response.filename})
-                state.commit('assessments/setLastEdit', {}, {root: true});
-            })
-            .catch((error) => {
-                state.commit('setImportFileError', error.response.data);
-            })
+        try {
+            const response = await this.$axios.$patch(`/v1/managementareas/${id}/`, formData, config);
+            await state.commit('setInstanceField', {field: responseField, value: response[responseField]})
+            state.commit('assessments/setLastEdit', {}, {root: true});
+        } catch (error) {
+            state.commit('setImportFileError', error.response.data);
+        }
     },
     async fetchZones(state, id) {
         let response = await this.$axios.$get(`v1/managementareazones/?management_area=` + id);

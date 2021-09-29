@@ -1,39 +1,29 @@
 <template>
-    <section class="section section--ma-data">
+    <section v-if="zones.length" class="section section--ma-data">
         <div class="container">
             <header class="header--ma-data header--ma-data--stripped">
-                <h3>{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.header.title' ) }}</h3>
+                <h3>{{ $t('pages.managed-areas.content.ma.tabs.info.data.zones.header.title') }}</h3>
             </header>
             <ul class="elinor__data-grid">
-                <li class="elinor__data-sublock">
+                <li v-for="zone in zones" class="elinor__data-sublock">
                     <ul class="elinor__data-sublist ui-rounded-border">
                         <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-name' ) }}</span>
-                            <span class="data"></span>
+                            <span class="title">{{
+                                    $t('pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-name')
+                                }}</span>
+                            <span class="data">{{ zone.name }}</span>
                         </li>
                         <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-restrictions' ) }}</span>
-                            <span class="data"></span>
+                            <span class="title">{{
+                                    $t('pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-restrictions')
+                                }}</span>
+                            <span class="data">{{ accessLevels[zone.access_level] }}</span>
                         </li>
                         <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-description' ) }}</span>
-                            <span class="data"></span>
-                        </li>
-                    </ul>
-                </li>
-                <li class="elinor__data-sublock">
-                    <ul class="elinor__data-sublist ui-rounded-border">
-                        <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-name' ) }}</span>
-                            <span class="data"></span>
-                        </li>
-                        <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-restrictions' ) }}</span>
-                            <span class="data"></span>
-                        </li>
-                        <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-description' ) }}</span>
-                            <span class="data"></span>
+                            <span class="title">{{
+                                    $t('pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-description')
+                                }}</span>
+                            <span class="data">{{ zone.description }}</span>
                         </li>
                     </ul>
                 </li>
@@ -43,7 +33,24 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
-    name: 'managementarea-zones'
+    name: 'managementarea-zones',
+    data() {
+        return {
+            accessLevels: {
+                90: this.$t('managementarea.zones.acccess_Level.OPEN_ACCESS'),
+                50: this.$t('managementarea.zones.acccessLevel.PARTIALLY_RESTRICTED'),
+                10: this.$t('managementarea.zones.acccessLevel.FULLY_RESTRICTED')
+            }
+        }
+    },
+    computed: {
+        ...mapState({
+            managementArea: state => state.managementareas.instance,
+            zones: state => state.managementareas.zones,
+        })
+    },
 }
 </script>

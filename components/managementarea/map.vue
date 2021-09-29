@@ -10,9 +10,7 @@
 import { mapState } from 'vuex'
 import * as turf from '@turf/turf'
 import mapboxgl from 'mapbox-gl'
-import MapboxDraw from '@mapbox/mapbox-gl-draw'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ'
 
 export default {
@@ -20,6 +18,7 @@ export default {
     data() {
         return {
             map: null,
+            marker: null,
             error: false,
             zoom: 13
         }
@@ -31,38 +30,88 @@ export default {
     },
     methods: {
         mapCreate() {
+            let center;
+            if(this.managementArea.polygon) {
+                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                center = turf.centroid(polygon);
+            } else {
+                center = turf.point(this.managementArea.point.coordinates);
+                this.marker = new mapboxgl.Marker()
+                    .setLngLat(this.managementArea.point.coordinates);
+            }
+
             this.map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/satellite-streets-v11',
-                center: this.managementArea.point,
+                center: center.geometry.coordinates,
                 zoom: this.zoom
             })
+
+            if(this.marker) {
+                this.marker.addTo(this.map);
+            }
+
+
+            this.mapFitBounds()
             this.mapAddControls()
             this.mapDisableScroll()
+            this.addPolygon()
         },
-        /*mapFitBounds() {
-            let data = this.draw.getAll()
-            if ( data.features.length > 0 ) {
-                let polygon = data.features[0].geometry
-                let bbox = turf.bbox( polygon )
-                this.map.fitBounds( bbox, {padding: 100} )
+        mapFitBounds() {
+            if(this.managementArea.polygon) {
+                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                const bbox = turf.bbox(polygon)
+                this.map.fitBounds(bbox)
             }
-        },*/
+        },
         mapAddControls() {
             this.map.addControl( new mapboxgl.NavigationControl() )
         },
         mapDisableScroll() {
             this.map.scrollZoom.disable();
         },
-        mapGetPointCoordinates( data ) {
-            return turf.center( data ).geometry.coordinates
-        },
-    },
-    created() {
+        addPolygon() {
+            this.map.on('load', () => {
+                this.map.addSource('polygon', {
+                    'type': 'geojson',
+                    'data': this.managementArea.polygon
+                });
+
+                this.map.addLayer({
+                    'id': 'polygon',
+                    'type': 'fill',
+                    'source': 'polygon',
+                    'layout': {},
+                    'paint': {
+                        'fill-color': '#43A0BD',
+                        'fill-opacity': 0.5
+                    }
+                });
+
+
+                this.map.addLayer({
+                    'id': 'outline',
+                    'type': 'line',
+                    'source': 'polygon',
+                    'layout': {},
+                    'paint': {
+                        'line-color': '#43A0BD',
+                        'line-width': 3
+                    }
+                });
+            });
+        }
 
     },
     mounted() {
-        this.mapCreate()
+        if(this.managementArea && this.managementArea.polygon) {
+            this.mapCreate()
+        }
+    },
+    watch: {
+        managementArea() {
+            this.mapCreate()
+        }
     }
 }
 

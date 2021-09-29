@@ -108,6 +108,7 @@ export default {
         return {
             map: null,
             polygonDrawer: null,
+            marker: null,
             area: null
         }
     },
@@ -125,6 +126,12 @@ export default {
     watch: {
         managementArea() {
             this.mapCreate()
+        },
+        ['managementArea.polygon']() {
+            this.mapCreate()
+        },
+        ['managementArea.point']() {
+            this.mapCreate()
         }
     },
     methods: {
@@ -138,40 +145,58 @@ export default {
             this.editManagementAreaField( {field, value, id: this.managementArea.id, assessmentId: this.assessment.id});
         },
         mapCreate() {
-            this.map != null ? this.map.remove() : null
-            this.map = new mapboxgl.Map({
-                container: 'map-edit',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [-68.137343, 45.137451],
-                zoom: 5
-            })
-            const options = {
-                displayControlsDefault: false,
-                controls: {
-                    polygon: true,
-                    trash: true
+            if(this.managementArea) {
+                this.map != null ? this.map.remove() : null
+
+                let center;
+                if(this.managementArea.polygon) {
+                    const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                    center = turf.centroid(polygon);
+                } else if(this.managementArea.point) {
+                    center = turf.point(this.managementArea.point.coordinates);
+                    this.marker = new mapboxgl.Marker().setLngLat(this.managementArea.point.coordinates);
                 }
-            };
 
-            if(!this.managementArea.polygon) {
-                options.defaultMode = 'draw_polygon'
-            }
+                this.map = new mapboxgl.Map({
+                    container: 'map-edit',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: center && center.geometry.coordinates || [0, 0],
+                    zoom: center ? 5 : 1
+                })
 
-            this.polygonDrawer = new MapboxDraw(options);
+                if(this.marker) {
+                    this.marker.addTo(this.map);
+                }
 
-            this.map.addControl(this.polygonDrawer);
-            this.mapAddControls()
-            this.mapDisableScroll()
+                const options = {
+                    displayControlsDefault: false,
+                    controls: {
+                        polygon: true,
+                        trash: true
+                    }
+                };
 
-            this.map.on('draw.create', this.onDrawCreate);
-            this.map.on('draw.delete', this.onDrawDelete);
-            this.map.on('draw.update', this.onDrawUpdate);
-            this.map.on( 'load', () => {
-                this.managementArea.polygon.coordinates.forEach((coords) => {
-                    this.polygonDrawer.add({type: 'MultiPolygon', coordinates: [coords]});
+                if(!this.managementArea.polygon) {
+                    options.defaultMode = 'draw_polygon'
+                }
+
+                this.polygonDrawer = new MapboxDraw(options);
+
+                this.map.addControl(this.polygonDrawer);
+                this.mapAddControls()
+                this.mapDisableScroll()
+                this.mapFitBounds()
+
+                this.map.on('draw.create', this.onDrawCreate);
+                this.map.on('draw.delete', this.onDrawDelete);
+                this.map.on('draw.update', this.onDrawUpdate);
+                this.map.on('load', () => {
+                    if(this.managementArea.polygon) {
+                        const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                        this.polygonDrawer.add(polygon);
+                    }
                 });
-                console.log(this.polygonDrawer.getAll());
-            })
+            }
         },
         mapAddControls() {
             this.map.addControl( new mapboxgl.NavigationControl() )
@@ -180,6 +205,13 @@ export default {
         },
         mapDisableScroll() {
             this.map.scrollZoom.disable();
+        },
+        mapFitBounds() {
+            if(this.managementArea.polygon) {
+                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                const bbox = turf.bbox(polygon)
+                this.map.fitBounds(bbox)
+            }
         },
         onDrawCreate(event) {
             const data = this.polygonDrawer.getAll();

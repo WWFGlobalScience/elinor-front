@@ -129,7 +129,7 @@
                     v-html="$t('popups.spatialfile.descriptions.file')"
                 ></div>
                 <!--STEP 3 - SUCCESS -->
-                <img v-if="fileAdded && progress === 100 && !importFileError" class="popup__map-img" src="~/assets/img/map-zone.jpg"/>
+                <div id="popup-map" v-show="fileAdded && progress === 100 && !importFileError" class="popup__map-img" style="top: 10rem !important;"></div>
                 <!--//STEP 3 - SUCCESS-->
             </div>
         </div>
@@ -139,8 +139,8 @@
 <script>
 import {mapActions, mapState} from "vuex";
 import Dropzone from "nuxt-dropzone";
-
-var shapefile = require("shapefile");
+import * as turf from "@turf/turf";
+import mapboxgl from "mapbox-gl";
 
 export default {
     name: "popup-map-spatialfile",
@@ -149,6 +149,7 @@ export default {
     },
     data() {
         return {
+            map: null,
             fileAdded: false,
             progress: 0,
             dropzoneAccepted: null,
@@ -183,19 +184,20 @@ export default {
             this.progress = 0;
             this.$refs.importFile.removeAllFiles();
         },
-        onImportFileAdded(file) {
-            this.$nextTick(() => {
+        async onImportFileAdded(file) {
+            await this.$nextTick(async () => {
                 if(file.status === "error") {
                     this.dropzoneAccepted = false;
                 } else {
                     this.dropzoneAccepted = true;
-                    this.editManagementAreaFileField({
+                    await this.editManagementAreaFileField({
                         field: "import_file",
                         file,
                         id: this.managementArea.id,
                         onUploadProgress: this.onImportFileProgress
                     });
                     this.fileAdded = true;
+                    this.mapCreate();
                 }
             });
         },
@@ -218,6 +220,66 @@ export default {
         template() {
             return "<div></div>";
         },
+        mapCreate() {
+            if(this.managementArea.polygon) {
+                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                const center = turf.centroid(polygon);
+                this.map = new mapboxgl.Map({
+                    container: 'popup-map',
+                    style: 'mapbox://styles/mapbox/satellite-streets-v11',
+                    center: center.geometry.coordinates
+                })
+
+                this.mapFitBounds()
+                this.mapAddControls()
+                this.mapDisableScroll()
+                this.addPolygon()
+            }
+        },
+        mapFitBounds() {
+            if(this.managementArea.polygon) {
+                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                const bbox = turf.bbox(polygon)
+                this.map.fitBounds(bbox)
+            }
+        },
+        mapAddControls() {
+            this.map.addControl( new mapboxgl.NavigationControl() )
+        },
+        mapDisableScroll() {
+            this.map.scrollZoom.disable();
+        },
+        addPolygon() {
+            this.map.on('load', () => {
+                this.map.addSource('polygon', {
+                    'type': 'geojson',
+                    'data': this.managementArea.polygon
+                });
+
+                this.map.addLayer({
+                    'id': 'polygon',
+                    'type': 'fill',
+                    'source': 'polygon',
+                    'layout': {},
+                    'paint': {
+                        'fill-color': '#43A0BD',
+                        'fill-opacity': 0.5
+                    }
+                });
+
+
+                this.map.addLayer({
+                    'id': 'outline',
+                    'type': 'line',
+                    'source': 'polygon',
+                    'layout': {},
+                    'paint': {
+                        'line-color': '#43A0BD',
+                        'line-width': 3
+                    }
+                });
+            });
+        }
     },
 };
 </script>
