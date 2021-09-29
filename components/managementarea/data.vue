@@ -73,11 +73,11 @@
                                 {{ managementArea.support_sources && managementArea.support_sources.map(supportSource => supportSource.name).join(', ') }}
                             </span>
                         </li>
-                        <li class="elinor__data elinor__data--full">
+                        <!--<li class="elinor__data elinor__data--full">
                             <span class="title">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.wdpa-id' ) }}</span>
                             <span class="data" v-if="managementArea.wdpa_protected_area">{{managementArea.wdpa_protected_area }}</span>
                             <span class="data" v-else>-</span>
-                        </li>
+                        </li>-->
                     </ul>
                     <div class="elinor__data-separator"></div>
                     <ul class="elinor__data-grid elinor__data-grid--3-5">

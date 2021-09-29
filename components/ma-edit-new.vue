@@ -174,12 +174,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form__row">
+                    <!--<div class="form__row">
                         <div class="input input--1-2">
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.wdpa-id-question' ) }}</label>
                             <input type="text" :value="managementArea.wdpa_protected_area" name="id" placeholder="00000 Id"  @change="save('wdpa_protected_area', $event.target.value)">
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="container">
                     <div class="form__row form__row--separator form__row--separator--16"></div>
