@@ -13,10 +13,10 @@
               <span class="elinor-card--question__number"> 1 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                  {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.main_purpose.question' ) }}
+                  {{ $t( 'pages.faq.content.survey.data.questions.items.main_purpose.question' ) }}
                 </h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.main_purpose.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.main_purpose.information' )">
                 </div>
               </div>
             </div>
@@ -30,11 +30,11 @@
               <span class="elinor-card--question__number"> 2 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                  {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.decisions.question' ) }}
+                  {{ $t( 'pages.faq.content.survey.data.questions.items.decisions.question' ) }}
                 </h4>
 
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.decisions.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.decisions.information' )">
                 </div>
               </div>
             </div>
@@ -47,9 +47,9 @@
             <div class="elinor-card--question">
               <span class="elinor-card--question__number"> 3 </span>
               <div class="elinor-card--question__info">
-                <h4 class="c-title--md">{{ $t( 'pages.faq.content.tabs.survey.data.questions.items.fill_out.question' ) }}</h4>
+                <h4 class="c-title--md">{{ $t( 'pages.faq.content.survey.data.questions.items.fill_out.question' ) }}</h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.fill_out.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.fill_out.information' )">
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@
           <div class="g-colspan--2-full-md">
             <div class="elinor-card__detail">
               <p>
-                {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.fill_out.detail' ) }}
+                {{ $t( 'pages.faq.content.survey.data.questions.items.fill_out.detail' ) }}
               </p>
             </div>
           </div>
@@ -69,10 +69,10 @@
               <span class="elinor-card--question__number"> 4 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                  {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.mett.question' ) }}
+                  {{ $t( 'pages.faq.content.survey.data.questions.items.mett.question' ) }}
                 </h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.mett.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.mett.information' )">
                 </div>
               </div>
             </div>
@@ -86,10 +86,10 @@
               <span class="elinor-card--question__number"> 5 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                  {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.data.question' ) }}
+                  {{ $t( 'pages.faq.content.survey.data.questions.items.data.question' ) }}
                 </h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.data.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.data.information' )">
                 </div>
               </div>
             </div>
@@ -103,10 +103,10 @@
               <span class="elinor-card--question__number"> 6 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                  {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.collect_data.question' ) }}
+                  {{ $t( 'pages.faq.content.survey.data.questions.items.collect_data.question' ) }}
                 </h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.collect_data.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.collect_data.information' )">
                 </div>
               </div>
             </div>
@@ -120,10 +120,10 @@
               <span class="elinor-card--question__number"> 7 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                  {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.things_elinor.question' ) }}
+                  {{ $t( 'pages.faq.content.survey.data.questions.items.things_elinor.question' ) }}
                 </h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.things_elinor.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.things_elinor.information' )">
                 </div>
               </div>
             </div>
@@ -137,10 +137,10 @@
               <span class="elinor-card--question__number"> 8 </span>
               <div class="elinor-card--question__info">
                 <h4 class="c-title--md">
-                 {{ $t( 'pages.faq.content.tabs.survey.data.questions.items.counts.question' ) }}
+                 {{ $t( 'pages.faq.content.survey.data.questions.items.counts.question' ) }}
                 </h4>
                 <div
-                v-html="$t( 'pages.faq.content.tabs.survey.data.questions.items.counts.information' )">
+                v-html="$t( 'pages.faq.content.survey.data.questions.items.counts.information' )">
                 </div>
               </div>
             </div>
