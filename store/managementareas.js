@@ -6,8 +6,13 @@ export const state = () => ({
     authorities: [],
     zones: [],
     importFileError: null,
+    editWdpaId: null,
+    editWdpaIdError: null,
 })
-
+const protectedPlanet = {
+    baseUrl: 'https://api.protectedplanet.net',
+    token: '76a1742fcede55c1ad277edd9a19c65b'
+}
 export const getters = {
     getPercentage: (state) => {
         const managementArea = state.instance;
@@ -119,6 +124,12 @@ export const mutations = {
     },
     resetImportFileError(state) {
         state.importFileError = null;
+    },
+    setEditWdpaId(state, value) {
+        state.editWdpaId = value;
+    },
+    setEditWdpaIdError(state, error) {
+        state.editWdpaIdError = error;
     }
 }
 
@@ -129,7 +140,6 @@ export const actions = {
         state.commit('setList', managementAreas)
     },
     async fetchManagementArea(state, id) {
-        console.log(id);
         const response = await this.$axios.$get(`v1/managementareas/${id}/`)
         const managementArea = mapToForm(state, response)
         state.commit('setInstance', managementArea)
@@ -166,17 +176,17 @@ export const actions = {
         state.dispatch('assessments/updateAssessmentProgress', assessmentId, {root: true});
     },
     async editManagementAreaFileField(state, {field, file, onUploadProgress, id}) {
+        const responseField = field === 'import_file' ? 'polygon' : 'map_image';
         let formData = new FormData()
         formData.append(field, file,file.name)
         const config = { onUploadProgress, headers: {'Content-Type': 'multipart/form-data'}};
-        this.$axios.$patch(`/v1/managementareas/${id}/`, formData, config)
-            .then((response) => {
-                state.commit('setInstanceField', {field, value: response.filename})
-                state.commit('assessments/setLastEdit', {}, {root: true});
-            })
-            .catch((error) => {
-                state.commit('setImportFileError', error.response.data);
-            })
+        try {
+            const response = await this.$axios.$patch(`/v1/managementareas/${id}/`, formData, config);
+            await state.commit('setInstanceField', {field: responseField, value: response[responseField]})
+            state.commit('assessments/setLastEdit', {}, {root: true});
+        } catch (error) {
+            state.commit('setImportFileError', error.response.data);
+        }
     },
     async fetchZones(state, id) {
         let response = await this.$axios.$get(`v1/managementareazones/?management_area=` + id);
@@ -292,5 +302,50 @@ export const actions = {
         });
 
         state.commit('setInstanceField', {field: 'regions', value: response.data.regions})
+    },
+    async clearProtectedArea(state) {
+        await this.$axios({
+            method: 'patch',
+            url: `/v1/managementareas/${state.state.instance.id}/`,
+            data: {protected_area: null}
+        });
+        state.commit('setEditWdpaId', true);
+    },
+    async protectedAreaByWdpaId(state, {wdpaId, managementAreaId, assessmentId}) {
+        try {
+            const protectedPlanetResponse = await this.$axios({
+                method: 'get',
+                url: `${protectedPlanet.baseUrl}/v3/protected_areas/${wdpaId}?token=${protectedPlanet.token}`
+            });
+
+            const findProtectedAreaResponse = await this.$axios({
+                method: 'get',
+                url: `/v1/protectedareas?name=${protectedPlanetResponse.data.protected_area.name}`
+            });
+            let protectedArea;
+            if(findProtectedAreaResponse.data.results.length === 0) {
+                const createProtectedAreaResponse = await this.$axios({
+                    method: 'post',
+                    url: `/v1/protectedareas/`,
+                    data: {
+                        name: protectedPlanetResponse.data.protected_area.name,
+                        wdpa_id: wdpaId
+                    }
+                });
+
+                protectedArea = createProtectedAreaResponse.data;
+            } else {
+                protectedArea = findProtectedAreaResponse.data.results[0];
+            }
+
+            state.commit('setEditWdpaId', false);
+            state.commit('setEditWdpaIdError', null);
+            state.dispatch('editManagementAreaField', {field: 'protected_area', value: protectedArea, id: managementAreaId, assessmentId })
+
+        } catch(e) {
+            state.commit('setEditWdpaIdError', e.response.data);
+            state.commit('setEditWdpaId', true);
+        }
+
     }
 }

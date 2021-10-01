@@ -67,7 +67,7 @@
                         </div>
                     </td>
                     <td>
-                        <button v-if="!isLastAdmin() && isAdmin($auth, assessment)" type="button" class="btn--circle btn--opacity--child"
+                        <button v-if="!isLastAdmin(collaborator) && isAdmin($auth, assessment)" type="button" class="btn--circle btn--opacity--child"
                                 @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-delete', title: 'Deleting Collaborator', onConfirm: onConfirmDelete(collaborator.id) })"
                         >
                             <span class="sr-only">delete</span>
@@ -107,8 +107,8 @@ export default {
                 this.deleteCollaborator(collaboratorId);
             }
         },
-        isLastAdmin() {
-            return this.assessment.collaborators.filter(collaborator => collaborator.role !== 70).length === 1;
+        isLastAdmin(collaborator) {
+            return collaborator.role === 70 && this.assessment.collaborators.filter(c => c.role === 70 && collaborator.id !== c.id).length === 0;
         },
         permissionToCollaboratorRoleEdit(collaborator, role) {
            return collaborator.role === role || this.isAdmin(this.$auth, this.assessment);

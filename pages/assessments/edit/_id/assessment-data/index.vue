@@ -272,18 +272,13 @@
                 </div>
                 <div class="container">
                     <div class="section__bottom">
-                        <button
-                            class="btn btn--opacity--child"
-                        >
+                        <NuxtLink @click.prevent :to="`/assessments/edit/${id}/managed-area`" class="btn btn--opacity--child">
                             <span class="btn--opacity__target">Next step</span>
-                            <img
-                                src="~/assets/img/ico-button-arrow.svg"
-                                alt="Next step"
-                            />
-                        </button>
+                            <img src="~/assets/img/ico-button-arrow.svg" alt="Next step" />
+                        </NuxtLink>
                     </div>
                 </div>
-                
+
             </div>
         </form>
     </section>
@@ -363,9 +358,10 @@ export default {
         managementUploadTrigger() {
            this.$refs.managementPlan.$el.click();
         },
-        clearManagementPlan() {
+        async clearManagementPlan() {
             this.$refs.managementPlan.removeAllFiles();
-            this.editAssessmentField({field: 'management_plan_file', value: null, id: this.id});
+            await this.editAssessmentField({field: 'management_plan_file', value: null, id: this.id});
+            this.$refs.managementPlan.$el.childNodes[0].innerHTML = '<div class="file__drag"><img src="/_nuxt/assets/img/ico-file-drag-turqy.svg"><span>' + this.$t('default.upload-file.placeholder') + '</span></div>';
         },
         save(field, value) {
             this.editAssessmentField({field, value, id: this.id});
@@ -380,8 +376,9 @@ export default {
         onOrganizationSelected(organization) {
             this.editAssessmentField({field: 'organization', value: organization, id: this.id});
         },
-        onManagementPlanAdded(file) {
-            this.editAssessmentFileField({field: 'management_plan_file', file, id: this.id});
+        async onManagementPlanAdded(file) {
+            await this.editAssessmentFileField({field: 'management_plan_file', file, id: this.id});
+            this.$refs.managementPlan.$el.childNodes[0].innerHTML = '<div class="file__drag"><img src="/_nuxt/assets/img/ico-file-drag-turqy.svg"><span><a onclick="event.stopPropagation()" href="' + this.assessment.management_plan_file + '" target="_blank">' + this.assessment.management_plan_file + '</a></span></div>';
         },
         template() {
             return `<div></div>`;

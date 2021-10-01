@@ -31,11 +31,6 @@ export default {
     },
     mounted() {
         this.$store.dispatch( 'assessments/fetchAssessment', this.id )
-        this.$store.dispatch( 'supportsources/fetchSupportSources')
-        this.$store.dispatch( 'stakeholdergroups/fetchStakeholderGroups')
-        this.$store.dispatch( 'governancetypes/fetchGovernanceTypes')
-        this.$store.dispatch( 'regions/fetchRegions')
-        this.$store.dispatch( 'collaborators/fetchCollaborators', this.id)
         this.loaded = true;
     }
 

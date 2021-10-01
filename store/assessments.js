@@ -22,7 +22,7 @@ let required_fields = {
         'governance_type',
         'management_authority',
         'name',
-        'polygon',
+        //'polygon',
         'protected_area',
         'recognition_level',
         'regions',
@@ -299,7 +299,6 @@ export const actions = {
         })
             .then((response) => {
                 const assessment = response.data;
-                console.log(assessment)
                 if(assessment.management_area) {
                     state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
                 }
@@ -438,19 +437,18 @@ export const actions = {
     async editAssessmentFileField(state, {field, file, id}) {
         let formData = new FormData()
         formData.append(field, file,file.name)
-        this.$axios({
-            method: 'patch',
-            url: `/v1/assessments/${id}/`,
-            data:  formData,
-            config: {headers: {'Content-Type': 'multipart/form-data'}}
-        })
-            .then((response) => {
-                state.commit('setAssessmentField', {field, value: response.filename})
-                state.commit('setLastEdit');
+        try {
+            const response = await this.$axios({
+                method: 'patch',
+                url: `/v1/assessments/${id}/`,
+                data:  formData,
+                config: {headers: {'Content-Type': 'multipart/form-data'}}
             })
-            .catch((error) => {
-                console.log(error)
-            })
+            await state.commit('setAssessmentField', {field, value: response.data[field]})
+            state.commit('setLastEdit');
+        } catch (e) {
+            console.log(e);
+        }
     },
 
     async publish(state, {id, status}) {

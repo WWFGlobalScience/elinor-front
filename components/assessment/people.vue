@@ -19,7 +19,7 @@
             <span>{{ assessment.count_community }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.leaders' ) }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessmentPeople }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.total' ) }}
+            <span>{{ total }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.total' ) }}
         </li>
     </ul>
 </template>
@@ -33,7 +33,7 @@ export default {
             assessment: state => state.assessments.assessment
         }),
         total() {
-            return assessment.count_manager + assessment.count_personnel + assessment.count_government + assessment.count_committee + assessment.count_community;
+            return this.assessment.count_manager + this.assessment.count_personnel + this.assessment.count_government + this.assessment.count_committee + this.assessment.count_community;
         }
     }
 }

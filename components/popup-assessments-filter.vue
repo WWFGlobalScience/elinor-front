@@ -11,7 +11,7 @@
                         <label class="label">by Countries</label>
                         <div class="multiselect__wrap">
                             <multiselect placeholder="Countries"
-                                :value="getCountryByCode(filters.country)"
+                                :value="getCountryByCode(filters.management_area_countries)"
                                 track-by="code"
                                 label="name"
                                 :options="countries"
@@ -19,7 +19,7 @@
                                 :searchable="false"
                                 :showLabels="false"
                                 :allow-empty="false" open-direction="bottom"
-                                @input="onFilterChanged('country', $event.code)" >
+                                @input="onFilterChanged('management_area_countries', $event.code)" >
                                 <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
@@ -209,7 +209,9 @@ export default {
             }
         },
         getCountryByCode(code) {
-            return this.countries.filter(country => country.code === code)[0];
+            if(code) {
+                return this.countries.filter(country => country.code === code)[0];
+            }
         },
         getStatusById(id) {
             if(id) {
