@@ -17,7 +17,7 @@
             <span class="btn--opacity__target">Methodology</span>
           </a>
         </li>
-        <li>
+        <li v-if="!$auth.loggedIn">
           <a role="button" class="btn--opacity--child" v-scroll-to="'#create-account'">
             <span class="btn--opacity__target">Create Account</span>
           </a>
@@ -25,6 +25,9 @@
         <li class="btn--opacity--child header--main__toggle-btn" @click="toggleSidebar">
             <img v-if="isSidebarOpen" src="~/assets/img/ico-maximize-turqy.svg" alt="maximize" class="center-v w-12">
             <img v-else src="~/assets/img/ico-minimize-turqy.svg" alt="minimize" class="center-v w-12 btn--opacity__target">
+        </li>
+        <li>
+            <default-header-profile />
         </li>
       </ul>
     </nav>

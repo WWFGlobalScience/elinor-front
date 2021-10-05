@@ -15,7 +15,7 @@
                     <header class="header">
                         <div class="left">
                             <span class="title">{{ assessment.person_responsible.username }}</span>
-                            <span class="subtitle">{{ assessment.name }}</span>
+                            <NuxtLink class="subtitle" :to="isOpenAssessment(assessment) ? `/assessments/edit/${assessment.id}/assessment-data/` : `/assessments/${assessment.id}/info/`">{{ assessment.name }}</NuxtLink>
                         </div>
                     </header>
                     <ul class="sublist">
@@ -73,6 +73,9 @@ export default {
         isAssessmentCollaborator: isAssessmentCollaborator,
         isAssessmentObserver: isAssessmentObserver,
         getMyRole: getMyRole,
+        isOpenAssessment(assessment) {
+            return this.$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver(this.$auth, assessment)
+        }
     },
     filters: {
         capitalizeFirstLetter: (value) => {

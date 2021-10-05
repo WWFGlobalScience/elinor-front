@@ -7,11 +7,11 @@ let required_fields = {
         'name',
         'year',
         'person_responsible_role',
-        'count_manager',
-        'count_personnel',
-        'count_government',
-        'count_committee',
         'count_community',
+        'count_academic',
+        'count_government',
+        'count_private',
+        'count_indigenous',
         'consent_given',
         'organization',
         //'management_plan_file',
@@ -101,11 +101,11 @@ export const getters = {
                     'data_policy',
                     'person_responsible_role',
                     'year',
-                    'count_manager',
-                    'count_personnel',
-                    'count_government',
-                    'count_committee',
                     'count_community',
+                    'count_academic',
+                    'count_government',
+                    'count_private',
+                    'count_indigenous',
                     'consent_given',
                     'management_plan_file',
                     'organization_id'
@@ -230,11 +230,11 @@ export const mutations = {
         state.assessment.collaborators.push(payload)
     },
     removeCollaborator(state, payload) {
-        state.assessment.collaborators = state.collaborators.filter(collaborator => collaborator.id !== payload);
+        state.assessment.collaborators = state.assessment.collaborators.filter(collaborator => collaborator.id !== payload);
     },
     updateCollaborator(state, payload) {
         const {id, role} = payload;
-        state.assessment.collaborators = state.collaborators.map((collaborator) => {
+        state.assessment.collaborators = state.assessment.collaborators.map((collaborator) => {
             if(collaborator.id === id) {
                 collaborator.role = role;
             }

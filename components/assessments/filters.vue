@@ -7,7 +7,7 @@
                         <div class="form__group">
                             <div class="form__row">
                                 <div class="input input--ico">
-                                    <input type="text" :placeholder="$t( 'default.search' )" @keyup="search($event.target.value)" @keydown="search($event.target.value)">
+                                    <input type="text" :placeholder="$t( 'default.search' )" v-model="searchText">
                                     <div class="input__ico">
                                         <span></span>
                                         <button type="submit" form="form--search">
@@ -41,11 +41,28 @@
 import { mapActions } from 'vuex'
 export default {
     name: 'assessments-filters',
+    data() {
+        return {
+            timer: null,
+            searchText: null
+        }
+    },
+    watch: {
+        searchText(value) {
+            this.delay(() => {
+                this.search(value);
+            }, 800);
+        }
+    },
     methods: {
         ...mapActions({
             popupState: 'popup/popupState',
             search: 'assessments/search'
-        })
+        }),
+        delay(fn, ms)  {
+            clearTimeout(this.timer);
+            this.timer = setTimeout(fn, ms || 0);
+        }
     }
 }
 </script>

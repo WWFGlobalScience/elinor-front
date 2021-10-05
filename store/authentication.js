@@ -65,36 +65,42 @@ export const actions = {
         })
     },
     async signUp(state, form) {
-
-        if (form.accept_tor) {
-            this.dispatch('loader/loaderState', {
-                active: true,
-                text: 'Registering...'
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Registering...'
+        })
+        await this.$axios
+            .$post('rest-auth/registration/', {
+                username: form.username,
+                email: form.email,
+                password1: form.password1,
+                password2: form.password2,
+                first_name: form.first_name,
+                last_name: form.last_name,
+                affiliation: form.affiliation && form.affiliation.id,
+                accept_tor: form.accept_tor,
             })
-            await this.$axios
-                .$post('rest-auth/registration/', {
-                    username: form.username,
-                    email: form.email,
-                    password1: form.password1,
-                    password2: form.password2,
-                    first_name: form.first_name,
-                    last_name: form.last_name,
-                    affiliation: form.affiliation && form.affiliation.id,
-                    accept_tor: form.accept_tor,
+            .then((response) => {
+                this.$router.push(`/status/email-verification-sent`)
+            })
+            .catch((e) => {
+                const error = {...e.response.data};
+                if(error.non_field_errors) {
+                    if(error.non_field_errors[0] === "The two password fields didn't match.") {
+                        error.password2 = ["The two password fields didn't match."];
+                    }
+                }
+                setTimeout(() => {
+                    this.$scrollTo('#' + Object.keys(error).filter((e) => e !== 'non_field_errors')[0], {offset: -100});
                 })
-                .then((response) => {
-                    this.$router.push(`/status/email-verification-sent`)
+                state.commit('setError', error);
+            })
+            .finally(() => {
+                this.dispatch('loader/loaderState', {
+                    active: false,
+                    text: ''
                 })
-                .catch((error) => {
-                    state.commit('setError', error.response.data);
-                })
-                .finally(() => {
-                    this.dispatch('loader/loaderState', {
-                        active: false,
-                        text: ''
-                    })
-                });
-        }
+            });
     },
     async setUserOrganization(state, organizationId) {
         await this.$axios

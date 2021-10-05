@@ -107,6 +107,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form__row">
+                        <div class="input input--pr">
+                            <div class="label">What are the objectives of this MA?</div>
+                            <textarea name="objectives" placeholder="" @change="save('objectives', $event.target.value)">{{ managementArea.objectives }}</textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="container">
                     <div class="form__row form__row--separator form__row--separator--16"></div>
@@ -122,9 +128,14 @@
                                     label="name"
                                     :options="recognitionLevels"
                                     :multiple="true" :searchable="false" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom"
+                                    :allow-empty="true" open-direction="bottom"
                                     @input="onSelectChanged('recognition_level', $event.map(recognitionLevel => recognitionLevel.id))">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
+                                    <template slot="option" slot-scope="{ option }">
+                                        <span :content="option.guide" v-tippy='{ placement : "right" }'>
+                                            {{ option.name }}
+                                        </span>
+                                    </template>
                                 </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
@@ -132,7 +143,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form__row">
+                    <!--<div class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.stakeholder-groups' ) }}</label>
                             <div class="multiselect__wrap">
@@ -142,7 +153,7 @@
                                     label="name"
                                     :options="stakeholderGroups"
                                     :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
+                                    :allow-empty="true" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('stakeholder_groups', $event)"
                                     @search-change="onSelectSearch('stakeholdergroups/fetchStakeholderGroups', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -152,7 +163,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.support-question' ) }}</label>
@@ -163,7 +174,7 @@
                                     label="name"
                                     :options="supportSources"
                                     :multiple="true" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom" :hide-selected="true"
+                                    :allow-empty="true" open-direction="bottom" :hide-selected="true"
                                     @input="onSelectChanged('support_sources', $event)"
                                     @search-change="onSelectSearch('supportsources/fetchSupportSources', $event)">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
@@ -194,9 +205,9 @@
                                     track-by="code"
                                     label="name"
                                     :options="countries"
-                                    :multiple="true" :searchable="false" :showLabels="false"
+                                    :multiple="true" :searchable="true" :showLabels="false"
                                     :allow-empty="true" :hide-selected="true"
-                                    @input="onSelectChanged('countries', $event.map(country => country.code))">
+                                    @input="onCountryChanged($event.map(country => country.code))">
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
@@ -205,7 +216,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form__row">
+                    <div v-show="managementArea.countries && managementArea.countries.length" class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.provinces-ma' ) }}</label>
                             <div id="geocoder"></div>
@@ -307,7 +318,7 @@
 
             <div class="container">
                     <div class="section__bottom">
-                        <NuxtLink @click.prevent :to="`/assessments/edit/${id}/survey`"
+                        <NuxtLink @click.prevent :to="`/assessments/edit/${id}/the-survey`"
                             class="btn btn--opacity--child"
                         >
                             <span class="btn--opacity__target">Next step</span>
@@ -349,9 +360,9 @@ export default {
                 { id: 10, name: this.$t('managementarea.zones.acccessLevel.FULLY_RESTRICTED') }
             ],
             recognitionLevels: [
-                {id: 'local', name: this.$t('managementarea.recognition_levels.local')},
-                {id: 'national', name: this.$t('managementarea.recognition_levels.national')},
-                {id: 'international', name: this.$t('managementarea.recognition_levels.international')}
+                {id: 'local', name: this.$t('managementarea.recognition_levels.local'), guide: this.$t('managementarea.recognition_levels.local_guide')},
+                {id: 'national', name: this.$t('managementarea.recognition_levels.national'), guide: this.$t('managementarea.recognition_levels.national_guide')},
+                {id: 'international', name: this.$t('managementarea.recognition_levels.international'), guide: this.$t('managementarea.recognition_levels.international_guide')}
             ]
         }
     },
@@ -359,11 +370,7 @@ export default {
         this.numZones = this.zones.length;
         this.showZones = this.zones.length > 0;
 
-        this.geocoder.addTo('#geocoder');
-        this.geocoder.on('result', (e) => {
-            this.$store.dispatch('managementareas/setRegion', e.result);
-            this.geocoder.clear();
-        });
+        this.initGeocoder();
     },
     watch: {
         zones() {
@@ -395,8 +402,16 @@ export default {
         onSelectSearch(action, search) {
             this.$store.dispatch(action, search)
         },
-        onSelectChanged(field, value) {
-            this.editManagementAreaField({field, value, id: this.managementArea.id, assessmentId: this.assessment.id});
+        onCountryChanged(countries) {
+            this.geocoder.setCountries(countries.join(','));
+            if(countries.length === 0) {
+                this.onSelectChanged('regions', [])
+            }
+            this.onSelectChanged('countries', countries)
+        },
+        async onSelectChanged(field, value) {
+            await this.editManagementAreaField({field, value, id: this.managementArea.id, assessmentId: this.assessment.id});
+
         },
         onDateEstablishmentSelected(value) {
             const date = this.$moment(value);
@@ -411,6 +426,17 @@ export default {
         },
         onZoneFieldChanged(field, index, value) {
             this.editZoneField({field, index, value})
+        },
+        initGeocoder() {
+            const countries = this.managementArea.countries;
+            if(countries && countries.length) {
+                this.geocoder.setCountries(countries.join(','));
+            }
+            this.geocoder.addTo('#geocoder');
+            this.geocoder.on('result', (e) => {
+                this.$store.dispatch('managementareas/setRegion', e.result);
+                this.geocoder.clear();
+            });
         },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',

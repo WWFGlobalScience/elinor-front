@@ -9,53 +9,52 @@
         <section class="section--signin-form">
             <form id="form--signin" class="form form--signin" @submit="submit">
                 <div class="container--sm">
-                    <div class="form__group" v-if="error">
-                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-                             role="alert">
-                            <strong class="font-bold">Error</strong>
-                            <span v-for="field in Object.keys(error)" class="block sm:inline"><strong>{{ field }}:</strong> {{ error[field].join(', ')}}</span>
-                            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                                     viewBox="0 0 20 20"><title>Close</title><path
-                                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-                            </span>
+                    <div id="error" class="form__group" v-if="error">
+                        <div class="mb-10 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <strong class="font-bold">Validation error</strong>
                         </div>
                     </div>
                     <div class="form__group">
                         <div class="form__row">
-                            <div class="input" :class="{'border-red-500': error && error.email && error.email.length}">
-                                <input v-model="form.email" type="email" name="email"
-                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.email' )" required>
+                            <div id="email" class="input" >
+                                <input :class="{'input--error': hasError('email')}" v-model="form.email" type="email" name="email"
+                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.email' )">
+                                <p v-if="hasError('email')" class="msg msg--error">{{ getError('email') }}</p>
                             </div>
                         </div>
-                        <div class="form__row">
-                            <div class="input" :class="{'border-red-500': error && error.password1 && error.password1.length}">
-                                <input v-model="form.password1" type="password" name="password1"
-                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.password1' )" required>
+                        <div id="password1" class="form__row">
+                            <div class="input">
+                                <input :class="{'input--error': hasError('password1')}" v-model="form.password1" type="password" name="password1"
+                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.password1' )">
+                                <p v-if="hasError('password1')" class="msg msg--error">{{ getError('password1') }}</p>
                             </div>
                         </div>
-                        <div class="form__row">
-                            <div class="input" :class="{'border-red-500': error && error.password2 && error.password2.length}">
-                                <input v-model="form.password2" type="password" name="password2"
-                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.password2' )" required>
+                        <div id="password2" class="form__row">
+                            <div class="input">
+                                <input :class="{'input--error': hasError('password2')}" v-model="form.password2" type="password" name="password2"
+                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.password2' )">
+                                <p v-if="hasError('password2')" class="msg msg--error">{{ getError('password2') }}</p>
                             </div>
                         </div>
-                        <div class="form__row">
-                            <div class="input" :class="{'border-red-500': error && error.first_name}">
-                                <input v-model="form.first_name" type="text" name="first_name"
-                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.first_name' )" required>
+                        <div id="first_name" class="form__row">
+                            <div class="input">
+                                <input :class="{'input--error': hasError('first_name')}" v-model="form.first_name" type="text" name="first_name"
+                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.first_name' )">
+                                <p v-if="hasError('first_name')" class="msg msg--error">{{ getError('first_name') }}</p>
                             </div>
                         </div>
-                        <div class="form__row">
-                            <div class="input" :class="{'border-red-500': error && error.last_name}">
-                                <input v-model="form.last_name" type="text" name="last_name"
-                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.last_name' )" required>
+                        <div id="last_name" class="form__row">
+                            <div class="input">
+                                <input :class="{'input--error': hasError('last_name')}" v-model="form.last_name" type="text" name="last_name"
+                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.last_name' )">
+                                <p v-if="hasError('last_name')" class="msg msg--error">{{ getError('last_name') }}</p>
                             </div>
                         </div>
-                        <div class="form__row">
-                            <div class="input" :class="{'border-red-500': error && error.username}">
-                                <input v-model="form.username" type="text" name="username"
-                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.username' )" required>
+                        <div id="username" class="form__row">
+                            <div class="input">
+                                <input :class="{'input--error': hasError('username')}" v-model="form.username" type="text" name="username"
+                                       :placeholder="$t( 'pages.sign-up.content.form.inputs.username' )">
+                                <p v-if="hasError('username')" class="msg msg--error">{{ getError('username') }}</p>
                             </div>
                         </div>
                     </div>
@@ -102,7 +101,7 @@
                                 <div class="input input--checkbox">
                                     <div class="checkbox">
                                         <input v-model="form.accept_tor" type="checkbox" id="terms-of-service"
-                                               name="terms-of-service" required>
+                                               name="terms-of-service">
                                         <img src="~/assets/img/ico-checkbox.svg">
                                     </div>
                                     <label for="terms-of-service">{{
@@ -159,6 +158,12 @@ export default {
         submit(event) {
             event.preventDefault();
             this.signUp(this.form);
+        },
+        hasError(field) {
+            return this.error && this.error[field];
+        },
+        getError(field) {
+            return this.error[field][0];
         }
     }
 }

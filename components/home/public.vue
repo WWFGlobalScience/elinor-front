@@ -72,10 +72,10 @@
                     <div class="radio__wrap">
                       <div class="radio">
                         <input
-                          type="radio"
+                          type="checkbox"
                           name="answer"
                           id="answer-1"
-                          value="1"
+                          v-model="remember"
                         />
                         <img src="~/assets/img/ico-ok.svg"/>
                       </div>
@@ -243,6 +243,7 @@ export default {
     return {
       username: null,
       password: null,
+      remember: false
     }
   },
   computed: {

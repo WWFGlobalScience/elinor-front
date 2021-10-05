@@ -26,7 +26,7 @@
                         </div>
                         <div v-else class="uncompleted">
                             <div class="txt__uncomplete">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.not-completed' ) }}</div>
-                            <nuxt-link :to="`${index + 1}`" class="btn btn--opacity--child btn--uncomplete">
+                            <nuxt-link :to="`/assessments/edit/${assessment.id}/the-survey/${index + 1}`" class="btn btn--opacity--child btn--uncomplete">
                                 <span class="btn--opacity__target">{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.answer-question' ) }}</span>
                                 <img src="~/assets/img/ico-button-arrow.svg">
                             </nuxt-link>

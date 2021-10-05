@@ -72,9 +72,12 @@
     },
     "managementarea": {
         "recognition_levels": {
-            "local": "Local",
-            "national": "National",
-            "international": "International"
+            "local": "Local level",
+            "local_guide": "Recognized by the community",
+            "national": "National level",
+            "national_guide": "Recognized by national government",
+            "international": "International level",
+            "international_guide": "Is it a valid other effective area-based conservation measures [OECM] that contributes to global targets"
         },
         "headers": {
             "related": "Are there there other Managment Areas related to this?",
@@ -314,11 +317,12 @@
                                 "people-consulted": {
                                     "title": "People consulted",
                                     "labels": {
-                                        "manager": "MA manager",
-                                        "ma-personnel": "MA personnel",
-                                        "government-personnel": "Government Personnel",
-                                        "local-members": "Members of local community",
-                                        "leaders": "Community leaders",
+                                        "community": "Local community leader",
+                                        "ngo": "NGO personnel",
+                                        "academic": "Academic personnel",
+                                        "government": "Government Personnel",
+                                        "private": "Private sector personnel",
+                                        "indigenous": "Indigenous leader",
                                         "total": "Total people consulted"
                                     }
                                 }
@@ -771,6 +775,30 @@
                                                 "4": "There are adequate equipment and facilities",
                                                 "5": "Don't know"
                                             }
+                                        },
+                                        "multiple_knowledge_ecological": {
+                                            "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the ecological impacts of the MA?",
+                                            "information": "",
+                                            "guidance": "",
+                                            "answers": {
+                                                "1": "Poor",
+                                                "2": "Average",
+                                                "3": "Good",
+                                                "4": "Excellent",
+                                                "5": "Don't know"
+                                            }
+                                        },
+                                        "climatechange_assessed": {
+                                            "question": "Have observed and anticipated changes in climate, and their associated impacts on people and nature, been assessed, understood, and documented?",
+                                            "information": "",
+                                            "guidance": "",
+                                            "answers": {
+                                                "1": "Poor",
+                                                "2": "Average",
+                                                "3": "Good",
+                                                "4": "Excellent",
+                                                "5": "Don't know"
+                                            }
                                         }
                                     }
                                 }
@@ -810,11 +838,13 @@
                                 "role": "Role of the person responsible to complete this Assessment",
                                 "people": {
                                     "title": "Number of people consulted",
-                                    "manager": "MA manager",
-                                    "personnel": "MA personnel",
-                                    "government-personnel": "Government Personnel",
-                                    "community-members": "Members of local community / indigenous committees",
-                                    "community-leaders": "Community leaders / reprentatives"
+                                    "community": "Local community leader",
+                                    "ngo": "NGO personnel",
+                                    "academic": "Academic personnel",
+                                    "government": "Government Personnel",
+                                    "private": "Private sector personnel",
+                                    "indigenous": "Indigenous leader",
+                                    "total": "Total people consulted"
                                 },
                                 "authority": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                                 "ma-file": "Upload a Managment Plan File"

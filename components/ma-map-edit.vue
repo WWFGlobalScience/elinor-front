@@ -72,10 +72,6 @@
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
                         </a>
                     </div>
-                    <div class="option__info">
-                        <p>PREFERED METHOD</p>
-                        <p>Upload a image file</p>
-                    </div>
                 </div>
                 <div class="w-2/3 sm:w-full">
                     <div class="form__group">

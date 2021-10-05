@@ -14,7 +14,7 @@
                                 :value="getCountryByCode(filters.management_area_countries)"
                                 track-by="code"
                                 label="name"
-                                :options="countries"
+                                :options="management_area_countries"
                                 :multiple="false"
                                 :searchable="false"
                                 :showLabels="false"
@@ -180,7 +180,7 @@ export default {
     name: 'popup-assessments-filter',
     data() {
         return {
-            years: ['2020', '2021'],
+            years: [new Date().getFullYear() - 1, new Date().getFullYear()],
             statuses: [
                 {id: 90, name: this.$t('assessments.statuses.90')},
                 {id: 80, name: this.$t('assessments.statuses.80')},
@@ -188,10 +188,13 @@ export default {
             ]
         }
     },
+    mounted() {
+        this.$store.dispatch('countries/fetchCountries');
+    },
     computed: {
         ...mapState({
             filters: state => state.assessments.filters,
-            countries: state => state.countries.list,
+            management_area_countries: state => state.countries.management_area_countries
         })
     },
     methods: {

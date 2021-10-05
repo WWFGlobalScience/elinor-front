@@ -249,5 +249,29 @@ export const state = () => ({
         {code: "YE", name: "Yemen"},
         {code: "ZM", name: "Zambia"},
         {code: "ZW", name: "Zimbabwe"}
-    ]
+    ],
+    management_area_countries: []
 })
+
+
+export const mutations = {
+    setManagementAreaCountries(state, payload) {
+        state.management_area_countries = payload
+    }
+}
+
+export const actions = {
+    async fetchCountries(state) {
+        try {
+            const response = await this.$axios({
+                method: 'get',
+                url: 'v1/managementareas/countries'
+            });
+
+            state.commit('setManagementAreaCountries', response.data)
+        } catch (e) {
+            console.error(e);
+        }
+    }
+}
+

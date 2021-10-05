@@ -8,6 +8,9 @@
             }
             .input {
                 @apply w-full sm:mb-3;
+                &--error {
+                    @apply border-red-500 #{!important};
+                }
                 input:not(.vs__search), textarea:not(.vs__search) {
                     @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium focus:border-grayy-lighter;
                     &::placeholder {
@@ -18,7 +21,7 @@
                     @apply h-[200px] resize-none;
                 }
                 .label {
-                    @apply block text-[12px] mb-3;
+                    @apply block text-[14px] mb-3;
                     &.label--stripped {
                         span {
                             @apply bg-white z-10 pr-10;
@@ -220,7 +223,7 @@
                         @apply flex flex-wrap;
                     }
                     .multiselect__tag {
-                        @apply bg-white text-grayy-lighter border border-grayy-border mb-1 mr-1 px-2 py-[5px] pr-10;
+                        @apply bg-white text-grayy border border-grayy-border mb-1 mr-1 px-2 py-[5px] pr-10;
                         border-radius: 20px;
                     }
                     .multiselect__tag-icon:after {
@@ -306,8 +309,8 @@
                         @apply fill-current text-turqy;
                     }
                     @apply fill-current text-grayy-lighter;
-                } 
-                
+                }
+
             }
         }
         .mapboxgl-ctrl-geocoder--button{
@@ -316,11 +319,11 @@
                 @apply h-8 w-4 mr-1 mt-5 fill-current text-grayy hidden;
             }
         }
-        
+
     }
     .suggestions-wrapper{
         @apply border-b border-l border-r border-grayy-border rounded-b-lg absolute bg-white w-full;
-        
+
         .mapboxgl-ctrl-geocoder--suggestion{
             @apply text-xs p-3 cursor-pointer text-grayy hover:bg-turqy-lighter;
             .mapboxgl-ctrl-geocoder--suggestion-address{

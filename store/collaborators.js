@@ -103,6 +103,7 @@ export const actions = {
             this.dispatch('popup/popupState', {
                 active: false
             })
+            this.dispatch('loader/loaderState', {active: false});
         }).catch(error => console.log(error));
     },
 }

@@ -19,7 +19,7 @@
                                 }}</span>
                             <span class="data">{{ accessLevels[zone.access_level] }}</span>
                         </li>
-                        <li class="elinor__data elinor__data--full">
+                        <li v-if="zone.description" class="elinor__data elinor__data--full">
                             <span class="title">{{
                                     $t('pages.managed-areas.content.ma.tabs.info.data.zones.labels.zone-description')
                                 }}</span>
@@ -40,9 +40,9 @@ export default {
     data() {
         return {
             accessLevels: {
-                90: this.$t('managementarea.zones.acccess_Level.OPEN_ACCESS'),
-                50: this.$t('managementarea.zones.acccessLevel.PARTIALLY_RESTRICTED'),
-                10: this.$t('managementarea.zones.acccessLevel.FULLY_RESTRICTED')
+                90: this.$t('managementarea.zones.access_levels.OPEN_ACCESS'),
+                50: this.$t('managementarea.zones.access_levels.PARTIALLY_RESTRICTED'),
+                10: this.$t('managementarea.zones.access_levels.FULLY_RESTRICTED')
             }
         }
     },

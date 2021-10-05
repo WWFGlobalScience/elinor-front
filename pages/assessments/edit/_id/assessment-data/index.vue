@@ -91,6 +91,36 @@
                 </div>
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
+                        <div class="input input--multiselect">
+                            <label class="label">Please choose which option best describes how information for this assessment was collected</label>
+                            <div class="multiselect__wrap">
+                                <multiselect :value="collection_method" :options="collection_methods" label="name"
+                                             track-by="id" :multiple="false" :searchable="false" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom" :hide-selected="false"
+                                             @input="save('collection_method', $event.id)">
+                                    <template slot="singleLabel" slot-scope="{ option }">{{ option.name }}</template>
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <input type="hidden" name="person_responsible_role" class="input__dummy"
+                                   :value="assessment.collection_method">
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <div class="input input--pr">
+                            <div class="label">Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment</div>
+                            <textarea name="collection_method_text" placeholder="" @change="save('collection_method_text', $event.target.value)">{{ assessment.collection_method_text }}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="form__row form__row--separator form__row--separator--16"></div>
+                </div>
+                <div class="container--sm">
+                    <div class="form__row form__row--mt-16">
                         <div class="input">
                             <label class="label">{{
                                     $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.title')
@@ -98,62 +128,6 @@
                         </div>
                     </div>
                     <div class="form__row ">
-                        <div class="input input--multiselect input--1-2 input--flexy">
-                            <div class="multiselect__wrap">
-                                <input type="hidden" name="count_manager" class="input__dummy"
-                                       :value="assessment.count_manager">
-                                <multiselect placeholder="" :value="assessment.count_manager" :options="counts"
-                                             :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" open-direction="bottom"
-                                             @input="save('count_manager', $event)">
-                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                </div>
-                            </div>
-                            <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.manager')
-                                }}</label>
-                        </div>
-                        <div class="input input--multiselect input--1-2 input--flexy">
-                            <div class="multiselect__wrap">
-                                <input type="hidden" name="count_personnel" class="input__dummy"
-                                       :value="assessment.count_personnel">
-                                <multiselect placeholder="" :value="assessment.count_personnel" :options="counts"
-                                             :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" open-direction="bottom"
-                                             @input="save('count_personnel', $event)">
-                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                </div>
-                            </div>
-                            <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.personnel')
-                                }}</label>
-                        </div>
-                    </div>
-                    <div class="form__row ">
-                        <div class="input input--multiselect input--1-2 input--flexy">
-                            <div class="multiselect__wrap">
-                                <input type="hidden" name="count_government" class="input__dummy"
-                                       :value="assessment.count_government">
-                                <multiselect placeholder="" :value="assessment.count_government" :options="counts"
-                                             :multiple="false" :searchable="true" :showLabels="false"
-                                             :allow-empty="false" open-direction="bottom"
-                                             @input="save('count_government', $event)">
-                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                </div>
-                            </div>
-                            <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.government-personnel')
-                                }}</label>
-                        </div>
                         <div class="input input--multiselect input--1-2 input--flexy">
                             <div class="multiselect__wrap">
                                 <input type="hidden" name="count_community" class="input__dummy"
@@ -169,19 +143,18 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.community-members')
+                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.community')
                                 }}</label>
                         </div>
-                    </div>
-                    <div class="form__row ">
+
                         <div class="input input--multiselect input--1-2 input--flexy">
                             <div class="multiselect__wrap">
-                                <input type="hidden" name="count_committee" class="input__dummy"
-                                       :value="assessment.count_committee">
-                                <multiselect placeholder="" :value="assessment.count_committee" :options="counts"
+                                <input type="hidden" name="count_community" class="input__dummy"
+                                       :value="assessment.count_ngo">
+                                <multiselect placeholder="" :value="assessment.count_ngo" :options="counts"
                                              :multiple="false" :searchable="true" :showLabels="false"
                                              :allow-empty="false" open-direction="bottom"
-                                             @input="save('count_committee', $event)">
+                                             @input="save('count_ngo', $event)">
                                     <span slot="noResult">{{ $t('default.noresults') }}</span>
                                 </multiselect>
                                 <div class="multiselect__caret">
@@ -189,7 +162,84 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.community-leaders')
+                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.ngo')
+                                }}</label>
+                        </div>
+                    </div>
+                    <div class="form__row ">
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_academic" class="input__dummy"
+                                       :value="assessment.count_academic">
+                                <multiselect placeholder="" :value="assessment.count_academic" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_academic', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.academic')
+                                }}</label>
+                        </div>
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_government" class="input__dummy"
+                                       :value="assessment.count_government">
+                                <multiselect placeholder="" :value="assessment.count_government" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_government', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.government')
+                                }}</label>
+                        </div>
+
+                    </div>
+                    <div class="form__row ">
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_indigenous" class="input__dummy"
+                                       :value="assessment.count_indigenous">
+                                <multiselect placeholder="" :value="assessment.count_indigenous" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_indigenous', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.indigenous')
+                                }}</label>
+                        </div>
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_private" class="input__dummy"
+                                       :value="assessment.count_private">
+                                <multiselect placeholder="" :value="assessment.count_private" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_private', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.private')
                                 }}</label>
                         </div>
                     </div>
@@ -297,14 +347,19 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            years: ['2019', '2020', '2021'],
+            years: [new Date().getFullYear() - 2, new Date().getFullYear() - 1, new Date().getFullYear()],
             roles: [
-                {id: 10, name: 'Non profit'},
-                {id: 20, name: 'Manager'},
-                {id: 30, name: 'Personnel'},
-                {id: 40, name: 'Government'},
-                {id: 50, name: 'Committee'},
-                {id: 60, name: 'Community'}
+                {id: 10, name: 'Non-profit staff'},
+                {id: 20, name: 'Management area manager'},
+                {id: 30, name: 'Management area personnel'},
+                {id: 40, name: 'Government personnel'},
+                {id: 50, name: 'Members of local community or indigenous committees'},
+                {id: 60, name: 'Community leaders or representatives'}
+            ],
+            collection_methods: [
+                {id: 10, name: 'Through knowledge of the person(s) responsible for filling out assessment'},
+                {id: 20, name: 'Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents'},
+                {id: 30, name: 'Through semi-structured interviews and focus group'},
             ],
             counts: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             dropzone: {
@@ -335,6 +390,9 @@ export default {
         },
         person_responsible_role() {
             return this.roles.filter(role => role.id === this.assessment.person_responsible_role);
+        },
+        collection_method() {
+            return this.collection_methods.filter(collectionMethod => collectionMethod.id === this.assessment.collection_method);
         },
         managementPlanFile() {
             if(this.assessment.management_plan_file) {
