@@ -15,6 +15,7 @@ export default {
     name: 'assessment-management-area',
     layout: 'assessment-edit',
     mounted() {
+        this.$store.dispatch('managementareas/fetchManagementAreas', '');
         this.$store.dispatch('managementareas/fetchAuthorities', '');
         this.$store.dispatch('stakeholdergroups/fetchStakeholderGroups', '');
         this.$store.dispatch('supportsources/fetchSupportSources', '');
