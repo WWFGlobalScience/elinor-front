@@ -18,7 +18,8 @@
                                     >
                                         <div class="file__drag">
                                             <img src="~/assets/img/ico-file-drag-turqy.svg"/>
-                                            <span>{{ $t("default.upload-mapimage.placeholder") }}</span>
+                                            <span v-if="!managementArea.map_image">{{ $t("default.upload-mapimage.placeholder") }}</span>
+                                            <span v-if="managementArea.map_image"><img :src="managementArea.map_image" style="width: 100%; height: auto" /></span>
                                         </div>
                                     </dropzone>
                                 </div>
@@ -57,7 +58,8 @@
                     ></div>
                 </div>
             </div>
-            <div v-if="fileAdded" class="popup__map">
+            <div v-if="fileAdded" class="popup__map image">
+                <img :src="preview || managementArea.map_image" />
                 <div class="header--map header--map--flexy">
                     <div class="left">
                         <div class="form__group">
@@ -148,7 +150,6 @@ export default {
         },
         clearMapImage() {
             this.fileAdded = false;
-            this.resetImportFileError();
             this.progress = 0;
             this.$refs.mapImage.removeAllFiles();
             this.dropzoneAccepted = null;

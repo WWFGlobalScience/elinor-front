@@ -1,11 +1,11 @@
 //popup
 .elinor__popup {
     @apply w-screen h-screen fixed top-0 left-0 z-40 flex items-center m-auto overflow-auto py-8 sm:p-0;
-    @media only screen 
-    and (min-device-width: 320px) 
-    and (max-device-width: 823px) 
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 823px)
     and (-webkit-min-device-pixel-ratio: 3)
-    and (orientation: landscape) { 
+    and (orientation: landscape) {
         @apply p-0;
     }
     .popup__overlay {
@@ -13,7 +13,7 @@
     }
     .popup__box {
         @apply w-[1000px] z-10 shadow-xl m-auto md:w-11/12 sm:w-full;
-       
+
         .popup__header {
             @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8 sm:rounded-none;
             span {
@@ -30,12 +30,12 @@
                     @apply sm:flex-col sm:items-start;
                 }
             }
-            
-            .popup__map-img{   
+
+            .popup__map-img{
                 top: 6.563rem;
-                height: calc(100% - 6.563rem);  
+                height: calc(100% - 6.563rem);
                 @apply fixed right-0 w-6/12 object-cover sm:relative sm:w-full sm:top-0 sm:h-auto;
-                
+
             }
             .popup__map{
                 @apply relative flex justify-center items-center flex-col mt-16 -mx-20;
@@ -44,6 +44,9 @@
                     @apply flex justify-between items-center sm:flex-col sm:px-4 sm:w-screen sm:items-start;
                     .form__row{@apply items-end sm:items-start sm:mb-4}
                 }
+            }
+            .popup__map.image {
+                @apply mt-0 #{!important};
             }
             .popup__footer{
                 @apply flex justify-end pt-11;
@@ -54,9 +57,9 @@
         }
 
         &.popup__box--min{
-           @apply w-3/12 2xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-full 
+           @apply w-3/12 2xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-full
         }
-        @media only screen 
+        @media only screen
             and (max-device-width: 823px)
             and (-webkit-min-device-pixel-ratio: 2)
             and (orientation: landscape) {
