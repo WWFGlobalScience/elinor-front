@@ -70,15 +70,15 @@
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.name-authority' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
-                                    :value="managementArea.management_authority"
                                     track-by="id"
                                     label="name"
+                                    :value="managementArea.management_authority"
                                     :options="authorities"
                                     :multiple="false" :searchable="true" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom"
+                                    :allow-empty="false" open-direction="bottom" :hide-selected="false"
                                     @input="onSelectChanged('management_authority', $event)"
                                     @search-change="onSelectSearch('managementareas/fetchAuthorities', $event)">
-                                    <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
+                                    <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> <button @click="$event.preventDefault();$event.stopPropagation(); onCreateAuthority(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">{{ $t('default.create') }}</button></span>
                                 </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
@@ -427,6 +427,10 @@ export default {
         onZoneFieldChanged(field, index, value) {
             this.editZoneField({field, index, value})
         },
+        async onCreateAuthority(name) {
+            const authority = await this.createAuthority(name);
+            this.onSelectChanged('management_authority', authority)
+        },
         initGeocoder() {
             const countries = this.managementArea.countries;
             if(countries && countries.length) {
@@ -440,6 +444,7 @@ export default {
         },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
+            createAuthority: 'managementareas/createAuthority',
             editZoneField: 'managementareas/editZoneField',
             removeRegion: 'managementareas/removeRegion',
             protectedAreaByWdpaId: 'managementareas/protectedAreaByWdpaId',

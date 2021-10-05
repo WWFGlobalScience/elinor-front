@@ -130,6 +130,9 @@ export const mutations = {
     },
     setEditWdpaIdError(state, error) {
         state.editWdpaIdError = error;
+    },
+    addAuthorityToList(state, authority) {
+        state.authorities.push(authority);
     }
 }
 
@@ -201,8 +204,8 @@ export const actions = {
         let response = await this.$axios.$patch(`v1/managementareazones/${id}`, form)
         state.commit('updateZone', response.data);
     },
-    async fetchAuthorities(state) {
-        let response = await this.$axios.$get(`v1/managementauthorities/`)
+    async fetchAuthorities(state, search) {
+        let response = await this.$axios.$get(`v1/managementauthorities/?search=` + search)
         state.commit('setAuthorities', response.results)
     },
     async onManagementAreaNew(state, assessment) {
@@ -346,6 +349,15 @@ export const actions = {
             state.commit('setEditWdpaIdError', e.response.data);
             state.commit('setEditWdpaId', true);
         }
-
-    }
+    },
+    async createAuthority(state, name) {
+        const response = await this.$axios({
+            method: 'post',
+            url: 'v1/managementauthorities/',
+            data: { name }
+        })
+        const authority = response.data;
+        state.commit('addAuthorityToList', authority);
+        return authority;
+    },
 }
