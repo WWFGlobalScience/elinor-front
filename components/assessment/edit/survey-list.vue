@@ -38,7 +38,7 @@
         </div>
          <div class="container">
             <div class="section__bottom">
-                <button
+                <NuxtLink @click.prevent :to="`/assessments/edit/${assessment.id}/collaborators`"
                     class="btn btn--opacity--child"
                 >
                     <span class="btn--opacity__target">Next step</span>
@@ -46,7 +46,7 @@
                         src="~/assets/img/ico-button-arrow.svg"
                         alt="Next step"
                     />
-                </button>
+                </NuxtLink>
             </div>
         </div>
     </section>
@@ -63,13 +63,6 @@ export default {
             survey: state => state.assessments.survey
         }),
         questions() {
-            const questions = [];
-            const translatedQuestions = this.$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items`);
-            for(const key in translatedQuestions) {
-                const question = translatedQuestions[key]
-                questions.push(question);
-            }
-            console.log();
             return this.$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items`);
         }
     },

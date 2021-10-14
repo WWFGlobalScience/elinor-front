@@ -4,7 +4,7 @@
             Are you sure you want to publish your assessment?
         </h4>
         <p class="c-text--base mb-6">
-            Once publicated you can not edit the Survey or Assessment Data, so publish only when you finish your Assessment
+            Once publicated you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment
         </p>
         <div class="g-grid--2">
             <div>

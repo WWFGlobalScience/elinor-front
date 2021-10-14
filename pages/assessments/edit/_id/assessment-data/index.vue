@@ -298,8 +298,10 @@
                                 >
                                     <div class="file__drag">
                                         <img src="~/assets/img/ico-file-drag-turqy.svg">
-                                        <span v-if="!assessment.management_plan_file">{{ $t('default.upload-file.placeholder') }}</span>
-                                        <span v-else><a @click.stop :href="assessment.management_plan_file" target="_blank">{{ assessment.management_plan_file }}</a></span>
+                                        <div>
+                                            <span v-if="!assessment.management_plan_file">{{ $t('default.upload-file.placeholder') }}</span>
+                                            <span v-else><a @click.stop :href="assessment.management_plan_file" target="_blank">{{ assessment.management_plan_file }}</a></span>
+                                        </div>
                                     </div>
                                 </dropzone>
                                 <div class="file__buttons">
@@ -419,7 +421,7 @@ export default {
         async clearManagementPlan() {
             this.$refs.managementPlan.removeAllFiles();
             await this.editAssessmentField({field: 'management_plan_file', value: null, id: this.id});
-            this.$refs.managementPlan.$el.childNodes[0].innerHTML = '<div class="file__drag"><img src="/_nuxt/assets/img/ico-file-drag-turqy.svg"><span>' + this.$t('default.upload-file.placeholder') + '</span></div>';
+            this.$refs.managementPlan.$el.childNodes[0].childNodes[0].childNodes[1].innerHTML = '<span>' + this.$t('default.upload-file.placeholder') + '</span>';
         },
         save(field, value) {
             this.editAssessmentField({field, value, id: this.id});
@@ -436,7 +438,7 @@ export default {
         },
         async onManagementPlanAdded(file) {
             await this.editAssessmentFileField({field: 'management_plan_file', file, id: this.id});
-            this.$refs.managementPlan.$el.childNodes[0].innerHTML = '<div class="file__drag"><img src="/_nuxt/assets/img/ico-file-drag-turqy.svg"><span><a onclick="event.stopPropagation()" href="' + this.assessment.management_plan_file + '" target="_blank">' + this.assessment.management_plan_file + '</a></span></div>';
+            this.$refs.managementPlan.$el.childNodes[0].childNodes[0].childNodes[1].innerHTML = '<span><a onclick="event.stopPropagation()" href="' + this.assessment.management_plan_file + '" target="_blank">' + this.assessment.management_plan_file + '</a></span>';
         },
         template() {
             return `<div></div>`;

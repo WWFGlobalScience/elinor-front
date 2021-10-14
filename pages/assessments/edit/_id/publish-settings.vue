@@ -136,7 +136,7 @@
                     <div class="g-colspan--2">
                         <p>
                             <span class="c-text--warning c-text--base">Warning!!</span> Once
-                            publicated you can not edit the Survey or Assessment Data, so
+                            publicated you cannot edit the Survey or Assessment Data, so
                             publish only when you finish your Assessment
                         </p>
                     </div>

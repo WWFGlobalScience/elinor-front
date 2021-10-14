@@ -15,11 +15,6 @@ export const mutations = {
 
 export const actions = {
     async fetchOrganizations(state, search) {
-        this.dispatch('loader/loaderState', {
-            active: true,
-            text: 'Fetching organizations...'
-        })
-
         try {
             const response = await this.$axios({
                 method: 'get',
@@ -27,8 +22,6 @@ export const actions = {
             });
 
             state.commit('setList', response.data.results)
-
-            this.dispatch('loader/loaderState', {active: false})
         } catch (e) {
             console.error(e);
         }

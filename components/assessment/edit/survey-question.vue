@@ -24,12 +24,12 @@
             <div class="answers">
                 <header>
                     <p>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.select' ) }}</p>
-                    <a href="#" class="elinor__back btn--opacity" v-scroll-to="{
+                    <a href="#" class="btn btn--sm" v-scroll-to="{
                         el: '.elinor__question-help',
                         offset: -200,
                     }">
                         <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.help' ) }}</span>
-                        <img src="~/assets/img/ico-arrow-bottom-turqy.svg">
+                        <img src="~/assets/img/ico-arrow-bottom-white.svg">
                     </a>
                 </header>
                 <form class="form" refs="editAssessmentSurvey">
@@ -69,6 +69,10 @@
                         <li>
                             <nuxt-link v-if="questionId < survey.length" :to="`/assessments/edit/${id}/the-survey/${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <span>Next</span>
+                                <img src="~/assets/img/ico-button-arrow-turqy.svg">
+                            </nuxt-link>
+                            <nuxt-link v-if="questionId === survey.length" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
+                                <span>Next step</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
                         </li>

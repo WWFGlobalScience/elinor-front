@@ -1,13 +1,10 @@
 <template>
     <footer class="footer--main" v-bind:class="[!isSidebarOpen ? 'footer--main--max' : null]">
         <nav class="footer--main__wrapper">
-            <img src="~/assets/img/elinor-sidebar-circle.svg" alt="elinor-icon turqy">
-            <ul>
-                <li class="btn--opacity--child">
-                    <NuxtLink to="'/'" class="btn--opacity__target">
-                        About
-                    </NuxtLink>
-                </li>
+            <NuxtLink to="/">
+                <img src="~/assets/img/elinor-sidebar-circle.svg" alt="elinor-icon turqy">
+            </NuxtLink>
+            <ul v-if="$route.path === '/'">
                 <li class="btn--opacity--child">
                     <NuxtLink :to="`/faq/`" class="btn--opacity__target">
                         FAQs

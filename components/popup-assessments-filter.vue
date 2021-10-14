@@ -11,7 +11,7 @@
                         <label class="label">by Countries</label>
                         <div class="multiselect__wrap">
                             <multiselect placeholder="Countries"
-                                :value="getCountryByCode(filters.management_area_countries)"
+                                :value="getCountryByCode(management_area_country)"
                                 track-by="code"
                                 label="name"
                                 :options="management_area_countries"
@@ -32,6 +32,7 @@
                         <label class="label">by Year</label>
                         <div class="multiselect__wrap">
                             <multiselect
+                                placeholder=""
                                 :value="filters['year']"
                                 :options="years"
                                 :multiple="false"
@@ -160,13 +161,14 @@
                 </ul>
             </section>-->
             <section class="mt-10">
-                <button type="button" @click="resetFilters" class="btn--border-turqy btn--opacity--child">
+                <button type="button" @click="resetFilters" class="btn--border-turqy btn--opacity--child mr-5" style="float: left">
                     <span class="btn--opacity__target">{{ $t( 'default.filters.reset' ) }}</span>
                 </button>
-                <button type="button" @click="popupState({active: false})" class="btn--border-turqy btn--opacity--child">
+                <button type="button" @click="popupState({active: false})" class="btn--border-turqy btn--opacity--child"  style="float: left">
                     <span class="btn--opacity__target">{{ $t( 'default.filters.apply' ) }}</span>
                     <img src="~/assets/img/ico-filters-turqy.svg">
                 </button>
+                <div style="clear: both"></div>
             </section>
 
         </form>
@@ -194,7 +196,8 @@ export default {
     computed: {
         ...mapState({
             filters: state => state.assessments.filters,
-            management_area_countries: state => state.countries.management_area_countries
+            management_area_countries: state => state.countries.management_area_countries,
+            management_area_country: state => state.assessments.filters.management_area_countries
         })
     },
     methods: {
@@ -213,7 +216,7 @@ export default {
         },
         getCountryByCode(code) {
             if(code) {
-                return this.countries.filter(country => country.code === code)[0];
+                return this.management_area_countries.filter(country => country.code === code)[0];
             }
         },
         getStatusById(id) {

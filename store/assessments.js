@@ -65,7 +65,7 @@ let progress = {
 export const state = () => ({
     list: [],
     search: null,
-    filters: {country: null, status: null, year: null},
+    filters: {management_area_countries: null, status: null, year: null},
     pagination: {
         count: 0,
         next: null,
@@ -244,14 +244,14 @@ export const mutations = {
     setSearch(state, payload) {
         state.search = payload;
     },
-    addFilter(state, payload) {
-        state.filters[payload.name] = payload.value;
+    addFilter(state, {name, value}) {
+        state.filters[name] = value;
     },
     removeFilter(state, payload) {
         state.filters[payload] = undefined;
     },
     resetFilters(state) {
-        state.filters = {};
+        state.filters = {management_area_countries: null, status: null, year: null};
     }
 }
 
@@ -494,6 +494,7 @@ export const actions = {
     },
     resetFilters(state) {
         state.commit('resetFilters')
+        state.dispatch('popup/popupState', {active: false}, {root: true})
         state.dispatch('fetchAssessments');
     }
 }

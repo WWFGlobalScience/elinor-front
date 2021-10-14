@@ -22,23 +22,23 @@
                 <li>
                     <button type="button" class="btn--border-turqy btn--opacity--child"
                     @click="popupState( {active: true, component : 'popup-assessments-filter', title: 'pages.assessments.content.filters.title' })">
-                        <span class="btn--opacity__target">{{ $t( 'default.filters.button' ) }}</span>
+                        <span class="btn--opacity__target"><template v-if="filtersApplied > 0">({{ filtersApplied }})</template> {{ $t( 'default.filters.button' ) }}</span>
                         <img src="~/assets/img/ico-filters-turqy.svg">
                     </button>
                 </li>
-                <li>
+                <!--<li>
                     <button type="button" class="btn--border-turqy btn--opacity--child">
                         <span class="btn--opacity__target">{{ $t( 'default.order.button' ) }}</span>
                         <img src="~/assets/img/ico-order-turqy.svg">
                     </button>
-                </li>
+                </li>-->
             </ul>
         </div>
     </section>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import {mapActions, mapState} from 'vuex'
 export default {
     name: 'assessments-filters',
     data() {
@@ -53,6 +53,15 @@ export default {
                 this.search(value);
             }, 800);
         }
+    },
+    computed: {
+        filtersApplied() {
+            console.log(this.filters);
+            return Object.keys(this.filters).filter(filterName => this.filters[filterName] !== null).length;
+        },
+        ...mapState({
+            filters: state => state.assessments.filters
+        })
     },
     methods: {
         ...mapActions({

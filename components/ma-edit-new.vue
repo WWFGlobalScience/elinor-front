@@ -17,9 +17,9 @@
                     <div class="form__row">
                         <div class="input">
                             <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.pa-ca-name-ma' ) }}</label>
-                            <div v-if="editWdpaId || !managementArea.protected_area" class="input input--1-3">
+                            <div v-if="editWdpaId || !managementArea.protected_area" class="input input--2-3">
                                 <input type="text" :value="managementArea.protected_area && managementArea.protected_area.wdpa_id" placeholder="00000 Id" @change="protectedAreaByWdpaId({wdpaId: $event.target.value, managementAreaId: managementArea.id, assessmentId: assessment.id})">
-                                <p v-if="editWdpaIdError" class="msg msg--error">WDPA ID not found at protected planet api. <a target="_blank" href="https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA">Click here to search</a></p>
+                                <p class="msg">WDPA ID can be found at protected planet api. <a style="display: inline" class="btn btn--sm ml-2" target="_blank" href="https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA">Click here to search</a></p>
                             </div>
                             <div v-if="!editWdpaId && managementArea.protected_area" class="input input--2-3">
                                 <input :disabled="true" type="text" :value="managementArea.protected_area.name">
@@ -280,8 +280,8 @@
                                 <div v-for="(num, index) in numZones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
-                                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-name' ) }}</label>
-                                            <input type="text" name="name" placeholder="Zone name 1" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
+                                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-name' ) + ' ' + (index + 1) }}</label>
+                                            <input type="text" name="name" :placeholder="`Zone name ${index + 1}`" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
                                     <div class="form__row form__row--mt-8">
@@ -376,6 +376,12 @@ export default {
         zones() {
             this.numZones = this.zones.length;
             this.showZones = this.zones.length > 0;
+        },
+        assessment() {
+            const countries = this.assessment.management_area_countries.countries;
+            if(countries && countries.length) {
+                this.geocoder.setCountries(countries.join(','));
+            }
         }
     },
     computed: {
@@ -432,10 +438,6 @@ export default {
             this.onSelectChanged('management_authority', authority)
         },
         initGeocoder() {
-            const countries = this.managementArea.countries;
-            if(countries && countries.length) {
-                this.geocoder.setCountries(countries.join(','));
-            }
             this.geocoder.addTo('#geocoder');
             this.geocoder.on('result', (e) => {
                 this.$store.dispatch('managementareas/setRegion', e.result);

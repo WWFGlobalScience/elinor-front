@@ -928,7 +928,7 @@
                                     "access-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                                     "zones" : "Does this MA have zones?",
                                     "zones-quantity" : "How many zones does the MA have?",
-                                    "zone-name" : "Name of the zone 1",
+                                    "zone-name" : "Name of the zone",
                                     "zone-level" : "Select the level of access the best describes this zone?",
                                     "zone-description" : "Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?",
                                     "date" : "Date of formal establishment"
