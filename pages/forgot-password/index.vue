@@ -10,24 +10,23 @@
         </NuxtLink>
         <div class="elinor__card--sign-in__info">
           <div>
-            <p class="text-xl mb-1.5">{{ $t('pages.auth.content.forgot-password.title') }}</p>
+            <p class="text-xl mb-1.5">{{ $t('pages.auth.forgotPassword.title') }}</p>
           </div>
         </div>
 
-        <p class="text-base">{{ $t('pages.auth.content.forgot-password.subtitle') }}</p>
+        <p class="text-base">{{ $t('pages.auth.forgotPassword.subtitle') }}</p>
 
         <div v-if="alerts.forgotPasswordEmailSent"
              class="bg-green-100 mt-10 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">Forgot password email sent!</strong>
-          <span class="block sm:inline">We have generated a link to reset your password</span>
+          <strong class="font-bold">{{ $t('pages.auth.forgotPassword.alerts.forgotPasswordEmailSent.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.auth.forgotPassword.alerts.forgotPasswordEmailSent.subtitle') }}</span>
         </div>
 
         <form id="form--signin" class="form form--sign-in" @submit="submit">
           <div v-if="!alerts.forgotPasswordEmailSent" class="form__group">
             <div class="form__row">
               <div class="input">
-                <input type="email" :placeholder="$t('pages.auth.content.forgot-password.email-placeholder')"
-                       v-model="email" required/>
+                <input type="email" :placeholder="$t('pages.auth.forgotPassword.emailInput')" v-model="email" required/>
               </div>
             </div>
           </div>
@@ -35,11 +34,11 @@
           <div class="elinor__card--sign-in__info mt-9">
             <div>
               <button v-if="!alerts.forgotPasswordEmailSent" type="submit" class="btn--border-turqy btn--opacity--child">
-                <span class="btn--opacity__target">Send email</span>
+                <span class="btn--opacity__target">{{ $t('pages.auth.forgotPassword.sendEmailButton') }}</span>
                 <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
               <button v-if="alerts.forgotPasswordEmailSent" @click.prevent.stop="reset" type="button" class="btn--border-turqy btn--opacity--child">
-                <span class="btn--opacity__target">Try again</span>
+                <span class="btn--opacity__target">{{ $t('pages.auth.forgotPassword.tryAgainButton') }}</span>
                 <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
             </div>

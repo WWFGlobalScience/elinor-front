@@ -30,7 +30,7 @@
                                         class="btn--border-turqy btn--opacity--child"
                                     >
                       <span class="btn--opacity__target">{{
-                              $t("default.upload-file.buttons.select")
+                              $t("default.upload-mapimage.buttons.select")
                           }}</span>
                                         <img src="~/assets/img/ico-file-turqy.svg"/>
                                     </button>
@@ -41,11 +41,11 @@
                                         class="btn--border-turqy btn--opacity--child"
                                     >
                       <span class="btn--opacity__target">{{
-                              $t("default.upload-file.buttons.clear")
+                              $t("default.upload-mapimage.buttons.clear")
                           }}</span>
                                         <img src="~/assets/img/ico-clear-turqy.svg"/>
                                     </button>
-                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">This format is not supported</p>
+                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">{{ $t('pages.assessments.edit.tabs.managementArea.popups.imageFile.formatNotSupported') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                 <div class="right">
                     <div
                         class="description"
-                        v-html="$t('popups.spatialfile.descriptions.file')"
+                        v-html="$t('pages.assessments.edit.tabs.managementArea.popups.imageFile.help')"
                     ></div>
                 </div>
             </div>
@@ -65,18 +65,15 @@
                         <div class="form__group">
                             <div class="form__row">
                                 <div class="input input--1-2">
-                                    <label class="label">Indicate GPS coordinates</label>
+                                    <label class="label">{{ $t('pages.assessments.edit.tabs.managementArea.popups.imageFile.gpsCoordinatesTitle') }}</label>
                                     <input :value="coordinates" :disabled="true" type="text" name="name" placeholder="lat,lng"/>
                                 </div>
-                                <p>
-                                    Latitude , Longitude<br>
-                                    (e.g 40.741895,-73.989308)
-                                </p>
+                                <p v-html="$t('pages.assessments.edit.tabs.managementArea.popups.imageFile.gpsCoordinatesExample')" />
                             </div>
                         </div>
                     </div>
                     <div class="right">
-                        <p>You can Drag the icon in the map to select the coordinates</p>
+                        <p>{{ $t('pages.assessments.edit.tabs.managementArea.popups.imageFile.dragMapIcon') }}</p>
                     </div>
                 </div>
                 <div id="map" class="elinor__map" style="padding: 0"></div>
@@ -87,7 +84,7 @@
                     type="button"
                     class="btn--border-turqy btn--opacity--child"
                 >
-                    <span class="btn--opacity__target">Cancel</span>
+                    <span class="btn--opacity__target">{{ $t('default.cancel') }}</span>
                     <img src="~/assets/img/ico-close-turqy.svg"/>
                 </button>
                 <button
@@ -95,7 +92,7 @@
                     type="button"
                     class="btn btn--opacity--child"
                 >
-                    <span class="btn--opacity__target">Accept</span>
+                    <span class="btn--opacity__target">{{ $t('default.accept') }}</span>
                     <img src="~/assets/img/ico-ok-white.svg"/>
                 </button>
             </div>

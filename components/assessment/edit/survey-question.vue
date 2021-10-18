@@ -2,20 +2,20 @@
     <section  class="section section--assessment-edit-survey-question elinor__question">
         <div class="container">
             <header id="question" class="header--back">
-                <h1>{{ $t( 'pages.assessments.content.assessment.tabs.survey.header.title' ) }}</h1>
+                <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
                 <nuxt-link to="./" class="elinor__back btn--opacity">
                     <img src="~/assets/img/ico-arrow-back-turqy.svg">
-                    <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.back' ) }}</span>
+                    <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.back' ) }}</span>
                 </nuxt-link>
             </header>
             <div class="">
                 <div class="question">
                     <div class="question__index">
                         <span class="bullet"></span>
-                        <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.question' ) }} {{ questionId }} / {{ survey.length }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.question' ) }} {{ questionId }} / {{ survey.length }}</span>
                     </div>
                     <div class="question__title">
-                        {{ $t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.question` ) }}
+                        {{ $t( `pages.assessments.edit.tabs.survey.questions.items.${question}.question` ) }}
                     </div>
                 </div>
             </div>
@@ -23,12 +23,12 @@
         <div class="container--sm">
             <div class="answers">
                 <header>
-                    <p>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.select' ) }}</p>
+                    <p>{{ $t( 'pages.assessments.edit.tabs.survey.questions.selectAnswer' ) }}</p>
                     <a href="#" class="btn btn--sm" v-scroll-to="{
                         el: '.elinor__question-help',
                         offset: -200,
                     }">
-                        <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.help' ) }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.help' ) }}</span>
                         <img src="~/assets/img/ico-arrow-bottom-white.svg">
                     </a>
                 </header>
@@ -46,13 +46,13 @@
                                 </div>
                                 <label :for="'answer-'+ answer" class="label">
                                     <span></span>
-                                    <span v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.answers.${index + 1}` )"></span>
+                                    <span v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.answers.${index + 1}` )"></span>
                                 </label>
                             </div>
                         </div>
                         <div class="form__row form__row--mt-16">
                             <div class="input input--pr">
-                                <div class="label">{{ $t( `pages.assessments.content.assessment.tabs.survey.data.questions.default.explanation`) }}</div>
+                                <div class="label">{{ $t( `pages.assessments.edit.tabs.survey.questions.explanation`) }}</div>
                                 <textarea name="explanation" @change="saveExplanation($event.target.value)">{{ assessment[question + '_text'] }}</textarea>
                             </div>
                         </div>
@@ -63,16 +63,16 @@
                         <li>
                             <nuxt-link v-if="questionId > 1" :to="`/assessments/edit/${id}/the-survey/${questionId - 1}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <img src="~/assets/img/ico-arrow-back-turqy.svg">
-                                <span>Prev</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}</span>
                             </nuxt-link>
                         </li>
                         <li>
                             <nuxt-link v-if="questionId < survey.length" :to="`/assessments/edit/${id}/the-survey/${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
-                                <span>Next</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
                             <nuxt-link v-if="questionId === survey.length" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
-                                <span>Next step</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
                         </li>

@@ -2,14 +2,14 @@
     <div class="popup__content popup--assessment-delete">
         <form class="form form--organization">
         <h4 class="c-title--modal c-title--modal--alert mb-2">
-            What is your organization or institution?
+            {{ $t('popup.organization.title') }}
         </h4>
         <div class="form__group">
             <div class="form__row">
                 <div class="input input--pr input--multiselect">
                     <div class="multiselect__wrap">
                         <multiselect
-                            :placeholder="$t( 'pages.sign-up.content.form.inputs.affiliation' )" select-label="Enter doesn’t work here!"
+                            :placeholder="$t('popup.organization.placeholder' )"
                             track-by="id"
                             label="name"
                             :options="organizations"
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="input__tooltip"
-                         :content="$t( 'pages.sign-up.content.form.tooltips.affiliation' )"
+                         :content="$t('popup.organization.tooltip')"
                          v-tippy='{ placement : "top-start" }'>?
                     </div>
                 </div>

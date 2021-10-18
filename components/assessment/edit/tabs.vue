@@ -9,7 +9,7 @@
                             <img v-if="progress.data.complete" src="~/assets/img/ico-ok.svg">
                             <img v-else src="~/assets/img/ico-error.svg">
                         </span>
-                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.data.tab') }}</span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.data.tabButton') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
@@ -19,7 +19,7 @@
                             <img v-if="progress.managed_area.complete" src="~/assets/img/ico-ok.svg">
                             <img v-else src="~/assets/img/ico-error.svg">
                         </span>
-                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.ma.tab') }}</span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.managementArea.tabButton') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
@@ -29,7 +29,7 @@
                             <img v-if="progress.survey.complete" src="~/assets/img/ico-ok.svg">
                             <img v-else src="~/assets/img/ico-error.svg">
                         </span>
-                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.survey.tab') }}</span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.survey.tabButton') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
@@ -37,7 +37,7 @@
                                :class="[ 'btn--tab', { 'btn--error': !progress.collaborators.complete } ]">
                         <span class="bullet">{{ progress.collaborators.filled }}</span>
                         <span class="txt">
-                            {{ $t('pages.assessments.content.assessment-edit.tabs.collaborators.tab') }}
+                            {{ $t('pages.assessments.edit.tabs.collaborators.tabButton') }}
                         </span>
                     </nuxt-link>
                 </li>
@@ -45,7 +45,7 @@
                     <nuxt-link :to="`/assessments/edit/${id}/publish-settings`"
                                :class="[ 'btn--tab btn--tab-percent', { 'btn--error': progress.overall_percentage < 100, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
                         <span class="bullet">{{ Math.floor(progress.overall_percentage) }}%</span>
-                        <span class="txt">{{ $t('pages.assessments.content.assessment-edit.tabs.publish.tab') }}</span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.publish.tabButton') }}</span>
                     </nuxt-link>
                 </li>
             </ul>

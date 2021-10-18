@@ -3,8 +3,8 @@
         <header class="header--map header--map--flexy">
             <div class="container--lg">
                 <div class="left">
-                    <p>Indicate the boundaries of the Managed Area</p>
-                    <p>Use the tools over the map to create a Polygon over the Managed Area</p>
+                    <p>{{ $t('pages.assessments.edit.tabs.managementArea.map.polygonParagraph1') }}</p>
+                    <p>{{ $t('pages.assessments.edit.tabs.managementArea.map.polygonParagraph2') }}</p>
                 </div>
                 <div class="right">
                     <ul>
@@ -12,25 +12,25 @@
                             <div class="pic__wrap">
                                 <img src="~/assets/img/ico-map-pointer.svg">
                             </div>
-                            <span>Click over the Map to create a Polygon</span>
+                            <span>{{ $t('pages.assessments.edit.tabs.managementArea.map.drawPolygonStartText') }}</span>
                         </li>
                         <li>
                             <div class="pic__wrap">
                                 <img src="~/assets/img/ico-map-closer.svg">
                              </div>
-                            <span>To Close a Polygon click over a created Point</span>
+                            <span>{{ $t('pages.assessments.edit.tabs.managementArea.map.drawPolygonCloseText') }}</span>
                         </li>
                         <li>
                             <div class="pic__wrap">
                                 <img src='data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20">%3Cpath d="m15 12.3v-4.6c.6-.3 1-1 1-1.7 0-1.1-.9-2-2-2-.7 0-1.4.4-1.7 1h-4.6c-.3-.6-1-1-1.7-1-1.1 0-2 .9-2 2 0 .7.4 1.4 1 1.7v4.6c-.6.3-1 1-1 1.7 0 1.1.9 2 2 2 .7 0 1.4-.4 1.7-1h4.6c.3.6 1 1 1.7 1 1.1 0 2-.9 2-2 0-.7-.4-1.4-1-1.7zm-8-.3v-4l1-1h4l1 1v4l-1 1h-4z"/>%3C/svg>' alt="">
                              </div>
-                            <span>Create a new Polygon</span>
+                            <span>{{ $t('pages.assessments.edit.tabs.managementArea.map.newPolygon') }}</span>
                         </li>
                         <li>
                             <div class="pic__wrap">
                                 <img src='data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20">%3Cpath d="M10,3.4 c-0.8,0-1.5,0.5-1.8,1.2H5l-1,1v1h12v-1l-1-1h-3.2C11.5,3.9,10.8,3.4,10,3.4z M5,8v7c0,1,1,2,2,2h6c1,0,2-1,2-2V8h-2v5.5h-1.5V8h-3 v5.5H7V8H5z"/>%3C/svg>' alt="">
                              </div>
-                            <span>Delete selected Polygon</span>
+                            <span>{{ $t('pages.assessments.edit.tabs.managementArea.map.deletePolygon') }}</span>
                         </li>
                     </ul>
                 </div>
@@ -39,36 +39,36 @@
         <div id="map-edit" class="elinor__map">
             <div class="map__legend">
                 <div class="map__instructions">
-                    Click over the map to draw a polygon
+                    {{ $t('pages.assessments.edit.tabs.managementArea.map.help') }}
                 </div>
                 <div class="map__area" v-if="area != null ">
-                    Area: <br>
+                    {{ $t('pages.assessments.edit.tabs.managementArea.map.area') }}: <br>
                     {{ area }}
                 </div>
             </div>
         </div>
         <footer class="footer--map">
             <div class="container--lg">
-                <p>Indicate the boundaries of the Managed Area</p>
+                <p>{{ $t('pages.assessments.edit.tabs.managementArea.map.indicateBoundaries') }}</p>
                 <div class="options__wrap mt-10">
                     <div class="option__btn">
-                        <a role="button" @click="popupState( { active: true, component: 'popup-map-spatialfile', title: 'popups.spatialfile.title' })" class="btn btn--border-turqy btn--opacity--child btn--between">
-                            <span class="btn--opacity__target">Upload spatial area file</span>
+                        <a role="button" @click="popupState( { active: true, component: 'popup-map-spatialfile', title: 'pages.assessments.edit.tabs.managementArea.popups.spatialFile.title' })" class="btn btn--border-turqy btn--opacity--child btn--between">
+                            <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.managementArea.map.spatialFile') }}</span>
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
                         </a>
                     </div>
                     <div class="option__info">
-                        <p>PREFERED METHOD</p>
-                        <p>Upload a Spatial file in Shapefile format or GeoJSON  </p>
+                        <p>{{ $t('pages.assessments.edit.tabs.managementArea.map.preferredMethod') }}</p>
+                        <p>{{ $t('pages.assessments.edit.tabs.managementArea.map.preferredMethodText') }}</p>
                     </div>
                 </div>
                 <div class="divider">
-                    <span>OR</span>
+                    <span>{{ $t('pages.assessments.edit.tabs.managementArea.map.spatialFileAndMapImageSeparator') }}</span>
                 </div>
                 <div class="options__wrap">
                     <div class="option__btn">
-                        <a role="button" @click="popupState( { active: true, component: 'popup-map-imagefile', title: 'popups.imagefile.title' })" class="btn btn--border-turqy btn--opacity--child btn--between">
-                            <span class="btn--opacity__target">Upload map image</span>
+                        <a role="button" @click="popupState( { active: true, component: 'popup-map-imagefile', title: 'pages.assessments.edit.tabs.managementArea.popups.imageFile.title' })" class="btn btn--border-turqy btn--opacity--child btn--between">
+                            <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.managementArea.map.imageFile') }}</span>
                             <img src="~/assets/img/ico-button-arrow-turqy.svg">
                         </a>
                     </div>
@@ -77,8 +77,8 @@
                     <div class="form__group">
                         <div class="form__row form__row--mt-8">
                             <div class="input input--pr">
-                                <div class="label">Please list the source of the geospatial information</div>
-                                <textarea name="explanation" placeholder="Text here" @change="save('geospatial_sources', $event.target.value)">{{ managementArea.geospatial_sources }}</textarea>
+                                <div class="label">{{ $t('pages.assessments.edit.tabs.managementArea.labels.geospatialSources') }}</div>
+                                <textarea name="explanation" @change="save('geospatial_sources', $event.target.value)">{{ managementArea.geospatial_sources }}</textarea>
                             </div>
                         </div>
                     </div>

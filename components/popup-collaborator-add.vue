@@ -1,11 +1,10 @@
 <template>
     <div class="popup__content popup--collaborator-add">
         <p class="c-text--base mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna.
+            {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.description') }}
         </p>
 
-        <h4 class="c-title--modal mb-6">Select Collaborator</h4>
+        <h4 class="c-title--modal mb-6">{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.selectCollaboratorTitle') }}</h4>
         <form
             id="form--assessment-create"
             class="form form--assessment-create form--mt-0"
@@ -20,11 +19,9 @@
             <div class="form__group">
                 <div class="form__row">
                     <div class="input input--multiselect input--3-4">
-                        <label class="label"> Collaborator </label>
+                        <label class="label"> {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.selectCollaboratorLabel') }} </label>
                         <div class="multiselect__wrap">
                             <multiselect
-                                placeholder="Select..."
-                                select-label="Enter doesn’t work here!"
                                 :value="users.id"
                                 track-by="id"
                                 label="username"
@@ -46,7 +43,7 @@
                         <input type="hidden" name="user" :value="selectedUser.id"/>
                     </div>
                 </div>
-                <h4 class="c-title--modal mb-6">Select role & permissions</h4>
+                <h4 class="c-title--modal mb-6">{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roleAndPermissions') }}</h4>
                 <div class="form__group g-grid--3-1-md">
                     <div v-if="isAdmin($auth, assessment)" class="form__row">
                         <div class="input input--radios input--radios-question">
@@ -65,14 +62,14 @@
                                 </div>
                             </div>
                             <label for="answer-1" class="c-title--base">
-                                <span>Admin</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.name') }}</span>
                                 <ul class="list-inside list-disc list--light">
-                                    <li>Edit the Assessment data</li>
-                                    <li>Edit Survey data</li>
-                                    <li>Edit MA location</li>
-                                    <li>Add/Edit Admin, Contributors & Observers</li>
-                                    <li>Delet the Assessment</li>
-                                    <li>Publish & Unpublish Assessment</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.permission1') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.permission2') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.permission3') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.permission4') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.permission5') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.admin.permission6') }}</li>
                                 </ul>
                             </label>
                         </div>
@@ -94,13 +91,13 @@
                                 </div>
                             </div>
                             <label for="answer-2" class="c-title--base">
-                                <span>Contributor</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.contributor.name') }}</span>
                                 <ul class="list-inside list-disc list--light">
-                                    <li>Edit the Survey data</li>
-                                    <li>Edit the MA location data</li>
-                                    <li>View the Assessment data</li>
-                                    <li>View the Survey data</li>
-                                    <li>View the MA location</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.contributor.permission1') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.contributor.permission2') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.contributor.permission3') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.contributor.permission4') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.contributor.permission5') }}</li>
                                 </ul>
                             </label>
                         </div>
@@ -122,11 +119,11 @@
                                 </div>
                             </div>
                             <label for="answer-3" class="c-title--base">
-                                <span>Observer</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.observer.name') }}</span>
                                 <ul class="list-inside list-disc list--light">
-                                    <li>View the Assessment data</li>
-                                    <li>View the Survey data</li>
-                                    <li>View the MA location</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.observer.permission1') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.observer.permission2') }}</li>
+                                    <li>{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roles.observer.permission3') }}</li>
                                 </ul>
                             </label>
                         </div>
@@ -141,10 +138,10 @@
                                     type="submit"
                                     class="btn--border-turqy btn--opacity--child"
                                 >
-                                    <span class="btn--opacity__target">Add collaborator</span>
+                                    <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.submit') }}</span>
                                     <img
                                         src="~/assets/img/addcollaborator.svg"
-                                        alt="add collaborator"
+                                        :alt="$t('pages.assessments.edit.tabs.collaborators.popups.add.submit')"
                                     />
                                 </button>
                             </div>
@@ -153,15 +150,15 @@
                     <div class="g-colspan--2">
                         <div class="message-detail">
                             <p class="message-detail__title">
-                                Didn’t you find your Collaborator?
+                                {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.help') }}
                             </p>
-                            <p class="message-detail__text btn--opacity--child">
+                            <!--<p class="message-detail__text btn--opacity--child">
                                 If you don’t find your collaborator you can
                                 <NuxtLink to="" class="text-turqy btn--opacity__target">
                                     send an invitation
                                 </NuxtLink>
                                 to the app, you will be notified once joins
-                            </p>
+                            </p>-->
                         </div>
                     </div>
                 </div>

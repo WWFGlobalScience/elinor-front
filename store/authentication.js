@@ -5,7 +5,8 @@ export const state = () => ({
         emailVerificationSent: false,
         emailVerificationRequired: false,
         passwordChangedSuccessfully: false,
-        forgotPasswordEmailSent: false
+        forgotPasswordEmailSent: false,
+        emailVerifiedSuccessfully: false
     }
 })
 
@@ -22,7 +23,8 @@ export const mutations = {
             emailVerificationSent: false,
             emailVerificationRequired: false,
             passwordChangedSuccessfully: false,
-            forgotPasswordEmailSent: false
+            forgotPasswordEmailSent: false,
+            emailVerifiedSuccessfully: false
         };
     }
 }
@@ -158,14 +160,14 @@ export const actions = {
                 this.$router.push(`/status/password-changed-successfully`)
             })
             .catch((error) => {
-                state.commit('setError', true);
+                state.commit('setError', error.response.data);
             });
     },
     async confirmEmail(state, token) {
         await this.$axios
             .$post('rest-auth/account-confirm-email/', {key: token})
             .then((response) => {
-                this.$router.push(`/status/email-confirmed-successfully`)
+                this.$router.push(`/status/email-verified-successfully`)
             })
             .catch((error) => {
                 state.commit('setError', true);

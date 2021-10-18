@@ -11,8 +11,8 @@
             <nav class="nav__main">
                 <ul>
                     <li v-for="(page, index) in pages">
-                        <NuxtLink v-slot="{ href, route, navigate, isActive, isExactActive }" v-if="page.config.display.auth === null || page.config.display.auth === isUserAuthenticated" :to="`/${$t( page.slug )}`">
-                            <a @click="navigate" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': page.slug === '' ? isExactActive : isActive}">
+                        <NuxtLink v-slot="{ href, route, navigate, isActive, isExactActive }" v-if="page.config.display.auth === null || page.config.display.auth === isUserAuthenticated" :to="`/${$t(page.slug)}`">
+                            <a @click="goTo(page)" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': $t(page.slug) === '' ? isExactActive : isActive }">
                                 <img v-if="page.icons.turqy" :src="isActive ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
                                 <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
                                 <div
@@ -32,7 +32,7 @@
                         <div class="nav__main__link">
                             <img v-if="isSidebarOpen" src="~/assets/img/ico-minimize-white.svg" alt="minimize" class="center-v">
                             <img v-else src="~/assets/img/ico-maximize-white.svg" alt="maximize" class="center-v w-4 btn--opacity__target">
-                            <span class="btn--opacity__target">Minimize</span>
+                            <span class="btn--opacity__target">{{ $t('sidebar.minimize') }}</span>
                         </div>
                     </li>
                 </ul>
@@ -61,6 +61,10 @@
             ...mapActions({
                 toggleSidebar: 'layout/toggleSidebar'
             }),
+            goTo(page) {
+                const route = this.$t(page.slug);
+                this.$router.push(route === '' ? '/' : route);
+            },
             home() {
                 this.$router.push('/');
             }

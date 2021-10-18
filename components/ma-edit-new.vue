@@ -2,7 +2,7 @@
     <section class="section section--ma-edit-selector">
         <div class="container">
             <header>
-                <h2>Edit Managed Area</h2>
+                <h2>{{ $t('pages.assessments.edit.tabs.managementArea.title') }}</h2>
             </header>
         </div>
         <form class="form form--ma-selector">
@@ -10,16 +10,16 @@
                 <div class="container--sm">
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.name-new' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.name' ) }}</label>
                             <input type="text" name="name" placeholder="Name here" :value="managementArea.name" @change="save('name', $event.target.value)">
                         </div>
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.pa-ca-name-ma' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.protectedArea' ) }}</label>
                             <div v-if="editWdpaId || !managementArea.protected_area" class="input input--2-3">
                                 <input type="text" :value="managementArea.protected_area && managementArea.protected_area.wdpa_id" placeholder="00000 Id" @change="protectedAreaByWdpaId({wdpaId: $event.target.value, managementAreaId: managementArea.id, assessmentId: assessment.id})">
-                                <p class="msg">WDPA ID can be found at protected planet api. <a style="display: inline" class="btn btn--sm ml-2" target="_blank" href="https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA">Click here to search</a></p>
+                                <p class="msg">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.protectedAreaWdpaIdHelp' ) }} <a style="display: inline" class="btn btn--sm ml-2" target="_blank" href="https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.protectedAreaWdpaIdHelpLink' ) }}</a></p>
                             </div>
                             <div v-if="!editWdpaId && managementArea.protected_area" class="input input--2-3">
                                 <input :disabled="true" type="text" :value="managementArea.protected_area.name">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.management-related' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.containedBy' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.containedby"
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input-1-2 input--date">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.date' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.dateEstablished' ) }}</label>
                             <div class="date__wrap">
                                 <date-picker placeholder="MM/DD/YYYY" format="MM/dd/yyyy" :value="managementArea.date_established" @selected="onDateEstablishmentSelected" />
                                 <div class="date__caret">
@@ -61,13 +61,13 @@
                             </div>
                         </div>
                         <div class="input input-1-2">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.size' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.reportedSize' ) }}</label>
                             <input type="number" name="ha" placeholder="0000 Ha" :value="managementArea.reported_size" @change="save('reported_size', $event.target.value)">
                         </div>
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.name-authority' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.managementAuthority' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     track-by="id"
@@ -88,7 +88,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.governance-type' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.governanceType' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.governance_type"
@@ -109,7 +109,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--pr">
-                            <div class="label">What are the objectives of this MA?</div>
+                            <div class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.objectives' ) }}</div>
                             <textarea name="objectives" placeholder="" @change="save('objectives', $event.target.value)">{{ managementArea.objectives }}</textarea>
                         </div>
                     </div>
@@ -120,10 +120,10 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.rights-ma' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.recognitionLevel' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
-                                    :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('managementarea.recognition_levels.' + recognitionLevel) }})"
+                                    :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('pages.assessments.edit.tabs.managementArea.recognitionLevels.' + recognitionLevel) }})"
                                     track-by="id"
                                     label="name"
                                     :options="recognitionLevels"
@@ -145,7 +145,7 @@
                     </div>
                     <!--<div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.stakeholder-groups' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.stakeholderGroups' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.stakeholder_groups"
@@ -166,7 +166,7 @@
                     </div>-->
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.support-question' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.supportSources' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.support_sources"
@@ -187,7 +187,7 @@
                     </div>
                     <!--<div class="form__row">
                         <div class="input input--1-2">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.wdpa-id-question' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.wdpaId ) }}</label>
                             <input type="text" :value="managementArea.wdpa_protected_area" name="id" placeholder="00000 Id"  @change="save('wdpa_protected_area', $event.target.value)">
                         </div>
                     </div>-->
@@ -198,7 +198,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.countries-ma' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.countries' ) }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.countries"
@@ -218,7 +218,7 @@
                     </div>
                     <div v-show="managementArea.countries && managementArea.countries.length" class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.provinces-ma' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.regions' ) }}</label>
                             <div id="geocoder"></div>
                             <div class="section section--tags section--tags-filter">
                                 <ul>
@@ -241,7 +241,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-24">
                         <div class="input input--radios">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zones' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zones' ) }}</label>
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
@@ -262,7 +262,7 @@
                     </div>
                     <div class="form__row form__row--mt-16" v-if="showZones">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zones-quantity' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zonesQuantity' ) }}</label>
                             <div class="multiselect__wrap multiselect__wrap--1-3">
                                 <multiselect
                                     :value="numZones"
@@ -280,13 +280,13 @@
                                 <div v-for="(num, index) in numZones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
-                                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-name' ) + ' ' + (index + 1) }}</label>
-                                            <input type="text" name="name" :placeholder="`Zone name ${index + 1}`" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
+                                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</label>
+                                            <input type="text" name="name" :placeholder="`${$t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' )} ${index + 1}`" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--multiselect">
-                                            <label class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-level' ) }}</label>
+                                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneLevel' ) }}</label>
                                             <div class="multiselect__wrap">
                                                 <multiselect
                                                     :value="zones[index] && zones[index].access_level"
@@ -305,8 +305,8 @@
                                     </div>
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--pr">
-                                            <div class="label">{{ $t( 'pages.managed-areas.content.ma.tabs.info.data.labels.zone-description' ) }}</div>
-                                            <textarea name="explanation" placeholder="Text here" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zones[index] && zones[index].description }}</textarea>
+                                            <div class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneDescription' ) }}</div>
+                                            <textarea name="explanation" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zones[index] && zones[index].description }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -321,10 +321,10 @@
                         <NuxtLink @click.prevent :to="`/assessments/edit/${id}/the-survey`"
                             class="btn btn--opacity--child"
                         >
-                            <span class="btn--opacity__target">Next step</span>
+                            <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                             <img
                                 src="~/assets/img/ico-button-arrow.svg"
-                                alt="Next step"
+                                :alt="$t('pages.assessments.edit.tabs.nextStep')"
                             />
                         </NuxtLink>
                     </div>
@@ -355,14 +355,14 @@ export default {
             showZones: null,
             numZones: null,
             accessLevels: [
-                { id: 90, name: this.$t('managementarea.zones.acccess_Level.OPEN_ACCESS') },
-                { id: 50, name: this.$t('managementarea.zones.acccessLevel.PARTIALLY_RESTRICTED') },
-                { id: 10, name: this.$t('managementarea.zones.acccessLevel.FULLY_RESTRICTED') }
+                { id: 90, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.OPEN_ACCESS') },
+                { id: 50, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.PARTIALLY_RESTRICTED') },
+                { id: 10, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.FULLY_RESTRICTED') }
             ],
             recognitionLevels: [
-                {id: 'local', name: this.$t('managementarea.recognition_levels.local'), guide: this.$t('managementarea.recognition_levels.local_guide')},
-                {id: 'national', name: this.$t('managementarea.recognition_levels.national'), guide: this.$t('managementarea.recognition_levels.national_guide')},
-                {id: 'international', name: this.$t('managementarea.recognition_levels.international'), guide: this.$t('managementarea.recognition_levels.international_guide')}
+                {id: 'local', name: this.$t('pages.assessments.edit.tabs.managementArea.recognitionLevels.local'), guide: this.$t('pages.assessments.edit.tabs.managementArea.recognitionLevels.local_guide')},
+                {id: 'national', name: this.$t('pages.assessments.edit.tabs.managementArea.recognitionLevels.national'), guide: this.$t('pages.assessments.edit.tabs.managementArea.recognitionLevels.national_guide')},
+                {id: 'international', name: this.$t('pages.assessments.edit.tabs.managementArea.recognitionLevels.international'), guide: this.$t('pages.assessments.edit.tabs.managementArea.recognitionLevels.international_guide')}
             ]
         }
     },

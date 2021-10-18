@@ -2,7 +2,7 @@
     <section class="section section--assessment-edit-data">
         <div class="container">
             <header>
-                <h2>{{ $t('pages.assessments.content.assessment-edit.tabs.data.tab') }}</h2>
+                <h2>{{ $t('pages.assessments.edit.tabs.data.title') }}</h2>
             </header>
         </div>
         <form class="form form--assessment-data" ref="editAssessment" @submit="submit">
@@ -11,7 +11,7 @@
                     <div class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.year')
+                                    $t('pages.assessments.edit.tabs.data.labels.year')
                                 }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect :value="assessment.year" :options="years" :multiple="false"
@@ -28,11 +28,8 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.name')
-                                }}*</label>
-                            <input type="text" name="name" :value="assessment.name"
-                                   @change="save('name', $event.target.value)">
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.name') }}*</label>
+                            <input type="text" name="name" :value="assessment.name" @change="save('name', $event.target.value)">
                         </div>
                     </div>
                 </div>
@@ -43,11 +40,10 @@
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.institution')
+                                    $t('pages.assessments.edit.tabs.data.labels.organization')
                                 }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
-                                    select-label="Enter doesn’t work here!"
                                     :value="assessment.organization"
                                     track-by="id"
                                     label="name"
@@ -67,7 +63,7 @@
                     <div class="form__row">
                         <div class="input input--multiselect">
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.role')
+                                    $t('pages.assessments.edit.tabs.data.labels.personResponsibleRole')
                                 }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect :value="person_responsible_role" :options="roles" label="name"
@@ -92,7 +88,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">Please choose which option best describes how information for this assessment was collected</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.collectionMethods')}}</label>
                             <div class="multiselect__wrap">
                                 <multiselect :value="collection_method" :options="collection_methods" label="name"
                                              track-by="id" :multiple="false" :searchable="false" :showLabels="false"
@@ -111,7 +107,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--pr">
-                            <div class="label">Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment</div>
+                            <div class="label">{{ $t('pages.assessments.edit.tabs.data.labels.collectionMethodsText')}}</div>
                             <textarea name="collection_method_text" placeholder="" @change="save('collection_method_text', $event.target.value)">{{ assessment.collection_method_text }}</textarea>
                         </div>
                     </div>
@@ -123,7 +119,7 @@
                     <div class="form__row form__row--mt-16">
                         <div class="input">
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.title')
+                                    $t('pages.assessments.edit.tabs.data.people.title')
                                 }}</label>
                         </div>
                     </div>
@@ -143,7 +139,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.community')
+                                    $t('pages.assessments.edit.tabs.data.people.community')
                                 }}</label>
                         </div>
 
@@ -162,7 +158,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.ngo')
+                                    $t('pages.assessments.edit.tabs.data.people.ngo')
                                 }}</label>
                         </div>
                     </div>
@@ -182,7 +178,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.academic')
+                                    $t('pages.assessments.edit.tabs.data.people.academic')
                                 }}</label>
                         </div>
                         <div class="input input--multiselect input--1-2 input--flexy">
@@ -200,7 +196,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.government')
+                                    $t('pages.assessments.edit.tabs.data.people.government')
                                 }}</label>
                         </div>
 
@@ -221,7 +217,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.indigenous')
+                                    $t('pages.assessments.edit.tabs.data.people.indigenous')
                                 }}</label>
                         </div>
                         <div class="input input--multiselect input--1-2 input--flexy">
@@ -239,7 +235,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.people.private')
+                                    $t('pages.assessments.edit.tabs.data.people.private')
                                 }}</label>
                         </div>
                     </div>
@@ -251,26 +247,26 @@
                     <div class="form__row form__row--mt-16">
                         <div class="input input--radios">
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.authority')
+                                    $t('pages.assessments.edit.tabs.data.labels.consentGiven')
                                 }}</label>
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="authority-yes"
+                                        <input type="radio" name="consent_given" id="consentGiven-yes"
                                                @change="save('consent_given', true)"
                                                :checked="assessment.consent_given">
                                         <img src="~/assets/img/ico-ok.svg">
                                     </div>
-                                    <label for="authority-yes" class="label">{{ $t('default.yes') }}</label>
+                                    <label for="consentGiven-yes" class="label">{{ $t('default.yes') }}</label>
                                 </div>
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="authority-no"
+                                        <input type="radio" name="consent_given" id="consentGiven-no"
                                                @change="save('consent_given', false)"
                                                :checked="!assessment.consent_given">
                                         <img src="~/assets/img/ico-ok.svg">
                                     </div>
-                                    <label for="authority-no" class="label">{{ $t('default.no') }}</label>
+                                    <label for="consentGiven-no" class="label">{{ $t('default.no') }}</label>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +279,7 @@
                     <div class="form__row form__row--mt-16">
                         <div class="input input--file">
                             <label class="label">{{
-                                    $t('pages.assessments.content.assessment-edit.tabs.data.labels.ma-file')
+                                    $t('pages.assessments.edit.tabs.data.labels.managementPlan')
                                 }}</label>
 
 
@@ -325,8 +321,8 @@
                 <div class="container">
                     <div class="section__bottom">
                         <NuxtLink @click.prevent :to="`/assessments/edit/${id}/managed-area`" class="btn btn--opacity--child">
-                            <span class="btn--opacity__target">Next step</span>
-                            <img src="~/assets/img/ico-button-arrow.svg" alt="Next step" />
+                            <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
+                            <img src="~/assets/img/ico-button-arrow.svg" :alt="$t('pages.assessments.edit.tabs.nextStep')" />
                         </NuxtLink>
                     </div>
                 </div>
@@ -351,17 +347,17 @@ export default {
             id: this.$route.params.id,
             years: [new Date().getFullYear() - 2, new Date().getFullYear() - 1, new Date().getFullYear()],
             roles: [
-                {id: 10, name: 'Non-profit staff'},
-                {id: 20, name: 'Management area manager'},
-                {id: 30, name: 'Management area personnel'},
-                {id: 40, name: 'Government personnel'},
-                {id: 50, name: 'Members of local community or indigenous committees'},
-                {id: 60, name: 'Community leaders or representatives'}
+                {id: 10, name: this.$t('pages.assessments.personResponsibleRoles.10')},
+                {id: 20, name: this.$t('pages.assessments.personResponsibleRoles.20')},
+                {id: 30, name: this.$t('pages.assessments.personResponsibleRoles.30')},
+                {id: 40, name: this.$t('pages.assessments.personResponsibleRoles.40')},
+                {id: 50, name: this.$t('pages.assessments.personResponsibleRoles.50')},
+                {id: 60, name: this.$t('pages.assessments.personResponsibleRoles.60')}
             ],
             collection_methods: [
-                {id: 10, name: 'Through knowledge of the person(s) responsible for filling out assessment'},
-                {id: 20, name: 'Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents'},
-                {id: 30, name: 'Through semi-structured interviews and focus group'},
+                {id: 10, name: this.$t('pages.assessments.collectionMethods.10')},
+                {id: 20, name: this.$t('pages.assessments.collectionMethods.20')},
+                {id: 30, name: this.$t('pages.assessments.collectionMethods.30')}
             ],
             counts: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             dropzone: {

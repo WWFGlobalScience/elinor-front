@@ -4,22 +4,22 @@
       <ul>
         <li>
           <a role="button" class="btn--opacity--child" v-scroll-to="'#about'">
-            <span class="btn--opacity__target" >About</span>
+            <span class="btn--opacity__target" >{{ $t('pages.home.header.aboutLink') }}</span>
           </a>
         </li>
         <li>
           <a role="button" class="btn--opacity--child" v-scroll-to="'#faqs'">
-            <span class="btn--opacity__target">Faqs</span>
+            <span class="btn--opacity__target">{{ $t('pages.home.header.faqsLink') }}</span>
           </a>
         </li>
         <li>
           <a role="button" class="btn--opacity--child" v-scroll-to="'#methodology'">
-            <span class="btn--opacity__target">Methodology</span>
+            <span class="btn--opacity__target">{{ $t('pages.home.header.methodologyLink') }}</span>
           </a>
         </li>
         <li v-if="!$auth.loggedIn">
           <a role="button" class="btn--opacity--child" v-scroll-to="'#create-account'">
-            <span class="btn--opacity__target">Create Account</span>
+            <span class="btn--opacity__target">{{ $t('pages.home.header.createAccountLink') }}</span>
           </a>
         </li>
         <li class="btn--opacity--child header--main__toggle-btn" @click="toggleSidebar">

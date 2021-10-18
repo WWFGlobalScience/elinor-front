@@ -28,7 +28,8 @@
 
                                     <!--STEP 2 - FILE UPLOAD-->
                                     <template v-if="fileAdded && progress < 100">
-                                        <label class="label label--bold">Validating file format...</label>
+                                        <label class="label label--bold">
+                                            {{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.validatingFileFormat') }}</label>
                                         <div class="elinor__progress-bar">
                                             <span class="elinor__progress-bar-status" :style="{width: progress + '%'}"></span>
                                         </div>
@@ -42,12 +43,8 @@
                                         src="~/assets/img/ico-file-gray.svg"
                                         alt="file uploaded successfully"
                                       />
-                                      <h4>The file is correctly formated</h4>
-                                      <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                        <a href="">GeoJson</a> sed do eiusmod tempor incididunt ut
-                                        labore et dolore magna.
-                                      </p>
+                                      <h4>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.fileCorrectlyFormated') }}</h4>
+                                      <p>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.fileCorrectlyFormatedText') }}</p>
                                     </div>
                                     <!--//STEP 3 - SUCCESS-->
 
@@ -57,11 +54,11 @@
                                         src="~/assets/img/ico-file-error.svg"
                                         alt="file error"
                                       />
-                                      <h4>Sorry something is Wrong</h4>
+                                      <h4>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.importFileError') }}</h4>
                                       <p>
                                         {{ importFileError.message.import_file[0] }}
                                       </p>
-                                      <p>You can <a @click="clearImportFile" role="button">try again</a></p>
+                                      <p>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.tryAgain') }} <a @click="clearImportFile" role="button">{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.tryAgain') }}</a></p>
                                     </div>
                                     <!--//STEP 3 - ERROR-->
                                 </div>
@@ -78,7 +75,7 @@
                                     </button>
                                     <!--<p class="msg msg--error">This format is not supported</p>-->
                                     <!--//STEP 1 - DROPZONE-->
-                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">This format is not supported</p>
+                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.formatNotSupported') }}</p>
 
                                     <!--STEP 2 - FILE UPLOAD-->
                                     <button
@@ -87,7 +84,7 @@
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                       >
-                                        <span class="btn--opacity__target">Cancel</span>
+                                        <span class="btn--opacity__target">{{ $t('default.cancel') }}</span>
                                         <img src="~/assets/img/ico-close-turqy.svg" />
                                     </button>
                                     <!--// STEP 2 - FILE UPLOAD-->
@@ -99,7 +96,7 @@
                                       type="button"
                                       class="btn btn--opacity--child"
                                     >
-                                      <span class="btn--opacity__target">Accept</span>
+                                      <span class="btn--opacity__target">{{ $t('default.accept') }}</span>
                                       <img src="~/assets/img/ico-ok-white.svg" />
                                     </button>
                                     <!--// STEP 3 - SUCCESS -->
@@ -111,7 +108,7 @@
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                       >
-                                        <span class="btn--opacity__target">Cancel</span>
+                                        <span class="btn--opacity__target">{{ $t('default.cancel') }}</span>
                                         <img src="~/assets/img/ico-close-turqy.svg" />
                                       </button>
                                     <!--//STEP3 - ERROR-->
@@ -126,7 +123,7 @@
                 <div
                     v-if="!fileAdded || progress < 100 || importFileError"
                     class="description"
-                    v-html="$t('popups.spatialfile.descriptions.file')"
+                    v-html="$t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.help')"
                 ></div>
                 <!--STEP 3 - SUCCESS -->
                 <div id="popup-map" v-show="fileAdded && progress === 100 && !importFileError" class="popup__map-img" style="top: 10rem !important;"></div>

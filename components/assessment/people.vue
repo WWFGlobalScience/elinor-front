@@ -1,28 +1,28 @@
 <template>
     <ul class="elinor__people ui-rounded-border">
         <li class="elinor__people-header">
-            {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.title' ) }}
+            {{ $t('pages.assessments.view.tabs.info.people.title') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_community }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.community' ) }}
+            <span>{{ assessment.count_community }}</span> {{ $t('pages.assessments.view.tabs.info.people.community') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_ngo }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.ngo' ) }}
+            <span>{{ assessment.count_ngo }}</span> {{ $t('pages.assessments.view.tabs.info.people.ngo') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_academic }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.academic' ) }}
+            <span>{{ assessment.count_academic }}</span> {{ $t('pages.assessments.view.tabs.info.people.academic') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_government }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.government' ) }}
+            <span>{{ assessment.count_government }}</span> {{ $t('pages.assessments.view.tabs.info.people.government') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_private }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.private' ) }}
+            <span>{{ assessment.count_private }}</span> {{ $t('pages.assessments.view.tabs.info.people.private') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_indigenous }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.indigenous' ) }}
+            <span>{{ assessment.count_indigenous }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ total }}</span> {{ $t( 'pages.assessments.content.assessment.tabs.info.data.people-consulted.labels.total' ) }}
+            <span>{{ total }}</span> {{ $t('pages.assessments.view.tabs.info.people.total') }}
         </li>
     </ul>
 </template>

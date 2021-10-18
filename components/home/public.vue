@@ -10,56 +10,62 @@
         </NuxtLink>
         <div class="elinor__card--sign-in__info">
           <div>
-            <p class="text-xl mb-1.5">SIGN IN</p>
+            <p class="text-xl mb-1.5">{{ $t('pages.home.public.signInTitle') }}</p>
           </div>
           <div>
             <p class="mb-0 text-grayy-lighter"
                v-if="!alerts.emailVerificationRequired && !alerts.emailVerificationSent">
-              or
-              <NuxtLink to="/create-account" class="text-turqy text-sm">create an account</NuxtLink>
+                {{ $t('pages.home.public.signInTitleAndCreateAccountSeparator') }}
+              <NuxtLink to="/create-account" class="text-turqy text-sm">{{ $t('pages.home.public.createAccountLink') }}</NuxtLink>
             </p>
             <p class="mb-0 text-grayy-lighter" v-if="alerts.emailVerificationRequired || alerts.emailVerificationSent">
-              <a class="text-turqy text-sm">Resend email</a>
+              <a class="text-turqy text-sm">{{ $t('pages.home.public.resentVerificationLink') }}</a>
             </p>
           </div>
         </div>
 
-        <p class="text-base">{{ $t('pages.auth.content.sign-in.subtitle') }}</p>
+        <p class="text-base">{{ $t('pages.home.public.signInSubtitle') }}</p>
 
         <div v-if="alerts.invalidCredentials"
              class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">Invalid credentials!</strong>
-          <span class="block sm:inline">Do not remember the password? Try the forgot password</span>
+          <strong class="font-bold">{{ $t('pages.home.public.alerts.invalidCredentials.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.home.public.alerts.invalidCredentials.subtitle') }}</span>
         </div>
 
         <div v-if="alerts.emailVerificationRequired"
              class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">Email verification required!</strong>
-          <span class="block sm:inline">Have you not received the verification email? If not resend it again</span>
+          <strong class="font-bold">{{ $t('pages.home.public.alerts.emailVerificationRequired.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.home.public.alerts.emailVerificationRequired.subtitle') }}</span>
         </div>
 
         <div v-if="alerts.emailVerificationSent"
              class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">Email verification sent!</strong>
-          <span class="block sm:inline">You will receive a message to verify your email</span>
+          <strong class="font-bold">{{ $t('pages.home.public.alerts.emailVerificationSent.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.home.public.alerts.emailVerificationSent.subtitle') }}</span>
         </div>
 
         <div v-if="alerts.passwordChangedSuccessfully"
              class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">Password changed successfully!</strong>
-          <span class="block sm:inline">Now you can access with the new password.</span>
+          <strong class="font-bold">{{ $t('pages.home.public.alerts.passwordChangedSuccessfully.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.home.public.alerts.passwordChangedSuccessfully.subtitle') }}</span>
+        </div>
+
+        <div v-if="alerts.emailVerifiedSuccessfully"
+             class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">{{ $t('pages.home.public.alerts.emailVerifiedSuccessfully.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.home.public.alerts.emailVerifiedSuccessfully.subtitle') }}</span>
         </div>
 
         <form id="form--signin" @submit="submit" class="form form--sign-in">
           <div class="form__group">
             <div class="form__row">
               <div class="input">
-                <input type="text" :placeholder="'Username'" v-model="username" required/>
+                <input type="text" :placeholder="$t('pages.home.public.usernameInput')" v-model="username" required/>
               </div>
             </div>
             <div class="form__row">
               <div class="input">
-                <input type="password" :placeholder="'Password'" v-model="password" required/>
+                <input type="password" :placeholder="$t('pages.home.public.passwordInput')" v-model="password" required/>
               </div>
             </div>
           </div>
@@ -82,7 +88,7 @@
                     </div>
                   </div>
                   <label for="answer-1" class="label">
-                    <span>Remember me</span>
+                    <span>{{ $t('pages.home.public.rememberMeCheckbox') }}</span>
                   </label>
                 </div>
               </div>
@@ -92,14 +98,14 @@
                 type="submit"
                 class="btn--border-turqy btn--opacity--child"
               >
-                <span class="btn--opacity__target"> Sign in </span>
+                <span class="btn--opacity__target">{{ $t('pages.home.public.signInButton') }}</span>
                 <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
             </div>
           </div>
         </form>
         <NuxtLink to="/forgot-password" class="text-turqy mt-3 text-sm">
-          Forgot password?
+            {{ $t('pages.home.public.forgotPasswordLink') }}
         </NuxtLink>
       </div>
     </section>
@@ -110,14 +116,10 @@
           alt="ellinor illustration"
         />
         <p class="section--intro__info">
-          Elinor is a flexible tool and data system designed to track the
-          management, governance, and equity status in areas under protection or
-          management. Elinor seeks to streamline data collection, entry, and
-          visualization for information on management, governance, and equity
-          while also allowing flexibility on how data is gathered.
+          {{ $t('pages.home.public.content.introduction.text') }}
         </p>
         <NuxtLink v-if="!$auth.loggedIn" to="/create-account" class="btn btn--opacity--child">
-          <span class="btn--opacity__target">Create an account</span>
+          <span class="btn--opacity__target">{{ $t('pages.home.public.content.introduction.createAccountLink') }}</span>
           <img src="~/assets/img/ico-button-arrow.svg"/>
         </NuxtLink>
       </div>
@@ -127,16 +129,9 @@
       <div class="container">
         <div class="section--img-text__block">
           <div class="section--img-text__block-text">
-            <h1 class="c-title">WHY SHOULD I USE IT?</h1>
-            <p>
-              Elinor can be applied as either a field-based assessment with a
-              trained facilitator or as a desk-based tool that harnesses local
-              and practitioner knowledge.
-            </p>
-            <p>The questions within Elinor are
-              high-level, covering a broad range of topics and have been
-              designed to supplement and not replace in-depth research exploring
-              issues like equity, governance, gender and climate change.</p>
+            <h1 class="c-title">{{ $t('pages.home.public.content.explanation.title') }}</h1>
+            <p>{{ $t('pages.home.public.content.explanation.paragraph1') }}</p>
+            <p>{{ $t('pages.home.public.content.explanation.paragraph2') }}</p>
           </div>
           <div class="flex justify-end items-center">
             <img class="h-64" src="~/assets/img/elinor-hand-icon.svg" />
@@ -149,17 +144,11 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-            <h4 class="c-title--sm">TRACKING CHANGE</h4>
-            <p>
-              Elinor has been designed primarily to help track changes over time,
-              thus can be used at any stage in the project cycle to
-            </p>
+            <h4 class="c-title--sm">{{ $t('pages.home.public.content.explanation.trackingChange.title') }}</h4>
+            <p>{{ $t('pages.home.public.content.explanation.trackingChange.text') }}</p>
             <ul class="list-disc list-inside">
-              <li>Indicate the suitability of a site for conservation</li>
-              <li>
-                Highlight areas that require more focused interventions to enhance
-                implementation efforts.
-              </li>
+              <li>{{ $t('pages.home.public.content.explanation.trackingChange.first') }}</li>
+              <li>{{ $t('pages.home.public.content.explanation.trackingChange.second') }}</li>
             </ul>
           </div>
         </div>
@@ -172,23 +161,18 @@
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
             <blockquote class="elinor__sentence mx-auto">
-              “Little by little, bit by bit, family by family, so much good can be done on so many levels.”
+              “{{ $t('pages.home.public.content.elinor.quote.text') }}”
               <span class="elinor__sentence__name">
-                ELINOR OSTROM
+                {{ $t('pages.home.public.content.elinor.quote.author') }}
               </span>
             </blockquote>
           </div>
           <div class="lg:order-1">
-            <h3 class="c-epi">In Honor</h3>
-            <h4 class="c-title">Elinor “Lin” Ostrom</h4>
-            <p>Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.
-            </p>
-            <p>
-              Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.
-            </p>
-            <p>
-              Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.
-            </p>
+            <h3 class="c-epi">{{ $t('pages.home.public.content.elinor.title') }}</h3>
+            <h4 class="c-title">{{ $t('pages.home.public.content.elinor.subtitle') }}</h4>
+            <p>{{ $t('pages.home.public.content.elinor.paragraph1') }}</p>
+            <p>{{ $t('pages.home.public.content.elinor.paragraph2') }}</p>
+            <p>{{ $t('pages.home.public.content.elinor.paragraph3') }}</p>
           </div>
         </div>
       </div>
@@ -198,12 +182,10 @@
       <div class="section--img-text__block is-flushed items-center">
         <div class="container">
           <div class="section--img-text__block-text">
-            <h4 class="c-title--block">FAQ’s</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <h4 class="c-title--block">{{ $t('pages.home.public.content.faqs.title') }}</h4>
+            <p>{{ $t('pages.home.public.content.faqs.text') }}</p>
             <NuxtLink to="/faq" class="btn btn--opacity--child">
-              <span class="btn--opacity__target">Go to FAQ’s</span>
+              <span class="btn--opacity__target">{{ $t('pages.home.public.content.faqs.button') }}</span>
               <img src="~/assets/img/ico-button-arrow.svg" />
             </NuxtLink>
           </div>
@@ -218,12 +200,10 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-            <h4 class="c-title--block">METHODOLOGY</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <h4 class="c-title--block">{{ $t('pages.home.public.content.methodology.title') }}</h4>
+            <p>{{ $t('pages.home.public.content.methodology.text') }}</p>
             <NuxtLink to="/methodology" class="btn btn--opacity--child">
-              <span class="btn--opacity__target">Go to Methodology</span>
+              <span class="btn--opacity__target">{{ $t('pages.home.public.content.methodology.button') }}</span>
               <img src="~/assets/img/ico-button-arrow.svg" />
             </NuxtLink>
           </div>

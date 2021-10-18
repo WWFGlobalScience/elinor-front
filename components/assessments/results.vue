@@ -3,11 +3,11 @@
         <div class="container">
             <div class="search__results">
 
-                <span>{{ $t('default.showing') }}</span> -
+                <span>{{ $t('pages.assessments.list.total') }}</span> -
                 <span>{{ assessments.length }}</span>
                 <span
-                    v-if="assessments.length > 1 || assessments.length == 0">{{ $t('pages.assessments.content.showing.plural') }}</span>
-                <span v-if="assessments.length == 1">{{ $t('pages.assessments.content.showing.singular') }}</span>
+                    v-if="assessments.length > 1 || assessments.length == 0">{{ $t('pages.assessments.list.totalPlural') }}</span>
+                <span v-if="assessments.length == 1">{{ $t('pages.assessments.list.totalSingular') }}</span>
 
             </div>
             <ul class="ma__results">
@@ -25,28 +25,28 @@
                             </div>
                         </li>
                         <li v-if="isAssessmentCollaborator($auth, assessment)" class="role">
-                            <span class="label">{{ $t('pages.assessments.content.assessment.labels.role') }}</span>
-                            <span class="data">{{ $t('default.roles.' + getMyRole($auth, assessment)) }}</span>
+                            <span class="label">{{ $t('pages.assessments.list.myRole') }}</span>
+                            <span class="data">{{ $t('pages.assessments.roles.' + getMyRole($auth, assessment)) }}</span>
                         </li>
                         <li class="ha">
-                            <span class="label">{{ $t('pages.assessments.content.assessment.labels.year') }}</span>
+                            <span class="label">{{ $t('pages.assessments.list.year') }}</span>
                             <span class="data">{{ assessment.year }}</span>
                         </li>
                         <li class="countries" v-if="assessment.management_area_countries && assessment.management_area_countries.countries">
-                            <span class="label">{{ $t('pages.assessments.content.assessment.labels.countries') }}</span>
+                            <span class="label">{{ $t('pages.assessments.list.countries') }}</span>
                             <span class="data" v-html="assessment.management_area_countries.countries.join(', ')"></span>
                         </li>
                         <li class="view" v-if="!$auth.loggedIn || assessment.status === 10 || isAssessmentObserver($auth, assessment)">
                             <nuxt-link :to="`/assessments/${assessment.id}/info/`"
                                        class="btn--border-turqy btn--opacity--child">
-                                <span class="btn--opacity__target">{{ $t( 'default.view' ) }}</span>
+                                <span class="btn--opacity__target">{{ $t('pages.assessments.list.viewButton') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
                         </li>
                         <li class="view" v-if="$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver($auth, assessment)">
                             <nuxt-link :to="`/assessments/edit/${assessment.id}/assessment-data/`"
                                        class="btn--border-turqy btn--opacity--child">
-                                <span class="btn--opacity__target">{{ $t( 'default.edit' ) }}</span>
+                                <span class="btn--opacity__target">{{ $t('pages.assessments.list.editButton') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
                         </li>

@@ -5,10 +5,10 @@
                 <table class="c-data-table">
                     <thead>
                     <tr>
-                        <th class="c-data-table__main-cell">Name</th>
-                        <th>Admin</th>
-                        <th>Contributor</th>
-                        <th>Observer</th>
+                        <th class="c-data-table__main-cell">{{ $t('pages.assessments.view.tabs.collaborators.table.name') }}</th>
+                        <th>{{ $t('pages.assessments.view.tabs.collaborators.table.admin') }}</th>
+                        <th>{{ $t('pages.assessments.view.tabs.collaborators.table.contributor') }}</th>
+                        <th>{{ $t('pages.assessments.view.tabs.collaborators.table.observer') }}</th>
                         <th></th>
                     </tr>
                     </thead>

@@ -2,7 +2,7 @@
     <section class="section section--ma-edit-selector">
         <div class="container">
             <header>
-                <h2>Managed Area</h2>
+                <h2>{{ $t('pages.assessments.edit.tabs.managementArea.selector.title') }}</h2>
             </header>
         </div>
         <form class="form form--ma-selector">
@@ -10,7 +10,7 @@
                 <div class="container--sm">
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">Select a Managed Area*</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.managementArea.selector.existing') }}</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="instance.parent"
@@ -27,14 +27,14 @@
                                     <img src="~/assets/img/ico-select-turqy.svg">
                                 </div>
                             </div>
-                            <div class="legend mt-2">You can select an already created Managed Area, or if you don’t find it you can create a new one from here</div>
+                            <div class="legend mt-2">{{ $t('pages.assessments.edit.tabs.managementArea.selector.existingGuide') }}</div>
                         </div>
                     </div>
                     <div class="form__row">
                         <div class="input input--button">
-                            <label class="label label--stripped"><span>OR CREATE A NEW ONE</span></label>
+                            <label class="label label--stripped"><span>{{ $t('pages.assessments.edit.tabs.managementArea.selector.orNew') }}</span></label>
                             <button type="button" class="btn--border-turqy btn--opacity--child btn--arrow-down" @click="onManagementAreaNew(assessment)">
-                                <span>Create New Managed Area</span>
+                                <span>{{ $t('pages.assessments.edit.tabs.managementArea.selector.newButton') }}</span>
                                 <img src="~/assets/img/ico-arrow-bottom-turqy.svg">
                             </button>
                         </div>

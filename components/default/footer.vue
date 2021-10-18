@@ -7,23 +7,26 @@
             <ul v-if="$route.path === '/'">
                 <li class="btn--opacity--child">
                     <NuxtLink :to="`/faq/`" class="btn--opacity__target">
-                        FAQs
+                        {{ $t('footer.faqs') }}
                     </NuxtLink>
                 </li>
                 <li class="btn--opacity--child">
                     <NuxtLink :to="`/methodology/`" class="btn--opacity__target">
-                        Methodology
+                        {{ $t('footer.methodology') }}
                     </NuxtLink>
                 </li>
                 <li v-if="!$auth.loggedIn" class="btn--opacity--child">
                     <NuxtLink :to="`/create-account/`" class="btn--opacity__target">
-                        Create Account
+                        {{ $t('footer.createAccount') }}
                     </NuxtLink>
                 </li>
             </ul>
         </nav>
         <div class="footer--main__bottom">
-            © Copright 2021 Elinor. All rights reserved. <NuxtLink to="'/'" class="btn--opacity--child"><span class="btn--opacity__target">Terms of Use</span> </NuxtLink> | <NuxtLink to="'/'" class="btn--opacity--child"><span class="btn--opacity__target">Privacy Policy</span></NuxtLink>
+            {{ $t('footer.copyright') }}
+            {{ currentYear }}
+            {{ $t('footer.copyrightAfterYear') }}
+            <NuxtLink to="'/'" class="btn--opacity--child"><span class="btn--opacity__target"> {{ $t('footer.termsOfUse') }}</span> </NuxtLink> | <NuxtLink to="'/'" class="btn--opacity--child"><span class="btn--opacity__target"> {{ $t('footer.privacyPolicy') }}</span></NuxtLink>
         </div>
     </footer>
 </template>
@@ -33,6 +36,9 @@
         computed: {
             isSidebarOpen(){
                 return this.$store.state.layout.sidebar
+            },
+            currentYear() {
+                return new Date().getFullYear();
             }
         }
     }

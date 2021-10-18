@@ -5,35 +5,23 @@
     </section>
     <section class="section">
       <div class="container">
-        <h1 class="c-title--main">Methodology</h1>
+        <h1 class="c-title--main">{{ $t('pages.methodology.title') }}</h1>
         <div class="g-grid--5 flex items-center">
           <div class="g-colspan--3-full-md">
             <div class="info-block">
-              <h4 class="c-title--md">What is the main purpose of the tool?</h4>
-              <p>
-                Here, we’ve listed the background information collected and the
-                32 questions found in Elinor organized under nine attributes .
-                All questions answered by a score 0-4 and an associated
-                qualitative statement.
-              </p>
-              <p>
-                There is no required cadence on which data can be inputted into
-                Elinor: We hope that users of the tool will complete assessments
-                on time frames suitable for their own projects and needs, but
-                expect that assessments could be completed either annually or
-                bi-annually.
-              </p>
+              <h4 class="c-title--md">{{ $t('pages.methodology.mainPurposeTitle') }}</h4>
+                <template v-html="$t('pages.methodology.mainPurposeContent')" />
             </div>
           </div>
           <div class="g-colspan--4-full-md">
             <div class="elinor-card__icons">
               <h4 class="elinor-card__icons-title">
-                <span class="elinor-card__icons-title-info">Assessment</span>
+                <span class="elinor-card__icons-title-info">{{ $t('pages.methodology.assessment') }}</span>
               </h4>
               <div class="g-grid--3-1-sm flex items-stretch">
                 <div class="elinor-card__icons__item">
                   <p class="elinor-card__icons__item-title">
-                    Background information
+                      {{ $t('pages.methodology.backgroundInformation') }}
                   </p>
                   <img
                     src="~/assets/img/background-information.svg"
@@ -41,12 +29,12 @@
                   />
                 </div>
                 <div class="elinor-card__icons__item">
-                  <p class="elinor-card__icons__item-title">32 questions</p>
+                  <p class="elinor-card__icons__item-title">{{ $t('pages.methodology.numberQuestions') }}</p>
                   <img src="~/assets/img/questions.svg" alt="questions" />
                 </div>
                 <div class="elinor-card__icons__item">
                   <p class="elinor-card__icons__item-title">
-                    Annually or bi-annually
+                      {{ $t('pages.methodology.timeframe') }}
                   </p>
                   <img src="~/assets/img/calendar.svg" alt="calendar" />
                 </div>
@@ -55,36 +43,13 @@
           </div>
           <div class="g-colspan--3-full-md">
             <div class="info-block">
-              <h4 class="c-title--md">Background information collected</h4>
-              <ul class="list-disc list-inside list--small">
-                <li>Year of assessment</li>
-                <li>
-                  Number of people consulted during the assessment and their
-                  affiliation
-                </li>
-                <li>Name of MA</li>
-                <li>
-                  Jurisdiction(s) where MA is located (e.g., country,
-                  states/provinces)
-                </li>
-                <li>Date of formal establishment (if applicable)</li>
-                <li>Size of MA (ha)</li>
-                <li>Map or spatial file of MA</li>
-                <li>Management zones of MA</li>
-                <li>MA governance type</li>
-                <li>MA objectives</li>
-                <li>Name of management authority</li>
-                <li>Key stakeholder groups</li>
-                <li>
-                  Focal area within MA (if focusing on MA within a broader
-                  PA/CA)
-                </li>
-              </ul>
+              <h4 class="c-title--md">{{ $t('pages.methodology.backgroundInformationCollected') }}</h4>
+              <ul class="list-disc list-inside list--small" v-html="$t('pages.methodology.backgroundInformationCollectedContent') " />
             </div>
           </div>
           <div class="col-span-full">
             <div class="info-block">
-              <h4 class="c-title--md">Survey questions</h4>
+              <h4 class="c-title--md">{{ $t('pages.methodology.surveyQuestions') }}</h4>
               <ul class="elinor__survey-navigator elinor__survey-navigator--no-border">
                 <li v-for="item in items" v-bind:key="item.id">
                   <a href="#" class="btn--opacity"> </a>
@@ -92,143 +57,24 @@
               </ul>
               <div class="elinor__navigator-category">
                 <NuxtLink to="" class="elinor__navigator-category__link btn--opacity--child">
-                  <span class="elinor__navigator-category__text btn--opacity__target">Go to category</span>
+                  <span class="elinor__navigator-category__text btn--opacity__target">{{ $t('pages.methodology.goToCategory') }}</span>
                   <img src="~/assets/img/ico-arrow-bottom-turqy.svg" alt="ico-arrow-bottom-turqy">
                 </NuxtLink>
               </div>
-              <div class="elinor__survey-list elinor__survey-list--row">
+              <div v-for="question in Object.keys($t('pages.methodology.questions'))" class="elinor__survey-list elinor__survey-list--row">
                 <div class="elinor__survey-question ui-rounded-border">
                   <div class="left">
-                    <div class="txt">4</div>
+                    <div class="txt">{{ question }}</div>
                     <div class="left__item">
-                      <div class="question">
-                        Clearly defined rights and decision making
-                      </div>
-                      <p>
-                        Explanation lorem iosum dolor sid amet adipiscin et
-                        ipsum
-                      </p>
+                      <div class="question">{{ $t('pages.methodology.questions.' + question + '.title') }}</div>
+                      <p>{{ $t('pages.methodology.questions.' + question + '.explanation') }}</p>
                     </div>
                   </div>
                   <div class="right">
-                    <div class="right__item">
-                      <div class="txt">Q1</div>
+                    <div v-for="answer in Object.keys($t('pages.methodology.questions.' + question + '.answers'))" class="right__item">
+                      <div class="txt">Q{{ answer }}</div>
                       <div class="answer">
-                        Do local stakeholders have clearly defined rights to the
-                        natural resources found inside the MA?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q3</div>
-                      <div class="answer">
-                        Is there legislation in place to enable resource
-                        management by local communities?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q4</div>
-                      <div class="answer">
-                        Are local stakeholders able to exercise their rights to
-                        natural resources?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q6</div>
-                      <div class="answer">
-                        Are local stakeholders affected by the rules able to
-                        play a role in making changes to the rules?
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="elinor__survey-list elinor__survey-list--row">
-                <div class="elinor__survey-question ui-rounded-border">
-                  <div class="left">
-                    <div class="txt">5</div>
-                    <div class="left__item">
-                      <div class="question">
-                        Clearly defined rights and decision making
-                      </div>
-                      <p>
-                        Explanation lorem iosum dolor sid amet adipiscin et
-                        ipsum
-                      </p>
-                    </div>
-                  </div>
-                  <div class="right">
-                    <div class="right__item">
-                      <div class="txt">Q1</div>
-                      <div class="answer">
-                        Do local stakeholders have clearly defined rights to the
-                        natural resources found inside the MA?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q3</div>
-                      <div class="answer">
-                        Is there legislation in place to enable resource
-                        management by local communities?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q4</div>
-                      <div class="answer">
-                        Are local stakeholders able to exercise their rights to
-                        natural resources?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q6</div>
-                      <div class="answer">
-                        Are local stakeholders affected by the rules able to
-                        play a role in making changes to the rules?
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="elinor__survey-list elinor__survey-list--row">
-                <div class="elinor__survey-question ui-rounded-border">
-                  <div class="left">
-                    <div class="txt">6</div>
-                    <div class="left__item">
-                      <div class="question">
-                        Clearly defined rights and decision making
-                      </div>
-                      <p>
-                        Explanation lorem iosum dolor sid amet adipiscin et
-                        ipsum
-                      </p>
-                    </div>
-                  </div>
-                  <div class="right">
-                    <div class="right__item">
-                      <div class="txt">Q1</div>
-                      <div class="answer">
-                        Do local stakeholders have clearly defined rights to the
-                        natural resources found inside the MA?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q3</div>
-                      <div class="answer">
-                        Is there legislation in place to enable resource
-                        management by local communities?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q4</div>
-                      <div class="answer">
-                        Are local stakeholders able to exercise their rights to
-                        natural resources?
-                      </div>
-                    </div>
-                    <div class="right__item">
-                      <div class="txt">Q6</div>
-                      <div class="answer">
-                        Are local stakeholders affected by the rules able to
-                        play a role in making changes to the rules?
+                          {{ $t('pages.methodology.questions.' + question + '.answers.' + answer) }}
                       </div>
                     </div>
                   </div>

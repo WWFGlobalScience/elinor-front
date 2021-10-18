@@ -4,18 +4,18 @@
             <div class="elinor__help-border"></div>
             <div class="elinor__help">
                 <header>
-                    <h3>Information requirements</h3>
+                    <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.information') }}</h3>
                 </header>
                 <ul>
-                    <li v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.information`)"></li>
+                    <li v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.information`)"></li>
                 </ul>
             </div>
             <div class="elinor__help">
                 <header>
-                    <h3>Guidance</h3>
+                    <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.guidance') }}</h3>
                 </header>
                 <ul>
-                    <li v-html="$t( `pages.assessments.content.assessment.tabs.survey.data.questions.items.${question}.guidance`)"></li>
+                    <li v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.guidance`)"></li>
                 </ul>
             </div>
         </div>

@@ -15,8 +15,8 @@
                         {{  completedQuestions  }}
                     </div>
                     <div class="text">
-                        <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.completed' ) }}</span>
-                        <span>{{ $t( 'pages.assessments.content.assessment.tabs.survey.data.questions.default.out-of' ) }} {{ survey.length }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.completed' ) }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.outOf' ) }} {{ survey.length }}</span>
                     </div>
                 </li>
             </ul>

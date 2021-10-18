@@ -5,10 +5,10 @@
                 <table class="c-data-table">
                 <thead>
                 <tr>
-                    <th class="c-data-table__main-cell">Name</th>
-                    <th>Admin</th>
-                    <th>Contributor</th>
-                    <th>Observer</th>
+                    <th class="c-data-table__main-cell">{{ $t('pages.assessments.edit.tabs.collaborators.table.name') }}</th>
+                    <th>{{ $t('pages.assessments.edit.tabs.collaborators.table.admin') }}</th>
+                    <th>{{ $t('pages.assessments.edit.tabs.collaborators.table.contributor') }}</th>
+                    <th>{{ $t('pages.assessments.edit.tabs.collaborators.table.observer') }}</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -68,7 +68,7 @@
                     </td>
                     <td>
                         <button v-if="!isLastAdmin(collaborator) && isAdmin($auth, assessment)" type="button" class="btn--circle btn--opacity--child"
-                                @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-delete', title: 'Deleting Collaborator', onConfirm: onConfirmDelete(collaborator.id) })"
+                                @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-delete', title: 'pages.assessments.edit.tabs.collaborators.popups.delete.title', onConfirm: onConfirmDelete(collaborator.id) })"
                         >
                             <span class="sr-only">delete</span>
                             <img class="btn--opacity__target" src="~/assets/img/ico-trash.svg">

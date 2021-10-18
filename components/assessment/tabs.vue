@@ -4,18 +4,18 @@
             <ul class="elinor__tabs">
                 <li>
                     <nuxt-link :to="`/assessments/${id}/info/`" class="btn--tab">
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.info.tab' ) }}</span>
+                        <span class="txt">{{ $t('pages.assessments.view.tabs.info.tabButton') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
                     <nuxt-link :to="`/assessments/${id}/the-survey`" class="btn--tab">
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.survey.tab' ) }}</span>
+                        <span class="txt">{{ $t('pages.assessments.view.tabs.survey.tabButton') }}</span>
                     </nuxt-link>
                 </li>
                 <li>
                     <nuxt-link :to="`/assessments/${id}/collaborators`" class="btn--tab">
                         <span class="bullet">3</span>
-                        <span class="txt">{{ $t( 'pages.assessments.content.assessment.tabs.collaborators.tab' ) }}</span>
+                        <span class="txt">{{ $t('pages.assessments.view.tabs.collaborators.tabButton') }}</span>
                     </nuxt-link>
                 </li>
             </ul>

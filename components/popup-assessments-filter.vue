@@ -8,9 +8,9 @@
             <div class="form__group">
                 <div class="form__row">
                     <div class="input input--multiselect input--1-2">
-                        <label class="label">by Countries</label>
+                        <label class="label">{{ $t('pages.assessments.list.filters.popup.labels.countries') }}</label>
                         <div class="multiselect__wrap">
-                            <multiselect placeholder="Countries"
+                            <multiselect :placeholder="$t('pages.assessments.list.filters.popup.placeholders.countries')"
                                 :value="getCountryByCode(management_area_country)"
                                 track-by="code"
                                 label="name"
@@ -20,7 +20,6 @@
                                 :showLabels="false"
                                 :allow-empty="false" open-direction="bottom"
                                 @input="onFilterChanged('management_area_countries', $event.code)" >
-                                <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
                                 <img src="~/assets/img/ico-select-turqy.svg">
@@ -29,10 +28,10 @@
                     </div>
 
                     <div class="input input--multiselect input--1-6">
-                        <label class="label">by Year</label>
+                        <label class="label">{{ $t('pages.assessments.list.filters.popup.labels.year') }}</label>
                         <div class="multiselect__wrap">
                             <multiselect
-                                placeholder=""
+                                :placeholder="$t('pages.assessments.list.filters.popup.placeholders.year')"
                                 :value="filters['year']"
                                 :options="years"
                                 :multiple="false"
@@ -40,83 +39,20 @@
                                 :showLabels="false"
                                 :allow-empty="true" open-direction="bottom"
                                 @input="onFilterChanged('year', $event)" >
-                                <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
                                 <img src="~/assets/img/ico-select-turqy.svg">
                             </div>
                         </div>
                     </div>
-
-                    <!--<div class="input input--multiselect input--1-6">
-                        <label class="label">by Score</label>
-                        <div class="multiselect__wrap">
-                            <multiselect placeholder="100"
-                                select-label="Enter doesn’t work here!"
-                                :value="selectScore.value"
-                                :options="selectScore.options"
-                                :multiple="false"
-                                :searchable="true"
-                                :showLabels="false"
-                                :allow-empty="false" open-direction="bottom"
-                                :hide-selected="true"
-                                @input="onselectScoreChange" >
-                                <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
-                            </multiselect>
-                            <div class="multiselect__caret">
-                                <img src="~/assets/img/ico-select-turqy.svg">
-                            </div>
-                        </div>
-                    </div>-->
-
-                    <!--<div class="input input--multiselect input--1-6">
-                        <label class="label">by Completation</label>
-                        <div class="multiselect__wrap">
-                            <multiselect placeholder="50%"
-                                select-label="Enter doesn’t work here!"
-                                :value="selectCompletation.value"
-                                :options="selectCompletation.options"
-                                :multiple="false"
-                                :searchable="true"
-                                :showLabels="false"
-                                :allow-empty="false" open-direction="bottom"
-                                :hide-selected="true"
-                                @input="onselectCompletationChange" >
-                                <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
-                            </multiselect>
-                            <div class="multiselect__caret">
-                                <img src="~/assets/img/ico-select-turqy.svg">
-                            </div>
-                        </div>
-                    </div>-->
                 </div>
                 <div class="form__row">
-                    <!--<div class="input input--multiselect input--1-4">
-                        <label class="label">by My Role</label>
-                        <div class="multiselect__wrap">
-                            <multiselect placeholder="Myrole"
-                                select-label="Enter doesn’t work here!"
-                                :value="selectMyrole.value"
-                                :options="selectMyrole.options"
-                                :multiple="false"
-                                :searchable="true"
-                                :showLabels="false"
-                                :allow-empty="false" open-direction="bottom"
-                                :hide-selected="true"
-                                @input="onselectMyroleChange" >
-                                <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
-                            </multiselect>
-                            <div class="multiselect__caret">
-                                <img src="~/assets/img/ico-select-turqy.svg">
-                            </div>
-                        </div>
-                    </div>-->
-
                     <div class="input input--multiselect input--1-4">
-                        <label class="label">by Publication</label>
+                        <label class="label">{{ $t('pages.assessments.list.filters.popup.labels.status') }}</label>
                         <div class="multiselect__wrap">
                             <multiselect
                                 :value="getStatusById(filters.status)"
+                                :placeholder="$t('pages.assessments.list.filters.popup.placeholders.status')"
                                  track-by="id"
                                  label="name"
                                 :options="statuses"
@@ -124,7 +60,6 @@
                                 :showLabels="false"
                                 :allow-empty="true" open-direction="bottom"
                                 @input="onFilterChanged('status', $event.id)" >
-                                <span slot="noResult">{{ $t( 'default.noresults' ) }}</span>
                             </multiselect>
                             <div class="multiselect__caret">
                                 <img src="~/assets/img/ico-select-turqy.svg">
@@ -134,38 +69,12 @@
 
                 </div>
             </div>
-
-            <!--<section class="section section--tags">
-                <h4 class="c-title--modal mb-6">
-                    Filters
-                </h4>
-                <ul>
-                    <li>
-                        <div class="tag__item">Lorem</div>
-                        <a href="" class="tag__close">
-                            <img src="~/assets/img/ico-close-popup.svg">
-                        </a>
-                    </li>
-                    <li>
-                        <div class="tag__item">Ipsum</div>
-                        <a href="" class="tag__close">
-                            <img src="~/assets/img/ico-close-popup.svg">
-                        </a>
-                    </li>
-                    <li>
-                        <div class="tag__item">Dolor sit</div>
-                        <a href="" class="tag__close">
-                            <img src="~/assets/img/ico-close-popup.svg">
-                        </a>
-                    </li>
-                </ul>
-            </section>-->
             <section class="mt-10">
                 <button type="button" @click="resetFilters" class="btn--border-turqy btn--opacity--child mr-5" style="float: left">
-                    <span class="btn--opacity__target">{{ $t( 'default.filters.reset' ) }}</span>
+                    <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.filters.popup.reset' ) }}</span>
                 </button>
                 <button type="button" @click="popupState({active: false})" class="btn--border-turqy btn--opacity--child"  style="float: left">
-                    <span class="btn--opacity__target">{{ $t( 'default.filters.apply' ) }}</span>
+                    <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.filters.popup.apply' ) }}</span>
                     <img src="~/assets/img/ico-filters-turqy.svg">
                 </button>
                 <div style="clear: both"></div>
@@ -184,9 +93,9 @@ export default {
         return {
             years: [new Date().getFullYear() - 1, new Date().getFullYear()],
             statuses: [
-                {id: 90, name: this.$t('assessments.statuses.90')},
-                {id: 80, name: this.$t('assessments.statuses.80')},
-                {id: 10, name: this.$t('assessments.statuses.10')}
+                {id: 90, name: this.$t('pages.assessments.statuses.90')},
+                {id: 80, name: this.$t('pages.assessments.statuses.80')},
+                {id: 10, name: this.$t('pages.assessments.statuses.10')}
             ]
         }
     },
