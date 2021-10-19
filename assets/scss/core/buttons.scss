@@ -15,7 +15,7 @@ button {
     }
 }
 .btn {
-    @apply flex items-center bg-turqy text-sm text-white border-radius--40 px-10 py-5 cursor-pointer;
+    @apply flex items-center bg-turqy text-sm text-white border-radius--40 px-10 py-5 cursor-pointer lg:px-5;
     span {
         @apply mr-3;
     }
@@ -28,9 +28,15 @@ button {
             transform: translateX(5px);
         }
     }
+    &.btn--sm{
+        @apply py-2 px-4 text-xs;
+    }
+}
+.btn--circle{
+    @apply w-10 h-10 rounded-full border border-solid border-turqy-border flex items-center justify-center;
 }
 .btn--border-turqy {
-    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3;
+    @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3 bg-white;
     img {
         @apply transition;
         transform: translateX(0);
@@ -55,7 +61,7 @@ button {
     @apply w-[38px] h-[38px] flex items-center justify-center border-radius--50 border border-turqy;
 }
 .btn--tab {
-    @apply flex items-center border border-solid border-turqy-lighter border-b-[5px] px-8 py-4 text-turqy text-[12px] transition hover:bg-turqy-lighter;
+    @apply flex items-center border border-solid border-turqy-lighter border-b-[5px] px-8 py-4 text-turqy text-[14px] transition hover:bg-turqy-lighter;
     &.nuxt-link-active {
         @apply border-turqy pointer-events-none;
     }
@@ -76,3 +82,13 @@ button {
         @apply text-grayy-lighter pointer-events-none;
     }
 }
+.btn--between{
+    @apply justify-between;
+}
+
+.btn--protected-area__clear {
+    position: absolute;
+    right: 10px;
+    top: 28px;
+}
+

@@ -17,7 +17,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ'
 
 export default {
-    name: 'ma-map',
+    name: 'ma-map-2',
     props: [ 'ma' ],
     data() {
         return {
@@ -92,7 +92,7 @@ export default {
             this.map.addControl( new mapboxgl.NavigationControl() )
             this.map.addControl( new mapboxgl.FullscreenControl({
                 container: document.documentElement
-                }) 
+                })
             )
         },
         mapDisableScroll() {

@@ -891,6 +891,7 @@
                                 "name": "Private",
                                 "paragraph1": "The Assessment will only be visible to you and to your collaborators",
                                 "paragraph2": "Will appear as aggregated data in insights and maps"
+
                             }
                         }
                     }
@@ -950,6 +951,7 @@
                             "data":{
                                 "question":"How will the data be analysed and presented?",
                                 "information":"<p>The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking. </p>",
+
                                 "detail":""
                             },
                             "collect_data":{
@@ -965,6 +967,8 @@
                             "counts":{
                                 "question":"OK, I’m using the tool. How do I decide what 'counts' as a managed or conserved area?",
                                 "information":"<p>This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. </p><p>Therefore, the user of this tool may decide to conduct this assessment on:</p><ul class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area. </li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ul> <p>It is important to specify this decision in the background section of the survey. </p>",
+
+
                                 "detail":""
                             }
                         }

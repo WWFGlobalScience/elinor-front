@@ -2,15 +2,17 @@
     <transition name="elinor-fade">
         <div class="elinor__popup" v-show="popup.active">
             <div class="popup__overlay" @click="popupState( false, '', '' )"></div>
-            <div class="popup__box">
+            <div class="popup__box" :class="{'popup__box--min': popup.type ==='confirmation'}">
                 <header class="popup__header">
                     <span>{{ $t( popup.title ) }}</span>
                     <button type="button" class="btn--opacity" @click="popupState( false, '', '' )">
                         <img src="~/assets/img/ico-close-popup.svg">
                     </button>
                 </header>
-                <popup-assessments-filter v-if="popup.component == 'popup-assessments-filter'"></popup-assessments-filter>
-                <popup-assessment-create v-if="popup.component == 'popup-assessment-create'"></popup-assessment-create>
+                <component :is="popup.component" :props="popup.props"></component>
+<!--                <popup-assessments-filter v-if="popup.component == 'popup-assessments-filter'"></popup-assessments-filter>-->
+<!--                <popup-assessment-create v-if="popup.component == 'popup-assessment-create'"></popup-assessment-create>-->
+<!--                <popup-map-spatialfile v-if="popup.component == 'popup-map-spatialfile'"></popup-map-spatialfile>-->
             </div>
         </div>
     </transition>

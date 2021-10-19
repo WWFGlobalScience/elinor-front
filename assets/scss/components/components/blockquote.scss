@@ -1,0 +1,7 @@
+//sentence
+.elinor__sentence{
+    @apply font-light text-turqy w-5/12 text-base text-center pt-12 pb-3 lg:w-8/12;
+    .elinor__sentence__name{
+        @apply font-bold text-xs uppercase block pt-3;
+    }
+}

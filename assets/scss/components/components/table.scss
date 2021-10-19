@@ -1,0 +1,47 @@
+//tables
+.c-data-table{
+    @apply w-full mb-12;
+    
+    thead{
+        @apply relative h-14;
+        &::after{
+            content: "";
+            @apply absolute h-14 w-screen bg-turqy-lighter right-0 top-0 mx-auto;
+            left: -10vw;
+            @media(max-width:768px){
+                left: -7vw;
+            }
+            @media(max-width:767px){
+                left: -4vw;
+            }
+        }
+        th{
+            @apply text-xs text-grayy font-normal text-left z-10 w-16;
+            &.c-data-table__main-cell{
+                @apply w-7/12;
+            }
+        }
+    }
+
+    tbody{
+        td{
+            @apply text-base text-grayy h-16 border-b border-grayy-border sm:text-sm;
+        }
+    }
+
+    
+
+    .c-data-table__initial{
+        @apply w-9 h-9 rounded-full mr-3 inline-flex items-center justify-center text-sm text-white sm:w-5 sm:h-5 sm:flex;
+
+        &.admin{
+            @apply bg-redy-lighter;    
+        }
+        &.contributor{
+            @apply bg-yellowy-lighter;
+        }
+        &.observer{
+            @apply bg-bluy;
+        }
+    }
+}

@@ -4,11 +4,12 @@
             <default-header></default-header>
             <main role="main">
                 <default-sidebar></default-sidebar>
-                <Nuxt />
-                <default-notification></default-notification>
+                <Nuxt keep-alive />
+                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>
+        <default-notification v-if="$nuxt.nuxt.err"></default-notification>
         <popup-default></popup-default>
     </div>
 </template>
@@ -23,6 +24,6 @@ export default {
         popup() {
             return this.$store.state.popup.popup
         }
-    } 
-}
+    }
+};
 </script>

@@ -2,13 +2,13 @@
     <section class="section section--assesment-edit-survey-question section--mt-0">
         <assessment-edit-survey-question-navigator :assessment="assessment" :id="id"></assessment-edit-survey-question-navigator>
         <assessment-edit-survey-question :assessment="assessment" :question="question" :qid="qid" :id="id"></assessment-edit-survey-question>
-        <assessment-edit-survey-question-help></assessment-edit-survey-question-help>
+        <assessment-edit-survey-question-help :qid="qid" ></assessment-edit-survey-question-help>
     </section>
 </template>
 
 
 <script>
-import { mapActions } from 'vuex'
+import {mapActions, mapState} from 'vuex'
 
 export default {
     name: 'assessment-survey-question',
@@ -20,11 +20,12 @@ export default {
         }
     },
     computed: {
-        assessment() {
-            return this.$store.state.assessments.assessment
-        },
+        ...mapState({
+            assessment: state => state.assessments.assessment,
+            survey: state => state.assessments.survey
+        }),
         question() {
-            return this.assessment.survey[ this.qid - 1 ]
+            return this.survey[ this.qid - 1 ]
         }
     }
 }

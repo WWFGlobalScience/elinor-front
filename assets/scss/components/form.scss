@@ -1,11 +1,17 @@
 .form {
-    @apply mt-20; 
+    @apply mt-20;
     .form__group {
         .form__row {
-            @apply flex space-x-5 mb-6;
+            @apply flex space-x-5 mb-6 sm:flex-col sm:mb-0;
+            & > :not([hidden]) ~ :not([hidden]){
+                @apply sm:mx-0;
+            }
             .input {
-                @apply w-full;
-                input, textarea {
+                @apply w-full sm:mb-3;
+                &--error {
+                    @apply border-red-500 #{!important};
+                }
+                input:not(.vs__search), textarea:not(.vs__search) {
                     @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium focus:border-grayy-lighter;
                     &::placeholder {
                         @apply text-grayy-lighter;
@@ -15,7 +21,7 @@
                     @apply h-[200px] resize-none;
                 }
                 .label {
-                    @apply block text-[12px] mb-3;
+                    @apply block text-[14px] mb-3;
                     &.label--stripped {
                         span {
                             @apply bg-white z-10 pr-10;
@@ -24,6 +30,9 @@
                             content: '';
                             @apply center-v left-0 w-full h-px bg-grayy-border;
                         }
+                    }
+                    &.label--bold{
+                        @apply font-bold;
                     }
                 }
                 .legend {
@@ -113,7 +122,7 @@
                             @apply absolute w-full h-full z-10 opacity-0;
                         }
                         .file__drag {
-                            @apply w-full h-[220px] flex items-center justify-center border border-dashed border-black mb-6;
+                            @apply w-full h-[220px] flex items-center justify-center border border-dashed border-black mb-10;
                             img {
                                 @apply center-both;
                             }
@@ -121,9 +130,9 @@
                                 @apply text-[12px];
                             }
                         }
-                        .file__buttons {
-                            @apply flex justify-between items-center;
-                        }
+                    }
+                    .file__buttons {
+                        @apply flex justify-between items-center mt-4;
                     }
                 }
                 &.input--flexy {
@@ -139,36 +148,45 @@
                     }
                 }
                 &.input--1-2 {
-                    @apply w-1/2;
+                    @apply w-1/2 sm:w-full;
                 }
                 &.input--1-3 {
-                    @apply w-1/3;
+                    @apply w-1/3 sm:w-full;
                 }
                 &.input--1-4 {
-                    @apply w-1/4;
+                    @apply w-1/4 md:w-2/4 sm:w-full;
+                }
+                &.input--3-4 {
+                    @apply w-3/4 md:w-2/4 sm:w-full;
                 }
                 &.input--1-5 {
-                    @apply w-1/5;
+                    @apply w-1/5 md:w-2/4 sm:w-full;
+                }
+                &.input--1-6 {
+                    @apply w-1/6 md:w-2/4 sm:w-full;
                 }
                 &.input--date {
                     .date__caret {
                         @apply center-v right-3 border-l border-grayy-border pl-3 pointer-events-none z-10;
                     }
+                    .vdp-datepicker__calendar header {
+                        @apply z-10;
+                    }
                     .vdp-datepicker__calendar .cell:hover{
                         @apply bg-transparent;
-                    } 
+                    }
                     .vdp-datepicker__calendar .cell{
                         @apply text-[12px] text-grayy-lighter;
-                    }  
+                    }
                     .vdp-datepicker__calendar .cell.day:hover{
                         @apply border-turqy;
-                    }  
+                    }
                     .vdp-datepicker__calendar .cell.today{
                         @apply bg-transparent border border-turqy;
-                    } 
+                    }
                     .vdp-datepicker__calendar .cell.selected{
                         @apply bg-turqy text-white;
-                    } 
+                    }
                     .vdp-datepicker__calendar .day__month_btn.up {
                         @apply text-[14px] text-grayy;
                     }
@@ -184,7 +202,7 @@
                         @apply hidden;
                     }
                     .multiselect__tags {
-                        @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium min-h-0 rounded-none focus:border-grayy-lighter;
+                        @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium min-h-0 rounded-none pr-[50px] focus:border-grayy-lighter text-[12px];
                         input {
                             @apply p-0 border-0 mb-0 min-h-0 focus:border-grayy-lighter;
                         }
@@ -205,17 +223,32 @@
                         @apply flex flex-wrap;
                     }
                     .multiselect__tag {
-                        @apply bg-white text-grayy-lighter border border-grayy-border mb-1 mr-1 px-2 py-3 pr-10;
+                        @apply bg-white text-grayy border border-grayy-border mb-1 mr-1 px-2 py-[5px] pr-10;
                         border-radius: 20px;
                     }
                     .multiselect__tag-icon:after {
-                        @apply text-grayy-lighter text-[26px] center-both font-light;
+                        @apply text-grayy-lighter text-[20px] center-both font-light;
                     }
                     .multiselect__tag-icon {
                         border-radius: 0;
                         @apply hover:bg-grayy-border;
                     }
+                    .multiselect__wrap{
+                        &.multiselect__wrap--1-3{
+                            @apply w-1/3 sm:w-1/2;
+                        }
+                    }
+                    .multiselect__extra{
+                        @apply mt-8 ;
 
+                    }
+                    .multiselect__form{
+                        @apply relative ml-8 pl-14 pt-4 border-l border-grayy-border;
+                        &:before{
+                            content:'';
+                            @apply absolute top-14 left-0 block w-12 h-px bg-grayy-border;
+                        }
+                    }
                 }
             }
             &.form__row--separator {
@@ -227,16 +260,78 @@
                     @apply mt-20;
                 }
             }
+            &.form__row--mt-8 {
+                @apply mt-8;
+            }
             &.form__row--mt-16 {
                 @apply mt-16;
             }
             &:last-child {
                 @apply mb-0;
             }
-            
+            &.form__row--mt-24{
+                @apply mt-24
+            }
+
         }
     }
     &.form--mt-0 {
         @apply mt-0;
+    }
+
+    &.form--sign-in{
+        @apply mt-11;
+    }
+
+    &.form--organization{
+        @apply mt-1;
+    }
+}
+
+//mapboxgl-ctrl-geocoder
+
+.mapboxgl-ctrl-geocoder{
+    @apply z-10;
+    .mapboxgl-ctrl-geocoder--icon{
+        @apply absolute top-5 right-6 z-10;
+        &-search{
+            @apply w-12 h-7 fill-current text-turqy border-l border-grayy-border pl-3;
+        }
+    }
+    .mapboxgl-ctrl-geocoder--pin-right{
+        @apply absolute right-0 top-0 py-6;
+        .mapboxgl-ctrl-geocoder--icon{
+            @apply right-0 w-12 h-7 mr-20;
+            &-loading{
+                @apply hidden;
+                &>*{
+                    &:first-child{
+                        @apply fill-current text-turqy;
+                    }
+                    @apply fill-current text-grayy-lighter;
+                }
+
+            }
+        }
+        .mapboxgl-ctrl-geocoder--button{
+            @apply cursor-pointer hover:opacity-60;
+            .mapboxgl-ctrl-geocoder--icon{
+                @apply h-8 w-4 mr-1 mt-5 fill-current text-grayy hidden;
+            }
+        }
+
+    }
+    .suggestions-wrapper{
+        @apply border-b border-l border-r border-grayy-border rounded-b-lg absolute bg-white w-full;
+
+        .mapboxgl-ctrl-geocoder--suggestion{
+            @apply text-xs p-3 cursor-pointer text-grayy hover:bg-turqy-lighter;
+            .mapboxgl-ctrl-geocoder--suggestion-address{
+                @apply text-grayy-lighter;
+            }
+        }
+        .mapbox-gl-geocoder--no-results{
+            @apply text-xs p-3 text-grayy;
+        }
     }
 }

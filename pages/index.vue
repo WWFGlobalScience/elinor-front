@@ -1,40 +1,51 @@
 <template>
-  <div class="container">
-    <div>
-      
-      <h1 class="title">
-        {{ $t( 'pages.home.title' ) }}
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+<main role="main">
+    <home-public v-if="true"></home-public>
+    <home-private v-if="false"></home-private>
+    <default-footer></default-footer>
+</main>
 </template>
 
 <script>
+import {mapActions, mapState} from "vuex";
+
 export default {
-    name: 'Home',
-    computed: {
-        pages() {
-            return this.$store.state.pages
-        }
+  name: 'home',
+  auth: false,
+  data() {
+    return {
+      username: null,
+      password: null,
     }
+  },
+  computed: {
+    ...mapState({
+      alerts: state => state.authentication.alerts
+    })
+  },
+  mounted() {
+    const status = this.$route.params.status;
+
+    if(status) {
+      this.$store.commit('authentication/setAlert', {name: this.toCamelCase(status), value: true});
+    }
+  },
+  methods: {
+    ...mapActions({
+      signIn: 'authentication/signIn',
+      resendEmail: 'authentication/resendEmail'
+    }),
+    submit(event) {
+      event.preventDefault();
+      this.signIn({username: this.username, password: this.password});
+    },
+    resend() {
+      this.resendEmail(this.email)
+    },
+    toCamelCase(str) {
+      return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+    }
+
+}
 }
 </script>
-
