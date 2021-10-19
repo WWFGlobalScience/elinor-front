@@ -1,730 +1,1069 @@
 {
-	"default": {
-		"seo": {
-			"title": "Elinor",
-			"description": "",
-			"keywords": "",
-			"og_image": ""
-		},
-		"feedback": {
-			"progress": "Saving data...",
-			"ok": "ok",
-			"error": "Oops! Something is wrong. Please, try again after a few minutes"
-		},
-		"filters": {
-			"button": "Filters",
-			"popup": {
-				"title": "Add filters",
-				"select": "Select filters",
-				"selected": "Filters",
-				"apply": "Apply filters"
-			},
-			"by": "Filter by"
-		},
-		"order": {
-			"button": "Order",
-			"by": "Order by"
+    "pages": {
+        "home": {
+            "meta": {
+                "title": "Home",
+                "slug": "",
+                "seo": {
+                    "title": "",
+                    "description": "",
+                    "keywords": "",
+                    "og_image": ""
+                }
+            },
+            "header": {
+                "aboutLink": "About",
+                "faqsLink": "FAQs",
+                "methodologyLink": "Methodology",
+                "createAccountLink": "Create Account",
+                "signOut": "Sign Out"
+            },
+            "public": {
+                "signInTitle": "SIGN IN",
+                "signInSubtitle": "Use your username and password to access Elinor",
+                "signInTitleAndCreateAccountSeparator": " or ",
+                "createAccountLink": "create account",
+                "resentVerificationLink": "Resend",
+                "usernameInput": "Username",
+                "passwordInput": "Password",
+                "rememberMeCheckbox": "Remember me",
+                "forgotPasswordLink": "Forgot password?",
+                "signInButton": "Sign In",
+                "alerts": {
+                    "invalidCredentials": {"title": "Invalid credentials!", "subtitle": "Do not remember the password? Try the forgot password"},
+                    "emailVerificationSent": {"title": "Email verification sent!", "subtitle": "You will receive a message to verify your email"},
+                    "emailVerificationRequired": {"title": "Email verification required!", "subtitle": "Have you not received the verification email? If not resend it"},
+                    "passwordChangedSuccessfully": {"title": "Password changed successfully!", "subtitle": "Now you can access with the new password."},
+                    "emailVerifiedSuccessfully": {"title": "Email verified successfully!", "subtitle": "Now you can access with your credentials."}
+                },
+                "content": {
+                    "introduction": {
+                        "text": "Elinor is a flexible tool and data system designed to track the management, governance, and equity status in areas under protection or management. Elinor seeks to streamline data collection, entry, and visualization for information on management, governance, and equity while also allowing flexibility on how data is gathered.",
+                        "createAccountLink": "Create Account"
+                    },
+                    "explanation": {
+                        "title": "WHY SHOULD I USE IT?",
+                        "paragraph1": "Elinor can be applied as either a field-based assessment with a trained facilitator or as a desk-based tool that harnesses local and practitioner knowledge.",
+                        "paragraph2": "The questions within Elinor are high-level, covering a broad range of topics and have been designed to supplement and not replace in-depth research exploring issues like equity, governance, gender and climate change.",
+                        "trackingChange": {
+                            "title": "TRACKING CHANGE",
+                            "text": "Elinor has been designed primarily to help track changes over time, thus can be used at any stage in the project cycle to",
+                            "first": "Indicate the suitability of a site for conservation",
+                            "second": "Highlight areas that require more focused interventions to enhance implementation efforts."
+                        }
+                    },
+                    "elinor": {
+                        "title": "In Honor",
+                        "subtitle": "Elinor “Lin” Ostrom",
+                        "paragraph1": "Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.",
+                        "paragraph2": "Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.",
+                        "paragraph3": "Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.",
+                        "quote": {
+                            "text": "Little by little, bit by bit, family by family, so much good can be done on so many levels.",
+                            "author": "ELINOR OSTROM"
+                        }
+                    },
+                    "faqs": {
+                        "title": "FAQs",
+                        "text": "Are you having trouble using Elinor or would like to learn more about use cases and common applications? Visit the FAQ section to see these common questions answered.",
+                        "button": "Go to FAQs"
+                    },
+                    "methodology": {
+                        "title": "METHODOLOGY",
+                        "text": "Learn more about how Elinor works and get to understand the structure of the instrument.",
+                        "button": "Go to Methodology"
+                    }
+                }
+            },
+            "private": {}
         },
+        "auth": {
+            "registration": {
+                "title": "CREATE AN ACCOUNT",
+                "subtitle": "Complete the form below to start using Elinor",
+                "inputs": {
+                    "email": "Email",
+                    "password1": "Password",
+                    "password2": "Password confirmation",
+                    "firstname": "First name",
+                    "lastname": "Last name",
+                    "username": "Username"
+                },
+                "termsOfServiceCheckbox": "I agree with the terms of service*",
+                "validationErrorTitle": "Validation error!",
+                "createAccountButton": "Create an account"
+            },
+            "forgotPassword": {
+                "title": "FORGOT PASSWORD",
+                "subtitle": "Enter your email to recieve a password reset link",
+                "emailInput": "Email",
+                "sendEmailButton": "Send Email",
+                "tryAgainButton": "Try Again",
+                "alerts": {
+                    "forgotPasswordEmailSent": {"title": "Forgot password email sent!", "subtitle": "Check your email for password reset link"}
+                }
+            },
+            "resetPassword": {
+                "title": "RESET PASSWORD",
+                "subtitle": "Enter a new password below",
+                "error": {
+                    "title": "Error!",
+                    "subtitle": "Problem with your new password"
+                },
+                "password1Input": "Password",
+                "password2Input": "Password confirmation",
+                "changePasswordButton": "Reset password"
+            }
+        },
+        "assessments": {
+            "meta": {
+                "title": "Assessments",
+                "slug": "/assessments"
+            },
+            "list": {
+                "title": "Assessments",
+                "total": "Showing",
+                "totalPlural": "assessments",
+                "totalSingular": "assessment",
+                "myRole": "My Role",
+                "viewButton": "View",
+                "editButton": "Edit",
+                "createButton": "Create Assessment",
+                "year": "Year",
+                "countries": "Countries",
+                "create": {
+                    "title": "Create assessment",
+                    "popup": {
+                        "title": "Create Assessment",
+                        "labels": {
+                            "name": "Name of assessment*",
+                            "year": "Select Year*"
+                        },
+                        "placeholders": {
+                            "name": "Name of assessment",
+                            "year": ""
+                        },
+                        "nameCriteria": "Enter a short and easy to remember name such as Tsavo Annual Assessment 2021",
+                        "submit": "Create Assessment"
+                    }
+                },
+                "filters": {
+                    "search": "Search by assessment name or managed area name",
+                    "button": "Filters",
+                    "popup": {
+                        "title": "Filter assessments",
+                        "labels": {
+                            "countries": "by Countries",
+                            "year": "by Year",
+                            "status": "by Publication"
+                        },
+                        "placeholders": {
+                            "countries": "",
+                            "year": "",
+                            "status": ""
+                        },
+                        "reset": "Reset",
+                        "apply": "Apply filters"
+                    }
+                }
+            },
+            "view": {
+                "title": "View assessment",
+                "year" : "Year",
+                "tabs": {
+                    "info": {
+                        "tabButton": "Info",
+                        "title": "View Assessment",
+                        "labels": {
+                            "managementAreaName": "Name of Managment Area",
+                            "protectedArea": "Name of the larger PA/CA in which this MA is contained",
+                            "dateEstablished": "Date of formal establishment",
+                            "reportedSize": "Size of MA",
+                            "containedBy": "Name of the related Managment Area",
+                            "governanceType": "MA Governance type",
+                            "managementAuthority": "Name of management authority",
+                            "recognitionLevel": "The rights of the MA formally recognized at the....",
+                            "supportSources": "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
+                            "countries": "MA Countries",
+                            "regions": "MA States / Provinces",
+                            "zones": {
+                                "title": "ZONES",
+                                "zoneName": "Name of zone",
+                                "zoneLevel": "Does this zone restrict any activites or use?",
+                                "zoneDescription": "Description and Attributes"
+                            }
+                        },
+                        "map": {
+                            "title": "Map or Spatial File of the MA",
+                            "subtitle": "Geospatial information lorem ipsum dolor"
+                        },
+                        "people": {
+                            "title": "Number of people consulted",
+                            "community": "Local community leader",
+                            "ngo": "NGO personnel",
+                            "academic": "Academic personnel",
+                            "government": "Government personnel",
+                            "indigenous": "Indigenous leader",
+                            "private": "Private sector personnel",
+                            "total": "total consulted"
+                        }
+                    },
+                    "survey": {
+                        "tabButton": "The survey",
+                        "title": "The survey"
+                    },
+                    "collaborators": {
+                        "tabButton": "Collaborators",
+                        "title": "Collaborators",
+                        "description": "Collaborators are persons that work with you on this assessment or need to have access to the data.",
+                        "table": {
+                            "name": "Name",
+                            "admin": "Admin",
+                            "contributor": "Contributor",
+                            "observer": "Observer"
+                        }
+                    }
+                }
+            },
+            "edit": {
+                "title": "Edit assessment",
+                "year" : "Year",
+                "saveButton": "Save",
+                "tabs": {
+                    "nextStep": "Next step",
+                    "data": {
+                        "tabButton": "Assessment data",
+                        "title": "Edit Assessment Data",
+                        "labels": {
+                            "year": "Select Year*",
+                            "name": "Name of assessment*",
+                            "organization": "Name of institution associated with this Assessment*",
+                            "personResponsibleRole": "Role of the person responsible for completing this Assessment*",
+                            "collectionMethods": "Please choose which option best describes how information for this assessment was collected",
+                            "collectionMethodsText": "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
+                            "consentGiven": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
+                            "managementPlan": "Upload a Management Plan File"
+                        },
+                        "people": {
+                            "title": "Number of people consulted",
+                            "community": "Local community leader",
+                            "ngo": "NGO personnel",
+                            "academic": "Academic personnel",
+                            "government": "Government Personnel",
+                            "indigenous": "Indigenous leader",
+                            "private": "Private sector personnel"
+                        }
+                    },
+                    "managementArea": {
+                        "tabButton": "Management area",
+                        "title": "Edit Management Area",
+                        "selector": {
+                            "title": "Select management area",
+                            "existing": "Select a Management Area*",
+                            "existingGuide": "You can select an already created Managed Area, or if you don’t find it you can create a new one from here",
+                            "orNew": "OR CREATE A NEW ONE",
+                            "newButton": "Create New Managed Area"
+                        },
+                        "zones": {
+                            "accessLevels": {
+                                "OPEN_ACCESS": "Open access (open for extraction and entering)",
+                                "PARTIALLY_RESTRICTED": "Fully restricted access (total extraction ban)",
+                                "FULLY_RESTRICTED": "Partially Restricted (e.g., periodic closures, restriction by use type, restriction by activity type, species restrictions, gear restrictions, etc.)"
+                            }
+                        },
+                        "recognitionLevels": {
+                            "local": "Local level",
+                            "local_guide": "Recognized by the community",
+                            "national": "National level",
+                            "national_guide": "Recognized by national government",
+                            "international": "International level",
+                            "international_guide": "Is it a valid other effective area-based conservation measures [OECM] that contributes to global targets"
+                        },
+                        "labels": {
+                            "name": "Name of new managed area*",
+                            "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?*",
+                            "containedBy": "Are there other Managment Areas related to this MA?",
+                            "dateEstablished": "Date of formal establishment",
+                            "reportedSize": "Size of MA",
+                            "managementAuthority": "Name of management authority",
+                            "governanceType": "MA Governance type",
+                            "objectives": "What are the objectives of this MA?",
+                            "recognitionLevel": "Are the rights of the MA formally recognized at the level ...",
+                            "stakeholderGroups": "Stakeholder groups",
+                            "supportSources": "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
+                            "countries": "MA Countries",
+                            "regions": "MA States / Provinces",
+                            "zones": "Does this MA have zones?",
+                            "zonesQuantity": "How many zones does the MA have?",
+                            "zoneName": "Name of the zone",
+                            "zoneLevel": "Select the level of access the best describes this zone",
+                            "zoneDescription": "Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and people who can and canot access it",
+                            "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
+                            "protectedAreaWdpaIdHelpLink": "Click here to search Protected Planet",
+                            "geospatialSources": "Please list the source of the geospatial information"
+                        },
+                        "map": {
+                            "polygonParagraph1": "Indicate the boundaries of the Managed Area",
+                            "polygonParagraph2": "Use the tools over the map to create a Polygon of the Managed Area",
+                            "drawPolygonStartText": "Click over the Map to create a polygon",
+                            "drawPolygonCloseText": "To Close a polygon click over a created Point",
+                            "newPolygon": "Create a new polygon",
+                            "deletePolygon": "Delete selected polygon",
+                            "help": "Click over the map to draw a polygon",
+                            "area": "Area",
+                            "indicateBoundaries": "Indicate the boundaries of the Managed Area",
+                            "spatialFile": "Upload spatial area file",
+                            "preferredMethod": "PREFERRED METHOD",
+                            "preferredMethodText": "Upload a spatial file in Shapefile format or GeoJSON",
+                            "spatialFileAndMapImageSeparator": "OR",
+                            "imageFile": "Upload map image"
+                        },
+                        "popups": {
+                            "spatialFile": {
+                                "title": "Upload Map Area File",
+                                "validatingFileFormat": "Validating file format...",
+                                "fileCorrectlyFormated": "The file is correctly formatted",
+                                "fileCorrectlyFormatedText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+                                "importFileError": "Sorry something is wrong",
+                                "formatNotSupported": "This format is not supported",
+                                "youCan": "You can",
+                                "tryAgain": "try again",
+                                "help": "<h4>What file to upload?</h4><p>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload.</p>"
+                            },
+                            "imageFile": {
+                                "title": "Upload Map Image File",
+                                "formatNotSupported": "This format is not supported",
+                                "gpsCoordinatesTitle": "Indicate GPS coordinates",
+                                "gpsCoordinatesExample": "Latitude , Longitude<br>(e.g 40.741895,-73.989308)",
+                                "dragMapIcon": "You can Drag the icon in the map to select the coordinates",
+                                "help": "<h4>What file to upload?</h4><p>If you do not have a shapefile or GeoJSON format file but have an image map of the managed area you may upload it here and it will be processed manually. </p>"
+                            }
+                        }
+                    },
+                    "survey": {
+                        "tabButton": "The survey",
+                        "title": "The survey",
+                        "navigator": {
+                            "completed": "Completed",
+                            "outOf": "Out of"
+                        },
+                        "questions": {
+                            "question": "Question",
+                            "back": "Back to resume",
+                            "answer": "Answer",
+                            "score": "Score",
+                            "unknown": "unknown",
+                            "explanation": "Explanation",
+                            "notCompleted": "Not completed",
+                            "answerQuestionButton": "Answer question",
+                            "selectAnswer": "Select answer",
+                            "help": "Need help? See below",
+                            "prev": "Prev",
+                            "next": "Next",
+                            "information": "Information requirements",
+                            "guidance": "Guidance",
+                            "items": {
+                                "stakeholder_harvest_rights": {
+                                    "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
+                                    "information": "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to harvest natural resource within the MA e.g., a management plan/ legislature / key informants with customary knowledge</p>",
+                                    "guidance": "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders' level of awareness </p>. <p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders.</p>",
+                                    "answers": {
+                                        "1": "Rights to harvest natural resources within the MA are not clearly defined",
+                                        "2": "Some rights to harvest natural resources within the MA are slightly defined",
+                                        "3": "Most rights to harvest  natural resources within the MA are somewhat defined",
+                                        "4": "Rights to harvest natural resources within the MA are clearly defined ",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "stakeholder_develop_rules": {
+                                    "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
+                                    "information": "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to develop rules for the use of resources within the MA e.g., a management plan/ legislature / key informants with customary knowledge</p>",
+                                    "guidance": "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders' level of awareness</p>.<p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders</p>",
+                                    "answers": {
+                                        "1": "Rights to develop rules for the use of natural resources within the MA are not clearly defined",
+                                        "2": "Some rights to develop rules for the use of natural  resources within the MA are slightly defined",
+                                        "3": "Most to develop rules for the use of natural  resources within the MA somewhat defined",
+                                        "4": "Rights to develop rules for the use of  natural resources within the MA are clearly defined",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "stakeholder_exclude_others": {
+                                    "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?",
+                                    "information": "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to exclude other groups from harvesting resources within the MA e.g., a management plan/ legislature / key informants with customary knowledge</p>",
+                                    "guidance": "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders' level of awareness</p>.<p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders</p>",
+                                    "answers": {
+                                        "1": "There are no regulations for controlling marine based activities in the MA.",
+                                        "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
+                                        "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
+                                        "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis  for management",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "legislation_exists": {
+                                    "question": "Is there legislation in place to enable resource management by local communities?",
+                                    "information": "<p>Knowledge of the regional/national legislation and the mechanisms to support its implementation</p>.<p>Local community’s governance needs e.g., ability to restrict access to the MA/CA by outside groups, or enforce local laws concerning use</p>",
+                                    "guidance": "Enable in this context means that there are effective accountability mechanisms in place that support the meaningful implementation of natural resource management by local communities",
+                                    "answers": {
+                                        "1": "There is no legislation that enables local stakeholders to develop their own rules governing resources within the MA",
+                                        "2": "Legislation enables local stakeholders to develop their own rules governing resources within the MA but there are major issues that need to be resolved",
+                                        "3": "Legislation enables local stakeholders to develop their own rules governing resources within the MA but there are some weaknesses",
+                                        "4": "Legislation enables local stakeholders to develop their own rules governing resources within the MA",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "exercise_rights": {
+                                    "question": "Are local stakeholders able to exercise their rights to natural resources?",
+                                    "information": "<p>The rights to natural resources held by local communities</p>.<p>The sorts of challenges local stakeholders (or socially differentiated groups) have in exercising these rights. Key informants may be a useful source of information to elucidate some of the hidden costs.</p>",
+                                    "guidance": "<p>Exercise – the ability to act to secure one's rights. This ability could be financial, knowledge, social connections, or any other mechanisms required to secure one's rights</p>.<p> Cost – this is the challenge encountered when trying to exercise ones rights. Some examples include limited capacity (financial or knowledge of legal systems) or problems with the system that upholds the rights (such as corrupt legal systems) or ecological barriers preventing physical access to places.</p>",
+                                    "answers": {
+                                        "1": "Local stakeholders are not able to exercise their rights to resources",
+                                        "2": "Local stakeholders are able to exercise their rights to resources but there are significant costs that severely limit their ability to do so",
+                                        "3": "Local stakeholders are able to exercise their rights to resources but there are still some costs to doing so that need to be addressed",
+                                        "4": "Local stakeholders are able to exercise their rights to resources without any significant costs to them",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "stakeholder_agency": {
+                                    "question": "To what extent are stakeholders affected by the rules of the MA able to play a role in making changes to the rules?",
+                                    "information": "<p>Knowledge of the range of decision-making platforms that exist for the MA</p>.<p>Knowledge of management decisions that have taken place in approximately the last 5 years</p>",
+                                    "guidance": "<p>Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and marginalized groups when answering this question</p>.<p>The ability to influence/modify means existing rules/regulations reflect the views of affected individuals</p>.<p>Rarely means that evidence for influence/modification of rules is scarce.</p><p>Occasionally means that on occasion stakeholders views have been incorporated into management</p>",
+                                    "answers": {
+                                        "1": "Individuals affected by the rules of the MA are not able to influence/modify them",
+                                        "2": "Individuals affected by the rules of the MA are rarely able to influence/modify them",
+                                        "3": "Individuals affected by the rules of the MA are occasionally able to influence/modify them",
+                                        "4": "Individuals affected by the rules of the MA are able to influence management decisions",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "vulnerable_defined_rights": {
+                                    "question": "Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?",
+                                    "information": "<p>Knowledge of the range of stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders e.g., a management plan/ legal documents / key informants with customary knowledge</p>",
+                                    "guidance": "<p>This question is designed to measure the equitable governance of the natural resource base amongst different stakeholder groups<p>.<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders’ level of awareness.</p><p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders.</p>",
+                                    "answers": {
+                                        "1": "Women’s or other vulnerable group’s rights to natural resources are not clearly defined",
+                                        "2": "Some rights to natural resources within the MA are clearly defined for women or other vulnerable groups",
+                                        "3": "Most rights to natural resources within the MA are clearly defined for women or other vulnerable groups",
+                                        "4": "Women’s or other vulnerable group’s rights to natural resources are clearly defined",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "benefits_shared": {
+                                    "question": "Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among local stakeholders?",
+                                    "information": "<p>Knowledge of the range of decision-making platforms that exist for the MA</p>.<p> Knowledge of management decisions that have taken place in approximately the last 5 years</p>",
+                                    "guidance": "Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and marginalized groups when answering this question.<p>The ability to influence/modify means existing rules/regulations reflect the views of affected individuals</p><p>Few is approximately < 50%</p><p>Some is approximately = 50%</p>p>Most is approximately > 50%</p>",
+                                    "answers": {
+                                        "1": "There is no strategy or approach for equitable benefit sharing among the relevant stakeholders",
+                                        "2": "A strategy or approach for equitable benefit sharing is being prepared or has been prepared but not implemented",
+                                        "3": "A strategy or approach for equitable benefit sharing is being partially implemented",
+                                        "4": "A strategy or approach for equitable benefit sharing is being fully implemented",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "supportive_networks": {
+                                    "question": "Do networks exist that develop social relations and support mutual learning among local stakeholders?",
+                                    "information": "<p>Knowledge of the range and scope of formal or informal networks</p>.<p>A key informant with extensive social networks may be useful to consult</p>.",
+                                    "guidance": "The intent of this question is to understand if formal or informal networks exist that facilitate positive social relationships and opportunities for knowledge exchange amongst different local stakeholders in a MA.",
+                                    "answers": {
+                                        "1": "No networks exist that develop social relations and support mutual learning",
+                                        "2": "No such networks exist but there is interest in developing them",
+                                        "3": "Networks exist but they are not always effective at developing social relationships and supporting learning. ",
+                                        "4": "Yes, networks exist that effectively develop social relations and support mutual learning.",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "climatechange_incorporated": {
+                                    "question": "Is information on climate change being used to inform strategies to build community resilience to climate change?",
+                                    "information": "Knowledge of information sources on climate change, planning process to address community resilience, level of progress in the planning, and how plans are already being implemented",
+                                    "guidance": "",
+                                    "answers": {
+                                        "1": "There have been no efforts or plans to use information on climate change to inform strategies to build community resilience",
+                                        "2": "Some initial effort has taken place about how to use information on climate change to inform strategies to build community resilience, but this has yet to be implemented",
+                                        "3": "Limited plans have been made on how to use information on climate change to inform strategies to build community resilience, which may or may not be implemented",
+                                        "4": "Detailed plans have been made on how to use information on climate change to inform strategies that build community resilience, and these are being implemented",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "governance_accountable": {
+                                    "question": "Are those responsible for governance of the MA held to account if they do not perform their role?",
+                                    "information": "<p>Knowledge of formal or informal accountability mechanisms</p>.<p> For informal bodies and process that are not documented you may wish to ask a key informant.Knowledge of past or present governance issues/challenges and how these have been addressed</p>",
+                                    "guidance": "<p>The intent of this question is to understand if there are mechanisms or systems in place that can help ensure that those responsible for managing and governing the MA are carrying out their responsibilities effectively.</p><p>Rarely means that events of accountability are scarce</p><p>Occasionally means there has been at least one instance where governors have been held accountable</p>",
+                                    "answers": {
+                                        "1": "Nothing happens",
+                                        "2": "Those responsible for governance of the MA are rarely held to account for not performing their role",
+                                        "3": "Those responsible for governance of the MA are occasionally held to account when they do not perform their role",
+                                        "4": "Those responsible for governance of the MA are always held to account when they do not perform their role",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "timely_information": {
+                                    "question": "Do local stakeholders receive information from MA authorities in a timely manner?",
+                                    "information": "Information may include such things as the management plan, income/expenditure, benefit sharing, threats, rules and regulations, changes, or amendments to national laws, etc.",
+                                    "guidance": "Timely means that information is received at a point in time that is considered useful, effective, or relevant for stakeholders. ",
+                                    "answers": {
+                                        "1": "Local stakeholders do not receive information from MA authorities",
+                                        "2": "Local stakeholders receive information from MA authorities but not in a timely manner",
+                                        "3": "Local stakeholders receive information from MA authorities but not always in a timely manner",
+                                        "4": "Local stakeholders  always receive information from MA authorities in a timely manner",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "conflict_resolution_access": {
+                                    "question": "Do local stakeholders have access to effective conflict resolution mechanisms?",
+                                    "information": "Conflict resolution mechanisms at the site including complaints and grievance procedures and other accountability mechanisms. This can be either formal or informal procedures.",
+                                    "guidance": "<p>This question is about the presence and effectiveness of conflict resolution mechanisms, particularly as they relate to natural resource use/access.</p><p>Effective conflict resolution mechanisms are characterized as being 1) rapid to access, 2) low-cost,3) local, and 4) trusted. All four conditions must be met to be considered effective.</p><p>Rare means that evidence for rapid, low-cost access to arenas to resolve conflict is scarce.</p><p>Sometimes means that there is evidence to show this has occurred on more than one occasion but not on a regular basis</p>",
+                                    "answers": {
+                                        "1": "Users do not have access to effective arenas to resolve conflict among users",
+                                        "2": "It is rare that users have access to effective local arenas to resolve conflict",
+                                        "3": "Users sometimes have access to effective arenas",
+                                        "4": "There is rapid access to effective arenas for users",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "penalties_frequency": {
+                                    "question": "How often are the penalties for breaking resource use rules administered?",
+                                    "information": "Enforcement data or enforcement personnel",
+                                    "guidance": "<p>Penalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.</p> <p>Rarely - means that instances penalties have been administered are scarce e.g., not one occasion can be identified in the past year</p><p>Occasionally - means there has been at least one instance in the past year when a penalty for breaking resource rules has been administered</p><p>Usually - means that penalties are administered in most of the instances when rules are broken</p>",
+                                    "answers": {
+                                        "1": "Penalties are never administered",
+                                        "2": "Penalties are rarely administered",
+                                        "3": "Penalties are occasionally administered ",
+                                        "4": "Penalties are usually administered",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "penalties_fair": {
+                                    "question": "To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity, or frequency of the infraction?",
+                                    "information": "Enforcement data or enforcement personnel",
+                                    "guidance": "<p>Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offense</p><p>Penalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.</p><p>Are there different penalties depending on the size/scale of the infraction?</p><p>Few is approximately < 50%</p><p>Some is approximately = 50%</p><p>Most is approximately > 50%</p>",
+                                    "answers": {
+                                        "1": "Penalties are fixed and do not change with the nature, severity or frequency of the infraction",
+                                        "2": "Some penalties increase with the nature, severity of frequency of the infraction",
+                                        "3": "Most penalties increase with the nature, severity of frequency of the infraction",
+                                        "4": "All penalties increase with the nature, severity of frequency of the infraction",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "monitoring_used": {
+                                    "question": "Are systems in place to monitor and document ecological conditions in the MA?",
+                                    "information": "Knowledge of the state of monitoring systems and practices to collect and track ecological conditions in the MA",
+                                    "guidance": "This question is less about capacity and resources for monitoring ecological conditions in the MA and more aimed at whether existing capacity is being used and implemented effectively.",
+                                    "answers": {
+                                        "1": "Systems do not exist or are not effective in monitoring and documenting ecological conditions in the MA",
+                                        "2": "Systems exist but are only partially effective in monitoring and documenting ecological conditions in the MA",
+                                        "3": "Systems exist and are moderately effective in monitoring and documenting ecological conditions in the MA",
+                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting ecological conditions in the MA",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "unknown": {
+                                    "question": "Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?",
+                                    "information": "Knowledge of the state of monitoring systems and practices to collect and track social conditions in the MA",
+                                    "guidance": "This question is less about capacity and resources for monitoring social conditions in the MA and more aimed at whether existing capacity is being used and implemented effectively.",
+                                    "answers": {
+                                        "1": "Systems do not exist or are not effective in monitoring and documenting monitor conditions in the MA",
+                                        "2": "Systems exist but are only partially effective in monitoring and documenting monitor conditions in the MA",
+                                        "3": "Systems exist and are moderately effective in monitoring and documenting monitor conditions in the MA",
+                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting monitor conditions in the MA",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "climatechange_monitored": {
+                                    "question": "Are systems in place to monitor and document impacts of climate change?",
+                                    "information": "Knowledge of the state of monitoring systems and practices to collect and track impacts of climate change",
+                                    "guidance": " This question is less about capacity and resources for monitoring climate change impacts and more aimed at whether existing capacity is being used effectively.",
+                                    "answers": {
+                                        "1": "Systems do not exist or are not effective in monitoring and documenting impacts of climate change",
+                                        "2": "Systems exist but are only partially effective in monitoring and documenting impacts of climate change",
+                                        "3": "Systems exist and are moderately effective in monitoring and documenting impacts of climate change",
+                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting impacts of climate change",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "multiple_knowledge_social": {
+                                    "question": " Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?",
+                                    "information": "<p>Different knowledge types include:</p><p>local and indigenous knowledge (often integrated through engaging IPLC in decision-making processes),</p><p>experiential knowledge, and </p><p>various types of conventional scientific knowledge (CSK) (including information from the natural and social sciences and from MA social and ecological monitoring )</p><p>Diversity here refers to more than two different types of knowledge</p>",
+                                    "guidance": "Relevant knowledge holders are individuals or groups who represent different knowledge systems",
+                                    "answers": {
+                                        "1": "No, diverse knowledge types are not included in the management/decision making",
+                                        "2": "Some diverse knowledge types are included in limited ways into the management /decision-making, but not reflected or reflected in limited ways in the plan outputs",
+                                        "3": "Diverse knowledge types are included in the management/decision making and plan outputs, but incorporation was not guided by relevant knowledge holders.",
+                                        "4": "Yes, diverse knowledge types included in the management/decision-making and plan outputs, and inclusion is guided by knowledge holders",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "multiple_knowledge_integrated": {
+                                    "question": "Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?",
+                                    "information": "<p>Knowledge of monitoring, research and evaluation that occurs at the MA</p>.<p>Knowledge of decision-making procedures (e.g., who is involved and how) for the MA</p>",
+                                    "guidance": "<p>Routinely incorporated – there are established or clearly recognizable procedures for actively including the results of monitoring, research or evaluation when making management decisions.</p><p>Major weaknesses - the weaknesses identified prevent their proper integration into management decision making.</p><p>Some weaknesses – results are incorporated but more could be done to improve their efficacy.</p>",
+                                    "answers": {
+                                        "1": "The results of monitoring, research and evaluation are not routinely incorporated into management decisions",
+                                        "2": "The results of monitoring, research and evaluation are routinely incorporated into management decisions but there are major weaknesses",
+                                        "3": "The results of monitoring, research and evaluation are routinely incorporated into management decisions but there are some weaknesses",
+                                        "4": "The results of monitoring, research and evaluation are routinely incorporated into management decisions",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "climatechange_managed": {
+                                    "question": "Is the MA consciously managed to adapt to climate change?",
+                                    "information": "Knowledge of management adaptations to anticipated climate change, and how these are already being implemented. ",
+                                    "guidance": "Adaptation to climate change means reducing the vulnerability of the MA to actual or anticipated climate change effects",
+                                    "answers": {
+                                        "1": "There have been no efforts or plans to consider adaptation to climate change management",
+                                        "2": "Some initial thought has taken place about current and anticipated impacts of climate change, but this has yet to be translated into management plans",
+                                        "3": "Limited plans have been drawn up about how to adapt management to current and anticipated climate change, which may or may not be implemented",
+                                        "4": "Detailed plans have been drawn up about how to adapt management to current and anticipated climate change, and these are already being implemented",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "rights_governance": {
+                                    "question": "Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?",
+                                    "information": "",
+                                    "guidance": "",
+                                    "answers": {
+                                        "1": "Rights to harvest or benefit from resources are not related to contributions to governance",
+                                        "2": "Rights to harvest or benefit from resources are slightly related to contributions to governance",
+                                        "3": "Rights to harvest or benefit from resources are somewhat related to contributions to governance",
+                                        "4": "Rights to harvest or benefit from resources are directly related to contributions to governance",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "management_levels_cohesive": {
+                                    "question": "Do different levels of management exist within the MA that function as a coordinated unit?",
+                                    "information": "The different management authorities (formal and informal) that may exist within the MA and the degree of synergy across them.",
+                                    "guidance": "<p>Levels – Formal or informal. There may be overlapping management jurisdictions of different government departments.</p> <p>Coordinated means united and working together effectively.</p><p>Major weaknesses – the weaknesses identified prevent the proper management of the MA</p><p>Some weaknesses – the weaknesses identified have room for improvement, but they are able to operate to fulfill the basic management requirements</p>",
+                                    "answers": {
+                                        "1": "Different levels of management zones exist but they do not function as a cohesive unit",
+                                        "2": "Different levels of management zones exist but there are major weaknesses in their cohesion",
+                                        "3": "Different levels of management zones exist but there are some weaknesses in their cohesion",
+                                        "4": "Different levels of management zones exist and function as a cohesive unit",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "regulations_exist": {
+                                    "question": "Are appropriate regulations in place to control natural resource-based activities in the MA?",
+                                    "information": "<p>Access to (formal) information covering the regulations e.g., a management plan or legal/ government documents.</p><p>Access to informal/undocumented information covering customary regulations associated with local stakeholders/communities, this could be verbal rules </p>",
+                                    "guidance": "<p>This question concerns conservation regulations, including local, national, and internal regulations.</p> <p>Appropriate means regulations that promote sustainable use without disadvantaging local communities/stakeholders </p><p>Major weaknesses: This could be in the scope of regulations e.g., key activities are not regulated, or in instances where the regulations exist, they severely disadvantage local communities/stakeholders.</p><p>Some weaknesses: The key activities are covered by regulations, but more activities need to be included and/or there are issues with local communities/stakeholders being disadvantaged.</p><p>Good basis: This could mean that the regulations cover all the natural based activities considered necessary to promote sustainable use without causing disadvantages to local communities/stakeholders.</p>",
+                                    "answers": {
+                                        "1": "There are no regulations for controlling natural resource based activities in the MA.",
+                                        "2": "Regulations for controlling natural resource based activities in the MA area exist but there are major weaknesses",
+                                        "3": "Regulations for controlling natural resource based activities in the MA area exist but there are some weaknesses",
+                                        "4": "Regulations for controlling inappropriate natural resource based activities in the MA exist and provide a good basis for management",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "management_plan": {
+                                    "question": "Is there a management plan for the MA and is it being implemented?",
+                                    "information": "Access to the most recent (even if out of date) management plan or personnel responsible for writing one",
+                                    "guidance": "<p>The definition of a management plan can be broadened to include any formal or informal process that outlines how the MA is to be managed. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response.</p><p>Note for tool reviewers: in online system, opportunity will exist to append current management plan</p>",
+                                    "answers": {
+                                        "1": "There is no management plan for the MA.",
+                                        "2": "A management plan is being prepared OR a management plan has been prepared but is not being implemented.",
+                                        "3": "A management plan exists but it is only being partially implemented because of funding constraints or other problems",
+                                        "4": "A management plan exists and is being fully implemented",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "boundary_known": {
+                                    "question": "Is the boundary known by all local stakeholder groups?",
+                                    "information": "<p>Knowledge of the range of stakeholders. If a stakeholder analysis or engagement plan exists this would make a good reference document for the range of stakeholders.</p> <p>Access to legal documents or management plans with information on the boundary of the MA</p><p>Access to informal information sources that may hold knowledge on boundaries (e.g., local historians)</p>",
+                                    "guidance": "<p>Note:  Answer this question for what you understand the boundary to be.</p><p>For a boundary to be known by a stakeholder group at least one individual must be able to provide the information verbally/written or the information must be accessible to the group upon enquiry (e.g., through existing records).</p><p>Few is approximately < 50%</p> <p>Some is approximately = 50%</p><p>Most is approximately > 50%</p> ",
+                                    "answers": {
+                                        "1": "The boundary of the MA is not known by relevant stakeholder groups",
+                                        "2": "The boundary of the MA is known for a few stakeholder groups",
+                                        "3": "The boundary of the MA is known by some stakeholder groups",
+                                        "4": "The boundary of the MA is known by most of the relevant stakeholder groups",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "boundary_defined": {
+                                    "question": "Is the boundary clearly defined?",
+                                    "information": "<p>Access to legal documents or management plans with information on the boundary of the MA</p><p>Access to local key informant or site level personnel who is able to identify demarcations.</p>",
+                                    "guidance": "<p>Note: This question relates to what you understand the boundary to be.</p><p>Demarcations can be man-made (e.g., signs, buoys) or landscape features. They may or may not be physically present in the landscape but may exist in maps in management plans/ documents or local accounts.</p><p>Major deficiencies may be interpreted as some areas of the MA/CA that are not demarcated or insecure demarcations.</p><p>Some deficiencies may be interpreted as needing some adjustments, but these do not interfere with its ability to function adequately.</p><p>Well demarcated may be interpreted as requiring no further improvements.</p>",
+                                    "answers": {
+                                        "1": "The boundary of the MA is not demarcated",
+                                        "2": "The boundary of the MA is demarcated but there are major deficiencies",
+                                        "3": "The boundary of the MA is demarcated but there are some deficiencies",
+                                        "4": "The boundary of the MA is well demarcated",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "outcomes_achieved_ecological": {
+                                    "question": "To what extent do you feel the ecological outcomes are being achieved?",
+                                    "information": "<p>Documents such as a management plan that list the ecological objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)</p><p>Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the ecology of the system.</p>",
+                                    "guidance": "<p>Are not – there are no notable ecological outcomes.</p><<p>Partially – there are some outcomes, but they are not sufficient to meet the ecological objectives</p><<p>Mostly - outcomes are sufficient enough to meet some key ecological objectives</p><<p>Fully – outcomes sufficient to meet all key ecological objectives.</p><",
+                                    "answers": {
+                                        "1": "The ecological outcomes are not being achieved",
+                                        "2": "The ecological outcomes are only partially being achieved",
+                                        "3": "The ecological outcomes are mostly being achieved",
+                                        "4": "The ecological outcomes are fully being achieved",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "outcomes_achieved_social": {
+                                    "question": "To what extent do you feel the social outcomes are being achieved?",
+                                    "information": "<p>Documents such as a management plan that list the social objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)</p><p>Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the socioeconomic characteristics of the system</p>",
+                                    "guidance": "<p>Social outcomes include social impacts on human well-being and livelihoods of local stakeholders</p><p>Are not – there are no notable social outcomes.</p><p>Partially - outcomes are not sufficient to meet the social objectives.</p><p>Mostly - outcomes are sufficient enough to meet some key social objectives.</p>",
+                                    "answers": {
+                                        "1": "The social outcomes are not being achieved",
+                                        "2": "The social outcomes are only partially being achieved",
+                                        "3": "The social outcomes are mostly being achieved",
+                                        "4": "The social outcomes are fully being achieved",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "management_capacity": {
+                                    "question": "Do those responsible for managing the MA (e.g., staff, community associations, management groups) have the capacity to enforce the rules and regulations?",
+                                    "information": "<p>Access to the site manager/local authority/duty-bearers,  or equivalent to ask about enforcement capacity</p> <p>Knowledge of the (informal/formal) rules and regulations</p><p>Any available databases/documents on enforcement targets, evaluation or monitoring</p>",
+                                    "guidance": "<p>Note: rules and regulations may not always be legal laws, and may include local rules and norms</p><p>Capacity: This is related to a person’s ability: it could mean the necessary skill set(s) required for enforcement; it could also refer to level of authority e.g., legal capacity</p><p>Resources: This could mean technical equipment, time, money, skills</p><p>Partial enforcement: means that there are major weaknesses that need to be addressed to ensure the proper functioning of the MA</p><p>Acceptable enforcement can mean that a minimum level of enforcement exists which allows the functioning of the MA but there are some gaps/weaknesses that need to be addressed to ensure its sustainability into the future</p><p>Fully enforce means that an adequate level of enforcement exists which allows the functioning of the MA and there are no significant (negligible) gaps/weaknesses and cannot affect its sustainability into the future.</p>",
+                                    "answers": {
+                                        "1": "Those with responsibility for managing the MA do not have the capacity to enforce the rules and regulations",
+                                        "2": "Those with responsibility for managing the MA can only partially enforce the rules and regulations",
+                                        "3": "Those with responsibility for managing the MA can adequately enforce the rules and regulations",
+                                        "4": "Those with responsibility for managing the MA can fully enforce the rules and regulations",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "sufficient_staff": {
+                                    "question": "Are there enough people employed or engaged to manage the MA?",
+                                    "information": "<p>Information on the number of people involved in MA management</p><p>Proposal/management plan for the site to understand the priority management activities</p><p>Informal communication with those involved in management activities may help to assess what is enough</p>",
+                                    "guidance": "The question is in reference to all people who manage the MA on a regular basis or are employed as staff.",
+                                    "answers": {
+                                        "1": "No one is employed or engaged to manage the MA",
+                                        "2": "Numbers of people employed or engaged to manage the MA are insufficient to carry out management activities effectively ",
+                                        "3": "Numbers of people employed or engaged to manage the MA are below optimum level necessary to carry out management activities effectively",
+                                        "4": "Numbers people employed or engaged  to manage the MA are sufficient to carry out management activities effectively",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "staff_capacity": {
+                                    "question": "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
+                                    "information": "<p>Proposal/management plan for the MA to understand the management activities</p><p>Knowledge of the full range of personnel involved in MA management</p>",
+                                    "guidance": "Personnel includes all individuals responsible for MA management activities",
+                                    "answers": {
+                                        "1": "Those responsible for managing the MA lack the skills needed for MA management objectives",
+                                        "2": "Training and skills of those responsible for managing the MA are low relative to the management objectives of the MA",
+                                        "3": "Training and skills of those responsible for managing the MA are adequate but could be further improved to fully achieve the objectives of management.",
+                                        "4": "Training and skills of those responsible for managing the MA are aligned with the management objectives of the MA",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "sufficient_budget": {
+                                    "question": "Is the current budget or funds used to support MA activities sufficient?",
+                                    "information": "<p>MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently.</p><p>Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines how the financial or management objectives on the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).</p>",
+                                    "guidance": "If the budget information is not available please select “Do not know”",
+                                    "answers": {
+                                        "1": "There is no budget or funds for management of the MA",
+                                        "2": "The available budget or funds is inadequate for basic management needs and presents a serious constraint to the capacity to manage the MA",
+                                        "3": "The available budget or funds is acceptable but could be further improved to fully achieve effective management",
+                                        "4": "The available budget or funds is sufficient and meets the full management needs of the MA",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "budget_secure": {
+                                    "question": "Is the budget or funding secure?",
+                                    "information": "<p>MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently (see previous question on budget sufficiency)</p><p>Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines the financial or management objectives of the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).</p>",
+                                    "guidance": "Secure budget  = 5 years or longer",
+                                    "answers": {
+                                        "1": "There is no secure budget or funding for the MA and management is wholly reliant on outside or highly variable funding",
+                                        "2": "There is very little secure budget or funding, and the protected area could not function adequately without outside funding",
+                                        "3": "There is a reasonably secure core budget or funding for regular operation of the MA, but many innovations and initiatives are reliant on outside funding",
+                                        "4": "There is a secure budget or funding for the MA and its management needs",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "sufficient_equipment": {
+                                    "question": "Is the equipment sufficient for management needs?",
+                                    "information": "<p>Proposal/management plan for the site to understand the management needs</p><p>Inventory of equipment/facilities accessible to the site</p><p>Site level equipment facilities</p><p>Knowledge of equipment maintenance requirements</p>",
+                                    "guidance": "Consider to what extent the available equipment and facilities are adequately maintained.",
+                                    "answers": {
+                                        "1": "There is little or no equipment and facilities for management needs ",
+                                        "2": "There are some equipment and facilities, but these are inadequate for most management needs",
+                                        "3": "There are equipment and facilities, but still some gaps that constrain management",
+                                        "4": "There are adequate equipment and facilities",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "multiple_knowledge_ecological": {
+                                    "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the ecological impacts of the MA?",
+                                    "information": "",
+                                    "guidance": "",
+                                    "answers": {
+                                        "1": "Poor",
+                                        "2": "Average",
+                                        "3": "Good",
+                                        "4": "Excellent",
+                                        "5": "Don't know"
+                                    }
+                                },
+                                "climatechange_assessed": {
+                                    "question": "Have observed and anticipated changes in climate, and their associated impacts on people and nature, been assessed, understood, and documented?",
+                                    "information": "",
+                                    "guidance": "",
+                                    "answers": {
+                                        "1": "Poor",
+                                        "2": "Average",
+                                        "3": "Good",
+                                        "4": "Excellent",
+                                        "5": "Don't know"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "collaborators": {
+                        "tabButton": "Collaborators",
+                        "title": "Collaborators",
+                        "description": "Collaborators are people who are involved in completing this assessment or need access that is not available to other users",
+                        "addCollaboratorButton": "Add collaborator",
+                        "table": {
+                            "name": "Name",
+                            "admin": "Admin",
+                            "contributor": "Contributor",
+                            "observer": "Observer"
+                        },
+                        "popups": {
+                            "delete": {
+                                "title": "Deleting Collaborator",
+                                "confirmationTitle": "Are you sure?",
+                                "confirmationDescription": "By clicking yes you will remove the collaborator making them unable to access the assessment."
+                            },
+                            "add": {
+                                "title": "Add Collaborator",
+                                "description": "Select collaborator below and specify the level of access that you would like them to have.",
+                                "selectCollaboratorTitle": "Select collaborator",
+                                "selectCollaboratorLabel": "Collaborator",
+                                "roleAndPermissions": "Select role & permissions",
+                                "submit": "Add collaborator",
+                                "help": "Didn’t you find your Collaborator?",
+                                "roles": {
+                                    "admin": {
+                                        "name": "Admin",
+                                        "permission1": "Edit the Assessment data",
+                                        "permission2": "Edit Survey data",
+                                        "permission3": "Edit MA location",
+                                        "permission4": "Add/Edit Admin, Contributors & Observers",
+                                        "permission5": "Delete the Assessment",
+                                        "permission6": "Publish & Unpublish Assessment"
+                                    },
+                                    "contributor": {
+                                        "name": "Contributor",
+                                        "permission1": "Edit the Survey data",
+                                        "permission2": "Edit the MA location data",
+                                        "permission3": "View the Assessment data",
+                                        "permission4": "View the Survey data",
+                                        "permission5": "View the MA location"
+                                    },
+                                    "observer": {
+                                        "name": "Observer",
+                                        "permission1": "View the Assessment data",
+                                        "permission2": "View the Survey data",
+                                        "permission3": "View the MA location"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "publish": {
+                        "tabButton": "Publish...",
+                        "title": "Publish",
+                        "whatHappen": "What will happen when you publish",
+                        "whatHappen1": "You mark your Assessment as Finished",
+                        "whatHappen2": "You will not be able to edit the Survey Data",
+                        "whatHappen3": "You will not be able to edit the Assessment Data",
+                        "whatHappen4": "You could still edit or change the Managed Area",
+                        "whatHappen5": "You could still add collaborators",
+                        "whatHappen6": "You could still unpublish the Assessment",
+                        "publishButton": "Publish Assessment",
+                        "warning": "Warning!!",
+                        "warningText": "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment",
+                        "popup": {
+                            "title": "Publish Assessment",
+                            "confirmationTitle": "Are you sure you want to publish your assessment?",
+                            "confirmationDescription": "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
+                        },
+                        "statuses": {
+                            "public": {
+                                "name": "Public",
+                                "paragraph1": "You make available your Assessment to the public",
+                                "paragraph2": "Will appear as aggregated data in insights and maps"
+                            },
+                            "private": {
+                                "name": "Private",
+                                "paragraph1": "The Assessment will only be visible to you and to your collaborators",
+                                "paragraph2": "Will appear as aggregated data in insights and maps"
+                            }
+                        }
+                    }
+                }
+            },
+            "roles": {
+                "admin": "Admin",
+                "contributor": "Contributor",
+                "observer": "Observer"
+            },
+            "statuses": {
+                "90": "Open",
+                "10": "Published"
+            },
+            "personResponsibleRoles": {
+                "10": "Non-profit staff",
+                "20": "Management area manager",
+                "30": "Management area personnel",
+                "40": "Government personnel",
+                "50": "Members of local community or indigenous committees",
+                "60": "Community leaders or representatives"
+            },
+            "collectionMethods": {
+                "10": "Through knowledge of the person(s) responsible for filling out assessment",
+                "20": "Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents",
+                "30": "Through semi-structured interviews and focus group"
+            }
+        },
+        "faqs": {
+            "header": {
+                "title": "FAQs"
+            },
+            "survey": {
+                "data": {
+                    "questions": {
+                        "items": {
+                            "main_purpose": {
+                                "question": "What is the main purpose of the tool?",
+                                "information": "<p>The main purpose of this tool is to help conservationists working in managed and conserved areas to easily track components critical to the success of area-based conservation over time, and share this information with decision makers and conservation supporters working at national or international scales.</p><p>The tool was specifically designed knowing many conservation practitioners (1) are familiar with and use an adopted version for the METT in their work and (2) face budget and time constraints for conservation monitoring and evaluation, and finally, (3) have minimal capacity to identify metrics that are (a) grounded in social science (b) useful for local adaptive management while also being (c) relevant for global research and decision-making.</p><p>Because of this, this low-cost and simple assessment has been developed collaboratively with members of the conservation community over two years, building on existing tools and resources (see reference list), and focuses on covering a range of management and governance issues considered important to success rather than going in-depth in one particular area.</p>",
+                                "detail":""
+                            },
+                            "decisions": {
+                                "question": "What kinds of decisions will this tool help inform?",
+                                "information": "<p>For project and site managers, information from the assessment can help identify where a more in-depth assessment of management, governance, equity, or climate is needed in a particular site. When resources for more comprehensive governance or management assessments are not available, insights from this tool help project teams make decisions about what activities to carry out. </p><p> For regional and international decision-makers, the tool can help provide a broad overview of perceived status and trends in management and governance and help identify areas for future regional-level research. Decision-makers might come from different types of organizations, and may include NGO or government staff, consultants, and researchers. </p>",
+                                "detail":""
+                            },
+                            "fill_out": {
+                                "question": "Who should fill out this tool?",
+                                "information": "<p>The target user (who will input information in the tool) is a conservation stakeholder who is knowledgeable about the management and governance of a managed or conserved area. Oftentimes this person will be a staff member at a conservation NGO but may also be natural resource users and other individuals from Indigenous Peoples, local communities, and private entities. </p><p> The target user should consult other stakeholders or resources when filling out the tool. If the target user has more time and resources, it’s possible to use this tool as a focus group instrument, and invite a relevant group of stakeholders to review and answer questions together. You can download the facilitation guide here with tips on research ethics and facilitation should you choose to take this path. </p>",
+                                "detail":"Consultation is a prerequisite to success! Consulting with a range of stakeholders will increase the legitimacy of the tool. It is also a quick and easy way to include stakeholders in part of the planning and decision-making process for the MA."
+                            },
+                            "mett":{
+                                "question":"I already use the METT (or a modified version of the METT) in my projects - do I have to stop and use this tool now?",
+                                "information":"<p>Not necessarily. This tool was designed to mirror the METT as closely as possible, so data collected using the METT could inform inputs into the Elinor tool and database. For example, if you use the METT for evalu <strong>conservation and management</strong>: </p><p> 1. Clearly defined rights and decision making; 2. Inclusive and equitable management; 3. Transparency and accountability; 4. Monitoring and enforcement; 5. Clear and congruent regulations; 6. Resource boundaries; 7. Perceived outcomes; 8. Capacity for adaptive management; 9. Operational capacity. </p><p> The data system will also allow tool users to append relevant documents like management plans and geospatial files to facilitate knowledge management and sharing across spatial scales and access decision-friendly visualizations of site-level data and aggregate data. </p>",
+                                "detail":""
+                            },
+                            "data":{
+                                "question":"How will the data be analysed and presented?",
+                                "information":"<p>The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking. </p>",
+                                "detail":""
+                            },
+                            "collect_data":{
+                                "question":"I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?",
+                                "information":"<p> No! This tool was designed to complement in-depth, field-based data collection. If you currently collect data using field-based surveys or focus groups, you can use the data you already collect to inform the answers to the questions asked in Elinor. Conversely, information gathered using this tool can help you understand what topics require more in-depth field-based surveys. </p>",
+                                "detail":""
+                            },
+                            "things_elinor":{
+                                "question":"What are some things I should keep in mind when I’m making my decision about using Elinor?",
+                                "information":"<p> No one tool does every job. It’s important to remember that: </p><ul class='list-inside list-disc'> <li><strong>This tool does not gather in-depth data.</strong> This tool does not replace the need for working with communities on an in-depth assessment of the issues identified by the tool </li><li><strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed to track indicators commonly recognized as being important for management and governance of coastal managed and conserved areas. It does not measure specific changes in laws and regulations, which may have great impacts on conservation activities in any given place. </li></ul>",
+                                "detail":""
+                            },
+                            "counts":{
+                                "question":"OK, I’m using the tool. How do I decide what 'counts' as a managed or conserved area?",
+                                "information":"<p>This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. </p><p>Therefore, the user of this tool may decide to conduct this assessment on:</p><ul class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area. </li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ul> <p>It is important to specify this decision in the background section of the survey. </p>",
+                                "detail":""
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "methodology": {
+            "title": "Methodology",
+            "mainPurposeTitle": "What is the main purpose of the tool?",
+            "mainPurposeContent": "<p>Here, we’ve listed the background information collected and the 32 questions found in Elinor organized under nine attributes. All questions answered by a score 0-4 and an associated qualitative statement.</p><p>There is no required cadence on which data can be inputted into Elinor: We hope that users of the tool will complete assessments on time frames suitable for their own projects and needs, but expect that assessments could be completed either annually or bi-annually.</p>",
+            "assessment": "Assessment",
+            "backgroundInformation": "Background information",
+            "numberQuestions": "32 questions",
+            "timeframe": "Annually or bi-annually",
+            "backgroundInformationCollected": "Background information collected",
+            "backgroundInformationCollectedContent": "<li>Year of assessment</li><li>Number of people consulted during the assessment and their affiliation</li><li>Name of MA</li><li>Jurisdiction(s) where MA is located (e.g., country, states/provinces)</li><li>Date of formal establishment (if applicable)</li><li>Size of MA (ha)</li><li>Map or spatial file of MA</li><li>Management zones of MA</li><li>MA governance type</li><li>MA objectives</li><li>Name of management authority</li><li>Key stakeholder groups</li><li>  Focal area within MA (if focusing on MA within a broader PA/CA)</li>",
+            "surveyQuestions": "Survey questions",
+            "goToCategory": "Go to category",
+            "questions": {
+                "1": {
+                    "title": "Clearly defined rights and decision making",
+                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
+                    "answers": {
+                        "1": "Do local stakeholders have clearly defined rights to the atural resources found inside the MA?",
+                        "2": "Is there legislation in place to enable resource management by local communities?",
+                        "3": "Are local stakeholders able to exercise their rights to natural resources?",
+                        "4": "Are local stakeholders affected by the rules able to play a role in making changes to the rules?"
+                    }
+                },
+                "2": {
+                    "title": "Clearly defined rights and decision making",
+                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
+                    "answers": {
+                        "1": "Do local stakeholders have clearly defined rights to the atural resources found inside the MA?",
+                        "2": "Is there legislation in place to enable resource management by local communities?",
+                        "3": "Are local stakeholders able to exercise their rights to natural resources?",
+                        "4": "Are local stakeholders affected by the rules able to play a role in making changes to the rules?"
+                    }
+                },
+                "3": {
+                    "title": "Clearly defined rights and decision making",
+                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
+                    "answers": {
+                        "1": "Do local stakeholders have clearly defined rights to the atural resources found inside the MA?",
+                        "2": "Is there legislation in place to enable resource management by local communities?",
+                        "3": "Are local stakeholders able to exercise their rights to natural resources?",
+                        "4": "Are local stakeholders affected by the rules able to play a role in making changes to the rules?"
+                    }
+                }
+            }
+        }
+    },
+    "sidebar": {
+        "minimize": "Minimize"
+    },
+    "popup": {
+        "organization": {
+            "title": "What is your organization or institution?",
+            "placeholder": "Affiliation",
+            "tooltip": "Affiliation tooltip content"
+        }
+    },
+    "default": {
+        "noresults": "No results",
         "yes": "Yes",
         "no": "No",
-        "search": "Search by Managed Area, Country, Admin",
-		"showing": "Showing",
-		"view": "View",
-        "noresults": "No results for this query.",
-        "save": {
-            "button": "Save",
-            "autosave": "Data autosaved a few seconds ago"
-        },
+        "accept": "Accept",
+        "cancel": "Cancel",
         "upload-file": {
             "placeholder": "Drag and drop a PDF file here",
             "buttons": {
                 "select": "Select a file",
                 "clear": "Clear"
             }
-        }
-	},
-	"pages": {
-        "sign-in": {
-			"title": "Sign In",
-			"slug": "sign-in",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			}
-		},
-        "sign-up": {
-			"title": "Create account",
-			"slug": "create-account",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			},
-			"content": {
-				"header": {
-					"title": "Create an account",
-					"subtitle": "Lorem ipsum dolor aemet"
-				},
-				"form": {
-					"inputs": {
-						"email": "E-mail*",
-						"password": "Password*",
-						"name": "Name*",
-						"username": "Username*",
-						"affiliation": "Affiliation*",
-						"contact-details": "Contact details*",
-						"terms-of-service": "I agree with the terms of service*",
-						"submit": "Create an account"
-					},
-					"tooltips": {
-						"affiliation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus.",
-						"contact-details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut rutrum dui. Aenean facilisis malesuada lacus hendrerit consectetur. Nullam eu porttitor lacus."
-					},
-					"feedback": {
-						"progress": "Creating account",
-						"ok": "Your account has been created successfullty",
-						"error": "Oops! Error. Please, try again"
-					}
-				}
-			}
-		},
-		"home": {
-			"title": "Home",
-			"slug": "",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			}
-		},
-		"assessments": {
-			"title": "Assessments",
-			"slug": "assessments",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			},
-            "content": {
-                "header": {
-                    "title": "ASSESSMENTS"
-                },
-                
-                "showing": {
-					"plural": "Assessments",
-					"singular": "Assessment",
-                    "empty": "No Assessments created yet"
-				},
-                "filters": {
-                    "title": "Add filters to assessments"
-                },
-                "assessment": {
-                    "header": {
-                        "year": "Year"
-                    },
-                    "labels": {
-                        "role": "My role",
-                        "year": "Year",
-                        "countries": "Countries"
-                    },
-                    "tabs": {
-                        "info": {
-                            "tab": "Info",
-                            "data": {
-                                "header": {
-                                    "title": "Info"
-                                },
-                                "people-consulted": {
-                                    "title": "People consulted",
-                                    "labels": {
-                                        "manager": "MA manager",
-                                        "ma-personnel": "MA personnel",
-                                        "government-personnel": "Government Personnel",
-                                        "local-members": "Members of local community",
-                                        "leaders": "Community leaders",
-                                        "total": "Total people consulted"
-                                    }
-                                }
-                            }
-                        },
-                        "survey": {
-                            "tab": "The Survey",
-                            "header": {
-                                "title": "The survey"
-                            },
-                            "data": {
-                                "questions": {
-                                    "default": {
-                                        "explanation": "Explanation",
-                                        "answer": "Answer",
-                                        "answer-question": "Answer question",
-                                        "score": "Score",
-                                        "question": "Question",
-                                        "completed": "Completed",
-                                        "out-of": "Out of",
-                                        "select": "Select answer",
-                                        "help": "Need help? See below",
-                                        "edit": "Edit",
-                                        "not-completed": "Not completed",
-                                        "unknown": "Don’t know",
-                                        "back": "Back to resume",
-                                        "prev": "Prev",
-                                        "next": "Next"
-                                    },
-                                    "categories": {
-                                        "rights-decision": "Clearly defined rights and decision making"
-                                    },
-                                    "items": {
-                                        "1": {
-                                            "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "2": {
-                                            "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "3": {
-                                            "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "4": {
-                                            "question": "Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "5": {
-                                            "question": "Is there legislation in place to enable resource management by local communities?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "6": {
-                                            "question": "Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "7": {
-                                            "question": "Are local stakeholders able to exercise their rights to natural resources?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "8": {
-                                            "question": "Is there an effective strategy or guideline for ensuring benefits from the MA are shared equitably among local stakeholders?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "9": {
-                                            "question": "To what extent are local stakeholders affected by the rules able to play a role in making changes to the rules?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "10": {
-                                            "question": "Are those responsible for governance of the MA held to account if they do not perform their role?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "11": {
-                                            "question": "Do local stakeholders receive information from MA authorities in a timely manner?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "12": {
-                                            "question": "To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity or frequency of the offence?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "13": {
-                                            "question": "How often are the penalties for breaking resource use rules administered?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "14": {
-                                            "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the ecological impacts of the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "15": {
-                                            "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the social impacts of the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "16": {
-                                            "question": "Do local stakeholders have access to effective conflict resolution mechanisms?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "17": {
-                                            "question": "Do different levels of management exist within the MA that function as a cohesive unit?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "18": {
-                                            "question": "Do networks exist that develop social relations and support mutual learning among stakeholders?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "19": {
-                                            "question": "Are appropriate regulations in place to control natural resource based activities in the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "20": {
-                                            "question": "Do those responsible for managing the MA (e.g., staff/community associations/ management group) have the capacity to enforce the rules and regulations?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "21": {
-                                            "question": "Is the boundary known by all local stakeholder groups?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "22": {
-                                            "question": "Is the boundary clearly defined?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "23": {
-                                            "question": "Is there a management plan for the MA and is it being implemented?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "24": {
-                                            "question": "To what extent do you feel the ecological outcomes are being achieved?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "25": {
-                                            "question": "To what extent do you feel the social outcomes are being achieved?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "26": {
-                                            "question": "Do those responsible for managing the MA integrate different types of knowledge into management decisions?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "27": {
-                                            "question": "Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "28": {
-                                            "question": "Are there enough people employed or engaged to manage the MA?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "29": {
-                                            "question": "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "30": {
-                                            "question": "Is the current budget or funds used to support MA activities sufficient?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "31": {
-                                            "question": "Is the budget or funding secure?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "32": {
-                                            "question": "Is equipment sufficient for management needs?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "33": {
-                                            "question": "Is information on climate change being used to inform strategies to build resilience to climate change for local stakeholders?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "34": {
-                                            "question": "Is the MA consciously managed to adapt to climate change?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        },
-                                        "35": {
-                                            "question": "Are systems in place to monitor and document impacts of climate change?",
-                                            "answers": {
-                                                "1": "There are no regulations for controlling marine based activities in the MA.",
-                                                "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                                "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                                "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis for management"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "ma": {
-                            "tab": "Edit Management Area"
-                        },
-                        "collaborators": {
-                            "tab": "Collaborators"
-                        },
-                        "publish": {
-                            "tab": "Edit publish settings"
-                        }
-                    }
-                },
-                "assessment-edit": {
-                    "create": {
-                        "title": "New Assessment",
-                        "labels": {
-                            "create": "Create Assessment",
-                            "year": "Select Year",
-                            "name": "Name of assessment"
-                        },
-                        "legends": {
-                            "name": "Criteria for names Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
-                        }
-                    },
-                    "tabs": {
-                        "data": {
-                            "tab": "Assessment data",
-                            "labels": {
-                                "year": "Select Year",
-                                "name": "Name of assessment",
-                                "institution": "Name of institution associated with this Assessment",
-                                "role": "Role of the person responsible to complete this Assessment",
-                                "people": {
-                                    "title": "Number of people consulted",
-                                    "manager": "MA manager",
-                                    "personnel": "MA personnel",
-                                    "government-personnel": "Government Personnel",
-                                    "community-members": "Members of local community / indigenous committees",
-                                    "community-leaders": "Community leaders / reprentatives"
-                                },
-                                "authority": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
-                                "ma-file": "Upload a Managment Plan File"
-                            }
-                        },
-                        "ma": {
-                            "tab": "Managed Area"
-                        },
-                        "survey": {
-                            "tab": "The survey"
-                        },
-                        "collaborators": {
-                            "tab": "Collaborators"
-                        },
-                        "publish": {
-                            "tab": "Prepare for publish"
-                        }
-                    }
-                }
+        },
+        "upload-import-file": {
+            "placeholder": "Drag and drop a zip file here",
+            "buttons": {
+                "select": "Select a file",
+                "clear": "Clear"
             }
-		},
-		"managed-areas": {
-			"title": "Managed Areas",
-			"slug": "managed-areas",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			},
-			"content": {
-				"header": {
-					"title": "MANAGED AREAS"
-				},
-				"create": "Create Managed Area",	
-				"showing": {
-					"plural": "Managed areas",
-					"singular": "Managed area",
-                    "empty": "No Managed Areas created yet"
-				},
-				"ma": {
-					"labels": {
-						"role": "My role",
-						"ha": "Hectareas",
-						"assessments": "Assessments",
-						"countries": "Countries"
-					},
-					"tabs": {
-						"info": {
-							"tab": "Info",
-							"data": {
-								"header": {
-                                    "title": "Info"
-                                },
-                                "labels": {
-                                    "name": "Name of Managment Area",
-                                    "pa-ca-name": "Name of the larger PA/CA this MA is contained",
-                                    "establishment": "Date of formal establishment",
-                                    "size": "Size of Managed Area",
-                                    "pa-ca-name-focal": "What is the name of the larger PA/CA this focal area is contained within?*",
-                                    "management-unit": "This assessment is specific to a particular management unit within a broader protected or conserved area?",
-                                    "management-unit-definition": "Managment unit definition",
-                                    "governance-type": "MA Governance type",
-                                    "authority-name": "Name of managment authority",
-                                    "rights": "The rights of the MA formally recognized at the...",
-                                    "stakeholder-groups": "Key stakeholder groups",
-                                    "support": "The MA management authority receive technical, financial or other types of support from the following groups or organizations",
-                                    "wdpa-id": " ID inthe World Database on Protected Areas (WDPA)",
-                                    "countries": "Countries",
-                                    "provinces": "Provinces",
-                                    "access-level": "Level of access",
-                                    "access-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                },
-								"map": {
-									"header": {
-										"title": "Map or Spatial File of the MA",
-										"subtitle": "Geospatial information lorem ipsum dolor"
-									}
-								},
-                                "zones": {
-                                    "header": {
-                                        "title": "ZONES"
-                                    },
-                                    "labels": {
-                                        "zone-name": "Name of zone",
-                                        "zone-restrictions": "Does this zone restrict any activites or use?",
-                                        "zone-description": "Description and Attributes"
-                                    }
-                                },
-								"assessments": {
-									"header": {
-										"title": "ASSESSMENTS"
-									}
-								}
-							}
-						},
-						"edit": "Edit Managed Area",
-						"collaborators": "Collaborators"
-					}
-				}
-			}
-		},
-		"map": {
-			"title": "Map",
-			"slug": "map",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			}
-		},
-		"users-access": {
-			"title": "Users & Access",
-			"slug": "users-and-access",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			}
-		},
-		"help-guides": {
-			"title": "Help & Guides",
-			"slug": "help-and-guides",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			}
-		},
-		"insights": {
-			"title": "Insights",
-			"slug": "insights",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			}
-		},
-		"welcome": {
-			"title": "Welcome to Elinor",
-			"slug": "welcome",
-			"seo": {
-				"title": "",
-				"description": "",
-				"keywords": "",
-				"og_image": ""
-			},
-			"content": {
-				"header": {
-					"title": "WELCOME TO ELINOR",
-					"subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-				},
-				"assessments": {
-					"header": {
-						"title": "Assessments you have been invited"
-					},
-					"labels": {
-						"role": "Role",
-						"invited-by": "Invited by"
-					}
-				},
-				"ctas": {
-					"header": {
-						"title": "What can I do from here?"
-					},
-					"items": {
-						"create": {
-							"title": "Create an assessment",
-							"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
-							"button": "Create an assessment"
-						},
-						"invite": {
-							"title": "Invite others to join",
-							"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
-							"button": "Invite users"
-						},
-						"help": {
-							"title": "Learn more about how to use create",
-							"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut",
-							"button": "Help & guides"
-						}
-					}
-				}
-			}
-		}
-	}
+        },
+        "upload-mapimage": {
+            "placeholder": "Drag and drop an image file here",
+            "buttons": {
+                "select": "Select a file",
+                "clear": "Clear"
+            }
+        }
+    },
+    "footer": {
+        "faqs": "FAQs",
+        "methodology": "Methodology",
+        "createAccount": "Create Account",
+        "copyright": "© Copyright",
+        "copyrightAfterYear": "Elinor. All rights reserved.",
+        "termsOfUse": "Terms of Use",
+        "privacyPolicy": "Privacy Policy"
+
+    }
 }
