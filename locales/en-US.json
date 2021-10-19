@@ -183,7 +183,7 @@
                             "governanceType": "MA Governance type",
                             "managementAuthority": "Name of management authority",
                             "recognitionLevel": "The rights of the MA formally recognized at the....",
-                            "supportSources": "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
+                            "supportSources": "Which of the following groups or organizations does the MA management authority receive technical, financial or other types of support?",
                             "countries": "MA Countries",
                             "regions": "MA States / Provinces",
                             "zones": {
@@ -282,15 +282,15 @@
                         "labels": {
                             "name": "Name of new managed area*",
                             "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?*",
-                            "containedBy": "Are there other Managment Areas related to this MA?",
+                            "containedBy": "Are there other Management Areas related to this MA?",
                             "dateEstablished": "Date of formal establishment",
                             "reportedSize": "Size of MA",
                             "managementAuthority": "Name of management authority",
                             "governanceType": "MA Governance type",
                             "objectives": "What are the objectives of this MA?",
-                            "recognitionLevel": "Are the rights of the MA formally recognized at the level ...",
+                            "recognitionLevel": "At what level are the rights of the MA formally recognized?",
                             "stakeholderGroups": "Stakeholder groups",
-                            "supportSources": "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
+                            "supportSources": "Which of the following groups or organizations does the MA management authority receive technical, financial or other types of support?",
                             "countries": "MA Countries",
                             "regions": "MA States / Provinces",
                             "zones": "Does this MA have zones?",
@@ -299,7 +299,7 @@
                             "zoneLevel": "Select the level of access the best describes this zone",
                             "zoneDescription": "Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and people who can and canot access it",
                             "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
-                            "protectedAreaWdpaIdHelpLink": "Click here to search Protected Planet",
+                            "protectedAreaWdpaIdHelpLink": "Click here to search",
                             "geospatialSources": "Please list the source of the geospatial information"
                         },
                         "map": {
