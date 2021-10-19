@@ -1,0 +1,66 @@
+//badge
+.elinor__badge {
+    @apply mb-8 transition hover:bg-grayy-badge;
+    .header {
+        @apply flex items-center justify-between border-b border-grayy-border pb-7 mb-5;
+        span {
+            @apply block;
+            &.title {
+                @apply mb-2 text-grayy-lighter;
+            }
+            &.subtitle {
+                @apply text-[20px];
+            }
+        }
+    }
+    .sublist {
+        @apply flex items-center md:flex-wrap;
+        li {
+            @apply flex flex-col mr-10 md:mb-3 sm:mr-auto;
+
+            &:not(.role):not(.avatar){
+                @apply md:flex-auto md:w-2/12 sm:w-full;
+            }
+
+            &.role{
+                @apply md:flex-auto md:w-10/12 sm:w-full;
+            }
+
+            span {
+                &.label {
+                    @apply mb-2 text-[14px] text-grayy-lighter;
+                }
+            }
+            &.owner {
+                span {
+                    &.label {
+                        @apply text-[16px];
+                    }
+                    &.data {
+                        top: -2px;
+                    }
+                }
+            }
+            &.avatar {
+                @apply mr-3;
+            }
+            &.view {
+               @apply flex-1 items-end mr-0;
+            }
+        }
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+    &.elinor__badge--empty {
+        header {
+            @apply border-0 mb-0 pb-0;
+            span {
+                &.title {
+                    @apply mb-0;
+                }
+            }
+        }
+    }
+
+}

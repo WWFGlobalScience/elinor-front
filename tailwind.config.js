@@ -14,13 +14,13 @@ module.exports = {
     darkMode: false,
     theme: {
         screens: {
-            '3xl': {'max': '1680px'},
-            '2xl': {'max': '1366px'},
-            'xl': {'max': '1280px'},
-            'lg': {'max': '1024px'},
-            'md': {'max': '768px'},
-            'sm': {'max': '640px'},
-            'xs': {'max': '375px'},
+            '3xl': { 'max': '1680px' },
+            '2xl': { 'max': '1366px' },
+            'xl': { 'max': '1280px' },
+            'lg': { 'max': '1024px' },
+            'md': { 'max': '768px' },
+            'sm': { 'max': '640px' },
+            'xs': { 'max': '375px' },
         },
         container: {
             padding: {
@@ -34,9 +34,15 @@ module.exports = {
         extend: {
             colors: {
                 turqy: {
-                    DEFAULT: '#359E98',
-                    lighter: '#EDF6F6',
-                    darker: '#2E8D88'
+                    DEFAULT: '#43A0BD',
+                    lighter: '#EDF4F6',
+                    middle:  '#BDDADE',
+                    darker: '#3A90AB',
+                    border: '#43A0BD',
+                },
+                yellowy:{
+                    DEFAULT:'#F2994A',
+                    lighter:'#EABA5C'
                 },
                 grayy: {
                     DEFAULT: '#585858',
@@ -45,11 +51,18 @@ module.exports = {
                     badge: 'rgba(0, 0, 0, .02)'
                 },
                 redy: {
-                    DEFAULT: '#F37871'
+                    DEFAULT: '#F37871',
+                    lighter:'#EA5C65'
+                },
+                bluy:{
+                    DEFAULT:'#5CD0EA'
                 }
             },
             fontFamily: {
-                'montserrat': [ 'Montserrat', 'sans-serif' ]
+                'montserrat': ['Montserrat', 'sans-serif']
+            },
+            height:{
+                '2px':'2px'
             },
             width: {
                 '3xl': '1680px',
@@ -59,6 +72,8 @@ module.exports = {
                 'md': '768px',
                 'sm': '640px',
                 'xs': '375px',
+                '2px': '2px',
+                '90' : '90vw'
             },
             maxWidth: {
                 '3xl': '1680px',
@@ -69,6 +84,17 @@ module.exports = {
                 'sm': '640px',
                 'xs': '375px',
             },
+            maxHeight:{
+                '75screen' : '75vh'
+            },
+            fontSize: {
+                'small': '0.625rem',
+                'medium': '1.375rem',
+                'huge':'2.5rem',
+            },
+            borderRadius:{
+                'huge': '1.25rem'
+            }
         },
     },
     variants: {
@@ -79,34 +105,33 @@ module.exports = {
     plugins: [
         plugin(function ({ addUtilities, theme }) {
             const customUtilities = {
-              '.center-v': {
-                position: 'absolute',
-                top: '50%',
-                transform: 'translateY(-50%)'
-              },
-              '.center-h': {
-                position: 'absolute',
-                left: '50%',
-                transform: 'translateX(-50%)'
-              },
-              '.center-both': {
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)'
-              },
-              '.border-radius--50': {
-                borderRadius: '50%'
-              },
-              '.border-radius--40': {
-                borderRadius: '40px'
-              },
-              '.border-radius--20': {
-                borderRadius: '20px'
-              },
+                '.center-v': {
+                    position: 'absolute',
+                    top: '50%',
+                    transform: 'translateY(-50%)'
+                },
+                '.center-h': {
+                    position: 'absolute',
+                    left: '50%',
+                    transform: 'translateX(-50%)'
+                },
+                '.center-both': {
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)'
+                },
+                '.border-radius--50': {
+                    borderRadius: '50%'
+                },
+                '.border-radius--40': {
+                    borderRadius: '40px'
+                },
+                '.border-radius--20': {
+                    borderRadius: '20px'
+                },
             }
-            addUtilities( customUtilities )
+            addUtilities(customUtilities)
         })
     ],
 }
-  

@@ -1,24 +1,19 @@
 export const state = () => ({
     notifications: {
-        active: true,
-        success: true,
-        text: '' 
+        active: false,
+        text: 'default.error.text',
+        button: 'default.error.button'
     }
 })
 
 export const mutations = {
-    notificationsState( state, { text, success } ) {
+    notificationsState( state ) {
         state.notifications.active = !state.notifications.active
-        state.notifications.success = success
-        state.notifications.text = text
     }
 }
 
 export const actions = {
-    notificationsState( state, { text, success } ) {
-        state.commit( 'notificationsState', { 
-            text: text,
-            success: success
-        })
+    notificationsState( state ) {
+        state.commit( 'notificationsState' )
     }
 }

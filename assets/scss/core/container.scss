@@ -1,5 +1,5 @@
 .container {
-    @apply w-full px-32 2xl:px-14;
+    @apply w-full px-32 2xl:px-14 sm:px-4;
 }
 .container--2xl {
     @apply w-2xl max-w-2xl px-9 mx-auto 2xl:w-full;
@@ -24,4 +24,14 @@
 }
 .container--turqy-lighter {
     @apply bg-turqy-lighter;
+}
+
+.container-lg--responsive {
+    @apply w-8/12 mx-auto 2xl:w-10/12 sm:w-11/12;
+}
+
+.container{
+    .container-lg--responsive{
+        @apply w-10/12 mx-auto 2xl:w-11/12;
+    }
 }

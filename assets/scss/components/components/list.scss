@@ -1,0 +1,96 @@
+//list
+.list-inside{
+    @apply pl-5 relative;
+    li{
+        &::before{
+            content: "";
+            @apply absolute -left-4 top-2 w-1 h-1 bg-grayy;
+        }
+    }
+    &.list-disc {
+        li{
+            &::before{
+                @apply rounded-full;
+            }
+        }
+    }
+    &.list--small{
+        li{
+            @apply text-sm leading-7 text-grayy;
+        }
+    }
+    &.list--light{
+        li{
+            @apply text-xs leading-6 text-grayy-lighter;
+            &::before{
+                content: "";
+                @apply bg-grayy-lighter -left-2 w-2px h-2px;
+            }
+        }
+    }
+}
+
+//survey list
+
+.elinor__survey-list {
+    @apply mt-10;
+    p{
+        @apply mb-0
+    }
+    .elinor__survey-question {
+        @apply flex flex-wrap justify-between mb-8;
+        .question {
+            @apply text-[20px] leading-[30px] font-bold;
+        }
+        .txt {
+            @apply flex items-center text-[12px] text-grayy-lighter mb-2;
+            &.txt--explanation {
+                @apply mt-8;
+            }
+            .txt__mark {
+                @apply w-[12px] h-[12px] bg-turqy border-radius--50 mr-2;
+            }
+        }
+        .answer {
+            @apply leading-[26px];
+        }
+        .left {
+            @apply w-1/2 pr-8 sm:w-full;
+        }
+        .right {
+            @apply w-1/2 border-l border-grayy-border pl-8 sm:w-full sm:border-l-0 sm:border-t sm:pt-8 sm:pl-0 sm:mt-8;
+        }
+        &.is--uncomplete {
+            .txt {
+                .txt__mark {
+                    @apply bg-grayy-border
+                }
+            }
+        }
+        .uncompleted {
+            @apply flex flex-col;
+        }
+        .txt__uncomplete {
+            @apply text-redy;
+        }
+        .btn--uncomplete {
+            @apply mt-8 self-start;
+        }
+    }
+    &.elinor__survey-list--row{
+        .left{
+            @apply flex items-start;
+            .txt{
+                @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
+            }
+        }
+        .right{
+            .right__item{
+                @apply flex items-start mb-6;
+                .txt{
+                    @apply w-8 mr-4
+                }
+            }
+        }
+    }
+}
