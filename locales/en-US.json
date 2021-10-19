@@ -13,7 +13,7 @@
             },
             "header": {
                 "aboutLink": "About",
-                "faqsLink": "Faqs",
+                "faqsLink": "FAQs",
                 "methodologyLink": "Methodology",
                 "createAccountLink": "Create Account",
                 "signOut": "Sign Out"
@@ -32,7 +32,7 @@
                 "alerts": {
                     "invalidCredentials": {"title": "Invalid credentials!", "subtitle": "Do not remember the password? Try the forgot password"},
                     "emailVerificationSent": {"title": "Email verification sent!", "subtitle": "You will receive a message to verify your email"},
-                    "emailVerificationRequired": {"title": "Email verification required!", "subtitle": "Have you not received the verification email? If not resend it again"},
+                    "emailVerificationRequired": {"title": "Email verification required!", "subtitle": "Have you not received the verification email? If not resend it"},
                     "passwordChangedSuccessfully": {"title": "Password changed successfully!", "subtitle": "Now you can access with the new password."},
                     "emailVerifiedSuccessfully": {"title": "Email verified successfully!", "subtitle": "Now you can access with your credentials."}
                 },
@@ -64,13 +64,13 @@
                         }
                     },
                     "faqs": {
-                        "title": "FAQ’s",
-                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        "button": "Go to FAQ’s"
+                        "title": "FAQs",
+                        "text": "Are you having trouble using Elinor or would like to learn more about use cases and common applications? Visit the FAQ section to see these common questions answered.",
+                        "button": "Go to FAQs"
                     },
                     "methodology": {
                         "title": "METHODOLOGY",
-                        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "text": "Learn more about how Elinor works and get to understand the structure of the instrument.",
                         "button": "Go to Methodology"
                     }
                 }
@@ -80,7 +80,7 @@
         "auth": {
             "registration": {
                 "title": "CREATE AN ACCOUNT",
-                "subtitle": "Fill all the data to start using Elinor",
+                "subtitle": "Complete the form below to start using Elinor",
                 "inputs": {
                     "email": "Email",
                     "password1": "Password",
@@ -95,24 +95,24 @@
             },
             "forgotPassword": {
                 "title": "FORGOT PASSWORD",
-                "subtitle": "Use your email to recieve a link to reset your password",
+                "subtitle": "Enter your email to recieve a password reset link",
                 "emailInput": "Email",
                 "sendEmailButton": "Send Email",
                 "tryAgainButton": "Try Again",
                 "alerts": {
-                    "forgotPasswordEmailSent": {"title": "Forgot password email sent!", "subtitle": "We have generated a link to reset your password"}
+                    "forgotPasswordEmailSent": {"title": "Forgot password email sent!", "subtitle": "Check your email for password reset link"}
                 }
             },
             "resetPassword": {
                 "title": "RESET PASSWORD",
-                "subtitle": "Fill the password and password verification to change your password",
+                "subtitle": "Enter a new password below",
                 "error": {
                     "title": "Error!",
                     "subtitle": "Problem with your new password"
                 },
                 "password1Input": "Password",
                 "password2Input": "Password confirmation",
-                "changePasswordButton": "Change password"
+                "changePasswordButton": "Reset password"
             }
         },
         "assessments": {
@@ -143,7 +143,7 @@
                             "name": "Name of assessment",
                             "year": ""
                         },
-                        "nameCriteria": "Criteria for names Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+                        "nameCriteria": "Enter a short and easy to remember name such as Tsavo Annual Assessment 2021",
                         "submit": "Create Assessment"
                     }
                 },
@@ -176,10 +176,10 @@
                         "title": "View Assessment",
                         "labels": {
                             "managementAreaName": "Name of Managment Area",
-                            "protectedArea": "Name of the larger PA/CA this MA is contained",
+                            "protectedArea": "Name of the larger PA/CA in which this MA is contained",
                             "dateEstablished": "Date of formal establishment",
                             "reportedSize": "Size of MA",
-                            "containedBy": "Name if the related Managment Area",
+                            "containedBy": "Name of the related Managment Area",
                             "governanceType": "MA Governance type",
                             "managementAuthority": "Name of management authority",
                             "recognitionLevel": "The rights of the MA formally recognized at the....",
@@ -202,7 +202,7 @@
                             "community": "Local community leader",
                             "ngo": "NGO personnel",
                             "academic": "Academic personnel",
-                            "government": "Government Personnel",
+                            "government": "Government personnel",
                             "indigenous": "Indigenous leader",
                             "private": "Private sector personnel",
                             "total": "total consulted"
@@ -215,7 +215,7 @@
                     "collaborators": {
                         "tabButton": "Collaborators",
                         "title": "Collaborators",
-                        "description": "Explanation about collaborators Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+                        "description": "Collaborators are persons that work with you on this assessment or need to have access to the data.",
                         "table": {
                             "name": "Name",
                             "admin": "Admin",
@@ -238,7 +238,7 @@
                             "year": "Select Year*",
                             "name": "Name of assessment*",
                             "organization": "Name of institution associated with this Assessment*",
-                            "personResponsibleRole": "Role of the person responsible to complete this Assessment*",
+                            "personResponsibleRole": "Role of the person responsible for completing this Assessment*",
                             "collectionMethods": "Please choose which option best describes how information for this assessment was collected",
                             "collectionMethodsText": "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
                             "consentGiven": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
@@ -282,7 +282,7 @@
                         "labels": {
                             "name": "Name of new managed area*",
                             "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?*",
-                            "containedBy": "Are there there other Managment Areas related to this?",
+                            "containedBy": "Are there other Managment Areas related to this MA?",
                             "dateEstablished": "Date of formal establishment",
                             "reportedSize": "Size of MA",
                             "managementAuthority": "Name of management authority",
@@ -296,25 +296,25 @@
                             "zones": "Does this MA have zones?",
                             "zonesQuantity": "How many zones does the MA have?",
                             "zoneName": "Name of the zone",
-                            "zoneLevel": "Select the level of access the best describes this zone?",
-                            "zoneDescription": "Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and who can and can't access it?",
-                            "protectedAreaWdpaIdHelp": "WDPA ID can be found at protected planet api.",
-                            "protectedAreaWdpaIdHelpLink": "Click here to search",
+                            "zoneLevel": "Select the level of access the best describes this zone",
+                            "zoneDescription": "Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and people who can and canot access it",
+                            "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
+                            "protectedAreaWdpaIdHelpLink": "Click here to search Protected Planet",
                             "geospatialSources": "Please list the source of the geospatial information"
                         },
                         "map": {
                             "polygonParagraph1": "Indicate the boundaries of the Managed Area",
-                            "polygonParagraph2": "Use the tools over the map to create a Polygon over the Managed Area",
-                            "drawPolygonStartText": "Click over the Map to create a Polygon",
-                            "drawPolygonCloseText": "To Close a Polygon click over a created Point",
-                            "newPolygon": "Create a new Polygon",
-                            "deletePolygon": "Delete selected Polygon",
+                            "polygonParagraph2": "Use the tools over the map to create a Polygon of the Managed Area",
+                            "drawPolygonStartText": "Click over the Map to create a polygon",
+                            "drawPolygonCloseText": "To Close a polygon click over a created Point",
+                            "newPolygon": "Create a new polygon",
+                            "deletePolygon": "Delete selected polygon",
                             "help": "Click over the map to draw a polygon",
                             "area": "Area",
                             "indicateBoundaries": "Indicate the boundaries of the Managed Area",
                             "spatialFile": "Upload spatial area file",
                             "preferredMethod": "PREFERRED METHOD",
-                            "preferredMethodText": "Upload a Spatial file in Shapefile format or GeoJSON",
+                            "preferredMethodText": "Upload a spatial file in Shapefile format or GeoJSON",
                             "spatialFileAndMapImageSeparator": "OR",
                             "imageFile": "Upload map image"
                         },
@@ -322,13 +322,13 @@
                             "spatialFile": {
                                 "title": "Upload Map Area File",
                                 "validatingFileFormat": "Validating file format...",
-                                "fileCorrectlyFormated": "The file is correctly formated",
+                                "fileCorrectlyFormated": "The file is correctly formatted",
                                 "fileCorrectlyFormatedText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-                                "importFileError": "Sorry something is Wrong",
+                                "importFileError": "Sorry something is wrong",
                                 "formatNotSupported": "This format is not supported",
                                 "youCan": "You can",
                                 "tryAgain": "try again",
-                                "help": "<h4>What file to upload?</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis viverra finibus. </p><br><p>Fusce vitae nisi eget nisi varius semper ut sed odio. <a href='https://en.wikipedia.org/wiki/GeoJSON' target='_blank'>Geojson</a> elementum id nunc nec tempor.</p><br><p> Morbi eget vestibulum libero. Morbi consectetur eros massa. </p>"
+                                "help": "<h4>What file to upload?</h4><p>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload.</p>"
                             },
                             "imageFile": {
                                 "title": "Upload Map Image File",
@@ -336,7 +336,7 @@
                                 "gpsCoordinatesTitle": "Indicate GPS coordinates",
                                 "gpsCoordinatesExample": "Latitude , Longitude<br>(e.g 40.741895,-73.989308)",
                                 "dragMapIcon": "You can Drag the icon in the map to select the coordinates",
-                                "help": "<h4>What file to upload?</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis viverra finibus. </p><br><p>Fusce vitae nisi eget nisi varius semper ut sed odio. <a href='https://en.wikipedia.org/wiki/GeoJSON' target='_blank'>Geojson</a> elementum id nunc nec tempor.</p><br><p> Morbi eget vestibulum libero. Morbi consectetur eros massa. </p>"
+                                "help": "<h4>What file to upload?</h4><p>If you do not have a shapefile or GeoJSON format file but have an image map of the managed area you may upload it here and it will be processed manually. </p>"
                             }
                         }
                     },
@@ -813,7 +813,7 @@
                     "collaborators": {
                         "tabButton": "Collaborators",
                         "title": "Collaborators",
-                        "description": "Explanation about collaborators Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+                        "description": "Collaborators are people who are involved in completing this assessment or need access that is not available to other users",
                         "addCollaboratorButton": "Add collaborator",
                         "table": {
                             "name": "Name",
@@ -829,7 +829,7 @@
                             },
                             "add": {
                                 "title": "Add Collaborator",
-                                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
+                                "description": "Select collaborator below and specify the level of access that you would like them to have.",
                                 "selectCollaboratorTitle": "Select collaborator",
                                 "selectCollaboratorLabel": "Collaborator",
                                 "roleAndPermissions": "Select role & permissions",
@@ -864,38 +864,34 @@
                         }
                     },
                     "publish": {
-                        "tabButton": "Prepare for publish",
+                        "tabButton": "Publish...",
                         "title": "Publish",
-                        "whatHappen": "What happen when you publish",
+                        "whatHappen": "What will happen when you publish",
                         "whatHappen1": "You mark your Assessment as Finished",
                         "whatHappen2": "You will not be able to edit the Survey Data",
                         "whatHappen3": "You will not be able to edit the Assessment Data",
-                        "whatHappen4": "You could still edit or change the MAnaged Area",
+                        "whatHappen4": "You could still edit or change the Managed Area",
                         "whatHappen5": "You could still add collaborators",
                         "whatHappen6": "You could still unpublish the Assessment",
                         "publishButton": "Publish Assessment",
                         "warning": "Warning!!",
-                        "warningText": "Once publicated you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment",
+                        "warningText": "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment",
                         "popup": {
                             "title": "Publish Assessment",
                             "confirmationTitle": "Are you sure you want to publish your assessment?",
-                            "confirmationDescription": "Once publicated you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
+                            "confirmationDescription": "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
                         },
                         "statuses": {
                             "public": {
                                 "name": "Public",
-                                "paragraph1": "You make available your Assessment to public users",
-                                "paragraph2": "Will appear as Aggregated data in Insights and maps"
+                                "paragraph1": "You make available your Assessment to the public",
+                                "paragraph2": "Will appear as aggregated data in insights and maps"
                             },
                             "private": {
                                 "name": "Private",
-                                "paragraph1": "The Assessment will only be visible to you and to your Collaborators",
-                                "paragraph2": "Will appear as Aggregated data in insights and maps"
-                            },
-                            "test": {
-                                "name": "Test",
-                                "paragraph1": "Option only available to the superuser",
-                                "paragraph2": "Will not appear as Aggregated data in insights and maps"
+                                "paragraph1": "The Assessment will only be visible to you and to your collaborators",
+                                "paragraph2": "Will appear as aggregated data in insights and maps"
+
                             }
                         }
                     }
@@ -908,7 +904,6 @@
             },
             "statuses": {
                 "90": "Open",
-                "80": "Test",
                 "10": "Published"
             },
             "personResponsibleRoles": {
@@ -927,7 +922,7 @@
         },
         "faqs": {
             "header": {
-                "title": "FAQ's"
+                "title": "FAQs"
             },
             "survey": {
                 "data": {
@@ -940,22 +935,23 @@
                             },
                             "decisions": {
                                 "question": "What kinds of decisions will this tool help inform?",
-                                "information": "<p> For project and site managers, information from the assessment can help identify where a more in-depth assessment of management, governance, equity, or climate is needed in a particular site. When resources for more comprehensive governance or management assessments are not available, insights from this tool help project teams make decisions about what activities to carry out. </p><p> For regional and international decision-makers, the tool can help provide a broad overview of perceived status and trends in management and governance and help identify areas for future regional-level research. Decision-makers might come from different types of organizations, and may include NGO or government staff, consultants, and researchers. </p>",
+                                "information": "<p>For project and site managers, information from the assessment can help identify where a more in-depth assessment of management, governance, equity, or climate is needed in a particular site. When resources for more comprehensive governance or management assessments are not available, insights from this tool help project teams make decisions about what activities to carry out. </p><p> For regional and international decision-makers, the tool can help provide a broad overview of perceived status and trends in management and governance and help identify areas for future regional-level research. Decision-makers might come from different types of organizations, and may include NGO or government staff, consultants, and researchers. </p>",
                                 "detail":""
                             },
                             "fill_out": {
                                 "question": "Who should fill out this tool?",
-                                "information": "<p> The target user (who will input information in the tool) is a conservation stakeholder who is knowledgeable about the management and governance of a managed or conserved area. Oftentimes this person will be a staff member at a conservation NGO but may also be natural resource users and other individuals from Indigenous Peoples, local communities, and private entities. </p><p> The target user should consult other stakeholders or resources when filling out the tool. If the target user has more time and resources, it’s possible to use this tool as a focus group instrument, and invite a relevant group of stakeholders to review and answer questions together. You can download the facilitation guide here with tips on research ethics and facilitation should you choose to take this path. </p>",
+                                "information": "<p>The target user (who will input information in the tool) is a conservation stakeholder who is knowledgeable about the management and governance of a managed or conserved area. Oftentimes this person will be a staff member at a conservation NGO but may also be natural resource users and other individuals from Indigenous Peoples, local communities, and private entities. </p><p> The target user should consult other stakeholders or resources when filling out the tool. If the target user has more time and resources, it’s possible to use this tool as a focus group instrument, and invite a relevant group of stakeholders to review and answer questions together. You can download the facilitation guide here with tips on research ethics and facilitation should you choose to take this path. </p>",
                                 "detail":"Consultation is a prerequisite to success! Consulting with a range of stakeholders will increase the legitimacy of the tool. It is also a quick and easy way to include stakeholders in part of the planning and decision-making process for the MA."
                             },
                             "mett":{
                                 "question":"I already use the METT (or a modified version of the METT) in my projects - do I have to stop and use this tool now?",
-                                "information":"<p> Not necessarily. This tool was designed to mirror the METT as closely as possible, so data collected using the METT could inform inputs into the Elinor tool and database. For example, if you use the METT for evalu <strong>conservation and management</strong>: </p><p> 1. Clearly defined rights and decision making; 2. Inclusive and equitable management; 3. Transparency and accountability; 4. Monitoring and enforcement; 5. Clear and congruent regulations; 6. Resource boundaries; 7. Perceived outcomes; 8. Capacity for adaptive management; 9. Operational capacity. </p><p> The data system will also allow tool users to append relevant documents like management plans and geospatial files to facilitate knowledge management and sharing across spatial scales and access decision-friendly visualizations of site-level data and aggregate data. </p>",
+                                "information":"<p>Not necessarily. This tool was designed to mirror the METT as closely as possible, so data collected using the METT could inform inputs into the Elinor tool and database. For example, if you use the METT for evalu <strong>conservation and management</strong>: </p><p> 1. Clearly defined rights and decision making; 2. Inclusive and equitable management; 3. Transparency and accountability; 4. Monitoring and enforcement; 5. Clear and congruent regulations; 6. Resource boundaries; 7. Perceived outcomes; 8. Capacity for adaptive management; 9. Operational capacity. </p><p> The data system will also allow tool users to append relevant documents like management plans and geospatial files to facilitate knowledge management and sharing across spatial scales and access decision-friendly visualizations of site-level data and aggregate data. </p>",
                                 "detail":""
                             },
                             "data":{
                                 "question":"How will the data be analysed and presented?",
-                                "information":"<p> The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking. </p>",
+                                "information":"<p>The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking. </p>",
+
                                 "detail":""
                             },
                             "collect_data":{
@@ -970,7 +966,9 @@
                             },
                             "counts":{
                                 "question":"OK, I’m using the tool. How do I decide what 'counts' as a managed or conserved area?",
-                                "information":"<p> his depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. </p><p>Therefore, the user of this tool may decide to conduct this assessment on:</p><ul class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area. </li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ul> <p>It is important to specify this decision in the background section of the survey. </p>",
+                                "information":"<p>This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. </p><p>Therefore, the user of this tool may decide to conduct this assessment on:</p><ul class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area. </li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ul> <p>It is important to specify this decision in the background section of the survey. </p>",
+
+
                                 "detail":""
                             }
                         }
