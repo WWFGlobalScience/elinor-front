@@ -195,7 +195,7 @@
                         },
                         "map": {
                             "title": "Map or Spatial File of the MA",
-                            "subtitle": "Geospatial information lorem ipsum dolor"
+                            "subtitle": "Geospatial information"
                         },
                         "people": {
                             "title": "Number of people consulted",
@@ -277,7 +277,7 @@
                             "national": "National level",
                             "national_guide": "Recognized by national government",
                             "international": "International level",
-                            "international_guide": "Is it a valid other effective area-based conservation measures [OECM] that contributes to global targets"
+                            "international_guide": "Is there a valid other effective area-based conservation measures [OECM] that contributes to global targets"
                         },
                         "labels": {
                             "name": "Name of new managed area*",
@@ -296,8 +296,8 @@
                             "zones": "Does this MA have zones?",
                             "zonesQuantity": "How many zones does the MA have?",
                             "zoneName": "Name of the zone",
-                            "zoneLevel": "Select the level of access the best describes this zone",
-                            "zoneDescription": "Describe this zone and it's attributes, including allowable or restricted uses, seasonality, and people who can and canot access it",
+                            "zoneLevel": "Select the level of access that best describes this zone",
+                            "zoneDescription": "Describe this zone and its attributes, including allowable or restricted uses, seasonality, and people who can and cannot access it",
                             "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
                             "protectedAreaWdpaIdHelpLink": "Click here to search",
                             "geospatialSources": "Please list the source of the geospatial information"
@@ -323,7 +323,7 @@
                                 "title": "Upload Map Area File",
                                 "validatingFileFormat": "Validating file format...",
                                 "fileCorrectlyFormated": "The file is correctly formatted",
-                                "fileCorrectlyFormatedText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+                                "fileCorrectlyFormatedText": "Your file has been successfully verified and is ready for upload",
                                 "importFileError": "Sorry something is wrong",
                                 "formatNotSupported": "This format is not supported",
                                 "youCan": "You can",
@@ -376,14 +376,14 @@
                                     }
                                 },
                                 "stakeholder_develop_rules": {
-                                    "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
+                                    "question": "Are there formal or informal mechanisms that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
                                     "information": "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to develop rules for the use of resources within the MA e.g., a management plan/ legislature / key informants with customary knowledge</p>",
                                     "guidance": "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders' level of awareness</p>.<p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders</p>",
                                     "answers": {
                                         "1": "Rights to develop rules for the use of natural resources within the MA are not clearly defined",
-                                        "2": "Some rights to develop rules for the use of natural  resources within the MA are slightly defined",
-                                        "3": "Most to develop rules for the use of natural  resources within the MA somewhat defined",
-                                        "4": "Rights to develop rules for the use of  natural resources within the MA are clearly defined",
+                                        "2": "Rights to develop rules for the use of natural  resources within the MA are slightly defined",
+                                        "3": "Rights to develop rules for the use of natural  resources within the MA are somewhat defined",
+                                        "4": "Rights to develop rules for the use of natural resources within the MA are clearly defined",
                                         "5": "Don't know"
                                     }
                                 },
@@ -392,17 +392,17 @@
                                     "information": "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to exclude other groups from harvesting resources within the MA e.g., a management plan/ legislature / key informants with customary knowledge</p>",
                                     "guidance": "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders' level of awareness</p>.<p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders</p>",
                                     "answers": {
-                                        "1": "There are no regulations for controlling marine based activities in the MA.",
-                                        "2": "Regulations for controlling marine based activities in the MA area exist but there are major weaknesses",
-                                        "3": "Regulations for controlling marine based activities in the MA area exist but there are some weaknesses",
-                                        "4": "Regulations for controlling inappropriate marine based activities in the MA exist and provide a good basis  for management",
+                                        "1": "Rights to exclude other groups from harvesting natural resources within the MA are not clearly defined",
+                                        "2": "Rights to exclude other groups from harvesting natural resources within the MA are slightly defined",
+                                        "3": "Rights to exclude other groups from harvesting natural resources within the MA are somewhat defined",
+                                        "4": "Rights to exclude other groups from harvesting natural resources within the MA are clearly defined",
                                         "5": "Don't know"
                                     }
                                 },
                                 "legislation_exists": {
                                     "question": "Is there legislation in place to enable resource management by local communities?",
                                     "information": "<p>Knowledge of the regional/national legislation and the mechanisms to support its implementation</p>.<p>Local community’s governance needs e.g., ability to restrict access to the MA/CA by outside groups, or enforce local laws concerning use</p>",
-                                    "guidance": "Enable in this context means that there are effective accountability mechanisms in place that support the meaningful implementation of natural resource management by local communities",
+                                    "guidance": "<p>Enable in this context means that there are effective accountability mechanisms in place that support the meaningful implementation of natural resource management by local communities<p>.<p>Accountability mechanisms may include complaints and grievance procedures<p>",
                                     "answers": {
                                         "1": "There is no legislation that enables local stakeholders to develop their own rules governing resources within the MA",
                                         "2": "Legislation enables local stakeholders to develop their own rules governing resources within the MA but there are major issues that need to be resolved",
@@ -414,7 +414,7 @@
                                 "exercise_rights": {
                                     "question": "Are local stakeholders able to exercise their rights to natural resources?",
                                     "information": "<p>The rights to natural resources held by local communities</p>.<p>The sorts of challenges local stakeholders (or socially differentiated groups) have in exercising these rights. Key informants may be a useful source of information to elucidate some of the hidden costs.</p>",
-                                    "guidance": "<p>Exercise – the ability to act to secure one's rights. This ability could be financial, knowledge, social connections, or any other mechanisms required to secure one's rights</p>.<p> Cost – this is the challenge encountered when trying to exercise ones rights. Some examples include limited capacity (financial or knowledge of legal systems) or problems with the system that upholds the rights (such as corrupt legal systems) or ecological barriers preventing physical access to places.</p>",
+                                    "guidance": "<p>Exercise – the ability to act to secure one's rights. This ability could be financial, knowledge, social connections, or any other mechanisms required to secure one's rights</p>.<p> Cost – this is the challenge encountered when trying to exercise one's rights. Some examples include limited capacity (financial or knowledge of legal systems) or problems with the system that upholds the rights (such as corrupt legal systems) or ecological barriers preventing physical access to places.</p>",
                                     "answers": {
                                         "1": "Local stakeholders are not able to exercise their rights to resources",
                                         "2": "Local stakeholders are able to exercise their rights to resources but there are significant costs that severely limit their ability to do so",
@@ -485,7 +485,7 @@
                                 },
                                 "governance_accountable": {
                                     "question": "Are those responsible for governance of the MA held to account if they do not perform their role?",
-                                    "information": "<p>Knowledge of formal or informal accountability mechanisms</p>.<p> For informal bodies and process that are not documented you may wish to ask a key informant.Knowledge of past or present governance issues/challenges and how these have been addressed</p>",
+                                    "information": "<p>Knowledge of formal or informal accountability mechanisms</p>.<p> For informal bodies and processes that are not documented you may wish to ask a key informant.Knowledge of past or present governance issues/challenges and how these have been addressed</p>",
                                     "guidance": "<p>The intent of this question is to understand if there are mechanisms or systems in place that can help ensure that those responsible for managing and governing the MA are carrying out their responsibilities effectively.</p><p>Rarely means that events of accountability are scarce</p><p>Occasionally means there has been at least one instance where governors have been held accountable</p>",
                                     "answers": {
                                         "1": "Nothing happens",
@@ -503,7 +503,7 @@
                                         "1": "Local stakeholders do not receive information from MA authorities",
                                         "2": "Local stakeholders receive information from MA authorities but not in a timely manner",
                                         "3": "Local stakeholders receive information from MA authorities but not always in a timely manner",
-                                        "4": "Local stakeholders  always receive information from MA authorities in a timely manner",
+                                        "4": "Local stakeholders always receive information from MA authorities in a timely manner",
                                         "5": "Don't know"
                                     }
                                 },
@@ -543,7 +543,7 @@
                                         "5": "Don't know"
                                     }
                                 },
-                                "monitoring_used": {
+                                "ecological_monitoring_used": {
                                     "question": "Are systems in place to monitor and document ecological conditions in the MA?",
                                     "information": "Knowledge of the state of monitoring systems and practices to collect and track ecological conditions in the MA",
                                     "guidance": "This question is less about capacity and resources for monitoring ecological conditions in the MA and more aimed at whether existing capacity is being used and implemented effectively.",
@@ -555,15 +555,15 @@
                                         "5": "Don't know"
                                     }
                                 },
-                                "unknown": {
+                                "social_monitoring_used": {
                                     "question": "Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?",
                                     "information": "Knowledge of the state of monitoring systems and practices to collect and track social conditions in the MA",
                                     "guidance": "This question is less about capacity and resources for monitoring social conditions in the MA and more aimed at whether existing capacity is being used and implemented effectively.",
                                     "answers": {
-                                        "1": "Systems do not exist or are not effective in monitoring and documenting monitor conditions in the MA",
-                                        "2": "Systems exist but are only partially effective in monitoring and documenting monitor conditions in the MA",
-                                        "3": "Systems exist and are moderately effective in monitoring and documenting monitor conditions in the MA",
-                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting monitor conditions in the MA",
+                                        "1": "Systems do not exist or are not effective in monitoring and documenting social conditions in the MA",
+                                        "2": "Systems exist but are only partially effective in monitoring and documenting social conditions in the MA",
+                                        "3": "Systems exist and are moderately effective in monitoring and documenting social conditions in the MA",
+                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting social conditions in the MA",
                                         "5": "Don't know"
                                     }
                                 },
@@ -584,10 +584,10 @@
                                     "information": "<p>Different knowledge types include:</p><p>local and indigenous knowledge (often integrated through engaging IPLC in decision-making processes),</p><p>experiential knowledge, and </p><p>various types of conventional scientific knowledge (CSK) (including information from the natural and social sciences and from MA social and ecological monitoring )</p><p>Diversity here refers to more than two different types of knowledge</p>",
                                     "guidance": "Relevant knowledge holders are individuals or groups who represent different knowledge systems",
                                     "answers": {
-                                        "1": "No, diverse knowledge types are not included in the management/decision making",
-                                        "2": "Some diverse knowledge types are included in limited ways into the management /decision-making, but not reflected or reflected in limited ways in the plan outputs",
-                                        "3": "Diverse knowledge types are included in the management/decision making and plan outputs, but incorporation was not guided by relevant knowledge holders.",
-                                        "4": "Yes, diverse knowledge types included in the management/decision-making and plan outputs, and inclusion is guided by knowledge holders",
+                                        "1": "No, diverse knowledge types are not included in management/decision making",
+                                        "2": "Some diverse knowledge types are included in limited ways in management/decision-making, but not reflected or reflected in limited ways in the plan outputs",
+                                        "3": "Diverse knowledge types are included in management/decision making and plan outputs, but incorporation was not guided by relevant knowledge holders.",
+                                        "4": "Yes, diverse knowledge types are included in the management/decision-making and plan outputs, and inclusion is guided by knowledge holders",
                                         "5": "Don't know"
                                     }
                                 },
@@ -654,7 +654,7 @@
                                 "management_plan": {
                                     "question": "Is there a management plan for the MA and is it being implemented?",
                                     "information": "Access to the most recent (even if out of date) management plan or personnel responsible for writing one",
-                                    "guidance": "<p>The definition of a management plan can be broadened to include any formal or informal process that outlines how the MA is to be managed. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response.</p><p>Note for tool reviewers: in online system, opportunity will exist to append current management plan</p>",
+                                    "guidance": "<p>The definition of a management plan can be broadened to include any formal or informal process that outlines how the MA is to be managed. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response.</p>",
                                     "answers": {
                                         "1": "There is no management plan for the MA.",
                                         "2": "A management plan is being prepared OR a management plan has been prepared but is not being implemented.",
@@ -731,7 +731,7 @@
                                         "1": "No one is employed or engaged to manage the MA",
                                         "2": "Numbers of people employed or engaged to manage the MA are insufficient to carry out management activities effectively ",
                                         "3": "Numbers of people employed or engaged to manage the MA are below optimum level necessary to carry out management activities effectively",
-                                        "4": "Numbers people employed or engaged  to manage the MA are sufficient to carry out management activities effectively",
+                                        "4": "Numbers of people employed or engaged to manage the MA are sufficient to carry out management activities effectively",
                                         "5": "Don't know"
                                     }
                                 },
