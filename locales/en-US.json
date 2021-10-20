@@ -165,6 +165,10 @@
                         "reset": "Reset",
                         "apply": "Apply filters"
                     }
+                },
+                "type": {
+                    "own": "Member",
+                    "all": "All"
                 }
             },
             "view": {

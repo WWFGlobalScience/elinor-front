@@ -65,6 +65,7 @@ let progress = {
 export const state = () => ({
     list: [],
     search: null,
+    listType: 'own',
     filters: {management_area_countries: null, status: null, year: null},
     pagination: {
         count: 0,
@@ -252,22 +253,27 @@ export const mutations = {
     },
     resetFilters(state) {
         state.filters = {management_area_countries: null, status: null, year: null};
-    }
+    },
+    setListType(state, value) {
+        state.listType = value;
+    },
 }
 
 export const actions = {
     async fetchAssessments(state) {
-        let params;
+        let params = {};
+
         if(state.state.search) {
-            params = {search: state.state.search};
+            params.search = state.state.search;
         }
 
-        if(Object.keys(state.state.filters).length) {
-            if(!params) params = {};
-            params = {...params, ...state.state.filters};
+        params = {...params, ...state.state.filters};
+        if(this.$auth.loggedIn && state.state.listType === 'own') {
+            params.collaborator = this.$auth.user.id;
         }
+        const notHasParams = Object.keys(params).length === 0
 
-        if(!params) {
+        if(notHasParams) {
             this.dispatch('loader/loaderState', {
                 active: true,
                 text: 'Getting assessments...'
@@ -279,7 +285,7 @@ export const actions = {
             state.commit('setAssessments', response.data)
         })
         .finally(() => {
-            if(!params) {
+            if(notHasParams) {
                 this.dispatch('loader/loaderState', {
                     active: false,
                     text: ''
@@ -495,6 +501,10 @@ export const actions = {
     resetFilters(state) {
         state.commit('resetFilters')
         state.dispatch('popup/popupState', {active: false}, {root: true})
+        state.dispatch('fetchAssessments');
+    },
+    filterAssessmentsBy(state, type) {
+        state.commit('setListType', type);
         state.dispatch('fetchAssessments');
     }
 }
