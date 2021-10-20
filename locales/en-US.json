@@ -782,30 +782,6 @@
                                         "4": "There are adequate equipment and facilities",
                                         "5": "Don't know"
                                     }
-                                },
-                                "multiple_knowledge_ecological": {
-                                    "question": "Do planning and management processes draw on multiple knowledge sources (scientific, experiential, local, and traditional knowledge) for monitoring the ecological impacts of the MA?",
-                                    "information": "",
-                                    "guidance": "",
-                                    "answers": {
-                                        "1": "Poor",
-                                        "2": "Average",
-                                        "3": "Good",
-                                        "4": "Excellent",
-                                        "5": "Don't know"
-                                    }
-                                },
-                                "climatechange_assessed": {
-                                    "question": "Have observed and anticipated changes in climate, and their associated impacts on people and nature, been assessed, understood, and documented?",
-                                    "information": "",
-                                    "guidance": "",
-                                    "answers": {
-                                        "1": "Poor",
-                                        "2": "Average",
-                                        "3": "Good",
-                                        "4": "Excellent",
-                                        "5": "Don't know"
-                                    }
                                 }
                             }
                         }
