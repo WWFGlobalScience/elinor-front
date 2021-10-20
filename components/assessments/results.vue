@@ -1,14 +1,59 @@
 <template>
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
-            <div class="search__results">
-
-                <span>{{ $t('pages.assessments.list.total') }}</span> -
-                <span>{{ assessments.length }}</span>
-                <span
-                    v-if="assessments.length > 1 || assessments.length == 0">{{ $t('pages.assessments.list.totalPlural') }}</span>
-                <span v-if="assessments.length == 1">{{ $t('pages.assessments.list.totalSingular') }}</span>
-
+            <div class="search__results" style="display:flex">
+                <div style="flex: 70%">
+                    <span>{{ $t('pages.assessments.list.total') }}</span> -
+                    <span>{{ assessments.length }}</span>
+                    <span v-if="assessments.length > 1 || assessments.length == 0">{{ $t('pages.assessments.list.totalPlural') }}</span>
+                    <span v-if="assessments.length == 1">{{ $t('pages.assessments.list.totalSingular') }}</span>
+                </div>
+                <div class="form" style="flex: 30%; margin-top: 0" v-if="$auth.loggedIn">
+                    <div class="form__group">
+                        <div class="form__row">
+                            <div class="input input--radios input--radios-question">
+                                <div class="radios__wrap">
+                                    <div class="radio__wrap">
+                                        <div class="radio">
+                                            <input
+                                                type="radio"
+                                                name="assessmentType"
+                                                value="own"
+                                                id="own"
+                                                @change="filterAssessmentsBy($event.target.value)"
+                                                :checked="listType === 'own'"
+                                            />
+                                            <img src="~/assets/img/ico-ok.svg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="own" class="label">
+                                    <span>{{ $t('pages.assessments.list.type.own') }}</span>
+                                </label>
+                            </div>
+                            <div class="input input--radios input--radios-question">
+                                <div class="radios__wrap">
+                                    <div class="radio__wrap">
+                                        <div class="radio">
+                                            <input
+                                                type="radio"
+                                                name="assessmentType"
+                                                value="all"
+                                                id="all"
+                                                @change="filterAssessmentsBy($event.target.value)"
+                                                :checked="listType === 'all'"
+                                            />
+                                            <img src="~/assets/img/ico-ok.svg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="all" class="label">
+                                    <span>{{ $t('pages.assessments.list.type.all') }}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <ul class="ma__results">
                 <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
@@ -58,7 +103,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapActions, mapState} from 'vuex'
 import {isAssessmentObserver, getMyRole, isAssessmentCollaborator} from "~/config/assessment-roles";
 
 export default {
@@ -66,7 +111,8 @@ export default {
     computed: {
         ...mapState({
             assessments: state => state.assessments.list,
-            users: state => state.users.users
+            users: state => state.users.users,
+            listType: state => state.assessments.listType
         })
     },
     methods: {
@@ -75,7 +121,10 @@ export default {
         getMyRole: getMyRole,
         isOpenAssessment(assessment) {
             return this.$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver(this.$auth, assessment)
-        }
+        },
+        ...mapActions({
+            filterAssessmentsBy: 'assessments/filterAssessmentsBy'
+        })
     },
     filters: {
         capitalizeFirstLetter: (value) => {
