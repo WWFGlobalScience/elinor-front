@@ -268,7 +268,7 @@ export const actions = {
 
         params = {...params, ...state.state.filters};
         if(this.$auth.loggedIn && state.state.listType === 'own') {
-            params.collaborator = this.$auth.user.id;
+            params.collaborators = this.$auth.user.id;
         }
         const notHasParams = Object.keys(params).length === 0
 
