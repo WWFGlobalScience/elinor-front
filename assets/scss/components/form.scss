@@ -108,6 +108,38 @@
                         }
                     }
                 }
+                &.input--switch{
+                    .switch__wrap{
+                        @apply flex items-center;
+                        .label{
+                            @apply ml-4 mb-0;
+                        }
+                    }
+                    .switch{
+                        @apply relative inline-block w-12 h-7;
+
+                        input{
+                            @apply opacity-0 w-full h-full absolute z-10;
+
+                            &:checked + .switch__slider{
+                                @apply bg-turqy;
+                            }
+                            &:checked + .switch__slider:before {
+                                transform: translate(1.25rem);
+                              }
+                            &:focus + .switch__slider{
+                                @apply shadow-sm;
+                            }
+                        }
+                        .switch__slider{
+                            @apply absolute cursor-pointer inset-0 bg-grayy-lighter rounded-full transition-all duration-500 ease-in-out;
+                            &::before{
+                                content: "";
+                                @apply absolute  w-5 h-5 left-1 bottom-1 bg-white rounded-full transition-all duration-500 ease-in-out;
+                            }
+                        }
+                    }
+                }
                 &.input--ico {
                     .input__ico {
                         @apply flex items-center center-v right-6;

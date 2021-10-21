@@ -1,14 +1,14 @@
 <template>
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
-            <div class="search__results" style="display:flex">
-                <div style="flex: 70%">
+            <div class="search__results g-grid--3-1-md">
+                <div class="col-span-2">
                     <span>{{ $t('pages.assessments.list.total') }}</span> -
                     <span>{{ assessments.length }}</span>
                     <span v-if="assessments.length > 1 || assessments.length == 0">{{ $t('pages.assessments.list.totalPlural') }}</span>
                     <span v-if="assessments.length == 1">{{ $t('pages.assessments.list.totalSingular') }}</span>
                 </div>
-                <div class="form" style="flex: 30%; margin-top: 0" v-if="$auth.loggedIn">
+                <div class="form form--mt-0 ml-auto w-full" v-if="$auth.loggedIn">
                     <div class="form__group">
                         <div class="form__row">
                             <div class="input input--radios input--radios-question">
