@@ -1034,6 +1034,9 @@
                 "select": "Select a file",
                 "clear": "Clear"
             }
+        },
+        "save": {
+            "autosave": "Data saved"
         }
     },
     "footer": {
