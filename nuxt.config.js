@@ -65,8 +65,8 @@ export default {
                 offset: -70
             }],
         ],
-        'nuxt-vue-multiselect'
-
+        'nuxt-vue-multiselect',
+        '@nuxtjs/google-gtag'
     ],
     auth: {
         strategies: {
@@ -119,5 +119,14 @@ export default {
             )
         }
     },
-    build: {}
+    build: {},
+    'google-gtag': {
+        id: 'G-51J4H4V6HK',
+        config: {
+            anonymize_ip: false,
+            send_page_view: false
+        },
+        debug: false,
+        disableAutoPageTrack: false
+    }
 }
