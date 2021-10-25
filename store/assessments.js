@@ -300,7 +300,7 @@ export const actions = {
 
         this.$axios({
             method: 'get',
-            url: `v1/assessments/${id}`,
+            url: `v1/assessments/${id}/`,
         })
             .then((response) => {
                 const assessment = response.data;
@@ -390,7 +390,7 @@ export const actions = {
         progress.overall_percentage = 0;
 
         //DATA
-        const assessment = (await this.$axios.get('v1/assessments/' + id)).data;
+        const assessment = (await this.$axios.get('v1/assessments/' + id + '/')).data;
         const managementArea = assessment.management_area ? (await this.$axios.get('v1/managementareas/' + assessment.management_area)).data : {};
 
         progress.data.filled = 0;

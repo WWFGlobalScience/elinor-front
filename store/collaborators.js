@@ -97,7 +97,7 @@ export const actions = {
 
         this.$axios({
             method: 'delete',
-            url: 'v1/collaborators/' + id,
+            url: 'v1/collaborators/' + id + '/',
         }).then(response => {
             state.commit('assessments/removeCollaborator', id, {root: true});
             this.dispatch('popup/popupState', {
