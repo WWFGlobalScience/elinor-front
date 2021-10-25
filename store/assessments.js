@@ -23,7 +23,7 @@ let required_fields = {
         'management_authority',
         'name',
         //'polygon',
-        'protected_area',
+        //'protected_area',
         'recognition_level',
         'regions',
         'reported_size',

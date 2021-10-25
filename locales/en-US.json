@@ -285,7 +285,7 @@
                         },
                         "labels": {
                             "name": "Name of new managed area*",
-                            "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?*",
+                            "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?",
                             "containedBy": "Are there other Management Areas related to this MA?",
                             "dateEstablished": "Date of formal establishment",
                             "reportedSize": "Size of MA",
