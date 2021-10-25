@@ -201,7 +201,7 @@ export const actions = {
         state.commit('addZone', response.data);
     },
     async updateZone(state, {form, id}) {
-        let response = await this.$axios.$patch(`v1/managementareazones/${id}`, form)
+        let response = await this.$axios.$patch(`v1/managementareazones/${id}/`, form)
         state.commit('updateZone', response.data);
     },
     async fetchAuthorities(state, search) {
