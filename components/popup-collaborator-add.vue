@@ -1,5 +1,11 @@
 <template>
     <div class="popup__content popup--collaborator-add">
+
+        <div v-if="error" class="bg-red-100 border border-red-400 text-white-700 px-4 py-3 rounded relative mt-5 mb-10"
+             role="alert">
+            <strong class="font-bold">{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.error') }}</strong>
+        </div>
+
         <p class="c-text--base mb-8">
             {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.description') }}
         </p>
@@ -19,10 +25,14 @@
             <div class="form__group">
                 <div class="form__row">
                     <div class="input input--multiselect input--3-4">
-                        <label class="label"> {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.selectCollaboratorLabel') }} </label>
+                        <label class="label">
+                            {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.selectCollaboratorLabel') }}
+                            <span v-if="hasError('non_field_errors')" class="msg msg--error">{{ getError('non_field_errors') }}</span>
+                        </label>
                         <div class="multiselect__wrap">
                             <multiselect
                                 :value="users.id"
+                                :class="{'input--error': hasError('non_field_errors')}"
                                 track-by="id"
                                 label="username"
                                 :options="users"
@@ -43,7 +53,10 @@
                         <input type="hidden" name="user" :value="selectedUser.id"/>
                     </div>
                 </div>
-                <h4 class="c-title--modal mb-6">{{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roleAndPermissions') }}</h4>
+                <h4 class="c-title--modal mb-6">
+                    {{ $t('pages.assessments.edit.tabs.collaborators.popups.add.roleAndPermissions') }}
+                    <span v-if="hasError('role')" class="msg msg--error">{{ getError('role') }}</span>
+                </h4>
                 <div class="form__group g-grid--3-1-md">
                     <div v-if="isAdmin($auth, assessment)" class="form__row">
                         <div class="input input--radios input--radios-question">
@@ -52,6 +65,7 @@
                                     <div class="radio">
                                         <input
                                             type="radio"
+                                            :class="{'input--error': hasError('role')}"
                                             v-model="role"
                                             name="role"
                                             value="70"
@@ -85,6 +99,7 @@
                                             name="role"
                                             value="40"
                                             id="answer-2"
+                                            :class="{'input--error': hasError('role')}"
                                         />
                                         <img src="~/assets/img/ico-ok.svg"/>
                                     </div>
@@ -113,6 +128,7 @@
                                             name="role"
                                             value="10"
                                             id="answer-3"
+                                            :class="{'input--error': hasError('role')}"
                                         />
                                         <img src="~/assets/img/ico-ok.svg"/>
                                     </div>
@@ -188,12 +204,23 @@ export default {
             e.preventDefault();
             this.createCollaborator(e.target);
         },
-        isAdmin: isAssessmentAdmin
+        isAdmin: isAssessmentAdmin,
+        hasError(error) {
+            return !!(this.error && this.error[error]);
+        },
+        getError(error) {
+            let message = this.error && this.error[error];
+            if(message && message.length >= 0) {
+                message = message[0];
+            }
+            return message;
+        }
     },
     computed: {
         ...mapState({
             users: (state) => state.users.users,
             assessment: (state) => state.assessments.assessment,
+            error: (state) => state.collaborators.error,
         }),
     },
 };

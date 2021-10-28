@@ -1,7 +1,8 @@
 import qs from "qs";
 
 export const state = () => ({
-    collaborators: []
+    collaborators: [],
+    error: null
 })
 
 export const mutations = {
@@ -23,6 +24,9 @@ export const mutations = {
             return collaborator;
         });
     },
+    setError(state, payload) {
+        state.error = payload;
+    }
 }
 
 export const actions = {
@@ -42,8 +46,8 @@ export const actions = {
                 state.commit('assessments/addCollaborator', response.data, {root: true});
                 this.dispatch('popup/popupState', {active: false})
             })
-            .catch(error => () => {
-                console.log(error);
+            .catch(error => {
+                state.commit('setError', error.response.data);
             })
             .finally(() => {
 
@@ -64,8 +68,8 @@ export const actions = {
             });
 
             state.commit('setCollaborators', response.data.results)
-        } catch (e) {
-            console.error(e);
+        } catch (error) {
+            state.commit('setError', error.response.data);
         } finally {
             this.dispatch('loader/loaderState', {active: false})
         }
@@ -89,7 +93,7 @@ export const actions = {
                 state.commit('assessments/updateCollaborator', {id: collaborator.id, role}, {root: true});
             })
             .catch(error => () => {
-                console.log(error);
+                state.commit('setError', error.response.data);
             })
             .finally(() => {
                 this.dispatch('loader/loaderState', {active: false})
@@ -106,8 +110,8 @@ export const actions = {
                 state.commit('assessments/removeCollaborator', id, {root: true});
                 this.dispatch('popup/popupState', {active: false})
             })
-            .catch(error => () => {
-                console.log(error);
+            .catch(error => {
+                state.commit('setError', error.response.data);
             })
             .finally(() => {
                 this.dispatch('loader/loaderState', {active: false})

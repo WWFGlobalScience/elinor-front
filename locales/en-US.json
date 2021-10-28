@@ -839,7 +839,8 @@
                                         "permission2": "View the Survey data",
                                         "permission3": "View the MA location"
                                     }
-                                }
+                                },
+                                "error": "Validation error"
                             }
                         }
                     },
