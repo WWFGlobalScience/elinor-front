@@ -73,7 +73,8 @@ export default {
             local: {
                 token: {
                     property: 'key',
-                    type: 'Token'
+                    type: 'Token',
+                    maxAge: 31536000
                 },
                 user: {
                     autoFetch: true,
