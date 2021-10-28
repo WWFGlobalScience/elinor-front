@@ -16,13 +16,12 @@ export const mutations = {
     },
     updateCollaborator(state, payload) {
         const {id, role} = payload;
-        const collaborators = state.collaborators.map((collaborator) => {
+        state.collaborators = state.collaborators.map((collaborator) => {
             if(collaborator.id === id) {
                 collaborator.role = role;
             }
             return collaborator;
         });
-        state.collaborators = collaborators;
     },
 }
 
@@ -40,15 +39,16 @@ export const actions = {
             url: 'v1/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
-            state.commit('assessments/addCollaborator', response.data, {root: true});
-            this.dispatch('popup/popupState', {
-                active: false
+                state.commit('assessments/addCollaborator', response.data, {root: true});
+                this.dispatch('popup/popupState', {active: false})
             })
-            this.dispatch('loader/loaderState', {
-                active: false,
-                text: 'Creating collaborator...'
+            .catch(error => () => {
+                console.log(error);
             })
-        }).catch(error => console.log(error))
+            .finally(() => {
+
+                this.dispatch('loader/loaderState', {active: false})
+            })
     },
 
     async fetchCollaborators(state, assessmentId) {
@@ -64,15 +64,14 @@ export const actions = {
             });
 
             state.commit('setCollaborators', response.data.results)
-
-            this.dispatch('loader/loaderState', {active: false})
         } catch (e) {
             console.error(e);
+        } finally {
+            this.dispatch('loader/loaderState', {active: false})
         }
     },
 
     async updateCollaborator(state, {role, collaborator, assessmentId}) {
-        console.log(role,collaborator);
         this.dispatch('loader/loaderState', {
             active: true,
             text: 'Updating collaborator...'
@@ -87,9 +86,14 @@ export const actions = {
                 user: collaborator.user.id
             }
         }).then(response => {
-            this.dispatch('loader/loaderState', {active: false})
-            state.commit('assessments/updateCollaborator', {id: collaborator.id, role}, {root: true});
-        }).catch(error => console.log(error))
+                state.commit('assessments/updateCollaborator', {id: collaborator.id, role}, {root: true});
+            })
+            .catch(error => () => {
+                console.log(error);
+            })
+            .finally(() => {
+                this.dispatch('loader/loaderState', {active: false})
+            })
     },
 
     async deleteCollaborator(state, id) {
@@ -99,11 +103,14 @@ export const actions = {
             method: 'delete',
             url: 'v1/collaborators/' + id + '/',
         }).then(response => {
-            state.commit('assessments/removeCollaborator', id, {root: true});
-            this.dispatch('popup/popupState', {
-                active: false
+                state.commit('assessments/removeCollaborator', id, {root: true});
+                this.dispatch('popup/popupState', {active: false})
             })
-            this.dispatch('loader/loaderState', {active: false});
-        }).catch(error => console.log(error));
+            .catch(error => () => {
+                console.log(error);
+            })
+            .finally(() => {
+                this.dispatch('loader/loaderState', {active: false})
+            })
     },
 }
