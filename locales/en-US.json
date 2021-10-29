@@ -809,12 +809,12 @@
                             },
                             "add": {
                                 "title": "Add Collaborator",
-                                "description": "Select collaborator below and specify the level of access that you would like them to have.",
+                                "description": "Type the first few characters of the collaborator username then select collaborator below and specify the level of access that you would like them to have. Collaborators must create accounts before you can add them.",
                                 "selectCollaboratorTitle": "Select collaborator",
                                 "selectCollaboratorLabel": "Collaborator",
                                 "roleAndPermissions": "Select role & permissions",
                                 "submit": "Add collaborator",
-                                "help": "Didn’t you find your Collaborator?",
+                                "help": "Didn’t you find your Collaborator? Ask them to create an Elinor account first",
                                 "roles": {
                                     "admin": {
                                         "name": "Admin",
