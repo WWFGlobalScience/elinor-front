@@ -67,6 +67,9 @@
                 }
             }
         }
+        .completed {
+            @apply flex flex-col;
+        }
         .uncompleted {
             @apply flex flex-col;
         }
