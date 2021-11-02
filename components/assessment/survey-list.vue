@@ -16,8 +16,10 @@
                             <span v-if="assessment[ question ] !== 50" v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.answers.${parseInt(assessment[ question ]) / 10}`)"></span>
                             <span v-else>{{ $t( 'pages.assessments.edit.tabs.survey.questions.unknown' ) }}</span>
                         </div>
-                        <div class="txt txt--explanation" v-if="assessment[ question + '_text' ] !== ''">{{ $t( 'pages.assessments.edit.tabs.survey.questions.explanation' ) }}</div>
-                        <div class="answer" v-if="assessment[ question + '_text' ] !== ''" v-html="assessment[ question + '_text' ]"></div>
+                        <template v-if="assessment[ question + '_text' ] !== ''">
+                            <div class="txt txt--explanation">{{ $t( 'pages.assessments.edit.tabs.survey.questions.explanation' ) }}</div>
+                            <div class="answer" v-if="assessment[ question + '_text' ] !== ''" v-html="assessment[ question + '_text' ]"></div>
+                        </template>
                     </div>
                 </div>
             </div>
