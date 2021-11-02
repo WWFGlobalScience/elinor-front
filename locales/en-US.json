@@ -360,6 +360,7 @@
                             "explanation": "Explanation",
                             "notCompleted": "Not completed",
                             "answerQuestionButton": "Answer question",
+                            "editQuestionButton": "Edit question",
                             "selectAnswer": "Select answer",
                             "help": "Need help? See below",
                             "prev": "Prev",
