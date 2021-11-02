@@ -27,7 +27,7 @@ let required_fields = {
         'recognition_level',
         'regions',
         'reported_size',
-        'stakeholder_groups',
+        //'stakeholder_groups',
         'support_sources'
     ],
     survey: survey
