@@ -10,7 +10,7 @@
                 <div class="container--sm">
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.name' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.name' ) }}*</label>
                             <input type="text" name="name" placeholder="Name here" :value="managementArea.name" @change="save('name', $event.target.value)">
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input-1-2 input--date">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.dateEstablished' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.dateEstablished' ) }}*</label>
                             <div class="date__wrap">
                                 <date-picker placeholder="MM/DD/YYYY" format="MM/dd/yyyy" :value="managementArea.date_established" @selected="onDateEstablishmentSelected" />
                                 <div class="date__caret">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.managementAuthority' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.managementAuthority' ) }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     track-by="id"
@@ -88,7 +88,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.governanceType' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.governanceType' ) }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.governance_type"
@@ -109,7 +109,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--pr">
-                            <div class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.objectives' ) }}</div>
+                            <div class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.objectives' ) }}*</div>
                             <textarea name="objectives" placeholder="" @change="save('objectives', $event.target.value)">{{ managementArea.objectives }}</textarea>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.recognitionLevel' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.recognitionLevel' ) }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.recognition_level && managementArea.recognition_level.map(recognitionLevel => {return {id: recognitionLevel, name: $t('pages.assessments.edit.tabs.managementArea.recognitionLevels.' + recognitionLevel) }})"
@@ -166,7 +166,7 @@
                     </div>-->
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.supportSources' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.supportSources' ) }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.support_sources"
@@ -198,7 +198,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.countries' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.countries' ) }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect
                                     :value="managementArea.countries"
@@ -218,7 +218,7 @@
                     </div>
                     <div v-show="managementArea.countries && managementArea.countries.length" class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.regions' ) }}</label>
+                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.regions' ) }}*</label>
                             <div id="geocoder"></div>
                             <div class="section section--tags section--tags-filter">
                                 <ul>
