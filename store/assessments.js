@@ -6,28 +6,27 @@ let required_fields = {
     data: [
         'name',
         'year',
+        'organization',
         'person_responsible_role',
         'count_community',
         'count_academic',
         'count_government',
         'count_private',
         'count_indigenous',
+        'collection_method',
+        'collection_method_text',
         'consent_given',
-        'organization',
-        //'management_plan_file',
+        'consent_given_written'
     ],
     managed_area: [
-        'countries',
-        'date_established',
-        'governance_type',
-        'management_authority',
         'name',
-        //'polygon',
-        //'protected_area',
-        'recognition_level',
+        'countries',
         'regions',
-        'reported_size',
-        //'stakeholder_groups',
+        'date_established',
+        'recognition_level',
+        'governance_type',
+        'objectives',
+        'management_authority',
         'support_sources'
     ],
     survey: survey
@@ -85,126 +84,6 @@ export const state = () => ({
     required_fields: required_fields,
     progress: progress
 })
-
-export const getters = {
-    getPercentage: (state) => {
-        const percentage = {
-            data: 0,
-            survey: 0
-        };
-
-        const sections = [
-            {
-                name: 'data',
-                fields: [
-                    'name',
-                    'status',
-                    'data_policy',
-                    'person_responsible_role',
-                    'year',
-                    'count_community',
-                    'count_academic',
-                    'count_government',
-                    'count_private',
-                    'count_indigenous',
-                    'consent_given',
-                    'management_plan_file',
-                    'organization_id'
-                ]
-            },
-            {
-                name: 'survey',
-                fields: [
-                    'stakeholder_harvest_rights',
-                    'stakeholder_harvest_rights_text',
-                    'stakeholder_develop_rules',
-                    'stakeholder_develop_rules_text',
-                    'stakeholder_exclude_others',
-                    'stakeholder_exclude_others_text',
-                    'legislation_exists',
-                    'legislation_exists_text',
-                    'exercise_rights',
-                    'exercise_rights_text',
-                    'stakeholder_agency',
-                    'stakeholder_agency_text',
-                    'vulnerable_defined_rights',
-                    'vulnerable_defined_rights_text',
-                    'benefits_shared',
-                    'benefits_shared_text',
-                    'supportive_networks',
-                    'supportive_networks_text',
-                    'climatechange_incorporated',
-                    'climatechange_incorporated_text',
-                    'governance_accountable',
-                    'governance_accountable_text',
-                    'timely_information',
-                    'timely_information_text',
-                    'conflict_resolution_access',
-                    'conflict_resolution_access_text',
-                    'penalties_frequency',
-                    'penalties_frequency_text',
-                    'penalties_fair',
-                    'penalties_fair_text',
-                    'ecological_monitoring_used',
-                    'ecological_monitoring_used_text',
-                    'social_monitoring_used',
-                    'social_monitoring_used_text',
-                    'climatechange_monitored',
-                    'climatechange_monitored_text',
-                    'multiple_knowledge_social',
-                    'multiple_knowledge_social_text',
-                    'multiple_knowledge_integrated',
-                    'multiple_knowledge_integrated_text',
-                    'climatechange_managed',
-                    'climatechange_managed_text',
-                    'rights_governance',
-                    'rights_governance_text',
-                    'management_levels_cohesive',
-                    'management_levels_cohesive_text',
-                    'regulations_exist',
-                    'regulations_exist_text',
-                    'management_plan',
-                    'management_plan_text',
-                    'boundary_known',
-                    'boundary_known_text',
-                    'boundary_defined',
-                    'boundary_defined_text',
-                    'outcomes_achieved_ecological',
-                    'outcomes_achieved_ecological_text',
-                    'outcomes_achieved_social',
-                    'outcomes_achieved_social_text',
-                    'management_capacity',
-                    'management_capacity_text',
-                    'sufficient_staff',
-                    'sufficient_staff_text',
-                    'staff_capacity',
-                    'staff_capacity_text',
-                    'sufficient_budget',
-                    'sufficient_budget_text',
-                    'budget_secure',
-                    'budget_secure_text',
-                    'sufficient_equipment',
-                    'sufficient_equipment_text'
-
-                ]
-            }
-        ];
-
-        const assessment = state.assessment;
-
-        for(const section of sections) {
-            let completed = 0;
-            for(const field of section.fields) {
-                if(assessment[field] !== null && assessment[field] !== undefined) {
-                    completed++;
-                }
-            }
-            percentage[section.name] = completed / section.fields.length;
-        }
-
-        return percentage;
-    }
-}
 
 export const mutations = {
     setAssessments(state, payload) {

@@ -10,9 +10,7 @@
                 <div class="container--sm">
                     <div class="form__row">
                         <div class="input input--multiselect">
-                            <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.labels.year')
-                                }}*</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.year') }}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect :value="assessment.year" :options="years" :multiple="false"
                                              :searchable="true" :showLabels="false" :allow-empty="false" open-direction="bottom"
@@ -88,7 +86,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.collectionMethods')}}</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.collectionMethods')}}*</label>
                             <div class="multiselect__wrap">
                                 <multiselect :value="collection_method" :options="collection_methods" label="name"
                                              track-by="id" :multiple="false" :searchable="false" :showLabels="false"
@@ -107,7 +105,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input input--pr">
-                            <div class="label">{{ $t('pages.assessments.edit.tabs.data.labels.collectionMethodsText')}}</div>
+                            <div class="label">{{ $t('pages.assessments.edit.tabs.data.labels.collectionMethodsText')}}*</div>
                             <textarea name="collection_method_text" placeholder="" @change="save('collection_method_text', $event.target.value)">{{ assessment.collection_method_text }}</textarea>
                         </div>
                     </div>
@@ -118,9 +116,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input">
-                            <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.people.title')
-                                }}</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.people.title') }}*</label>
                         </div>
                     </div>
                     <div class="form__row ">
@@ -246,9 +242,7 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--radios">
-                            <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.labels.consentGiven')
-                                }}</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.consentGiven') }}*</label>
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
@@ -267,6 +261,31 @@
                                         <img src="~/assets/img/ico-ok.svg">
                                     </div>
                                     <label for="consentGiven-no" class="label">{{ $t('default.no') }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__row form__row--mt-16">
+                        <div class="input input--radios">
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.consentGivenWritten') }}*</label>
+                            <div class="radios__wrap">
+                                <div class="radio__wrap">
+                                    <div class="radio">
+                                        <input type="radio" name="consent_given_written" id="consentGivenWritten-yes"
+                                               @change="save('consent_given_written', true)"
+                                               :checked="assessment.consent_given_written">
+                                        <img src="~/assets/img/ico-ok.svg">
+                                    </div>
+                                    <label for="consentGivenWritten-yes" class="label">{{ $t('default.yes') }}</label>
+                                </div>
+                                <div class="radio__wrap">
+                                    <div class="radio">
+                                        <input type="radio" name="consent_given_written" id="consentGivenWritten-no"
+                                               @change="save('consent_given_written', false)"
+                                               :checked="!assessment.consent_given_written">
+                                        <img src="~/assets/img/ico-ok.svg">
+                                    </div>
+                                    <label for="consentGivenWritten-no" class="label">{{ $t('default.no') }}</label>
                                 </div>
                             </div>
                         </div>
@@ -357,7 +376,9 @@ export default {
             collection_methods: [
                 {id: 10, name: this.$t('pages.assessments.collectionMethods.10')},
                 {id: 20, name: this.$t('pages.assessments.collectionMethods.20')},
-                {id: 30, name: this.$t('pages.assessments.collectionMethods.30')}
+                {id: 30, name: this.$t('pages.assessments.collectionMethods.30')},
+                {id: 40, name: this.$t('pages.assessments.collectionMethods.40')},
+                {id: 50, name: this.$t('pages.assessments.collectionMethods.50')}
             ],
             counts: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             dropzone: {

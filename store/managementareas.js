@@ -13,46 +13,6 @@ const protectedPlanet = {
     baseUrl: 'https://api.protectedplanet.net',
     token: '76a1742fcede55c1ad277edd9a19c65b'
 }
-export const getters = {
-    getPercentage: (state) => {
-        const managementArea = state.instance;
-        let completed = 0;
-
-        const fields = [
-            'name',
-            'date_established',
-            'recognition_level',
-            'countries',
-            'polygon',
-            'reported_size',
-            'point',
-            'import_file',
-            'map_image',
-            'geospatial_sources',
-            'governance_type_id',
-            'management_authority_id',
-            'protected_area_id'
-        ];
-
-        for (const field of fields) {
-            if (managementArea[field] !== null && managementArea[field] !== undefined) {
-                completed++;
-            }
-        }
-
-        const relations = ['supportsources', 'stakeholdergroups', 'regions']
-
-        for (const relation of relations) {
-            if (managementArea[relation] && managementArea[relation].length > 1) {
-                completed++;
-            }
-        }
-
-        return completed / (fields.length + relations.length);
-        ;
-    }
-}
-
 
 const mapToForeignKeys = (form) => {
     const data = {...form};

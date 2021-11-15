@@ -136,8 +136,8 @@
                     "popup": {
                         "title": "Create Assessment",
                         "labels": {
-                            "name": "Name of assessment*",
-                            "year": "Select Year*"
+                            "name": "Name of assessment",
+                            "year": "Select Year"
                         },
                         "placeholders": {
                             "name": "Name of assessment",
@@ -239,13 +239,14 @@
                         "tabButton": "Assessment data",
                         "title": "Edit Assessment Data",
                         "labels": {
-                            "year": "Select Year*",
-                            "name": "Name of assessment*",
-                            "organization": "Name of institution associated with this Assessment*",
-                            "personResponsibleRole": "Role of the person responsible for completing this Assessment*",
+                            "year": "Select Year",
+                            "name": "Name of assessment",
+                            "organization": "Name of institution associated with this Assessment",
+                            "personResponsibleRole": "Role of the person responsible for completing this Assessment",
                             "collectionMethods": "Please choose which option best describes how information for this assessment was collected",
                             "collectionMethodsText": "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
                             "consentGiven": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
+                            "consentGivenWritten": "Has the governance authority provided written consent?",
                             "managementPlan": "Upload a Management Plan File"
                         },
                         "people": {
@@ -263,7 +264,7 @@
                         "title": "Edit Management Area",
                         "selector": {
                             "title": "Select management area",
-                            "existing": "Select a Management Area*",
+                            "existing": "Select a Management Area",
                             "existingGuide": "You can select an already created Managed Area, or if you don’t find it you can create a new one from here",
                             "orNew": "OR CREATE A NEW ONE",
                             "newButton": "Create New Managed Area"
@@ -284,7 +285,7 @@
                             "international_guide": "Is there a valid other effective area-based conservation measures [OECM] that contributes to global targets"
                         },
                         "labels": {
-                            "name": "Name of new managed area*",
+                            "name": "Name of new managed area",
                             "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?",
                             "containedBy": "Are there other Management Areas related to this MA?",
                             "dateEstablished": "Date of formal establishment",
@@ -899,7 +900,9 @@
             "collectionMethods": {
                 "10": "Through knowledge of the person(s) responsible for filling out assessment",
                 "20": "Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents",
-                "30": "Through semi-structured interviews and focus group"
+                "30": "Through semi-structured interviews and focus group",
+                "40": "A combination of the above",
+                "50": "Other (please provide details below)"
             }
         },
         "faqs": {
