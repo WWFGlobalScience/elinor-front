@@ -289,7 +289,7 @@
                                             <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneLevel' ) }}</label>
                                             <div class="multiselect__wrap">
                                                 <multiselect
-                                                    :value="zones[index] && zones[index].access_level"
+                                                    :value="getZoneAccessLevelValue(zones[index])"
                                                     :options="accessLevels"
                                                     track-by="id"
                                                     label="name"
@@ -443,6 +443,11 @@ export default {
                 this.$store.dispatch('managementareas/setRegion', e.result);
                 this.geocoder.clear();
             });
+        },
+        getZoneAccessLevelValue(zone) {
+            if(zone && zone.access_level) {
+                return this.accessLevels.filter(accessLevel => accessLevel.id === zone.access_level)[0];
+            }
         },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
