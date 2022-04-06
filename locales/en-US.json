@@ -588,7 +588,7 @@
                                 "multiple_knowledge_social": {
                                     "question": " Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?",
                                     "information": "<p>Different knowledge types include:</p><p>local and indigenous knowledge (often integrated through engaging IPLC in decision-making processes),</p><p>experiential knowledge, and </p><p>various types of conventional scientific knowledge (CSK) (including information from the natural and social sciences and from MA social and ecological monitoring )</p><p>Diversity here refers to more than two different types of knowledge</p>",
-                                    "guidance": "Relevant knowledge holders are individuals or groups who represent different knowledge systems",
+                                    "guidance": "Relevant knowledge holders are individuals or groups who represent different knowledge systems, such as traditional, indigenous or local knowledge systems",
                                     "answers": {
                                         "1": "No, diverse knowledge types are not included in management/decision making",
                                         "2": "Some diverse knowledge types are included in limited ways in management/decision-making, but not reflected or reflected in limited ways in the plan outputs",
@@ -623,8 +623,8 @@
                                 },
                                 "rights_governance": {
                                     "question": "Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?",
-                                    "information": "",
-                                    "guidance": "",
+                                    "information": "Knowledge of different stakeholder’s involvement in governance and their rights to acess/benefit from resources",
+                                    "guidance": "This question is about whether or not those involved in governing resources receive any direct benefits as a result of their role in governing the MA",
                                     "answers": {
                                         "1": "Rights to harvest or benefit from resources are not related to contributions to governance",
                                         "2": "Rights to harvest or benefit from resources are slightly related to contributions to governance",
