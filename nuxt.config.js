@@ -102,11 +102,8 @@ export default {
             home: '/assessments'
         }
     },
-    /*axios: {
-        baseUrl: 'https://elinor-dev.eba-3jiy2caq.us-east-1.elasticbeanstalk.com/'
-    },*/
     axios: {
-        baseUrl: 'https://dev-api.elinordata.org/'
+        baseUrl: 'https://api.elinordata.org/'
     },
     router: {
         middleware: ['auth'],
