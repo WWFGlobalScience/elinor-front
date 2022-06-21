@@ -9,16 +9,16 @@ export const mutations = {
 }
 
 export const actions = {
-    async fetchStakeholderGroups(state, search) {
+    async fetchAttributes(state) {
         this.dispatch('loader/loaderState', {
             active: true,
-            text: 'Fetching stake holder groups...'
+            text: 'Fetching attributes...'
         })
 
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v2/stakeholdergroups/?search=' + search
+                url: 'v2/attributes/'
             });
 
             state.commit('setList', response.data.results)

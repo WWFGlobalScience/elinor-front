@@ -276,12 +276,12 @@
                                 </div>
                             </div>
 
-                            <div v-if="numZones > 0" class="multiselect__extra">
-                                <div v-for="(num, index) in numZones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                            <div v-if="managementArea.zones && managementArea.zones.length > 0" class="multiselect__extra">
+                                <div v-for="(zone, index) in managementArea.zones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
                                             <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</label>
-                                            <input type="text" name="name" :placeholder="`${$t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' )} ${index + 1}`" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
+                                            <input type="text" name="name" :placeholder="`${$t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' )} ${index + 1}`" :value="zone.name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
                                     <div class="form__row form__row--mt-8">
@@ -289,7 +289,7 @@
                                             <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneLevel' ) }}</label>
                                             <div class="multiselect__wrap">
                                                 <multiselect
-                                                    :value="getZoneAccessLevelValue(zones[index])"
+                                                    :value="accessLevels.filter(accessLevel => accessLevel.id === zone.access_level)[0]"
                                                     :options="accessLevels"
                                                     track-by="id"
                                                     label="name"
@@ -306,7 +306,7 @@
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--pr">
                                             <div class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneDescription' ) }}</div>
-                                            <textarea name="explanation" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zones[index] && zones[index].description }}</textarea>
+                                            <textarea name="explanation" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zone.description }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -426,9 +426,10 @@ export default {
         onShowZones(value) {
             this.showZones = value;
         },
-        onNumZonesChanged(value) {
-            this.showZones = value > 0;
-            this.numZones = value;
+        onNumZonesChanged(number) {
+            this.showZones = number > 0;
+            this.numZones = number;
+            this.initZones(number);
         },
         onZoneFieldChanged(field, index, value) {
             this.editZoneField({field, index, value})
@@ -444,14 +445,10 @@ export default {
                 this.geocoder.clear();
             });
         },
-        getZoneAccessLevelValue(zone) {
-            if(zone && zone.access_level) {
-                return this.accessLevels.filter(accessLevel => accessLevel.id === zone.access_level)[0];
-            }
-        },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
             createAuthority: 'managementareas/createAuthority',
+            initZones: 'managementareas/initZones',
             editZoneField: 'managementareas/editZoneField',
             removeRegion: 'managementareas/removeRegion',
             protectedAreaByWdpaId: 'managementareas/protectedAreaByWdpaId',

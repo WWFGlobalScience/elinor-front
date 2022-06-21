@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
     name: 'layout-default',
     computed: {
@@ -24,6 +26,14 @@ export default {
         popup() {
             return this.$store.state.popup.popup
         }
+    },
+    methods: {
+        ...mapActions({
+            fetchAttributes: 'attributes/fetchAttributes',
+        })
+    },
+    mounted() {
+        this.fetchAttributes();
     }
 };
 </script>

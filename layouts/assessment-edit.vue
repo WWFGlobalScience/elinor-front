@@ -39,11 +39,13 @@ export default {
     },
     methods: {
         ...mapActions({
-            fetchAssessment: 'assessments/fetchAssessment'
+            fetchAssessment: 'assessments/fetchAssessment',
+            fetchAttributes: 'attributes/fetchAttributes',
         })
     },
     created() {
         this.fetchAssessment( this.id )
+        this.fetchAttributes();
     }
 }
 </script>

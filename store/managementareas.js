@@ -52,7 +52,10 @@ export const mutations = {
         state.list = payload
     },
     setInstance(state, payload) {
-        state.instance = payload
+        state.instance = payload;
+        if(!state.instance.zones) {
+            state.instance.zones = [];
+        }
     },
     setAuthorities(state, payload) {
         state.authorities = payload
@@ -93,23 +96,29 @@ export const mutations = {
     },
     addAuthorityToList(state, authority) {
         state.authorities.push(authority);
+    },
+    addEmptyZone(state) {
+        state.instance.zones.push({name: null, access_level: null, description: null});
+    },
+    removeLastZone(state) {
+        state.instance.zones.pop();
     }
 }
 
 export const actions = {
     async fetchManagementAreas(state, search) {
-        const response = await this.$axios.$get(`v1/managementareas/?search=${search}`)
+        const response = await this.$axios.$get(`v2/managementareas/?search=${search}`)
         const managementAreas = mapCollectionToForm(state, response.results);
         state.commit('setList', managementAreas)
     },
     async fetchManagementArea(state, id) {
-        const response = await this.$axios.$get(`v1/managementareas/${id}/`)
+        const response = await this.$axios.$get(`v2/managementareas/${id}/`)
         const managementArea = mapToForm(state, response)
         state.commit('setInstance', managementArea)
         await state.dispatch('fetchZones', id);
     },
     async createManagementArea(state, {form, assessmentId}) {
-        let response = await this.$axios.$post(`v1/managementareas/`, mapToForeignKeys(form))
+        let response = await this.$axios.$post(`v2/managementareas/`, mapToForeignKeys(form))
         state.dispatch('assessments/editAssessmentField', {
             field: 'management_area',
             value: response.id,
@@ -121,7 +130,7 @@ export const actions = {
         const data = mapToForeignKeys({[field]: value});
         let response = await this.$axios({
             method: 'patch',
-            url: `/v1/managementareas/${id}/`,
+            url: `/v2/managementareas/${id}/`,
             data: {
                 [field]: data[field]
             }
@@ -144,7 +153,7 @@ export const actions = {
         formData.append(field, file,file.name)
         const config = { onUploadProgress, headers: {'Content-Type': 'multipart/form-data'}};
         try {
-            const response = await this.$axios.$patch(`/v1/managementareas/${id}/`, formData, config);
+            const response = await this.$axios.$patch(`/v2/managementareas/${id}/`, formData, config);
             await state.commit('setInstanceField', {field: responseField, value: response[responseField]})
             state.commit('assessments/setLastEdit', {}, {root: true});
         } catch (error) {
@@ -152,20 +161,20 @@ export const actions = {
         }
     },
     async fetchZones(state, id) {
-        let response = await this.$axios.$get(`v1/managementareazones/?management_area=` + id);
+        let response = await this.$axios.$get(`v2/managementareazones/?management_area=` + id);
         state.commit('setZones', response.results)
     },
     async createZone(state, {form, managementAreaId}) {
         form.management_area = managementAreaId;
-        let response = await this.$axios.$post(`v1/managementareazones/`, form)
+        let response = await this.$axios.$post(`v2/managementareazones/`, form)
         state.commit('addZone', response.data);
     },
     async updateZone(state, {form, id}) {
-        let response = await this.$axios.$patch(`v1/managementareazones/${id}/`, form)
+        let response = await this.$axios.$patch(`v2/managementareazones/${id}/`, form)
         state.commit('updateZone', response.data);
     },
     async fetchAuthorities(state, search) {
-        let response = await this.$axios.$get(`v1/managementauthorities/?search=` + search)
+        let response = await this.$axios.$get(`v2/managementauthorities/?search=` + search)
         state.commit('setAuthorities', response.results)
     },
     async onManagementAreaNew(state, assessment) {
@@ -182,7 +191,7 @@ export const actions = {
     async setPolygon(state, polygon) {
         const response = await this.$axios({
             method: 'patch',
-            url: `/v1/managementareas/${state.state.instance.id}/`,
+            url: `/v2/managementareas/${state.state.instance.id}/`,
             data: {polygon}
         });
         state.commit('setPolygon', polygon)
@@ -190,7 +199,7 @@ export const actions = {
     async removePolygon(state) {
         const response = await this.$axios({
             method: 'patch',
-            url: `/v1/managementareas/${state.state.instance.id}/`,
+            url: `/v2/managementareas/${state.state.instance.id}/`,
             data: {polygon: null}
         });
         state.commit('removePolygon')
@@ -198,20 +207,17 @@ export const actions = {
     async editZoneField(state, {field, index, value}) {
         const zone = state.state.zones[index];
         if(zone && zone.id) {
-            const response = await this.$axios({
+            await this.$axios({
                 method: 'patch',
-                url: `/v1/managementareazones/${zone.id}/`,
+                url: `/v2/managementareazones/${zone.id}/`,
                 data: {[field]: value}
             });
-
-            state.commit('setZoneField', {field: 'id', index, value: response.data.id})
-
         } else {
             if(zone && zone.name && zone.access_level) {
                 const data = {...zone, management_area: state.state.instance.id}
                 await this.$axios({
                     method: 'post',
-                    url: `/v1/managementareazones/`,
+                    url: `/v2/managementareazones/`,
                     data
                 });
             }
@@ -227,7 +233,7 @@ export const actions = {
         const name = result.text;
         const regionsResponse = await this.$axios({
             method: 'get',
-            url: `/v1/regions/?search=${name}`
+            url: `/v2/regions/?search=${name}`
         });
 
         const region = regionsResponse.data.results[0];
@@ -236,7 +242,7 @@ export const actions = {
             const country = result.context[0].short_code;
             const createdRegionResponse = await this.$axios({
                 method: 'post',
-                url: `/v1/regions/`,
+                url: `/v2/regions/`,
                 data: {name, country: country.toUpperCase()}
             });
             const createdRegion = createdRegionResponse.data;
@@ -250,7 +256,7 @@ export const actions = {
             regions.push(regionIdToAssociate);
             const response = await this.$axios({
                 method: 'patch',
-                url: `/v1/managementareas/${state.state.instance.id}/`,
+                url: `/v2/managementareas/${state.state.instance.id}/`,
                 data: {regions}
             });
             state.commit('setInstanceField', {field: 'regions', value: response.data.regions})
@@ -260,7 +266,7 @@ export const actions = {
         const regions = state.state.instance.regions.filter(region => region.id !== regionId).map(region => region.id);
         const response = await this.$axios({
             method: 'patch',
-            url: `/v1/managementareas/${state.state.instance.id}/`,
+            url: `/v2/managementareas/${state.state.instance.id}/`,
             data: {regions}
         });
 
@@ -269,7 +275,7 @@ export const actions = {
     async clearProtectedArea(state) {
         await this.$axios({
             method: 'patch',
-            url: `/v1/managementareas/${state.state.instance.id}/`,
+            url: `/v2/managementareas/${state.state.instance.id}/`,
             data: {protected_area: null}
         });
         state.commit('setEditWdpaId', true);
@@ -283,13 +289,13 @@ export const actions = {
 
             const findProtectedAreaResponse = await this.$axios({
                 method: 'get',
-                url: `/v1/protectedareas?name=${protectedPlanetResponse.data.protected_area.name}`
+                url: `/v2/protectedareas?name=${protectedPlanetResponse.data.protected_area.name}`
             });
             let protectedArea;
             if(findProtectedAreaResponse.data.results.length === 0) {
                 const createProtectedAreaResponse = await this.$axios({
                     method: 'post',
-                    url: `/v1/protectedareas/`,
+                    url: `/v2/protectedareas/`,
                     data: {
                         name: protectedPlanetResponse.data.protected_area.name,
                         wdpa_id: wdpaId
@@ -313,11 +319,25 @@ export const actions = {
     async createAuthority(state, name) {
         const response = await this.$axios({
             method: 'post',
-            url: 'v1/managementauthorities/',
+            url: 'v2/managementauthorities/',
             data: { name }
         })
         const authority = response.data;
         state.commit('addAuthorityToList', authority);
         return authority;
     },
+    initZones(state, number) {
+        if(number > state.state.instance.zones.length) {
+            for(let i = 0; i < number - state.state.instance.zones.length; i++) {
+                state.commit('addEmptyZone');
+                console.log('add')
+            }
+        }
+        if (number < state.state.instance.zones.length) {
+            for(let i = 0; i < state.state.instance.zones.length - number; i++) {
+                state.commit('removeLastZone');
+                console.log('rm')
+            }
+        }
+    }
 }

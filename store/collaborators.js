@@ -40,7 +40,7 @@ export const actions = {
 
         this.$axios({
             method: 'post',
-            url: 'v1/collaborators/',
+            url: 'v2/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
                 state.commit('assessments/addCollaborator', response.data, {root: true});
@@ -64,7 +64,7 @@ export const actions = {
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v1/collaborators/?assessment=' + assessmentId,
+                url: 'v2/collaborators/?assessment=' + assessmentId,
             });
 
             state.commit('setCollaborators', response.data.results)
@@ -83,7 +83,7 @@ export const actions = {
 
         this.$axios({
             method: 'put',
-            url: `v1/collaborators/${collaborator.id}/`,
+            url: `v2/collaborators/${collaborator.id}/`,
             data: {
                 role: role,
                 assessment: assessmentId,
@@ -105,7 +105,7 @@ export const actions = {
 
         this.$axios({
             method: 'delete',
-            url: 'v1/collaborators/' + id + '/',
+            url: 'v2/collaborators/' + id + '/',
         }).then(response => {
                 state.commit('assessments/removeCollaborator', id, {root: true});
                 this.dispatch('popup/popupState', {active: false})

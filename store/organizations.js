@@ -18,7 +18,7 @@ export const actions = {
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v1/organizations/?search=' + search,
+                url: 'v2/organizations/?search=' + search,
             });
 
             state.commit('setList', response.data.results)
@@ -29,7 +29,7 @@ export const actions = {
     async createOrganization(state, name) {
         const response = await this.$axios({
             method: 'post',
-            url: 'v1/organizations/',
+            url: 'v2/organizations/',
             data: { name }
         })
         const organization = response.data;
