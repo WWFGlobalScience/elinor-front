@@ -7,7 +7,7 @@
                     <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.information') }}</h3>
                 </header>
                 <ul>
-                    <li v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.information`)"></li>
+                    <li v-html="question.information"></li>
                 </ul>
             </div>
             <div class="elinor__help">
@@ -15,7 +15,7 @@
                     <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.guidance') }}</h3>
                 </header>
                 <ul>
-                    <li v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.guidance`)"></li>
+                    <li v-html="question.guidance"></li>
                 </ul>
             </div>
         </div>
@@ -38,8 +38,10 @@ export default {
             survey: state => state.assessments.survey
         }),
         question() {
-            return this.survey[parseInt(this.qid) - 1];
+            return this.$store.state.surveyquestions.list[this.questionId - 1];
         }
     },
+    mounted() {
+    }
 }
 </script>

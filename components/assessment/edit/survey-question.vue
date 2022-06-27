@@ -15,7 +15,7 @@
                         <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.question' ) }} {{ questionId }} / {{ survey.length }}</span>
                     </div>
                     <div class="question__title">
-                        {{ $t( `pages.assessments.edit.tabs.survey.questions.items.${question}.question` ) }}
+                        {{ question.text }}
                     </div>
                 </div>
             </div>
@@ -34,26 +34,28 @@
                 </header>
                 <form class="form" refs="editAssessmentSurvey">
                     <div class="form__group">
-                        <div v-for="(answer, index) in [10,20,30,40,50]" class="form__row">
+                        <div v-for="(score, index) in [10, 20, 30, 40, 50]" class="form__row">
                             <div class="input input--radios input--radios-question">
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                         <div class="radio">
-                                            <input type="radio" name="answer" :id="'answer-' + answer" :value="answer" @change="save(answer)" :checked="assessment[question] === answer">
+                                            <input type="radio" name="answer" :id="'answer-' + score" :value="score"
+                                                   @change="save(score)"
+                                                   :checked="assessment[question.key] === score">
                                             <img src="~/assets/img/ico-ok.svg">
                                         </div>
                                     </div>
                                 </div>
-                                <label :for="'answer-'+ answer" class="label">
+                                <label :for="'answer-'+ score" class="label">
                                     <span></span>
-                                    <span v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.answers.${index + 1}` )"></span>
+                                    <span>{{ getAnswerText(score, questionId) }}</span>
                                 </label>
                             </div>
                         </div>
                         <div class="form__row form__row--mt-16">
                             <div class="input input--pr">
                                 <div class="label">{{ $t( `pages.assessments.edit.tabs.survey.questions.explanation`) }}</div>
-                                <textarea name="explanation" @change="saveExplanation($event.target.value)">{{ assessment[question + '_text'] }}</textarea>
+                                <textarea name="explanation" @change="saveExplanation($event.target.value)">{{ assessment[question.key + '_text'] }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -85,13 +87,15 @@
 
 <script>
 import {mapActions, mapState} from 'vuex'
+
 export default {
     name: 'assessment-edit-survey-question',
     props: ['qid'],
     data() {
         return {
             questionId: parseInt( this.qid ),
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            question: null
         }
     },
     computed: {
@@ -100,7 +104,17 @@ export default {
             survey: state => state.assessments.survey
         }),
         question() {
-            return this.survey[parseInt(this.qid) - 1];
+            let question = this.$store.state.surveyquestions.list[this.questionId - 1];
+            console.log(this.questionId, this.qid)
+            if (!question) {
+                this.$store.dispatch('surveyquestions/fetchSurveyQuestions').then(() => {
+                    console.log(this.$store.state.surveyquestions, this.$store.state.surveyquestions.list, this.$store.state.surveyquestions.list[this.questionId - 1]);
+                    question =  this.$store.state.surveyquestions.list[this.questionId - 1];
+                        console.log(question);
+                    }
+                )
+            }
+            return question;
         }
     },
     methods: {
@@ -108,13 +122,27 @@ export default {
             editAssessmentField: 'assessments/editAssessmentField'
         }),
         save(value) {
-            const field = this.question;
-            this.editAssessmentField( {field, value, id: this.assessment.id});
+            const field = this.question.key;
+            this.editAssessmentField({field, value, id: this.assessment.id});
         },
         saveExplanation(value) {
-            const field = this.question + '_text';
-            this.editAssessmentField( {field, value, id: this.assessment.id});
-        }
+            const field = this.question.key + '_text';
+            this.editAssessmentField({field, value, id: this.assessment.id});
+        },
+        getAnswerText(score, index) {
+            switch (score) {
+                case 10:
+                    return this.question["poor_20"];
+                case 20:
+                    return this.question["average_30"];
+                case 30:
+                    return this.question["good_40"];
+                case 40:
+                    return this.question["excellent_50"];
+                case 50:
+                    return this.question["dontknow_10"];
+            }
+        },
     }
 }
 </script>

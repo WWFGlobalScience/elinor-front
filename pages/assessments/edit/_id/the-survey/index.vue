@@ -7,8 +7,12 @@
 
 <script>
 export default {
-    name: 'assessnent-survey',
+    name: 'assessment-survey',
     layout: 'assessment-edit',
+   mounted() {
+       console.log("test")
+        this.$store.dispatch('surveyquestions/fetchSurveyQuestions');
+    }
 }
 
 </script>

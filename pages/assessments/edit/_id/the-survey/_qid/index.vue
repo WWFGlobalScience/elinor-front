@@ -1,7 +1,7 @@
 <template>
     <section class="section section--assesment-edit-survey-question section--mt-0">
         <assessment-edit-survey-question-navigator :assessment="assessment" :id="id"></assessment-edit-survey-question-navigator>
-        <assessment-edit-survey-question :assessment="assessment" :question="question" :qid="qid" :id="id"></assessment-edit-survey-question>
+        <assessment-edit-survey-question :assessment="assessment" :qid="qid" :id="id"></assessment-edit-survey-question>
         <assessment-edit-survey-question-help :qid="qid" ></assessment-edit-survey-question-help>
     </section>
 </template>
@@ -24,9 +24,6 @@ export default {
             assessment: state => state.assessments.assessment,
             survey: state => state.assessments.survey
         }),
-        question() {
-            return this.survey[ this.qid - 1 ]
-        }
     }
 }
 
