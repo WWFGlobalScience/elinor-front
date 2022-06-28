@@ -1,5 +1,7 @@
 import qs from 'qs'
 
+let survey = ['stakeholder_harvest_rights','stakeholder_develop_rules','stakeholder_exclude_others','legislation_exists','exercise_rights','stakeholder_agency','vulnerable_defined_rights','benefits_shared','supportive_networks','climatechange_incorporated','governance_accountable','timely_information','conflict_resolution_access','penalties_frequency','penalties_fair','ecological_monitoring_used','social_monitoring_used','climatechange_monitored','multiple_knowledge_social','multiple_knowledge_integrated','climatechange_managed','rights_governance','management_levels_cohesive','regulations_exist','management_plan','boundary_known','boundary_defined','outcomes_achieved_ecological','outcomes_achieved_social','management_capacity','sufficient_staff','staff_capacity','sufficient_budget','budget_secure','sufficient_equipment'];
+
 let required_fields = {
     data: [
         'name',
@@ -78,7 +80,8 @@ export const state = () => ({
         percent: 0
     },
     required_fields: required_fields,
-    progress: progress
+    progress: progress,
+    survey
 })
 
 export const mutations = {
