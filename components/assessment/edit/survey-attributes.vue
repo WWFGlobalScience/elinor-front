@@ -6,7 +6,7 @@
                     <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
                 </header>
                 <div class="elinor__survey-attribute-group">
-                    <h2 class="uppercase">Attributes</h2>
+                    <h2 class="title-up uppercase">Attributes</h2>
                     <ul class="elinor__survey-attribute-gird">
                         <li class="elinor__survey-attribute-item item--mandatory">
                             <div class="item-pic">
@@ -47,7 +47,10 @@
                     </ul>
                 </div>
                 <div class="elinor__survey-attribute-group">
-                    <h3>Optional attributes</h3>
+                    <div class="title-border">
+                        <h3 class="title">Optional attributes</h3>
+                    </div>
+                    
                     <p>Unselect the attributtes  that do not correspond with your Assessment</p>
                     <form><!-- opcional -->
                         <ul class="elinor__survey-attribute-gird">
