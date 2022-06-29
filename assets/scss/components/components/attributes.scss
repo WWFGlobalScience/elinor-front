@@ -1,0 +1,54 @@
+//attribute
+
+.elinor__survey-attribute-wrapper {
+    @apply border-b border-grayy-border py-10;
+}
+
+.elinor__survey-attribute-gird {
+    @apply grid grid-cols-2 sm:grid-cols-1;
+    grid-gap: 1.875rem 2.625rem;
+}
+
+
+.elinor__survey-attribute-item {
+    @apply flex transition hover:bg-grayy-badge;
+    .header {
+        @apply flex items-center justify-between border-b border-grayy-border pb-7 mb-5;
+        span {
+            @apply block;
+            &.title {
+                @apply mb-2 text-grayy-lighter;
+            }
+            &.subtitle {
+                @apply text-[20px];
+            }
+        }
+    }
+
+
+    .radio {
+        @apply w-[22px] h-[22px] border border-turqy border-solid border-radius--50;
+        input {
+            @apply w-[22px] h-[22px] m-0 p-0 opacity-0 cursor-pointer;
+        }
+        img {
+            @apply w-[22px] center-both z-10 pointer-events-none ml-[2px] transition opacity-0;
+        }
+        input:checked+ img {
+            @apply opacity-100;
+        }
+    }
+    
+
+    &.elinor__badge--empty {
+        header {
+            @apply border-0 mb-0 pb-0;
+            span {
+                &.title {
+                    @apply mb-0;
+                }
+            }
+        }
+    }
+
+}

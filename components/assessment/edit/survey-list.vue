@@ -1,9 +1,9 @@
 <template>
     <section class="section section--assessment-survey-list">
         <div class="container">
-            <header>
+            <!-- <header>
                 <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
-            </header>
+            </header> -->
             <div class="elinor__survey-list">
                 <div v-for="(question, index) in survey" :id="`question-${ index + 1 }`" :class="['elinor__survey-question', 'ui-rounded-border', { 'is--uncomplete': assessment[question] === null }]">
                     <div class="left">
