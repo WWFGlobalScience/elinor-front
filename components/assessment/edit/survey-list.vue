@@ -31,6 +31,21 @@
                     <p>Short Descipttion Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
 
+                <div class="elinor__survey-question ui-rounded-border is--inactive">
+                    <div class="left">
+                        <div class="txt">
+                            <span class="txt__mark"></span> Question 4 / 35
+                        </div> 
+                        <div class="question">Is the boundary clearly defined?*</div>
+                    </div>
+                    <div class="right">
+                        <div class="q-msg">
+                            <p class="txt__inactive">To activate this question, you must activate the attribute</p>
+                        </div>
+
+                    </div>
+                </div>
+
 
                 <div class="title-border">
                     <h3 class="title uppercase">Resource boundaries</h3>                  

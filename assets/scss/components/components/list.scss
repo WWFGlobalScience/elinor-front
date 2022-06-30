@@ -60,6 +60,7 @@
         .right {
             @apply w-1/2 border-l border-grayy-border pl-8 sm:w-full sm:border-l-0 sm:border-t sm:pt-8 sm:pl-0 sm:mt-8;
         }
+        &.is--inactive,
         &.is--uncomplete {
             .txt {
                 .txt__mark {
@@ -76,8 +77,14 @@
         .txt__uncomplete {
             @apply text-redy;
         }
+        .txt__inactive {
+            @apply text-grayy-lighter;
+        }
         .btn--uncomplete {
             @apply mt-8 self-start;
+        }
+        & + .title-border {
+            @apply mt-16;
         }
     }
     &.elinor__survey-list--row{
