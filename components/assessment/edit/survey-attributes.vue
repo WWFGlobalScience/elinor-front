@@ -1,5 +1,5 @@
 <template>
-    <section class="section section--assessment-edit-survey-attributes section--mt-10">
+    <section class="section section--assessment-edit-survey-attributes section--mt-0">
         <div class="container">
             <div class="elinor__survey-attribute-wrapper">
                 <header>
@@ -49,63 +49,60 @@
                 <div class="elinor__survey-attribute-group">
                     <div class="title-border">
                         <h3 class="title">Optional attributes</h3>
-                    </div>
-                    
-                    <p>Unselect the attributtes  that do not correspond with your Assessment</p>
-                    <form><!-- opcional -->
-                        <ul class="elinor__survey-attribute-gird">
-                            <li class="elinor__survey-attribute-item item--optional">
-                                <div class="option-check">
-                                    <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1"> 
-                                    <div class="radio">
-                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                    </div>
-                                    <label class="title" for="survey-attribute-optional-1">Resource boundaries</label>
+                    </div>   
+                    <p class="text-intro">Unselect the attributtes  that do not correspond with your Assessment</p>
+                    <ul class="elinor__survey-attribute-gird">
+                        <li class="elinor__survey-attribute-item item--optional">
+                            <div class="option-check">
+                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1"> 
+                                <div class="radio">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <a href="/" class="see-link">See Questions</a>
-                            </li>
-                            <li class="elinor__survey-attribute-item item--optional">
-                                <div class="option-check">
-                                    <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-2"> 
-                                    <div class="radio">
-                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                    </div>
-                                    <label class="title" for="survey-attribute-optional-2">Resource boundaries</label>
+                                <label class="title" for="survey-attribute-optional-1">Resource boundaries</label>
+                            </div>
+                            <a href="/" class="see-link">See Questions</a>
+                        </li>
+                        <li class="elinor__survey-attribute-item item--optional">
+                            <div class="option-check">
+                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-2"> 
+                                <div class="radio">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <a href="/" class="see-link">See Questions</a>
-                            </li>
-                            <li class="elinor__survey-attribute-item item--optional">
-                                <div class="option-check">
-                                    <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-3"> 
-                                    <div class="radio">
-                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                    </div>
-                                    <label class="title" for="survey-attribute-optional-3">Resource boundaries</label>
+                                <label class="title" for="survey-attribute-optional-2">Resource boundaries</label>
+                            </div>
+                            <a href="/" class="see-link">See Questions</a>
+                        </li>
+                        <li class="elinor__survey-attribute-item item--optional">
+                            <div class="option-check">
+                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-3"> 
+                                <div class="radio">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <a href="/" class="see-link">See Questions</a>
-                            </li>
-                            <li class="elinor__survey-attribute-item item--optional">
-                                <div class="option-check">
-                                    <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-4"> 
-                                    <div class="radio">
-                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                    </div>
-                                    <label class="title" for="survey-attribute-optional-4">Resource boundaries</label>
+                                <label class="title" for="survey-attribute-optional-3">Resource boundaries</label>
+                            </div>
+                            <a href="/" class="see-link">See Questions</a>
+                        </li>
+                        <li class="elinor__survey-attribute-item item--optional">
+                            <div class="option-check">
+                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-4"> 
+                                <div class="radio">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <a href="/" class="see-link">See Questions</a>
-                            </li>
-                            <li class="elinor__survey-attribute-item item--optional">
-                                <div class="option-check">
-                                    <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-5"> 
-                                    <div class="radio">
-                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                    </div>
-                                    <label class="title" for="survey-attribute-optional-5">Resource boundaries</label>
+                                <label class="title" for="survey-attribute-optional-4">Resource boundaries</label>
+                            </div>
+                            <a href="/" class="see-link">See Questions</a>
+                        </li>
+                        <li class="elinor__survey-attribute-item item--optional">
+                            <div class="option-check">
+                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-5"> 
+                                <div class="radio">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <a href="/" class="see-link">See Questions</a>
-                            </li>
-                        </ul>
-                    </form><!-- /opcional -->
+                                <label class="title" for="survey-attribute-optional-5">Resource boundaries</label>
+                            </div>
+                            <a href="/" class="see-link">See Questions</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
