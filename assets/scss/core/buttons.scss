@@ -91,4 +91,12 @@ button {
     right: 10px;
     top: 28px;
 }
+.btn--small {
+    @apply h-[27px] w-auto px-3 py-0 border-radius--btn-small;
+    &:hover {
+        img {
+            transform: translateX(0);
+        }
+    }
+}
 

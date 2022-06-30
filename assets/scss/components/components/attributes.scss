@@ -53,7 +53,6 @@
 
 .elinor__survey-attribute-item {
     @apply flex border-radius--20 border border-grayy-border pt-5 pb-4 px-3 transition hover:bg-grayy-badge;
-    // &.elinor__survey-attribute-item--empty {}
 
     .title {
          @apply block mb-1 text-[14px];

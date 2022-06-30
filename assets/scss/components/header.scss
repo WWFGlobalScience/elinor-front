@@ -68,6 +68,11 @@
             @apply text-right text-[12px] text-grayy-lighter;
         }
     }
+    .assessment__down {
+        @apply mt-5;
+        white-space: nowrap;
+        display: inline-flex;
+    }
 }
 
 .header--ma-data {
