@@ -69,8 +69,7 @@
         }
     }
     .assessment__down {
-        @apply mt-5;
-        white-space: nowrap;
+        @apply mt-5 whitespace-nowrap;
         display: inline-flex;
     }
 }

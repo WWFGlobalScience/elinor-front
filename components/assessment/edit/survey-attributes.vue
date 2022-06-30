@@ -49,7 +49,7 @@
                 <div class="elinor__survey-attribute-group">
                     <div class="title-border">
                         <h3 class="title">Optional attributes</h3>
-                    </div>   
+                    </div>
                     <p class="text-intro">Unselect the attributtes  that do not correspond with your Assessment</p>
                     <ul class="elinor__survey-attribute-gird">
                         <li class="elinor__survey-attribute-item item--optional">
