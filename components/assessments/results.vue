@@ -61,6 +61,9 @@
                         <div class="left">
                             <span class="title">{{ assessment.person_responsible.username }}</span>
                             <NuxtLink class="subtitle" :to="isOpenAssessment(assessment) ? `/assessments/edit/${assessment.id}/assessment-data/` : `/assessments/${assessment.id}/info/`">{{ assessment.name }}</NuxtLink>
+                            <div class="search-criteria"><span class="area">Managed Area</span> <span class="criteria">Lorem ipsum dolor sit</span></div>
+                        </div>
+                        <div class="right">
                         </div>
                     </header>
                     <ul class="sublist">

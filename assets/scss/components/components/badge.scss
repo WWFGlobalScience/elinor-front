@@ -2,14 +2,29 @@
 .elinor__badge {
     @apply mb-8 transition hover:bg-grayy-badge;
     .header {
-        @apply flex items-center justify-between border-b border-grayy-border pb-7 mb-5;
+        @apply flex items-center justify-between border-b border-grayy-border pb-3 mb-5;
+        .left {
+            flex-grow: 1;
+        }
+        .right {
+            @apply ml-5;
+        }
         span {
             @apply block;
-            &.title {
-                @apply mb-2 text-grayy-lighter;
+        }
+        .title {
+            @apply mb-1 text-grayy-lighter;
+        }
+        .subtitle {
+            @apply text-[20px] mb-2 inline-block;
+        }
+        .search-criteria {
+            @apply flex items-baseline;
+            .area {
+                @apply text-[12px] text-grayy-lighter mr-2;
             }
-            &.subtitle {
-                @apply text-[20px];
+            .criteria {
+                @apply text-[16px];
             }
         }
     }
