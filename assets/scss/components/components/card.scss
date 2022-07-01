@@ -33,8 +33,13 @@
 
 .elinor__question {
     @apply mt-10;
+    .title-border {
+        .title {
+           @apply text-[16px]; 
+        }
+    }
     .question {
-        @apply mt-16;
+        @apply mt-8;
         .question__index {
             @apply flex items-center text-[18px];
             .bullet {

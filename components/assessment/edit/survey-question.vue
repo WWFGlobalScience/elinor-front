@@ -9,6 +9,9 @@
                 </nuxt-link>
             </header>
             <div class="">
+                <div class="title-border">
+                    <h3 class="title uppercase">Lorem ipsum dolor sit</h3>
+                </div>
                 <div class="question">
                     <div class="question__index">
                         <span class="bullet"></span>
