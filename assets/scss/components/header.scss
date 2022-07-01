@@ -68,9 +68,12 @@
             @apply text-right text-[12px] text-grayy-lighter;
         }
     }
-    .assessment__down {
-        @apply mt-5 whitespace-nowrap;
-        display: inline-flex;
+    .assessment__btns {
+        @apply flex items-center mt-5;
+        .btn {
+            @apply mr-2 whitespace-nowrap;
+            display: inline-flex;
+        }
     }
 }
 
