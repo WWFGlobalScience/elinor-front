@@ -64,6 +64,18 @@
                             <div class="search-criteria"><span class="area">Managed Area</span> <span class="criteria">Lorem ipsum dolor sit</span></div>
                         </div>
                         <div class="right">
+                            <div class="assessment-status status--ready">
+                                <span class="status-circle"><img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K'/></span>
+                                <span class="text">Published</span>
+                            </div>
+                            <div class="assessment-status status--ready">
+                                <span class="status-circle"><span>100%</span></span>
+                                <span class="text">Ready to Publish</span>
+                            </div>
+                            <div class="assessment-status status--pending">
+                                <span class="status-circle"><span>50%</span></span>
+                                <span class="text">Preparing to Publish</span>
+                            </div>
                         </div>
                     </header>
                     <ul class="sublist">
