@@ -3,7 +3,7 @@
         <div class="container">
             <header id="question" class="header--back">
                 <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
-                <nuxt-link to="./" class="elinor__back btn--opacity">
+                <nuxt-link to="./" class="elinor__back btn btn--border-turqy btn--opacity">
                     <img src="~/assets/img/ico-arrow-back-turqy.svg">
                     <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.back' ) }}</span>
                 </nuxt-link>

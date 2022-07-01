@@ -32,6 +32,7 @@
 //elinor question
 
 .elinor__question {
+    @apply mt-10;
     .question {
         @apply mt-16;
         .question__index {
