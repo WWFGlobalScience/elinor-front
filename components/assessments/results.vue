@@ -1,6 +1,7 @@
 <template>
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
+            <button class="btn mb-10" @click="popupState( { active: true, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' })">Onboarding</button>
             <div class="search__results g-grid--3-1-md">
                 <div class="col-span-2">
                     <span>{{ $t('pages.assessments.list.total') }}</span> -
@@ -138,7 +139,8 @@ export default {
             return this.$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver(this.$auth, assessment)
         },
         ...mapActions({
-            filterAssessmentsBy: 'assessments/filterAssessmentsBy'
+            filterAssessmentsBy: 'assessments/filterAssessmentsBy',
+            popupState: 'popup/popupState',
         })
     },
     filters: {

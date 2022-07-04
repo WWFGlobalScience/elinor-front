@@ -1,6 +1,6 @@
 <template>
     <transition name="elinor-fade">
-        <div class="elinor__popup" v-show="popup.active">
+        <div class="elinor__popup" v-show="popup.active" :class="{'popup__onboarding': popup.type ==='onboarding'}">
             <div class="popup__overlay" @click="popupState( false, '', '' )"></div>
             <div class="popup__box" :class="{'popup__box--min': popup.type ==='confirmation'}">
                 <header class="popup__header">

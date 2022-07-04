@@ -70,6 +70,55 @@
             }
         }
     }
+
+    //onboarding
+    &.popup__onboarding {
+        .popup__box {
+            .popup__header {
+                @apply flex justify-between items-center bg-turqy text-white px-20 py-10 rounded-t-xl sm:px-8 sm:rounded-none;
+                span {
+                    @apply text-[22px];
+                }
+                button img {
+                    filter: invert(94%) sepia(6%) saturate(101%) hue-rotate(217deg) brightness(200%) contrast(100%);
+                }
+            }
+            .popup__content {}
+        }
+    }
 }
 
 
+//num
+.step-num {
+    @apply flex items-center justify-center flex-shrink-0 text-[14px] w-[48px] h-[48px] text-turqy border-turqy border border-solid border-radius--50;
+}
+
+//onboarding steps
+.elinor__step-card {
+    @apply border-turqy border border-solid border-radius--card py-[30px] pr-[40px] pl-[50px] ml-[25px];
+    &::before {
+        @apply flex items-center justify-center flex-shrink-0 text-[14px] w-[48px] h-[48px] bg-white text-turqy border-turqy border border-solid border-radius--50;
+        position: absolute;
+        left: -25px;
+        top: 25px;
+    }
+    &.step-card--row {}
+
+}
+
+
+.elinor__steps-list {
+    counter-reset: step-counter;
+    grid-row-gap: 30px;
+    grid-column-gap: 20px;
+    > li {
+        counter-increment: step-counter;
+        &:before {
+            content: counter(step-counter);
+        }
+        &.step-card--row {
+            grid-column: 1 / span 2;
+        }
+    }
+}
