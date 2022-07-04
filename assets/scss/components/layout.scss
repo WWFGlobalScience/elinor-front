@@ -36,6 +36,9 @@ main {
 .g-grid--2{
     @apply grid grid-cols-2 gap-14;
 }
+.g-grid--1{
+    @apply grid grid-cols-1 gap-14;
+}
 
 .g-grid--2-1-lg{
     @apply grid grid-cols-2 gap-4 lg:grid-cols-1;
