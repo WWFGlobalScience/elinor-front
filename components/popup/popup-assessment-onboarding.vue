@@ -59,6 +59,19 @@
                 </li>
             </ul>
         </div>
+        <div class="mt-14">
+            <div class="input input--radios input--radios-question">
+                <div class="radios__wrap">
+                    <div class="radio__wrap">
+                        <div class="radio">
+                            <input type="radio" name="answer" id="dontShowAgain" value="10"> 
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
+                        </div>
+                    </div>
+                </div> 
+                <label for="dontShowAgain" class="label"><span></span> <span>Don’t show again this initial modal screen</span></label>
+            </div>             
+        </div>
     </div>
 </template>
 
