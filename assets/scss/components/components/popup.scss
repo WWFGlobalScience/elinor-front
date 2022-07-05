@@ -169,3 +169,16 @@
         }
     }
 }
+
+//cta
+.elinor__btn-group {
+    @apply flex items-center justify-center sm:flex-col;
+    column-gap: 24px;
+    row-gap: 18px;
+}
+.elinor__cta-bar {
+    @apply flex items-center justify-center py-8 mt-14 border-b border-t border-grayy-border sm:block;
+    .title {
+        @apply text-[22px] mr-8 sm:mb-6 sm:text-center;
+    }
+}
