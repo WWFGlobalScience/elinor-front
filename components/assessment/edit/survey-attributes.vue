@@ -8,40 +8,18 @@
                 <div class="elinor__survey-attribute-group">
                     <h2 class="title-up uppercase">Attributes</h2>
                     <ul class="elinor__survey-attribute-gird">
-                        <li class="elinor__survey-attribute-item item--mandatory">
+                        <li v-for="(attribute, index) in requiredAttributes" class="elinor__survey-attribute-item item--mandatory">
                             <div class="item-pic">
                                 <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDI4QzIyLjYyNzQgMjggMjggMjIuNjI3NCAyOCAxNkMyOCA5LjM3MjU4IDIyLjYyNzQgNCAxNiA0QzkuMzcyNTggNCA0IDkuMzcyNTggNCAxNkM0IDIyLjYyNzQgOS4zNzI1OCAyOCAxNiAyOFoiIHN0cm9rZT0iIzQzQTBCRCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik0xNiAxMFYxNyIgc3Ryb2tlPSIjNDNBMEJEIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYgMjNDMTYuODI4NCAyMyAxNy41IDIyLjMyODQgMTcuNSAyMS41QzE3LjUgMjAuNjcxNiAxNi44Mjg0IDIwIDE2IDIwQzE1LjE3MTYgMjAgMTQuNSAyMC42NzE2IDE0LjUgMjEuNUMxNC41IDIyLjMyODQgMTUuMTcxNiAyMyAxNiAyM1oiIGZpbGw9IiM0M0EwQkQiLz4KPC9zdmc+Cg=='/>
                             </div>
                             <div class="item-content">
-                                <span class="title">Resource boundaries</span>
-                                <a href="/" class="see-link">See Questions</a>
-                            </div>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--mandatory">
-                            <div class="item-pic">
-                                <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDI4QzIyLjYyNzQgMjggMjggMjIuNjI3NCAyOCAxNkMyOCA5LjM3MjU4IDIyLjYyNzQgNCAxNiA0QzkuMzcyNTggNCA0IDkuMzcyNTggNCAxNkM0IDIyLjYyNzQgOS4zNzI1OCAyOCAxNiAyOFoiIHN0cm9rZT0iIzQzQTBCRCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik0xNiAxMFYxNyIgc3Ryb2tlPSIjNDNBMEJEIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYgMjNDMTYuODI4NCAyMyAxNy41IDIyLjMyODQgMTcuNSAyMS41QzE3LjUgMjAuNjcxNiAxNi44Mjg0IDIwIDE2IDIwQzE1LjE3MTYgMjAgMTQuNSAyMC42NzE2IDE0LjUgMjEuNUMxNC41IDIyLjMyODQgMTUuMTcxNiAyMyAxNiAyM1oiIGZpbGw9IiM0M0EwQkQiLz4KPC9zdmc+Cg=='/>
-                            </div>
-                            <div class="item-content">
-                                <span class="title">Resource boundaries</span>
-                                <a href="/" class="see-link">See Questions</a>
-                            </div>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--mandatory">
-                            <div class="item-pic">
-                                <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDI4QzIyLjYyNzQgMjggMjggMjIuNjI3NCAyOCAxNkMyOCA5LjM3MjU4IDIyLjYyNzQgNCAxNiA0QzkuMzcyNTggNCA0IDkuMzcyNTggNCAxNkM0IDIyLjYyNzQgOS4zNzI1OCAyOCAxNiAyOFoiIHN0cm9rZT0iIzQzQTBCRCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik0xNiAxMFYxNyIgc3Ryb2tlPSIjNDNBMEJEIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYgMjNDMTYuODI4NCAyMyAxNy41IDIyLjMyODQgMTcuNSAyMS41QzE3LjUgMjAuNjcxNiAxNi44Mjg0IDIwIDE2IDIwQzE1LjE3MTYgMjAgMTQuNSAyMC42NzE2IDE0LjUgMjEuNUMxNC41IDIyLjMyODQgMTUuMTcxNiAyMyAxNiAyM1oiIGZpbGw9IiM0M0EwQkQiLz4KPC9zdmc+Cg=='/>
-                            </div>
-                            <div class="item-content">
-                                <span class="title">Resource boundaries</span>
-                                <a href="/" class="see-link">See Questions</a>
-                            </div>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--mandatory">
-                            <div class="item-pic">
-                                <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDI4QzIyLjYyNzQgMjggMjggMjIuNjI3NCAyOCAxNkMyOCA5LjM3MjU4IDIyLjYyNzQgNCAxNiA0QzkuMzcyNTggNCA0IDkuMzcyNTggNCAxNkM0IDIyLjYyNzQgOS4zNzI1OCAyOCAxNiAyOFoiIHN0cm9rZT0iIzQzQTBCRCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik0xNiAxMFYxNyIgc3Ryb2tlPSIjNDNBMEJEIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTYgMjNDMTYuODI4NCAyMyAxNy41IDIyLjMyODQgMTcuNSAyMS41QzE3LjUgMjAuNjcxNiAxNi44Mjg0IDIwIDE2IDIwQzE1LjE3MTYgMjAgMTQuNSAyMC42NzE2IDE0LjUgMjEuNUMxNC41IDIyLjMyODQgMTUuMTcxNiAyMyAxNiAyM1oiIGZpbGw9IiM0M0EwQkQiLz4KPC9zdmc+Cg=='/>
-                            </div>
-                            <div class="item-content">
-                                <span class="title">Resource boundaries</span>
-                                <a href="/" class="see-link">See Questions</a>
+                                <span class="title">{{ attribute.name }}</span>
+                                <a href="#" class="see-link" v-scroll-to="{
+                                    el: '#anchor-attribute-' + attribute.id,
+                                    offset: -80,
+                                }">
+                                    See Questions
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -50,57 +28,23 @@
                     <div class="title-border">
                         <h3 class="title">Optional attributes</h3>
                     </div>
-                    <p class="text-intro">Unselect the attributtes  that do not correspond with your Assessment</p>
+                    <p class="text-intro">Unselect the attributtes that do not correspond with your Assessment</p>
                     <ul class="elinor__survey-attribute-gird">
-                        <li class="elinor__survey-attribute-item item--optional">
+                        <li v-for="(attribute, index) in optionalAttributes" class="elinor__survey-attribute-item item--optional">
                             <div class="option-check">
-                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1"> 
+                                <input :checked="isAttributeChecked(attribute)" @change="onChangeAttribute(attribute)" type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1">
                                 <div class="radio">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <label class="title" for="survey-attribute-optional-1">Resource boundaries</label>
+                                <label class="title" for="survey-attribute-optional-1">{{ attribute.name }}</label>
                             </div>
-                            <a href="/" class="see-link">See Questions</a>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--optional">
-                            <div class="option-check">
-                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-2"> 
-                                <div class="radio">
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                </div>
-                                <label class="title" for="survey-attribute-optional-2">Resource boundaries</label>
-                            </div>
-                            <a href="/" class="see-link">See Questions</a>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--optional">
-                            <div class="option-check">
-                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-3"> 
-                                <div class="radio">
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                </div>
-                                <label class="title" for="survey-attribute-optional-3">Resource boundaries</label>
-                            </div>
-                            <a href="/" class="see-link">See Questions</a>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--optional">
-                            <div class="option-check">
-                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-4"> 
-                                <div class="radio">
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                </div>
-                                <label class="title" for="survey-attribute-optional-4">Resource boundaries</label>
-                            </div>
-                            <a href="/" class="see-link">See Questions</a>
-                        </li>
-                        <li class="elinor__survey-attribute-item item--optional">
-                            <div class="option-check">
-                                <input type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-5"> 
-                                <div class="radio">
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
-                                </div>
-                                <label class="title" for="survey-attribute-optional-5">Resource boundaries</label>
-                            </div>
-                            <a href="/" class="see-link">See Questions</a>
+                            <a href="#" class="see-link" v-scroll-to="{
+                                    el: '#anchor-attribute-' + attribute.id,
+                                    offset: -80,
+                                }"
+                            >
+                                See Questions
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -110,7 +54,32 @@
 </template>
 
 <script>
+import {mapActions, mapState} from "vuex";
+
 export default {
     name: 'assessment-edit-survey-attributes',
+    computed: {
+        ...mapState({
+            attributes: state => state.attributes.list,
+            assessment: state => state.assessments.assessment
+        }),
+        requiredAttributes() {
+            return this.attributes.filter(attribute => attribute.required === true);
+        },
+        optionalAttributes() {
+            return this.attributes.filter(attribute => attribute.required === false);
+        }
+    },
+    methods: {
+        ...mapActions({
+            toggleAttribute: 'assessments/toggleAttribute'
+        }),
+        isAttributeChecked(attribute) {
+            return this.assessment.attributes.indexOf(attribute.id) !== -1;
+        },
+        onChangeAttribute(attribute) {
+            this.toggleAttribute({assessmentId: this.assessment.id, attributeId: attribute.id});
+        }
+    }
 }
 </script>

@@ -22,10 +22,11 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            survey: state => state.assessments.survey
+            questions: state => state.surveyquestions.list
         }),
         question() {
-            return this.survey[ this.qid - 1 ]
+            const filtered = this.questions.filter(question => question.id === parseInt(this.qid));
+            return filtered[0];
         }
     }
 }

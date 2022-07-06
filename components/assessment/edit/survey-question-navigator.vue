@@ -2,8 +2,8 @@
     <section class="section section--assessment-survey section--mt-0">
         <div class="container">
             <ul class="elinor__survey-navigator">
-                <li v-for="(question, index) in survey">
-                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/${index + 1}`" :class="[ 'btn--opacity', { 'is--uncomplete': assessment[question] === null } ]">
+                <li v-for="(question, index) in activeQuestions">
+                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/${question.id}`" :class="[ 'btn--opacity', { 'is--uncomplete': isAnswered(question) } ]">
                     </nuxt-link>
                 </li>
                 <li class="elinor__survey-complete">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="text">
                         <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.completed' ) }}</span>
-                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.outOf' ) }} {{ survey.length }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.outOf' ) }} {{ totalQuestions }}</span>
                     </div>
                 </li>
             </ul>
@@ -29,16 +29,21 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            survey: state => state.assessments.survey
+            questions: state => state.surveyquestions.list,
         }),
         completedQuestions() {
-            let completed = 0;
-            this.survey.forEach((question) => {
-                if(this.assessment[question]) {
-                    completed++;
-                }
-            });
-            return completed;
+            return this.assessment.surveyAnswers.length;
+        },
+        activeQuestions() {
+            return this.questions.filter(question => this.assessment.attributes.indexOf(question.attribute) !== -1);
+        },
+        totalQuestions() {
+            return this.activeQuestions.length;
+        }
+    },
+    methods: {
+        isAnswered(question) {
+            return false;
         }
     }
 }

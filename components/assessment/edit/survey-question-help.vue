@@ -7,7 +7,7 @@
                     <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.information') }}</h3>
                 </header>
                 <ul>
-                    <li v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.information`)"></li>
+                    <li v-html="question.information"></li>
                 </ul>
             </div>
             <div class="elinor__help">
@@ -15,7 +15,7 @@
                     <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.guidance') }}</h3>
                 </header>
                 <ul>
-                    <li v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.guidance`)"></li>
+                    <li v-html="question.guidance"></li>
                 </ul>
             </div>
         </div>
@@ -28,17 +28,13 @@ import {mapState} from "vuex";
 export default {
     name: 'assessment-edit-survey-help',
     props: ['qid'],
-    data() {
-        return {
-            questionId: parseInt( this.qid )
-        }
-    },
     computed: {
         ...mapState({
-            survey: state => state.assessments.survey
+            questions: state => state.surveyquestions.list
         }),
         question() {
-            return this.survey[parseInt(this.qid) - 1];
+            const filtered = this.questions.filter(question => question.id === parseInt(this.qid));
+            return filtered[0];
         }
     },
 }

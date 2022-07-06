@@ -1,7 +1,5 @@
 import qs from 'qs'
 
-let survey = ['stakeholder_harvest_rights','stakeholder_develop_rules','stakeholder_exclude_others','legislation_exists','exercise_rights','stakeholder_agency','vulnerable_defined_rights','benefits_shared','supportive_networks','climatechange_incorporated','governance_accountable','timely_information','conflict_resolution_access','penalties_frequency','penalties_fair','ecological_monitoring_used','social_monitoring_used','climatechange_monitored','multiple_knowledge_social','multiple_knowledge_integrated','climatechange_managed','rights_governance','management_levels_cohesive','regulations_exist','management_plan','boundary_known','boundary_defined','outcomes_achieved_ecological','outcomes_achieved_social','management_capacity','sufficient_staff','staff_capacity','sufficient_budget','budget_secure','sufficient_equipment'];
-
 let required_fields = {
     data: [
         'name',
@@ -79,9 +77,8 @@ export const state = () => ({
         publish: false,
         percent: 0
     },
-    required_fields: required_fields,
-    progress: progress,
-    survey
+    required_fields,
+    progress
 })
 
 export const mutations = {
@@ -139,6 +136,13 @@ export const mutations = {
     },
     setAttributes(state, attributes) {
         state.assessment.attributes = attributes;
+    },
+    addSurveyAnswer(state, answer) {
+        state.assessment.surveyAnswers = [answer, ...state.assessment.surveyAnswers];
+    },
+    updateSurveyAnswer(state, answer) {
+        const filtered = state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== answer.id);
+        state.assessment.surveyAnswers = [answer, ...filtered];
     }
 }
 
@@ -218,7 +222,7 @@ export const actions = {
         this.$axios({
             method: 'post',
             url: 'v2/assessments/',
-            data: ddd.stringify(this.$formDataStringify(form))
+            data: qs.stringify(this.$formDataStringify(form))
         })
         .then((response) => {
             this.dispatch('popup/popupState', {active: false, component: '', title: ''})
@@ -314,9 +318,9 @@ export const actions = {
 
         //SURVEY
         progress.survey.filled = 0;
-        for (let field of required_fields.survey) {
+        /*for (let field of required_fields.survey) {
             if (assessment[field]) progress.survey.filled++;
-        }
+        }*/
 
         progress.survey.percentage = progress.survey.filled / progress.survey.required * 100;
         progress.survey.percentage = progress.survey.percentage < 100 ? progress.survey.percentage : 100;
@@ -379,19 +383,53 @@ export const actions = {
             })
     },
 
-    async toggleAttribute(state, {id, assessmentId, attributeId}) {
-        const attributes = state.state.assessment.attributes;
+    async toggleAttribute(state, {assessmentId, attributeId}) {
+        const attributes = [...state.state.assessment.attributes];
         const position = attributes.indexOf(attributeId);
         if(position === -1) {
             attributes.push(attributeId);
         } else {
             attributes.splice(position, 1);
         }
-        state.dispatch('editAssessmentField', {field: 'attributes', value: attributes, id: assessmentId });
+        await state.dispatch('editAssessmentField', {field: 'attributes', value: attributes, id: assessmentId });
     },
 
-    async storeSurveyAnswer(state, {assessmentId, questionId, answerId, explanation}) {
+    async storeSurveyAnswer(state, {assessmentId, questionId, choice, explanation}) {
+        this.$axios({
+            method: 'post',
+            url: `/v2/surveyanswerlikerts/`,
+            data: {
+                question: questionId,
+                assessment: assessmentId,
+                choice,
+                explanation
+            }
+        })
+            .then((response) => {
+                state.commit('addSurveyAnswer', response.data)
+            })
+            .catch((error) => {
 
+            })
+    },
+
+    async updateSurveyAnswer(state, {id, assessmentId, questionId, choice, explanation}) {
+        this.$axios({
+            method: 'patch',
+            url: `/v2/surveyanswerlikerts/${id}/`,
+            data: {
+                question: questionId,
+                assessment: assessmentId,
+                choice,
+                explanation
+            }
+        })
+            .then((response) => {
+                state.commit('updateSurveyAnswer', response.data)
+            })
+            .catch((error) => {
+
+            })
     },
 
     reset(state) {

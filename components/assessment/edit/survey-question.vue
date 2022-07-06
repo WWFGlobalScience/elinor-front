@@ -10,15 +10,15 @@
             </header>
             <div class="">
                 <div class="title-border">
-                    <h3 class="title uppercase">Lorem ipsum dolor sit</h3>
+                    <h3 class="title uppercase">{{ attribute.name }}</h3>
                 </div>
                 <div class="question">
                     <div class="question__index">
                         <span class="bullet"></span>
-                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.question' ) }} {{ questionId }} / {{ survey.length }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.question' ) }} {{ questionId }} / {{ questions.length }}</span>
                     </div>
                     <div class="question__title">
-                        {{ $t( `pages.assessments.edit.tabs.survey.questions.items.${question}.question` ) }}
+                        {{ question.text }}
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <p>{{ $t( 'pages.assessments.edit.tabs.survey.questions.selectAnswer' ) }}</p>
                     <a href="#" class="btn btn--sm" v-scroll-to="{
                         el: '.elinor__question-help',
-                        offset: -200,
+                        offset: -40,
                     }">
                         <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.help' ) }}</span>
                         <img src="~/assets/img/ico-arrow-bottom-white.svg">
@@ -37,26 +37,26 @@
                 </header>
                 <form class="form" refs="editAssessmentSurvey">
                     <div class="form__group">
-                        <div v-for="(answer, index) in [10,20,30,40,50]" class="form__row">
+                        <div v-for="(choice, index) in [10,20,30,40,50]" class="form__row">
                             <div class="input input--radios input--radios-question">
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                         <div class="radio">
-                                            <input type="radio" name="answer" :id="'answer-' + answer" :value="answer" @change="save(answer)" :checked="assessment[question] === answer">
+                                            <input type="radio" name="answer" :id="'answer-' + choice" @click="saveChoice(choice)" :checked="isAnsweredWith(choice)">
                                             <img src="~/assets/img/ico-ok.svg">
                                         </div>
                                     </div>
                                 </div>
-                                <label :for="'answer-'+ answer" class="label">
+                                <label :for="'answer-'+ choice" class="label">
                                     <span></span>
-                                    <span v-html="$t( `pages.assessments.edit.tabs.survey.questions.items.${question}.answers.${index + 1}` )"></span>
+                                    <span v-html="question[answersMapping[choice]]"></span>
                                 </label>
                             </div>
                         </div>
                         <div class="form__row form__row--mt-16">
                             <div class="input input--pr">
                                 <div class="label">{{ $t( `pages.assessments.edit.tabs.survey.questions.explanation`) }}</div>
-                                <textarea name="explanation" @change="saveExplanation($event.target.value)">{{ assessment[question + '_text'] }}</textarea>
+                                <textarea name="explanation" @change="saveExplanation($event.target.value)">{{ answer && answer.explanation }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -70,11 +70,11 @@
                             </nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link v-if="questionId < survey.length" :to="`/assessments/edit/${id}/the-survey/${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="questionId < questions.length" :to="`/assessments/edit/${id}/the-survey/${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <span>{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
-                            <nuxt-link v-if="questionId === survey.length" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="questionId === questions.length" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
                                 <span>{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
@@ -94,30 +94,69 @@ export default {
     data() {
         return {
             questionId: parseInt( this.qid ),
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            answersMapping: {
+                10: 'dontknow_10',
+                20: 'poor_20',
+                30: 'average_30',
+                40: 'good_40',
+                50: 'excellent_50'
+            }
         }
     },
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            survey: state => state.assessments.survey
+            attributes: state => state.attributes.list,
+            questions: state => state.surveyquestions.list
         }),
         question() {
-            return this.survey[parseInt(this.qid) - 1];
+            const filtered = this.questions.filter(question => question.id === parseInt(this.qid));
+            return filtered[0];
+        },
+        attribute() {
+            const filtered = this.attributes.filter(attribute => attribute.id === this.question.attribute);
+            return filtered[0];
+        },
+        answer() {
+            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
+            return answer[0] || null;
         }
     },
     methods: {
         ...mapActions({
-            editAssessmentField: 'assessments/editAssessmentField'
+            storeSurveyAnswer: 'assessments/storeSurveyAnswer',
+            updateSurveyAnswer: 'assessments/updateSurveyAnswer'
         }),
-        save(value) {
-            const field = this.question;
-            this.editAssessmentField( {field, value, id: this.assessment.id});
+
+        save(choice, explanation) {
+            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
+            if(answer.length === 0) {
+                const data = {assessmentId: this.assessment.id, questionId: this.question.id, choice};
+                if(explanation) {
+                    data.explanation = explanation;
+                }
+                this.storeSurveyAnswer(data);
+            } else {
+                this.updateSurveyAnswer( {id: answer[0].id, assessmentId: this.assessment.id, questionId: this.question.id, choice, explanation});
+            }
         },
-        saveExplanation(value) {
-            const field = this.question + '_text';
-            this.editAssessmentField( {field, value, id: this.assessment.id});
+        saveChoice(choice) {
+            this.save(choice);
+        },
+        saveExplanation(explanation) {
+            if(this.answer !== null) {
+                this.save(this.answer.choice, explanation);
+            }
+        },
+        isAnsweredWith(choice) {
+            return this.answer && this.answer.choice === choice;
+        },
+        isExplanationDisabled() {
+            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
+            return answer.length === 0;
         }
+
     }
 }
 </script>
