@@ -21,6 +21,60 @@
                     </div>
                 </li>
             </ul>
+            
+            <div class="elinor__survey-progress">
+                <ul class="elinor__survey-dots">
+                    <li class="li-bg-1">
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity"></a>
+                    </li>
+                    <li class="li-bg-2">
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                        <a href="#" class="btn-opacity is--uncomplete"></a>
+                    </li>
+                    <li class="elinor__survey-complete elinor__survey-complete--no-border">
+                        <div class="index">
+                            9
+                        </div>
+                        <div class="text">
+                            <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.completed' ) }}</span>
+                            <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.outOf' ) }} {{ totalQuestions }}</span>
+                        </div>
+                    </li>
+                    
+                </ul>
+
+            </div>
+
         </div>
     </section>
 </template>
