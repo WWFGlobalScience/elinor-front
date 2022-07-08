@@ -19,6 +19,9 @@
             &.form__row--mt-8 {
                 @apply mt-8;
             }
+            &.form__row--mt-7 {
+                @apply mt-7;
+            }
             &.form__row--mt-16 {
                 @apply mt-16;
             }
@@ -73,6 +76,10 @@
         &.label--bold{
             @apply font-bold;
         }
+
+        &.label--tit{
+            @apply font-bold text-[16px];
+        }
     }
     .legend {
         @apply block text-[12px] text-grayy-lighter;
@@ -111,7 +118,7 @@
         }
     }
     &.input--radios {
-        @apply flex items-start justify-start;
+        @apply flex items-start justify-start flex-col;
         .radios__wrap {
             @apply flex items-center space-x-10;
             .radio__wrap {
@@ -313,6 +320,10 @@
         .multiselect__extra{
             @apply mt-8 ;
 
+            .btn-row{
+                display: flex;
+            }
+
         }
         .multiselect__form{
             @apply relative ml-8 pl-14 pt-4 border-l border-grayy-border;
@@ -374,4 +385,11 @@
         }
     }
 
+}
+
+.tit-row{
+    @apply justify-between items-center;
+    .label{
+        @apply mb-0;
+    }
 }

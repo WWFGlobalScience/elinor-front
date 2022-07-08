@@ -285,6 +285,7 @@
                             "international_guide": "Is there a valid other effective area-based conservation measures [OECM] that contributes to global targets"
                         },
                         "labels": {
+                            "title": "Zones",
                             "name": "Name of new managed area",
                             "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?",
                             "containedBy": "Are there other Management Areas related to this MA?",
@@ -306,6 +307,9 @@
                             "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
                             "protectedAreaWdpaIdHelpLink": "Click here to search",
                             "geospatialSources": "Please list the source of the geospatial information"
+                        },
+                        "buttons": {
+                            "addZone": "Add a new Zone"
                         },
                         "map": {
                             "polygonParagraph1": "Indicate the boundaries of the Managed Area",
@@ -1034,6 +1038,7 @@
         "no": "No",
         "accept": "Accept",
         "cancel": "Cancel",
+        "delete": "Delete",
         "upload-file": {
             "placeholder": "Drag and drop a PDF file here",
             "buttons": {

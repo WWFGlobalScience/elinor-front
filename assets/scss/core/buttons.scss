@@ -99,4 +99,9 @@ button {
         }
     }
 }
+.btn--inverse{
+    span {
+        @apply mr-0;
+    }
+}
 
