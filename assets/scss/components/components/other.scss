@@ -98,6 +98,9 @@
 //rounded number
 .rounded-number{
     @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-small mr-2;
+    &--xl {
+        @apply w-14 h-14 text-[26px];
+    }
 }
 
 //message detail

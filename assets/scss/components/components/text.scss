@@ -29,6 +29,9 @@
         @apply text-yellowy-lighter;
     }
 }
+.c-title--upp {
+    @apply text-base font-bold uppercase;
+}
 
 //text color
 .c-text--warning{

@@ -852,7 +852,9 @@
                     },
                     "publish": {
                         "tabButton": "Publish...",
-                        "title": "Publish",
+                        "title": "Finalize & Publish",
+                        "finalize": "Finalize",
+                        "publish": "Publish",
                         "whatHappen": "What will happen when you publish",
                         "whatHappen1": "You mark your Assessment as Finished",
                         "whatHappen2": "You will not be able to edit the Survey Data",
