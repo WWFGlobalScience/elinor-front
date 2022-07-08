@@ -909,6 +909,34 @@
                 "30": "Through semi-structured interviews and focus group",
                 "40": "A combination of the above",
                 "50": "Other (please provide details below)"
+            },
+            "popup": {
+                "title": "How to create an Assessment",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "step-1": {
+                    "title": "Assessment Data",
+                    "text": "Complete the information related to the ASSESMENT, such as the number of people consulted or related institutions"
+                },
+                "step-2": {
+                    "title": "Management Area",
+                    "text": "Identify the Management Area, its belonging to some PA and upload the shape or draw on the map its location."
+                },
+                "step-3": {
+                    "title": "The survey",
+                    "text": "Answer the questions from the Survey. You can select those attributes that best adapt to your Assessment"
+                },
+                "step-4": {
+                    "title": "Collaborators",
+                    "text": "Invite collaborators to help you complete the Assessment, or share only as an observer"
+                },
+                "step-5": {
+                    "title": "Publish",
+                    "text": "Once the Assessment is finished you can publish it, making it accessible from the public zone of the web"
+                },
+                "question": "What can I do from here?",
+                "answer-1": "Go to assessments",
+                "answer-2": "Create an assessment",
+                "label": "Don’t show again this initial modal screen"
             }
         },
 
