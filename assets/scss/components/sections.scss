@@ -40,6 +40,11 @@
             }
         }
     }
+    &.section--intro {
+        .intro {
+            @apply py-10 space-x-5 border-b border-t border-grayy-border sm:flex-wrap;
+        }
+    }
     
     &.section--tags {
         @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
