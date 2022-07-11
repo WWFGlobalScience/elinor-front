@@ -285,6 +285,7 @@
                             "international_guide": "Is there a valid other effective area-based conservation measures [OECM] that contributes to global targets"
                         },
                         "labels": {
+                            "title": "Zones",
                             "name": "Name of new managed area",
                             "protectedArea": "What is the WDPA ID of the larger PA/CA this MA is contained within?",
                             "containedBy": "Are there other Management Areas related to this MA?",
@@ -306,6 +307,9 @@
                             "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
                             "protectedAreaWdpaIdHelpLink": "Click here to search",
                             "geospatialSources": "Please list the source of the geospatial information"
+                        },
+                        "buttons": {
+                            "addZone": "Add a new Zone"
                         },
                         "map": {
                             "polygonParagraph1": "Indicate the boundaries of the Managed Area",
@@ -848,7 +852,9 @@
                     },
                     "publish": {
                         "tabButton": "Publish...",
-                        "title": "Publish",
+                        "title": "Finalize & Publish",
+                        "finalize": "Finalize",
+                        "publish": "Publish",
                         "whatHappen": "What will happen when you publish",
                         "whatHappen1": "You mark your Assessment as Finished",
                         "whatHappen2": "You will not be able to edit the Survey Data",
@@ -903,8 +909,47 @@
                 "30": "Through semi-structured interviews and focus group",
                 "40": "A combination of the above",
                 "50": "Other (please provide details below)"
+            },
+            "popup": {
+                "title": "How to create an Assessment",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "step-1": {
+                    "title": "Assessment Data",
+                    "text": "Complete the information related to the ASSESMENT, such as the number of people consulted or related institutions"
+                },
+                "step-2": {
+                    "title": "Management Area",
+                    "text": "Identify the Management Area, its belonging to some PA and upload the shape or draw on the map its location."
+                },
+                "step-3": {
+                    "title": "The survey",
+                    "text": "Answer the questions from the Survey. You can select those attributes that best adapt to your Assessment"
+                },
+                "step-4": {
+                    "title": "Collaborators",
+                    "text": "Invite collaborators to help you complete the Assessment, or share only as an observer"
+                },
+                "step-5": {
+                    "title": "Publish",
+                    "text": "Once the Assessment is finished you can publish it, making it accessible from the public zone of the web"
+                },
+                "question": "What can I do from here?",
+                "answer-1": "Go to assessments",
+                "answer-2": "Create an assessment",
+                "label": "Don’t show again this initial modal screen"
             }
         },
+
+        "documentation": {
+            "header": {
+                "title": "Documentation"
+            },
+            "intro": {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            }
+           
+        },
+        
         "faqs": {
             "header": {
                 "title": "FAQs"
@@ -1023,6 +1068,7 @@
         "no": "No",
         "accept": "Accept",
         "cancel": "Cancel",
+        "delete": "Delete",
         "upload-file": {
             "placeholder": "Drag and drop a PDF file here",
             "buttons": {

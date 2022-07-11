@@ -108,3 +108,11 @@ main {
          }
      }
  }
+
+ .publish__layout {
+    @apply flex flex-row md:flex-col mt-11;
+
+    .publish__num {
+        @apply min-w-[20%];
+    }
+ }

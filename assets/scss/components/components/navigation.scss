@@ -56,3 +56,70 @@
         @apply text-base text-turqy pr-3 ;
     }
 }
+
+//survey progress
+.elinor__survey-progress {
+    @apply flex justify-between items-center border-b border-grayy-border py-10 sm:w-90 sm:overflow-auto;
+    .elinor__survey-dots {
+        @apply flex justify-between sm:mx-1 h-8 w-full;
+
+        &:not(:last-child) {
+            @apply mr-4;
+        }
+
+        li {
+            @apply flex-1 flex justify-between items-center sm:mx-1 px-2 py-1 bg-white rounded-xl;
+            a {
+                @apply w-[12px] h-[12px] bg-turqy border-radius--50 z-10;
+                &.is--uncomplete {
+                    @apply bg-grayy-border;
+                }
+                &:not(:last-child) {
+                    @apply mr-3;
+                }
+            }
+            &:nth-last-of-type(n + 3) {
+                @apply mr-6 relative;
+                
+                &::after {
+                    content: '';
+                    @apply absolute top-0 -right-3 w-px h-full bg-grayy-border ;
+                }
+            }
+            &:before {
+                content: '';
+                width: calc(100% - 20px);
+                @apply center-v h-px bg-grayy-border;
+            }
+            &.li-bg-1 {
+                @apply bg-turqy/5;
+            }
+            &.li-bg-2 {
+                @apply bg-turqy/10;
+            }
+
+            &.elinor__survey-complete {
+                @apply flex items-center bg-white z-10 justify-end px-0;
+                .index {
+                    @apply min-w-[42px] min-h-[42px] flex items-center justify-center border-radius--50 border border-grayy-border mr-2;
+                }
+                .text {
+                    @apply flex flex-col;
+                    span {
+                        @apply leading-[16px];
+                        &:last-child {
+                            @apply text-base text-[12px] leading-[12px] text-grayy-lighter mt-2;
+                        }
+                    }
+                }
+                &::before {
+                    @apply bg-transparent;
+                }
+            }
+        }
+    }
+
+
+
+
+}

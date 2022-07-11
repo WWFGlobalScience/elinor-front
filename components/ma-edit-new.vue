@@ -24,7 +24,7 @@
                             <div v-if="!editWdpaId && managementArea.protected_area" class="input input--2-3">
                                 <input :disabled="true" type="text" :value="managementArea.protected_area.name">
                                 <div @click="clearProtectedArea()" role="button" class="btn--protected-area__clear">
-                                    <img src="~/assets/img/ico-close-turqy.svg">
+                                    <img src="~/assets/img/ico-close-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="date__wrap">
                                 <date-picker placeholder="MM/DD/YYYY" format="MM/dd/yyyy" :value="managementArea.date_established" @selected="onDateEstablishmentSelected" />
                                 <div class="date__caret">
-                                    <img src="~/assets/img/ico-date-turqy.svg">
+                                    <img src="~/assets/img/ico-date-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                     <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> <button @click="$event.preventDefault();$event.stopPropagation(); onCreateAuthority(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">{{ $t('default.create') }}</button></span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                                     </template>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                     <li v-for="region in managementArea.regions">
                                         <div class="tag__item">{{ region.name }}</div>
                                         <a @click="removeRegion(region.id)" role="button" class="tag__close">
-                                            <img src="~/assets/img/ico-close-popup.svg">
+                                            <img src="~/assets/img/ico-close-popup.svg" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -246,14 +246,14 @@
                                 <div class="radio__wrap">
                                     <div class="radio">
                                         <input type="radio" name="consent_given" id="zone-yes" @change="onShowZones" :checked="showZones === true" :value="true">
-                                        <img src="~/assets/img/ico-ok.svg">
+                                        <img src="~/assets/img/ico-ok.svg" alt="" alt="">
                                     </div>
                                     <label for="zone-yes" class="label">Yes</label>
                                 </div>
                                 <div class="radio__wrap">
                                     <div class="radio">
                                         <input type="radio" name="consent_given" id="zone-no" @change="onShowZones" :checked="showZones === false" :value="false">
-                                        <img src="~/assets/img/ico-ok.svg">
+                                        <img src="~/assets/img/ico-ok.svg" alt="" alt="">
                                     </div>
                                     <label for="zone-no" class="label">No</label>
                                 </div>
@@ -262,7 +262,7 @@
                     </div>
                     <div class="form__row form__row--mt-16" v-if="showZones">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zonesQuantity' ) }}</label>
+                            <div class="label label--tit">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.title' ) }}</div>
                             <div class="multiselect__wrap multiselect__wrap--1-3">
                                 <multiselect
                                     :value="numZones"
@@ -272,15 +272,21 @@
                                     @input="onNumZonesChanged($event)">
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
 
                             <div v-if="managementArea.zones && managementArea.zones.length > 0" class="multiselect__extra">
                                 <div v-for="(zone, index) in managementArea.zones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                                    <div class="form__row form__row--mt-7 tit-row">
+                                        <div class="label label--tit">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</div>
+                                        <a href="/" class="btn btn--border-turqy btn--inverse btn--sm">
+                                            <span>{{ $t( 'default.delete' ) }}</span>
+                                            <img src='~/assets/img/ico-delete.svg'/> 
+                                        </a>
+                                    </div>
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
-                                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</label>
                                             <input type="text" name="name" :placeholder="`${$t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' )} ${index + 1}`" :value="zone.name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
@@ -298,7 +304,7 @@
                                                     @input="onZoneFieldChanged('access_level', index, $event.id)">
                                                 </multiselect>
                                                 <div class="multiselect__caret">
-                                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -309,6 +315,12 @@
                                             <textarea name="explanation" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zone.description }}</textarea>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="btn-row">
+                                    <a href="/" class="btn--border-turqy mt-12 ml-8">
+                                        <span>{{ $t( 'pages.assessments.edit.tabs.managementArea.buttons.addZone' ) }}</span>
+                                        <img src='~/assets/img/ico-plus.svg'/> 
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +335,7 @@
                         >
                             <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                             <img
-                                src="~/assets/img/ico-button-arrow.svg"
+                                src="~/assets/img/ico-button-arrow.svg" alt=""
                                 :alt="$t('pages.assessments.edit.tabs.nextStep')"
                             />
                         </NuxtLink>
