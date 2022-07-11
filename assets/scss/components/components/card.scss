@@ -145,3 +145,45 @@
         }
     }
 }
+
+//elinor card document
+.elinor-card__document {
+    @apply px-0 mb-4;
+    
+    .header {
+        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border pb-6 px-10; ;
+        .title-group {
+            @apply flex justify-start items-center flex-row;
+            .ico{
+                @apply w-16;
+            }
+        }
+        .info-group{
+            @apply flex justify-start sm:justify-end flex-row items-center border-l sm:border-0 sm:mt-4 border-grayy-border pl-6;
+        }
+    }
+    .title {
+        @apply text-grayy-lighter text-[16px];
+    }
+    .body {
+        @apply pt-10 pl-[105px] sm:pl-6 pr-6;
+        .text-group {
+            &:not(:last-child) {
+                @apply mb-4;
+            }
+            
+        }
+    }
+}
+
+//ico download
+.ico-download{
+    @apply text-turqy flex flex-col justify-center items-center uppercase text-[11px] font-bold ml-6;
+    .ico-wrap {
+        @apply flex items-center justify-center text-[20px] w-[38px] h-[38px] bg-white border border-solid border-turqy border-radius--50;
+    }
+    span{
+        @apply mt-1;
+    }
+
+}
