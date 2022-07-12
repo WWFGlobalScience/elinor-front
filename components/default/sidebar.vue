@@ -4,8 +4,8 @@
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
-                <img src="~/assets/img/elinor-icon-white.svg" class="brand__icon">
-                <img src="~/assets/img/elinor.svg" class="brand__text">
+                <img src="~/assets/img/elinor-icon-white.svg" class="brand__icon" alt="">
+                <img src="~/assets/img/elinor.svg" class="brand__text" alt="">
                 </NuxtLink>
             </div>
             <nav class="nav__main">
@@ -13,7 +13,7 @@
                     <li v-for="(page, index) in pages">
                         <NuxtLink v-slot="{ href, route, navigate, isActive, isExactActive }" v-if="page.config.display.auth === null || page.config.display.auth === isUserAuthenticated" :to="`/${$t(page.slug)}`">
                             <a @click="goTo(page)" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': $t(page.slug) === '' ? isExactActive : isActive }">
-                                <img v-if="page.icons.turqy" :src="isExactActive ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
+                                <img v-if="page.icons.turqy" :src="isActive ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
                                 <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
                                 <div
                                     class="input__tooltip"

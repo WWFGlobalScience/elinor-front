@@ -176,6 +176,36 @@
     }
 }
 
+//elinor card news
+.elinor-card__news {
+    @apply p-0 mb-4;
+    
+    .header {
+        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border p-5; ;
+        .title-group {
+            .date {
+                @apply text-xs text-grayy;
+            }
+            @apply flex justify-start flex-col;
+            .title{
+                @apply text-2xl text-turqy font-bold mt-2;
+            }
+        }
+        .info-group{
+            @apply flex justify-start sm:justify-end flex-row items-center border-l sm:border-0 sm:mt-4 border-grayy-border pl-6;
+        }
+    }
+    .body {
+        @apply p-5;
+        .text-group {
+            .text{
+
+            }
+            
+        }
+    }
+}
+
 //ico download
 .ico-download{
     @apply text-turqy flex flex-col justify-center items-center uppercase text-[11px] font-bold ml-6;
@@ -185,5 +215,4 @@
     span{
         @apply mt-1;
     }
-
 }

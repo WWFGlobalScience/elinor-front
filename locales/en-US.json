@@ -939,7 +939,6 @@
                 "label": "Don’t show again this initial modal screen"
             }
         },
-
         "documentation": {
             "home": {
                 "meta": {
@@ -955,6 +954,31 @@
             },
             "header": {
                 "title": "Documentation"
+            },
+            "intro": {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "body": {
+                "cards": {
+                    "button": "More documents"
+                }
+            }
+        },
+        "news": {
+            "home": {
+                "meta": {
+                    "title": "News",
+                    "slug": "news",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
+            "header": {
+                "title": "News"
             },
             "intro": {
                 "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -1119,5 +1143,9 @@
         "termsOfUse": "Terms of Use",
         "privacyPolicy": "Privacy Policy"
 
+    },
+    "buttons": {
+        "seeMore": "See more",
+        "seeLess": "See less"
     }
 }

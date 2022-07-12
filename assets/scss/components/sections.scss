@@ -242,12 +242,4 @@
             @apply h-full w-full object-cover;
         }
     }
-    /*
-        PAGE: DOCUMENTATION
-    */
-    &.section--documentation {
-        .row-btn{
-            @apply flex justify-center mt-8;
-        }
-    }
 }

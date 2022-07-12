@@ -68,6 +68,29 @@ export const state = () => ({
                 keywords: 'pages.documentation.meta.seo.keywords',
                 og_image: 'pages.documentation.meta.seo.og_image',
             }
+        },
+        {
+            path: '/news',
+            config: {
+                display: {
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
+                }
+            },
+            title: 'pages.news.home.meta.title',
+            slug: 'pages.news.home.meta.slug',
+            icons: {
+                gray: require('~/assets/img/ico-news-gray.svg'),
+                white: require('~/assets/img/ico-news-white.svg'),
+                turqy: require('~/assets/img/ico-news-turqy.svg')
+            },
+            seo: {
+                title: 'pages.news.meta,seo.title',
+                description: 'pages.news.meta.seo.description',
+                keywords: 'pages.news.meta.seo.keywords',
+                og_image: 'pages.news.meta.seo.og_image',
+            }
         }
     ],
 });

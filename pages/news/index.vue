@@ -1,33 +1,24 @@
 <template>
-    <article class="page page--documentation" v-if="loaded">
+    <article class="page page--flushed" v-if="loaded">
 
-        <div class="page--assessments__top">
-            <img src="~/assets/img/assessment-bg.svg" alt="assessment top bg" class="page--assessments__top-img">
-            <documentation-header></documentation-header>
-        </div>
+        <news-header/>
 
-        <div class="container">
-            <documentation-intro/>
-            <documentation-title/>
-        </div>
-
-        <section class="section section--mt-medium section--documentation">
+        <section class="section section--mt-medium section--news">
             <div class="container">
-                <documentation-card/>
+                <news-title/>
+                <news-card/>
                 <div class="row-btn row-btn--center">
-                    <documentation-btn-more/>
+                    <news-btn-more/>
                 </div>
             </div>
         </section>
     </article>
 </template>
 
-
-
 <script>
 import { mapState } from 'vuex'
 export default {
-    name: 'documentation',
+    name: 'news',
     auth: false,
     data() {
         return {loaded: false}
