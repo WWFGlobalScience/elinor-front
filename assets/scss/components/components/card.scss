@@ -183,9 +183,6 @@
     .header {
         @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border p-5; ;
         .title-group {
-            .date {
-                @apply text-xs text-grayy;
-            }
             @apply flex justify-start flex-col;
             .title{
                 @apply text-2xl text-turqy font-bold mt-2;
@@ -203,6 +200,19 @@
             }
             
         }
+    }
+}
+
+//latest news
+.latest-news__card {
+    width: calc(33% - 20px);
+    @apply p-0 lg:w-full mb-5;
+    .header {
+        @apply p-5 border-b border-grayy-border;
+        
+    }
+    .body { 
+        @apply p-5;
     }
 }
 

@@ -188,7 +188,15 @@
 
 
     &.section--intro {
-        @apply mt-0 text-xl text-grayy text-center leading-9 pt-9 pb-14 w-8/12 lg:w-full sm:text-lg;
+        @apply mt-0 pt-14 pb-24;
+
+        .container {
+            @apply flex flex-col items-center justify-center;
+        }
+
+        .section--intro__info {
+            @apply text-xl text-grayy text-center leading-9 pt-9 pb-14 w-8/12 lg:w-full sm:text-lg;
+        }
     }
 
     &.section--img-text{
@@ -242,4 +250,14 @@
             @apply h-full w-full object-cover;
         }
     }
+    &.section--latest-news {
+        .row{
+            @apply flex flex-row justify-between;
+
+            &.row--cards{
+                @apply lg:flex-col;
+            }
+        }
+    }
+
 }
