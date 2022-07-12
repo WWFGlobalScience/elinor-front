@@ -4,8 +4,8 @@
         <div class="sidebar__wrap">
             <div class="brand">
                 <NuxtLink to="/" class="flex items-center">
-                <img src="~/assets/img/elinor-icon-white.svg" class="brand__icon">
-                <img src="~/assets/img/elinor.svg" class="brand__text">
+                <img src="~/assets/img/elinor-icon-white.svg" class="brand__icon" alt="">
+                <img src="~/assets/img/elinor.svg" class="brand__text" alt="">
                 </NuxtLink>
             </div>
             <nav class="nav__main">
