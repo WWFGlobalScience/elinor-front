@@ -18,7 +18,7 @@ export const actions = {
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v2/attributes/'
+                url: 'v2/attributes/?ordering=order'
             });
 
             state.commit('setList', response.data.results)

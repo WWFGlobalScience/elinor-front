@@ -8,12 +8,12 @@
                 </div>
                 <div class="text-group">
                     <h3 class="title">Name</h3>
-                    <p class="text">Name Assessmet Area lorem ipsum dolor sid amet </p>
+                    <p class="text">{{ document.name }}</p>
                 </div>
             </div>
             <div class="info-group">
-                <div class="date">5-12-2022</div>
-                <a href="#" title="download" class="ico ico-download">
+                <div class="date">{{ document.publication_date }}</div>
+                <a @click="downloadDocument(document)" role="button" title="download" class="ico ico-download">
                     <div class="ico-wrap">
                         <img src="~/assets/img/ico-download.svg" alt="download">
                     </div>
@@ -24,15 +24,28 @@
         <div class="body">
             <div class="text-group">
                 <h4 class="title">Version</h4>
-                <p class="text">2022 - 03</p>
+                <p class="text">{{ document.version }}</p>
             </div>
             <div class="text-group">
                 <h4 class="title">Description</h4>
-                <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="text">{{ document.description }}</p>
             </div>
         </div>
-        
+
     </div>
 
 </template>
-    
+
+<script>
+import {mapActions} from "vuex";
+
+export default {
+    name: 'documentation-card',
+    props: ['document'],
+    methods: {
+        ...mapActions({
+            downloadDocument: "documents/downloadDocument"
+        })
+    }
+}
+</script>

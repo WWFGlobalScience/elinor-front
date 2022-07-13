@@ -204,8 +204,6 @@ export const actions = {
                 url: `v2/surveyanswerlikerts/?assessment=${id}`,
             });
             state.commit('setSurveyAnswers', surveyAnswersResponse.data.results);
-
-            state.dispatch('surveyquestions/fetchSurveyQuestions', '', { root: true })
         } finally {
             this.dispatch('loader/loaderState', {
                 active: false,

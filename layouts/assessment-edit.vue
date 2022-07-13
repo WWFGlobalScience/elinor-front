@@ -45,7 +45,6 @@ export default {
     },
     created() {
         this.fetchAssessment( this.id )
-        this.fetchAttributes();
     }
 }
 </script>

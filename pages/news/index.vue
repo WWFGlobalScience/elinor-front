@@ -1,14 +1,12 @@
 <template>
-    <article class="page page--flushed" v-if="loaded">
-
+    <article class="page page--flushed" >
         <news-header/>
-
         <section class="section section--mt-medium section--news">
             <div class="container">
                 <news-title/>
-                <news-card/>
-                <div class="row-btn row-btn--center">
-                    <news-btn-more/>
+                <news-card v-for="(newsInstance, index) in visibleNews" :instance="newsInstance" :key="index" />
+                <div v-if="(perPage * page) < news.length + perPage" class="row-btn row-btn--center">
+                    <news-btn-more :on-click="load"/>
                 </div>
             </div>
         </section>
@@ -16,33 +14,28 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import newsJson from '../../news.json'
+const perPage = 5;
+
 export default {
     name: 'news',
-    auth: false,
     data() {
-        return {loaded: false}
-    },
-    async mounted() {
-        console.log(localStorage.getItem('onboarding'));
-        if(localStorage.getItem('onboarding') !== '0') {
-            this.$store.dispatch('popup/popupState', { active: false, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' });
+        return {
+            visibleNews: [],
+            news: newsJson.news,
+            page: 1,
+            perPage
         }
-        this.$store.dispatch( 'loader/loaderState', {
-            active: true,
-            text: 'Loading assessments...'
-        } )
-        await this.$store.dispatch( 'assessments/fetchAssessments' )
-        this.$store.dispatch( 'loader/loaderState', {active: false} )
-        this.loaded = true;
-
     },
-    fetchOnServer: false,
-    computed: {
-        ...mapState({
-            loader: state => state.loader,
-            onboarding: state => state.assessments.onboarding
-        })
+    methods: {
+        load() {
+            const position = perPage * (this.page - 1);
+            this.visibleNews = [...this.visibleNews, ...this.news.slice(position, position + perPage)];
+            this.page++;
+        }
+    },
+    mounted() {
+        this.load();
     }
 }
 </script>

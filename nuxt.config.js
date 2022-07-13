@@ -106,7 +106,7 @@ export default {
         baseUrl: 'https://dev-api.elinordata.org/'
     },
     router: {
-        middleware: ['auth'],
+        middleware: ['auth', 'onload'],
         extendRoutes(routes, resolve) {
             routes.push(
                 {

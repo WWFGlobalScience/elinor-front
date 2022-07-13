@@ -1,5 +1,5 @@
 <template>
-    <article class="page page--documentation" v-if="loaded">
+    <article class="page page--documentation">
 
         <div class="page--assessments__top">
             <img src="~/assets/img/assessment-bg.svg" alt="assessment top bg" class="page--assessments__top-img">
@@ -13,45 +13,42 @@
 
         <section class="section section--mt-medium section--documentation">
             <div class="container">
-                <documentation-card/>
+                <documentation-card v-for="(document, index) in documents" :document="document" :key="index"/>
                 <div class="row-btn row-btn--center">
-                    <documentation-btn-more/>
+                    <documentation-btn-more v-if="nextPage !== null" :load-more="load" />
                 </div>
             </div>
         </section>
     </article>
 </template>
 
-
-
 <script>
-import { mapState } from 'vuex'
+import {mapActions, mapState} from 'vuex'
 export default {
     name: 'documentation',
     auth: false,
     data() {
-        return {loaded: false}
-    },
-    async mounted() {
-        console.log(localStorage.getItem('onboarding'));
-        if(localStorage.getItem('onboarding') !== '0') {
-            this.$store.dispatch('popup/popupState', { active: false, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' });
+        return {
+            sortBy: 'publication_date',
+            sortOrder: 'desc'
         }
-        this.$store.dispatch( 'loader/loaderState', {
-            active: true,
-            text: 'Loading assessments...'
-        } )
-        await this.$store.dispatch( 'assessments/fetchAssessments' )
-        this.$store.dispatch( 'loader/loaderState', {active: false} )
-        this.loaded = true;
-
     },
-    fetchOnServer: false,
     computed: {
         ...mapState({
-            loader: state => state.loader,
-            onboarding: state => state.assessments.onboarding
+            documents: state => state.documents.list,
+            nextPage: state => state.documents.pagination.next
         })
+    },
+    methods: {
+        ...mapActions({
+            fetchDocuments: "documents/fetchDocuments"
+        }),
+        load() {
+            this.fetchDocuments({page: this.nextPage, sortBy: this.sortBy, sortOrder: this.sortOrder});
+        }
+    },
+    mounted() {
+        this.load();
     }
 }
 </script>

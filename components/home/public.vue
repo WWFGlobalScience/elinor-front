@@ -129,46 +129,22 @@
       <div class="container">
         <div class="row">
           <div class="text-medium uppercase">LATEST NEWS</div>
-          <a href="" class="link-arrow">
-            <span>See more news</span> 
-            <img class="ico" src="~/assets/img/ico-arrow-right.svg"/>  
-          </a>
+          <nuxt-link to="/news" role="button" class="link-arrow">
+            <span>See more news</span>
+            <img class="ico" src="~/assets/img/ico-arrow-right.svg"/>
+          </nuxt-link>
         </div>
         <div class="row row--cards mt-9">
-
-          <div class="latest-news__card ui-rounded-border">
+          <div v-for="newsInstance in latestNews" class="latest-news__card ui-rounded-border">
             <div class="header">
-              <p class="date">5-12-2022</p>
-              <h3 class="title c-title--md text-turqy mt-2">Name Assessmet Area lorem ipsum dolor sid amet </h3>
+              <p class="date">{{ newsInstance.date }}</p>
+              <h3 class="title c-title--md text-turqy mt-2">{{ newsInstance.title }}</h3>
             </div>
             <div class="body">
-              <p class="text c-text--base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  aliquip ex ea commodo consequat.</p>
-              <a href="" class="link-more mt-4">Read more</a>
+              <p class="text c-text--base">{{ newsInstance.text.length > maxCharacters ? newsInstance.text.substring(0,maxCharacters) + '...' : newsInstance.text}}</p>
+              <nuxt-link to="news" class="link-more mt-4">Read more</nuxt-link>
             </div>
           </div>
-
-          <div class="latest-news__card ui-rounded-border">
-            <div class="header">
-              <p class="date">5-12-2022</p>
-              <h3 class="title c-title--md text-turqy mt-2">Name Assessmet Area lorem ipsum dolor sid amet </h3>
-            </div>
-            <div class="body">
-              <p class="text c-text--base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud  aliquip ex ea commodo consequat.</p>
-              <a href="" class="link-more mt-4">Read more</a>
-            </div>
-          </div>
-
-          <div class="latest-news__card ui-rounded-border">
-            <div class="header">
-              <p class="date">5-12-2022</p>
-              <h3 class="title c-title--md text-turqy mt-2">Name Assessmet Area lorem ipsum dolor sid amet </h3>
-            </div>
-            <div class="body">
-              <p class="text c-text--base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <a href="" class="link-more mt-4">Read more</a>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -264,6 +240,9 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
+import newsJson from '../../news.json'
+const numNews = 3;
+const maxCharacters = 300;
 
 export default {
   name: 'home-public',
@@ -271,7 +250,9 @@ export default {
     return {
       username: null,
       password: null,
-      remember: false
+      remember: false,
+      latestNews: [...newsJson.news].splice(0, numNews),
+      maxCharacters
     }
   },
   computed: {
@@ -282,8 +263,7 @@ export default {
   methods: {
     ...mapActions({
       signIn: 'authentication/signIn',
-      resendEmail: 'authentication/resendEmail',
-      getProtectedAreas: 'managementareas/getProtectedAreas',
+      resendEmail: 'authentication/resendEmail'
     }),
     submit(event) {
       event.preventDefault();
