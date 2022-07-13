@@ -48,9 +48,8 @@ export const actions = {
         })
 
         try {
-            let url = 'v2/documents/download/' + document.id + '/';
             const responseType = 'blob' ;
-            const response = await this.$axios.get(url, {responseType});
+            const response = await this.$axios.get(document.file, {responseType});
             const objectURL = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = objectURL;
