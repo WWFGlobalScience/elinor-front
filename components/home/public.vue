@@ -185,7 +185,7 @@
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
             <blockquote class="elinor__sentence mx-auto">
-              “{{ $t('pages.home.public.content.elinor.quote.text') }}”
+              “{!! $t('pages.home.public.content.elinor.quote.text') !!}”
               <span class="elinor__sentence__name">
                 {{ $t('pages.home.public.content.elinor.quote.author') }}
               </span>

@@ -141,7 +141,7 @@
             }
         }
         &.input--radios-question {
-            @apply flex items-start;
+            @apply flex items-start flex-row;
             .radios__wrap {
                 @apply mr-4;
             }
@@ -350,6 +350,16 @@
     }
 }
 
+.form__legend{
+    @apply text-sm ;
+    strong{
+        @apply text-xl font-bold mb-2;
+    }
+    a{
+        @apply text-turqy
+    }
+}
+
 
 
 
@@ -399,7 +409,6 @@
             @apply text-xs p-3 text-grayy;
         }
     }
-
 }
 
 .tit-row{

@@ -15,6 +15,7 @@
                 "aboutLink" : "About",
                 "faqsLink" : "FAQs",
                 "methodologyLink" : "Methodology",
+                "contactLink" : "Contact",
                 "createAccountLink" : "Create Account",
                 "signOut" : "Sign Out"
             },
@@ -965,7 +966,7 @@
             "home": {
                 "meta": {
                     "title": "Documentation",
-                    "slug": "documentation",
+                    "slug": "/documentation",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -990,7 +991,7 @@
             "home": {
                 "meta": {
                     "title": "News",
-                    "slug": "news",
+                    "slug": "/news",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -1138,6 +1139,26 @@
                         "3" : "Are local stakeholders able to exercise their rights to natural resources?",
                         "4" : "Are local stakeholders affected by the rules able to play a role in making changes to the rules?"
                     }
+                }
+            }
+        },
+        "contact" : {
+            "header" : {
+                "title" : "Contact"
+            },
+            "form": {
+                "legend": {
+                    "strong": "Fill this form to contact us",
+                    "default": "We will contact yoi as soon as possible"
+                },
+                "name":"Name",
+                "subject":"Subject",
+                "mail":"Mail",
+                "message":"Message",
+                "submit":"Send message",
+                "contact": {
+                    "strong":"Or if you prefer send a e-mail to",
+                    "link":""
                 }
             }
         },

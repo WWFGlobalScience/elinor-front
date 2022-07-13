@@ -57,6 +57,10 @@ main {
     @apply grid grid-cols-4 sm:grid-cols-1 gap-14;
 }
 
+.g-grid--4-1-lg{
+    @apply grid grid-cols-4 lg:grid-cols-1 gap-14;
+}
+
 .g-colspan--2{
     @apply col-span-2;
 }
@@ -70,6 +74,10 @@ main {
 
 .g-colspan--3-full-md{
     @apply col-span-3 md:col-span-full;
+}
+
+.g-colspan--3-full-lg{
+    @apply col-span-3 lg:col-span-full;
 }
 
 .g-colspan--4-full-md{
