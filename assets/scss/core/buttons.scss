@@ -111,3 +111,20 @@ button {
     }
 }
 
+//links
+.link-arrow {
+    @apply flex flex-row flex-wrap items-center text-turqy;
+    .ico{
+        @apply ml-2;
+    }
+}
+
+.link-more {
+    @apply text-turqy flex;
+    
+    &::after {
+        content: '...';
+        @apply pl-1;
+    }
+
+}
