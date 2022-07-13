@@ -98,10 +98,13 @@ export const mutations = {
         state.authorities.push(authority);
     },
     addEmptyZone(state) {
-        state.instance.zones.push({name: null, access_level: null, description: null});
+        state.zones.push({name: null, access_level: null, description: null});
     },
-    removeLastZone(state) {
-        state.instance.zones.pop();
+    deleteZone(state, zoneId) {
+        state.zones = state.zones.filter(zone => zone.id !== zoneId);
+    },
+    deleteAllZones(state) {
+        state.zones = [];
     }
 }
 
@@ -205,7 +208,8 @@ export const actions = {
         state.commit('removePolygon')
     },
     async editZoneField(state, {field, index, value}) {
-        const zone = state.state.zones[index];
+        const zone = {...state.state.zones[index]};
+        zone[field] = value;
         if(zone && zone.id) {
             await this.$axios({
                 method: 'patch',
@@ -213,22 +217,22 @@ export const actions = {
                 data: {[field]: value}
             });
         } else {
-            if(zone && zone.name && zone.access_level) {
+            if(zone && zone.name && zone.access_level && zone.description) {
                 const data = {...zone, management_area: state.state.instance.id}
-                await this.$axios({
+                const response = await this.$axios({
                     method: 'post',
                     url: `/v2/managementareazones/`,
                     data
                 });
+                state.commit('setZoneField', {field: 'id', index, value: response.data.id})
+
             }
         }
         state.commit('setZoneField', {field, index, value})
     },
-
     async resetImportFileError(state) {
         state.commit('resetImportFileError');
     },
-
     async setRegion(state, result) {
         const name = result.text;
         const regionsResponse = await this.$axios({
@@ -326,18 +330,23 @@ export const actions = {
         state.commit('addAuthorityToList', authority);
         return authority;
     },
-    initZones(state, number) {
-        if(number > state.state.instance.zones.length) {
-            for(let i = 0; i < number - state.state.instance.zones.length; i++) {
-                state.commit('addEmptyZone');
-                console.log('add')
+    async deleteZone(state, zoneId) {
+        await this.$axios({
+            method: 'delete',
+            url: `/v2/managementareazones/${zoneId}/`
+        });
+        state.commit('deleteZone', zoneId)
+    },
+    async deleteAllZones(state) {
+        state.state.zones.forEach(zone => {
+            if(zone.id) {
+                this.$axios({
+                    method: 'delete',
+                    url: `/v2/managementareazones/${zone.id}/`
+                });
             }
-        }
-        if (number < state.state.instance.zones.length) {
-            for(let i = 0; i < state.state.instance.zones.length - number; i++) {
-                state.commit('removeLastZone');
-                console.log('rm')
-            }
-        }
-    }
+        });
+        state.commit('deleteAllZones')
+    },
+
 }

@@ -245,14 +245,14 @@
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="zone-yes" @change="onShowZones" :checked="showZones === true" :value="true">
+                                        <input type="radio" name="consent_given" id="zone-yes" @change="onShowZones($event.target.value)" :checked="showZones === true" :value="1">
                                         <img src="~/assets/img/ico-ok.svg" alt="" alt="">
                                     </div>
                                     <label for="zone-yes" class="label">Yes</label>
                                 </div>
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="zone-no" @change="onShowZones" :checked="showZones === false" :value="false">
+                                        <input type="radio" name="consent_given" id="zone-no" @change="onShowZones($event.target.value)" :checked="showZones === false" :value="0">
                                         <img src="~/assets/img/ico-ok.svg" alt="" alt="">
                                     </div>
                                     <label for="zone-no" class="label">No</label>
@@ -262,27 +262,14 @@
                     </div>
                     <div class="form__row form__row--mt-16" v-if="showZones">
                         <div class="input input--multiselect">
-                            <div class="label label--tit">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.title' ) }}</div>
-                            <div class="multiselect__wrap multiselect__wrap--1-3">
-                                <multiselect
-                                    :value="numZones"
-                                    :options="[1,2,3,4,5,6,7,8,9,10]"
-                                    :multiple="false" :searchable="false" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom"
-                                    @input="onNumZonesChanged($event)">
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div v-if="managementArea.zones && managementArea.zones.length > 0" class="multiselect__extra">
-                                <div v-for="(zone, index) in managementArea.zones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                            <div class="label label--tit" v-if="zones.length">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.title' ) }}</div>
+                            <div class="multiselect__extra">
+                                <div v-for="(zone, index) in zones" :key="index" class="multiselect__form">
                                     <div class="form__row form__row--mt-7 tit-row">
                                         <div class="label label--tit">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</div>
-                                        <a href="/" class="btn btn--border-turqy btn--inverse btn--sm">
+                                        <a @click="onDeleteZone(zone)" role="button" class="btn btn--border-turqy btn--inverse btn--sm">
                                             <span>{{ $t( 'default.delete' ) }}</span>
-                                            <img src='~/assets/img/ico-delete.svg'/> 
+                                            <img src='~/assets/img/ico-delete.svg'/>
                                         </a>
                                     </div>
                                     <div class="form__row form__row--mt-8">
@@ -317,9 +304,9 @@
                                     </div>
                                 </div>
                                 <div class="btn-row">
-                                    <a href="/" class="btn--border-turqy mt-12 ml-8">
+                                    <a @click="onAddZone" role="button" class="btn--border-turqy mt-12 ml-8">
                                         <span>{{ $t( 'pages.assessments.edit.tabs.managementArea.buttons.addZone' ) }}</span>
-                                        <img src='~/assets/img/ico-plus.svg'/> 
+                                        <img src='~/assets/img/ico-plus.svg'/>
                                     </a>
                                 </div>
                             </div>
@@ -365,7 +352,6 @@ export default {
                 language: 'en-US'
             }),
             showZones: null,
-            numZones: null,
             accessLevels: [
                 { id: 90, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.OPEN_ACCESS') },
                 { id: 50, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.PARTIALLY_RESTRICTED') },
@@ -379,14 +365,11 @@ export default {
         }
     },
     mounted() {
-        this.numZones = this.zones.length;
         this.showZones = this.zones.length > 0;
-
         this.initGeocoder();
     },
     watch: {
         zones() {
-            this.numZones = this.zones.length;
             this.showZones = this.zones.length > 0;
         },
         assessment() {
@@ -436,12 +419,10 @@ export default {
             this.editManagementAreaField({field: 'date_established', value: date.format('YYYY-MM-DD'), id: this.managementArea.id, assessmentId: this.assessment.id});
         },
         onShowZones(value) {
-            this.showZones = value;
-        },
-        onNumZonesChanged(number) {
-            this.showZones = number > 0;
-            this.numZones = number;
-            this.initZones(number);
+            this.showZones = parseInt(value);
+            if(!this.showZones && this.zones.length > 0) {
+                this.deleteAllZones();
+            }
         },
         onZoneFieldChanged(field, index, value) {
             this.editZoneField({field, index, value})
@@ -457,14 +438,22 @@ export default {
                 this.geocoder.clear();
             });
         },
+        onAddZone() {
+            this.$store.commit('managementareas/addEmptyZone');
+
+        },
+        onDeleteZone(zone) {
+            this.deleteZone(zone.id);
+        },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
             createAuthority: 'managementareas/createAuthority',
-            initZones: 'managementareas/initZones',
             editZoneField: 'managementareas/editZoneField',
             removeRegion: 'managementareas/removeRegion',
             protectedAreaByWdpaId: 'managementareas/protectedAreaByWdpaId',
             clearProtectedArea: 'managementareas/clearProtectedArea',
+            deleteZone: 'managementareas/deleteZone',
+            deleteAllZones: 'managementareas/deleteAllZones',
         })
     }
 }
