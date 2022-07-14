@@ -48,14 +48,19 @@ export const actions = {
         })
 
         try {
-            let url = 'v2/documents/download/' + document.id + '/';
             const responseType = 'blob' ;
-            const response = await this.$axios.get(url, {responseType});
+            const response = await this.$axios.get(document.file, {responseType, transformRequest: (data, headers) => {
+                    delete headers['Authorization'];
+                    delete headers.common['Authorization'];
+                    return data;
+                }
+            });
             const objectURL = window.URL.createObjectURL(new Blob([response.data]));
-            const link = document.createElement('a');
+            const link = window.document.createElement('a');
             link.href = objectURL;
-            link.setAttribute('download', document.name);
-            document.body.appendChild(link);
+            const filename = document.file.split('/').pop();
+            link.setAttribute('download', filename);
+            window.document.body.appendChild(link);
             link.click();
 
             this.dispatch('loader/loaderState', {active: false})
