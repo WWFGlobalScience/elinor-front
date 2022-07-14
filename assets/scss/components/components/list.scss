@@ -116,15 +116,17 @@
             @apply text-lg;
             &::before {
                 content: counter(elements-counter);
-                @apply absolute -left-12 top-1 border-radius--50 flex justify-center items-center border border-turqy border-solid w-[36px] h-[36px] text-sm text-turqy;
+                @apply absolute -left-12 -top-1 border-radius--50 flex justify-center items-center border border-turqy border-solid w-[36px] h-[36px] text-sm text-turqy;
             }
         }
         .number-list__answer {
-            @apply flex justify-center items-center border-radius--20 bg-turqy-lighter px-10 py-5 text-sm italic mt-5;
+            @apply flex justify-start items-center border-radius--20 bg-turqy-lighter px-10 py-5 text-sm leading-6 italic mt-5;
+            .register {
+                @apply text-8xl;
+            }
         }
         &:not(:last-child) {
             @apply mb-20;
         }
     }
-
 }

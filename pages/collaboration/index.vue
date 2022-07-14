@@ -9,14 +9,14 @@
                 <div class="g-grid--3-1-lg mt-16">
                     <div class="g-colspan--2-full-lg">
                         <div class="text-group">
-                            <h2 class="c-title--md mb-12">Collaboration Principles to guide the use of the Elinor tool and data system </h2>
-                            <p>The Elinor tool and data system is a collaborativeCollaboration is at the heart of learning and working more efficiently and we want to foster a collaborative environment between users of Elinor, and to ensure that users feel comfortable and supported to do so. We value the contributions made by users who have made public their assessments on elinor.org and the Elinor development team in providing the service. Therefore the objective of laying out the principles below is to facilitate collaboration in a way that respects the intellectual property of all those who have contributed to xxxx@elinor.org.</p> 
-                            <p>The principles of openness, respect, transparency, sharing good practice and data accuracy arekey to effective and inclusive collaboration and we hope the guiding principles of collaboration laid out below reflect this and foster fruitful collaborations!  If you would like to make suggestionstowards strengthening collaborations, we welcome them here @ xxxx.elinor.org>. </p>
+                            <h2 class="c-title--md mb-12">{{ $t( 'pages.collaboration.intro.title' ) }}</h2>
+                            <p>{{ $t( 'pages.collaboration.intro.paragraph1' ) }}</p> 
+                            <p>{{ $t( 'pages.collaboration.intro.paragraph2' ) }}</p>
                         </div>
                     </div>
                     <div class="g-colspan--1-full-lg lg:mt-4">
                         <blockquote class="elinor__blockquote">
-                            <p>The principles of openness, respect, transparency, sharing good practice and data accuracy arekey to effective and inclusive collaboration and we hope the guiding principles of collaboration laid out below reflect this and foster fruitful collaborations! </p>
+                            <p>{{ $t( 'pages.collaboration.intro.blockquote' ) }}</p>
                         </blockquote>
                     </div>
                 </div>
@@ -24,62 +24,73 @@
         </section>
         <section class="section section--guidelines">
             <div class="container">
-                <h2 class="c-title--md mb-12">Guiding principles of collaboration</h2>
+                <h2 class="c-title--md mb-12">{{ $t( 'pages.collaboration.guidelines.title' ) }}</h2>
 
                 <div class="g-grid--4-1-lg mt-16">
                     <div class="g-colspan--3-full-lg lg:mt-4">
                         <ul class="number-list">
                             <li class="number-list__item">
                                 <div class="number-list__question">
-                                    <h4 class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.</h4>
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question1' ) }}</h4>
                                 </div>
                                 <div class="number-list__answer">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.
+                                    <h5>{{ $t( 'pages.collaboration.guidelines.answer1' ) }}</h5>
                                 </div>
                             </li>
 
                             <li class="number-list__item">
                                 <div class="number-list__question">
-                                    <h4 class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.</h4>
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question2' ) }}</h4>
                                 </div>
                                 <div class="number-list__answer">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.
+                                    <h5>{{ $t( 'pages.collaboration.guidelines.answer2' ) }}</h5>
                                 </div>
                             </li>
 
                             <li class="number-list__item">
                                 <div class="number-list__question">
-                                    <h4 class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.</h4>
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question3' ) }}</h4>
                                 </div>
                                 <div class="number-list__answer">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.
+                                    <h5>{{ $t( 'pages.collaboration.guidelines.answer3' ) }}</h5>
                                 </div>
                             </li>
 
                             <li class="number-list__item">
                                 <div class="number-list__question">
-                                    <h4 class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.</h4>
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question4' ) }}</h4>
                                 </div>
                                 <div class="number-list__answer">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.
+                                    <h5>{{ $t( 'pages.collaboration.guidelines.answer4' ) }}</h5>
                                 </div>
                             </li>
 
                             <li class="number-list__item">
                                 <div class="number-list__question">
-                                    <h4 class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.</h4>
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question5' ) }}</h4>
                                 </div>
                                 <div class="number-list__answer">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.
+                                    <h5>{{ $t( 'pages.collaboration.guidelines.answer5' ) }}</h5>
                                 </div>
                             </li>
 
                             <li class="number-list__item">
                                 <div class="number-list__question">
-                                    <h4 class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.</h4>
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question6' ) }}</h4>
                                 </div>
                                 <div class="number-list__answer">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum magnam labore aliquid quis eveniet! Aliquam porro necessitatibus accusamus magnam nam labore quasi qui, molestiae voluptatem ratione sed quod, in consectetur.
+                                   <h5>
+                                        <strong class="register">©</strong>    
+                                    </h5>
+                                </div>
+                            </li>
+
+                            <li class="number-list__item">
+                                <div class="number-list__question">
+                                    <h4 class="">{{ $t( 'pages.collaboration.guidelines.question7' ) }}</h4>
+                                </div>
+                                <div class="number-list__answer">
+                                    <h5>{{ $t( 'pages.collaboration.guidelines.answer7' ) }}</h5>
                                 </div>
                             </li>
                         </ul>
