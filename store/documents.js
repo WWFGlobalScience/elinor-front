@@ -58,7 +58,8 @@ export const actions = {
             const objectURL = window.URL.createObjectURL(new Blob([response.data]));
             const link = window.document.createElement('a');
             link.href = objectURL;
-            link.setAttribute('download', document.name + '.pdf');
+            const filename = document.file.split('/').pop();
+            link.setAttribute('download', filename);
             window.document.body.appendChild(link);
             link.click();
 
