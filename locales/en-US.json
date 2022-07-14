@@ -875,24 +875,37 @@
                         }
                     },
                     "publish" : {
-                        "tabButton" : "Publish...",
+                        "tabButton" : {
+                            "ready": "Ready to publish",
+                            "preparing": "Preparing to publish",
+                            "edit": "Edit publish settings"
+                        },
                         "title" : "Finalize & Publish",
-                        "finalize" : "Finalize",
-                        "publish" : "Publish",
-                        "whatHappen" : "What will happen when you publish",
-                        "whatHappen1" : "You mark your Assessment as Finished",
-                        "whatHappen2" : "You will not be able to edit the Survey Data",
-                        "whatHappen3" : "You will not be able to edit the Assessment Data",
-                        "whatHappen4" : "You could still edit or change the Managed Area",
-                        "whatHappen5" : "You could still add collaborators",
-                        "whatHappen6" : "You could still unpublish the Assessment",
-                        "publishButton" : "Publish Assessment",
-                        "warning" : "Warning!!",
-                        "warningText" : "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment",
-                        "popup" : {
-                            "title" : "Publish Assessment",
-                            "confirmationTitle" : "Are you sure you want to publish your assessment?",
-                            "confirmationDescription" : "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
+                        "finalize" : {
+                            "title": "Finalize",
+                            "whatHappenTitle" : "What happens when you finalize",
+                            "whatHappenList1" : "<li>You mark your Assessment as Finished</li><li>You will not be able to edit the Survey Data</li><li>You will not be able to edit the Assessment Data</li><li>Your Assessment will continue only visible by you and your Collaborators</li><li>Will appear as Aggregated data in insights and maps</li>",
+                            "whatHappenList2" : "<li>You could still edit or change the Managed Area</li><li>You could still add collaborators</li><li>You could still unpublish the Assessment</li>",
+                            "button" : "Finalized",
+                            "warning" : "Warning!!",
+                            "warningText" : "Once finalized you can not edit the Survey or Assessment Data, so finalize only when you finish your Assessment",
+                            "popup" : {
+                                "title" : "Finalize Assessment",
+                                "confirmationTitle" : "Are you sure you want to finalize your assessment?",
+                                "confirmationDescription" : "Once finalized you can not edit the Survey or Assessment Data, so finalize only when you finish your Assessment"
+                            }
+                        },
+                        "publish" : {
+                            "title": "Publish",
+                            "whatHappenTitle" : "What happens when you publish",
+                            "whatHappenList1" : "<li>You make available your Assessment to public users</li><li>Will appear as Aggregated data in insights and maps</li>",
+                            "whatHappenList2" : "<li>You could still edit or change the Managed Area</li><li>You could still add collaborators</li><li>You could still unpublish the Assessment</li>",
+                            "button" : "Publish Assessment",
+                            "popup" : {
+                                "title" : "Publish Assessment",
+                                "confirmationTitle" : "Are you sure you want to publish your assessment?",
+                                "confirmationDescription" : "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
+                            }
                         },
                         "statuses" : {
                             "public" : {

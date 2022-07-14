@@ -1,62 +1,5 @@
 import qs from 'qs'
-
-let required_fields = {
-    data: [
-        'name',
-        'year',
-        'organization',
-        'person_responsible_role',
-        'count_community',
-        'count_academic',
-        'count_government',
-        'count_private',
-        'count_indigenous',
-        'collection_method',
-        'collection_method_text',
-        'consent_given',
-        'consent_given_written'
-    ],
-    managed_area: [
-        'name',
-        'countries',
-        'regions',
-        'date_established',
-        'recognition_level',
-        'governance_type',
-        'objectives',
-        'management_authority',
-        'support_sources'
-    ]
-};
-
-let progress = {
-    data: {
-        complete: false,
-        percentage: 0,
-        filled: 0,
-        required: required_fields.data.length
-    },
-    managed_area: {
-        complete: false,
-        percentage: 0,
-        filled: 0,
-        required: required_fields.managed_area.length
-    },
-    survey: {
-        complete: false,
-        percentage: 0,
-        filled: 0,
-        required: 0 //TODO: get survey questions length
-    },
-    collaborators: {
-        complete: false,
-        percentage: 0,
-        filled: 0,
-        required: 1
-    },
-    published: false,
-    overall_percentage: 0
-};
+import {required_fields, initProgress, calculateProgress} from "~/config/assessment-progress";
 
 export const state = () => ({
     list: [],
@@ -68,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, surveyAnswers: []},
+    assessment: {last_edit: null, surveyAnswers: [], collaborators: []},
     edit: {
         data: true,
         ma: false,
@@ -78,7 +21,7 @@ export const state = () => ({
         percent: 0
     },
     required_fields,
-    progress
+    progress: initProgress()
 })
 
 export const mutations = {
@@ -102,19 +45,25 @@ export const mutations = {
         state.progress = payload;
     },
     addCollaborator(state, payload) {
-        state.assessment.collaborators.push(payload)
+        const collaborators = [...state.assessment.collaborators, payload];
+        state.assessment = {...state.assessment, collaborators};
+        state.progress = calculateProgress(state.assessment);
     },
     removeCollaborator(state, payload) {
-        state.assessment.collaborators = state.assessment.collaborators.filter(collaborator => collaborator.id !== payload);
+        const collaborators = [...state.assessment.collaborators.filter(collaborator => collaborator.id !== payload)]
+        state.assessment = {...state.assessment, collaborators}
+        state.progress = calculateProgress(state.assessment);
     },
     updateCollaborator(state, payload) {
         const {id, role} = payload;
-        state.assessment.collaborators = state.assessment.collaborators.map((collaborator) => {
+        const collaborators = [...state.assessment.collaborators.map((collaborator) => {
             if(collaborator.id === id) {
                 collaborator.role = role;
             }
             return collaborator;
-        });
+        })]
+        state.assessment = {...state.assessment, collaborators};
+        state.progress = calculateProgress(state.assessment);
     },
     setSearch(state, payload) {
         state.search = payload;
@@ -137,12 +86,20 @@ export const mutations = {
     setAttributes(state, attributes) {
         state.assessment.attributes = attributes;
     },
-    addSurveyAnswer(state, answer) {
-        state.assessment.surveyAnswers = [answer, ...state.assessment.surveyAnswers];
+    addSurveyAnswer(state, {answer, percent_complete}) {
+        const surveyAnswers = [answer, ...state.assessment.surveyAnswers];
+        state.assessment = {...state.assessment, surveyAnswers, percent_complete};
+        state.progress = calculateProgress(state.assessment);
     },
     updateSurveyAnswer(state, answer) {
         const filtered = state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== answer.id);
-        state.assessment.surveyAnswers = [answer, ...filtered];
+        const surveyAnswers = [answer, ...filtered];
+        state.assessment = {...state.assessment, surveyAnswers} ;
+        state.progress = calculateProgress(state.assessment);
+    },
+    setManagementArea(state, managementArea) {
+        console.log(managementArea);
+        state.assessment = {...state.assessment, management_area_countries: managementArea};
     }
 }
 
@@ -198,6 +155,7 @@ export const actions = {
                 state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
             }
             state.commit('setAssessment', assessment);
+            state.commit('setProgress', calculateProgress(assessment));
 
             const surveyAnswersResponse = await this.$axios({
                 method: 'get',
@@ -250,7 +208,7 @@ export const actions = {
         .then((response) => {
             state.commit('setAssessment', response.data);
             state.commit('setLastEdit');
-            state.dispatch('updateAssessmentProgress', id);
+            state.commit('setProgress', calculateProgress(response.data));
         })
         .catch((error) => {
             console.log(error)
@@ -264,76 +222,21 @@ export const actions = {
     },
 
     async editAssessmentField(state, {field, value, id}) {
-        this.$axios({
+        const response = await this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
             data: {
                 [field]: value && value.id || value
             }
-        })
-        .then((response) => {
-            state.commit('setAssessmentField', {field, value})
-            state.commit('setLastEdit');
-            state.dispatch('updateAssessmentProgress', id);
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+        });
+        await state.commit('setAssessmentField', {field, value})
+        state.commit('setLastEdit');
+        state.commit('setProgress', calculateProgress(response.data));
     },
 
-    async updateAssessmentProgress(state, id) {
-
-        let progress = JSON.parse(JSON.stringify(state.state.progress));
-        progress.overall_percentage = 0;
-
-        //DATA
-        const assessment = (await this.$axios.get('v2/assessments/' + id + '/')).data;
-        const managementArea = assessment.management_area ? (await this.$axios.get('v2/managementareas/' + assessment.management_area)).data : {};
-
-        progress.data.filled = 0;
-        for (let field of required_fields.data) {
-            if (assessment[field] !== null) progress.data.filled++;
-        }
-
-        progress.data.percentage = progress.data.filled / progress.data.required * 100;
-        progress.data.percentage = progress.data.percentage < 100 ? progress.data.percentage : 100;
-        progress.data.complete = progress.data.percentage === 100;
-        progress.overall_percentage += 25 * progress.data.percentage / 100;
-
-
-        //MANAGED AREA
-        progress.managed_area.filled = 0;
-        for (let field of required_fields.managed_area) {
-            if (managementArea[field]) progress.managed_area.filled++;
-            else console.log(field);
-        }
-
-        progress.managed_area.percentage = progress.managed_area.filled / progress.managed_area.required * 100;
-        progress.managed_area.percentage = progress.managed_area.percentage < 100 ? progress.managed_area.percentage : 100;
-        progress.managed_area.complete = progress.managed_area.percentage === 100;
-        progress.overall_percentage += 25 * progress.managed_area.percentage / 100;
-
-
-        //SURVEY
-        progress.survey.filled = 0;
-        /*for (let field of required_fields.survey) {
-            if (assessment[field]) progress.survey.filled++;
-        }*/
-
-        progress.survey.percentage = progress.survey.filled / progress.survey.required * 100;
-        progress.survey.percentage = progress.survey.percentage < 100 ? progress.survey.percentage : 100;
-        progress.survey.complete = progress.survey.percentage === 100;
-        progress.overall_percentage += 25 * progress.survey.percentage / 100;
-
-
-        //COLLABORATORS
-        const collaborators = await this.$axios.get('v2/collaborators/?assessment=' + id);
-        progress.collaborators.filled = collaborators.data.count;
-        progress.collaborators.percentage = progress.collaborators.filled / progress.collaborators.required * 100;
-        progress.collaborators.percentage = progress.collaborators.percentage < 100 ? progress.collaborators.percentage : 100;
-        progress.collaborators.complete = progress.collaborators.percentage === 100;
-        progress.overall_percentage += 25 * progress.collaborators.percentage / 100;
-
+    async updateAssessmentProgress(state) {
+        const assessment = state.state.assessment;
+        const progress = calculateProgress(assessment);
         state.commit('setProgress', progress)
     },
 
@@ -348,24 +251,82 @@ export const actions = {
                 config: {headers: {'Content-Type': 'multipart/form-data'}}
             })
             await state.commit('setAssessmentField', {field, value: response.data[field]})
+            state.commit('setProgress', calculateProgress(response.data));
             state.commit('setLastEdit');
         } catch (e) {
             console.log(e);
         }
     },
 
-    async publish(state, {id, status}) {
+    async publish(state, id) {
         this.dispatch('loader/loaderState', {
             active: true,
             text: 'Publishing assessment...'
         })
+        const versionResponse = await this.$axios.get('v2/assessmentversion');
+        const published_version = versionResponse.data;
         this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
-            data: {status}
+            data: {data_policy: 'public', published_version}
         })
             .then((response) => {
-                state.commit('setAssessmentField', {field: 'status', value: status})
+                state.commit('setAssessmentField', {field: 'data_policy', value: 'public'})
+                state.commit('setLastEdit');
+                this.dispatch('popup/popupState', {active: false})
+                this.$router.push('/assessments')
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                this.dispatch('loader/loaderState', {
+                    active: false,
+                    text: ''
+                })
+            })
+    },
+
+    async unpublish(state, id) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Unpublishing assessment...'
+        })
+
+        this.$axios({
+            method: 'patch',
+            url: `/v2/assessments/${id}/`,
+            data: {data_policy: 'private'}
+        })
+            .then((response) => {
+                state.commit('setAssessmentField', {field: 'data_policy', value: 'private'})
+                state.commit('setLastEdit');
+                this.dispatch('popup/popupState', {active: false})
+                this.$router.push('/assessments')
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() => {
+                this.dispatch('loader/loaderState', {
+                    active: false,
+                    text: ''
+                })
+            })
+    },
+
+    async finalize(state, id) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Finalizing assessment...'
+        })
+        this.$axios({
+            method: 'patch',
+            url: `/v2/assessments/${id}/`,
+            data: {status: 10}
+        })
+            .then((response) => {
+                state.commit('setAssessmentField', {field: 'status', value: 10})
                 state.commit('setLastEdit');
                 this.dispatch('popup/popupState', {active: false})
                 this.$router.push('/assessments')
@@ -393,7 +354,7 @@ export const actions = {
     },
 
     async storeSurveyAnswer(state, {assessmentId, questionId, choice, explanation}) {
-        this.$axios({
+        const response = await this.$axios({
             method: 'post',
             url: `/v2/surveyanswerlikerts/`,
             data: {
@@ -402,17 +363,15 @@ export const actions = {
                 choice,
                 explanation
             }
-        })
-            .then((response) => {
-                state.commit('addSurveyAnswer', response.data)
-            })
-            .catch((error) => {
+        });
 
-            })
+        const assessmentResponse = await this.$axios.get(`v2/assessments/${assessmentId}/`);
+
+        state.commit('addSurveyAnswer', {answer: response.data, percent_complete: assessmentResponse.data.percent_complete});
     },
 
     async updateSurveyAnswer(state, {id, assessmentId, questionId, choice, explanation}) {
-        this.$axios({
+        const response = await this.$axios({
             method: 'patch',
             url: `/v2/surveyanswerlikerts/${id}/`,
             data: {
@@ -421,13 +380,9 @@ export const actions = {
                 choice,
                 explanation
             }
-        })
-            .then((response) => {
-                state.commit('updateSurveyAnswer', response.data)
-            })
-            .catch((error) => {
+        });
 
-            })
+        state.commit('updateSurveyAnswer', response.data)
     },
 
     reset(state) {

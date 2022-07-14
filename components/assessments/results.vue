@@ -64,16 +64,20 @@
                             <div class="search-criteria" v-if="assessment.management_area_countries"><span class="area">Managed Area</span> <span class="criteria">{{ assessment.management_area_countries.name }}</span></div>
                         </div>
                         <div class="right">
-                            <div class="assessment-status status--ready">
+                            <div v-if="assessment.data_policy === 'public' && assessment.status === 10" class="assessment-status status--ready">
                                 <span class="status-circle"><img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K'/></span>
                                 <span class="text">Published</span>
                             </div>
-                            <div class="assessment-status status--ready">
+                            <div v-if="assessment.data_policy === 'private' && assessment.status === 90" class="assessment-status status--ready">
+                                <span class="status-circle"><img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K'/></span>
+                                <span class="text">Finalized</span>
+                            </div>
+                            <div v-if="assessment.status === 90 && assessment.percent_complete === 100" class="assessment-status status--ready">
                                 <span class="status-circle"><span>100%</span></span>
                                 <span class="text">Ready to Publish</span>
                             </div>
-                            <div class="assessment-status status--pending">
-                                <span class="status-circle"><span>50%</span></span>
+                            <div v-if="assessment.status === 90 && assessment.percent_complete < 100" class="assessment-status status--pending">
+                                <span class="status-circle"><span>{{ getCompletionPercentage(assessment) }}%</span></span>
                                 <span class="text">Preparing to Publish</span>
                             </div>
                         </div>
@@ -118,8 +122,9 @@
 </template>
 
 <script>
-import {mapActions, mapState} from 'vuex'
+import {mapActions, mapGetters, mapState} from 'vuex'
 import {isAssessmentObserver, getMyRole, isAssessmentCollaborator} from "~/config/assessment-roles";
+import {calculateProgress} from "~/config/assessment-progress";
 
 export default {
     name: 'assessments-results',
@@ -128,7 +133,8 @@ export default {
             assessments: state => state.assessments.list,
             users: state => state.users.users,
             listType: state => state.assessments.listType
-        })
+        }),
+        ...mapGetters(['assessments/getPercentage'])
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
@@ -140,7 +146,10 @@ export default {
         ...mapActions({
             filterAssessmentsBy: 'assessments/filterAssessmentsBy',
             popupState: 'popup/popupState',
-        })
+        }),
+        getCompletionPercentage(assessment) {
+            return calculateProgress(assessment).overall_percentage.toFixed(0);
+        }
     },
     filters: {
         capitalizeFirstLetter: (value) => {

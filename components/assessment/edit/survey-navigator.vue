@@ -3,7 +3,7 @@
         <div class="container">
             <div class="elinor__survey-progress">
                 <ul class="elinor__survey-dots">
-                    <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
+                    <li v-for="(attribute, index) in attributes" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
                         <template v-for="(question, index) in getAttributeQuestions(attribute)">
                             <template v-if="!mode || mode === 'list'">
                                 <a role="button"

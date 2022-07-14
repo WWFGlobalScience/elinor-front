@@ -1,34 +1,5 @@
 import qs from "qs";
 
-export const state = () => ({
-    collaborators: [],
-    error: null
-})
-
-export const mutations = {
-    setCollaborators(state, payload) {
-        state.collaborators = payload
-    },
-    addCollaborator(state, payload) {
-        state.collaborators.push(payload)
-    },
-    removeCollaborator(state, payload) {
-        state.collaborators = state.collaborators.filter(collaborator => collaborator.id !== payload);
-    },
-    updateCollaborator(state, payload) {
-        const {id, role} = payload;
-        state.collaborators = state.collaborators.map((collaborator) => {
-            if(collaborator.id === id) {
-                collaborator.role = role;
-            }
-            return collaborator;
-        });
-    },
-    setError(state, payload) {
-        state.error = payload;
-    }
-}
-
 export const actions = {
     async createCollaborator(state, form) {
         this.dispatch('loader/loaderState', {
@@ -43,36 +14,18 @@ export const actions = {
             url: 'v2/collaborators/',
             data: qs.stringify(data) //role, assessment, user
         }).then(response => {
+            console.log(response);
                 state.commit('assessments/addCollaborator', response.data, {root: true});
                 this.dispatch('popup/popupState', {active: false})
             })
             .catch(error => {
+                console.log(error);
                 state.commit('setError', error.response.data);
             })
             .finally(() => {
 
                 this.dispatch('loader/loaderState', {active: false})
             })
-    },
-
-    async fetchCollaborators(state, assessmentId) {
-        this.dispatch('loader/loaderState', {
-            active: true,
-            text: 'Fetching collaborators...'
-        })
-
-        try {
-            const response = await this.$axios({
-                method: 'get',
-                url: 'v2/collaborators/?assessment=' + assessmentId,
-            });
-
-            state.commit('setCollaborators', response.data.results)
-        } catch (error) {
-            state.commit('setError', error.response.data);
-        } finally {
-            this.dispatch('loader/loaderState', {active: false})
-        }
     },
 
     async updateCollaborator(state, {role, collaborator, assessmentId}) {

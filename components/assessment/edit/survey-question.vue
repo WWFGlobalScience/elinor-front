@@ -37,7 +37,7 @@
                 </header>
                 <form class="form" refs="editAssessmentSurvey">
                     <div class="form__group">
-                        <div v-for="(choice, index) in [10,20,30,40,50]" class="form__row">
+                        <div v-for="(choice, index) in [50,40,30,20,10]" class="form__row">
                             <div class="input input--radios input--radios-question">
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">

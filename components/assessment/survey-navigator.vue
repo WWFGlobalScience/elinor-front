@@ -1,16 +1,34 @@
 <template>
     <section class="section section--assessment-survey section--mt-0">
         <div class="container">
-            <ul class="elinor__survey-navigator">
-                <li v-for="(question, index) in survey">
-                    <a href="#" :class="[ 'btn--opacity', { 'is--uncomplete': assessment[question] === null } ]"
-                       v-scroll-to="{
-                        el: `#question-${index + 1}`,
-                        offset: -70
-                    }">
-                    </a>
-                </li>
-            </ul>
+            <div class="elinor__survey-progress">
+                <ul class="elinor__survey-dots">
+                    <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
+                        <template v-for="(question, index) in getAttributeQuestions(attribute)">
+                            <a role="button"
+                               class="btn-opacity"
+                               :class="{ 'is--uncomplete': !isAnswered(question) }"
+                               v-scroll-to="{
+                                    el: `.question-${question.id}`,
+                                    offset: -70
+                               }">
+                            </a>
+                        </template>
+                    </li>
+                    <li class="elinor__survey-complete elinor__survey-complete--no-border">
+                        <div class="index">
+                            {{ completedQuestions }}
+                        </div>
+                        <div class="text">
+                            <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.completed' ) }}</span>
+                            <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.outOf' ) }} {{ totalQuestions }}</span>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
     </section>
 </template>
@@ -23,8 +41,36 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            survey: state => state.assessments.survey
-        })
+            attributes: state => state.attributes.list,
+            questions: state => state.surveyquestions.list,
+        }),
+        completedQuestions() {
+            return this.assessment.surveyAnswers.filter(surveyAnswer => this.isAttributeSelected({id: surveyAnswer.question.attribute})).length;
+        },
+        activeQuestions() {
+            return this.questions.filter(question => this.assessment.attributes.indexOf(question.attribute) !== -1);
+        },
+        totalQuestions() {
+            return this.activeQuestions.length;
+        }
+    },
+    methods: {
+        isAnswered(question) {
+            return this.isAttributeSelected({id: question.attribute}) && this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === question.id).length === 1;
+
+        },
+        getAttributeQuestions(attribute) {
+            return this.questions.filter(question => question.attribute === attribute.id);
+        },
+        isAttributeSelected(attribute) {
+            return this.assessment.attributes.indexOf(attribute.id) !== -1
+        },
+        isCurrentQuestionFromAttribute(attribute) {
+            const questionId = this.$route.params.qid;
+            if (questionId) {
+                return this.questions.filter(question => question.id === parseInt(questionId) && question.attribute === attribute.id).length !== 0;
+            }
+        }
     }
 }
 </script>

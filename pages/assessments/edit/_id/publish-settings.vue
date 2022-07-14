@@ -6,145 +6,99 @@
                 <h1 class="c-title--lg">{{ $t('pages.assessments.edit.tabs.publish.title') }}</h1>
             </div>
 
-            <div class="publish__layout">
-                <div class="publish__num">
-                    <div class="flex items-center">
-                        <span class="rounded-number rounded-number--xl">1</span> 
-                        <h3 class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish.publish') }}</h3>
+            <template v-if="assessment.status === 90">
+                <div class="publish__layout">
+                    <div class="publish__num">
+                        <div class="flex items-center">
+                            <span class="rounded-number rounded-number--xl">1</span>
+                            <h3 class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish.finalize.title') }}</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="publish__content">
-                    <div class="py-6">
-                        <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish.whatHappen') }}</h2>
-                        <ul class="list-inside list-disc list--light">
-                            <li>{{ $t('pages.assessments.edit.tabs.publish.whatHappen1') }}</li>
-                            <li>{{ $t('pages.assessments.edit.tabs.publish.whatHappen2') }}</li>
-                            <li>{{ $t('pages.assessments.edit.tabs.publish.whatHappen3') }}</li>
-                            <li>{{ $t('pages.assessments.edit.tabs.publish.whatHappen4') }}</li>
-                            <li>{{ $t('pages.assessments.edit.tabs.publish.whatHappen5') }}</li>
-                            <li>{{ $t('pages.assessments.edit.tabs.publish.whatHappen6') }}</li>
-                        </ul>
-                    </div>
-
-                    <div class="py-6">
-                        <form action="" class="form form--mt-0">
-                            <div class="form__group g-grid--3-1-md">
-                                <div class="form__row">
-                                    <div class="input input--radios input--radios-question">
-                                        <div class="radios__wrap">
-                                            <div class="radio__wrap">
-                                                <div class="radio">
-                                                    <input
-                                                        type="radio"
-                                                        name="status"
-                                                        id="status-public"
-                                                        :value="10"
-                                                        v-model="status"
-                                                        :checked="assessment.status === 10"
-                                                    />
-                                                    <img src="~/assets/img/ico-ok.svg"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label for="status-public" class="c-title--base">
-                                            <span>{{ $t('pages.assessments.edit.tabs.publish.statuses.public.name') }}</span>
-                                            <ul class="list-inside list-disc list--light">
-                                                <li>{{ $t('pages.assessments.edit.tabs.publish.statuses.public.paragraph1') }}</li>
-                                                <li>{{ $t('pages.assessments.edit.tabs.publish.statuses.public.paragraph2') }}</li>
-                                            </ul>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form__row">
-                                    <div class="input input--radios input--radios-question">
-                                        <div class="radios__wrap">
-                                            <div class="radio__wrap">
-                                                <div class="radio">
-                                                    <input
-                                                        type="radio"
-                                                        name="status"
-                                                        id="status-private"
-                                                        :value="90"
-                                                        v-model="status"
-                                                        :checked="assessment.status === 90"
-                                                    />
-                                                    <img src="~/assets/img/ico-ok.svg"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label for="status-private" class="c-title--base">
-                                            <span>{{ $t('pages.assessments.edit.tabs.publish.statuses.private.name') }}</span>
-                                            <ul class="list-inside list-disc list--light">
-                                                <li>{{ $t('pages.assessments.edit.tabs.publish.statuses.private.paragraph1') }}</li>
-                                                <li>{{ $t('pages.assessments.edit.tabs.publish.statuses.private.paragraph2') }}</li>
-                                            </ul>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form__row">
-                                    <div class="input input--radios input--radios-question">
-                                        <div class="radios__wrap">
-                                            <div class="radio__wrap">
-                                                <div class="radio">
-                                                    <input
-                                                        type="radio"
-                                                        name="status"
-                                                        for="status-test"
-                                                        :value="80"
-                                                        v-model="status"
-                                                        :checked="assessment.status === 80"
-                                                    />
-                                                    <img src="~/assets/img/ico-ok.svg"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label for="status-test" class="c-title--base">
-                                            <span>{{ $t('pages.assessments.edit.tabs.publish.statuses.test.name') }}</span>
-                                            <ul class="list-inside list-disc list--light">
-                                                <li>{{ $t('pages.assessments.edit.tabs.publish.statuses.test.paragraph1') }}</li>
-                                                <li>{{ $t('pages.assessments.edit.tabs.publish.statuses.test.paragraph2') }}</li>
-                                            </ul>
-                                        </label>
-                                    </div>
-                                </div>
+                    <div class="publish__content">
+                        <div class="py-6">
+                            <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish.finalize.whatHappenTitle') }}</h2>
+                            <div class="g-grid--2-1-sm items-center">
+                                <ul class="list-inside list-disc list--light" v-html="$t('pages.assessments.edit.tabs.publish.finalize.whatHappenList1')"></ul>
+                                <ul class="list-inside list-disc list--light" v-html="$t('pages.assessments.edit.tabs.publish.finalize.whatHappenList2')"></ul>
                             </div>
-                        </form>
-                    </div>
+                        </div>
 
-                    <div class="py-6">
-                        <div class="g-grid--3-1-sm items-center">
-                            <div class="g-colspan--1-2-lg">
-                                <button
-                                    type="button"
-                                    class="btn btn--opacity--child"
-                                    @click="
-                                        popupState({
-                                        active: true,
-                                        type:'confirmation',
-                                        component: 'popup-assessment-publish',
-                                        title: $t('pages.assessments.edit.tabs.publish.popup.title'),
-                                        onConfirm: submit
-                                        })
-                                    "
-                                    >
-                                    <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.publish.publishButton') }}</span>
-                                    <img src="~/assets/img/ico-button-arrow.svg" alt=""/>
-                                </button>
-                            </div>
-                            <div class="g-colspan--2">
-                                <p>
-                                    <span class="c-text--warning c-text--base">{{ $t('pages.assessments.edit.tabs.publish.warning') }}</span>
-                                    {{ $t('pages.assessments.edit.tabs.publish.warningText') }}
-                                </p>
+                        <div class="py-6">
+                            <div class="g-grid--3-1-sm items-center">
+                                <div class="g-colspan--1-2-lg">
+                                    <button
+                                        type="button"
+                                        class="btn btn--opacity--child"
+                                        @click="
+                                            popupState({
+                                            active: true,
+                                            type:'confirmation',
+                                            component: 'popup-assessment-finalize',
+                                            title: $t('pages.assessments.edit.tabs.publish.finalize.popup.title'),
+                                            onConfirm: submitFinalized
+                                            })
+                                        "
+                                        >
+                                        <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.publish.finalize.button') }}</span>
+                                        <img src="~/assets/img/ico-button-arrow.svg" alt=""/>
+                                    </button>
+                                </div>
+                                <div class="g-colspan--2">
+                                    <p>
+                                        <span class="c-text--warning c-text--base">{{ $t('pages.assessments.edit.tabs.publish.finalize.warning') }}</span>
+                                        {{ $t('pages.assessments.edit.tabs.publish.finalize.warningText') }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="elinor__data-separator"></div>
+                <div class="elinor__data-separator"></div>
+            </template>
+
+            <template v-if="assessment.status === 10">
+                <div class="publish__layout">
+                    <div class="publish__num">
+                        <div class="flex items-center">
+                            <span class="rounded-number rounded-number--xl">2</span>
+                            <h3 class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish.publish.title') }}</h3>
+                        </div>
+                    </div>
+                    <div class="publish__content">
+                        <div class="py-6">
+                            <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish.publish.whatHappenTitle') }}</h2>
+                            <div class="g-grid--2-1-sm items-center">
+                                <ul class="list-inside list-disc list--light" v-html="$t('pages.assessments.edit.tabs.publish.publish.whatHappenList1')"></ul>
+                                <ul class="list-inside list-disc list--light" v-html="$t('pages.assessments.edit.tabs.publish.publish.whatHappenList2')"></ul>
+                            </div>
+                        </div>
+
+                        <div class="py-6">
+                            <div class="g-grid--3-1-sm items-center">
+                                <div class="g-colspan--1-2-lg">
+                                    <button
+                                        type="button"
+                                        class="btn btn--opacity--child"
+                                        @click="
+                                        popupState({
+                                        active: true,
+                                        type:'confirmation',
+                                        component: 'popup-assessment-publish',
+                                        title: $t('pages.assessments.edit.tabs.publish.publish.popup.title'),
+                                        onConfirm: submit
+                                        })
+                                    "
+                                    >
+                                        <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.publish.publish.button') }}</span>
+                                        <img src="~/assets/img/ico-button-arrow.svg" alt=""/>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="elinor__data-separator"></div>
+            </template>
 
         </div>
     </section>
@@ -157,14 +111,6 @@ import {mapActions, mapState} from "vuex"
 export default {
     name: "assessment-edit-publish-settings",
     layout: "assessment-edit",
-    data() {
-        return {
-            status: null
-        };
-    },
-    mounted() {
-        this.status = this.assessment.status;
-    },
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment
@@ -173,10 +119,14 @@ export default {
     methods: {
         ...mapActions({
             publish: 'assessments/publish',
+            finalize: 'assessments/finalize',
             popupState: 'popup/popupState'
         }),
-        submit() {
-            this.publish({id: this.assessment.id, status: this.status})
+        submitFinalized() {
+            this.finalize(this.assessment.id)
+        },
+        submitPublished() {
+            this.publish(this.assessment.id)
         }
     },
 };

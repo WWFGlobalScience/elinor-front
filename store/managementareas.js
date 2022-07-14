@@ -118,6 +118,7 @@ export const actions = {
         const response = await this.$axios.$get(`v2/managementareas/${id}/`)
         const managementArea = mapToForm(state, response)
         state.commit('setInstance', managementArea)
+        state.commit('assessments/setManagementArea', response, {root:true})
         await state.dispatch('fetchZones', id);
     },
     async createManagementArea(state, {form, assessmentId}) {
@@ -128,6 +129,8 @@ export const actions = {
             id: assessmentId
         }, {root: true})
         state.commit('setInstance', response)
+        state.commit('assessments/setManagementArea', response, {root:true})
+
     },
     async editManagementAreaField(state, {field, value, id, assessmentId}) {
         const data = mapToForeignKeys({[field]: value});
@@ -147,8 +150,9 @@ export const actions = {
             })
         }
         state.commit('setInstanceField', {field, value})
+        state.commit('assessments/setManagementArea', response.data, {root:true})
         state.commit('assessments/setLastEdit', {}, {root: true});
-        state.dispatch('assessments/updateAssessmentProgress', assessmentId, {root: true});
+        state.dispatch('assessments/updateAssessmentProgress', {}, {root: true});
     },
     async editManagementAreaFileField(state, {field, file, onUploadProgress, id}) {
         const responseField = field === 'import_file' ? 'polygon' : 'map_image';
@@ -158,6 +162,8 @@ export const actions = {
         try {
             const response = await this.$axios.$patch(`/v2/managementareas/${id}/`, formData, config);
             await state.commit('setInstanceField', {field: responseField, value: response[responseField]})
+            await state.commit('assessments/setManagementArea', response.data, {root:true})
+            state.dispatch('assessments/updateAssessmentProgress', {}, {root: true});
             state.commit('assessments/setLastEdit', {}, {root: true});
         } catch (error) {
             state.commit('setImportFileError', error.response.data);
