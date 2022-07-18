@@ -75,7 +75,7 @@ export default {
                 key = 'edit';
             }
 
-            return this.$t('pages.assessments.edit.tabs.publish.tabButton.' + key);
+            return this.$t('pages.assessments.edit.tabs.publish-settings.tabButton.' + key);
         }
     },
     computed: {

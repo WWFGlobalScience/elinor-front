@@ -28,8 +28,11 @@ button {
             transform: translateX(5px);
         }
     }
-    &.btn--sm{
+    &.btn--sm {
         @apply h-[28px] py-0 px-4 text-xs border-radius--btn-small;
+    }
+    &.disabled {
+        @apply bg-turqy-lighter text-grayy-lighter
     }
 }
 .btn--circle{
@@ -121,7 +124,7 @@ button {
 
 .link-more {
     @apply text-turqy flex;
-    
+
     &::after {
         content: '...';
         @apply pl-1;

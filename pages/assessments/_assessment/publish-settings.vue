@@ -60,11 +60,12 @@
                 <div class="publish__layout">
                     <div class="publish__num">
                         <div class="flex items-center">
-                            <span class="rounded-number rounded-number--xl">2</span>
-                            <h3 class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish-settings.publish.title') }}</h3>
+                            <span class="rounded-number rounded-number--xl">{{ isNotFinalized() ? 2 : (isPublished() ? 3 : 2) }}</span>
+                            <h3 v-if="isNotFinalized()" class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish-settings.publish.title') }}</h3>
+                            <h3 v-if="isPublished()" class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish-settings.unpublish.title') }}</h3>
                         </div>
                     </div>
-                    <div v-if="assessment.data_policy === 90" class="publish__content">
+                    <div v-if="isNotFinalized() || isUnpublished()" class="publish__content">
                         <div class="py-6">
                             <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish-settings.publish.whatHappenTitle') }}</h2>
                             <div class="g-grid--2-1-sm items-center">
@@ -89,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div v-if="assessment.status === 10 && assessment.data_policy === 10" class="publish__content">
+                    <div v-if="isPublished()" class="publish__content">
                         <div class="py-6">
                             <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish-settings.unpublish.whatHappenTitle') }}</h2>
                             <div class="g-grid--2-1-sm items-center">
@@ -114,7 +115,7 @@
                                         })
                                     "
                                     >
-                                        <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.publish-settings.publish.button') }}</span>
+                                        <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.publish-settings.unpublish.button') }}</span>
                                         <img src="~/assets/img/ico-button-arrow.svg" alt=""/>
                                     </button>
                                 </div>
@@ -174,6 +175,15 @@ export default {
         },
         submitUnpublish() {
             this.unpublish(this.assessment.id)
+        },
+        isPublished() {
+            return this.assessment.status === 10 && this.assessment.data_policy === 10;
+        },
+        isUnpublished() {
+            return this.assessment.status === 10 && this.assessment.data_policy !== 10;
+        },
+        isNotFinalized() {
+            return this.assessment.status === 90;
         }
     },
 };

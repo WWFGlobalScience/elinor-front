@@ -874,7 +874,7 @@
                             }
                         }
                     },
-                    "publish" : {
+                    "publish-settings" : {
                         "tabButton" : {
                             "ready": "Ready to publish",
                             "preparing": "Preparing to publish",
@@ -905,6 +905,25 @@
                                 "title" : "Publish Assessment",
                                 "confirmationTitle" : "Are you sure you want to publish your assessment?",
                                 "confirmationDescription" : "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
+                            },
+                            "alert": {
+                                "popup" : {
+                                    "title" : "Publish Assessment",
+                                    "confirmationTitle" : "You have to finalize your assessment to be able to publish",
+                                    "confirmationDescription" : "Go back and finalize first"
+                                }
+                            }
+                        },
+                        "unpublish" : {
+                            "title": "Unpublish",
+                            "whatHappenTitle" : "What happens when you unpublish",
+                            "whatHappenList1" : "<li>Lorem ipsum</li>",
+                            "whatHappenList2" : "<li>You could still publish the Assessment</li>",
+                            "button" : "Unpublish Assessment",
+                            "popup" : {
+                                "title" : "Unpublish Assessment",
+                                "confirmationTitle" : "Are you sure you want to unpublish your assessment?",
+                                "confirmationDescription" : "Lorem Ipsum"
                             }
                         },
                         "statuses" : {

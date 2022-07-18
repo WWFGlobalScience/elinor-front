@@ -268,10 +268,10 @@ export const actions = {
         this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
-            data: {data_policy: 'public', published_version}
+            data: {data_policy: 10, published_version}
         })
             .then((response) => {
-                state.commit('setAssessmentField', {field: 'data_policy', value: 'public'})
+                state.commit('setAssessmentField', {field: 'data_policy', value: 10})
                 state.commit('setLastEdit');
                 this.dispatch('popup/popupState', {active: false})
                 this.$router.push('/assessments')
@@ -296,10 +296,10 @@ export const actions = {
         this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
-            data: {data_policy: 'private'}
+            data: {data_policy: 90}
         })
             .then((response) => {
-                state.commit('setAssessmentField', {field: 'data_policy', value: 'private'})
+                state.commit('setAssessmentField', {field: 'data_policy', value: 90})
                 state.commit('setLastEdit');
                 this.dispatch('popup/popupState', {active: false})
                 this.$router.push('/assessments')
