@@ -47,7 +47,7 @@ export const state = () => ({
             }
         },
         {
-            path: '/documentation',
+            path: '/collaboration',
             config: {
                 display: {
                     sidebar: true,
@@ -55,18 +55,18 @@ export const state = () => ({
                     header: 'page'
                 }
             },
-            title: 'pages.documentation.home.meta.title',
-            slug: 'pages.documentation.home.meta.slug',
+            title: 'pages.collaboration.home.meta.title',
+            slug: 'pages.collaboration.home.meta.slug',
             icons: {
                 gray: require('~/assets/img/ico-documentation-gray.svg'),
                 white: require('~/assets/img/ico-documentation-white.svg'),
                 turqy: require('~/assets/img/ico-documentation-turqy.svg')
             },
             seo: {
-                title: 'pages.documentation.meta,seo.title',
-                description: 'pages.documentation.meta.seo.description',
-                keywords: 'pages.documentation.meta.seo.keywords',
-                og_image: 'pages.documentation.meta.seo.og_image',
+                title: 'pages.collaboration.meta,seo.title',
+                description: 'pages.collaboration.meta.seo.description',
+                keywords: 'pages.collaboration.meta.seo.keywords',
+                og_image: 'pages.collaboration.meta.seo.og_image',
             }
         },
         {
@@ -91,6 +91,52 @@ export const state = () => ({
                 keywords: 'pages.news.meta.seo.keywords',
                 og_image: 'pages.news.meta.seo.og_image',
             }
-        }
+        },
+        {
+            path: '/documentation',
+            config: {
+                display: {
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
+                }
+            },
+            title: 'pages.documentation.home.meta.title',
+            slug: 'pages.documentation.home.meta.slug',
+            icons: {
+                gray: require('~/assets/img/ico-documentation-gray.svg'),
+                white: require('~/assets/img/ico-documentation-white.svg'),
+                turqy: require('~/assets/img/ico-documentation-turqy.svg')
+            },
+            seo: {
+                title: 'pages.documentation.meta,seo.title',
+                description: 'pages.documentation.meta.seo.description',
+                keywords: 'pages.documentation.meta.seo.keywords',
+                og_image: 'pages.documentation.meta.seo.og_image',
+            }
+        },
+        {
+            path: '/contact',
+            config: {
+                display: {
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
+                }
+            },
+            title: 'pages.contact.home.meta.title',
+            slug: 'pages.contact.home.meta.slug',
+            icons: {
+                gray: require('~/assets/img/ico-documentation-gray.svg'),
+                white: require('~/assets/img/ico-documentation-white.svg'),
+                turqy: require('~/assets/img/ico-documentation-turqy.svg')
+            },
+            seo: {
+                title: 'pages.contact.meta,seo.title',
+                description: 'pages.contact.meta.seo.description',
+                keywords: 'pages.contact.meta.seo.keywords',
+                og_image: 'pages.contact.meta.seo.og_image',
+            }
+        },
     ],
 });

@@ -240,7 +240,7 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
-import newsJson from '../../news.json'
+import news from '../../content/news'
 const numNews = 3;
 const maxCharacters = 300;
 
@@ -251,7 +251,7 @@ export default {
       username: null,
       password: null,
       remember: false,
-      latestNews: [...newsJson.news].splice(0, numNews),
+      latestNews: [...news].splice(0, numNews),
       maxCharacters
     }
   },

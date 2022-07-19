@@ -46,14 +46,14 @@
 </template>
 
 <script>
-import faqsJson from '../../faqs.json';
+import faqs from '../../content/faqs.js';
 
 export default {
     name: "faq",
     auth: false,
     data() {
         return {
-            faqs: faqsJson.faqs
+            faqs
         }
     }
 };

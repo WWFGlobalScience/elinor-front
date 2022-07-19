@@ -26,7 +26,13 @@
             {{ $t('footer.copyright') }}
             {{ currentYear }}
             {{ $t('footer.copyrightAfterYear') }}
-            <NuxtLink to="'/'" class="btn--opacity--child"><span class="btn--opacity__target"> {{ $t('footer.termsOfUse') }}</span> </NuxtLink> | <NuxtLink to="'/'" class="btn--opacity--child"><span class="btn--opacity__target"> {{ $t('footer.privacyPolicy') }}</span></NuxtLink>
+            <NuxtLink to="terms-of-use" class="btn--opacity--child">
+                <span class="btn--opacity__target"> {{ $t('footer.termsOfUse') }}</span>
+            </NuxtLink>
+             |
+            <NuxtLink to="privacy-policy" class="btn--opacity--child">
+                <span class="btn--opacity__target"> {{ $t('footer.privacyPolicy') }}</span>
+            </NuxtLink>
         </div>
     </footer>
 </template>

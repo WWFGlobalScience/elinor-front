@@ -1175,6 +1175,18 @@
             }
         },
         "contact" : {
+            "home": {
+                "meta": {
+                    "title": "Contact",
+                    "slug": "/contact",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "header" : {
                 "title" : "Contact"
             },
@@ -1195,6 +1207,18 @@
             }
         },
         "collaboration" : {
+            "home": {
+                "meta": {
+                    "title": "Collaboration",
+                    "slug": "/collaboration",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "title" : "Collaboration Principles",
             "intro": {
                 "title": "Collaboration Principles to guide the use of the Elinor tool and data system ",

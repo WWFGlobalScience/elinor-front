@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import newsJson from '../../news.json'
+import news from '../../content/news.js'
 const perPage = 5;
 
 export default {
@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             visibleNews: [],
-            news: newsJson.news,
+            news,
             page: 1,
             perPage
         }
