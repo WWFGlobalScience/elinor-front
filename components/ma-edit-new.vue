@@ -267,7 +267,7 @@
                                 <div v-for="(zone, index) in zones" :key="index" class="multiselect__form">
                                     <div class="form__row form__row--mt-7 tit-row">
                                         <div class="label label--tit">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</div>
-                                        <a @click="onDeleteZone(zone)" role="button" class="btn btn--border-turqy btn--inverse btn--sm">
+                                        <a @click="onDeleteZone(zone.id, index)" role="button" class="btn btn--border-turqy btn--inverse btn--sm">
                                             <span>{{ $t( 'default.delete' ) }}</span>
                                             <img src='~/assets/img/ico-delete.svg'/>
                                         </a>
@@ -442,8 +442,8 @@ export default {
             this.$store.commit('managementareas/addEmptyZone');
 
         },
-        onDeleteZone(zone) {
-            this.deleteZone(zone.id);
+        onDeleteZone(zoneId, index) {
+            this.deleteZone({zoneId, index});
         },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',

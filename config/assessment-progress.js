@@ -98,3 +98,81 @@ export const calculateProgress = (assessment) => {
 
     return progress;
 }
+
+export const totalSurveyQuestions = (assessment, questions) => {
+    return questions.filter(question => assessment.attributes.indexOf(question.attribute) !== -1).length;
+}
+export const completedSurveyQuestions = (assessment) => {
+    return assessment.surveyAnswers.filter(surveyAnswer => assessment.attributes.indexOf(surveyAnswer.attribute) !== -1).length;
+}
+
+export const surveyQuestionNumber = (questionId, assessment, attributes, questions) => {
+    let position = 0;
+    const filteredAttributes = attributes.filter(attribute => assessment.attributes.indexOf(attribute.id) !== -1);
+    for (const attribute of filteredAttributes) {
+        const filteredQuestions = questions.filter(question => question.attribute === attribute.id);
+        for(const question of filteredQuestions) {
+            position++;
+            if(questionId === question.id) {
+                return position;
+            }
+        }
+    }
+}
+
+export const nextSurveyQuestion = (questionId, assessment, attributes, questions) => {
+    const filteredAttributes = attributes.filter(attribute => assessment.attributes.indexOf(attribute.id) !== -1);
+    let attributeIndex = 0;
+    for (const attribute of filteredAttributes) {
+        const filteredQuestions = questions.filter(question => question.attribute === attribute.id);
+        let questionIndex = 0;
+        for(const question of filteredQuestions) {
+            if(questionId === question.id) {
+                const nextQuestion = filteredQuestions[questionIndex+1];
+                if (nextQuestion !== undefined) {
+                    return nextQuestion.id;
+                }
+
+                const nextAttribute = filteredAttributes[attributeIndex + 1];
+                if(nextAttribute !== undefined) {
+                    const nextAttributeQuestions = questions.filter(question => question.attribute === nextAttribute.id);
+                    return nextAttributeQuestions[0].id;
+                }
+            }
+            questionIndex++;
+        }
+        attributeIndex++;
+    }
+}
+
+export const previousSurveyQuestion = (questionId, assessment, attributes, questions) => {
+    const filteredAttributes = attributes.filter(attribute => assessment.attributes.indexOf(attribute.id) !== -1);
+    let attributeIndex = 0;
+    for (const attribute of filteredAttributes) {
+        const filteredQuestions = questions.filter(question => question.attribute === attribute.id);
+        let questionIndex = 0;
+        for(const question of filteredQuestions) {
+            if(questionId === question.id) {
+                const previousQuestion = filteredQuestions[questionIndex - 1];
+                if (previousQuestion !== undefined) {
+                    return previousQuestion.id;
+                }
+
+                const previousAttribute = filteredAttributes[attributeIndex - 1];
+                if(previousAttribute !== undefined) {
+                    const previousAttributeQuestions = questions.filter(question => question.attribute === previousAttribute.id);
+                    return previousAttributeQuestions[previousAttributeQuestions.length - 1].id;
+                }
+            }
+            questionIndex++;
+        }
+        attributeIndex++;
+    }
+}
+
+export const isLastQuestionInSurvey = (questionId, assessment, attributes, questions) => {
+    const filteredAttributes = attributes.filter(attribute => assessment.attributes.indexOf(attribute.id) !== -1);
+    const lastAttribute = filteredAttributes[filteredAttributes.length - 1];
+    const filteredQuestions = questions.filter(question => question.attribute === lastAttribute.id);
+    return filteredQuestions[filteredQuestions.length - 1].id === questionId;
+}
