@@ -24,7 +24,7 @@
                             <div v-if="!editWdpaId && managementArea.protected_area" class="input input--2-3">
                                 <input :disabled="true" type="text" :value="managementArea.protected_area.name">
                                 <div @click="clearProtectedArea()" role="button" class="btn--protected-area__clear">
-                                    <img src="~/assets/img/ico-close-turqy.svg">
+                                    <img src="~/assets/img/ico-close-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="date__wrap">
                                 <date-picker placeholder="MM/DD/YYYY" format="MM/dd/yyyy" :value="managementArea.date_established" @selected="onDateEstablishmentSelected" />
                                 <div class="date__caret">
-                                    <img src="~/assets/img/ico-date-turqy.svg">
+                                    <img src="~/assets/img/ico-date-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                     <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> <button @click="$event.preventDefault();$event.stopPropagation(); onCreateAuthority(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">{{ $t('default.create') }}</button></span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                                     </template>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                                     <span slot="noResult" slot-scope="props">{{ $t('default.noresults') }} </span>
                                 </multiselect>
                                 <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                     <li v-for="region in managementArea.regions">
                                         <div class="tag__item">{{ region.name }}</div>
                                         <a @click="removeRegion(region.id)" role="button" class="tag__close">
-                                            <img src="~/assets/img/ico-close-popup.svg">
+                                            <img src="~/assets/img/ico-close-popup.svg" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -245,15 +245,15 @@
                             <div class="radios__wrap">
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="zone-yes" @change="onShowZones" :checked="showZones === true" :value="true">
-                                        <img src="~/assets/img/ico-ok.svg">
+                                        <input type="radio" name="consent_given" id="zone-yes" @change="onShowZones($event.target.value)" :checked="showZones === true" :value="1">
+                                        <img src="~/assets/img/ico-ok.svg" alt="" alt="">
                                     </div>
                                     <label for="zone-yes" class="label">Yes</label>
                                 </div>
                                 <div class="radio__wrap">
                                     <div class="radio">
-                                        <input type="radio" name="consent_given" id="zone-no" @change="onShowZones" :checked="showZones === false" :value="false">
-                                        <img src="~/assets/img/ico-ok.svg">
+                                        <input type="radio" name="consent_given" id="zone-no" @change="onShowZones($event.target.value)" :checked="showZones === false" :value="0">
+                                        <img src="~/assets/img/ico-ok.svg" alt="" alt="">
                                     </div>
                                     <label for="zone-no" class="label">No</label>
                                 </div>
@@ -262,26 +262,19 @@
                     </div>
                     <div class="form__row form__row--mt-16" v-if="showZones">
                         <div class="input input--multiselect">
-                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zonesQuantity' ) }}</label>
-                            <div class="multiselect__wrap multiselect__wrap--1-3">
-                                <multiselect
-                                    :value="numZones"
-                                    :options="[1,2,3,4,5,6,7,8,9,10]"
-                                    :multiple="false" :searchable="false" :showLabels="false"
-                                    :allow-empty="false" open-direction="bottom"
-                                    @input="onNumZonesChanged($event)">
-                                </multiselect>
-                                <div class="multiselect__caret">
-                                    <img src="~/assets/img/ico-select-turqy.svg">
-                                </div>
-                            </div>
-
-                            <div v-if="numZones > 0" class="multiselect__extra">
-                                <div v-for="(num, index) in numZones" :key="index" class="multiselect__form"><!-- Aquest div es repeteix en cas de seleccionar mes d'una zona -->
+                            <div class="label label--tit" v-if="zones.length">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.title' ) }}</div>
+                            <div class="multiselect__extra">
+                                <div v-for="(zone, index) in zones" :key="index" class="multiselect__form">
+                                    <div class="form__row form__row--mt-7 tit-row">
+                                        <div class="label label--tit">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</div>
+                                        <a @click="onDeleteZone(zone)" role="button" class="btn btn--border-turqy btn--inverse btn--sm">
+                                            <span>{{ $t( 'default.delete' ) }}</span>
+                                            <img src='~/assets/img/ico-delete.svg'/>
+                                        </a>
+                                    </div>
                                     <div class="form__row form__row--mt-8">
                                         <div class="input">
-                                            <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' ) + ' ' + (index + 1) }}</label>
-                                            <input type="text" name="name" :placeholder="`${$t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' )} ${index + 1}`" :value="zones[index] && zones[index].name" @change="onZoneFieldChanged('name', index, $event.target.value)">
+                                            <input type="text" name="name" :placeholder="`${$t( 'pages.assessments.edit.tabs.managementArea.labels.zoneName' )} ${index + 1}`" :value="zone.name" @change="onZoneFieldChanged('name', index, $event.target.value)">
                                         </div>
                                     </div>
                                     <div class="form__row form__row--mt-8">
@@ -289,7 +282,7 @@
                                             <label class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneLevel' ) }}</label>
                                             <div class="multiselect__wrap">
                                                 <multiselect
-                                                    :value="getZoneAccessLevelValue(zones[index])"
+                                                    :value="accessLevels.filter(accessLevel => accessLevel.id === zone.access_level)[0]"
                                                     :options="accessLevels"
                                                     track-by="id"
                                                     label="name"
@@ -298,7 +291,7 @@
                                                     @input="onZoneFieldChanged('access_level', index, $event.id)">
                                                 </multiselect>
                                                 <div class="multiselect__caret">
-                                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                                    <img src="~/assets/img/ico-select-turqy.svg" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -306,9 +299,15 @@
                                     <div class="form__row form__row--mt-8">
                                         <div class="input input--pr">
                                             <div class="label">{{ $t( 'pages.assessments.edit.tabs.managementArea.labels.zoneDescription' ) }}</div>
-                                            <textarea name="explanation" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zones[index] && zones[index].description }}</textarea>
+                                            <textarea name="explanation" @change="onZoneFieldChanged('description', index, $event.target.value)">{{ zone.description }}</textarea>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="btn-row">
+                                    <a @click="onAddZone" role="button" class="btn--border-turqy mt-12 ml-8">
+                                        <span>{{ $t( 'pages.assessments.edit.tabs.managementArea.buttons.addZone' ) }}</span>
+                                        <img src='~/assets/img/ico-plus.svg'/>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +322,7 @@
                         >
                             <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                             <img
-                                src="~/assets/img/ico-button-arrow.svg"
+                                src="~/assets/img/ico-button-arrow.svg" alt=""
                                 :alt="$t('pages.assessments.edit.tabs.nextStep')"
                             />
                         </NuxtLink>
@@ -353,7 +352,6 @@ export default {
                 language: 'en-US'
             }),
             showZones: null,
-            numZones: null,
             accessLevels: [
                 { id: 90, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.OPEN_ACCESS') },
                 { id: 50, name: this.$t('pages.assessments.edit.tabs.managementArea.zones.accessLevels.PARTIALLY_RESTRICTED') },
@@ -367,14 +365,11 @@ export default {
         }
     },
     mounted() {
-        this.numZones = this.zones.length;
         this.showZones = this.zones.length > 0;
-
         this.initGeocoder();
     },
     watch: {
         zones() {
-            this.numZones = this.zones.length;
             this.showZones = this.zones.length > 0;
         },
         assessment() {
@@ -424,11 +419,10 @@ export default {
             this.editManagementAreaField({field: 'date_established', value: date.format('YYYY-MM-DD'), id: this.managementArea.id, assessmentId: this.assessment.id});
         },
         onShowZones(value) {
-            this.showZones = value;
-        },
-        onNumZonesChanged(value) {
-            this.showZones = value > 0;
-            this.numZones = value;
+            this.showZones = parseInt(value);
+            if(!this.showZones && this.zones.length > 0) {
+                this.deleteAllZones();
+            }
         },
         onZoneFieldChanged(field, index, value) {
             this.editZoneField({field, index, value})
@@ -444,10 +438,12 @@ export default {
                 this.geocoder.clear();
             });
         },
-        getZoneAccessLevelValue(zone) {
-            if(zone && zone.access_level) {
-                return this.accessLevels.filter(accessLevel => accessLevel.id === zone.access_level)[0];
-            }
+        onAddZone() {
+            this.$store.commit('managementareas/addEmptyZone');
+
+        },
+        onDeleteZone(zone) {
+            this.deleteZone(zone.id);
         },
         ...mapActions({
             editManagementAreaField: 'managementareas/editManagementAreaField',
@@ -456,6 +452,8 @@ export default {
             removeRegion: 'managementareas/removeRegion',
             protectedAreaByWdpaId: 'managementareas/protectedAreaByWdpaId',
             clearProtectedArea: 'managementareas/clearProtectedArea',
+            deleteZone: 'managementareas/deleteZone',
+            deleteAllZones: 'managementareas/deleteAllZones',
         })
     }
 }

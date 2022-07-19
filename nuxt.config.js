@@ -103,10 +103,10 @@ export default {
         }
     },
     axios: {
-        baseUrl: 'https://api.elinordata.org/'
+        baseUrl: 'https://dev-api.elinordata.org/'
     },
     router: {
-        middleware: ['auth'],
+        middleware: ['auth', 'onload'],
         extendRoutes(routes, resolve) {
             routes.push(
                 {

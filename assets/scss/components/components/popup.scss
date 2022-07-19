@@ -70,6 +70,115 @@
             }
         }
     }
+
+    //onboarding
+    &.popup__onboarding {
+        .popup__box {
+            @apply rounded-b-xl;
+            .popup__header {
+                @apply bg-turqy text-white px-8 py-8;
+                span {
+                    @apply text-[22px];
+                }
+                button img {
+                    filter: invert(94%) sepia(6%) saturate(101%) hue-rotate(217deg) brightness(200%) contrast(100%);
+                }
+            }
+            .popup__content {
+                @apply bg-white px-8 py-11 rounded-b-xl border-turqy border border-solid;
+            }
+        }
+    }
 }
 
 
+//num
+// .step-num {
+//     @apply flex items-center justify-center flex-shrink-0 text-[24px] w-[48px] h-[48px] text-turqy border-turqy border border-solid border-radius--50;
+// }
+
+// circle 
+.circle-rang {
+    @apply flex items-center justify-center text-[20px] text-turqy w-[62px] h-[62px] bg-white border border-solid border-turqy border-radius--50;
+}
+
+//onboarding steps
+.elinor__step-card {
+    @apply border-turqy border border-solid border-radius--card py-[30px] pr-[40px] pl-[50px] ml-[25px];
+    .title {
+        @apply text-[18px] font-bold mb-3;
+    }
+    .text {
+        @apply text-[16px] mb-3;
+    }
+    &::before {
+        @apply flex items-center justify-center flex-shrink-0 text-[24px] w-[50px] h-[50px] bg-white text-turqy border-turqy border border-solid border-radius--50;
+        position: absolute;
+        left: -25px;
+        top: 25px;
+    }
+
+    &.step-card--row {
+        @apply flex items-center justify-between sm:block;
+        .step-info {
+            @apply flex items-start mr-6 sm:mr-0 sm:block;
+            .title {
+                @apply mr-6 mt-2;
+            }
+        }
+        .circle-rang {
+            @apply flex-shrink-0;
+        }
+    }
+}
+
+//onboarding list
+.elinor__steps-list {
+    @apply grid grid-cols-2; 
+    grid-row-gap: 30px;
+    grid-column-gap: 20px;
+    counter-reset: step-counter;
+    .elinor__step-card {
+        @apply sm:col-span-2;
+        counter-increment: step-counter;
+        &:before {
+            content: counter(step-counter);
+        }
+        &.step-card--row {
+            grid-column: 1 / span 2;
+        }
+    }
+}
+
+//onboarding intro 
+.elinor__popup-intro {
+    @apply flex items-end justify-between mr-[-32px] ml-[-32px] mb-10 sm:block;
+    .intro-content {
+        @apply px-8 sm:mb-5;
+        .title {
+            @apply text-[22px] mb-3;
+        }
+        .text {
+            @apply text-[20px] mb-3;
+        }
+    }
+    .intro-picture {
+        @apply flex-shrink-0 sm:text-center;
+        img {
+            margin: 0 auto;
+        }
+    }
+}
+
+//cta
+.elinor__btn-group {
+    @apply flex items-center justify-center sm:flex-col;
+    column-gap: 24px;
+    row-gap: 18px;
+}
+.elinor__cta-bar {
+    @apply flex items-center justify-center py-8 mt-14 border-b border-t border-grayy-border sm:block;
+    .title {
+        @apply text-[22px] mr-8 sm:mb-6 sm:text-center;
+    }
+}

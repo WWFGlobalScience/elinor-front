@@ -19,6 +19,10 @@ export default {
         return {loaded: false}
     },
     async mounted() {
+        console.log(localStorage.getItem('onboarding'));
+        if(localStorage.getItem('onboarding') !== '0') {
+            this.$store.dispatch('popup/popupState', { active: true, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' });
+        }
         this.$store.dispatch( 'loader/loaderState', {
             active: true,
             text: 'Loading assessments...'
@@ -26,11 +30,13 @@ export default {
         await this.$store.dispatch( 'assessments/fetchAssessments' )
         this.$store.dispatch( 'loader/loaderState', {active: false} )
         this.loaded = true;
+
     },
     fetchOnServer: false,
     computed: {
         ...mapState({
-            loader: state => state.loader
+            loader: state => state.loader,
+            onboarding: state => state.assessments.onboarding
         })
     }
 }

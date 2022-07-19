@@ -45,7 +45,7 @@
                     <nuxt-link :to="`/assessments/edit/${id}/publish-settings`"
                                :class="[ 'btn--tab btn--tab-percent', { 'btn--error': progress.overall_percentage < 100, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
                         <span class="bullet">{{ Math.floor(progress.overall_percentage) }}%</span>
-                        <span class="txt">{{ $t('pages.assessments.edit.tabs.publish.tabButton') }}</span>
+                        <span class="txt">{{ getPublishTabText() }}</span>
                     </nuxt-link>
                 </li>
             </ul>
@@ -60,17 +60,29 @@ export default {
     name: 'assessment-edit-tab',
     props: ['id'],
     methods: {
-        ...mapActions({
-            updateAssessmentProgress: 'assessments/updateAssessmentProgress'
-        }),
+        getPublishTabText() {
+            const status = this.assessment.status;
+            const percentage = this.progress.overall_percentage;
+            let key;
+            if(percentage < 100) {
+                key = 'preparing';
+            }
+            if(percentage === 100 && status === 90) {
+                key = 'ready';
+            }
+
+            if(percentage === 100 && status === 10) {
+                key = 'edit';
+            }
+
+            return this.$t('pages.assessments.edit.tabs.publish-settings.tabButton.' + key);
+        }
     },
     computed: {
         ...mapState({
+            assessment: state => state.assessments.assessment,
             progress: state => state.assessments.progress
         })
-    },
-    mounted() {
-        this.updateAssessmentProgress(this.id);
     }
 }
 </script>

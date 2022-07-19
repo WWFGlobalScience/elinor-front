@@ -68,6 +68,13 @@
             @apply text-right text-[12px] text-grayy-lighter;
         }
     }
+    .assessment__btns {
+        @apply flex items-center mt-5;
+        .btn {
+            @apply mr-2 whitespace-nowrap;
+            display: inline-flex;
+        }
+    }
 }
 
 .header--ma-data {
@@ -127,5 +134,5 @@
 }
 
 .header--back {
-    @apply flex items-center space-x-2;
+    @apply flex items-center justify-between space-x-2 mb-6;
 }

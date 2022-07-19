@@ -29,6 +29,9 @@
         @apply text-yellowy-lighter;
     }
 }
+.c-title--upp {
+    @apply text-base font-bold uppercase;
+}
 
 //text color
 .c-text--warning{
@@ -36,5 +39,9 @@
 }
 .c-text--warning-secondary{
     @apply text-yellowy-lighter;
+}
+
+.date {
+    @apply text-xs text-grayy;
 }
 

@@ -125,6 +125,30 @@
       </div>
     </section>
 
+    <section class="section section--latest-news">
+      <div class="container">
+        <div class="row">
+          <div class="text-medium uppercase">LATEST NEWS</div>
+          <nuxt-link to="/news" role="button" class="link-arrow">
+            <span>See more news</span>
+            <img class="ico" src="~/assets/img/ico-arrow-right.svg"/>
+          </nuxt-link>
+        </div>
+        <div class="row row--cards mt-9">
+          <div v-for="newsInstance in latestNews" class="latest-news__card ui-rounded-border">
+            <div class="header">
+              <p class="date">{{ newsInstance.date }}</p>
+              <h3 class="title c-title--md text-turqy mt-2">{{ newsInstance.title }}</h3>
+            </div>
+            <div class="body">
+              <p class="text c-text--base">{{ newsInstance.text.length > maxCharacters ? newsInstance.text.substring(0,maxCharacters) + '...' : newsInstance.text}}</p>
+              <nuxt-link to="news" class="link-more mt-4">Read more</nuxt-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section section--text section--img-text">
       <div class="container">
         <div class="section--img-text__block">
@@ -161,7 +185,7 @@
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
             <blockquote class="elinor__sentence mx-auto">
-              “{{ $t('pages.home.public.content.elinor.quote.text') }}”
+              “{!! $t('pages.home.public.content.elinor.quote.text') !!}”
               <span class="elinor__sentence__name">
                 {{ $t('pages.home.public.content.elinor.quote.author') }}
               </span>
@@ -216,6 +240,9 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
+import news from '../../content/news'
+const numNews = 3;
+const maxCharacters = 300;
 
 export default {
   name: 'home-public',
@@ -223,7 +250,9 @@ export default {
     return {
       username: null,
       password: null,
-      remember: false
+      remember: false,
+      latestNews: [...news].splice(0, numNews),
+      maxCharacters
     }
   },
   computed: {
@@ -234,8 +263,7 @@ export default {
   methods: {
     ...mapActions({
       signIn: 'authentication/signIn',
-      resendEmail: 'authentication/resendEmail',
-      getProtectedAreas: 'managementareas/getProtectedAreas',
+      resendEmail: 'authentication/resendEmail'
     }),
     submit(event) {
       event.preventDefault();

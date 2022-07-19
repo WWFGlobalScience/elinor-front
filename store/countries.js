@@ -265,7 +265,7 @@ export const actions = {
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v1/managementareas/countries/'
+                url: 'v2/managementareas/countries/'
             });
 
             state.commit('setManagementAreaCountries', response.data)

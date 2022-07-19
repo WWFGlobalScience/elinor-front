@@ -2,9 +2,6 @@
     <section class="section section--assessment-edit-managed-area">
         <ma-edit-selector v-if="assessment && assessment.management_area === null"></ma-edit-selector>
         <transition name="fade">
-            <ma-edit-exists v-if="false"></ma-edit-exists>
-        </transition>
-        <transition name="fade">
             <ma-edit-new v-if="assessment && assessment.management_area !== null"></ma-edit-new>
         </transition>
     </section>

@@ -32,8 +32,14 @@
 //elinor question
 
 .elinor__question {
+    @apply mt-10;
+    .title-border {
+        .title {
+           @apply text-[16px]; 
+        }
+    }
     .question {
-        @apply mt-16;
+        @apply mt-8;
         .question__index {
             @apply flex items-center text-[18px];
             .bullet {
@@ -137,5 +143,86 @@
             content: '';
             @apply absolute inset-0 m-auto h-px bg-turqy-middle w-full;
         }
+    }
+}
+
+//elinor card document
+.elinor-card__document {
+    @apply px-0 mb-4;
+    
+    .header {
+        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border pb-6 px-10; ;
+        .title-group {
+            @apply flex justify-start items-center flex-row;
+            .ico{
+                @apply w-16;
+            }
+        }
+        .info-group{
+            @apply flex justify-start sm:justify-end flex-row items-center border-l sm:border-0 sm:mt-4 border-grayy-border pl-6;
+        }
+    }
+    .title {
+        @apply text-grayy-lighter text-[16px];
+    }
+    .body {
+        @apply pt-10 pl-[105px] sm:pl-6 pr-6;
+        .text-group {
+            &:not(:last-child) {
+                @apply mb-4;
+            }
+            
+        }
+    }
+}
+
+//elinor card news
+.elinor-card__news {
+    @apply p-0 mb-4;
+    
+    .header {
+        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border p-5; ;
+        .title-group {
+            @apply flex justify-start flex-col;
+            .title{
+                @apply text-2xl text-turqy font-bold mt-2;
+            }
+        }
+        .info-group{
+            @apply flex justify-start sm:justify-end flex-row items-center border-l sm:border-0 sm:mt-4 border-grayy-border pl-6;
+        }
+    }
+    .body {
+        @apply p-5;
+        .text-group {
+            .text{
+
+            }
+            
+        }
+    }
+}
+
+//latest news
+.latest-news__card {
+    width: calc(33% - 20px);
+    @apply p-0 lg:w-full mb-5;
+    .header {
+        @apply p-5 border-b border-grayy-border;
+        
+    }
+    .body { 
+        @apply p-5;
+    }
+}
+
+//ico download
+.ico-download{
+    @apply text-turqy flex flex-col justify-center items-center uppercase text-[11px] font-bold ml-6;
+    .ico-wrap {
+        @apply flex items-center justify-center text-[20px] w-[38px] h-[38px] bg-white border border-solid border-turqy border-radius--50;
+    }
+    span{
+        @apply mt-1;
     }
 }

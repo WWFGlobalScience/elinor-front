@@ -18,7 +18,7 @@ export const actions = {
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v1/stakeholdergroups/?search=' + search
+                url: 'v2/stakeholdergroups/?search=' + search
             });
 
             state.commit('setList', response.data.results)

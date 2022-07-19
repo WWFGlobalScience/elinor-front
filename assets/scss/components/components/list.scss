@@ -60,6 +60,7 @@
         .right {
             @apply w-1/2 border-l border-grayy-border pl-8 sm:w-full sm:border-l-0 sm:border-t sm:pt-8 sm:pl-0 sm:mt-8;
         }
+        &.is--inactive,
         &.is--uncomplete {
             .txt {
                 .txt__mark {
@@ -76,8 +77,14 @@
         .txt__uncomplete {
             @apply text-redy;
         }
+        .txt__inactive {
+            @apply text-grayy-lighter;
+        }
         .btn--uncomplete {
             @apply mt-8 self-start;
+        }
+        & + .title-border {
+            @apply mt-16;
         }
     }
     &.elinor__survey-list--row{
@@ -94,6 +101,32 @@
                     @apply w-8 mr-4
                 }
             }
+        }
+    }
+}
+
+.number-list {
+    counter-reset: elements-counter;
+    @apply pl-12; 
+    
+    > li {
+        counter-increment: elements-counter;
+        @apply relative;
+        .number-list__question {
+            @apply text-lg;
+            &::before {
+                content: counter(elements-counter);
+                @apply absolute -left-12 -top-1 border-radius--50 flex justify-center items-center border border-turqy border-solid w-[36px] h-[36px] text-sm text-turqy;
+            }
+        }
+        .number-list__answer {
+            @apply flex justify-start items-center border-radius--20 bg-turqy-lighter px-10 py-5 text-sm leading-6 italic mt-5;
+            .register {
+                @apply text-8xl;
+            }
+        }
+        &:not(:last-child) {
+            @apply mb-20;
         }
     }
 }

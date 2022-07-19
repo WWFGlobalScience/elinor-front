@@ -28,8 +28,11 @@ button {
             transform: translateX(5px);
         }
     }
-    &.btn--sm{
-        @apply py-2 px-4 text-xs;
+    &.btn--sm {
+        @apply h-[28px] py-0 px-4 text-xs border-radius--btn-small;
+    }
+    &.disabled {
+        @apply bg-turqy-lighter text-grayy-lighter
     }
 }
 .btn--circle{
@@ -91,4 +94,40 @@ button {
     right: 10px;
     top: 28px;
 }
+.btn--small {
+    @apply h-[27px] w-auto px-3 py-0 border-radius--btn-small;
+    &:hover {
+        img {
+            transform: translateX(0);
+        }
+    }
+}
+.btn--inverse{
+    span {
+        @apply mr-0;
+    }
+}
+.btn-collapse {
+    @apply flex justify-start items-center text-turqy mt-4;
+    .ico{
+        @apply ml-2;
+    }
+}
 
+//links
+.link-arrow {
+    @apply flex flex-row flex-wrap items-center text-turqy;
+    .ico{
+        @apply ml-2;
+    }
+}
+
+.link-more {
+    @apply text-turqy flex;
+
+    &::after {
+        content: '...';
+        @apply pl-1;
+    }
+
+}

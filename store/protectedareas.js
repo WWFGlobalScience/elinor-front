@@ -13,7 +13,7 @@ export const actions = {
         try {
             const response = await this.$axios({
                 method: 'get',
-                url: 'v1/protectedareas/?search=' + search
+                url: 'v2/protectedareas/?search=' + search
             });
 
             state.commit('setList', response.data.results)

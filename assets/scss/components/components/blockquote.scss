@@ -5,3 +5,12 @@
         @apply font-bold text-xs uppercase block pt-3;
     }
 }
+
+.elinor__blockquote {
+    @apply flex justify-center items-center text-center border-radius--20 bg-turqy-lighter px-9 py-14 text-turqy;
+    p {
+        @apply text-xl;
+    }
+
+
+}

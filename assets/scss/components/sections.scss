@@ -40,6 +40,9 @@
             }
         }
     }
+    &.section--intro-full {
+        @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
+    }
     
     &.section--tags {
         @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
@@ -245,6 +248,34 @@
             }
         img{
             @apply h-full w-full object-cover;
+        }
+    }
+    &.section--latest-news {
+        .row{
+            @apply flex flex-row justify-between;
+
+            &.row--cards{
+                @apply lg:flex-col;
+            }
+        }
+    }
+    &.section--collaboration {
+        @apply border-grayy-border border-b pb-24;
+        .text-group {
+            p {
+                &:not(:last-child) {
+                    @apply mb-4;
+                }
+            }
+        }
+    }
+    &.section--guidelines {
+        .text-group {
+            p {
+                &:not(:last-child) {
+                    @apply mb-4;
+                }
+            }
         }
     }
 }

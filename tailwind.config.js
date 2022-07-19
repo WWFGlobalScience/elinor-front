@@ -130,6 +130,12 @@ module.exports = {
                 '.border-radius--20': {
                     borderRadius: '20px'
                 },
+                '.border-radius--btn-small': {
+                    borderRadius: '12px'
+                },
+                '.border-radius--card': {
+                    borderRadius: '12px'
+                },
             }
             addUtilities(customUtilities)
         })

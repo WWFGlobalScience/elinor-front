@@ -1,6 +1,6 @@
 <template>
-    <section class="section section--assesment-edit-survey-question section--mt-0">
-        <assessment-edit-survey-question-navigator :assessment="assessment" :id="id"></assessment-edit-survey-question-navigator>
+    <section v-if="!loader.active" class="section section--assesment-edit-survey-question section--mt-0">
+        <assessment-edit-survey-navigator mode="detail" :assessment="assessment" :id="id"></assessment-edit-survey-navigator>
         <assessment-edit-survey-question :assessment="assessment" :question="question" :qid="qid" :id="id"></assessment-edit-survey-question>
         <assessment-edit-survey-question-help :qid="qid" ></assessment-edit-survey-question-help>
     </section>
@@ -22,10 +22,12 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            survey: state => state.assessments.survey
+            questions: state => state.surveyquestions.list,
+            loader: state => state.loader.loader
         }),
         question() {
-            return this.survey[ this.qid - 1 ]
+            const filtered = this.questions.filter(question => question.id === parseInt(this.qid));
+            return filtered[0];
         }
     }
 }

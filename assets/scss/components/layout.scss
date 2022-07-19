@@ -26,6 +26,7 @@ main {
                 @apply absolute inset-0 w-full h-52 object-contain z-0 mx-auto sm:relative sm:mb-6;
             }
         }
+
     }
 }
 
@@ -36,13 +37,24 @@ main {
 .g-grid--2{
     @apply grid grid-cols-2 gap-14;
 }
+.g-grid--1{
+    @apply grid grid-cols-1 gap-14;
+}
 
 .g-grid--2-1-lg{
     @apply grid grid-cols-2 gap-4 lg:grid-cols-1;
 }
 
+.g-grid--2-1-sm {
+    @apply grid grid-cols-2 gap-4 lg:grid-cols-1;
+}
+
 .g-grid--3-1-md{
     @apply grid grid-cols-3 md:grid-cols-1 gap-14;
+}
+
+.g-grid--3-1-lg{
+    @apply grid grid-cols-3 lg:grid-cols-1 gap-14;
 }
 
 .g-grid--3-1-sm{
@@ -51,6 +63,10 @@ main {
 
 .g-grid--4-1-sm{
     @apply grid grid-cols-4 sm:grid-cols-1 gap-14;
+}
+
+.g-grid--4-1-lg{
+    @apply grid grid-cols-4 lg:grid-cols-1 gap-14;
 }
 
 .g-colspan--2{
@@ -64,8 +80,16 @@ main {
    @apply col-span-2 md:col-span-full;
 }
 
+.g-colspan--2-full-lg{
+    @apply col-span-2 lg:col-span-full;
+ }
+
 .g-colspan--3-full-md{
     @apply col-span-3 md:col-span-full;
+}
+
+.g-colspan--3-full-lg{
+    @apply col-span-3 lg:col-span-full;
 }
 
 .g-colspan--4-full-md{
@@ -102,6 +126,22 @@ main {
                 content: "";
                 @apply absolute inset-y-0 left-0 h-64 border-r border-grayy-border sm:w-full sm:border-t sm:border-r-0;
             }
-         }
-     }
+        }
+    }
  }
+
+ .publish__layout {
+    @apply flex flex-row md:flex-col mt-11;
+
+    .publish__num {
+        @apply min-w-[20%];
+    }
+ }
+
+.row-btn{
+    @apply flex mt-8;
+    &.row-btn--center {
+        @apply justify-center;
+    }
+}
+

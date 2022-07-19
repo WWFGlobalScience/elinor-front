@@ -18,12 +18,21 @@
                         <span class="txt">{{ $t('pages.assessments.view.tabs.collaborators.tabButton') }}</span>
                     </nuxt-link>
                 </li>
+                <li class="elinor__tab--end" v-if="isAssessmentCollaborator($auth, assessment)">
+                    <nuxt-link :to="`/assessments/${id}/publish-settings`"
+                               :class="['btn--tab btn--tab-percent']">
+                        <span class="bullet">100%</span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.publish-settings.tabButton.edit') }}</span>
+                    </nuxt-link>
+                </li>
             </ul>
         </div>
     </section>
 </template>
 
 <script>
+
+import {isAssessmentCollaborator} from "~/config/assessment-roles";
 
 export default {
     name: 'assessment-tabs',
@@ -34,6 +43,9 @@ export default {
         assessment() {
             return this.$store.state.assessments.assessment
         }
+    },
+    methods: {
+        isAssessmentCollaborator
     }
 }
 </script>
