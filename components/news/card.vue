@@ -8,9 +8,7 @@
         </div>
         <div class="body">
             <div class="text-group">
-                <p class="text">
-                    {{ text }}
-                </p>
+                <p class="text" v-html="text"></p>
             </div>
             <a v-if="instance.text.length > maxCharacters" @click="toggleExpanded"  role="button" class="btn-collapse">
                 <span v-if="!expanded">{{ $t( 'buttons.seeMore' ) }}</span>
