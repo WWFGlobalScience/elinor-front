@@ -19,6 +19,7 @@ const perPage = 5;
 
 export default {
     name: 'news',
+    auth: false,
     data() {
         return {
             visibleNews: [],
