@@ -100,8 +100,8 @@ export const mutations = {
     addEmptyZone(state) {
         state.zones.push({name: null, access_level: null, description: null});
     },
-    deleteZone(state, zoneId) {
-        state.zones = state.zones.filter(zone => zone.id !== zoneId);
+    deleteZone(state, index) {
+        state.zones.splice(index, 1);
     },
     deleteAllZones(state) {
         state.zones = [];
@@ -336,12 +336,14 @@ export const actions = {
         state.commit('addAuthorityToList', authority);
         return authority;
     },
-    async deleteZone(state, zoneId) {
-        await this.$axios({
-            method: 'delete',
-            url: `/v2/managementareazones/${zoneId}/`
-        });
-        state.commit('deleteZone', zoneId)
+    async deleteZone(state, {zoneId, index}) {
+        if(zoneId) {
+            await this.$axios({
+                method: 'delete',
+                url: `/v2/managementareazones/${zoneId}/`
+            });
+        }
+        state.commit('deleteZone', index)
     },
     async deleteAllZones(state) {
         state.state.zones.forEach(zone => {

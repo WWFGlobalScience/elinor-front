@@ -15,7 +15,7 @@
                 <div class="question">
                     <div class="question__index">
                         <span class="bullet"></span>
-                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.question' ) }} {{ questionId }} / {{ questions.length }}</span>
+                        <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.question' ) }} {{ surveyQuestionNumber(questionId, assessment, attributes, questions) }} / {{ totalSurveyQuestions(assessment, questions) }}</span>
                     </div>
                     <div class="question__title">
                         {{ question.text }}
@@ -64,17 +64,17 @@
                 <nav class="question__nav">
                     <ul>
                         <li>
-                            <nuxt-link v-if="questionId > 1" :to="`/assessments/edit/${id}/the-survey/${questionId - 1}/#question`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="previousSurveyQuestion" :to="`/assessments/edit/${id}/the-survey/${previousSurveyQuestion}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <img src="~/assets/img/ico-arrow-back-turqy.svg">
                                 <span>{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}</span>
                             </nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link v-if="questionId < questions.length" :to="`/assessments/edit/${id}/the-survey/${questionId + 1}/#question`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="nextSurveyQuestion" :to="`/assessments/edit/${id}/the-survey/${nextSurveyQuestion}/#question`" class="btn--border-turqy btn--opacity--child">
                                 <span>{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
-                            <nuxt-link v-if="questionId === questions.length" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
+                            <nuxt-link v-if="isLastQuestionInSurvey" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
                                 <span>{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                                 <img src="~/assets/img/ico-button-arrow-turqy.svg">
                             </nuxt-link>
@@ -88,6 +88,7 @@
 
 <script>
 import {mapActions, mapState} from 'vuex'
+import {surveyQuestionNumber, totalSurveyQuestions, previousSurveyQuestion, nextSurveyQuestion, isLastQuestionInSurvey} from '../../../config/assessment-progress';
 export default {
     name: 'assessment-edit-survey-question',
     props: ['qid'],
@@ -121,6 +122,15 @@ export default {
         answer() {
             const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
             return answer[0] || null;
+        },
+        previousSurveyQuestion() {
+            return previousSurveyQuestion(this.questionId, this.assessment, this.attributes, this.questions);
+        },
+        nextSurveyQuestion() {
+            return nextSurveyQuestion(this.questionId, this.assessment, this.attributes, this.questions);
+        },
+        isLastQuestionInSurvey() {
+            return isLastQuestionInSurvey(this.questionId, this.assessment, this.attributes, this.questions)
         }
     },
     methods: {
@@ -155,7 +165,9 @@ export default {
         isExplanationDisabled() {
             const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
             return answer.length === 0;
-        }
+        },
+        totalSurveyQuestions,
+        surveyQuestionNumber,
 
     }
 }
