@@ -57,16 +57,10 @@ export default {
                 }
             ]
         }],
-        [
-            'vue-scrollto/nuxt',
-            // Or if you have custom options...
-            ['vue-scrollto/nuxt', {
-                duration: 500,
-                offset: -70
-            }],
-        ],
+        'vue-scrollto/nuxt',,
         'nuxt-vue-multiselect',
-        '@nuxtjs/google-gtag'
+        '@nuxtjs/google-gtag',
+        '@nuxtjs/recaptcha'
     ],
     auth: {
         strategies: {
@@ -126,5 +120,11 @@ export default {
         },
         debug: false,
         disableAutoPageTrack: false
+    },
+    publicRuntimeConfig: {
+        recaptcha: {
+            siteKey: '6LezqLQgAAAAAPYyaUpHoZfIIMCLyQhqs_4dSfUj',
+            version: 3
+        }
     }
 }
