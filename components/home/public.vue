@@ -168,8 +168,9 @@
         </div>
         <div class="container">
           <div class="section--img-text__block-text">
-            <h4 class="c-title--sm">{{ $t('pages.home.public.content.explanation.trackingChange.title') }}</h4>
-            <div v-html="$t('pages.home.public.content.explanation.trackingChange.text')"></div>
+            <h4 class="c-title--block">{{ $t('pages.home.public.content.explanation.trackingChange.title') }}</h4>
+            <p v-html="$t('pages.home.public.content.explanation.trackingChange.text')"></p>
+            <ul class="list-disc list-inside" v-html="$t('pages.home.public.content.explanation.trackingChange.list')"></ul>
           </div>
         </div>
       </div>

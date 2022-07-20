@@ -63,7 +63,8 @@
                         "paragraph2" : "The questions within Elinor are high-level, covering a broad range of topics and can help stakeholders better understand issues related to the equitable governance and management of areas under protection or management.",
                         "trackingChange" : {
                             "title" : "TRACKING CHANGE",
-                            "text" : "Elinor has been designed primarily to help track changes over time, thus can be used at any stage in the project cycle to<ul><li>Indicate the suitability of a site for different types of interventions</li><li>Highlight areas that require more focused interventions to enhance implementation efforts.</li><li>Invite stakeholders to collaboratively reflect on a broad range of issues important for area-based conservation</li></ul>"
+                            "text" : "Elinor has been designed primarily to help track changes over time, thus can be used at any stage in the project cycle to:",
+                            "list" : "<li>Indicate the suitability of a site for different types of interventions</li><li>Highlight areas that require more focused interventions to enhance implementation efforts.</li><li>Invite stakeholders to collaboratively reflect on a broad range of issues important for area-based conservation</li>"
                         }
                     },
                     "elinor" : {
