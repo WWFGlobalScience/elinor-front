@@ -1260,6 +1260,16 @@
             "text" : "<p>Terms of service are currently under development.</p>"
         },
         "about" : {
+            "meta": {
+                "title": "Background",
+                "slug": "/background",
+                "seo": {
+                    "title": "",
+                    "description": "",
+                    "keywords": "",
+                    "og_image": ""
+                }
+            },
             "title" : "About the Assessment",
             "paragraph1" : "<p>The Elinor assessment collects background information on the managed area, and information on nine attributes important for area-based conservation and management through 35 questions.</p>",
             "backgroundItems" : {

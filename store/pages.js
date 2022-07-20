@@ -47,6 +47,29 @@ export const state = () => ({
             }
         },
         {
+            path: '/background',
+            config: {
+                display: {
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
+                }
+            },
+            title: 'pages.about.meta.title',
+            slug: 'pages.about.meta.slug',
+            icons: {
+                gray: require('~/assets/img/ico-documentation-gray.svg'),
+                white: require('~/assets/img/ico-documentation-white.svg'),
+                turqy: require('~/assets/img/ico-documentation-turqy.svg')
+            },
+            seo: {
+                title: 'pages.about.meta,seo.title',
+                description: 'pages.about.meta.seo.description',
+                keywords: 'pages.about.meta.seo.keywords',
+                og_image: 'pages.about.meta.seo.og_image',
+            }
+        },
+        {
             path: '/collaboration',
             config: {
                 display: {

@@ -17,7 +17,7 @@
               <p>{{ $t('pages.methodologyPage.paragraph3') }}</p>
               <div class="flex">
               <a href="/methodology" class="btn btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t('pages.methodologyPage.cta1') }}</span> 
+                <span class="btn--opacity__target">{{ $t('pages.methodologyPage.cta1') }}</span>
                 <img src="~/assets/img/ico-download-white.svg" alt="" />
               </a>
               </div>
@@ -32,3 +32,10 @@
     </section>
   </article>
 </template>
+
+<script>
+export default {
+    name: 'methodology',
+    auth: false
+}
+</script>
