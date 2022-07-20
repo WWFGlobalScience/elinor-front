@@ -991,7 +991,7 @@
                 "question" : "What can I do from here?",
                 "answer-1" : "Go to assessments",
                 "answer-2" : "Create an assessment",
-                "label" : "Don’t show again this initial modal screen"
+                "label" : "Don’t show this initial modal screen again"
             }
         },
         "documentation": {
