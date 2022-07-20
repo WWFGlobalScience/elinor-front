@@ -59,19 +59,19 @@
                     },
                     "explanation" : {
                         "title" : "WHY SHOULD I USE IT?",
-                        "paragraph1" : "<p>Elinor can be applied as either a field-based assessment with a trained facilitator or as a desk-based tool that harnesses local and practitioner knowledge.</p>",
-                        "paragraph2" : "<p>The questions within Elinor are high-level, covering a broad range of topics and can help stakeholders better understand issues related to the equitable governance and management of areas under protection or management.</p>",
+                        "paragraph1" : "Elinor can be applied as either a field-based assessment with a trained facilitator or as a desk-based tool that harnesses local and practitioner knowledge.",
+                        "paragraph2" : "The questions within Elinor are high-level, covering a broad range of topics and can help stakeholders better understand issues related to the equitable governance and management of areas under protection or management.",
                         "trackingChange" : {
                             "title" : "TRACKING CHANGE",
-                            "text" : "<p>Elinor has been designed primarily to help track changes over time, thus can be used at any stage in the project cycle to</p><ul><li>Indicate the suitability of a site for different types of interventions</li><li>Highlight areas that require more focused interventions to enhance implementation efforts.</li><li>Invite stakeholders to collaboratively reflect on a broad range of issues important for area-based conservation</li></ul>"
+                            "text" : "Elinor has been designed primarily to help track changes over time, thus can be used at any stage in the project cycle to<ul><li>Indicate the suitability of a site for different types of interventions</li><li>Highlight areas that require more focused interventions to enhance implementation efforts.</li><li>Invite stakeholders to collaboratively reflect on a broad range of issues important for area-based conservation</li></ul>"
                         }
                     },
                     "elinor" : {
                         "title" : "In Honor",
                         "subtitle" : "Elinor “Lin” Ostrom",
-                        "paragraph1" : "<p>Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.</p>",
-                        "paragraph2" : "<p>Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.</p>",
-                        "paragraph3" : "<p>Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.</p>",
+                        "paragraph1" : "Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.",
+                        "paragraph2" : "Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.",
+                        "paragraph3" : "Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.",
                         "quote" : {
                             "text" : "Little by little, bit by bit, family by family, so much good can be done on so many levels.",
                             "author" : "ELINOR OSTROM"
@@ -361,7 +361,7 @@
                                 "formatNotSupported" : "This format is not supported",
                                 "youCan" : "You can",
                                 "tryAgain" : "try again",
-                                "help" : "<h4>What file to upload?</h4><p>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload.</p>"
+                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload."
                             },
                             "imageFile" : {
                                 "title" : "Upload Map Image File",
@@ -369,7 +369,7 @@
                                 "gpsCoordinatesTitle" : "Indicate GPS coordinates",
                                 "gpsCoordinatesExample" : "Latitude , Longitude<br>(e.g 40.741895,-73.989308)",
                                 "dragMapIcon" : "You can Drag the icon in the map to select the coordinates",
-                                "help" : "<h4>What file to upload?</h4><p>If you do not have a shapefile or GeoJSON format file but have an image map of the managed area you may upload it here and it will be processed manually. </p>"
+                                "help" : "<h4>What file to upload?</h4>If you do not have a shapefile or GeoJSON format file but have an image map of the managed area you may upload it here and it will be processed manually. "
                             }
                         }
                     },
@@ -399,8 +399,8 @@
                             "items" : {
                                 "stakeholder_harvest_rights" : {
                                     "question" : "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
-                                    "information" : "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to harvest natural resources within the MA (e.g., a management plan/ legislature / key informants with customary knowledge)</p>",
-                                    "guidance" : "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers.</p> <p>Note: this question does not address/is not to be confused with local stakeholders’ level of awareness or the distribution of rights among stakeholders.</p>",
+                                    "information" : "Knowledge of the range of local stakeholders involved with the MA.Access to information covering the rights of stakeholders to harvest natural resources within the MA (e.g., a management plan/ legislature / key informants with customary knowledge)",
+                                    "guidance" : "Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Note: this question does not address/is not to be confused with local stakeholders’ level of awareness or the distribution of rights among stakeholders.",
                                     "answers" : {
                                         "1" : "Rights to harvest natural resources within the MA are not clearly defined ",
                                         "2" : "Some rights to harvest natural resources within the MA are slightly defined",
@@ -411,8 +411,8 @@
                                 },
                                 "stakeholder_develop_rules" : {
                                     "question" : "Are there formal or informal mechanisms that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
-                                    "information" : "<p>Knowledge of the range of local stakeholders involved with the MA.</p>.<p>Knowledge of the different mechanisms (see examples below) that may exist. These mechanisms should clearly state that local stakeholders have the right to develop rules. Some example formal mechanisms include an MA management plan or National legislature in which local stakeholder rights to develop rules are stated.</p>",
-                                    "guidance" : "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers.</p><p>In the cases where both formal and informal mechanisms exist you may wish to focus on the most prevalent and use the explanation box to explain their variation</p><p>Note:    i) Not to be confused with local stakeholders' level of awareness; ii)This question does not address/is not to be confused with the distribution of rights among stakeholders;    iii) This question does not ask how effective the mechanisms are, only whether they exist and if they are rights-based.</p>",
+                                    "information" : "Knowledge of the range of local stakeholders involved with the MA..Knowledge of the different mechanisms (see examples below) that may exist. These mechanisms should clearly state that local stakeholders have the right to develop rules. Some example formal mechanisms include an MA management plan or National legislature in which local stakeholder rights to develop rules are stated.",
+                                    "guidance" : "Clearly defined means written in legal or management documents or verbally communicated through duty bearers.In the cases where both formal and informal mechanisms exist you may wish to focus on the most prevalent and use the explanation box to explain their variationNote:    i) Not to be confused with local stakeholders' level of awareness; ii)This question does not address/is not to be confused with the distribution of rights among stakeholders;    iii) This question does not ask how effective the mechanisms are, only whether they exist and if they are rights-based.",
                                     "answers" : {
                                         "1" : "Rights to develop rules for the use of natural resources within the MA are not clearly defined",
                                         "2" : "Rights to develop rules for the use of natural resources within the MA are slightly defined",
@@ -423,8 +423,8 @@
                                 },
                                 "stakeholder_exclude_others" : {
                                     "question" : "Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?",
-                                    "information" : "<p>Knowledge of the range of local stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders to exclude other groups from harvesting resources within the MA (e.g., a management plan/ legislature / key informants with customary knowledge)</p>",
-                                    "guidance" : "<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers.</p><p>Other groups refer to stakeholders who have not traditionally or historically used resources in the MA</p><p>Note: i) Not to be confused with local stakeholders' level of awareness; ii) This question does not address/is not to be confused with the distribution of rights among stakeholders.</p>",
+                                    "information" : "Knowledge of the range of local stakeholders involved with the MA.Access to information covering the rights of stakeholders to exclude other groups from harvesting resources within the MA (e.g., a management plan/ legislature / key informants with customary knowledge)",
+                                    "guidance" : "Clearly defined means written in legal or management documents or verbally communicated through duty bearers.Other groups refer to stakeholders who have not traditionally or historically used resources in the MANote: i) Not to be confused with local stakeholders' level of awareness; ii) This question does not address/is not to be confused with the distribution of rights among stakeholders.",
                                     "answers" : {
                                         "1" : "Rights to exclude other groups from harvesting natural resources within the MA are not clearly defined",
                                         "2" : "Rights to exclude other groups from harvesting natural resources within the MA are slightly defined",
@@ -435,8 +435,8 @@
                                 },
                                 "legislation_exists" : {
                                     "question" : "Is there legislation in place to enable resource management by local communities?",
-                                    "information" : "<p>Knowledge of the regional/national legislation and the mechanisms to support its implementation</p>.<p>Local community’s governance needs, e.g., ability to restrict access to the MA/CA by outside groups, or enforce local laws concerning use</p>",
-                                    "guidance" : "<p><strong>Enable</strong> in this context means that there are effective accountability mechanisms in place that support the meaningful implementation of natural resource management by local communities.<p><p><strong>Accountability mechanisms</strong> may include complaints and grievance procedures<p>",
+                                    "information" : "Knowledge of the regional/national legislation and the mechanisms to support its implementation.Local community’s governance needs, e.g., ability to restrict access to the MA/CA by outside groups, or enforce local laws concerning use",
+                                    "guidance" : "<strong>Enable</strong> in this context means that there are effective accountability mechanisms in place that support the meaningful implementation of natural resource management by local communities.<strong>Accountability mechanisms</strong> may include complaints and grievance procedures",
                                     "answers" : {
                                         "1" : "There is no legislation that enables local stakeholders to develop their own rules governing resources within the MA",
                                         "2" : "Legislation enables local stakeholders to develop their own rules governing resources within the MA, but there are major issues that need to be resolved\n\n",
@@ -447,8 +447,8 @@
                                 },
                                 "exercise_rights" : {
                                     "question" : "Are local stakeholders able to exercise their rights to natural resources?",
-                                    "information" : "<p>The rights to natural resources held by local communities</p><p>The sorts of challenges local stakeholders (particularly marginalized groups or groups that are highly dependent on the resources in the MA to fulfill their basic needs) have in exercising these rights. Key informants may be a useful source of information to elucidate some of the hidden costs.</p>",
-                                    "guidance" : "<p><strong>Local stakeholders:</strong> this is a broad term that includes various interest groups. For the purpose of this question please consider the options below as they apply to the majority of local stakeholders and include in the qualitative response any variation among different stakeholders, especially women and other vulnerable groups</p><p><strong>Exercise</strong> – the ability to act to claim and secure one’s rights. This ability could be financial, knowledge, social connections, or any other mechanisms required to realize one’s rights</p><p><strong>Cost</strong> – this is the effort, loss, or sacrifice required to exercise one’s rights.</p>",
+                                    "information" : "The rights to natural resources held by local communitiesThe sorts of challenges local stakeholders (particularly marginalized groups or groups that are highly dependent on the resources in the MA to fulfill their basic needs) have in exercising these rights. Key informants may be a useful source of information to elucidate some of the hidden costs.",
+                                    "guidance" : "<strong>Local stakeholders:</strong> this is a broad term that includes various interest groups. For the purpose of this question please consider the options below as they apply to the majority of local stakeholders and include in the qualitative response any variation among different stakeholders, especially women and other vulnerable groups<strong>Exercise</strong> – the ability to act to claim and secure one’s rights. This ability could be financial, knowledge, social connections, or any other mechanisms required to realize one’s rights<strong>Cost</strong> – this is the effort, loss, or sacrifice required to exercise one’s rights.",
                                     "answers" : {
                                         "1" : "Local stakeholders are not able to exercise their rights to resources",
                                         "2" : "Local stakeholders are able to exercise their rights to resources but there are significant costs that severely limit their ability to do so",
@@ -459,8 +459,8 @@
                                 },
                                 "stakeholder_agency" : {
                                     "question" : "To what extent are stakeholders affected by the rules of the MA able to play a role in making changes to the rules?",
-                                    "information" : "<p>Knowledge of the range of decision-making platforms that exist for the MA</p><p>Knowledge of management decisions that have taken place in approximately the last 5 years</p>",
-                                    "guidance" : "<p>Stakeholders: this is a broad term that includes various interest groups. For the purpose of this question please consider the options below as they apply to the majority of stakeholders.</p><p>Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and other groups in vulnerable/marginalized situations when answering this question and be sure to document these differences in the explanation box.</p><p>The ability to influence/modify means existing rules/regulations reflect the views of affected individuals</p><p>Rarely means that evidence for influence/modification of rules is scarce</p><p>Occasionally means that on occasion stakeholders’ views have been incorporated into management</p>",
+                                    "information" : "Knowledge of the range of decision-making platforms that exist for the MAKnowledge of management decisions that have taken place in approximately the last 5 years",
+                                    "guidance" : "Stakeholders: this is a broad term that includes various interest groups. For the purpose of this question please consider the options below as they apply to the majority of stakeholders.Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and other groups in vulnerable/marginalized situations when answering this question and be sure to document these differences in the explanation box.The ability to influence/modify means existing rules/regulations reflect the views of affected individualsRarely means that evidence for influence/modification of rules is scarceOccasionally means that on occasion stakeholders’ views have been incorporated into management",
                                     "answers" : {
                                         "1" : "Individuals affected by the rules of the MA are not able to influence/modify them",
                                         "2" : "Individuals affected by the rules of the MA are rarely able to influence/modify them",
@@ -471,8 +471,8 @@
                                 },
                                 "vulnerable_defined_rights" : {
                                     "question" : "Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?",
-                                    "information" : "<p>Knowledge of the range of stakeholders involved with the MA</p>.<p>Access to information covering the rights of stakeholders e.g., a management plan/ legal documents / key informants with customary knowledge</p>",
-                                    "guidance" : "<p>This question is designed to measure the equitable governance of the natural resource base amongst different stakeholder groups<p>.<p>Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders’ level of awareness.</p><p>Note: this question does not address/is not to be confused with the distribution of rights among stakeholders.</p>",
+                                    "information" : "Knowledge of the range of stakeholders involved with the MA.Access to information covering the rights of stakeholders e.g., a management plan/ legal documents / key informants with customary knowledge",
+                                    "guidance" : "This question is designed to measure the equitable governance of the natural resource base amongst different stakeholder groups.Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders’ level of awareness.Note: this question does not address/is not to be confused with the distribution of rights among stakeholders.",
                                     "answers" : {
                                         "1" : "Women’s or other vulnerable group’s rights to natural resources are not clearly defined",
                                         "2" : "Some rights to natural resources within the MA are clearly defined for women or other vulnerable groups",
@@ -483,8 +483,8 @@
                                 },
                                 "benefits_shared" : {
                                     "question" : "Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among local stakeholders?",
-                                    "information" : "<p>Knowledge of the range of decision-making platforms that exist for the MA</p>.<p> Knowledge of management decisions that have taken place in approximately the last 5 years</p>",
-                                    "guidance" : "Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and marginalized groups when answering this question.<p>The ability to influence/modify means existing rules/regulations reflect the views of affected individuals</p><p>Few is approximately < 50%</p><p>Some is approximately = 50%</p>p>Most is approximately > 50%</p>",
+                                    "information" : "Knowledge of the range of decision-making platforms that exist for the MA. Knowledge of management decisions that have taken place in approximately the last 5 years",
+                                    "guidance" : "Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and marginalized groups when answering this question.The ability to influence/modify means existing rules/regulations reflect the views of affected individualsFew is approximately < 50%Some is approximately = 50%p>Most is approximately > 50%",
                                     "answers" : {
                                         "1" : "There is no strategy or approach for equitable benefit sharing among the relevant stakeholders",
                                         "2" : "A strategy or approach for equitable benefit sharing is being prepared or has been prepared but not implemented",
@@ -495,7 +495,7 @@
                                 },
                                 "supportive_networks" : {
                                     "question" : "Do networks exist that develop social relations and support mutual learning among local stakeholders?",
-                                    "information" : "<p>Knowledge of the range and scope of formal or informal networks</p>.<p>A key informant with extensive social networks may be useful to consult</p>.",
+                                    "information" : "Knowledge of the range and scope of formal or informal networks.A key informant with extensive social networks may be useful to consult.",
                                     "guidance" : "The intent of this question is to understand if formal or informal networks exist that facilitate positive social relationships and opportunities for knowledge exchange amongst different local stakeholders in a MA.",
                                     "answers" : {
                                         "1" : "No networks exist that develop social relations and support mutual learning",
@@ -519,8 +519,8 @@
                                 },
                                 "governance_accountable" : {
                                     "question" : "Are those responsible for governance of the MA held to account if they do not perform their role?",
-                                    "information" : "<p>Knowledge of formal or informal accountability mechanisms</p>.<p> For informal bodies and processes that are not documented you may wish to ask a key informant.Knowledge of past or present governance issues/challenges and how these have been addressed</p>",
-                                    "guidance" : "<p>The intent of this question is to understand if there are mechanisms or systems in place that can help ensure that those responsible for managing and governing the MA are carrying out their responsibilities effectively.</p><p>Rarely means that events of accountability are scarce</p><p>Occasionally means there has been at least one instance where governors have been held accountable</p>",
+                                    "information" : "Knowledge of formal or informal accountability mechanisms. For informal bodies and processes that are not documented you may wish to ask a key informant.Knowledge of past or present governance issues/challenges and how these have been addressed",
+                                    "guidance" : "The intent of this question is to understand if there are mechanisms or systems in place that can help ensure that those responsible for managing and governing the MA are carrying out their responsibilities effectively.Rarely means that events of accountability are scarceOccasionally means there has been at least one instance where governors have been held accountable",
                                     "answers" : {
                                         "1" : "Nothing happens",
                                         "2" : "Those responsible for governance of the MA are rarely held to account for not performing their role",
@@ -544,7 +544,7 @@
                                 "conflict_resolution_access" : {
                                     "question" : "Do local stakeholders have access to effective conflict resolution mechanisms?",
                                     "information" : "Conflict resolution mechanisms at the site including complaints and grievance procedures and other accountability mechanisms. This can be either formal or informal procedures.",
-                                    "guidance" : "<p>This question is about the presence and effectiveness of conflict resolution mechanisms, particularly as they relate to natural resource use/access.</p><p>Effective conflict resolution mechanisms are characterized as being 1) rapid to access, 2) low-cost,3) local, and 4) trusted. All four conditions must be met to be considered effective.</p><p>Rare means that evidence for rapid, low-cost access to arenas to resolve conflict is scarce.</p><p>Sometimes means that there is evidence to show this has occurred on more than one occasion but not on a regular basis</p>",
+                                    "guidance" : "This question is about the presence and effectiveness of conflict resolution mechanisms, particularly as they relate to natural resource use/access.Effective conflict resolution mechanisms are characterized as being 1) rapid to access, 2) low-cost,3) local, and 4) trusted. All four conditions must be met to be considered effective.Rare means that evidence for rapid, low-cost access to arenas to resolve conflict is scarce.Sometimes means that there is evidence to show this has occurred on more than one occasion but not on a regular basis",
                                     "answers" : {
                                         "1" : "Users do not have access to effective arenas to resolve conflict among users",
                                         "2" : "It is rare that users have access to effective local arenas to resolve conflict",
@@ -556,7 +556,7 @@
                                 "penalties_frequency" : {
                                     "question" : "How often are the penalties for breaking resource use rules administered?",
                                     "information" : "Enforcement data or enforcement personnel",
-                                    "guidance" : "<p>Penalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.</p> <p>Rarely - means that instances penalties have been administered are scarce e.g., not one occasion can be identified in the past year</p><p>Occasionally - means there has been at least one instance in the past year when a penalty for breaking resource rules has been administered</p><p>Usually - means that penalties are administered in most of the instances when rules are broken</p>",
+                                    "guidance" : "Penalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty. Rarely - means that instances penalties have been administered are scarce e.g., not one occasion can be identified in the past yearOccasionally - means there has been at least one instance in the past year when a penalty for breaking resource rules has been administeredUsually - means that penalties are administered in most of the instances when rules are broken",
                                     "answers" : {
                                         "1" : "Penalties are never administered",
                                         "2" : "Penalties are rarely administered",
@@ -568,7 +568,7 @@
                                 "penalties_fair" : {
                                     "question" : "To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity, or frequency of the infraction?",
                                     "information" : "Enforcement data or enforcement personnel",
-                                    "guidance" : "<p>Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offense</p><p>Penalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.</p><p>Are there different penalties depending on the size/scale of the infraction?</p><p>Few is approximately < 50%</p><p>Some is approximately = 50%</p><p>Most is approximately > 50%</p>",
+                                    "guidance" : "Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offensePenalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.Are there different penalties depending on the size/scale of the infraction?Few is approximately < 50%Some is approximately = 50%Most is approximately > 50%",
                                     "answers" : {
                                         "1" : "Penalties are fixed and do not change with the nature, severity or frequency of the infraction",
                                         "2" : "Some penalties increase with the nature, severity of frequency of the infraction",
@@ -615,7 +615,7 @@
                                 },
                                 "multiple_knowledge_social" : {
                                     "question" : " Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?",
-                                    "information" : "<p>Different knowledge types include:</p><p>local and indigenous knowledge (often integrated through engaging IPLC in decision-making processes),</p><p>experiential knowledge, and </p><p>various types of conventional scientific knowledge (CSK) (including information from the natural and social sciences and from MA social and ecological monitoring )</p><p>Diversity here refers to more than two different types of knowledge</p>",
+                                    "information" : "Different knowledge types include:local and indigenous knowledge (often integrated through engaging IPLC in decision-making processes),experiential knowledge, and various types of conventional scientific knowledge (CSK) (including information from the natural and social sciences and from MA social and ecological monitoring )Diversity here refers to more than two different types of knowledge",
                                     "guidance" : "Relevant knowledge holders are individuals or groups who represent different knowledge systems, such as traditional, indigenous or local knowledge systems",
                                     "answers" : {
                                         "1" : "No, diverse knowledge types are not included in management/decision making",
@@ -627,8 +627,8 @@
                                 },
                                 "multiple_knowledge_integrated" : {
                                     "question" : "Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?",
-                                    "information" : "<p>Knowledge of monitoring, research and evaluation that occurs at the MA</p>.<p>Knowledge of decision-making procedures (e.g., who is involved and how) for the MA</p>",
-                                    "guidance" : "<p>Routinely incorporated – there are established or clearly recognizable procedures for actively including the results of monitoring, research or evaluation when making management decisions.</p><p>Major weaknesses - the weaknesses identified prevent their proper integration into management decision making.</p><p>Some weaknesses – results are incorporated but more could be done to improve their efficacy.</p>",
+                                    "information" : "Knowledge of monitoring, research and evaluation that occurs at the MA.Knowledge of decision-making procedures (e.g., who is involved and how) for the MA",
+                                    "guidance" : "Routinely incorporated – there are established or clearly recognizable procedures for actively including the results of monitoring, research or evaluation when making management decisions.Major weaknesses - the weaknesses identified prevent their proper integration into management decision making.Some weaknesses – results are incorporated but more could be done to improve their efficacy.",
                                     "answers" : {
                                         "1" : "The results of monitoring, research and evaluation are not routinely incorporated into management decisions",
                                         "2" : "The results of monitoring, research and evaluation are routinely incorporated into management decisions but there are major weaknesses",
@@ -664,7 +664,7 @@
                                 "management_levels_cohesive" : {
                                     "question" : "Do different levels of management exist within the MA that function as a coordinated unit?",
                                     "information" : "The different management authorities (formal and informal) that may exist within the MA and the degree of synergy across them.",
-                                    "guidance" : "<p>Levels – Formal or informal. There may be overlapping management jurisdictions of different government departments.</p> <p>Coordinated means united and working together effectively.</p><p>Major weaknesses – the weaknesses identified prevent the proper management of the MA</p><p>Some weaknesses – the weaknesses identified have room for improvement, but they are able to operate to fulfill the basic management requirements</p>",
+                                    "guidance" : "Levels – Formal or informal. There may be overlapping management jurisdictions of different government departments. Coordinated means united and working together effectively.Major weaknesses – the weaknesses identified prevent the proper management of the MASome weaknesses – the weaknesses identified have room for improvement, but they are able to operate to fulfill the basic management requirements",
                                     "answers" : {
                                         "1" : "Different levels of management zones exist but they do not function as a cohesive unit",
                                         "2" : "Different levels of management zones exist but there are major weaknesses in their cohesion",
@@ -675,8 +675,8 @@
                                 },
                                 "regulations_exist" : {
                                     "question" : "Are appropriate regulations in place to control natural resource-based activities in the MA?",
-                                    "information" : "<p>Access to (formal) information covering the regulations e.g., a management plan or legal/ government documents.</p><p>Access to informal/undocumented information covering customary regulations associated with local stakeholders/communities, this could be verbal rules </p>",
-                                    "guidance" : "<p>This question concerns conservation regulations, including local, national, and internal regulations.</p> <p>Appropriate means regulations that promote sustainable use without disadvantaging local communities/stakeholders </p><p>Major weaknesses: This could be in the scope of regulations e.g., key activities are not regulated, or in instances where the regulations exist, they severely disadvantage local communities/stakeholders.</p><p>Some weaknesses: The key activities are covered by regulations, but more activities need to be included and/or there are issues with local communities/stakeholders being disadvantaged.</p><p>Good basis: This could mean that the regulations cover all the natural based activities considered necessary to promote sustainable use without causing disadvantages to local communities/stakeholders.</p>",
+                                    "information" : "Access to (formal) information covering the regulations e.g., a management plan or legal/ government documents.Access to informal/undocumented information covering customary regulations associated with local stakeholders/communities, this could be verbal rules ",
+                                    "guidance" : "This question concerns conservation regulations, including local, national, and internal regulations. Appropriate means regulations that promote sustainable use without disadvantaging local communities/stakeholders Major weaknesses: This could be in the scope of regulations e.g., key activities are not regulated, or in instances where the regulations exist, they severely disadvantage local communities/stakeholders.Some weaknesses: The key activities are covered by regulations, but more activities need to be included and/or there are issues with local communities/stakeholders being disadvantaged.Good basis: This could mean that the regulations cover all the natural based activities considered necessary to promote sustainable use without causing disadvantages to local communities/stakeholders.",
                                     "answers" : {
                                         "1" : "There are no regulations for controlling natural resource based activities in the MA.",
                                         "2" : "Regulations for controlling natural resource based activities in the MA area exist but there are major weaknesses",
@@ -688,7 +688,7 @@
                                 "management_plan" : {
                                     "question" : "Is there a management plan for the MA and is it being implemented?",
                                     "information" : "Access to the most recent (even if out of date) management plan or personnel responsible for writing one",
-                                    "guidance" : "<p>The definition of a management plan can be broadened to include any formal or informal process that outlines how the MA is to be managed. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response.</p>",
+                                    "guidance" : "The definition of a management plan can be broadened to include any formal or informal process that outlines how the MA is to be managed. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response.",
                                     "answers" : {
                                         "1" : "There is no management plan for the MA.",
                                         "2" : "A management plan is being prepared OR a management plan has been prepared but is not being implemented.",
@@ -699,8 +699,8 @@
                                 },
                                 "boundary_known" : {
                                     "question" : "Is the boundary known by all local stakeholder groups?",
-                                    "information" : "<p>Knowledge of the range of stakeholders. If a stakeholder analysis or engagement plan exists this would make a good reference document for the range of stakeholders.</p> <p>Access to legal documents or management plans with information on the boundary of the MA</p><p>Access to informal information sources that may hold knowledge on boundaries (e.g., local historians)</p>",
-                                    "guidance" : "<p>Note:    Answer this question for what you understand the boundary to be.</p><p>For a boundary to be known by a stakeholder group at least one individual must be able to provide the information verbally/written or the information must be accessible to the group upon enquiry (e.g., through existing records).</p><p>Few is approximately < 50%</p> <p>Some is approximately = 50%</p><p>Most is approximately > 50%</p> ",
+                                    "information" : "Knowledge of the range of stakeholders. If a stakeholder analysis or engagement plan exists this would make a good reference document for the range of stakeholders. Access to legal documents or management plans with information on the boundary of the MAAccess to informal information sources that may hold knowledge on boundaries (e.g., local historians)",
+                                    "guidance" : "Note:    Answer this question for what you understand the boundary to be.For a boundary to be known by a stakeholder group at least one individual must be able to provide the information verbally/written or the information must be accessible to the group upon enquiry (e.g., through existing records).Few is approximately < 50% Some is approximately = 50%Most is approximately > 50% ",
                                     "answers" : {
                                         "1" : "The boundary of the MA is not known by relevant stakeholder groups",
                                         "2" : "The boundary of the MA is known for a few stakeholder groups",
@@ -711,8 +711,8 @@
                                 },
                                 "boundary_defined" : {
                                     "question" : "Is the boundary clearly defined?",
-                                    "information" : "<p>Access to legal documents or management plans with information on the boundary of the MA</p><p>Access to local key informant or site level personnel who is able to identify demarcations.</p>",
-                                    "guidance" : "<p>Note: This question relates to what you understand the boundary to be.</p><p>Demarcations can be man-made (e.g., signs, buoys) or landscape features. They may or may not be physically present in the landscape but may exist in maps in management plans/ documents or local accounts.</p><p>Major deficiencies may be interpreted as some areas of the MA/CA that are not demarcated or insecure demarcations.</p><p>Some deficiencies may be interpreted as needing some adjustments, but these do not interfere with its ability to function adequately.</p><p>Well demarcated may be interpreted as requiring no further improvements.</p>",
+                                    "information" : "Access to legal documents or management plans with information on the boundary of the MAAccess to local key informant or site level personnel who is able to identify demarcations.",
+                                    "guidance" : "Note: This question relates to what you understand the boundary to be.Demarcations can be man-made (e.g., signs, buoys) or landscape features. They may or may not be physically present in the landscape but may exist in maps in management plans/ documents or local accounts.Major deficiencies may be interpreted as some areas of the MA/CA that are not demarcated or insecure demarcations.Some deficiencies may be interpreted as needing some adjustments, but these do not interfere with its ability to function adequately.Well demarcated may be interpreted as requiring no further improvements.",
                                     "answers" : {
                                         "1" : "The boundary of the MA is not demarcated",
                                         "2" : "The boundary of the MA is demarcated but there are major deficiencies",
@@ -723,8 +723,8 @@
                                 },
                                 "outcomes_achieved_ecological" : {
                                     "question" : "To what extent do you feel the ecological outcomes are being achieved?",
-                                    "information" : "<p>Documents such as a management plan that list the ecological objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)</p><p>Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the ecology of the system.</p>",
-                                    "guidance" : "<p>Are not – there are no notable ecological outcomes.</p><<p>Partially – there are some outcomes, but they are not sufficient to meet the ecological objectives</p><<p>Mostly - outcomes are sufficient enough to meet some key ecological objectives</p><<p>Fully – outcomes sufficient to meet all key ecological objectives.</p><",
+                                    "information" : "Documents such as a management plan that list the ecological objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the ecology of the system.",
+                                    "guidance" : "Are not – there are no notable ecological outcomes.<Partially – there are some outcomes, but they are not sufficient to meet the ecological objectives<Mostly - outcomes are sufficient enough to meet some key ecological objectives<Fully – outcomes sufficient to meet all key ecological objectives.<",
                                     "answers" : {
                                         "1" : "The ecological outcomes are not being achieved",
                                         "2" : "The ecological outcomes are only partially being achieved",
@@ -735,8 +735,8 @@
                                 },
                                 "outcomes_achieved_social" : {
                                     "question" : "To what extent do you feel the social outcomes are being achieved?",
-                                    "information" : "<p>Documents such as a management plan that list the social objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)</p><p>Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the socioeconomic characteristics of the system</p>",
-                                    "guidance" : "<p>Social outcomes include social impacts on human well-being and livelihoods of local stakeholders</p><p>Are not – there are no notable social outcomes.</p><p>Partially - outcomes are not sufficient to meet the social objectives.</p><p>Mostly - outcomes are sufficient enough to meet some key social objectives.</p>",
+                                    "information" : "Documents such as a management plan that list the social objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the socioeconomic characteristics of the system",
+                                    "guidance" : "Social outcomes include social impacts on human well-being and livelihoods of local stakeholdersAre not – there are no notable social outcomes.Partially - outcomes are not sufficient to meet the social objectives.Mostly - outcomes are sufficient enough to meet some key social objectives.",
                                     "answers" : {
                                         "1" : "The social outcomes are not being achieved",
                                         "2" : "The social outcomes are only partially being achieved",
@@ -747,8 +747,8 @@
                                 },
                                 "management_capacity" : {
                                     "question" : "Do those responsible for managing the MA (e.g., staff, community associations, management groups) have the capacity to enforce the rules and regulations?",
-                                    "information" : "<p>Access to the site manager/local authority/duty-bearers,    or equivalent to ask about enforcement capacity</p> <p>Knowledge of the (informal/formal) rules and regulations</p><p>Any available databases/documents on enforcement targets, evaluation or monitoring</p>",
-                                    "guidance" : "<p>Note: rules and regulations may not always be legal laws, and may include local rules and norms</p><p>Capacity: This is related to a person’s ability: it could mean the necessary skill set(s) required for enforcement; it could also refer to level of authority e.g., legal capacity</p><p>Resources: This could mean technical equipment, time, money, skills</p><p>Partial enforcement: means that there are major weaknesses that need to be addressed to ensure the proper functioning of the MA</p><p>Acceptable enforcement can mean that a minimum level of enforcement exists which allows the functioning of the MA but there are some gaps/weaknesses that need to be addressed to ensure its sustainability into the future</p><p>Fully enforce means that an adequate level of enforcement exists which allows the functioning of the MA and there are no significant (negligible) gaps/weaknesses and cannot affect its sustainability into the future.</p>",
+                                    "information" : "Access to the site manager/local authority/duty-bearers,    or equivalent to ask about enforcement capacity Knowledge of the (informal/formal) rules and regulationsAny available databases/documents on enforcement targets, evaluation or monitoring",
+                                    "guidance" : "Note: rules and regulations may not always be legal laws, and may include local rules and normsCapacity: This is related to a person’s ability: it could mean the necessary skill set(s) required for enforcement; it could also refer to level of authority e.g., legal capacityResources: This could mean technical equipment, time, money, skillsPartial enforcement: means that there are major weaknesses that need to be addressed to ensure the proper functioning of the MAAcceptable enforcement can mean that a minimum level of enforcement exists which allows the functioning of the MA but there are some gaps/weaknesses that need to be addressed to ensure its sustainability into the futureFully enforce means that an adequate level of enforcement exists which allows the functioning of the MA and there are no significant (negligible) gaps/weaknesses and cannot affect its sustainability into the future.",
                                     "answers" : {
                                         "1" : "Those with responsibility for managing the MA do not have the capacity to enforce the rules and regulations",
                                         "2" : "Those with responsibility for managing the MA can only partially enforce the rules and regulations",
@@ -759,7 +759,7 @@
                                 },
                                 "sufficient_staff" : {
                                     "question" : "Are there enough people employed or engaged to manage the MA?",
-                                    "information" : "<p>Information on the number of people involved in MA management</p><p>Proposal/management plan for the site to understand the priority management activities</p><p>Informal communication with those involved in management activities may help to assess what is enough</p>",
+                                    "information" : "Information on the number of people involved in MA managementProposal/management plan for the site to understand the priority management activitiesInformal communication with those involved in management activities may help to assess what is enough",
                                     "guidance" : "The question is in reference to all people who manage the MA on a regular basis or are employed as staff.",
                                     "answers" : {
                                         "1" : "No one is employed or engaged to manage the MA",
@@ -771,7 +771,7 @@
                                 },
                                 "staff_capacity" : {
                                     "question" : "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
-                                    "information" : "<p>Proposal/management plan for the MA to understand the management activities</p><p>Knowledge of the full range of personnel involved in MA management</p>",
+                                    "information" : "Proposal/management plan for the MA to understand the management activitiesKnowledge of the full range of personnel involved in MA management",
                                     "guidance" : "Personnel includes all individuals responsible for MA management activities",
                                     "answers" : {
                                         "1" : "Those responsible for managing the MA lack the skills needed for MA management objectives",
@@ -783,7 +783,7 @@
                                 },
                                 "sufficient_budget" : {
                                     "question" : "Is the current budget or funds used to support MA activities sufficient?",
-                                    "information" : "<p>MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently.</p><p>Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines how the financial or management objectives on the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).</p>",
+                                    "information" : "MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently.Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines how the financial or management objectives on the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).",
                                     "guidance" : "If the budget information is not available please select “Do not know”",
                                     "answers" : {
                                         "1" : "There is no budget or funds for management of the MA",
@@ -795,7 +795,7 @@
                                 },
                                 "budget_secure" : {
                                     "question" : "Is the budget or funding secure?",
-                                    "information" : "<p>MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently (see previous question on budget sufficiency)</p><p>Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines the financial or management objectives of the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).</p>",
+                                    "information" : "MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently (see previous question on budget sufficiency)Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines the financial or management objectives of the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).",
                                     "guidance" : "Secure budget    = 5 years or longer",
                                     "answers" : {
                                         "1" : "There is no secure budget or funding for the MA and management is wholly reliant on outside or highly variable funding",
@@ -807,7 +807,7 @@
                                 },
                                 "sufficient_equipment" : {
                                     "question" : "Is the equipment sufficient for management needs?",
-                                    "information" : "<p>Proposal/management plan for the site to understand the management needs</p><p>Inventory of equipment/facilities accessible to the site</p><p>Site level equipment facilities</p><p>Knowledge of equipment maintenance requirements</p>",
+                                    "information" : "Proposal/management plan for the site to understand the management needsInventory of equipment/facilities accessible to the siteSite level equipment facilitiesKnowledge of equipment maintenance requirements",
                                     "guidance" : "Consider to what extent the available equipment and facilities are adequately maintained.",
                                     "answers" : {
                                         "1" : "There is little or no equipment and facilities for management needs ",
@@ -1054,72 +1054,72 @@
                         "items" : {
                             "main_purpose" : {
                                 "question" : "What is the main purpose of the tool?",
-                                "information" : "<p>The main purpose of Elinor is to track attributes critical to the success of area-based conservation over time, and share this information with decision makers and conservation supporters working at local, national or international scales.</p><p>The tool was specifically designed knowing many conservation practitioners (1) are familiar with and use an adopted version of the METT in their work and (2) face budget and time constraints for conservation monitoring and evaluation, and may need flexible approaches for collecting standardized data.</p><p>Because of this, this low-cost and simple assessment has been developed collaboratively with members of the conservation community, building off of the scoring system of the METT and questions from existing protocols (see reference list), and covers a range of management and governance issues considered important to success.</p>",
+                                "information" : "The main purpose of Elinor is to track attributes critical to the success of area-based conservation over time, and share this information with decision makers and conservation supporters working at local, national or international scales.The tool was specifically designed knowing many conservation practitioners (1) are familiar with and use an adopted version of the METT in their work and (2) face budget and time constraints for conservation monitoring and evaluation, and may need flexible approaches for collecting standardized data.Because of this, this low-cost and simple assessment has been developed collaboratively with members of the conservation community, building off of the scoring system of the METT and questions from existing protocols (see reference list), and covers a range of management and governance issues considered important to success.",
                                 "detail" : ""
                             },
                             "decisions" : {
                                 "question" : "What kinds of decisions will this tool help inform?",
-                                "information" : "<p>For project and site managers, information from the assessment can help:</p><ul><li>Communicate with key stakeholders what issues of equitable management and governance are important to pay attention to</li><li>Identify what actions might be most suitable for an area under protection or management to help improve its management and governance status</li><li>Identify where a more in-depth assessment of management, governance, equity, or climate is needed</li></ul><p>For regional and international decision-makers, the assessment data can help:</p><ul>\n<li>Provide a broad overview of perceived status and trends in management and governance</li><li>Prompt conversations on equitable management and governance at national and international scales to inspire change in policy and practice</li><li>Identify areas requiring more in-depth research</li></ul>",
+                                "information" : "For project and site managers, information from the assessment can help:<ul><li>Communicate with key stakeholders what issues of equitable management and governance are important to pay attention to</li><li>Identify what actions might be most suitable for an area under protection or management to help improve its management and governance status</li><li>Identify where a more in-depth assessment of management, governance, equity, or climate is needed</li></ul>For regional and international decision-makers, the assessment data can help:<ul>\n<li>Provide a broad overview of perceived status and trends in management and governance</li><li>Prompt conversations on equitable management and governance at national and international scales to inspire change in policy and practice</li><li>Identify areas requiring more in-depth research</li></ul>",
                                 "detail" : ""
                             },
                             "complete" : {
                                 "question" : "Who should complete an assessment?",
-                                "information" : "<p>The Elinor assessment was initially designed to meet the needs of conservationists working for non-governmental organizations (NGOs) but can be used by any individual working to support a managed area. The assessment can be completed in one of two ways:</p><ol><li>As a <strong>field-based focus group.</strong> This is the way that many governance assessments are traditionally completed; leveraging diverse perceptions from key stakeholders involved in the management and governance of a particular area. On the ElinorData.org website, you will find a full field protocol that can be used to guide ethical data collection with stakeholders. This guidance offers insights on how to ethically lead a group, obtain the right permissions for using the data, and to probe for diverse perspectives; especially of those who may have been traditionally marginalized. This is the preferred pathway, as it allows diverse voices to contribute to the assessment, providing a more holistic perspective on the status of management and governance in an area. See the Elinor assessment tool and protocol for guidance on how to lead a focus group.</li><li><strong>As a desk based assessment.</strong> This pathway is for those who have limited time or resources for carrying out a participatory focus group. This option allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment.</li></ol><p>When inputting data into the ElinorData system, users can indicate which pathway they took to generate the data in the assessment so any future users of the data can consider who’s perspectives were represented in the data.</p>",
+                                "information" : "The Elinor assessment was initially designed to meet the needs of conservationists working for non-governmental organizations (NGOs) but can be used by any individual working to support a managed area. The assessment can be completed in one of two ways:<ol><li>As a <strong>field-based focus group.</strong> This is the way that many governance assessments are traditionally completed; leveraging diverse perceptions from key stakeholders involved in the management and governance of a particular area. On the ElinorData.org website, you will find a full field protocol that can be used to guide ethical data collection with stakeholders. This guidance offers insights on how to ethically lead a group, obtain the right permissions for using the data, and to probe for diverse perspectives; especially of those who may have been traditionally marginalized. This is the preferred pathway, as it allows diverse voices to contribute to the assessment, providing a more holistic perspective on the status of management and governance in an area. See the Elinor assessment tool and protocol for guidance on how to lead a focus group.</li><li><strong>As a desk based assessment.</strong> This pathway is for those who have limited time or resources for carrying out a participatory focus group. This option allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment.</li></ol>When inputting data into the ElinorData system, users can indicate which pathway they took to generate the data in the assessment so any future users of the data can consider who’s perspectives were represented in the data.",
                                 "detail" : "Consultation is a prerequisite to success! Consulting with a range of stakeholders will increase the legitimacy of the tool. It is also a quick and easy way to include stakeholders in part of the planning and decision-making process for the MA."
                             },
                             "rights_access" : {
                                 "question" : "Who has the rights and access to the data entered in this tool?",
-                                "information" : "<p>Data ethics, rights, and privacy is a central component of the Elinor tool and data system. The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and ethics with focus group participants, for those who gather data on Elinor via a focus group discussion. The Elinor Terms of Services and Collaboration Principles outline in detail how data is stored and used on the platform.</p>",
+                                "information" : "Data ethics, rights, and privacy is a central component of the Elinor tool and data system. The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and ethics with focus group participants, for those who gather data on Elinor via a focus group discussion. The Elinor Terms of Services and Collaboration Principles outline in detail how data is stored and used on the platform.",
                                 "detail" : ""
                             },
                             "usage" : {
                                 "question" : "Will I know how my data is being used?",
-                                "information" : "<p>For data made publicly available, users will eventually be able to ‘opt in’ to notifications that tell users where and when their assessment data is being downloaded to help users understand what their assessment data is being used for.</p>",
+                                "information" : "For data made publicly available, users will eventually be able to ‘opt in’ to notifications that tell users where and when their assessment data is being downloaded to help users understand what their assessment data is being used for.",
                                 "detail" : ""
                             },
                             "mett" : {
                                 "question" : "I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?",
-                                "information" : "<p>Elinor builds directly off the years of experience project teams have using the METT assessment and other tools designed to measure environmental governance. The Elinor assessment was designed to mirror the METT as closely as possible, and pulls questions directly from the METT and uses the same scale. Refer to this crosswalk between the METT, SAGE and Elinor to help users understand the similarities and differences between the different tools.</p><p>If you use the METT currently, if you obtain informed consent from participants in your METT assessment, you can enter the data gathered from the METT into the Elinor database. Pay careful attention to the data privacy settings and ensure you have the rights to enter the data in the ElinorData system.</p>",
+                                "information" : "Elinor builds directly off the years of experience project teams have using the METT assessment and other tools designed to measure environmental governance. The Elinor assessment was designed to mirror the METT as closely as possible, and pulls questions directly from the METT and uses the same scale. Refer to this crosswalk between the METT, SAGE and Elinor to help users understand the similarities and differences between the different tools.If you use the METT currently, if you obtain informed consent from participants in your METT assessment, you can enter the data gathered from the METT into the Elinor database. Pay careful attention to the data privacy settings and ensure you have the rights to enter the data in the ElinorData system.",
                                 "detail" : ""
                             },
                             "track" : {
                                 "question" : "What are the specific things this tool will help me track?",
-                                "information" : "<p>This tool focuses on compiling basic information about areas under management or protection, and assessing the status of <strong>nine attributes important for area-based conservation and management:</strong><ol><li>Resource boundaries</li><li>Monitoring and enforcement</li><li>Capacity for adaptive management</li><li>Operational capacity</li><li>Inclusive and equitable management</li><li> Clearly defined rights and decision making</li><li>Clear and congruent regulations</li><li>Transparency and accountability</li><li>Perceived outcomes</li></ol></p><p>The data system will also allow tool users to append relevant documents like management plans and geospatial files to facilitate knowledge management and sharing across spatial scales and access decision-friendly visualizations of site-level data and aggregate data.</p>",
+                                "information" : "This tool focuses on compiling basic information about areas under management or protection, and assessing the status of <strong>nine attributes important for area-based conservation and management:</strong><ol><li>Resource boundaries</li><li>Monitoring and enforcement</li><li>Capacity for adaptive management</li><li>Operational capacity</li><li>Inclusive and equitable management</li><li> Clearly defined rights and decision making</li><li>Clear and congruent regulations</li><li>Transparency and accountability</li><li>Perceived outcomes</li></ol>The data system will also allow tool users to append relevant documents like management plans and geospatial files to facilitate knowledge management and sharing across spatial scales and access decision-friendly visualizations of site-level data and aggregate data.",
                                 "detail" : ""
                             },
                             "data" : {
                                 "question" : "How will the data be analysed and presented?",
-                                "information" : "<p>The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking. Depending on the data privacy settings chosen by users, data from across regions will be available for public use.</p>",
+                                "information" : "The Elinor database and web platform will provide simple visuals at a site, regional, and international level that show trends over time, aggregated by the nine attributes listed above. More robust analysis can be carried out on the data collected using the social science theories and frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and resilience thinking. Depending on the data privacy settings chosen by users, data from across regions will be available for public use.",
                                 "detail" : ""
                             },
                             "collect_data" : {
                                 "question" : "I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?",
-                                "information" : "<p>No! This tool was designed to complement in-depth, field-based data collection. If you currently collect data using field-based surveys or focus groups, you can use the data you already collect to inform the answers to the questions asked in Elinor - just make sure you have the rights and permissions to do so. Conversely, information gathered using this tool can help you understand what topics require more in-depth field-based surveys.</p>",
+                                "information" : "No! This tool was designed to complement in-depth, field-based data collection. If you currently collect data using field-based surveys or focus groups, you can use the data you already collect to inform the answers to the questions asked in Elinor - just make sure you have the rights and permissions to do so. Conversely, information gathered using this tool can help you understand what topics require more in-depth field-based surveys.",
                                 "detail" : ""
                             },
                             "advantages" : {
                                 "question" : "What are the main advantages to using this tool?",
-                                "information" : "<p>The Elinor tool and data system was designed to streamline the data entry, storage, and visualization process. By doing so, users gain three key advantages:</p><ol><li><strong>The data collection, entry and visualization process becomes streamlined.</strong> For users working across multiple sites, all data can be stored and organized in the same way, and outputted into forms that are useful for communicating results to key audiences.</li><li><strong>Users are connected to a global community of conservationists striving to improve management and governance.</strong> Management and governance has long been an important topic in conservation, but gathering and sharing data on this subject has been difficult. One of the main barriers to data sharing is the time and energy that is often required to formalize and clean data for others to use: Elinor automates this, and allows users to selectively share data with individual users or the general public with a click of a button!</li></ol>",
+                                "information" : "The Elinor tool and data system was designed to streamline the data entry, storage, and visualization process. By doing so, users gain three key advantages:<ol><li><strong>The data collection, entry and visualization process becomes streamlined.</strong> For users working across multiple sites, all data can be stored and organized in the same way, and outputted into forms that are useful for communicating results to key audiences.</li><li><strong>Users are connected to a global community of conservationists striving to improve management and governance.</strong> Management and governance has long been an important topic in conservation, but gathering and sharing data on this subject has been difficult. One of the main barriers to data sharing is the time and energy that is often required to formalize and clean data for others to use: Elinor automates this, and allows users to selectively share data with individual users or the general public with a click of a button!</li></ol>",
                                 "detail" : ""
                             },
                             "stored" : {
                                 "question" : "Where is my data stored?",
-                                "information" : "<p>ElinorData.org uses Amazon Web Services to store the data.</p>",
+                                "information" : "ElinorData.org uses Amazon Web Services to store the data.",
                                 "detail" : ""
                             },
                             "things_elinor" : {
                                 "question" : "What are some things I should keep in mind when I’m making my decision about using this tool?",
-                                "information" : "<p>No one tool does every job. It’s important to remember that:</p><ol class='list-inside list-disc'> <li><strong>This tool does not gather in-depth data.</strong> This tool does not replace the need for working with communities on an in-depth assessment of the issues identified by the tool.</li><li><strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed to track indicators commonly recognized as being important for management and governance of coastal managed and conserved areas. It does not measure specific changes in laws and regulations, which may have great impacts on conservation activities in any given place. </li></ol>",
+                                "information" : "No one tool does every job. It’s important to remember that:<ol class='list-inside list-disc'> <li><strong>This tool does not gather in-depth data.</strong> This tool does not replace the need for working with communities on an in-depth assessment of the issues identified by the tool.</li><li><strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed to track indicators commonly recognized as being important for management and governance of coastal managed and conserved areas. It does not measure specific changes in laws and regulations, which may have great impacts on conservation activities in any given place. </li></ol>",
                                 "detail" : ""
                             },
                             "counts" : {
                                 "question" : "OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?",
-                                "information" : "<p>This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. </p><p>Therefore, the user of this tool may decide to conduct this assessment on:</p><ol class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ol>",
+                                "information" : "This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. Therefore, the user of this tool may decide to conduct this assessment on:<ol class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ol>",
                                 "detail" : ""
                             },
                             "ngo" : {
                                 "question" : "I work for a national NGO - how do I decide which sites to use the Elinor assessment in?",
-                                "information" : "<p>Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.</p>",
+                                "information" : "Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.",
                                 "detail" : ""
                             }
                         }
@@ -1133,12 +1133,12 @@
             "numberQuestions" : "32 questions",
             "backgroundInformation" : "Background information",
             "assessment" : "Assessment",
-            "paragraph1" : "<p>The Elinor assessment can be completed in two different ways: Through a facilitated focus group with different stakeholders involved in and affected by the MA, or as a desk-based assessment led by a conservation practitioner. When inputting data, users can indicate which pathway they took to generate the data in the assessment and what types of stakeholders were engaged in the assessment.</p>",
-            "focusGroup" : "<p><strong>Elinor as a field-based focus group discussion</strong></p>",
-            "focusGroupText" : "<p>Most governance assessments are traditionally completed through participatory focus group discussions; leveraging diverse perceptions from key stakeholders involved in the management and governance of a particular area. For those with the time and capacity to gather diverse perspectives on management and governance, we recommend downloading the Elinor assessment tool and protocol to guide your efforts.</p><p>This guidance offers insights on how to ethically lead a group, obtain the right permissions for using the data, and to probe for diverse perspectives; especially of those who may have been traditionally marginalized. This is the preferred pathway, as it allows diverse voices to contribute to the assessment, providing a more holistic perspective on the status of management and governance in an area.</p>",
+            "paragraph1" : "The Elinor assessment can be completed in two different ways: Through a facilitated focus group with different stakeholders involved in and affected by the MA, or as a desk-based assessment led by a conservation practitioner. When inputting data, users can indicate which pathway they took to generate the data in the assessment and what types of stakeholders were engaged in the assessment.",
+            "focusGroup" : "<strong>Elinor as a field-based focus group discussion</strong>",
+            "focusGroupText" : "Most governance assessments are traditionally completed through participatory focus group discussions; leveraging diverse perceptions from key stakeholders involved in the management and governance of a particular area. For those with the time and capacity to gather diverse perspectives on management and governance, we recommend downloading the Elinor assessment tool and protocol to guide your efforts.This guidance offers insights on how to ethically lead a group, obtain the right permissions for using the data, and to probe for diverse perspectives; especially of those who may have been traditionally marginalized. This is the preferred pathway, as it allows diverse voices to contribute to the assessment, providing a more holistic perspective on the status of management and governance in an area.",
             "protocolLink" : "ADD PROTOCOL LINK HERE",
-            "deskBased" : "<p><strong>Elinor as a practitioner-led, desk-based assessment.</strong></p>",
-            "deskBasedText" : "<p>This pathway is for those who have limited time, resources, or capacities for carrying out a participatory focus group. While a desk-based assessment offers a limited option, it allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment. Should you choose to take this pathway, allocate time for you and your colleagues familiar with the MA to discuss and answer each question, based on your experience and knowledge of the MA. If possible, we recommend engaging different stakeholders in whatever way you can to gain insights on the different questions.</p>",
+            "deskBased" : "<strong>Elinor as a practitioner-led, desk-based assessment.</strong>",
+            "deskBasedText" : "This pathway is for those who have limited time, resources, or capacities for carrying out a participatory focus group. While a desk-based assessment offers a limited option, it allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment. Should you choose to take this pathway, allocate time for you and your colleagues familiar with the MA to discuss and answer each question, based on your experience and knowledge of the MA. If possible, we recommend engaging different stakeholders in whatever way you can to gain insights on the different questions.",
             "surveyQuestions" : "Survey questions",
             "goToCategory" : "Go to category",
             "questions" : {
@@ -1257,7 +1257,7 @@
         },
         "tos" : {
             "title" : "Terms of Service",
-            "text" : "<p>Terms of service are currently under development.</p>"
+            "text" : "Terms of service are currently under development."
         },
         "about" : {
             "meta": {
@@ -1271,7 +1271,7 @@
                 }
             },
             "title" : "About the Assessment",
-            "paragraph1" : "<p>The Elinor assessment collects background information on the managed area, and information on nine attributes important for area-based conservation and management through 35 questions.</p>",
+            "paragraph1" : "The Elinor assessment collects background information on the managed area, and information on nine attributes important for area-based conservation and management through 35 questions.",
             "backgroundItems" : {
                 "header" : "Background Information",
                 "1" : "1. Name of facilitator responsible for submitting the assessment",
@@ -1304,48 +1304,48 @@
                 "header" : "A summary of the attributes measured with Elinor",
                 "attribute1" : {
                     "name" : "1. Resource boundaries",
-                    "description" : "<p>This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.</p>",
-                    "useIf" : "<p>You wish to understand whether the boundaries of the MA are well established.</p>"
+                    "description" : "This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.",
+                    "useIf" : "You wish to understand whether the boundaries of the MA are well established."
                 },
                 "attribute2" : {
                     "name" : "2. Monitoring and enforcement",
-                    "description" : "<p>This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.</p><p>It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored.</p>",
-                    "useIf" : "<p>You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.</p>"
+                    "description" : "This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored.",
+                    "useIf" : "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management."
                 },
                 "attribute3" : {
                     "name" : "3. Capacity for adaptive management",
-                    "description" : "<p>This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.</p>",
-                    "useIf" : "<p>You would like to know what sort of information informs management decisions in the MA.</p>"
+                    "description" : "This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.",
+                    "useIf" : "You would like to know what sort of information informs management decisions in the MA."
                 },
                 "attribute4" : {
                     "name" : "4. Operational capacity",
-                    "description" : "<p>This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.</p>",
-                    "useIf" : "<p>You wish to assess the capacity of the MA’s management system.</p>"
+                    "description" : "This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.",
+                    "useIf" : "You wish to assess the capacity of the MA’s management system."
                 },
                 "attribute5" : {
                     "name" : "5. Inclusive and equitable management",
-                    "description" : "<p>This attribute measures inclusivity and equity in MA management, two important components of good governance.</p><p>Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.</p>",
-                    "useIf" : "<p>You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.</p>"
+                    "description" : "This attribute measures inclusivity and equity in MA management, two important components of good governance.Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.",
+                    "useIf" : "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes."
                 },
                 "attribute6" : {
                     "name" : "6. Clearly defined rights and decision making",
-                    "description" : "<p>This attribute measures community rights in natural resource management.</p><p>Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.</p>",
-                    "useIf" : "<p>You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.</p>"
+                    "description" : "This attribute measures community rights in natural resource management.Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.",
+                    "useIf" : "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work."
                 },
                 "attribute7" : {
                     "name" : "7. Clear and congruent regulations",
-                    "description" : "<p>This attribute measures the quality of MA regulations.    Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.</p>",
-                    "useIf" : "<p>You wish to understand whether the regulations are clearly stated and fair.</p>"
+                    "description" : "This attribute measures the quality of MA regulations.    Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.",
+                    "useIf" : "You wish to understand whether the regulations are clearly stated and fair."
                 },
                 "attribute8" : {
                     "name" : "8. Transparency and accountability",
-                    "description" : "<p>This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.</p><p>Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.</p>",
-                    "useIf" : "<p>If you want to assess the quality of MA governance.</p>"
+                    "description" : "This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.",
+                    "useIf" : "If you want to assess the quality of MA governance."
                 },
                 "attribute9" : {
                     "name" : "9. Perceived outcomes",
-                    "description" : "<p>This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.</p>",
-                    "useIf" : "<p>You wish to know whether those involved in the MA think its objectives are being achieved.</p>"
+                    "description" : "This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.",
+                    "useIf" : "You wish to know whether those involved in the MA think its objectives are being achieved."
                 }
             },
             "elinorQuestions" : {
