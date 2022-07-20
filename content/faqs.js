@@ -267,11 +267,11 @@ export default [
             <p>
                 Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.
             </p>`
-    },
+    }/*,
     {
         type: 'box',
         title: 'Type box title',
         text: `<p>Type box text<p>`,
         text_box: 'Text box'
-    }
+    }*/
 ];
