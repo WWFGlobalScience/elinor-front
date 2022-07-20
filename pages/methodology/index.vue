@@ -16,7 +16,7 @@
               <p>{{ $t('pages.methodologyPage.paragraph2') }}</p>
               <p>{{ $t('pages.methodologyPage.paragraph3') }}</p>
               <div class="flex">
-              <a href="/methodology" class="btn btn--opacity--child">
+              <a target="_blank" href="https://elinor-user-files.s3.amazonaws.com/dev/Document/2/Elinor_assessment_tool_protocol_v2022.1.pdf" class="btn btn--opacity--child">
                 <span class="btn--opacity__target">{{ $t('pages.methodologyPage.cta1') }}</span>
                 <img src="~/assets/img/ico-download-white.svg" alt="" />
               </a>
