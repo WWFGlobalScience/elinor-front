@@ -967,10 +967,10 @@
             },
             "popup" : {
                 "title" : "How to create an Assessment",
-                "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "text" : "Use the process below to create an assessment. You will need to provide information relating to the assessment, create or select an managed area and then complete the actual survey questions. Collaborators functionality enables you to add people to your assessment.",
                 "step-1" : {
                     "title" : "Assessment Data",
-                    "text" : "Complete the information related to the ASSESMENT, such as the number of people consulted or related institutions"
+                    "text" : "Complete the information related to the ASSESSMENT, such as the number of people consulted or related institutions"
                 },
                 "step-2" : {
                     "title" : "Management Area",
