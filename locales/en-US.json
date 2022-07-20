@@ -1174,6 +1174,16 @@
                 }
             }
         },
+        "methodologyPage" : {
+            "title" : "Methodology",
+            "paragraph1" : "The Elinor assessment can be completed in two different ways: Through a facilitated focus group with different stakeholders involved in and affected by the MA, or as a desk-based assessment led by a conservation practitioner. When inputting data, users can indicate which pathway they took to generate the data in the assessment and what types of stakeholders were engaged in the assessment.",
+            "subtitle1" : "Elinor as a field-based focus group discussion",
+            "paragraph2" : "Most governance assessments are traditionally completed through participatory focus group discussions; leveraging diverse perceptions from key stakeholders involved in the management and governance of a particular area. For those with the time and capacity to gather diverse perspectives on management and governance, we recommend downloading the Elinor assessment tool and protocol to guide your efforts.",
+            "paragraph3" : "This guidance offers insights on how to ethically lead a group, obtain the right permissions for using the data, and to probe for diverse perspectives; especially of those who may have been traditionally marginalized. This is the preferred pathway, as it allows diverse voices to contribute to the assessment, providing a more holistic perspective on the status of management and governance in an area.",
+            "cta1" : "Download Protocol",
+            "subtitle2" : "Elinor as a practitioner-led, desk-based assessment.",
+            "paragraph4" : "This pathway is for those who have limited time, resources, or capacities for carrying out a participatory focus group. While a desk-based assessment offers a limited option, it allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment. Should you choose to take this pathway, allocate time for you and your colleagues familiar with the MA to discuss and answer each question, based on your experience and knowledge of the MA. If possible, we recommend engaging different stakeholders in whatever way you can to gain insights on the different questions."
+        },
         "contact" : {
             "home": {
                 "meta": {
