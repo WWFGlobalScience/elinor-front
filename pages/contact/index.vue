@@ -87,13 +87,7 @@
                                     </button>
                                 </div>
                             </fieldset>
-                        </form >
-
-                        <div class="form__legend mt-32">
-                            <p><strong>{{ $t('pages.contact.form.contact.strong') }}: </strong><a
-                                href="">mail@mail.com</a></p>
-                        </div>
-
+                        </form>
                     </div>
                 </div>
             </div>
