@@ -278,4 +278,39 @@
             }
         }
     }
+    &.section--terms {
+        ul {
+            @apply pl-4;
+            li {
+                @apply mb-8 leading-6 relative;
+                &::before {
+                    content: '';
+                    @apply w-2 h-2 bg-turqy absolute top-2 -left-4 border-radius--50;
+                }
+                ul{
+                    @apply pl-4 mt-4;
+                    > li {
+                        @apply mb-4 leading-6 relative;
+                        &::before {
+                            content: '';
+                            @apply w-2 h-2 border border-turqy bg-transparent top-2 -left-4 border-radius--50;
+                        }
+                    }
+                }
+            }
+        }
+        ol {
+            @apply pl-6 mt-4;
+            counter-reset: section; 
+
+            li {
+                @apply mb-8 leading-6 relative;
+                &::before {
+                    content: counter(section)". ";
+                    counter-increment: section; 
+                    @apply w-0 h-0 top-0 -left-6 text-turqy font-bold;
+                }
+            }
+        }
+    }
 }
