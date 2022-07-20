@@ -169,11 +169,7 @@
         <div class="container">
           <div class="section--img-text__block-text">
             <h4 class="c-title--sm">{{ $t('pages.home.public.content.explanation.trackingChange.title') }}</h4>
-            <p>{{ $t('pages.home.public.content.explanation.trackingChange.text') }}</p>
-            <ul class="list-disc list-inside">
-              <li>{{ $t('pages.home.public.content.explanation.trackingChange.first') }}</li>
-              <li>{{ $t('pages.home.public.content.explanation.trackingChange.second') }}</li>
-            </ul>
+            <div v-html="$t('pages.home.public.content.explanation.trackingChange.text')"></div>
           </div>
         </div>
       </div>
@@ -185,7 +181,7 @@
           <div class="text-center lg:order-2">
             <img class="w-10/12" src="~/assets/img/elinor-pic.svg" />
             <blockquote class="elinor__sentence mx-auto">
-              “{!! $t('pages.home.public.content.elinor.quote.text') !!}”
+              "{{ $t('pages.home.public.content.elinor.quote.text') }}"
               <span class="elinor__sentence__name">
                 {{ $t('pages.home.public.content.elinor.quote.author') }}
               </span>

@@ -45,3 +45,17 @@
         }
     }
 }
+
+.table-background {
+    @apply border border-grayy-border;
+    th, 
+    td {
+        @apply p-3 text-left border border-grayy-border leading-6;
+    }
+    th {
+        @apply bg-turqy text-white;
+    }
+    tr {
+        @apply align-top;
+    }
+}

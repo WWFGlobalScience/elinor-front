@@ -28,11 +28,11 @@
             {{ $t('footer.copyrightAfterYear') }}
             <NuxtLink to="terms-of-use" class="btn--opacity--child">
                 <span class="btn--opacity__target"> {{ $t('footer.termsOfUse') }}</span>
-            </NuxtLink>
+            </NuxtLink><!--
              |
             <NuxtLink to="privacy-policy" class="btn--opacity--child">
                 <span class="btn--opacity__target"> {{ $t('footer.privacyPolicy') }}</span>
-            </NuxtLink>
+            </NuxtLink>-->
         </div>
     </footer>
 </template>

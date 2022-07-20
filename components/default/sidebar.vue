@@ -11,9 +11,9 @@
             <nav class="nav__main">
                 <ul>
                     <li v-for="(page, index) in pages">
-                        <NuxtLink v-slot="{ href, route, navigate, isActive, isExactActive }" v-if="page.config.display.auth === null || page.config.display.auth === isUserAuthenticated" :to="`/${$t(page.slug)}`">
-                            <a @click="goTo(page)" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': $t(page.slug) === '' ? isExactActive : isActive }">
-                                <img v-if="page.icons.turqy" :src="isActive ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
+                        <NuxtLink v-slot="{ href, route, navigate }" v-if="page.config.display.auth === null || page.config.display.auth === isUserAuthenticated" :to="`/${$t(page.slug)}`">
+                            <a @click="goTo(page)" class="btn--opacity--child nav__main__link" :class="{'nuxt-link-active': isLinkActive(page) }">
+                                <img v-if="page.icons.turqy" :src="isLinkActive(page) ? page.icons.turqy : page.icons.white" :alt="$t(page.title)" class="center-v">
                                 <span class="btn--opacity__target">{{ $t( page.title ) }}</span>
                                 <div
                                     class="input__tooltip"
@@ -67,6 +67,22 @@
             },
             home() {
                 this.$router.push('/');
+            },
+            isLinkActive(page) {
+                const slug = this.$t(page.slug);
+                if(this.$route.fullPath === '/') {
+                    if(slug === '') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    if(slug === '') {
+                        return false;
+                    } else {
+                        return this.$route.fullPath.indexOf(slug) !== -1;
+                    }
+                }
             }
         }
     }
