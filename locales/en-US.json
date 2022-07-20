@@ -974,11 +974,11 @@
                 },
                 "step-2" : {
                     "title" : "Managed Area",
-                    "text" : "Identify the Managed Area, its belonging to some PA and upload the shape or draw on the map its location."
+                    "text" : "Identify the Managed Area, state if it belongs to some PA and upload the shapefile or draw its location on the map."
                 },
                 "step-3" : {
                     "title" : "The survey",
-                    "text" : "Answer the questions from the Survey. You can select those attributes that best adapt to your Assessment"
+                    "text" : "Answer the questions from the Survey. You can select those attributes that are relevant to your Assessment"
                 },
                 "step-4" : {
                     "title" : "Collaborators",
@@ -986,7 +986,7 @@
                 },
                 "step-5" : {
                     "title" : "Publish",
-                    "text" : "Once the Assessment is finished you can publish it, making it accessible from the public zone of the web"
+                    "text" : "Once the Assessment is complete you can publish it, making it accessible from the public zone of the web"
                 },
                 "question" : "What can I do from here?",
                 "answer-1" : "Go to assessments",
@@ -1204,12 +1204,12 @@
             },
             "form": {
                 "legend": {
-                    "strong": "Fill this form to contact us",
-                    "default": "We will contact yoi as soon as possible"
+                    "strong": "Use the form below to contact us",
+                    "default": "We will respond as soon as possible"
                 },
-                "name":"Name",
+                "name":"Your Name",
                 "subject":"Subject",
-                "mail":"Mail",
+                "mail":"Your E-Mail",
                 "message":"Message",
                 "submit":"Send message",
                 "contact": {
