@@ -284,11 +284,11 @@
                         }
                     },
                     "managementArea" : {
-                        "tabButton" : "Management area",
-                        "title" : "Edit Management Area",
+                        "tabButton" : "Managed area",
+                        "title" : "Edit Managed Area",
                         "selector" : {
-                            "title" : "Select management area",
-                            "existing" : "Select a Management Area",
+                            "title" : "Select managed area",
+                            "existing" : "Select a Managed Area",
                             "existingGuide" : "You can select an already created Managed Area, or if you don’t find it you can create a new one from here",
                             "orNew" : "OR CREATE A NEW ONE",
                             "newButton" : "Create New Managed Area"
@@ -312,7 +312,7 @@
                             "title" : "Zones",
                             "name" : "Name of new managed area",
                             "protectedArea" : "Associated ID in World Database on Protected Areas",
-                            "containedBy" : "Are there other Management Areas related to this MA?",
+                            "containedBy" : "Are there other Managed Areas related to this MA?",
                             "dateEstablished" : "Date of formal establishment (if applicable)",
                             "reportedSize" : "Size of MA (ha)",
                             "managementAuthority" : "Name of management authority",
@@ -952,8 +952,8 @@
             },
             "personResponsibleRoles" : {
                 "10" : "Non-profit staff",
-                "20" : "Management area manager",
-                "30" : "Management area personnel",
+                "20" : "Managed area manager",
+                "30" : "Managed area personnel",
                 "40" : "Government personnel",
                 "50" : "Members of local community or indigenous committees",
                 "60" : "Community leaders or representatives"
@@ -973,8 +973,8 @@
                     "text" : "Complete the information related to the ASSESSMENT, such as the number of people consulted or related institutions"
                 },
                 "step-2" : {
-                    "title" : "Management Area",
-                    "text" : "Identify the Management Area, its belonging to some PA and upload the shape or draw on the map its location."
+                    "title" : "Managed Area",
+                    "text" : "Identify the Managed Area, its belonging to some PA and upload the shape or draw on the map its location."
                 },
                 "step-3" : {
                     "title" : "The survey",
@@ -1114,7 +1114,7 @@
                             },
                             "counts" : {
                                 "question" : "OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?",
-                                "information" : "This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the management area (MA). A management area refers to a site/location to which management actions are directed. A management area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. Therefore, the user of this tool may decide to conduct this assessment on:<ol class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one management area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ol>",
+                                "information" : "This depends on your context. In this tool, we refer to the boundary of the area to be assessed as the managed area (MA). A managed area refers to a site/location to which management actions are directed. A managed area (MA) can be one protected area, or one conserved area (see glossary for definitions), or a broader area that encompasses several protected areas/conserved areas. Therefore, the user of this tool may decide to conduct this assessment on:<ol class='list-inside list-disc'> <li>An individual protected area or conserved area. For example, this could be an assessment of an area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and protected areas and consider these as one managed area, answering the questions with all of these areas in mind. For example, a Biosphere Reserve with multiple protected areas or conserved areas.</li></ol>",
                                 "detail" : ""
                             },
                             "ngo" : {
