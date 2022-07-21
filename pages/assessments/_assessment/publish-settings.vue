@@ -177,10 +177,10 @@ export default {
             this.unpublish(this.assessment.id)
         },
         isPublished() {
-            return this.assessment.status === 10 && this.assessment.data_policy === 10;
+            return this.assessment.status === 10 && this.assessment.data_policy === 90;
         },
         isUnpublished() {
-            return this.assessment.status === 10 && this.assessment.data_policy !== 10;
+            return this.assessment.status === 10 && this.assessment.data_policy === 10;
         },
         isNotFinalized() {
             return this.assessment.status === 90;
