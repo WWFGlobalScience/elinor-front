@@ -5,38 +5,130 @@
         </section>
         <section class="section">
             <div class="container">
-                <h1 class="c-title--main">Background</h1>
+                <h1 class="c-title--main">About the assessment</h1>
                 <div class="info-block">
-                    <h2  class="c-title--md">About the assessment</h2>
                     <p>The Elinor assessment collects background information on the managed area, and information on nine attributes important for area-based conservation and management through 35 questions.</p>
                 </div>
                 <div class="info-block">
                     <h2 class="c-title--md">Background Information</h2>
-                    <p>1. Name of facilitator responsible for submitting the assessment</p>
-                    <p>2. Name of institution associated with this MA</p>
-                    <p>3. Role of facilitator responsible for submitting the assessment</p>
-                    <p>4. Contact details of facilitator submitting the assessment</p>
-                    <p>5. Date of assessment (day/month/year)</p>
-                    <p>6. How was the information this assessment gathered?</p>
-                    <p>7. Number of people engaged from key stakeholder groups</p>
-                    <p>8. Gender representation of stakeholders consulted</p>
-                    <p>9. Rationale for assessment (e.g. annual monitoring, projectbaseline)</p>
-                    <p>10. Name of MA</p>
-                    <p>11. Country/Countries where MA is located</p>
-                    <p>12. State(s)/Province(s) where MA is located</p>
-                    <p>13. Date of formal establishment (if applicable)</p>
-                    <p>14. Are the rights of the MA authority formally recognized mat the…</p>
-                    <p>15. Size of MA (ha)</p>
-                    <p>16A. GPS coordinates of MA</p>
-                    <p>16B. Map or spatial file of MA</p>
-                    <p>17. MA governance type</p>
-                    <p>18. MA objectives</p>
-                    <p>19. Name of management authority</p>
-                    <p>20. Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?</p>
-                    <p>21A. Focal area within MA</p>
-                    <p>21B. Name of larger PA/CA this focal area is contained within</p>
-                    <p>22. Associated ID in World Database on Protected Areas</p>
-                    <p>23. Consent from MA authority</p>
+                    <div class="g-grid--2-1-lg">
+                        <div class="g-colspan--1-full-lg">
+                            <table class="table-background">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Information</th>
+                                </tr>
+                                <tr>
+                                    <td>1.</td>
+                                    <td>Name of facilitator responsible for submitting the assessment</td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>Name of institution associated with this MA</td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>Role of facilitator responsible for submitting the assessment</td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>Contact details of facilitator submitting the assessment</td>
+                                </tr>
+                                <tr>
+                                    <td>5.</td>
+                                    <td>Date of assessment (day/month/year)</td>
+                                </tr>
+                                <tr>
+                                    <td>6.</td>
+                                    <td>How was the information this assessment gathered?</td>
+                                </tr>
+                                <tr>
+                                    <td>7.</td>
+                                    <td>Number of people engaged from key stakeholder groups</td>
+                                </tr>
+                                <tr>
+                                    <td>8.</td>
+                                    <td>Gender representation of stakeholders consulted</td>
+                                </tr>
+                                <tr>
+                                    <td>9.</td>
+                                    <td>Rationale for assessment (e.g. annual monitoring, projectbaseline)</td>
+                                </tr>
+                                <tr>
+                                    <td>10.</td>
+                                    <td>Name of MA</td>
+                                </tr>
+                                <tr>
+                                    <td>11.</td>
+                                    <td>Country/Countries where MA is located</td>
+                                </tr>
+                                <tr>
+                                    <td>12.</td>
+                                    <td>State(s)/Province(s) where MA is located</td>
+                                </tr>
+                                <tr>
+                                    <td>13.</td>
+                                    <td>Date of formal establishment (if applicable)</td>
+                                </tr>
+                                <tr>
+                                    <td>14.</td>
+                                    <td>Are the rights of the MA authority formally recognized mat the…</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="g-colspan--1-full-lg">
+                            <table class="table-background">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Information</th>
+                                </tr>
+                                <tr>
+                                    <td>15.</td>
+                                    <td>Size of MA (ha)</td>
+                                </tr>
+                                <tr>
+                                    <td>16A.</td>
+                                    <td>GPS coordinates of MA</td>
+                                </tr>
+                                <tr>
+                                    <td>16B.</td>
+                                    <td>Map or spatial file of MA</td>
+                                </tr>
+                                <tr>
+                                    <td>17.</td>
+                                    <td>17. MA governance type</td>
+                                </tr>
+                                <tr>
+                                    <td>18.</td>
+                                    <td>18. MA objectives</td>
+                                </tr>
+                                <tr>
+                                    <td>19.</td>
+                                    <td>Name of management authority</td>
+                                </tr>
+                                <tr>
+                                    <td>20.</td>
+                                    <td>Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?</td>
+                                </tr>
+                                <tr>
+                                    <td>21A.</td>
+                                    <td>Focal area within MA</td>
+                                </tr>
+                                <tr>
+                                    <td>21B.</td>
+                                    <td>Name of larger PA/CA this focal area is contained within</td>
+                                </tr>
+                                <tr>
+                                    <td>22.</td>
+                                    <td>Associated ID in World Database on Protected Areas</td>
+                                </tr>
+                                <tr>
+                                    <td>23.</td>
+                                    <td>Consent from MA authority</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <div class="info-block">
                     <h2 class="c-title--md">A summary of the attributes measured with Elinor</h2>
@@ -48,68 +140,60 @@
                         </tr>
                         <tr>
                             <td>1. Resource boundaries</td>
-                            <td>This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders. </td>
-                            <td>You wish to understand whether the boundaries of the MA are well established.</td>
+                            <td><p>This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.</p></td>
+                            <td><p>You wish to understand whether the boundaries of the MA are well established.</p></td>
                         </tr>
                         <tr>
                             <td>2. Monitoring and enforcement</td>
-                            <td>This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.</td>
-                            <td>You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management. </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored. </td>
-                            <td></td>
+                            <td>
+                                <p>This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.</p>
+                                <p>It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored. </p>
+                            </td>
+                            <td><p>You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.</p></td>
                         </tr>
                         <tr>
                             <td>3. Capacity for adaptive management</td>
-                            <td>This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.</td>
-                            <td>You would like to know what sort of information informs management decisions in the MA.</td>
+                            <td><p>This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.</p></td>
+                            <td><p>You would like to know what sort of information informs management decisions in the MA.</p></td>
                         </tr>
                         <tr>
                             <td>4. Operational capacity</td>
-                            <td>This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs. </td>
-                            <td>You wish to assess the capacity of the MA’s management system. </td>
+                            <td><p>This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.</p></td>
+                            <td><p>You wish to assess the capacity of the MA’s management system.</p></td>
                         </tr>
                         <tr>
                             <td>5. Inclusive and equitable management</td>
-                            <td>This attribute measures inclusivity and equity in MA management, two important components of good governance.</td>
-                            <td>You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes. </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.</td>
-                            <td></td>
+                            <td>
+                                <p>This attribute measures inclusivity and equity in MA management, two important components of good governance.</p>
+                                <p>Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.</p>
+                            </td>
+                            <td><p>You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.</p></td>
                         </tr>
                         <tr>
                             <td>6. Clearly defined rights and decision making</td>
-                            <td>This attribute measures community rights in natural resource management. </td>
-                            <td>You wish to assess the local communities' control over, or access to, the natural resources in the MA you work. </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.</td>
-                            <td></td>
+                            <td>
+                                <p>This attribute measures community rights in natural resource management.</p>
+                                <p>Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.</p>
+                            </td>
+                            <td><p>You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.</p></td>
                         </tr>
                         <tr>
                             <td>7. Clear and congruent regulations</td>
-                            <td>This attribute measures the quality of MA regulations. Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate. </td>
-                            <td>You wish to understand whether the regulations are clearly stated and fair. </td>
+                            <td><p>This attribute measures the quality of MA regulations. Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.</p></td>
+                            <td><p>You wish to understand whether the regulations are clearly stated and fair.</p></td>
                         </tr>
                         <tr>
                             <td>8. Transparency and accountability</td>
-                            <td>This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution. </td>
-                            <td>If you want to assess the quality of MA governance. </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is. </td>
-                            <td></td>
+                            <td>
+                                <p>This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.</p>
+                                <p>Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is. </p>
+                            </td>
+                            <td><p>If you want to assess the quality of MA governance.</p></td>
                         </tr>
                         <tr>
                             <td>9. Perceived outcomes</td>
-                            <td>This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.</td>
-                            <td>You wish to know whether those involved in the MA think its objectives are being achieved.</td>
+                            <td><p>This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.</p></td>
+                            <td><p>You wish to know whether those involved in the MA think its objectives are being achieved.</p></td>
                         </tr>
                     </table>
                 </div>
