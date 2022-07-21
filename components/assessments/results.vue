@@ -64,11 +64,11 @@
                             <div class="search-criteria" v-if="assessment.management_area_countries"><span class="area">Managed Area</span> <span class="criteria">{{ assessment.management_area_countries.name }}</span></div>
                         </div>
                         <div class="right">
-                            <div v-if="assessment.data_policy === 10 && assessment.status === 10" class="assessment-status status--ready">
+                            <div v-if="assessment.data_policy === 90 && assessment.status === 10" class="assessment-status status--ready">
                                 <span class="status-circle"><img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K'/></span>
                                 <span class="text">Published</span>
                             </div>
-                            <div v-if="assessment.data_policy === 90 && assessment.status === 10" class="assessment-status status--ready">
+                            <div v-if="assessment.data_policy === 10 && assessment.status === 10" class="assessment-status status--ready">
                                 <span class="status-circle"><img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K'/></span>
                                 <span class="text">Finalized</span>
                             </div>

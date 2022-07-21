@@ -64,7 +64,7 @@
                             <h3 class="c-title--upp">{{ $t('pages.assessments.edit.tabs.publish-settings.publish.title') }}</h3>
                         </div>
                     </div>
-                    <div v-if="assessment.data_policy === 90" class="publish__content">
+                    <div v-if="assessment.data_policy === 10" class="publish__content">
                         <div class="py-6">
                             <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish-settings.publish.whatHappenTitle') }}</h2>
                             <div class="g-grid--2-1-sm items-center">
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </div>
-                    <div v-if="assessment.status === 10 && assessment.data_policy === 10" class="publish__content">
+                    <div v-if="assessment.status === 10 && assessment.data_policy === 90" class="publish__content">
                         <div class="py-6">
                             <h2 class="c-title--base mb-6">{{ $t('pages.assessments.edit.tabs.publish-settings.unpublish.whatHappenTitle') }}</h2>
                             <div class="g-grid--2-1-sm items-center">
