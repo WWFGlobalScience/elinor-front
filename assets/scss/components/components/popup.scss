@@ -117,6 +117,12 @@
         left: -25px;
         top: 25px;
     }
+    ul {
+        @apply pl-4;
+        li {
+            @apply list-disc ml-2 ;
+        }
+    }
 
     &.step-card--row {
         @apply flex items-center justify-between sm:block;

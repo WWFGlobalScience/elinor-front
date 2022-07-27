@@ -989,6 +989,12 @@
                     "title" : "Publish",
                     "text" : "Once the Assessment is complete you can publish it, making it accessible from the public zone of the web"
                 },
+                "step-6" : {
+                    "title" : "Choose your pathway for data collection",
+                    "text" : "Elinor can be completed in one of two ways:",
+                    "li-1" : "Through a facilitated focus group with different stakeholders involved in and affected by the MA",
+                    "li-2" : "As a desk-based assessment led by for example, a conservation practitioner or a site manager."
+                },
                 "question" : "What can I do from here?",
                 "answer-1" : "Go to assessments",
                 "answer-2" : "Create an assessment",
