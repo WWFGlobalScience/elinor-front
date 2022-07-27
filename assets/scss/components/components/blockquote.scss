@@ -9,7 +9,7 @@
 .elinor__blockquote {
     @apply flex justify-center items-center text-center border-radius--20 bg-turqy-lighter px-9 py-14 text-turqy;
     p {
-        @apply text-xl;
+        @apply text-[30px] leading-10 xl:text-[20px] xl:leading-7 ;
     }
 
 
