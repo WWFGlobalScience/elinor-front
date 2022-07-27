@@ -120,7 +120,7 @@
             }
         }
         .number-list__answer {
-            @apply flex justify-start items-center border-radius--20 bg-turqy-lighter px-10 py-5 text-sm leading-6 italic mt-5;
+            @apply flex flex-col justify-start items-start border-radius--20 bg-turqy-lighter px-10 py-5 text-sm leading-6 italic mt-5;
             .register {
                 @apply text-8xl;
             }
