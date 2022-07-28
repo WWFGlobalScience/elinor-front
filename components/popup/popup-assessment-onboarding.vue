@@ -14,6 +14,10 @@
                 <div class="step-info">
                     <h5 class="title">{{ $t('pages.assessments.popup.step-1.title') }}</h5>
                     <p class="text">{{ $t('pages.assessments.popup.step-1.text') }}</p>
+                    <ul>
+                        <li><p>{{ $t('pages.assessments.popup.step-1.li-1') }}</p></li>
+                        <li><p>{{ $t('pages.assessments.popup.step-1.li-2') }}</p></li>
+                    </ul>
                 </div>
             </li>
             <li class="elinor__step-card">
@@ -39,16 +43,12 @@
                     <h5 class="title">{{ $t('pages.assessments.popup.step-5.title') }}</h5>
                     <p class="text">{{ $t('pages.assessments.popup.step-5.text') }}</p>
                 </div>
-                <span class="circle-rang">100%</span>
+                <!-- <span class="circle-rang">100%</span> -->
             </li>
             <li class="elinor__step-card">
                 <div class="step-info">
                     <h5 class="title">{{ $t('pages.assessments.popup.step-6.title') }}</h5>
                     <p class="text">{{ $t('pages.assessments.popup.step-6.text') }}</p>
-                    <ul>
-                        <li><p>{{ $t('pages.assessments.popup.step-6.li-1') }}</p></li>
-                        <li><p>{{ $t('pages.assessments.popup.step-6.li-2') }}</p></li>
-                    </ul>
                 </div>
             </li>
         </ul>
