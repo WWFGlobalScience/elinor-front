@@ -970,30 +970,30 @@
                 "title" : "How to create an Assessment",
                 "text" : "Use the process below to create an assessment. You will need to provide information relating to the assessment, create or select a managed area and then complete the actual survey questions. Collaborators functionality enables you to add people to your assessment.",
                 "step-1" : {
-                    "title" : "Assessment Data",
-                    "text" : "Complete the information related to the ASSESSMENT, such as the number of people consulted or related institutions"
-                },
-                "step-2" : {
-                    "title" : "Managed Area",
-                    "text" : "Identify the Managed Area, state if it belongs to some PA and upload the shapefile or draw its location on the map."
-                },
-                "step-3" : {
-                    "title" : "The survey",
-                    "text" : "Answer the questions from the Survey. You can select those attributes that are relevant to your Assessment"
-                },
-                "step-4" : {
-                    "title" : "Collaborators",
-                    "text" : "Invite collaborators to help you complete the Assessment, or share only as an observer"
-                },
-                "step-5" : {
-                    "title" : "Publish",
-                    "text" : "Once the Assessment is complete you can publish it, making it accessible from the public zone of the web"
-                },
-                "step-6" : {
                     "title" : "Choose your pathway for data collection",
                     "text" : "Elinor can be completed in one of two ways:",
                     "li-1" : "Through a facilitated focus group with different stakeholders involved in and affected by the MA",
                     "li-2" : "As a desk-based assessment led by for example, a conservation practitioner or a site manager."
+                },
+                "step-2" : {
+                    "title" : "Assessment Data",
+                    "text" : "Complete the information related to the ASSESSMENT, such as the number of people consulted or related institutions"
+                },
+                "step-3" : {
+                    "title" : "Management Area",
+                    "text" : "Identify the Management Area, its belonging to some PA and upload the shape or draw on the map its location."
+                },
+                "step-4" : {
+                    "title" : "The survey",
+                    "text" : "Answer the questions from the Survey. You can select those attributes that are relevant to your Assessment"
+                },
+                "step-5" : {
+                    "title" : "Collaborators",
+                    "text" : "Invite collaborators to help you complete the Assessment, or share only as an observer"
+                },
+                "step-6" : {
+                    "title" : "Publish",
+                    "text" : "Once the Assessment is complete you can publish it, making it accessible from the public zone of the web"
                 },
                 "question" : "What can I do from here?",
                 "answer-1" : "Go to assessments",
