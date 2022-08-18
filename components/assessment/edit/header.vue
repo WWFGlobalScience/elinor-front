@@ -8,6 +8,7 @@
                 </h1>
                 <h2 class="assessment__name">{{ assessment.name }}</h2>
                 <p class="assessment__year">{{ $t('pages.assessments.edit.year') }} {{ assessment.year }}</p>
+                <assessment-actions type="edit" />
             </div>
             <div class="header__save">
                 <button type="submit" form="form--assessment-edit" class="btn btn--opacity--child">

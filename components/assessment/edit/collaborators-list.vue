@@ -22,7 +22,7 @@
                                     <div class="radios__wrap">
                                         <div class="radio__wrap">
                                         <div class="radio">
-                                            <input :disabled="!isAdmin($auth, assessment)" type="radio" :name="'role-' + collaborator.id" value="70" :checked="collaborator.role === 70"
+                                            <input :disabled="!isAdmin()" type="radio" :name="'role-' + collaborator.id" value="70" :checked="collaborator.role === 70"
                                             @input="updateColl(70, collaborator)"/>
                                             <img src="~/assets/img/ico-ok.svg"/>
                                         </div>
@@ -39,7 +39,7 @@
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                     <div class="radio">
-                                        <input :disabled="!isAdmin($auth, assessment)" type="radio" :name="'role-' + collaborator.id" value="40" :checked="collaborator.role == 40"
+                                        <input :disabled="!isAdminOrContributor()" type="radio" :name="'role-' + collaborator.id" value="40" :checked="collaborator.role == 40"
                                         @input="updateColl(40, collaborator)"/>
                                         <img src="~/assets/img/ico-ok.svg"/>
                                     </div>
@@ -56,7 +56,7 @@
                                     <div class="radios__wrap">
                                         <div class="radio__wrap">
                                         <div class="radio">
-                                            <input :disabled="!isAdmin($auth, assessment)" type="radio" :name="'role-' + collaborator.id" value="10" :checked="collaborator.role == 10"
+                                            <input :disabled="!isAdminOrContributor()" type="radio" :name="'role-' + collaborator.id" value="10" :checked="collaborator.role == 10"
                                             @input="updateColl(10, collaborator)"/>
                                             <img src="~/assets/img/ico-ok.svg"/>
                                         </div>
@@ -67,8 +67,8 @@
                         </div>
                     </td>
                     <td>
-                        <button v-if="!isLastAdmin(collaborator) && isAdmin($auth, assessment)" type="button" class="btn--circle btn--opacity--child"
-                                @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-delete', title: 'pages.assessments.edit.tabs.collaborators.popups.delete.title', onConfirm: onConfirmDelete(collaborator.id) })"
+                        <button v-if="!isLastAdmin(collaborator) && collaborator.user.id !== assessment.created_by" type="button" class="btn--circle btn--opacity--child"
+                                @click="popupState( { active: true, type:'confirmation', component: 'popup-assessment-collaborator-delete', title: 'pages.assessments.edit.tabs.collaborators.popups.delete.title', onConfirm: onConfirmDelete(collaborator.id) })"
                         >
                             <span class="sr-only">delete</span>
                             <img class="btn--opacity__target" src="~/assets/img/ico-trash.svg">
@@ -84,7 +84,12 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
-import {isAssessmentAdmin} from "~/config/assessment-roles";
+import {
+    getMyRole,
+    isAssessmentAdmin,
+    isAssessmentContributor,
+    roles
+} from "~/config/assessment-roles";
 
 export default {
     name: 'assessment-edit-collaborators-list',
@@ -111,9 +116,26 @@ export default {
             return collaborator.role === 70 && this.assessment.collaborators.filter(c => c.role === 70 && collaborator.id !== c.id).length === 0;
         },
         permissionToCollaboratorRoleEdit(collaborator, role) {
-           return collaborator.role === role || this.isAdmin(this.$auth, this.assessment);
+            console.log(collaborator);
+            let permission = false;
+            const userRole = getMyRole(this.$auth, this.assessment);
+            switch (role) {
+                case roles.admin:
+                    permission = userRole === roles.admin;
+                    break;
+                case roles.contributor:
+                case roles.observer:
+                    permission = collaborator.user.id !== this.assessment.created_by && (userRole === roles.admin || userRole === roles.contributor);
+                    break;
+            }
+            return permission;
         },
-        isAdmin: isAssessmentAdmin
+        isAdmin() {
+            return isAssessmentAdmin(this.$auth, this.assessment);
+        },
+        isAdminOrContributor() {
+            return this.isAdmin() || isAssessmentContributor(this.$auth, this.assessment);
+        }
     }
 }
 </script>

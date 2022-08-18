@@ -15,7 +15,6 @@ export const actions = {
         state.commit('setUsers', users.results)
     },
     async findUsers(state, username) {
-        console.log(username);
         let users = await this.$axios.$get('v2/users/?search=' + username)
         state.commit('setUsers', users.results)
     },

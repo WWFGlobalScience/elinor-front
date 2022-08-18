@@ -90,7 +90,7 @@
                         </li>
                         <li v-if="isAssessmentCollaborator($auth, assessment)" class="role">
                             <span class="label">{{ $t('pages.assessments.list.myRole') }}</span>
-                            <span class="data">{{ $t('pages.assessments.roles.' + getMyRole($auth, assessment)) }}</span>
+                            <span class="data">{{ $t('pages.assessments.roles.' + getMyRoleName($auth, assessment)) }}</span>
                         </li>
                         <li class="ha">
                             <span class="label">{{ $t('pages.assessments.list.year') }}</span>
@@ -123,7 +123,7 @@
 
 <script>
 import {mapActions, mapGetters, mapState} from 'vuex'
-import {isAssessmentObserver, getMyRole, isAssessmentCollaborator} from "~/config/assessment-roles";
+import {isAssessmentObserver, getMyRoleName, isAssessmentCollaborator} from "~/config/assessment-roles";
 import {calculateProgress} from "~/config/assessment-progress";
 
 export default {
@@ -139,7 +139,7 @@ export default {
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
         isAssessmentObserver: isAssessmentObserver,
-        getMyRole: getMyRole,
+        getMyRoleName,
         isOpenAssessment(assessment) {
             return this.$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver(this.$auth, assessment)
         },
