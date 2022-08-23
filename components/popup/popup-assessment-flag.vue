@@ -3,9 +3,10 @@
         <template v-if="!sent">
 
             <h4 class="c-title--modal mb-2">
-                Fill this form to flag the assessment
+                {{ $t('pages.assessments.actions.flag.subtitle') }}
             </h4>
             <h5 class="c-title--modal mb-6" style="font-size: 1em; font-weight: normal">
+            {{ $t('pages.assessments.actions.flag.text') }}
                 We will send a message to the ELinor administrators to review this assessment
             </h5>
             <form @submit="onSubmit" class="form form--ma-selector form--mt-0">
@@ -33,7 +34,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">Explanation</label>
+                            <label class="label">{{ $t('pages.assessments.actions.contact.labelTextarea') }}Explanation</label>
                             <textarea v-model="form.explanation"></textarea>
                             <template v-if="errors.explanation">
                                 <p class="msg msg--error" v-for="error in errors.explanation">
@@ -47,6 +48,7 @@
         </template>
         <template v-if="sent">
             <h4 class="c-title--modal mb-2">
+                {{ $t('pages.assessments.actions.contact.okMessage') }}
                 Thank you for sending the flag!
             </h4>
         </template>

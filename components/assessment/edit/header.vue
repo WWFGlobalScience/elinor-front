@@ -15,6 +15,10 @@
                     <span class="btn--opacity__target">{{ $t('pages.assessments.edit.saveButton') }}</span>
                     <img src="~/assets/img/ico-save-white.svg">
                 </button>
+                <!-- <div class="c-icon">
+                    <img src="~/assets/img/ico-megaphone.svg" class="ico-circle" alt="Delete">
+                    <span>Published</span>
+                </div> -->
                 <p v-if="assessment.last_edit !== null && assessment.last_edit !== undefined"> {{ $t( 'default.save.autosave' ) + ' ' + assessment.last_edit.fromNow() }}</p>
             </div>
         </div>

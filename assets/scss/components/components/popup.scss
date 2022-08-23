@@ -30,6 +30,12 @@
                     @apply sm:flex-col sm:items-start;
                 }
             }
+            &.popup__content--form {
+                .btn-row {
+                    @apply flex justify-between items-center mt-10;
+
+                }
+            }
 
             .popup__map-img{
                 top: 6.563rem;
@@ -86,6 +92,22 @@
             }
             .popup__content {
                 @apply bg-white px-8 py-11 rounded-b-xl border-turqy border border-solid;
+            }
+        }
+    }
+
+    //xs
+    &.popup__xs {
+        .popup__box {
+            @apply w-[570px] border-radius--20;
+            .popup__content {
+                .title {
+                    @apply text-lg font-bold text-yellowy-lighter mb-4;
+                }
+
+                .btn-row{
+                    @apply flex justify-between items-center mt-8;
+                }
             }
         }
     }

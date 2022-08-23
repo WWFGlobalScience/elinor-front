@@ -1,6 +1,20 @@
 <template>
     <div class="popup__content">
-        <p>Assessment delete</p>
+        <h4 class="title">
+            {{ $t('pages.assessments.actions.delete.subtitle') }}
+        </h4>
+        <p>
+            {{ $t('pages.assessments.actions.delete.text') }}
+        </p>
+        <div class="btn-row">
+            <button v-if="!sent" @click="onSubmit" class="btn--border-turqy btn--opacity--child">
+                <span class="btn--opacity__target"> {{ $t('default.yes') }}</span>
+            </button>
+            <button type="button" @click="close" class="btn--border-turqy btn--opacity--child">
+                <span class="btn--opacity__target"> {{ $t('default.no') }}</span>
+            </button>
+            <div style="clear: both"></div>
+        </div>
     </div>
 </template>
 

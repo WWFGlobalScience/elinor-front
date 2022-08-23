@@ -999,6 +999,28 @@
                 "answer-1" : "Go to assessments",
                 "answer-2" : "Create an assessment",
                 "label" : "Don’t show this initial modal screen again"
+            },
+            "actions" : {
+                "contact" : {
+                    "title" : "Contact Administrator",
+                    "subtitle" : "Fill this form to contact with the administrator",
+                    "text" : "We will send a message to the administrator of this assessment",
+                    "labelTextarea" : "Message",
+                    "okMessage" : "Thank you for the contact!"
+                },
+                "flag" : {
+                    "title" : "Flag title",
+                    "subtitle" : "Fill this form to flag the assessment",
+                    "text" : "We will send a message to the administrator of this assessment",
+                    "labelTextarea" : "Message",
+                    "okMessage" : "Thank you for the contact!"
+                },
+                "delete" : {
+                    "title" : "Delete title",
+                    "subtitle" : "Are you sure you want to delete your assessment",
+                    "text" : "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
+                }
+
             }
         },
         "documentation": {
@@ -1441,6 +1463,11 @@
         "accept" : "Accept",
         "cancel" : "Cancel",
         "delete" : "Delete",
+        "contactAdministrator" : "Contact Administrator",
+        "downloadData" : "Download Data",
+        "finalized" : "Finalized",
+        "submit" : "Submit",
+        "close" : "Close",
         "upload-file" : {
             "placeholder" : "Drag and drop a PDF file here",
             "buttons" : {

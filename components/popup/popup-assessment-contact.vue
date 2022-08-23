@@ -1,12 +1,11 @@
 <template>
-    <div class="popup__content">
+    <div class="popup__content popup__content--form">
         <template v-if="!sent">
-
             <h4 class="c-title--modal mb-2">
-                Fill this form to contact with the administrator
+                {{ $t('pages.assessments.actions.contact.subtitle') }}
             </h4>
             <h5 class="c-title--modal mb-6" style="font-size: 1em; font-weight: normal">
-                We will send a message to the administrator of this assessment
+                {{ $t('pages.assessments.actions.contact.text') }}
             </h5>
             <form @submit="onSubmit" class="form form--ma-selector form--mt-0">
                 <div class="form__group">
@@ -42,7 +41,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">Message</label>
+                            <label class="label">{{ $t('pages.assessments.actions.contact.labelTextarea') }}</label>
                             <textarea v-model="form.message"></textarea>
                             <template v-if="errors.message">
                                 <p class="msg msg--error" v-for="error in errors.message">
@@ -56,23 +55,25 @@
         </template>
         <template v-if="sent">
             <h4 class="c-title--modal mb-2">
-                Thank you for the contact!
+                {{ $t('pages.assessments.actions.contact.okMessage') }}
             </h4>
         </template>
-        <section class="mt-10">
-            <button type="button" @click="close" class="btn--border-turqy btn--opacity--child mr-5" style="float: left">
-                <span class="btn--opacity__target">Close</span>
+        <section class="btn-row">
+            <button type="button" @click="close" class="btn--border-turqy btn--opacity--child">
+                <span class="btn--opacity__target">{{ $t('default.close') }}</span>
             </button>
-            <button v-if="!sent" @click="onSubmit" class="btn--border-turqy btn--opacity--child"  style="float: left">
-                <span class="btn--opacity__target">Submit</span>
+            <button v-if="!sent" @click="onSubmit" class="btn btn--opacity--child">
+                <span class="btn--opacity__target">{{ $t('default.submit') }}</span>
+                <img src="~/assets/img/ico-button-arrow.svg" :alt="$t('default.submit')" />
             </button>
-            <template v-if="errors.recaptcha">
-                <p class="msg msg--error" v-for="error in errors.recaptcha">
-                    {{ error }}
-                </p>
-            </template>
-            <div style="clear: both"></div>
+
+
         </section>
+        <template v-if="errors.recaptcha">
+            <p class="msg msg--error" v-for="error in errors.recaptcha">
+                {{ error }}
+            </p>
+        </template>
     </div>
 </template>
 

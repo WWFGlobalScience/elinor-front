@@ -45,3 +45,14 @@
     @apply text-xs text-grayy;
 }
 
+//text icon
+.c-icon {
+    @apply flex items-center justify-end;
+    .ico-circle {
+        @apply  p-3 rounded-full border border-solid border-turqy-border flex items-center justify-center;
+    }
+    span{
+        @apply text-xs text-turqy ml-3;
+    }
+}
+
