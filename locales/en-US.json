@@ -887,7 +887,7 @@
                             "whatHappenTitle" : "What happens when you finalize",
                             "whatHappenList1" : "<li>You mark your Assessment as Finished</li><li>You will not be able to edit the Survey Data</li><li>You will not be able to edit the Assessment Data</li><li>Your Assessment will continue only visible by you and your Collaborators</li><li>Will appear as Aggregated data in insights and maps</li>",
                             "whatHappenList2" : "<li>You could still edit or change the Managed Area</li><li>You could still add collaborators</li><li>You could still unpublish the Assessment</li>",
-                            "button" : "Finalized",
+                            "button" : "Finalize",
                             "warning" : "Warning!!",
                             "warningText" : "Once finalized you can not edit the Survey or Assessment Data, so finalize only when you finish your Assessment",
                             "popup" : {
@@ -918,13 +918,13 @@
                         "unpublish" : {
                             "title": "Unpublish",
                             "whatHappenTitle" : "What happens when you unpublish",
-                            "whatHappenList1" : "<li>Lorem ipsum</li>",
+                            "whatHappenList1" : "<li>Assessment will not be visible to non-collaborators</li>",
                             "whatHappenList2" : "<li>You could still publish the Assessment</li>",
                             "button" : "Unpublish Assessment",
                             "popup" : {
                                 "title" : "Unpublish Assessment",
                                 "confirmationTitle" : "Are you sure you want to unpublish your assessment?",
-                                "confirmationDescription" : "Lorem Ipsum"
+                                "confirmationDescription" : "Confirm"
                             }
                         },
                         "statuses" : {
@@ -1292,7 +1292,7 @@
                 "answer3": {
                     "paragraph1": "The data owners have the right to request how they want data to be credited for publication. We suggest using the citation format listed below. We also suggest when possible, authors of reports and publications consider inviting data collectors to co-author publications, given their contributions in collecting data.",
                     "paragraph2": "DATA OWNER NAMES (ASSESSMENT YEAR). ASSESSMENT LOCATION. INSTITUTION. Occurrence dataset accessed via Elinordata.org on DATE. "
-                }           
+                }
             }
         },
         "tos" : {
