@@ -11,7 +11,7 @@
             <div class="">
                 <div class="title-border">
                     <div class="content">
-                        <p class="kicker">KICKER TEXT</p>
+                        <p class="kicker uppercase">Attribute</p>
                         <h3 class="title uppercase">{{ attribute.name }}</h3>
                     </div>
                 </div>

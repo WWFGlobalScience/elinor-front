@@ -397,6 +397,7 @@
                             "next" : "Next",
                             "information" : "Information requirements",
                             "guidance" : "Guidance",
+                            "rationale" : "What is this question asking?",
                             "items" : {
                                 "stakeholder_harvest_rights" : {
                                     "question" : "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
@@ -1465,6 +1466,7 @@
         "delete" : "Delete",
         "contactAdministrator" : "Contact Administrator",
         "downloadData" : "Download Data",
+        "published" : "Published",
         "finalized" : "Finalized",
         "submit" : "Submit",
         "close" : "Close",
