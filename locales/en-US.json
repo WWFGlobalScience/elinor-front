@@ -21,11 +21,11 @@
             },
             "public" : {
                 "signInTitle" : "SIGN IN",
-                "signInSubtitle" : "Use your username and password to access Elinor",
+                "signInSubtitle" : "Use your username or email and password to access Elinor",
                 "signInTitleAndCreateAccountSeparator" : " or ",
                 "createAccountLink" : "create account",
                 "resentVerificationLink" : "Resend",
-                "usernameInput" : "Username",
+                "usernameInput" : "Username or Email",
                 "passwordInput" : "Password",
                 "rememberMeCheckbox" : "Remember me",
                 "forgotPasswordLink" : "Forgot password?",
