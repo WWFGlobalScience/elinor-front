@@ -17,7 +17,8 @@
                 "methodologyLink" : "Methodology",
                 "contactLink" : "Contact",
                 "createAccountLink" : "Create Account",
-                "signOut" : "Sign Out"
+                "signOut" : "Sign Out",
+                "profile" : "Profile"
             },
             "public" : {
                 "signInTitle" : "SIGN IN",
@@ -1443,6 +1444,46 @@
                 "outcomes" : {
                     "Q34" : "(Q34) To what extent do you feel the ecological outcomes are being achieved?",
                     "Q35" : "(Q35) To what extent do you feel the social outcomes are being achieved?"
+                }
+            }
+        },
+        "profile" : {
+            "header" : {
+                "title" : "Your account",
+                "subtitle" : "Lorem ipsum dolor sit amet"
+            },
+            "form" : {
+                "legend": "Your data",
+                "email":"Email",
+                "password":"Password",
+                "username":"Username",
+                "submit":"Save changes"
+            },
+            "delete" : {
+                "title" : "Delete Account",
+                "subtitle" : "What happen when you delete your account",
+                "list" : {
+                    "1" : "Lorem IPsum dolor",
+                    "2" : "Adopiscing consectetur ad elit sed",
+                    "3" : "Lorem IPsum dolor",
+                    "4" : "Adopiscing consectetur ad elit sed"
+                },
+                "confirm" : {
+                    "title" : "Delete your Account",
+                    "message" : {
+                        "strong" : "Warning!!",
+                        "text" : "This action can not be undone"
+                    }
+                }
+            },
+            
+            "popup" : {
+                "title" : "Delete Account",
+                "header" : {
+                    "title" : "Are you sure you want to delete your account"
+                },
+                "body" : {
+                    "text" : "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
                 }
             }
         }

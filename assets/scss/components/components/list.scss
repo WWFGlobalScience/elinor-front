@@ -130,3 +130,9 @@
         }
     }
 }
+
+.list-delete {
+    li {
+        @apply mb-2 text-grayy-lighter text-sm;
+    }
+}

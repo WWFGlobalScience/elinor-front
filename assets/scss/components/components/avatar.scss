@@ -7,4 +7,10 @@
     &.elinor__avatar--red {
         @apply bg-redy;
     }
+    &.elinor__avatar--xl {
+        @apply w-[95px] h-[95px] sm:w-[60px] sm:h-[60px];
+        span {
+            @apply text-[36px] sm:text-[24px];
+        }
+    }
 }
