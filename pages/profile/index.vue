@@ -10,37 +10,59 @@
                     <p>{{ $t('pages.profile.header.subtitle') }}</p>
                 </div>
                 <div class="content">
-                    <form class="form">
+
+                    <div v-if="alerts.profileUpdatedSuccessfully"
+                         class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+                        <strong class="font-bold">{{ $t('pages.home.public.alerts.profileUpdatedSuccessfully.title') }}</strong>
+                        <span class="block sm:inline">{{ $t('pages.home.public.alerts.profileUpdatedSuccessfully.subtitle') }}</span>
+                    </div>
+                    <form @submit="onSubmit" class="form">
                         <fieldset class="form__group px-0">
                             <legend class="form__legend w-full mb-4">
                                 <div class="title-border">
-                                    <h3 class="title">{{ $t('pages.profile.form.legend') }}</h3> 
+                                    <h3 class="title">{{ $t('pages.profile.form.legend') }}</h3>
                                 </div>
                             </legend>
 
                             <div class="form__row">
                                 <div class="input">
-                                    <label for="mail" class="label">{{ $t('pages.profile.form.email') }}</label>
-                                    <input type="text" id="mail" :placeholder="$t('pages.profile.form.email')" v-model="name" required>
+                                    <label for="email" class="label">{{ $t('pages.profile.form.email') }}</label>
+                                    <input type="text" id="email" :placeholder="$t('pages.profile.form.email')" v-model="form.email" required>
                                 </div>
                             </div>
 
-                            <div class="form__row">
-                                <div class="input">
-                                    <label for="pass" class="label">{{ $t('pages.profile.form.password') }}</label>
-                                    <input type="password" id="pass" name="password" minlength="8" required>
-                                </div>
-                            </div>
+
 
                             <div class="form__row">
                                 <div class="input">
                                     <label for="username" class="label">{{ $t('pages.profile.form.username') }}*</label>
-                                    <input type="text" id="username" :placeholder="$t('pages.profile.form.username')" v-model="username" required>
+                                    <input type="text" id="username" :placeholder="$t('pages.profile.form.username')" v-model="form.username" required>
+                                </div>
+                            </div>
+
+                            <div class="form__row">
+                                <div class="input">
+                                    <label for="password" class="label">{{ $t('pages.profile.form.password') }}</label>
+                                    <input type="password" id="password" name="password" v-model="form.password">
+                                </div>
+                            </div>
+
+                            <div class="form__row">
+                                <div class="input">
+                                    <label for="first_name" class="label">{{ $t('pages.profile.form.first_name') }}*</label>
+                                    <input type="text" id="first_name" :placeholder="$t('pages.profile.form.first_name')" v-model="form.first_name" required>
+                                </div>
+                            </div>
+
+                            <div class="form__row">
+                                <div class="input">
+                                    <label for="last_name" class="label">{{ $t('pages.profile.form.last_name') }}*</label>
+                                    <input type="text" id="last_name" :placeholder="$t('pages.profile.form.last_name')" v-model="form.last_name" required>
                                 </div>
                             </div>
 
                             <div class="row-btn justify-end">
-                                <button type="submit" class="btn btn--opacity--child" @click="onSubmit"  >
+                                <button type="submit" class="btn btn--opacity--child">
                                     <span class="btn--opacity__target">{{ $t('pages.profile.form.submit') }}</span>
                                     <img src="~/assets/img/ico-button-arrow.svg" alt=""/>
                                 </button>
@@ -51,7 +73,7 @@
 
                 <div class="content mt-20">
                     <div class="title-border">
-                        <h3 class="title">{{ $t('pages.profile.delete.title') }}</h3> 
+                        <h3 class="title">{{ $t('pages.profile.delete.title') }}</h3>
                     </div>
                     <h4 class="c-title--base font-semibold mb-4">{{ $t('pages.profile.delete.subtitle') }}</h4>
                     <ul class="list-inside list-disc list-delete">
@@ -83,7 +105,7 @@
                             {{ $t('pages.profile.delete.confirm.message.text') }}
                         </p>
                     </div>
-            
+
                 </div>
             </div>
         </div>
@@ -91,15 +113,33 @@
 </template>
 
 <script>
-    import {mapActions} from "vuex";
+import {mapActions, mapState} from "vuex";
 
     export default {
-        methods: {
-            ...mapActions(
-                {
-                    popupState: 'popup/popupState'
+        data() {
+            return {
+                form: {
+                    email: this.$auth.user.email,
+                    password: null,
+                    username: this.$auth.user.username,
+                    first_name: this.$auth.user.first_name,
+                    last_name: this.$auth.user.last_name
                 }
-            )
+            }
+        },
+        computed: {
+            ...mapState({
+                alerts: state => state.authentication.alerts
+            })
+        },
+        methods: {
+            ...mapActions({
+                popupState: 'popup/popupState'
+            }),
+            onSubmit(event) {
+                event.preventDefault();
+                this.$store.dispatch('authentication/updateProfile', this.form);
+            }
         }
     };
 </script>

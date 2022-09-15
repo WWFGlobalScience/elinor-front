@@ -446,6 +446,40 @@ export const actions = {
         }
     },
 
+    async deleteAssessment(state, assessmentId) {
+        try {
+            const response = await this.$axios({
+                method: 'delete',
+                url: `v2/assessments/${assessmentId}/`,
+            });
+
+            this.$router.push('/assessments');
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    async downloadAssessment(state, assessmentId) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Downloading assessment...'
+        })
+        try {
+            const responseType = 'blob';
+            const response = await this.$axios.get(`v2/assessments/${assessmentId}/download`, {responseType});
+            const objectURL = window.URL.createObjectURL(new Blob([response.data]));
+            const link = window.document.createElement('a');
+            link.href = objectURL;
+            link.setAttribute('download', 'assessment-' + this.assessment.id);
+            window.document.body.appendChild(link);
+            link.click();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            this.dispatch('loader/loaderState', {active: false})
+        }
+    },
+
     reset(state) {
         state.dispatch('fetchAssessments');
     },

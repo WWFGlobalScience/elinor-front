@@ -49,7 +49,7 @@ export const initProgress = () => {
             complete: false,
             percentage: 0,
             filled: 0,
-            required: 2
+            required: 1
         },
         published: false,
         overall_percentage: 0

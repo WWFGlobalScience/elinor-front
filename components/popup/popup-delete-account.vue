@@ -7,7 +7,7 @@
             {{ $t('pages.profile.popup.body.text') }}
         </p>
         <div class="btn-row">
-            <button v-if="!sent" @click="onSubmit" class="btn--border-turqy btn--opacity--child">
+            <button @click="confirm" class="btn--border-turqy btn--opacity--child">
                 <span class="btn--opacity__target"> {{ $t('default.yes') }}</span>
             </button>
             <button type="button" @click="close" class="btn--border-turqy btn--opacity--child">
@@ -30,8 +30,12 @@ export default {
     },
     methods: {
         ...mapActions({
-            popupState: 'popup/popupState'
+            popupState: 'popup/popupState',
+            accountDelete: 'authentication/accountDelete'
         }),
+        confirm() {
+            this.accountDelete();
+        },
         close() {
             this.popupState({active: false});
         }

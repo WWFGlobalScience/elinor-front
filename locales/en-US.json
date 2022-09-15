@@ -51,6 +51,14 @@
                     "emailVerifiedSuccessfully" : {
                         "title" : "Email verified successfully!",
                         "subtitle" : "Now you can access with your credentials."
+                    },
+                    "profileUpdatedSuccessfully" : {
+                        "title" : "Profile updated successfully!",
+                        "subtitle" : "Now your profile data is up to date."
+                    },
+                    "accountDeletedSuccessfully" : {
+                        "title" : "Account deleted successfully!",
+                        "subtitle" : "To restore your account contact elinor administrators"
                     }
                 },
                 "content" : {
@@ -202,6 +210,7 @@
                     "info" : {
                         "tabButton" : "Info",
                         "title" : "View Assessment",
+                        "managementPlanFileTitle" : "Management plan document",
                         "labels" : {
                             "managementAreaName" : "Name of Managment Area",
                             "protectedArea" : "Name of larger PA/CA this focal area is contained within",
@@ -214,6 +223,7 @@
                             "supportSources" : "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
                             "countries" : "Country/Countries where MA is located",
                             "regions" : "State(s)/Province(s) where MA is located",
+                            "managementPlanFile" : "Download the management plan document",
                             "zones" : {
                                 "title" : "ZONES",
                                 "zoneName" : "Name of zone",
@@ -1021,6 +1031,11 @@
                     "title" : "Delete title",
                     "subtitle" : "Are you sure you want to delete your assessment",
                     "text" : "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
+                },
+                "delete-info" : {
+                    "title" : "Delete assessment",
+                    "subtitle" : "Assessment is finalized and is not possible to delete it",
+                    "text" : "Contact elinor administrator to edit or delete your assessment"
                 }
 
             }
@@ -1457,6 +1472,8 @@
                 "email":"Email",
                 "password":"Password",
                 "username":"Username",
+                "first_name":"First name",
+                "last_name":"Last name",
                 "submit":"Save changes"
             },
             "delete" : {
@@ -1476,7 +1493,7 @@
                     }
                 }
             },
-            
+
             "popup" : {
                 "title" : "Delete Account",
                 "header" : {

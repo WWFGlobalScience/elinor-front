@@ -56,6 +56,12 @@
           <span class="block sm:inline">{{ $t('pages.home.public.alerts.emailVerifiedSuccessfully.subtitle') }}</span>
         </div>
 
+        <div v-if="alerts.accountDeletedSuccessfully"
+             class="bg-green-100 mt-5 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">{{ $t('pages.home.public.alerts.accountDeletedSuccessfully.title') }}</strong>
+          <span class="block sm:inline">{{ $t('pages.home.public.alerts.accountDeletedSuccessfully.subtitle') }}</span>
+        </div>
+
         <form id="form--signin" @submit="submit" class="form form--sign-in">
           <div class="form__group">
             <div class="form__row">

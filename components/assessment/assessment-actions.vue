@@ -5,6 +5,7 @@
             <a v-if="!isCreator()" @click="contact" role="button" class="btn btn--border-turqy btn--sm" title="Contact"><img src='~/assets/img/ico-mail.svg' alt="Contact"/> <span>{{ $t('default.contactAdministrator') }}</span></a>
             <a v-if="!isCreator()" @click="flag" role="button" class="btn btn--rounded" title="Flag"><img src="~/assets/img/ico-flag.svg" alt="Flag"> <span class="visually-hidden">Flag</span></a>
             <a v-if="isCreator() && assessment.status !== 10" @click="destroy" role="button" class="btn btn--rounded" title="Delete"><img src="~/assets/img/ico-trash2.svg" alt="Delete"> <span class="visually-hidden">{{ $t('default.delete') }}</span></a>
+            <a v-if="isCreator() && assessment.status === 10" @click="infoToDestroy" role="button" class="btn btn--rounded" title="Delete"><img src="~/assets/img/ico-trash2.svg" alt="Delete"> <span class="visually-hidden">{{ $t('default.delete') }}</span></a>
         </template>
     </div>
 </template>
@@ -21,7 +22,8 @@ export default {
     },
     methods: {
         ...mapActions({
-            popupState: 'popup/popupState'
+            popupState: 'popup/popupState',
+            downloadAssessment: 'assessments/downloadAssessment'
         }),
         isCreator() {
             return this.assessment.created_by === this.$auth.user.id;
@@ -56,8 +58,18 @@ export default {
                 }
             );
         },
+        infoToDestroy() {
+            this.popupState(
+                {
+                    active: true,
+                    type:'xs',
+                    component: 'popup-assessment-delete-info',
+                    title: 'pages.assessments.actions.delete-info.title'
+                }
+            );
+        },
         download() {
-            console.log('download');
+            this.downloadAssessment(this.assessment.id);
         }
     }
 }

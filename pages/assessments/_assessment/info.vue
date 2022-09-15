@@ -1,8 +1,9 @@
 <template>
     <section class="section section--assessment-info">
-        <managementarea-data></managementarea-data>
-        <managementarea-map></managementarea-map>
-        <managementarea-zones></managementarea-zones>
+        <managementarea-data />
+        <assessment-management-plan />
+        <managementarea-map />
+        <managementarea-zones />
     </section>
 </template>
 
