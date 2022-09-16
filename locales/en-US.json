@@ -276,9 +276,9 @@
                         "labels" : {
                             "year" : "Select Year",
                             "name" : "Name of assessment",
-                            "organization" : "Name of institution associated with this MA",
+                            "organization" : "Name of institution associated with this assessment",
                             "personResponsibleRole" : "Role of the person responsible for completing this Assessment",
-                            "collectionMethods" : "How was the information this assessment gathered?",
+                            "collectionMethods" : "How was the information in this assessment gathered?",
                             "collectionMethodsText" : "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
@@ -1332,7 +1332,7 @@
             "backgroundItems" : {
                 "header" : "Background Information",
                 "1" : "1. Name of facilitator responsible for submitting the assessment",
-                "2" : "2. Name of institution associated with this MA",
+                "2" : "2. Name of institution associated with this assessment",
                 "3" : "3. Role of facilitator responsible for submitting the assessment",
                 "4" : "4. Contact details of facilitator submitting the assessment",
                 "5" : "5. Date of assessment (day/month/year)",
