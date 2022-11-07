@@ -56,8 +56,10 @@
                 </div>
                 <div>
                     <button type="button" class="btn btn--border-turqy" @click="download()">
+                        <img src='~/assets/img/ico-download.svg' alt="Download Data"/>
                         <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.downloadButton' ) }}</span>
                     </button>
+
                 </div>
             </div>
             <ul class="ma__results">
