@@ -1,7 +1,7 @@
 <template>
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
-            <div class="search__results g-grid--3-1-md">
+            <div class="search__results g-grid--4-1-sm">
                 <div class="col-span-2">
                     <span>{{ $t('pages.assessments.list.total') }}</span> -
                     <span>{{ assessments.length }}</span>
@@ -54,13 +54,11 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button type="button" class="btn btn--border-turqy" @click="download()">
-                        <img src='~/assets/img/ico-download.svg' alt="Download Data"/>
-                        <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.downloadButton' ) }}</span>
-                    </button>
+                <button type="button" class="btn btn--border-turqy btn--sm ml-auto" @click="download()">
+                    <img src='~/assets/img/ico-download.svg' alt="Download Data"/>
+                    <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.downloadButton' ) }}</span>
+                </button>
 
-                </div>
             </div>
             <ul class="ma__results">
                 <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
