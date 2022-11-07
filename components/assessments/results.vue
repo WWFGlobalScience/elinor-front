@@ -54,6 +54,11 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <button type="button" class="btn btn--border-turqy" @click="download()">
+                        <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.downloadButton' ) }}</span>
+                    </button>
+                </div>
             </div>
             <ul class="ma__results">
                 <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
@@ -146,6 +151,7 @@ export default {
         ...mapActions({
             filterAssessmentsBy: 'assessments/filterAssessmentsBy',
             popupState: 'popup/popupState',
+            download: 'assessments/downloadAssessments'
         }),
         getCompletionPercentage(assessment) {
             return parseFloat(calculateProgress(assessment).overall_percentage.toFixed(0));

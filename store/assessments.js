@@ -466,11 +466,32 @@ export const actions = {
         })
         try {
             const responseType = 'blob';
-            const response = await this.$axios.get(`v2/assessments/${assessmentId}/download`, {responseType});
+            const response = await this.$axios.get(`/v2/reports/assessments/${assessmentId}/csv/`, {responseType});
             const objectURL = window.URL.createObjectURL(new Blob([response.data]));
             const link = window.document.createElement('a');
             link.href = objectURL;
-            link.setAttribute('download', 'assessment-' + this.assessment.id);
+            link.setAttribute('download', 'assessment-' + assessmentId);
+            window.document.body.appendChild(link);
+            link.click();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            this.dispatch('loader/loaderState', {active: false})
+        }
+    },
+
+    async downloadAssessments(state) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Downloading assessments...'
+        })
+        try {
+            const responseType = 'blob';
+            const response = await this.$axios.get(`/v2/reports/assessments/csv/`, {responseType});
+            const objectURL = window.URL.createObjectURL(new Blob([response.data]));
+            const link = window.document.createElement('a');
+            link.href = objectURL;
+            link.setAttribute('download', 'assessments.csv');
             window.document.body.appendChild(link);
             link.click();
         } catch (error) {

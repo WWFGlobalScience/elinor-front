@@ -161,6 +161,7 @@
                 "viewButton" : "View",
                 "editButton" : "Edit",
                 "createButton" : "Create Assessment",
+                "downloadButton" : "Download All",
                 "year" : "Year",
                 "countries" : "Countries",
                 "create" : {
