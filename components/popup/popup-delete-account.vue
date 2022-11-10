@@ -1,10 +1,10 @@
 <template>
     <div class="popup__content">
         <h4 class="title">
-            {{ $t('pages.assessments.actions.delete.subtitle') }}
+            {{ $t('pages.profile.popup.header.title') }}
         </h4>
         <p>
-            {{ $t('pages.assessments.actions.delete.text') }}
+            {{ $t('pages.profile.popup.body.text') }}
         </p>
         <div class="btn-row">
             <button @click="confirm" class="btn--border-turqy btn--opacity--child">
@@ -25,17 +25,16 @@ export default {
     name: 'popup-assessment-delete',
     computed: {
         ...mapState({
-            assessment: state => state.assessments.assessment,
             popup: state => state.popup.popup
         })
     },
     methods: {
         ...mapActions({
             popupState: 'popup/popupState',
-            deleteAssessment: 'assessments/deleteAssessment'
+            accountDelete: 'authentication/accountDelete'
         }),
         confirm() {
-            this.deleteAssessment(this.assessment.id);
+            this.accountDelete();
         },
         close() {
             this.popupState({active: false});

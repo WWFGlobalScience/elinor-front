@@ -1,7 +1,7 @@
 <template>
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
-            <div class="search__results g-grid--3-1-md">
+            <div class="search__results g-grid--4-1-sm">
                 <div class="col-span-2">
                     <span>{{ $t('pages.assessments.list.total') }}</span> -
                     <span>{{ assessments.length }}</span>
@@ -54,6 +54,11 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" class="btn btn--border-turqy btn--sm ml-auto" @click="download()">
+                    <img src='~/assets/img/ico-download.svg' alt="Download Data"/>
+                    <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.downloadButton' ) }}</span>
+                </button>
+
             </div>
             <ul class="ma__results">
                 <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
@@ -65,7 +70,7 @@
                         </div>
                         <div class="right">
                             <div v-if="assessment.data_policy === 90 && assessment.status === 10" class="assessment-status status--ready">
-                                <span class="status-circle"><img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K'/></span>
+                                <span class="status-circle"><img src='~assets/img/ico-megaphone.svg'/></span>
                                 <span class="text">Published</span>
                             </div>
                             <div v-if="assessment.data_policy === 10 && assessment.status === 10" class="assessment-status status--ready">
@@ -90,7 +95,7 @@
                         </li>
                         <li v-if="isAssessmentCollaborator($auth, assessment)" class="role">
                             <span class="label">{{ $t('pages.assessments.list.myRole') }}</span>
-                            <span class="data">{{ $t('pages.assessments.roles.' + getMyRole($auth, assessment)) }}</span>
+                            <span class="data">{{ $t('pages.assessments.roles.' + getMyRoleName($auth, assessment)) }}</span>
                         </li>
                         <li class="ha">
                             <span class="label">{{ $t('pages.assessments.list.year') }}</span>
@@ -123,7 +128,7 @@
 
 <script>
 import {mapActions, mapGetters, mapState} from 'vuex'
-import {isAssessmentObserver, getMyRole, isAssessmentCollaborator} from "~/config/assessment-roles";
+import {isAssessmentObserver, getMyRoleName, isAssessmentCollaborator} from "~/config/assessment-roles";
 import {calculateProgress} from "~/config/assessment-progress";
 
 export default {
@@ -139,13 +144,14 @@ export default {
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
         isAssessmentObserver: isAssessmentObserver,
-        getMyRole: getMyRole,
+        getMyRoleName,
         isOpenAssessment(assessment) {
             return this.$auth.loggedIn && assessment.status !== 10 && !isAssessmentObserver(this.$auth, assessment)
         },
         ...mapActions({
             filterAssessmentsBy: 'assessments/filterAssessmentsBy',
             popupState: 'popup/popupState',
+            download: 'assessments/downloadAssessments'
         }),
         getCompletionPercentage(assessment) {
             return parseFloat(calculateProgress(assessment).overall_percentage.toFixed(0));

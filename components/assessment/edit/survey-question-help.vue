@@ -4,6 +4,14 @@
             <div class="elinor__help-border"></div>
             <div class="elinor__help">
                 <header>
+                    <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.rationale') }}</h3>
+                </header>
+                <ul>
+                    <li v-html="question.rationale"></li>
+                </ul>
+            </div>
+            <div class="elinor__help">
+                <header>
                     <h3>{{ $t('pages.assessments.edit.tabs.survey.questions.information') }}</h3>
                 </header>
                 <ul>

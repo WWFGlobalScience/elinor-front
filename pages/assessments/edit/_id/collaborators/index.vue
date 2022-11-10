@@ -4,7 +4,7 @@
             <h1 class="c-title--lg">{{ $t('pages.assessments.edit.tabs.collaborators.title') }}</h1>
             <p class="c-text--base">{{ $t('pages.assessments.edit.tabs.collaborators.description') }}</p>
             <button
-                v-if="isAdmin"
+                v-if="isAdminOrContributor"
                 class="btn--border-turqy btn--opacity--child mt-12"
                 @click="
                       popupState({
@@ -27,7 +27,7 @@
 
 <script>
 import {mapActions, mapState} from "vuex";
-import {isAssessmentAdmin} from '~/config/assessment-roles';
+import {isAssessmentAdmin, isAssessmentContributor} from '~/config/assessment-roles';
 
 export default {
     name: "assessment-collaborators",
@@ -36,8 +36,8 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment
         }),
-        isAdmin() {
-            return isAssessmentAdmin(this.$auth, this.assessment)
+        isAdminOrContributor() {
+            return isAssessmentAdmin(this.$auth, this.assessment) || isAssessmentContributor(this.$auth, this.assessment);
         }
     },
     methods: {

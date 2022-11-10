@@ -6,7 +6,9 @@ export const state = () => ({
         emailVerificationRequired: false,
         passwordChangedSuccessfully: false,
         forgotPasswordEmailSent: false,
-        emailVerifiedSuccessfully: false
+        emailVerifiedSuccessfully: false,
+        profileUpdatedSuccessfully: false,
+        accountDeletedSuccessfully: false,
     }
 })
 
@@ -179,5 +181,40 @@ export const actions = {
         state.commit('resetAlerts')
         this.dispatch('dropdown/toggleDropdown');
         this.$router.push(`/`);
-    }
+    },
+    async updateProfile(state, data) {
+        const formdata = {
+            email: data.email,
+            username: data.username,
+            first_name: data.first_name,
+            last_name: data.last_name
+        };
+
+        if(data.password !== null) {
+            formdata.password = data.password;
+        }
+
+        await this.$axios
+            .$patch('rest-auth/user/', formdata)
+            .then((response) => {
+                state.commit('setAlert', {name: 'profileUpdatedSuccessfully', value: true});
+            })
+            .catch((error) => {
+                state.commit('setError', true);
+            });
+    },
+    async accountDelete(state) {
+        await this.$axios
+            .$delete('rest-auth/user/')
+            .then((response) => {
+                this.$auth.logout();
+                this.dispatch('popup/popupState', {
+                    active: false
+                });
+                this.$router.push(`/status/account-deleted-successfully`);
+            })
+            .catch((error) => {
+                state.commit('setError', true);
+            });
+    },
 }

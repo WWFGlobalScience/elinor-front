@@ -17,15 +17,16 @@
                 "methodologyLink" : "Methodology",
                 "contactLink" : "Contact",
                 "createAccountLink" : "Create Account",
-                "signOut" : "Sign Out"
+                "signOut" : "Sign Out",
+                "profile" : "Profile"
             },
             "public" : {
                 "signInTitle" : "SIGN IN",
-                "signInSubtitle" : "Use your username and password to access Elinor",
+                "signInSubtitle" : "Use your username or email and password to access Elinor",
                 "signInTitleAndCreateAccountSeparator" : " or ",
                 "createAccountLink" : "create account",
                 "resentVerificationLink" : "Resend",
-                "usernameInput" : "Username",
+                "usernameInput" : "Username or Email",
                 "passwordInput" : "Password",
                 "rememberMeCheckbox" : "Remember me",
                 "forgotPasswordLink" : "Forgot password?",
@@ -50,6 +51,14 @@
                     "emailVerifiedSuccessfully" : {
                         "title" : "Email verified successfully!",
                         "subtitle" : "Now you can access with your credentials."
+                    },
+                    "profileUpdatedSuccessfully" : {
+                        "title" : "Profile updated successfully!",
+                        "subtitle" : "Now your profile data is up to date."
+                    },
+                    "accountDeletedSuccessfully" : {
+                        "title" : "Account deleted successfully!",
+                        "subtitle" : "To restore your account contact elinor administrators"
                     }
                 },
                 "content" : {
@@ -152,6 +161,7 @@
                 "viewButton" : "View",
                 "editButton" : "Edit",
                 "createButton" : "Create Assessment",
+                "downloadButton" : "Download All",
                 "year" : "Year",
                 "countries" : "Countries",
                 "create" : {
@@ -201,6 +211,7 @@
                     "info" : {
                         "tabButton" : "Info",
                         "title" : "View Assessment",
+                        "managementPlanFileTitle" : "Management plan document",
                         "labels" : {
                             "managementAreaName" : "Name of Managment Area",
                             "protectedArea" : "Name of larger PA/CA this focal area is contained within",
@@ -213,6 +224,7 @@
                             "supportSources" : "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
                             "countries" : "Country/Countries where MA is located",
                             "regions" : "State(s)/Province(s) where MA is located",
+                            "managementPlanFile" : "Download the management plan document",
                             "zones" : {
                                 "title" : "ZONES",
                                 "zoneName" : "Name of zone",
@@ -265,9 +277,9 @@
                         "labels" : {
                             "year" : "Select Year",
                             "name" : "Name of assessment",
-                            "organization" : "Name of institution associated with this MA",
+                            "organization" : "Name of institution associated with this assessment",
                             "personResponsibleRole" : "Role of the person responsible for completing this Assessment",
-                            "collectionMethods" : "How was the information this assessment gathered?",
+                            "collectionMethods" : "How was the information in this assessment gathered?",
                             "collectionMethodsText" : "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
@@ -397,6 +409,7 @@
                             "next" : "Next",
                             "information" : "Information requirements",
                             "guidance" : "Guidance",
+                            "rationale" : "What is this question asking?",
                             "items" : {
                                 "stakeholder_harvest_rights" : {
                                     "question" : "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
@@ -887,7 +900,7 @@
                             "whatHappenTitle" : "What happens when you finalize",
                             "whatHappenList1" : "<li>You mark your Assessment as Finished</li><li>You will not be able to edit the Survey Data</li><li>You will not be able to edit the Assessment Data</li><li>Your Assessment will continue only visible by you and your Collaborators</li><li>Will appear as Aggregated data in insights and maps</li>",
                             "whatHappenList2" : "<li>You could still edit or change the Managed Area</li><li>You could still add collaborators</li><li>You could still unpublish the Assessment</li>",
-                            "button" : "Finalized",
+                            "button" : "Finalize",
                             "warning" : "Warning!!",
                             "warningText" : "Once finalized you can not edit the Survey or Assessment Data, so finalize only when you finish your Assessment",
                             "popup" : {
@@ -918,13 +931,13 @@
                         "unpublish" : {
                             "title": "Unpublish",
                             "whatHappenTitle" : "What happens when you unpublish",
-                            "whatHappenList1" : "<li>Lorem ipsum</li>",
+                            "whatHappenList1" : "<li>Assessment will not be visible to non-collaborators</li>",
                             "whatHappenList2" : "<li>You could still publish the Assessment</li>",
                             "button" : "Unpublish Assessment",
                             "popup" : {
                                 "title" : "Unpublish Assessment",
                                 "confirmationTitle" : "Are you sure you want to unpublish your assessment?",
-                                "confirmationDescription" : "Lorem Ipsum"
+                                "confirmationDescription" : "Confirm"
                             }
                         },
                         "statuses" : {
@@ -999,6 +1012,33 @@
                 "answer-1" : "Go to assessments",
                 "answer-2" : "Create an assessment",
                 "label" : "Don’t show this initial modal screen again"
+            },
+            "actions" : {
+                "contact" : {
+                    "title" : "Contact Administrator",
+                    "subtitle" : "Fill this form to contact with the administrator",
+                    "text" : "We will send a message to the administrator of this assessment",
+                    "labelTextarea" : "Message",
+                    "okMessage" : "Thank you for the contact!"
+                },
+                "flag" : {
+                    "title" : "Flag title",
+                    "subtitle" : "Fill this form to flag the assessment",
+                    "text" : "We will send a message to the administrator of this assessment",
+                    "labelTextarea" : "Message",
+                    "okMessage" : "Thank you for the contact!"
+                },
+                "delete" : {
+                    "title" : "Delete title",
+                    "subtitle" : "Are you sure you want to delete your assessment",
+                    "text" : "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
+                },
+                "delete-info" : {
+                    "title" : "Delete assessment",
+                    "subtitle" : "Assessment is finalized and is not possible to delete it",
+                    "text" : "Contact elinor administrator to edit or delete your assessment"
+                }
+
             }
         },
         "documentation": {
@@ -1270,7 +1310,7 @@
                 "answer3": {
                     "paragraph1": "The data owners have the right to request how they want data to be credited for publication. We suggest using the citation format listed below. We also suggest when possible, authors of reports and publications consider inviting data collectors to co-author publications, given their contributions in collecting data.",
                     "paragraph2": "DATA OWNER NAMES (ASSESSMENT YEAR). ASSESSMENT LOCATION. INSTITUTION. Occurrence dataset accessed via Elinordata.org on DATE. "
-                }           
+                }
             }
         },
         "tos" : {
@@ -1293,7 +1333,7 @@
             "backgroundItems" : {
                 "header" : "Background Information",
                 "1" : "1. Name of facilitator responsible for submitting the assessment",
-                "2" : "2. Name of institution associated with this MA",
+                "2" : "2. Name of institution associated with this assessment",
                 "3" : "3. Role of facilitator responsible for submitting the assessment",
                 "4" : "4. Contact details of facilitator submitting the assessment",
                 "5" : "5. Date of assessment (day/month/year)",
@@ -1422,6 +1462,48 @@
                     "Q35" : "(Q35) To what extent do you feel the social outcomes are being achieved?"
                 }
             }
+        },
+        "profile" : {
+            "header" : {
+                "title" : "Your account",
+                "subtitle" : "Lorem ipsum dolor sit amet"
+            },
+            "form" : {
+                "legend": "Your data",
+                "email":"Email",
+                "password":"Password",
+                "username":"Username",
+                "first_name":"First name",
+                "last_name":"Last name",
+                "submit":"Save changes"
+            },
+            "delete" : {
+                "title" : "Delete Account",
+                "subtitle" : "What happen when you delete your account",
+                "list" : {
+                    "1" : "Lorem IPsum dolor",
+                    "2" : "Adopiscing consectetur ad elit sed",
+                    "3" : "Lorem IPsum dolor",
+                    "4" : "Adopiscing consectetur ad elit sed"
+                },
+                "confirm" : {
+                    "title" : "Delete your Account",
+                    "message" : {
+                        "strong" : "Warning!!",
+                        "text" : "This action can not be undone"
+                    }
+                }
+            },
+
+            "popup" : {
+                "title" : "Delete Account",
+                "header" : {
+                    "title" : "Are you sure you want to delete your account"
+                },
+                "body" : {
+                    "text" : "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
+                }
+            }
         }
     },
     "sidebar" : {
@@ -1441,6 +1523,12 @@
         "accept" : "Accept",
         "cancel" : "Cancel",
         "delete" : "Delete",
+        "contactAdministrator" : "Contact Administrator",
+        "downloadData" : "Download Data",
+        "published" : "Published",
+        "finalized" : "Finalized",
+        "submit" : "Submit",
+        "close" : "Close",
         "upload-file" : {
             "placeholder" : "Drag and drop a PDF file here",
             "buttons" : {

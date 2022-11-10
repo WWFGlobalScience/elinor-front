@@ -89,7 +89,7 @@
 import {mapActions, mapState} from "vuex";
 
 export default {
-    name: 'popup-assessment-delete',
+    name: 'popup-assessment-onboarding',
     computed: {
         ...mapState({
             popup: state => state.popup.popup
@@ -106,7 +106,6 @@ export default {
             this.popupState( { active: false });
         },
         showAgain(value) {
-            console.log(value);
             if(value === '1') {
                 localStorage.setItem('onboarding', '0');
             } else {

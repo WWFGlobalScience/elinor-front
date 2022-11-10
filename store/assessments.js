@@ -21,7 +21,15 @@ export const state = () => ({
         percent: 0
     },
     required_fields,
-    progress: initProgress()
+    progress: initProgress(),
+    flag: {
+        errors: [],
+        sent: false
+    },
+    contact: {
+        errors: [],
+        sent: false
+    }
 })
 
 export const mutations = {
@@ -100,6 +108,18 @@ export const mutations = {
     setManagementArea(state, managementArea) {
         console.log(managementArea);
         state.assessment = {...state.assessment, management_area_countries: managementArea};
+    },
+    setContactErrors(state, errors) {
+        state.contact.errors = errors;
+    },
+    setContactSent(state, sent) {
+        state.contact.sent = sent;
+    },
+    setFlagErrors(state, errors) {
+        state.flag.errors = errors;
+    },
+    setFlagSent(state, sent) {
+        state.flag.sent = sent;
     }
 }
 
@@ -383,6 +403,102 @@ export const actions = {
         });
 
         state.commit('updateSurveyAnswer', response.data)
+    },
+
+    async contactAssessmentAdmin(state, {assessmentId, name, email, subject, message, recaptcha}) {
+        try {
+            const response = await this.$axios({
+                method: 'post',
+                url: `v2/contactassessmentadmins`,
+                data: {
+                    assessment: assessmentId,
+                    name,
+                    email,
+                    subject,
+                    message,
+                    recaptcha
+                }
+            });
+            state.commit('setContactSent', true);
+        } catch (error) {
+            state.commit('setContactSent', false);
+            state.commit('setContactErrors', error.response.data);
+        }
+    },
+
+    async flagAssessment(state, {assessmentId, reporter, flag_type, flag_type_other, explanation}) {
+        try {
+            const response = await this.$axios({
+                method: 'post',
+                url: `v2/assessmentflags/`,
+                data: {
+                    assessment: assessmentId,
+                    reporter,
+                    flag_type,
+                    flag_type_other,
+                    explanation
+                }
+            });
+            state.commit('setFlagSent', true);
+        } catch (error) {
+            state.commit('setFlagSent', false);
+            state.commit('setFlagErrors', error.response.data);
+        }
+    },
+
+    async deleteAssessment(state, assessmentId) {
+        try {
+            const response = await this.$axios({
+                method: 'delete',
+                url: `v2/assessments/${assessmentId}/`,
+            });
+
+            this.$router.push('/assessments');
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    async downloadAssessment(state, assessmentId) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Downloading assessment...'
+        })
+        try {
+            const responseType = 'blob';
+            const response = await this.$axios.get(`/v2/reports/assessments/${assessmentId}/csv/`, {responseType});
+            const objectURL = window.URL.createObjectURL(new Blob([response.data]));
+            const link = window.document.createElement('a');
+            link.href = objectURL;
+            link.setAttribute('download', 'assessment-' + assessmentId);
+            window.document.body.appendChild(link);
+            link.click();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            this.dispatch('loader/loaderState', {active: false})
+        }
+    },
+
+    async downloadAssessments(state) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Downloading assessments...'
+        })
+        try {
+            const responseType = 'blob';
+            const response = await this.$axios.get(`/v2/reports/assessments/csv/`, {responseType});
+            const objectURL = window.URL.createObjectURL(new Blob([response.data]));
+            const link = window.document.createElement('a');
+            link.href = objectURL;
+            link.setAttribute('download', 'assessments.csv');
+            window.document.body.appendChild(link);
+            link.click();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            this.dispatch('loader/loaderState', {active: false})
+        }
     },
 
     reset(state) {

@@ -14,6 +14,7 @@
                             </div>
                             <div class="item-content">
                                 <span class="title">{{ attribute.name }}</span>
+                                <span class="subtitle">{{ attribute.description }}</span>
                                 <a href="#" class="see-link" v-scroll-to="{
                                     el: '#anchor-attribute-' + attribute.id,
                                     offset: -80,
@@ -28,7 +29,7 @@
                     <div class="title-border">
                         <h3 class="title">Optional attributes</h3>
                     </div>
-                    <p class="text-intro">Unselect the attributtes that do not correspond with your Assessment</p>
+                    <p class="text-intro">Unselect the attributes that do not correspond with your Assessment</p>
                     <ul class="elinor__survey-attribute-gird">
                         <li v-for="(attribute, index) in optionalAttributes" class="elinor__survey-attribute-item item--optional">
                             <div class="option-check">
@@ -37,6 +38,7 @@
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
                                 <label class="title" for="survey-attribute-optional-1">{{ attribute.name }}</label>
+                                <span class="subtitle">{{ attribute.description }}</span>
                             </div>
                             <a href="#" class="see-link" v-scroll-to="{
                                     el: '#anchor-attribute-' + attribute.id,

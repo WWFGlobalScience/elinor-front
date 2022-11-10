@@ -4,13 +4,16 @@
             <header id="question" class="header--back">
                 <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
                 <nuxt-link to="./" class="elinor__back btn btn--border-turqy btn--opacity">
-                    <img src="~/assets/img/ico-arrow-back-turqy.svg">
+                    <img src="~/assets/img/ico-arrow-back-turqy.svg" alt="">
                     <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.back' ) }}</span>
                 </nuxt-link>
             </header>
             <div class="">
                 <div class="title-border">
-                    <h3 class="title uppercase">{{ attribute.name }}</h3>
+                    <div class="content">
+                        <p class="kicker uppercase">Attribute</p>
+                        <h3 class="title uppercase">{{ attribute.name }}</h3>
+                    </div>
                 </div>
                 <div class="question">
                     <div class="question__index">
@@ -32,7 +35,7 @@
                         offset: -40,
                     }">
                         <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.help' ) }}</span>
-                        <img src="~/assets/img/ico-arrow-bottom-white.svg">
+                        <img src="~/assets/img/ico-arrow-bottom-white.svg" alt="">
                     </a>
                 </header>
                 <form class="form" refs="editAssessmentSurvey">
@@ -43,7 +46,7 @@
                                     <div class="radio__wrap">
                                         <div class="radio">
                                             <input type="radio" name="answer" :id="'answer-' + choice" @click="saveChoice(choice)" :checked="isAnsweredWith(choice)">
-                                            <img src="~/assets/img/ico-ok.svg">
+                                            <img src="~/assets/img/ico-ok.svg" alt="">
                                         </div>
                                     </div>
                                 </div>

@@ -1,42 +1,45 @@
-const roles = {
-    70: 'admin',
-    40: 'contributor',
-    10: 'observer'
+export const roles = {
+    admin: 70,
+    contributor: 40,
+    observer: 10
 }
 
-export default roles;
-
 export const isAssessmentAdmin = (auth, assessment) => {
-    return userHasAssessmentRole(auth, assessment, 70);
+    return userHasAssessmentRole(auth, assessment, roles.admin);
 }
 
 export const isAssessmentContributor = (auth, assessment) => {
-    return userHasAssessmentRole(auth, assessment, 40);
+    return userHasAssessmentRole(auth, assessment, roles.contributor);
 }
 
 export const isAssessmentObserver = (auth, assessment) => {
-    return userHasAssessmentRole(auth, assessment, 10);
+    return userHasAssessmentRole(auth, assessment, roles.observer);
 }
 
 export const isAssessmentCollaborator = (auth, assessment) => {
-    return findAssessmentCollaboratorUser(auth, assessment) !== undefined;
+    return findAssessmentCollaboratorUser(auth.user, assessment) !== undefined;
 }
 
-const findAssessmentCollaboratorUser = (auth, assessment) => {
-    if(auth && auth.loggedIn) {
-        return assessment.collaborators && assessment.collaborators.filter(collaborator => collaborator.user.id === auth.user.id)[0];
-    }
+export const findAssessmentCollaboratorUser = (user, assessment) => {
+    return assessment.collaborators && assessment.collaborators.filter(collaborator => collaborator.user.id === user.id)[0];
 }
 
 const userHasAssessmentRole = (auth, assessment, role) => {
-    const user = findAssessmentCollaboratorUser(auth, assessment);
+    const user = findAssessmentCollaboratorUser(auth.user, assessment);
     return user && user.role === role;
 }
 
 
 export const getMyRole = (auth, assessment) =>  {
-    const user = findAssessmentCollaboratorUser(auth, assessment);
+    const user = findAssessmentCollaboratorUser(auth.user, assessment);
     if(user) {
-        return roles[user.role];
+        return user.role;
+    }
+}
+
+export const getMyRoleName = (auth, assessment) =>  {
+    const user = findAssessmentCollaboratorUser(auth.user, assessment);
+    if(user) {
+        return Object.keys(roles).find(key => roles[key] === user.role);
     }
 }

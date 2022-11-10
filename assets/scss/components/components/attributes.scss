@@ -19,7 +19,7 @@
         content: '';
     }
     .title {
-        @apply text-[18px] pr-3 bg-white;
+        @apply text-[18px] pr-3 bg-white font-bold;
         position: relative;
         z-index: 10;
     }
@@ -40,6 +40,12 @@
             &.inactive-att {
                 @apply text-grayy-lighter;
             }
+        }
+    }
+    .content {
+        @apply bg-white z-10 mb-6;
+        .kicker {
+            @apply text-xs mb-2;
         }
     }
 }

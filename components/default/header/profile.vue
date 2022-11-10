@@ -11,6 +11,7 @@
                 class="elinor__dropdown-menu"
                 v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
             >
+                <li class="elinor__dropdown-menu__item"><NuxtLink to="/profile">{{ $t('pages.home.header.profile') }}<img src="~assets/img/ico-users-access-turqy.svg" :alt="$t('pages.home.header.signOut')"></NuxtLink></li>
                 <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">{{ $t('pages.home.header.signOut') }}<img src="~assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')"></a></li>
             </ul>
         </div>
