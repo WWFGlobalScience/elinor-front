@@ -52,7 +52,7 @@
                                 </tr>
                                 <tr>
                                     <td>9.</td>
-                                    <td>Rationale for assessment (e.g. annual monitoring, projectbaseline)</td>
+                                    <td>Rationale for assessment (e.g. annual monitoring, project baseline)</td>
                                 </tr>
                                 <tr>
                                     <td>10.</td>
@@ -72,7 +72,7 @@
                                 </tr>
                                 <tr>
                                     <td>14.</td>
-                                    <td>Are the rights of the MA authority formally recognized mat the…</td>
+                                    <td>Are the rights of the MA authority formally recognized at the…</td>
                                 </tr>
                             </table>
                         </div>
@@ -96,11 +96,11 @@
                                 </tr>
                                 <tr>
                                     <td>17.</td>
-                                    <td>17. MA governance type</td>
+                                    <td>MA governance type</td>
                                 </tr>
                                 <tr>
                                     <td>18.</td>
-                                    <td>18. MA objectives</td>
+                                    <td>MA objectives</td>
                                 </tr>
                                 <tr>
                                     <td>19.</td>
