@@ -585,9 +585,9 @@
                                     "guidance" : "Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offensePenalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.Are there different penalties depending on the size/scale of the infraction?Few is approximately < 50%Some is approximately = 50%Most is approximately > 50%",
                                     "answers" : {
                                         "1" : "Penalties are fixed and do not change with the nature, severity or frequency of the infraction",
-                                        "2" : "Some penalties increase with the nature, severity of frequency of the infraction",
-                                        "3" : "Most penalties increase with the nature, severity of frequency of the infraction",
-                                        "4" : "All penalties increase with the nature, severity of frequency of the infraction",
+                                        "2" : "Some penalties increase with the nature, severity and frequency of the infraction",
+                                        "3" : "Most penalties increase with the nature, severity and frequency of the infraction",
+                                        "4" : "All penalties increase with the nature, severity and frequency of the infraction",
                                         "5" : "Don't know"
                                     }
                                 },
