@@ -89,8 +89,12 @@
     @apply flex border-radius--20 border border-grayy-border pt-5 pb-4 px-3 transition hover:bg-grayy-badge;
 
     .title {
-         @apply block mb-1 text-[14px];
+         @apply block mb-1 text-[16px] font-bold;
     }
+
+    .subtitle {
+        @apply block mb-1 text-[14px] leading-6 mt-3;
+   }
 
     &.item--mandatory {
         @apply items-center;
@@ -106,7 +110,7 @@
     &.item--optional {
         @apply flex-col items-start;
         .option-check {
-            @apply flex items-center;
+            @apply flex items-start;
             position: relative;
             input {
                 @apply w-[22px] h-[22px] m-0 p-0 opacity-0 cursor-pointer;
@@ -122,8 +126,8 @@
                     @apply w-[22px] center-both z-10 pointer-events-none ml-[2px] transition opacity-0;
                 }
             }
-            .title {
-                @apply ml-3;
+            .content {
+                @apply ml-4 flex-1;
             }
 
             input:checked + .radio img {
@@ -135,7 +139,7 @@
             }
         }
         .see-link {
-            @apply ml-[38px];
+            @apply ml-[42px] mt-3;
         }
     }
 

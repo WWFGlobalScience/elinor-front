@@ -280,7 +280,7 @@
                             "organization" : "Name of institution associated with this assessment",
                             "personResponsibleRole" : "Role of the person responsible for completing this Assessment",
                             "collectionMethods" : "How was the information in this assessment gathered?",
-                            "collectionMethodsText" : "Rationale for assessment (e.g. annual monitoring, project baseline)",
+                            "collectionMethodsText" : "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
                             "managementPlan" : "Upload a Management Plan File"
@@ -585,9 +585,9 @@
                                     "guidance" : "Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offensePenalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.Are there different penalties depending on the size/scale of the infraction?Few is approximately < 50%Some is approximately = 50%Most is approximately > 50%",
                                     "answers" : {
                                         "1" : "Penalties are fixed and do not change with the nature, severity or frequency of the infraction",
-                                        "2" : "Some penalties increase with the nature, severity and frequency of the infraction",
-                                        "3" : "Most penalties increase with the nature, severity and frequency of the infraction",
-                                        "4" : "All penalties increase with the nature, severity and frequency of the infraction",
+                                        "2" : "Some penalties increase with the nature, severity of frequency of the infraction",
+                                        "3" : "Most penalties increase with the nature, severity of frequency of the infraction",
+                                        "4" : "All penalties increase with the nature, severity of frequency of the infraction",
                                         "5" : "Don't know"
                                     }
                                 },
@@ -973,8 +973,11 @@
                 "60" : "Community leaders or representatives"
             },
             "collectionMethods" : {
-                "10" : "Desk-based assessment",
-                "30" : "Facilitated focus group discussion"
+                "10" : "Through knowledge of the person(s) responsible for filling out assessment",
+                "20" : "Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents",
+                "30" : "Through semi-structured interviews and focus group",
+                "40" : "A combination of the above",
+                "50" : "Other (please provide details below)"
             },
             "popup" : {
                 "title" : "How to create an Assessment",
@@ -1275,7 +1278,7 @@
                     }
                 }
             },
-            "title" : "Principles of Collaboration and Citation Guidelines",
+            "title" : "Principios de colaboración and Citation Guidelines",
             "intro": {
                 "title": "Principles to guide transparent and collaborative data sharing",
                 "paragraph1": "The Elinor tool and data system helps users track management and governance status over time. It also provides the opportunity for sharing data on management and governance between users, which can in the long term, foster more transparency in management and governance and improve area-based conservation efforts.",

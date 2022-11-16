@@ -37,8 +37,11 @@
                                 <div class="radio">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
-                                <label class="title" for="survey-attribute-optional-1">{{ attribute.name }}</label>
-                                <span class="subtitle">{{ attribute.description }}</span>
+                                <div class="content">
+                                    <h4 class="title" for="survey-attribute-optional-1">{{ attribute.name }}</h4>
+                                    <h5 class="subtitle">{{ attribute.description }}</h5>
+                                </div>
+
                             </div>
                             <a href="#" class="see-link" v-scroll-to="{
                                     el: '#anchor-attribute-' + attribute.id,
