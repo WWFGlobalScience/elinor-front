@@ -375,10 +375,7 @@ export default {
             ],
             collection_methods: [
                 {id: 10, name: this.$t('pages.assessments.collectionMethods.10')},
-                {id: 20, name: this.$t('pages.assessments.collectionMethods.20')},
-                {id: 30, name: this.$t('pages.assessments.collectionMethods.30')},
-                {id: 40, name: this.$t('pages.assessments.collectionMethods.40')},
-                {id: 50, name: this.$t('pages.assessments.collectionMethods.50')}
+                {id: 30, name: this.$t('pages.assessments.collectionMethods.30')}
             ],
             counts: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
             dropzone: {
