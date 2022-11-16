@@ -40,7 +40,6 @@ export default {
     methods: {
         ...mapActions({
             fetchAssessment: 'assessments/fetchAssessment',
-            fetchAttributes: 'attributes/fetchAttributes',
         })
     },
     created() {

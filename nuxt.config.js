@@ -40,24 +40,31 @@ export default {
         '@nuxtjs/auth-next',
         '@nuxtjs/axios',
         ['nuxt-i18n', {
-            baseUrl: 'https://my-nuxt-app.com',
-            strategy: 'prefix_except_default',
+            strategy: 'no_prefix',
             defaultLocale: 'en',
             fallbackLocale: 'en',
             lazy: true,
             langDir: 'locales/',
             seo: true,
-            detectBrowserLanguage: false,
+            detectBrowserLanguage: {
+                alwaysRedirect: true
+            },
             locales: [
                 {
                     code: 'en',
                     iso: 'en-US',
                     name: 'English',
                     file: 'en-US.json'
+                },
+                {
+                    code: 'es',
+                    iso: 'es-ES',
+                    name: 'Español',
+                    file: 'es-ES.json'
                 }
             ]
         }],
-        'vue-scrollto/nuxt',,
+        'vue-scrollto/nuxt',
         'nuxt-vue-multiselect',
         '@nuxtjs/google-gtag',
         '@nuxtjs/recaptcha'
