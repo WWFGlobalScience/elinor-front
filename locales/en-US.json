@@ -973,11 +973,8 @@
                 "60" : "Community leaders or representatives"
             },
             "collectionMethods" : {
-                "10" : "Through knowledge of the person(s) responsible for filling out assessment",
-                "20" : "Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents",
-                "30" : "Through semi-structured interviews and focus group",
-                "40" : "A combination of the above",
-                "50" : "Other (please provide details below)"
+                "10" : "Desk-based assessment",
+                "30" : "Facilitated focus group discussion"
             },
             "popup" : {
                 "title" : "How to create an Assessment",
