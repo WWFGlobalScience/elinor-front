@@ -280,7 +280,7 @@
                             "organization" : "Name of institution associated with this assessment",
                             "personResponsibleRole" : "Role of the person responsible for completing this Assessment",
                             "collectionMethods" : "How was the information in this assessment gathered?",
-                            "collectionMethodsText" : "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
+                            "collectionMethodsText" : "Rationale for assessment (e.g. annual monitoring, project baseline)",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
                             "managementPlan" : "Upload a Management Plan File"
