@@ -1,27 +1,7 @@
 <template>
-    
+
     <ul v-if="$auth.loggedIn">
-
-        <div class="elinor__dropdown lang-dropdown">
-            <div class="elinor__dropdown-toggle">
-                <div class="elinor__dropdown-toggle">
-                    <div class="current" @click="toggleLangDropdown">
-                        <span>EN</span>
-                        <div class="multiselect__caret">
-                            <img src="~/assets/img/ico-select-turqy.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <ul
-                class="lang-dropdown-menu"
-                v-bind:class="[!isLangDropdownOpen ? 'isOpen' : null]"
-            >
-                <li class="lang-dropdown-menu__item"><NuxtLink to="#">ES</NuxtLink></li>
-                <li class="lang-dropdown-menu__item"><NuxtLink to="#">EN</NuxtLink></li>
-            </ul>
-        </div>
-
+        <default-language-selector />
         <div class="elinor__dropdown">
             <div class="elinor__dropdown-toggle">
                 <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
@@ -70,9 +50,6 @@ export default {
         isDropdownOpen() {
             return this.$store.state.dropdown.dropdown;
         },
-        isLangDropdownOpen() {
-            return this.$store.state.langdropdown.langdropdown;
-        },
         user() {
             return this.$store.state.auth.user;
         },
@@ -81,7 +58,6 @@ export default {
         ...mapActions({
             toggleSidebar: "layout/toggleSidebar",
             toggleDropdown: "dropdown/toggleDropdown",
-            toggleLangDropdown: "langdropdown/toggleLangDropdown",
             logout: "authentication/logout",
         }),
     }
