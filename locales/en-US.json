@@ -237,13 +237,17 @@
                             "subtitle" : "Geospatial information"
                         },
                         "people" : {
-                            "title" : "7. Number of people engaged    from key stakeholder groups",
+                            "title" : "7. Number of people engaged from key stakeholder groups",
                             "community" : "Local community",
                             "ngo" : "NGO",
                             "academic" : "Academic",
                             "government" : "Government",
                             "indigenous" : "Indigenous people",
                             "private" : "Private sector",
+                            "genderFemale": "Female",
+                            "genderMale": "Male",
+                            "genderNonBinary": "Non binary",
+                            "genderPreferNotToSay": "Prefer not to say",
                             "user" : "User group",
                             "total" : "total consulted"
                         }
@@ -283,7 +287,12 @@
                             "collectionMethodsText" : "Rationale for assessment (e.g. annual monitoring, project baseline)",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
-                            "managementPlan" : "Upload a Management Plan File"
+                            "managementPlan" : {
+                                "title": "Upload a Management Plan File",
+                                "maxSize": "max size: 100M",
+                                "maxUploadTime": "max upload time: 5 mins (so don't attempt large uploads on slow connection)",
+                                "anyFile": "can be any file"
+                            }
                         },
                         "people" : {
                             "title" : "Number of people engaged    from key stakeholder groups",
@@ -293,7 +302,11 @@
                             "academic" : "Academic",
                             "government" : "Government",
                             "indigenous" : "Indigenous peoples",
-                            "private" : "Private sector"
+                            "private" : "Private sector",
+                            "genderFemale": "Female",
+                            "genderMale": "Male",
+                            "genderNonBinary": "Non binary",
+                            "genderPreferNotToSay": "Prefer not to say"
                         }
                     },
                     "managementArea" : {
@@ -374,7 +387,12 @@
                                 "formatNotSupported" : "This format is not supported",
                                 "youCan" : "You can",
                                 "tryAgain" : "try again",
-                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload."
+                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload.",
+                                "condition1" : "zip file containing all necessary shapefile files (or a zip with a folder containing those files)",
+                                "condition2" : "<= 10MB",
+                                "condition3" : "shapefile only -- including all required sidecar files (.shp, .shx, .dbf, .prj)",
+                                "condition4" : "polygon or multipolygon",
+                                "condition5" : "no null, empty, or otherwise invalid geometries"
                             },
                             "imageFile" : {
                                 "title" : "Upload Map Image File",
