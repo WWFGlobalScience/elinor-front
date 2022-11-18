@@ -12,9 +12,8 @@
             }
         }
         @media only screen
-            and (max-device-width: 823px)
-            and (-webkit-min-device-pixel-ratio: 2)
-            and (orientation: landscape) {
+            and (max-height: 750px)
+            and (-webkit-min-device-pixel-ratio: 2) {
             @apply fixed;
             .nav__main{
                 &:not(.nav__main--bottom){
