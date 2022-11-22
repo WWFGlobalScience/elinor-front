@@ -1493,7 +1493,7 @@
         "profile" : {
             "header" : {
                 "title" : "Your account",
-                "subtitle" : "Lorem ipsum dolor sit amet"
+                "subtitle" : "Use this page to update your account"
             },
             "form" : {
                 "legend": "Your data",
@@ -1508,10 +1508,10 @@
                 "title" : "Delete Account",
                 "subtitle" : "What happen when you delete your account",
                 "list" : {
-                    "1" : "Lorem IPsum dolor",
-                    "2" : "Adopiscing consectetur ad elit sed",
-                    "3" : "Lorem IPsum dolor",
-                    "4" : "Adopiscing consectetur ad elit sed"
+                    "1" : "We will contact all your collaborators",
+                    "2" : "If any assessments you completed are related to an organization, we shall notify the organization",
+                    "3" : "You will lose access to all the assessments you have entered in the system",
+                    "4" : "Your account will be removed from the system including all your identifying information"
                 },
                 "confirm" : {
                     "title" : "Delete your Account",
