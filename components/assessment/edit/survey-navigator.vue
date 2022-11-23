@@ -7,20 +7,27 @@
                         <template v-for="(question, index) in getAttributeQuestions(attribute)">
                             <template v-if="!mode || mode === 'list'">
                                 <a role="button"
-                                   class="btn-opacity"
-                                   :class="{ 'is--uncomplete': !isAnswered(question) }"
-                                   v-scroll-to="{
+                                    content='Resource boundaries<strong>Q1 - Boundarie Know by All</strong>'
+                                    v-tippy="{
+                                        arrow : true, 
+                                        arrowType : 'round',
+                                        animation : 'fade',
+                                        theme : 'light',
+                                    }"
+                                    class="btn-opacity"
+                                    :class="{ 'is--uncomplete': !isAnswered(question) }"
+                                    v-scroll-to="{
                                         el: `.question-${question.id}`,
                                         offset: -70
-                                   }">
+                                    }">
                                 </a>
                             </template>
                             <template v-if="mode && mode === 'detail'">
                                 <nuxt-link v-if="isAttributeSelected(attribute)"
-                                           role="button"
-                                           class="btn-opacity"
-                                           :class="{ 'is--uncomplete': !isAnswered(question) }"
-                                           :to="`/assessments/edit/${assessment.id}/the-survey/${question.id}`"
+                                    role="button"
+                                    class="btn-opacity"
+                                    :class="{ 'is--uncomplete': !isAnswered(question) }"
+                                    :to="`/assessments/edit/${assessment.id}/the-survey/${question.id}`"
                                 >
                                 </nuxt-link>
                                 <a v-if="!isAttributeSelected(attribute)"
@@ -47,6 +54,7 @@
         </div>
     </section>
 </template>
+
 
 <script>
 import {mapState} from "vuex";
