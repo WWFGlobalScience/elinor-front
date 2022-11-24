@@ -12,7 +12,7 @@
         min-width: 230px!important;
         &::after {
             content: '';
-            @apply absolute w-[14px] h-[1px] left-[23px] bottom-[-1px] bg-white;
+            @apply absolute w-[16px] h-[2px] left-[22px] bottom-[0px] bg-white;
         }
         .tippy-content {
             @apply text-left;
