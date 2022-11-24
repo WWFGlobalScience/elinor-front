@@ -9,10 +9,11 @@
                                 <a role="button"
                                     :content='getQuestionTooltip(number, attribute, question)'
                                     v-tippy="{
-                                        arrow : true,
+                                        arrow : false,
                                         arrowType : 'round',
                                         animation : 'fade',
                                         theme : 'light',
+                                        placement : 'bottom-start'
                                     }"
                                     class="btn-opacity"
                                     :class="{ 'is--uncomplete': !isAnswered(question) }"

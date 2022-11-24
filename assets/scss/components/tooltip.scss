@@ -7,13 +7,12 @@
 .tippy-tooltip {
     &.light-theme {
         @apply bg-white text-grayy border border-solid border-gray-300 p-[12px] relative;
-        transform: translatex(84px)!important;
-        max-width: 230px!important;
-        min-width: 230px!important;
-        &::after {
-            content: '';
-            @apply absolute w-[16px] h-[2px] left-[22px] bottom-[0px] bg-white;
+        top: 65px!important;
+        
+        .tippy-backdrop{
+            @apply bg-white;
         }
+
         .tippy-content {
             @apply text-left;
             strong{ 
@@ -21,7 +20,6 @@
             }
         }
         .tippy-roundarrow {
-            left: 18px!important;
             fill: white;
             stroke: #ccc;
         }
