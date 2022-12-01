@@ -235,6 +235,11 @@
                                 }}</label>
                         </div>
                     </div>
+                    <div class="form__row form__row--mt-16">
+                        <div class="input">
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.gender.title') }}*</label>
+                        </div>
+                    </div>
                     <div class="form__row ">
                         <div class="input input--multiselect input--1-2 input--flexy">
                             <div class="multiselect__wrap">
@@ -251,7 +256,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.people.genderFemale')
+                                    $t('pages.assessments.edit.tabs.data.gender.female')
                                 }}</label>
                         </div>
                         <div class="input input--multiselect input--1-2 input--flexy">
@@ -269,7 +274,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.people.genderMale')
+                                    $t('pages.assessments.edit.tabs.data.gender.male')
                                 }}</label>
                         </div>
                     </div>
@@ -289,7 +294,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.people.genderNonBinary')
+                                    $t('pages.assessments.edit.tabs.data.gender.nonBinary')
                                 }}</label>
                         </div>
                         <div class="input input--multiselect input--1-2 input--flexy">
@@ -307,7 +312,7 @@
                                 </div>
                             </div>
                             <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.people.genderPreferNotToSay')
+                                    $t('pages.assessments.edit.tabs.data.gender.preferNotToSay')
                                 }}</label>
                         </div>
                     </div>

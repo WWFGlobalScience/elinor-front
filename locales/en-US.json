@@ -244,12 +244,16 @@
                             "government" : "Government",
                             "indigenous" : "Indigenous people",
                             "private" : "Private sector",
-                            "genderFemale": "Female",
-                            "genderMale": "Male",
-                            "genderNonBinary": "Non binary",
-                            "genderPreferNotToSay": "Prefer not to say",
                             "user" : "User group",
                             "total" : "total consulted"
+                        },
+                        "gender": {
+                            "title" : "8. Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonBinary": "Non binary",
+                            "preferNotToSay": "Prefer not to say",
+                            "total" : "total by gender"
                         }
                     },
                     "survey" : {
@@ -302,11 +306,14 @@
                             "academic" : "Academic",
                             "government" : "Government",
                             "indigenous" : "Indigenous peoples",
-                            "private" : "Private sector",
-                            "genderFemale": "Female",
-                            "genderMale": "Male",
-                            "genderNonBinary": "Non binary",
-                            "genderPreferNotToSay": "Prefer not to say"
+                            "private" : "Private sector"
+                        },
+                        "gender": {
+                            "title" : "Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonBinary": "Non binary",
+                            "preferNotToSay": "Prefer not to say"
                         }
                     },
                     "managementArea" : {
