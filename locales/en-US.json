@@ -212,6 +212,9 @@
                         "tabButton" : "Info",
                         "title" : "View Assessment",
                         "managementPlanFileTitle" : "Management plan document",
+                        "buttons": {
+                            "managementPlanFile" : "Download"
+                        },
                         "labels" : {
                             "managementAreaName" : "Name of Managment Area",
                             "protectedArea" : "Name of larger PA/CA this focal area is contained within",
