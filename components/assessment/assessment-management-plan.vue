@@ -9,8 +9,12 @@
                 <div class="elinor__data-list">
                     <ul class="elinor__data-grid elinor__data-grid--3-5">
                         <li class="elinor__data elinor__data--full">
-                            <span class="title">{{ $t('pages.assessments.view.tabs.info.labels.managementPlanFile') }}</span>
-                            <span class="data"><a target="_blank" :href="assessment.management_plan_file">{{ assessment.management_plan_file }}</a></span>
+                            <span class="data" style="width: 130px">
+                                <a target="_blank" class="btn btn--border-turqy btn--sm ml-auto" :href="assessment.management_plan_file">
+                                    <img src='~/assets/img/ico-download.svg' alt="Download"/>
+                                    <span class="btn--opacity__target">{{ $t('pages.assessments.view.tabs.info.buttons.managementPlanFile') }}</span>
+                                </a>
+                            </span>
                         </li>
                     </ul>
                 </div>

@@ -235,6 +235,87 @@
                                 }}</label>
                         </div>
                     </div>
+                    <div class="form__row form__row--mt-16">
+                        <div class="input">
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.gender.title') }}*</label>
+                        </div>
+                    </div>
+                    <div class="form__row ">
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_gender_female" class="input__dummy"
+                                       :value="assessment.count_gender_female">
+                                <multiselect placeholder="" :value="assessment.count_gender_female" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_gender_female', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.edit.tabs.data.gender.female')
+                                }}</label>
+                        </div>
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_gender_male" class="input__dummy"
+                                       :value="assessment.count_gender_male">
+                                <multiselect placeholder="" :value="assessment.count_gender_male" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_gender_male', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.edit.tabs.data.gender.male')
+                                }}</label>
+                        </div>
+                    </div>
+                    <div class="form__row ">
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_gender_nonbinary" class="input__dummy"
+                                       :value="assessment.count_gender_nonbinary">
+                                <multiselect placeholder="" :value="assessment.count_gender_nonbinary" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_gender_nonbinary', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.edit.tabs.data.gender.nonBinary')
+                                }}</label>
+                        </div>
+                        <div class="input input--multiselect input--1-2 input--flexy">
+                            <div class="multiselect__wrap">
+                                <input type="hidden" name="count_gender_prefer_not_say" class="input__dummy"
+                                       :value="assessment.count_gender_prefer_not_say">
+                                <multiselect placeholder="" :value="assessment.count_gender_prefer_not_say" :options="counts"
+                                             :multiple="false" :searchable="true" :showLabels="false"
+                                             :allow-empty="false" open-direction="bottom"
+                                             @input="save('count_gender_prefer_not_say', $event)">
+                                    <span slot="noResult">{{ $t('default.noresults') }}</span>
+                                </multiselect>
+                                <div class="multiselect__caret">
+                                    <img src="~/assets/img/ico-select-turqy.svg">
+                                </div>
+                            </div>
+                            <label class="label">{{
+                                    $t('pages.assessments.edit.tabs.data.gender.preferNotToSay')
+                                }}</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="container">
                     <div class="form__row form__row--separator form__row--separator--16"></div>
@@ -297,10 +378,10 @@
                 <div class="container--sm">
                     <div class="form__row form__row--mt-16">
                         <div class="input input--file">
-                            <label class="label">{{
-                                    $t('pages.assessments.edit.tabs.data.labels.managementPlan')
-                                }}</label>
-
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.managementPlan.title') }}</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.managementPlan.maxSize') }}</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.managementPlan.maxUploadTime') }}</label>
+                            <label class="label">{{ $t('pages.assessments.edit.tabs.data.labels.managementPlan.anyFile') }}</label>
 
                             <div v-if="assessment" class="file">
                                 <dropzone id="management_plan"

@@ -3,3 +3,25 @@
         @apply bg-turqy;
     }
 }
+
+.tippy-tooltip {
+    &.light-theme {
+        @apply bg-white text-grayy border border-solid border-gray-300 p-[12px] relative;
+        top: 65px!important;
+        
+        .tippy-backdrop{
+            @apply bg-white;
+        }
+
+        .tippy-content {
+            @apply text-left;
+            strong{ 
+                @apply block text-turqy;
+            }
+        }
+        .tippy-roundarrow {
+            fill: white;
+            stroke: #ccc;
+        }
+    }
+}

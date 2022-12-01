@@ -212,6 +212,9 @@
                         "tabButton" : "Info",
                         "title" : "View Assessment",
                         "managementPlanFileTitle" : "Management plan document",
+                        "buttons": {
+                            "managementPlanFile" : "Download"
+                        },
                         "labels" : {
                             "managementAreaName" : "Name of Managment Area",
                             "protectedArea" : "Name of larger PA/CA this focal area is contained within",
@@ -237,7 +240,7 @@
                             "subtitle" : "Geospatial information"
                         },
                         "people" : {
-                            "title" : "7. Number of people engaged    from key stakeholder groups",
+                            "title" : "7. Number of people engaged from key stakeholder groups",
                             "community" : "Local community",
                             "ngo" : "NGO",
                             "academic" : "Academic",
@@ -246,6 +249,14 @@
                             "private" : "Private sector",
                             "user" : "User group",
                             "total" : "total consulted"
+                        },
+                        "gender": {
+                            "title" : "8. Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonBinary": "Non binary",
+                            "preferNotToSay": "Prefer not to say",
+                            "total" : "total by gender"
                         }
                     },
                     "survey" : {
@@ -283,7 +294,12 @@
                             "collectionMethodsText" : "Rationale for assessment (e.g. annual monitoring, project baseline)",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
-                            "managementPlan" : "Upload a Management Plan File"
+                            "managementPlan" : {
+                                "title": "Upload a Management Plan File",
+                                "maxSize": "max size: 100M",
+                                "maxUploadTime": "max upload time: 5 mins (so don't attempt large uploads on slow connection)",
+                                "anyFile": "can be any file"
+                            }
                         },
                         "people" : {
                             "title" : "Number of people engaged    from key stakeholder groups",
@@ -294,6 +310,13 @@
                             "government" : "Government",
                             "indigenous" : "Indigenous peoples",
                             "private" : "Private sector"
+                        },
+                        "gender": {
+                            "title" : "Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonBinary": "Non binary",
+                            "preferNotToSay": "Prefer not to say"
                         }
                     },
                     "managementArea" : {
@@ -374,7 +397,12 @@
                                 "formatNotSupported" : "This format is not supported",
                                 "youCan" : "You can",
                                 "tryAgain" : "try again",
-                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. If you do not have the correct file type, please convert first before you upload."
+                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. If you do not have the correct file type, please convert first before you upload.",
+                                "condition1" : "zip file containing all necessary shapefile files (or a zip with a folder containing those files)",
+                                "condition2" : "<= 10MB",
+                                "condition3" : "shapefile only -- including all required sidecar files (.shp, .shx, .dbf, .prj)",
+                                "condition4" : "polygon or multipolygon",
+                                "condition5" : "no null, empty, or otherwise invalid geometries"
                             },
                             "imageFile" : {
                                 "title" : "Upload Map Image File",
@@ -1089,6 +1117,18 @@
             }
         },
         "faqs" : {
+            "home": {
+                "meta": {
+                    "title": "FAQs",
+                    "slug": "/faq",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "header" : {
                 "title" : "FAQs"
             },
@@ -1463,7 +1503,7 @@
         "profile" : {
             "header" : {
                 "title" : "Your account",
-                "subtitle" : "Lorem ipsum dolor sit amet"
+                "subtitle" : "Use this page to update your account"
             },
             "form" : {
                 "legend": "Your data",
@@ -1478,10 +1518,10 @@
                 "title" : "Delete Account",
                 "subtitle" : "What happen when you delete your account",
                 "list" : {
-                    "1" : "Lorem IPsum dolor",
-                    "2" : "Adopiscing consectetur ad elit sed",
-                    "3" : "Lorem IPsum dolor",
-                    "4" : "Adopiscing consectetur ad elit sed"
+                    "1" : "We will contact all your collaborators",
+                    "2" : "If any assessments you completed are related to an organization, we shall notify the organization",
+                    "3" : "You will lose access to all the assessments you have entered in the system",
+                    "4" : "Your account will be removed from the system including all your identifying information"
                 },
                 "confirm" : {
                     "title" : "Delete your Account",

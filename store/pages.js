@@ -40,7 +40,7 @@ export const state = () => ({
                 turqy: require('~/assets/img/ico-assessments-turqy.svg')
             },
             seo: {
-                title: 'pages.assessments.meta,seo.title',
+                title: 'pages.assessments.meta.seo.title',
                 description: 'pages.assessments.meta.seo.description',
                 keywords: 'pages.assessments.meta.seo.keywords',
                 og_image: 'pages.assessments.meta.seo.og_image',
@@ -63,7 +63,7 @@ export const state = () => ({
                 turqy: require('~/assets/img/ico-documentation-turqy.svg')
             },
             seo: {
-                title: 'pages.about.meta,seo.title',
+                title: 'pages.about.meta.seo.title',
                 description: 'pages.about.meta.seo.description',
                 keywords: 'pages.about.meta.seo.keywords',
                 og_image: 'pages.about.meta.seo.og_image',
@@ -86,7 +86,7 @@ export const state = () => ({
                 turqy: require('~/assets/img/ico-documentation-turqy.svg')
             },
             seo: {
-                title: 'pages.collaboration.meta,seo.title',
+                title: 'pages.collaboration.meta.seo.title',
                 description: 'pages.collaboration.meta.seo.description',
                 keywords: 'pages.collaboration.meta.seo.keywords',
                 og_image: 'pages.collaboration.meta.seo.og_image',
@@ -109,7 +109,7 @@ export const state = () => ({
                 turqy: require('~/assets/img/ico-news-turqy.svg')
             },
             seo: {
-                title: 'pages.news.meta,seo.title',
+                title: 'pages.news.meta.seo.title',
                 description: 'pages.news.meta.seo.description',
                 keywords: 'pages.news.meta.seo.keywords',
                 og_image: 'pages.news.meta.seo.og_image',
@@ -132,10 +132,33 @@ export const state = () => ({
                 turqy: require('~/assets/img/ico-documentation-turqy.svg')
             },
             seo: {
-                title: 'pages.documentation.meta,seo.title',
+                title: 'pages.documentation.meta.seo.title',
                 description: 'pages.documentation.meta.seo.description',
                 keywords: 'pages.documentation.meta.seo.keywords',
                 og_image: 'pages.documentation.meta.seo.og_image',
+            }
+        },
+        {
+            path: '/faq',
+            config: {
+                display: {
+                    sidebar: true,
+                    auth: null,
+                    header: 'page'
+                }
+            },
+            title: 'pages.faqs.home.meta.title',
+            slug: 'pages.faqs.home.meta.slug',
+            icons: {
+                gray: require('~/assets/img/ico-documentation-gray.svg'),
+                white: require('~/assets/img/ico-documentation-white.svg'),
+                turqy: require('~/assets/img/ico-documentation-turqy.svg')
+            },
+            seo: {
+                title: 'pages.faqs.meta.seo.title',
+                description: 'pages.faqs.meta.seo.description',
+                keywords: 'pages.faqs.meta.seo.keywords',
+                og_image: 'pages.faqs.meta.seo.og_image',
             }
         },
         {
@@ -155,7 +178,7 @@ export const state = () => ({
                 turqy: require('~/assets/img/ico-documentation-turqy.svg')
             },
             seo: {
-                title: 'pages.contact.meta,seo.title',
+                title: 'pages.contact.meta.seo.title',
                 description: 'pages.contact.meta.seo.description',
                 keywords: 'pages.contact.meta.seo.keywords',
                 og_image: 'pages.contact.meta.seo.og_image',

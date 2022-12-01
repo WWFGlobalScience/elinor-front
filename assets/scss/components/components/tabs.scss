@@ -6,10 +6,10 @@
     }
 
     .btn--tab{
-        @apply md:flex-col md:justify-center md:p-3;
+        @apply lg:flex-col lg:justify-center lg:p-3;
 
         .bullet{
-            @apply md:mb-2;
+            @apply lg:mb-2;
         }
     }
 }

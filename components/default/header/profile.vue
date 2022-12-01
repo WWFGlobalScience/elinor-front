@@ -1,6 +1,7 @@
 <template>
-    <ul v-if="$auth.loggedIn">
 
+    <ul v-if="$auth.loggedIn">
+        <default-language-selector />
         <div class="elinor__dropdown">
             <div class="elinor__dropdown-toggle">
                 <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
@@ -33,6 +34,7 @@
                 class="center-v w-12 btn--opacity__target"
             />
         </li>
+
     </ul>
 </template>
 
@@ -58,6 +60,6 @@ export default {
             toggleDropdown: "dropdown/toggleDropdown",
             logout: "authentication/logout",
         }),
-    },
+    }
 };
 </script>

@@ -24,18 +24,6 @@
                         </NuxtLink>
                     </li>
                 </ul>
-                <div class="lang-dropdown">
-                    <select @change="onLanguageChange">
-                        <option
-                            v-for="lang in $i18n.locales"
-                            :key="lang.code"
-                            :value="lang.code"
-                            :selected="lang.code === $i18n.locale"
-                        >
-                            {{ lang.name }}
-                        </option>
-                    </select>
-                </div>
                 <img @click="home" style="cursor: pointer" class="nav__main__bottom-brand" src="~/assets/img/elinor-sidebar-circle.svg" alt="elinor-sidebar-circle" />
             </nav>
             <div class="nav__main nav__main--bottom">
@@ -95,13 +83,6 @@
                         return this.$route.fullPath.indexOf(slug) !== -1;
                     }
                 }
-            },
-            onLanguageChange(e) {
-                this.$i18n.setLocale(e.target.value)
-                const locale = this.$i18n.locales.find(i => i.code !== this.$i18n.locale);
-                this.$axios.setHeader('Accept-Language', locale.iso);
-                this.$store.dispatch('attributes/fetchAttributes');
-                this.$store.dispatch('surveyquestions/fetchSurveyQuestions');
             }
         }
     }

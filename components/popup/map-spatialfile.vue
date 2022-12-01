@@ -120,11 +120,19 @@
                 </form>
             </div>
             <div class="right">
-                <div
-                    v-if="!fileAdded || progress < 100 || importFileError"
-                    class="description"
-                    v-html="$t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.help')"
-                ></div>
+                <template v-if="!fileAdded || progress < 100 || importFileError">
+                    <div class="description">
+                        <div v-html="$t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.help')" />
+                        <ul class="list-disc list-inside mt-10" v-if="!fileAdded || progress < 100 || importFileError">
+                            <li>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.condition1') }}</li>
+                            <li>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.condition2') }}</li>
+                            <li>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.condition3') }}</li>
+                            <li>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.condition4') }}</li>
+                            <li>{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.condition5') }}</li>
+                        </ul>
+                    </div>
+                </template>
+                </div>
                 <!--STEP 3 - SUCCESS -->
                 <div id="popup-map" v-show="fileAdded && progress === 100 && !importFileError" class="popup__map-img" style="top: 10rem !important;"></div>
                 <!--//STEP 3 - SUCCESS-->

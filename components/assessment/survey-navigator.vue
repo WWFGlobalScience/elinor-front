@@ -4,8 +4,15 @@
             <div class="elinor__survey-progress">
                 <ul class="elinor__survey-dots">
                     <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
-                        <template v-for="(question, index) in getAttributeQuestions(attribute)">
+                        <template v-for="(question, number) in getAttributeQuestions(attribute)">
                             <a role="button"
+                               :content='getQuestionTooltip(number, attribute, question)'
+                               v-tippy="{
+                                        arrow : true,
+                                        arrowType : 'round',
+                                        animation : 'fade',
+                                        theme : 'light',
+                                    }"
                                class="btn-opacity"
                                :class="{ 'is--uncomplete': !isAnswered(question) }"
                                v-scroll-to="{
@@ -70,6 +77,9 @@ export default {
             if (questionId) {
                 return this.questions.filter(question => question.id === parseInt(questionId) && question.attribute === attribute.id).length !== 0;
             }
+        },
+        getQuestionTooltip(number, attribute, question) {
+            return `${attribute.name}<strong>Q${number + 1} - ${question.text}</strong>`;
         }
     }
 }

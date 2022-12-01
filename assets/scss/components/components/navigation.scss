@@ -59,9 +59,9 @@
 
 //survey progress
 .elinor__survey-progress {
-    @apply flex justify-between items-center border-b border-grayy-border py-10 sm:w-90 sm:overflow-auto;
+    @apply flex justify-between items-center border-b border-grayy-border py-10 sm:w-[94vw] lg:w-[84vw] w-[86vw] overflow-auto;
     .elinor__survey-dots {
-        @apply flex justify-between sm:mx-1 h-8 w-full;
+        @apply flex justify-between sm:mx-1 h-8;
 
         &:not(:last-child) {
             @apply mr-4;

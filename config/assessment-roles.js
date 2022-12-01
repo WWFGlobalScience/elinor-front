@@ -17,7 +17,7 @@ export const isAssessmentObserver = (auth, assessment) => {
 }
 
 export const isAssessmentCollaborator = (auth, assessment) => {
-    return findAssessmentCollaboratorUser(auth.user, assessment) !== undefined;
+    return auth.user && findAssessmentCollaboratorUser(auth.user, assessment) !== undefined;
 }
 
 export const findAssessmentCollaboratorUser = (user, assessment) => {

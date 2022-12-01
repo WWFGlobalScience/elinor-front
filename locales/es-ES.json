@@ -212,6 +212,9 @@
                         "tabButton" : "Info",
                         "title" : "View Assessment",
                         "managementPlanFileTitle" : "Management plan document",
+                        "buttons": {
+                            "managementPlanFile" : "Download"
+                        },
                         "labels" : {
                             "managementAreaName" : "Name of Managment Area",
                             "protectedArea" : "Name of larger PA/CA this focal area is contained within",
@@ -237,7 +240,7 @@
                             "subtitle" : "Geospatial information"
                         },
                         "people" : {
-                            "title" : "7. Number of people engaged    from key stakeholder groups",
+                            "title" : "7. Number of people engaged from key stakeholder groups",
                             "community" : "Local community",
                             "ngo" : "NGO",
                             "academic" : "Academic",
@@ -246,6 +249,14 @@
                             "private" : "Private sector",
                             "user" : "User group",
                             "total" : "total consulted"
+                        },
+                        "gender": {
+                            "title" : "8. Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonBinary": "Non binary",
+                            "preferNotToSay": "Prefer not to say",
+                            "total" : "total by gender"
                         }
                     },
                     "survey" : {
@@ -280,10 +291,15 @@
                             "organization" : "Name of institution associated with this assessment",
                             "personResponsibleRole" : "Role of the person responsible for completing this Assessment",
                             "collectionMethods" : "How was the information in this assessment gathered?",
-                            "collectionMethodsText" : "Please elaborate on how the data were collected and the people/groups whose perspectives are represented in this assessment",
+                            "collectionMethodsText" : "Rationale for assessment (e.g. annual monitoring, project baseline)",
                             "consentGiven" : "Has someone in the governance authority provided his or her consent for this assessment to take place?",
                             "consentGivenWritten" : "Has the governance authority provided written consent?",
-                            "managementPlan" : "Upload a Management Plan File"
+                            "managementPlan" : {
+                                "title": "Upload a Management Plan File",
+                                "maxSize": "max size: 100M",
+                                "maxUploadTime": "max upload time: 5 mins (so don't attempt large uploads on slow connection)",
+                                "anyFile": "can be any file"
+                            }
                         },
                         "people" : {
                             "title" : "Number of people engaged    from key stakeholder groups",
@@ -294,6 +310,13 @@
                             "government" : "Government",
                             "indigenous" : "Indigenous peoples",
                             "private" : "Private sector"
+                        },
+                        "gender": {
+                            "title" : "Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonBinary": "Non binary",
+                            "preferNotToSay": "Prefer not to say"
                         }
                     },
                     "managementArea" : {
@@ -360,7 +383,7 @@
                             "indicateBoundaries" : "Indicate the boundaries of the Managed Area",
                             "spatialFile" : "Upload spatial area file",
                             "preferredMethod" : "PREFERRED METHOD",
-                            "preferredMethodText" : "Upload a spatial file in Shapefile format or GeoJSON",
+                            "preferredMethodText" : "Upload a spatial file in Shapefile format",
                             "spatialFileAndMapImageSeparator" : "OR",
                             "imageFile" : "Upload map image"
                         },
@@ -374,7 +397,12 @@
                                 "formatNotSupported" : "This format is not supported",
                                 "youCan" : "You can",
                                 "tryAgain" : "try again",
-                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. You may also uplaod a GeoJSON format file. If you do not have the correct file type, please convert first before you upload."
+                                "help" : "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. If you do not have the correct file type, please convert first before you upload.",
+                                "condition1" : "zip file containing all necessary shapefile files (or a zip with a folder containing those files)",
+                                "condition2" : "<= 10MB",
+                                "condition3" : "shapefile only -- including all required sidecar files (.shp, .shx, .dbf, .prj)",
+                                "condition4" : "polygon or multipolygon",
+                                "condition5" : "no null, empty, or otherwise invalid geometries"
                             },
                             "imageFile" : {
                                 "title" : "Upload Map Image File",
@@ -382,7 +410,7 @@
                                 "gpsCoordinatesTitle" : "Indicate GPS coordinates",
                                 "gpsCoordinatesExample" : "Latitude , Longitude<br>(e.g 40.741895,-73.989308)",
                                 "dragMapIcon" : "You can Drag the icon in the map to select the coordinates",
-                                "help" : "<h4>What file to upload?</h4>If you do not have a shapefile or GeoJSON format file but have an image map of the managed area you may upload it here and it will be processed manually. "
+                                "help" : "<h4>What file to upload?</h4>If you do not have a shapefile but have an image map of the managed area you may upload it here and it will be processed manually. "
                             }
                         }
                     },
@@ -585,9 +613,9 @@
                                     "guidance" : "Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offensePenalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.Are there different penalties depending on the size/scale of the infraction?Few is approximately < 50%Some is approximately = 50%Most is approximately > 50%",
                                     "answers" : {
                                         "1" : "Penalties are fixed and do not change with the nature, severity or frequency of the infraction",
-                                        "2" : "Some penalties increase with the nature, severity of frequency of the infraction",
-                                        "3" : "Most penalties increase with the nature, severity of frequency of the infraction",
-                                        "4" : "All penalties increase with the nature, severity of frequency of the infraction",
+                                        "2" : "Some penalties increase with the nature, severity and frequency of the infraction",
+                                        "3" : "Most penalties increase with the nature, severity and frequency of the infraction",
+                                        "4" : "All penalties increase with the nature, severity and frequency of the infraction",
                                         "5" : "Don't know"
                                     }
                                 },
@@ -973,11 +1001,8 @@
                 "60" : "Community leaders or representatives"
             },
             "collectionMethods" : {
-                "10" : "Through knowledge of the person(s) responsible for filling out assessment",
-                "20" : "Through knowledge of the person(s) responsible for filling our assessment and acquired external input from informal conversations and secondary documents",
-                "30" : "Through semi-structured interviews and focus group",
-                "40" : "A combination of the above",
-                "50" : "Other (please provide details below)"
+                "10" : "Desk-based assessment",
+                "30" : "Facilitated focus group discussion"
             },
             "popup" : {
                 "title" : "How to create an Assessment",
@@ -1092,6 +1117,18 @@
             }
         },
         "faqs" : {
+            "home": {
+                "meta": {
+                    "title": "FAQs",
+                    "slug": "/faq",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "header" : {
                 "title" : "FAQs"
             },
@@ -1278,7 +1315,7 @@
                     }
                 }
             },
-            "title" : "Principios de colaboración and Citation Guidelines",
+            "title" : "Principles of Collaboration and Citation Guidelines",
             "intro": {
                 "title": "Principles to guide transparent and collaborative data sharing",
                 "paragraph1": "The Elinor tool and data system helps users track management and governance status over time. It also provides the opportunity for sharing data on management and governance between users, which can in the long term, foster more transparency in management and governance and improve area-based conservation efforts.",
@@ -1466,7 +1503,7 @@
         "profile" : {
             "header" : {
                 "title" : "Your account",
-                "subtitle" : "Lorem ipsum dolor sit amet"
+                "subtitle" : "Use this page to update your account"
             },
             "form" : {
                 "legend": "Your data",
@@ -1481,10 +1518,10 @@
                 "title" : "Delete Account",
                 "subtitle" : "What happen when you delete your account",
                 "list" : {
-                    "1" : "Lorem IPsum dolor",
-                    "2" : "Adopiscing consectetur ad elit sed",
-                    "3" : "Lorem IPsum dolor",
-                    "4" : "Adopiscing consectetur ad elit sed"
+                    "1" : "We will contact all your collaborators",
+                    "2" : "If any assessments you completed are related to an organization, we shall notify the organization",
+                    "3" : "You will lose access to all the assessments you have entered in the system",
+                    "4" : "Your account will be removed from the system including all your identifying information"
                 },
                 "confirm" : {
                     "title" : "Delete your Account",

@@ -44,7 +44,7 @@
                 <li class="elinor__tab--end" v-if="!progress.published">
                     <nuxt-link :to="`/assessments/edit/${id}/publish-settings`"
                                :class="[ 'btn--tab btn--tab-percent', { 'btn--error': progress.overall_percentage < 100, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
-                        <span class="bullet">{{ Math.floor(progress.overall_percentage) }}%</span>
+                        <span class="bullet">{{ getPublishPercentage() }}%</span>
                         <span class="txt">{{ getPublishTabText() }}</span>
                     </nuxt-link>
                 </li>
@@ -64,7 +64,7 @@ export default {
             const status = this.assessment.status;
             const percentage = this.progress.overall_percentage;
             let key;
-            if(percentage < 100) {
+            if(isNaN(percentage) || percentage < 100) {
                 key = 'preparing';
             }
             if(percentage === 100 && status === 90) {
@@ -76,6 +76,9 @@ export default {
             }
 
             return this.$t('pages.assessments.edit.tabs.publish-settings.tabButton.' + key);
+        },
+        getPublishPercentage() {
+            return isNaN(this.progress.overall_percentage) ? 0 : Math.floor(this.progress.overall_percentage)
         }
     },
     computed: {

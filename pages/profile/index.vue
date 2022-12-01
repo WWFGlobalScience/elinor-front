@@ -71,7 +71,7 @@
                     </form>
                 </div>
 
-                <div class="content mt-20">
+                <div v-if="false" class="content mt-20">
                     <div class="title-border">
                         <h3 class="title">{{ $t('pages.profile.delete.title') }}</h3>
                     </div>
@@ -105,7 +105,6 @@
                             {{ $t('pages.profile.delete.confirm.message.text') }}
                         </p>
                     </div>
-
                 </div>
             </div>
         </div>

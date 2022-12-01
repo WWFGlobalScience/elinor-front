@@ -53,13 +53,13 @@ export default {
                 {
                     code: 'en',
                     iso: 'en-US',
-                    name: 'English',
+                    name: 'EN',
                     file: 'en-US.json'
                 },
                 {
                     code: 'es',
                     iso: 'es-ES',
-                    name: 'Español',
+                    name: 'ES',
                     file: 'es-ES.json'
                 }
             ]

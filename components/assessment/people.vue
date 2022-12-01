@@ -24,6 +24,26 @@
         <li class="elinor__people-data">
             <span>{{ total }}</span> {{ $t('pages.assessments.view.tabs.info.people.total') }}
         </li>
+        <li class="elinor__people-data"> </li>
+        <li class="elinor__people-data"> </li>
+        <li class="elinor__people-header">
+            {{ $t('pages.assessments.view.tabs.info.gender.title') }}
+        </li>
+        <li class="elinor__people-data">
+            <span>{{ assessment.count_gender_female }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+        </li>
+        <li class="elinor__people-data">
+            <span>{{ assessment.count_gender_male }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+        </li>
+        <li class="elinor__people-data">
+            <span>{{ assessment.count_gender_nonbinary }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+        </li>
+        <li class="elinor__people-data">
+            <span>{{ assessment.count_gender_prefer_not_say }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+        </li>
+        <li class="elinor__people-data">
+            <span>{{ totalGender }}</span> {{ $t('pages.assessments.view.tabs.info.gender.total') }}
+        </li>
     </ul>
 </template>
 
@@ -37,6 +57,9 @@ export default {
         }),
         total() {
             return this.assessment.count_community + this.assessment.count_academic + this.assessment.count_government + this.assessment.count_private + this.assessment.count_indigenous;
+        },
+        totalGender() {
+            return this.assessment.count_gender_female + this.assessment.count_gender_male + this.assessment.count_gender_nonbinary + this.assessment.count_gender_prefer_not_say;
         }
     }
 }
