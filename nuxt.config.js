@@ -104,7 +104,7 @@ export default {
         }
     },
     axios: {
-        baseUrl: 'https://api.elinordata.org/'
+        baseUrl: 'https://dev-api.elinordata.org/'
     },
     router: {
         middleware: ['auth', 'onload'],

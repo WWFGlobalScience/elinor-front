@@ -45,6 +45,10 @@ main {
     @apply grid grid-cols-2 gap-4 lg:grid-cols-1;
 }
 
+.g-grid--2-1-lg-0{
+    @apply grid grid-cols-2 lg:grid-cols-1;
+}
+
 .g-grid--2-1-sm {
     @apply grid grid-cols-2 gap-4 lg:grid-cols-1;
 }
