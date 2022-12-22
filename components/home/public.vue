@@ -19,18 +19,20 @@
               <NuxtLink to="/create-account" class="text-turqy text-sm">{{ $t('pages.home.public.createAccountLink') }}</NuxtLink>
             </p>
             <p class="mb-0 text-grayy-lighter" v-if="alerts.emailVerificationRequired || alerts.emailVerificationSent">
-              <a class="text-turqy text-sm">{{ $t('pages.home.public.resentVerificationLink') }}</a>
+                {{ $t('pages.home.public.signInTitleAndCreateAccountSeparator') }}
+                <NuxtLink to="/resend-verification-email" class="text-turqy text-sm">{{ $t('pages.home.public.resendVerificationLink') }}</NuxtLink>
             </p>
           </div>
         </div>
 
         <p class="text-base">{{ $t('pages.home.public.signInSubtitle') }}</p>
 
-        <div v-if="alerts.invalidCredentials"
-             class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">{{ $t('pages.home.public.alerts.invalidCredentials.title') }}</strong>
-          <span class="block sm:inline">{{ $t('pages.home.public.alerts.invalidCredentials.subtitle') }}</span>
-        </div>
+          <div v-if="error"
+               class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">Error!</strong>
+              <span class="block sm:inline">{{ error }}</span>
+
+          </div>
 
         <div v-if="alerts.emailVerificationRequired"
              class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -260,21 +262,21 @@ export default {
   },
   computed: {
     ...mapState({
-      alerts: state => state.authentication.alerts
+      alerts: state => state.authentication.alerts,
+      error: state => state.authentication.error
     })
   },
-  methods: {
+    mounted() {
+      this.$store.commit('authentication/clearError');
+    },
+    methods: {
     ...mapActions({
       signIn: 'authentication/signIn',
-      resendEmail: 'authentication/resendEmail'
     }),
     submit(event) {
       event.preventDefault();
       this.signIn({username: this.username, password: this.password});
     },
-    resend() {
-      this.resendEmail(this.email)
-    }
   }
 }
 </script>

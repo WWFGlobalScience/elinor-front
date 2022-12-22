@@ -25,7 +25,7 @@
                 "signInSubtitle" : "Use your username or email and password to access Elinor",
                 "signInTitleAndCreateAccountSeparator" : " or ",
                 "createAccountLink" : "create account",
-                "resentVerificationLink" : "Resend",
+                "resendVerificationLink" : "Resend",
                 "usernameInput" : "Username or Email",
                 "passwordInput" : "Password",
                 "rememberMeCheckbox" : "Remember me",
@@ -132,6 +132,19 @@
                     "forgotPasswordEmailSent" : {
                         "title" : "Forgot password email sent!",
                         "subtitle" : "Check your email for password reset link"
+                    }
+                }
+            },
+            "resendVerificationEmail" : {
+                "title" : "RESEND VERIFICATION EMAIL",
+                "subtitle" : "Enter your email to receive a new email verification",
+                "emailInput" : "Email",
+                "sendEmailButton" : "Send Email",
+                "tryAgainButton" : "Try Again",
+                "alerts" : {
+                    "resendVerificationEmailSent" : {
+                        "title" : "Verification email sent!",
+                        "subtitle" : "Check your email for verification link"
                     }
                 }
             },

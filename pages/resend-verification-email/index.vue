@@ -10,35 +10,39 @@
         </NuxtLink>
         <div class="elinor__card--sign-in__info">
           <div>
-            <p class="text-xl mb-1.5">{{ $t('pages.auth.forgotPassword.title') }}</p>
+            <p class="text-xl mb-1.5">{{ $t('pages.auth.resendVerificationEmail.title') }}</p>
           </div>
         </div>
 
-        <p class="text-base">{{ $t('pages.auth.forgotPassword.subtitle') }}</p>
+        <p class="text-base">{{ $t('pages.auth.resendVerificationEmail.subtitle') }}</p>
+          <div v-if="error"
+               class="bg-red-100 mt-5 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">{{ error }}</strong>
+          </div>
 
-        <div v-if="alerts.forgotPasswordEmailSent"
+        <div v-if="alerts.resendVerificationEmailSent"
              class="bg-green-100 mt-10 border border-green-400 text-white-700 px-4 py-3 rounded relative" role="alert">
           <strong class="font-bold">{{ $t('pages.auth.forgotPassword.alerts.forgotPasswordEmailSent.title') }}</strong>
           <span class="block sm:inline">{{ $t('pages.auth.forgotPassword.alerts.forgotPasswordEmailSent.subtitle') }}</span>
         </div>
 
         <form id="form--signin" class="form form--sign-in" @submit="submit">
-          <div v-if="!alerts.forgotPasswordEmailSent" class="form__group">
+          <div v-if="!alerts.resendVerificationEmailSent" class="form__group">
             <div class="form__row">
               <div class="input">
-                <input type="email" :placeholder="$t('pages.auth.forgotPassword.emailInput')" v-model="email" required/>
+                <input type="email" :placeholder="$t('pages.auth.resendVerificationEmail.emailInput')" v-model="email" required/>
               </div>
             </div>
           </div>
 
           <div class="elinor__card--sign-in__info mt-9">
             <div>
-              <button v-if="!alerts.forgotPasswordEmailSent" type="submit" class="btn--border-turqy btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t('pages.auth.forgotPassword.sendEmailButton') }}</span>
+              <button v-if="!alerts.resendVerificationEmailSent" type="submit" class="btn--border-turqy btn--opacity--child">
+                <span class="btn--opacity__target">{{ $t('pages.auth.resendVerificationEmail.sendEmailButton') }}</span>
                 <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
-              <button v-if="alerts.forgotPasswordEmailSent" @click.prevent.stop="reset" type="button" class="btn--border-turqy btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t('pages.auth.forgotPassword.tryAgainButton') }}</span>
+              <button v-if="alerts.resendVerificationEmailSent" @click.prevent.stop="reset" type="button" class="btn--border-turqy btn--opacity--child">
+                <span class="btn--opacity__target">{{ $t('pages.auth.resendVerificationEmail.tryAgainButton') }}</span>
                 <img src="~/assets/img/ico-signin-turqy.svg"/>
               </button>
             </div>
@@ -53,7 +57,7 @@
 import {mapActions, mapState} from "vuex";
 
 export default {
-  name: 'forgot-password',
+  name: 'resend-verification-email',
   auth: 'guest',
   data() {
     return {
@@ -62,7 +66,8 @@ export default {
   },
     computed: {
     ...mapState({
-      alerts: state => state.authentication.alerts
+      alerts: state => state.authentication.alerts,
+      error: state => state.authentication.error
     })
   },
     mounted() {
@@ -70,16 +75,12 @@ export default {
     },
   methods: {
     ...mapActions({
-      forgotPassword: 'authentication/forgotPassword',
-      resetForgotPassword: 'authentication/resetForgotPassword'
+        resendEmail: 'authentication/resendEmail'
     }),
     submit(event) {
       event.preventDefault();
-      this.forgotPassword(this.email);
+      this.resendEmail(this.email);
     },
-      reset() {
-        this.resetForgotPassword();
-      }
   }
 }
 </script>

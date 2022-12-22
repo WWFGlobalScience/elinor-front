@@ -146,6 +146,9 @@ export default {
             error: state => state.authentication.error
         })
     },
+    mounted() {
+        this.$store.commit('authentication/clearError');
+    },
     methods: {
         ...mapActions({
             signUp: 'authentication/signUp'
