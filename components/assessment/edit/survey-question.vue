@@ -44,7 +44,7 @@
                         </header>
                         <form class="form" refs="editAssessmentSurvey">
                             <div class="form__group">
-                                <div v-for="(choice, index) in [50,40,30,20,10]" class="form__row">
+                                <div v-for="(choice, index) in [3,2,1,0]" class="form__row">
                                     <div class="input input--radios input--radios-question">
                                         <div class="radios__wrap">
                                             <div class="radio__wrap">
@@ -136,11 +136,10 @@ export default {
             questionId: parseInt( this.qid ),
             id: this.$route.params.id,
             answersMapping: {
-                10: 'dontknow_10',
-                20: 'poor_20',
-                30: 'average_30',
-                40: 'good_40',
-                50: 'excellent_50'
+                0: 'poor_0',
+                1: 'average_1',
+                2: 'good_2',
+                3: 'excellent_3'
             }
         }
     },
