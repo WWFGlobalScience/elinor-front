@@ -1,33 +1,32 @@
 //cards
-.elinor__card{
-    &.elinor__card--sign-in{
+.elinor__card {
+    &.elinor__card--sign-in {
         min-width: 31rem;
         @apply bg-white p-8 ml-32 border-radius--20 lg:mx-auto sm:w-11/12 sm:min-w-0;
-        .elinor__card--sign-in__logo{
+        .elinor__card--sign-in__logo {
             @apply -mt-14 mb-6;
         }
-        .elinor__card--sign-in__info{
+        .elinor__card--sign-in__info {
             @apply flex items-center justify-between;
-            &.info-start{
+            &.info-start {
                 @apply items-start;
             }
             .input.input--radios {
-                label{
+                label {
                     @apply mt-1;
-                    span{
-                        &:first-child{
+                    span {
+                        &:first-child {
                             @apply text-xs font-normal text-grayy-lighter whitespace-nowrap;
                         }
                     }
                 }
             }
         }
-        .elinor__card--sign-in__separator{
+        .elinor__card--sign-in__separator {
             @apply mt-8 mb-11 w-96 sm:w-full;
         }
     }
 }
-
 
 //elinor question
 
@@ -35,7 +34,7 @@
     @apply mt-10;
     .title-border {
         .title {
-           @apply text-[16px]; 
+            @apply text-[16px];
         }
     }
     .question {
@@ -48,7 +47,7 @@
         }
         .question__title {
             @apply mt-5 text-[20px] leading-[30px] font-bold;
-        } 
+        }
     }
     .answers {
         @apply mt-10;
@@ -92,55 +91,56 @@
     }
 }
 
-
 //elinor card question
 
-.elinor-card--question{
+.elinor-card--question {
     @apply flex items-start pt-12 pb-6;
-    .elinor-card--question__number{
+    .elinor-card--question__number {
         @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
     }
-    .elinor-card--question__info{
+    .elinor-card--question__info {
         @apply flex-1;
 
-        [class*='c-title--']{
+        [class*="c-title--"] {
             @apply mb-8;
         }
 
-        p{@apply mb-6}
+        p {
+            @apply mb-6;
+        }
     }
 }
 
 //elinor card detail
-.elinor-card__detail{
+.elinor-card__detail {
     @apply bg-turqy-lighter text-turqy text-4xl text-center rounded-huge p-6 leading-9;
 }
 
 //elinor card icons
-.elinor-card__icons{
+.elinor-card__icons {
     @apply bg-turqy-lighter rounded-huge p-6 pb-12;
-    .elinor-card__icons__item{
+    .elinor-card__icons__item {
         @apply relative flex items-center justify-between flex-col;
-        &::after{
+        &::after {
             content: "+";
             @apply text-turqy absolute m-auto text-2xl -right-8 flex items-center h-full sm:right-0 sm:left-0 sm:justify-center sm:-bottom-12 sm:items-end;
         }
-        &:last-child{
-            &::after{
+        &:last-child {
+            &::after {
                 @apply hidden;
             }
         }
-        .elinor-card__icons__item-title{
+        .elinor-card__icons__item-title {
             @apply text-lg text-turqy text-center font-bold mb-4 w-6/12;
         }
     }
-    .elinor-card__icons-title{
+    .elinor-card__icons-title {
         @apply text-base text-center relative text-turqy mb-6;
-        .elinor-card__icons-title-info{
-           @apply bg-turqy-lighter px-2 z-30 inline-block; 
+        .elinor-card__icons-title-info {
+            @apply bg-turqy-lighter px-2 z-30 inline-block;
         }
-        &::after{
-            content: '';
+        &::after {
+            content: "";
             @apply absolute inset-0 m-auto h-px bg-turqy-middle w-full;
         }
     }
@@ -149,16 +149,16 @@
 //elinor card document
 .elinor-card__document {
     @apply px-0 mb-4;
-    
+
     .header {
-        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border pb-6 px-10; ;
+        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border pb-6 px-10;
         .title-group {
             @apply flex justify-start items-center flex-row;
-            .ico{
+            .ico {
                 @apply w-16;
             }
         }
-        .info-group{
+        .info-group {
             @apply flex justify-start sm:justify-end flex-row items-center border-l sm:border-0 sm:mt-4 border-grayy-border pl-6;
         }
     }
@@ -171,7 +171,6 @@
             &:not(:last-child) {
                 @apply mb-4;
             }
-            
         }
     }
 }
@@ -179,26 +178,24 @@
 //elinor card news
 .elinor-card__news {
     @apply p-0 mb-4;
-    
+
     .header {
-        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border p-5; ;
+        @apply flex justify-between flex-row sm:flex-col border-b border-grayy-border p-5;
         .title-group {
             @apply flex justify-start flex-col;
-            .title{
+            .title {
                 @apply text-2xl text-turqy font-bold mt-2;
             }
         }
-        .info-group{
+        .info-group {
             @apply flex justify-start sm:justify-end flex-row items-center border-l sm:border-0 sm:mt-4 border-grayy-border pl-6;
         }
     }
     .body {
         @apply p-5;
         .text-group {
-            .text{
-
+            .text {
             }
-            
         }
     }
 }
@@ -209,20 +206,19 @@
     @apply p-0 lg:w-full mb-5;
     .header {
         @apply p-5 border-b border-grayy-border;
-        
     }
-    .body { 
+    .body {
         @apply p-5;
     }
 }
 
 //ico download
-.ico-download{
+.ico-download {
     @apply text-turqy flex flex-col justify-center items-center uppercase text-[11px] font-bold ml-6;
     .ico-wrap {
         @apply flex items-center justify-center text-[20px] w-[38px] h-[38px] bg-white border border-solid border-turqy border-radius--50;
     }
-    span{
+    span {
         @apply mt-1;
     }
 }
