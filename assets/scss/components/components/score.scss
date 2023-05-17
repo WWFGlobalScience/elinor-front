@@ -3,19 +3,56 @@
     @media (max-width: 1224px) {
         @apply flex-wrap justify-start w-auto;
     }
-    .item-legend {
-        @apply flex justify-center flex-1 items-center gap-2 px-2;
+}
+.item-legend {
+    @apply flex justify-center flex-1 items-center gap-2 px-2;
+    @media (max-width: 1224px) {
+        @apply justify-start py-2;
+    }
+    &:not(:last-child) {
+        @apply border-r;
         @media (max-width: 1224px) {
-            @apply justify-start py-2;
+            @apply border-0;
         }
-        &:not(:last-child) {
-            @apply border-r;
-            @media (max-width: 1224px) {
-                @apply border-0;
-            }
+    }
+    .text {
+        @apply text-[10px] mb-0 uppercase;
+    }
+}
+
+.score-values-table {
+    caption {
+        p {
+            @apply flex;
         }
-        & .text {
-            @apply text-grayy text-[10px] mb-0 uppercase;
+        p:before,
+        p:after {
+            color: transparent;
+            content: "";
+            flex: 1;
+            border-bottom: groove 1px;
+            border-color: transparent;
+            margin: auto 1rem;
+            box-shadow: 0 -1px #bddade;
         }
+    }
+    th,
+    td {
+        @apply px-2 py-6;
+    }
+    th {
+        @apply text-sm text-turqy font-bold;
+    }
+    .item-legend {
+        @apply justify-start;
+        .text {
+            @apply text-xs text-turqy font-bold;
+        }
+    }
+    .description {
+        @apply flex border-l border-r border-turqy-middle px-4 min-w-[250px];
+    }
+    .num {
+        @apply text-center font-bold;
     }
 }
