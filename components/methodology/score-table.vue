@@ -46,8 +46,8 @@
                     <div class="flex justify-center items-center">
                         <span class="description"
                             >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                            addressing major governance gaps
+                        </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>

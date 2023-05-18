@@ -8,8 +8,8 @@
                 <h1 class="c-title--main">
                     {{ $t("pages.methodologyPage.title") }}
                 </h1>
-                <div class="g-grid--3-1-lg">
-                    <div class="g-colspan--2-full-lg">
+                <div class="g-grid--4-1-lg">
+                    <div class="g-colspan--3-full-lg">
                         <div class="info-block">
                             <p>{{ $t("pages.methodologyPage.paragraph1") }}</p>
                         </div>
@@ -40,6 +40,12 @@
                                 {{ $t("pages.methodologyPage.subtitle2") }}
                             </h2>
                             <p>{{ $t("pages.methodologyPage.paragraph4") }}</p>
+                        </div>
+                        <div class="info-block">
+                            <h2 class="c-title--md">
+                                {{ $t("pages.methodologyPage.subtitle3") }}
+                            </h2>
+                            <p>{{ $t("pages.methodologyPage.paragraph5") }}</p>
                         </div>
                         <score-table />
                     </div>

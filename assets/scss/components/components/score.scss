@@ -5,7 +5,7 @@
     }
 }
 .item-legend {
-    @apply flex justify-center flex-1 items-center gap-2 px-2;
+    @apply flex justify-center items-center flex-1 items-center gap-2 px-2;
     @media (max-width: 1224px) {
         @apply justify-start py-2;
     }
@@ -50,7 +50,7 @@
         }
     }
     .description {
-        @apply flex border-l border-r border-turqy-middle px-4 min-w-[250px];
+        @apply flex border-l text-[14px] border-r border-turqy-middle px-4 min-w-[150px];
     }
     .num {
         @apply text-center font-bold;

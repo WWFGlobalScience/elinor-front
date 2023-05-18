@@ -500,25 +500,25 @@
                                     <span
                                         class="w-7 h-7 rounded-full bg-poor"
                                     ></span>
-                                    <p class="text">Plan</p>
+                                    <span class="text">Plan</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-average"
                                     ></span>
-                                    <p class="text">Build</p>
+                                    <span class="text">Build</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-good"
                                     ></span>
-                                    <p class="text">Strengthen</p>
+                                    <span class="text">Strengthen</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-excellent"
                                     ></span>
-                                    <p class="text">Maintain</p>
+                                    <span class="text">Maintain</span>
                                 </div>
                             </div>
                         </div>
