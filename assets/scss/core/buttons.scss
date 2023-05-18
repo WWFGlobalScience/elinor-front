@@ -1,5 +1,5 @@
 button {
-    outline: 0!important;
+    outline: 0 !important;
 }
 .btn--opacity {
     @apply transition hover:opacity-60;
@@ -32,12 +32,11 @@ button {
         @apply h-[28px] py-0 px-4 text-xs border-radius--btn-small;
     }
     &.disabled {
-        @apply bg-turqy-lighter text-grayy-lighter
+        @apply bg-turqy-lighter text-grayy-lighter;
     }
 }
-.btn--circle{
+.btn--circle {
     @apply w-10 h-10 rounded-full border border-solid border-turqy-border flex items-center justify-center;
-
 }
 .btn--rounded {
     @apply h-[28px] w-[28px] p-0 rounded-full border border-solid border-turqy bg-white flex items-center justify-center;
@@ -49,16 +48,20 @@ button {
             @apply transform-none;
         }
     }
-
 }
 .btn--border-turqy {
     @apply flex items-center text-sm text-turqy border-radius--40 px-10 py-5 cursor-pointer border border-solid border-turqy space-x-3 bg-white;
-    img {
-        @apply transition;
+    img,
+    svg {
+        @apply transition fill-[none] w-5 h-5;
         transform: translateX(0);
     }
+    path {
+        @apply stroke-[1.3px] stroke-[#43A0BD];
+    }
     &:hover {
-        img {
+        img,
+        svg {
             transform: translateX(5px);
         }
     }
@@ -98,7 +101,7 @@ button {
         @apply text-grayy-lighter pointer-events-none;
     }
 }
-.btn--between{
+.btn--between {
     @apply justify-between;
 }
 
@@ -115,14 +118,14 @@ button {
         }
     }
 }
-.btn--inverse{
+.btn--inverse {
     span {
         @apply mr-0;
     }
 }
 .btn-collapse {
     @apply flex justify-start items-center text-turqy mt-4;
-    .ico{
+    .ico {
         @apply ml-2;
     }
 }
@@ -130,7 +133,7 @@ button {
 //links
 .link-arrow {
     @apply flex flex-row flex-wrap items-center text-turqy;
-    .ico{
+    .ico {
         @apply ml-2;
     }
 }
@@ -139,8 +142,7 @@ button {
     @apply text-turqy flex;
 
     &::after {
-        content: '...';
+        content: "...";
         @apply pl-1;
     }
-
 }
