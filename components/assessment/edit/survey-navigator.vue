@@ -36,7 +36,7 @@
                                         theme: 'light',
                                         placement: 'bottom-start'
                                     }"
-                                    class="btn-opacity bg-poor"
+                                    class="btn-opacity bg-turqy"
                                     :class="{
                                         'is--uncomplete': !isAnswered(question)
                                     }"

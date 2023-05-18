@@ -52,7 +52,7 @@
                     </div>
                 </td>
                 <td class="num text-average">0</td>
-                <td class="num text-average">3-4</td>
+                <td class="num text-average">3-5</td>
                 <td class="num text-average">30-59</td>
             </tr>
             <tr>
@@ -74,7 +74,7 @@
                     </div>
                 </td>
                 <td class="num text-good">0</td>
-                <td class="num text-good">5-7</td>
+                <td class="num text-good">6-8</td>
                 <td class="num text-good">60-89</td>
             </tr>
             <tr>
