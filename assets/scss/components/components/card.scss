@@ -222,3 +222,10 @@
         @apply mt-1;
     }
 }
+
+.keys-card {
+    @apply p-8 pb-4 relative;
+    .title {
+        @apply uppercase text-sm font-semibold bg-white block absolute top-[-10px] left-4 px-2;
+    }
+}

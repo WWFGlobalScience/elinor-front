@@ -1,28 +1,28 @@
 //list
-.list-inside{
+.list-inside {
     @apply pl-5 relative;
-    li{
-        &::before{
+    li {
+        &::before {
             content: "";
             @apply absolute -left-4 top-2 w-1 h-1 bg-grayy;
         }
     }
     &.list-disc {
-        li{
-            &::before{
+        li {
+            &::before {
                 @apply rounded-full;
             }
         }
     }
-    &.list--small{
-        li{
+    &.list--small {
+        li {
             @apply text-sm leading-7 text-grayy;
         }
     }
-    &.list--light{
-        li{
+    &.list--light {
+        li {
             @apply text-xs leading-6 text-grayy-lighter;
-            &::before{
+            &::before {
                 content: "";
                 @apply bg-grayy-lighter -left-2 w-2px h-2px;
             }
@@ -34,8 +34,8 @@
 
 .elinor__survey-list {
     @apply mt-10;
-    p{
-        @apply mb-0
+    p {
+        @apply mb-0;
     }
     .elinor__survey-question {
         @apply flex flex-wrap justify-between mb-8;
@@ -64,7 +64,7 @@
         &.is--uncomplete {
             .txt {
                 .txt__mark {
-                    @apply bg-grayy-border
+                    @apply bg-grayy-border;
                 }
             }
         }
@@ -87,18 +87,18 @@
             @apply mt-16;
         }
     }
-    &.elinor__survey-list--row{
-        .left{
+    &.elinor__survey-list--row {
+        .left {
             @apply flex items-start;
-            .txt{
+            .txt {
                 @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
             }
         }
-        .right{
-            .right__item{
+        .right {
+            .right__item {
                 @apply flex items-start mb-6;
-                .txt{
-                    @apply w-8 mr-4
+                .txt {
+                    @apply w-8 mr-4;
                 }
             }
         }
@@ -107,8 +107,8 @@
 
 .number-list {
     counter-reset: elements-counter;
-    @apply pl-12; 
-    
+    @apply pl-12;
+
     > li {
         counter-increment: elements-counter;
         @apply relative;
@@ -134,5 +134,29 @@
 .list-delete {
     li {
         @apply mb-2 text-grayy-lighter text-sm;
+    }
+}
+
+.list-keys {
+    li {
+        @apply mb-2 text-sm relative;
+        &::before {
+            content: "";
+            @apply inline-block w-2 h-2 border-radius--50 bg-grayy-lighter mr-2;
+        }
+    }
+    &.key-ok {
+        li {
+            &::before {
+                @apply bg-excellent;
+            }
+        }
+    }
+    &.key-ko {
+        li {
+            &::before {
+                @apply bg-poor;
+            }
+        }
     }
 }

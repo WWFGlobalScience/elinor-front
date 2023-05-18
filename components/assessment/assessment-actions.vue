@@ -11,6 +11,13 @@
         >
         <template v-if="$auth.loggedIn">
             <a
+                @click="
+                    popupState({
+                        active: true,
+                        component: 'popup-assessment-generate-report',
+                        title: 'Generate Report'
+                    })
+                "
                 role="button"
                 class="btn btn--border-turqy btn--sm"
                 title="Report"
