@@ -3,53 +3,26 @@
         <div class="container">
             <div class="elinor__survey-progress">
                 <ul class="elinor__survey-dots">
-                    <li
-                        v-for="(attribute, index) in attributes"
-                        :key="index"
-                        :class="{
-                            'li-bg-2': isCurrentQuestionFromAttribute(
-                                attribute
-                            ),
-                            'li-bg-1':
-                                !isCurrentQuestionFromAttribute(attribute) &&
-                                isAttributeSelected(attribute)
-                        }"
-                    >
-                        <template
-                            v-for="(question, number) in getAttributeQuestions(
-                                attribute
-                            )"
-                        >
-                            <a
-                                role="button"
-                                :content="
-                                    getQuestionTooltip(
-                                        number,
-                                        attribute,
-                                        question
-                                    )
-                                "
+                    <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
+                        <template v-for="(question, number) in getAttributeQuestions(attribute)">
+                            <a role="button"
+                                :content='getQuestionTooltip(number, attribute, question)'
                                 v-tippy="{
-                                    arrow: true,
-                                    arrowType: 'round',
-                                    animation: 'fade',
-                                    theme: 'light'
-                                }"
-                                class="btn-opacity"
-                                :class="{
-                                    'is--uncomplete': !isAnswered(question)
-                                }"
-                                v-scroll-to="{
-                                    el: `.question-${question.id}`,
-                                    offset: -70
-                                }"
-                                >asdfasdf
+                                        arrow : false,
+                                        arrowType : 'round',
+                                        animation : 'fade',
+                                        theme : 'light',
+                                        placement : 'bottom-start'}"
+                                    class="btn-opacity"
+                                    :class="!isAnswered(question) ? 'is--uncomplete' : 'bg-turqy'"
+                                    v-scroll-to="{
+                                        el: `.question-${question.id}`,
+                                        offset: -70
+                                    }">
                             </a>
                         </template>
                     </li>
-                    <li
-                        class="elinor__survey-complete elinor__survey-complete--no-border"
-                    >
+                    <li class="elinor__survey-complete elinor__survey-complete--no-border">
                         <div class="index">
                             {{ completedQuestions }}
                         </div>

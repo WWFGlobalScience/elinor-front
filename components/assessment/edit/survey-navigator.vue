@@ -3,48 +3,23 @@
         <div class="container">
             <div class="elinor__survey-progress">
                 <ul class="elinor__survey-dots">
-                    <li
-                        v-for="(attribute, index) in attributes"
-                        :class="{
-                            'li-bg-2': isCurrentQuestionFromAttribute(
-                                attribute
-                            ),
-                            'li-bg-1':
-                                !isCurrentQuestionFromAttribute(attribute) &&
-                                isAttributeSelected(attribute)
-                        }"
-                    >
-                        <template
-                            v-for="(question, number) in getAttributeQuestions(
-                                attribute
-                            )"
-                        >
+                    <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
+                        <template v-for="(question, number) in getAttributeQuestions(attribute)">
                             <template v-if="!mode || mode === 'list'">
-                                <a
-                                    role="button"
-                                    :content="
-                                        getQuestionTooltip(
-                                            number,
-                                            attribute,
-                                            question
-                                        )
-                                    "
+                                <a role="button"
+                                    :content='getQuestionTooltip(number, attribute, question)'
                                     v-tippy="{
-                                        arrow: false,
-                                        arrowType: 'round',
-                                        animation: 'fade',
-                                        theme: 'light',
-                                        placement: 'bottom-start'
-                                    }"
-                                    class="btn-opacity bg-turqy"
-                                    :class="{
-                                        'is--uncomplete': !isAnswered(question)
-                                    }"
-                                    v-scroll-to="{
-                                        el: `.question-${question.id}`,
-                                        offset: -70
-                                    }"
-                                >
+                                            arrow : false,
+                                            arrowType : 'round',
+                                            animation : 'fade',
+                                            theme : 'light',
+                                            placement : 'bottom-start'}"
+                                        class="btn-opacity"
+                                        :class="!isAnswered(question) ? 'is--uncomplete' : 'bg-turqy'"
+                                        v-scroll-to="{
+                                            el: `.question-${question.id}`,
+                                            offset: -70
+                                        }">
                                 </a>
                             </template>
                             <template v-if="mode && mode === 'detail'">
@@ -55,9 +30,7 @@
                                     :class="{
                                         'is--uncomplete': !isAnswered(question)
                                     }"
-                                    :to="
-                                        `/assessments/edit/${assessment.id}/the-survey/${question.id}`
-                                    "
+                                    :to="`/assessments/edit/${assessment.id}/the-survey/${question.id}`"
                                 >
                                 </nuxt-link>
                                 <a
@@ -69,9 +42,7 @@
                             </template>
                         </template>
                     </li>
-                    <li
-                        class="elinor__survey-complete elinor__survey-complete--no-border"
-                    >
+                    <li class="elinor__survey-complete elinor__survey-complete--no-border">
                         <div class="index">
                             {{ completedQuestions }}
                         </div>

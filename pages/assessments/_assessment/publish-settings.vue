@@ -53,6 +53,9 @@
                         </div>
                     </div>
                 </div>
+                <br/><br/>
+                <assessment-score-chart></assessment-score-chart>
+
                 <div class="elinor__data-separator"></div>
             </template>
 

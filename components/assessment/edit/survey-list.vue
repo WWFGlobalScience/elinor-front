@@ -3,13 +3,14 @@
         <div class="container">
             <div class="elinor__survey-list">
                 <template v-for="(attribute, index) in attributes">
-                    <div
-                        class="title-border"
-                        :id="`anchor-attribute-${attribute.id}`"
-                    >
+                    <div class="title-border" :id="`anchor-attribute-${attribute.id}`">
                         <div class="title-dot-wrapper">
-                            <!-- if not completed use the variant bg-grayy-lighter -->
-                            <span class="title-dot bg-excellent">99</span>
+                            <span class="title-dot"
+                                :class="isAttributeChecked(attribute) ? 'bg-' + getAttributteColor(attribute) : 'bg-grayy-lighter'">
+                                <template v-if="isAttributeChecked(attribute)">
+                                    {{ getScoreByAttribute(attribute).toFixed(0)}}
+                                </template>
+                            </span>
                             <h3 class="title uppercase">
                                 {{ attribute.name }}
                             </h3>
@@ -108,21 +109,9 @@
                                         }}</span>
                                     </div>
                                     <div class="answer">
-                                        <span
-                                            v-html="
-                                                question[
-                                                    answersMapping[
-                                                        getAnswerChoice(
-                                                            question
-                                                        )
-                                                    ]
-                                                ]
-                                            "
-                                        ></span>
+                                        <span v-html=" question[ answersMapping[getAnswerChoice(question)]]"></span>
                                     </div>
-                                    <template
-                                        v-if="getAnswerExplanation(question)"
-                                    >
+                                    <template v-if="getAnswerExplanation(question)" >
                                         <div class="txt txt--explanation">
                                             {{
                                                 $t(
@@ -130,12 +119,7 @@
                                                 )
                                             }}
                                         </div>
-                                        <div
-                                            class="answer"
-                                            v-html="
-                                                getAnswerExplanation(question)
-                                            "
-                                        ></div>
+                                        <div class="answer" v-html="getAnswerExplanation(question)"></div>
                                     </template>
                                 </template>
                                 <div
@@ -219,12 +203,12 @@ export default {
     data() {
         return {
             answersMapping: {
-                10: "dontknow_10",
-                20: "poor_20",
-                30: "average_30",
-                40: "good_40",
-                50: "excellent_50"
-            }
+                0: 'poor_0',
+                1: 'average_1',
+                2: 'good_2',
+                3: 'excellent_3'
+            },
+            scoreColors: ['poor', 'average', 'good','excellent']
         };
     },
     computed: {
@@ -265,6 +249,31 @@ export default {
         },
         isAttributeChecked(attribute) {
             return this.assessment.attributes.indexOf(attribute.id) !== -1;
+        },
+        getScoreByAttribute(attribute){
+            if(this.isAttributeChecked(attribute)){
+                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.attribute === attribute.id)
+                if(answers.length == 0){
+                    return 0
+                }
+                var sumValues = answers.reduce(function (s, a) {return s + a.choice;}, 0);
+
+                return 10 / 3 * sumValues / Object.keys(answers).length //score out of 10
+            }else{
+                return 0
+            }
+        },
+        getAttributteColor(attribute){
+            var score = this.getScoreByAttribute(attribute)
+            if(score <= 2){
+                return this.scoreColors[0]
+            }else if(score <= 5){
+                return this.scoreColors[1]
+            }else if(score <= 8){
+                return this.scoreColors[2]
+            }else{
+                return this.scoreColors[3]
+            }
         }
     }
 };

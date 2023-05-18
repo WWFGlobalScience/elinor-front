@@ -103,18 +103,11 @@
                 >
                     <header class="header">
                         <div class="flex gap-2 flex-col items-center">
-                            <div
-                                class="flex justify-center items-center w-[56px] h-[56px] rounded-full bg-poor"
-                            >
-                                <span
-                                    class="text-white text-[24px] font-semibold"
-                                    >2</span
-                                >
+                            <div class="flex justify-center items-center w-[56px] h-[56px] rounded-full"
+                                :class="'bg-' + getScoreColor(95)">
+                                <span class="text-white text-[24px] font-semibold">95</span>
                             </div>
-                            <span
-                                class="uppercase text-grayy-lighter font-bold text-[8px]"
-                                >out of 100</span
-                            >
+                            <span class="uppercase text-grayy-lighter font-bold text-[8px]">out of 100</span>
                         </div>
                         <div class="left">
                             <span class="title">{{
@@ -306,6 +299,11 @@ import { calculateProgress } from "~/config/assessment-progress";
 
 export default {
     name: "assessments-results",
+    data() {
+        return {
+            scoreColors: ['poor', 'average', 'good','excellent']
+        };
+    },
     computed: {
         ...mapState({
             assessments: state => state.assessments.list,
@@ -334,6 +332,17 @@ export default {
             return parseFloat(
                 calculateProgress(assessment).overall_percentage.toFixed(0)
             );
+        },
+        getScoreColor(score){
+            if(score <= 29){
+                return this.scoreColors[0]
+            }else if(score <= 59){
+                return this.scoreColors[1]
+            }else if(score <= 89){
+                return this.scoreColors[2]
+            }else{
+                return this.scoreColors[3]
+            }
         }
     },
     filters: {

@@ -1,5 +1,5 @@
 <template>
-    <section class="section section--assessment-map">
+    <section v-if="map" class="section section--assessment-map">
         <managementarea-map-header></managementarea-map-header>
         <div id="map" class="elinor__map"></div>
     </section>
@@ -110,7 +110,9 @@ export default {
     },
     watch: {
         managementArea() {
-            this.mapCreate()
+            if(this.managementArea && this.managementArea.polygon) {
+                this.mapCreate()
+            }
         }
     }
 }
