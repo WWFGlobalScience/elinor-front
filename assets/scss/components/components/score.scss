@@ -56,3 +56,14 @@
         @apply text-center font-bold;
     }
 }
+
+.title-dot-wrapper {
+    @apply flex justify-start items-center gap-4 bg-white z-10;
+    .title-dot {
+        @apply flex justify-center items-center w-7 h-7 rounded-full text-white font-semibold text-[12px];
+    }
+}
+
+.dot-score {
+    @apply flex justify-center items-center w-6 h-6 rounded-full text-white font-semibold text-[12px] ml-2;
+}
