@@ -194,4 +194,12 @@ main {
     .content-report {
         @apply col-start-2 col-end-4 row-span-full p-10;
     }
+    .container-report {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-width: 100%; /* Ancho máximo del contenedor */
+        height: 100vh; /* Altura del contenedor */
+        margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    }
 }

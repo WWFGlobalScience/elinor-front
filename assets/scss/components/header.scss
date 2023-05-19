@@ -15,7 +15,7 @@
                     @apply pl-2;
                 }
 
-                &:nth-last-child(-n+2){
+                &:nth-last-child(-n + 2) {
                     &::after {
                         @apply hidden md:inline-block;
                     }
@@ -28,8 +28,8 @@
                 }
             }
         }
-        .header--main__toggle-btn{
-            @apply hidden md:block w-7
+        .header--main__toggle-btn {
+            @apply hidden md:block w-7;
         }
     }
 }
@@ -44,7 +44,6 @@
     }
 
     h2 {
-
         &.ma__name,
         &.assessment__name {
             @apply mt-2 text-[36px];
@@ -86,7 +85,7 @@
         }
 
         &:after {
-            content: '';
+            content: "";
             @apply w-full h-px absolute top-1/2 left-0 bg-grayy-border;
         }
     }
@@ -135,4 +134,7 @@
 
 .header--back {
     @apply flex items-center justify-between space-x-2 mb-6;
+}
+
+.header--report {
 }
