@@ -55,6 +55,39 @@
     .num {
         @apply text-center font-bold;
     }
+    &--report {
+        th {
+            @apply text-small leading-3 text-turqy font-bold;
+        }
+        th,
+        td {
+            @apply py-2;
+        }
+        .item-legend {
+            @apply justify-start;
+            .text {
+                @apply text-[11px] text-grayy font-semibold;
+            }
+        }
+        .description {
+            @apply text-small text-grayy-lighter py-0 border-0 pl-9;
+        }
+        .num {
+            @apply text-center text-grayy font-semibold text-[12px];
+        }
+        td.hr {
+            @apply border-b border-turqy-middle pb-2;
+        }
+        tr {
+            &:last-child {
+                td {
+                    &:last-child {
+                        @apply border-b-0 pb-0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .title-dot-wrapper {

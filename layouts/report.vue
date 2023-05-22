@@ -1,7 +1,11 @@
 <template>
     <div class="page-report">
         <report-aside />
-        <report-content />
+        <div class="content-report">
+            <report-btn-download />
+            <report-header />
+            <Nuxt keep-alive />
+        </div>
     </div>
 </template>
 

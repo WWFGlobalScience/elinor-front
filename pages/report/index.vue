@@ -1,7 +1,7 @@
 <template> </template>
 <script>
 export default {
-    name: "privacy-policy",
+    name: "report",
     layout: "report",
     auth: false
 };

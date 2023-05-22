@@ -176,7 +176,7 @@ main {
 }
 
 .page-report {
-    @apply w-[1440px] h-[1024px] m-auto border border-grayy-border grid;
+    @apply w-[1440px] h-[1024px] m-auto border border-grayy-border grid overflow-hidden;
     grid-template-columns: 172px 72px auto;
     .aside-report {
         @apply col-start-1 col-end-3 row-span-full grid z-10;
@@ -188,18 +188,24 @@ main {
             }
         }
         .brand {
-            @apply col-start-2 col-end-4 row-span-full mt-12;
+            @apply col-start-2 col-end-4 row-span-full mt-4;
         }
     }
     .content-report {
-        @apply col-start-2 col-end-4 row-span-full p-10;
+        @apply col-start-2 col-end-4 row-span-full p-10 pt-4 flex flex-col relative;
     }
     .container-report {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        max-width: 100%; /* Ancho máximo del contenedor */
-        height: 100vh; /* Altura del contenedor */
-        margin: 0 auto; /* Centrar el contenedor horizontalmente */
+        @apply grid grid-cols-3 gap-6 h-full pt-8;
+        .col-report {
+            @apply h-full flex flex-col gap-5 justify-between;
+            &:last-child {
+                @apply justify-start;
+                div {
+                    &:last-child {
+                        @apply mt-auto;
+                    }
+                }
+            }
+        }
     }
 }
