@@ -1,46 +1,44 @@
 //tables
-.c-data-table{
+.c-data-table {
     @apply w-full mb-12;
-    
-    thead{
+
+    thead {
         @apply relative h-14;
-        &::after{
+        &::after {
             content: "";
             @apply absolute h-14 w-screen bg-turqy-lighter right-0 top-0 mx-auto;
             left: -10vw;
-            @media(max-width:768px){
+            @media (max-width: 768px) {
                 left: -7vw;
             }
-            @media(max-width:767px){
+            @media (max-width: 767px) {
                 left: -4vw;
             }
         }
-        th{
+        th {
             @apply text-xs text-grayy font-normal text-left z-10 w-16;
-            &.c-data-table__main-cell{
+            &.c-data-table__main-cell {
                 @apply w-7/12;
             }
         }
     }
 
-    tbody{
-        td{
+    tbody {
+        td {
             @apply text-base text-grayy h-16 border-b border-grayy-border sm:text-sm;
         }
     }
 
-    
-
-    .c-data-table__initial{
+    .c-data-table__initial {
         @apply w-9 h-9 rounded-full mr-3 inline-flex items-center justify-center text-sm text-white sm:w-5 sm:h-5 sm:flex;
 
-        &.admin{
-            @apply bg-redy-lighter;    
+        &.admin {
+            @apply bg-redy-lighter;
         }
-        &.contributor{
+        &.contributor {
             @apply bg-yellowy-lighter;
         }
-        &.observer{
+        &.observer {
             @apply bg-bluy;
         }
     }
@@ -48,7 +46,7 @@
 
 .table-background {
     @apply border border-grayy-border;
-    th, 
+    th,
     td {
         @apply p-3 text-left border border-grayy-border leading-6;
     }
@@ -57,5 +55,125 @@
     }
     tr {
         @apply align-top;
+    }
+}
+
+.table-score-values {
+    caption {
+        p {
+            @apply flex;
+        }
+        p:before,
+        p:after {
+            color: transparent;
+            content: "";
+            flex: 1;
+            border-bottom: groove 1px;
+            border-color: transparent;
+            margin: auto 1rem;
+            box-shadow: 0 -1px #bddade;
+        }
+    }
+    th,
+    td {
+        @apply px-2 py-6;
+    }
+    th {
+        @apply text-sm text-turqy font-bold;
+    }
+    .item-legend {
+        @apply justify-start;
+        .text {
+            @apply text-xs text-turqy font-bold;
+        }
+    }
+    .description {
+        @apply flex border-l text-[14px] border-r border-turqy-middle px-4 min-w-[150px];
+    }
+    .num {
+        @apply text-center font-bold;
+    }
+    &--report {
+        th {
+            @apply text-small leading-3 text-turqy font-bold;
+        }
+        th,
+        td {
+            @apply py-2;
+        }
+        .item-legend {
+            @apply justify-start;
+            .text {
+                @apply text-[11px] text-grayy font-semibold;
+            }
+        }
+        .description {
+            @apply text-small text-grayy-lighter py-0 border-0 pl-9;
+        }
+        .num {
+            @apply text-center text-grayy font-semibold text-[12px];
+        }
+        td.hr {
+            @apply border-b border-turqy-middle pb-2 pt-0;
+        }
+        tr {
+            &:last-child {
+                td {
+                    &:last-child {
+                        @apply border-b-0 pb-0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table-score-assessment {
+    th,
+    td {
+        @apply p-4 py-2;
+    }
+    th {
+        &.title-col {
+            @apply uppercase text-[10px] align-top text-grayy font-semibold;
+        }
+        &.title-row {
+            span {
+                @apply block mt-[-12px] text-left;
+                h3 {
+                    @apply inline-block bg-white px-1 uppercase text-sm  text-grayy font-semibold;
+                }
+            }
+        }
+    }
+    td {
+        .dot-row,
+        .dot-col {
+            @apply text-center text-white font-semibold border-radius--50 inline-flex justify-center items-center w-8 h-8;
+        }
+        &:not(:first-child) {
+            @apply text-center;
+            &::before {
+                content: "|";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .dot-row {
+            @apply w-12 h-12 text-[20px];
+        }
+    }
+    .wrapper-row {
+        @apply rounded-2xl shadow-rowTable;
+        tr {
+            th {
+                @apply py-0;
+            }
+            td {
+                @apply py-4;
+            }
+        }
     }
 }

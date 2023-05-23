@@ -1,8 +1,8 @@
 <template>
     <a
-        href="#"
+        @click="pdf"
         role="button"
-        class="btn btn--border-turqy btn--sm absolute top-0 right-0 mr-8 mt-8 z-10"
+        class="btn btn--border-turqy btn--sm absolute top-0 right-0 mr-8 mt-8 z-10  "
         title="Report"
         ><svg>
             <path

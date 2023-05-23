@@ -1,5 +1,22 @@
 <template>
     <div class="container-report">
+        <a
+            @click="pdf"
+            role="button"
+            class="btn btn--border-turqy btn--sm absolute top-0 right-0 mr-8 mt-8 z-10  "
+            title="Report"
+            ><svg>
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.688 8.5h3.187a.531.531 0 0 1 .531.531v4.25a.531.531 0 0 1-.531.531H2.125a.531.531 0 0 1-.531-.53v-4.25a.531.531 0 0 1 .531-.532h3.188M8.5 1.594V8.5M5.313 5.313 8.5 8.5l3.188-3.188"
+                />
+                <path
+                    d="M12.484 11.953a.797.797 0 1 0 0-1.593.797.797 0 0 0 0 1.593Z"
+                />
+            </svg>
+            <span>Download Report</span></a
+        >
         <div class="col-report">
             <div class="card-report ui-rounded-border">
                 <div class="dot-value bg-poor">3</div>
@@ -270,7 +287,7 @@
 
             <div class="rounded-3xl bg-turqy-lighter p-3">
                 <table
-                    class="score-values-table score-values-table--report overflow-x-scroll block"
+                    class="table-score-values table-score-values--report overflow-x-scroll block"
                 >
                     <tr>
                         <th></th>
@@ -388,10 +405,41 @@
     </div>
 </template>
 <script>
-import btnDownload from "~/components/report/btn-download.vue";
+import { jsPDF } from "jspdf";
 export default {
     name: "report",
     layout: "report",
-    auth: false
+    auth: false,
+    methods: {
+        pdf() {
+            var doc = new jsPDF("l", "mm", [1440, 1024]);
+            var pdfjs = document.querySelector("#temp-target");
+            // Convert HTML to PDF in JavaScript
+            doc.html(pdfjs, {
+                callback: function(doc) {
+                    doc.setFont("Courier");
+                    doc.internal.write(0, "Tw");
+                    doc.save("output.pdf");
+                },
+                x: 0,
+                y: 0
+
+                // fontFaces: [
+                //     {
+                //         family: "Montserrat",
+                //         weight: "normal",
+                //         stretch: "normal",
+                //         src: [
+                //             {
+                //                 src:
+                //                     "assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf",
+                //                 format: "truetype"
+                //             }
+                //         ]
+                //     }
+                // ]
+            });
+        }
+    }
 };
 </script>

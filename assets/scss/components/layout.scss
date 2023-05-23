@@ -176,7 +176,7 @@ main {
 }
 
 .page-report {
-    @apply w-[1440px] h-[1024px] m-auto border border-grayy-border grid overflow-hidden;
+    @apply w-[1440px] h-[1024px] m-auto border border-grayy-border grid overflow-hidden tracking-normal;
     grid-template-columns: 172px 72px auto;
     .aside-report {
         @apply col-start-1 col-end-3 row-span-full grid z-10;
@@ -195,7 +195,7 @@ main {
         @apply col-start-2 col-end-4 row-span-full p-10 pt-4 flex flex-col relative;
     }
     .container-report {
-        @apply grid grid-cols-3 gap-6 h-full pt-8;
+        @apply grid grid-cols-3 gap-6 h-full pt-8 static;
         .col-report {
             @apply h-full flex flex-col gap-5 justify-between;
             &:last-child {
@@ -207,5 +207,7 @@ main {
                 }
             }
         }
+    }
+    .container-table {
     }
 }

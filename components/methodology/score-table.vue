@@ -1,6 +1,6 @@
 <template>
     <div class="rounded-3xl bg-turqy-lighter px-4 py-8">
-        <table class="score-values-table overflow-x-scroll block">
+        <table class="table-score-values overflow-x-scroll block">
             <caption>
                 <p>Values</p>
             </caption>
