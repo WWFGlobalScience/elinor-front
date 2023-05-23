@@ -71,7 +71,10 @@ module.exports = {
                 }
             },
             fontFamily: {
-                montserrat: ["Montserrat", "sans-serif"]
+                montserrat: ["Montserrat", "sans-serif"],
+                montserratMediumPdf: ["Montserrat-Medium"],
+                montserratSemiBoldPdf: ["Montserrat-SemiBold"],
+                montserratBoldPdf: ["Montserrat-Bold"]
             },
             height: {
                 "2px": "2px"

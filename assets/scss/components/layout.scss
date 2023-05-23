@@ -176,10 +176,10 @@ main {
 }
 
 .page-report {
-    @apply w-[1440px] h-[1024px] m-auto border border-grayy-border grid overflow-hidden tracking-normal;
+    @apply w-[1440px] h-[1023px] m-auto grid overflow-hidden tracking-normal;
     grid-template-columns: 172px 72px auto;
     .aside-report {
-        @apply col-start-1 col-end-3 row-span-full grid z-10;
+        @apply col-start-1 col-end-3 row-span-full grid z-10 h-[1023px];
         grid-template-columns: 100px 72px 72px;
         .background {
             @apply col-start-1 col-end-3 row-span-full h-full flex overflow-hidden;

@@ -79,23 +79,23 @@
         @apply px-2 py-6;
     }
     th {
-        @apply text-sm text-turqy font-bold;
+        @apply text-sm text-turqy font-montserratBoldPdf;
     }
     .item-legend {
         @apply justify-start;
         .text {
-            @apply text-xs text-turqy font-bold;
+            @apply text-xs text-turqy font-montserratBoldPdf;
         }
     }
     .description {
-        @apply flex border-l text-[14px] border-r border-turqy-middle px-4 min-w-[150px];
+        @apply flex border-l text-[14px] font-montserratMediumPdf border-r border-turqy-middle px-4 min-w-[150px];
     }
     .num {
-        @apply text-center font-bold;
+        @apply text-center font-montserratBoldPdf;
     }
     &--report {
         th {
-            @apply text-small leading-3 text-turqy font-bold;
+            @apply text-small leading-3 text-turqy font-montserratBoldPdf;
         }
         th,
         td {
@@ -129,6 +129,7 @@
 }
 
 .table-score-assessment {
+    @apply flex flex-col justify-between h-full;
     th,
     td {
         @apply p-4 py-2;
@@ -154,11 +155,7 @@
         &:not(:first-child) {
             @apply text-center;
             &::before {
-                content: "|";
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                @apply content-['|'] absolute top-1/2 left-0 -translate-y-1/2 text-grayy-border;
             }
         }
         .dot-row {

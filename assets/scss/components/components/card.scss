@@ -233,13 +233,13 @@
 .card-report {
     @apply border-grayy-border relative p-0;
     .title {
-        @apply uppercase text-sm text-[12px] font-semibold bg-white block absolute top-[-10px] left-6 px-2;
+        @apply uppercase text-sm text-[12px] font-montserratSemiBoldPdf bg-white block absolute top-[-10px] left-6 px-2;
     }
     .text {
-        @apply text-gray-500 text-[12px] leading-5 pl-8 mt-3;
+        @apply text-gray-500 text-[12px] font-montserratMediumPdf leading-5 pl-8 mt-3;
     }
     .dot-value {
-        @apply absolute top-3 left-[-18px] w-9 h-9 flex justify-center items-center rounded-full text-white font-semibold text-[18px];
+        @apply absolute top-3 left-[-18px] w-9 h-9 flex justify-center items-center rounded-full text-white font-montserratSemiBoldPdf text-[18px];
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -253,11 +253,11 @@
             @apply flex items-center py-[3px] px-4 pl-8 border-t justify-between border-grayy-border text-[12px];
 
             p {
-                @apply text-gray-500 text-[11px] leading-5 font-semibold;
+                @apply text-gray-500 text-[11px] leading-5 font-montserratSemiBoldPdf;
             }
 
             span {
-                @apply font-bold;
+                @apply font-montserratBoldPdf;
             }
         }
     }

@@ -40,6 +40,106 @@
                     <td><span class="dot-col bg-poor">10</span></td>
                 </tr>
             </tbody>
+            <tbody class="wrapper-row">
+                <tr>
+                    <th colspan="11" class="title-row">
+                        <span><h3>Title row</h3></span>
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="dot-row bg-poor">69</span></td>
+                    <td><span class="dot-col bg-poor">1</span></td>
+                    <td><span class="dot-col bg-poor">2</span></td>
+                    <td><span class="dot-col bg-poor">3</span></td>
+                    <td><span class="dot-col bg-poor">4</span></td>
+                    <td><span class="dot-col bg-poor">5</span></td>
+                    <td><span class="dot-col bg-poor">6</span></td>
+                    <td><span class="dot-col bg-poor">7</span></td>
+                    <td><span class="dot-col bg-poor">8</span></td>
+                    <td><span class="dot-col bg-poor">9</span></td>
+                    <td><span class="dot-col bg-poor">10</span></td>
+                </tr>
+            </tbody>
+            <tbody class="wrapper-row">
+                <tr>
+                    <th colspan="11" class="title-row">
+                        <span><h3>Title row</h3></span>
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="dot-row bg-poor">69</span></td>
+                    <td><span class="dot-col bg-poor">1</span></td>
+                    <td><span class="dot-col bg-poor">2</span></td>
+                    <td><span class="dot-col bg-poor">3</span></td>
+                    <td><span class="dot-col bg-poor">4</span></td>
+                    <td><span class="dot-col bg-poor">5</span></td>
+                    <td><span class="dot-col bg-poor">6</span></td>
+                    <td><span class="dot-col bg-poor">7</span></td>
+                    <td><span class="dot-col bg-poor">8</span></td>
+                    <td><span class="dot-col bg-poor">9</span></td>
+                    <td><span class="dot-col bg-poor">10</span></td>
+                </tr>
+            </tbody>
+            <tbody class="wrapper-row">
+                <tr>
+                    <th colspan="11" class="title-row">
+                        <span><h3>Title row</h3></span>
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="dot-row bg-poor">69</span></td>
+                    <td><span class="dot-col bg-poor">1</span></td>
+                    <td><span class="dot-col bg-poor">2</span></td>
+                    <td><span class="dot-col bg-poor">3</span></td>
+                    <td><span class="dot-col bg-poor">4</span></td>
+                    <td><span class="dot-col bg-poor">5</span></td>
+                    <td><span class="dot-col bg-poor">6</span></td>
+                    <td><span class="dot-col bg-poor">7</span></td>
+                    <td><span class="dot-col bg-poor">8</span></td>
+                    <td><span class="dot-col bg-poor">9</span></td>
+                    <td><span class="dot-col bg-poor">10</span></td>
+                </tr>
+            </tbody>
+            <tbody class="wrapper-row">
+                <tr>
+                    <th colspan="11" class="title-row">
+                        <span><h3>Title row</h3></span>
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="dot-row bg-poor">69</span></td>
+                    <td><span class="dot-col bg-poor">1</span></td>
+                    <td><span class="dot-col bg-poor">2</span></td>
+                    <td><span class="dot-col bg-poor">3</span></td>
+                    <td><span class="dot-col bg-poor">4</span></td>
+                    <td><span class="dot-col bg-poor">5</span></td>
+                    <td><span class="dot-col bg-poor">6</span></td>
+                    <td><span class="dot-col bg-poor">7</span></td>
+                    <td><span class="dot-col bg-poor">8</span></td>
+                    <td><span class="dot-col bg-poor">9</span></td>
+                    <td><span class="dot-col bg-poor">10</span></td>
+                </tr>
+            </tbody>
+            <tbody class="wrapper-row">
+                <tr>
+                    <th colspan="11" class="title-row">
+                        <span><h3>Title row</h3></span>
+                    </th>
+                </tr>
+                <tr>
+                    <td><span class="dot-row bg-poor">69</span></td>
+                    <td><span class="dot-col bg-poor">1</span></td>
+                    <td><span class="dot-col bg-poor">2</span></td>
+                    <td><span class="dot-col bg-poor">3</span></td>
+                    <td><span class="dot-col bg-poor">4</span></td>
+                    <td><span class="dot-col bg-poor">5</span></td>
+                    <td><span class="dot-col bg-poor">6</span></td>
+                    <td><span class="dot-col bg-poor">7</span></td>
+                    <td><span class="dot-col bg-poor">8</span></td>
+                    <td><span class="dot-col bg-poor">9</span></td>
+                    <td><span class="dot-col bg-poor">10</span></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template>
