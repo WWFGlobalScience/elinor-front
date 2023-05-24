@@ -1,11 +1,9 @@
 <template>
-    <div class="rounded-3xl bg-turqy-lighter px-4 py-8">
-        <table class="table-score-values overflow-x-scroll block">
-            <caption>
-                <p>Values</p>
-            </caption>
+    <div class="rounded-3xl bg-turqy-lighter p-3">
+        <table
+            class="table-score-values table-score-values--report overflow-x-scroll block"
+        >
             <tr>
-                <th></th>
                 <th></th>
                 <th>Indicator<br />value</th>
                 <th>Attribute<br />value</th>
@@ -14,97 +12,100 @@
             <tr>
                 <td>
                     <div class="item-legend">
-                        <span class="w-7 h-7 rounded-full bg-poor"></span>
+                        <span class="w-5 h-5 rounded-full bg-poor"></span>
                         <p class="text">
                             Plan
                         </p>
                     </div>
                 </td>
-                <td>
+                <td class="num">0</td>
+                <td class="num">0-2</td>
+                <td class="num">0-29</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
                         <span class="description"
                             >Collaborate with stakeholders to develop plans for
                             addressing major governance gaps</span
                         >
-                        <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
-                <td class="num text-poor">0</td>
-                <td class="num text-poor">0-2</td>
-                <td class="num text-poor">0-29</td>
             </tr>
             <tr>
                 <td>
                     <div class="item-legend">
-                        <span class="w-7 h-7 rounded-full bg-average"></span>
+                        <span class="w-5 h-5 rounded-full bg-average"></span>
                         <p class="text">
                             Build
                         </p>
                     </div>
                 </td>
-                <td>
+                <td class="num">1</td>
+                <td class="num">3-5</td>
+                <td class="num">0-29</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
                         <span class="description"
                             >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps
-                        </span>
-                        <img src="~/assets/img/arrow-right.svg" alt="" />
+                            addressing major governance gaps</span
+                        >
                     </div>
                 </td>
-                <td class="num text-average">0</td>
-                <td class="num text-average">3-5</td>
-                <td class="num text-average">30-59</td>
             </tr>
             <tr>
                 <td>
                     <div class="item-legend">
-                        <span class="w-7 h-7 rounded-full bg-good"></span>
+                        <span class="w-5 h-5 rounded-full bg-good"></span>
                         <p class="text">
                             Strengthen
                         </p>
                     </div>
                 </td>
-                <td>
+                <td class="num">2</td>
+                <td class="num">6-8</td>
+                <td class="num">0-29</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
                         <span class="description"
                             >Collaborate with stakeholders to develop plans for
                             addressing major governance gaps</span
                         >
-                        <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
-                <td class="num text-good">0</td>
-                <td class="num text-good">6-8</td>
-                <td class="num text-good">60-89</td>
             </tr>
             <tr>
                 <td>
                     <div class="item-legend">
-                        <span class="w-7 h-7 rounded-full bg-excellent"></span>
+                        <span class="w-5 h-5 rounded-full bg-excellent"></span>
                         <p class="text">
                             Maintain
                         </p>
                     </div>
                 </td>
-                <td>
+                <td class="num">3</td>
+                <td class="num">9-10</td>
+                <td class="num">0-29</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description"
+                        <span class="description border-transparent"
                             >Collaborate with stakeholders to develop plans for
                             addressing major governance gaps</span
                         >
-                        <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
-                <td class="num text-excellent">0</td>
-                <td class="num text-excellent">8-10</td>
-                <td class="num text-excellent">90-100</td>
             </tr>
         </table>
     </div>
 </template>
-
 <script>
 export default {
-    name: "score-table"
+    name: "report-table-score"
 };
 </script>

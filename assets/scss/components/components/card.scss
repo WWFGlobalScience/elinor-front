@@ -226,6 +226,55 @@
 .keys-card {
     @apply p-8 pb-4 relative;
     .title {
-        @apply uppercase text-sm font-semibold bg-white block absolute top-[-10px] left-4 px-2;
+        @apply font-semibold font-montserratSemiBoldPdf bg-white block absolute top-[-10px] left-6 px-2;
+    }
+}
+
+.card-report {
+    @apply border-grayy-border relative p-0;
+    .title {
+        @apply uppercase text-sm text-[12px] font-montserratSemiBoldPdf bg-white block absolute top-[-10px] left-6 px-2;
+    }
+    .text {
+        @apply text-gray-500 text-[12px] font-montserratMediumPdf leading-5 pl-8 mt-3;
+    }
+    .dot-value {
+        @apply absolute top-3 left-[-18px] w-9 h-9 flex justify-center items-center rounded-full text-white font-montserratSemiBoldPdf text-[18px];
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+    }
+    ul {
+        @apply mt-2;
+        > li {
+            @apply flex items-center py-[3px] px-4 pl-8 border-t justify-between border-grayy-border text-[12px];
+
+            p {
+                @apply text-gray-500 text-[11px] leading-5 font-montserratSemiBoldPdf;
+            }
+
+            span {
+                @apply font-montserratBoldPdf;
+            }
+        }
+    }
+}
+
+.card-map {
+    @apply bg-turqy-lighter p-8 rounded-huge grid grid-cols-2 gap-4;
+    .card-map-col {
+        @apply grid gap-4;
+        p {
+            @apply text-sm font-montserratMediumPdf text-grayy-lighter;
+            strong {
+                @apply block text-[18px] font-montserratBoldPdf text-grayy;
+                &.accent {
+                    @apply text-[24px];
+                }
+            }
+        }
     }
 }

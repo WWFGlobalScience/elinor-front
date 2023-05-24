@@ -20,43 +20,6 @@
     }
 }
 
-.score-values-table {
-    caption {
-        p {
-            @apply flex;
-        }
-        p:before,
-        p:after {
-            color: transparent;
-            content: "";
-            flex: 1;
-            border-bottom: groove 1px;
-            border-color: transparent;
-            margin: auto 1rem;
-            box-shadow: 0 -1px #bddade;
-        }
-    }
-    th,
-    td {
-        @apply px-2 py-6;
-    }
-    th {
-        @apply text-sm text-turqy font-bold;
-    }
-    .item-legend {
-        @apply justify-start;
-        .text {
-            @apply text-xs text-turqy font-bold;
-        }
-    }
-    .description {
-        @apply flex border-l text-[14px] border-r border-turqy-middle px-4 min-w-[150px];
-    }
-    .num {
-        @apply text-center font-bold;
-    }
-}
-
 .title-dot-wrapper {
     @apply flex justify-start items-center gap-4 bg-white z-10;
     .title-dot {
@@ -66,4 +29,10 @@
 
 .dot-score {
     @apply flex justify-center items-center w-6 h-6 rounded-full text-white font-semibold text-[12px] ml-2;
+}
+
+.report-text {
+    strong {
+        @apply text-turqy font-montserratSemiBoldPdf;
+    }
 }
