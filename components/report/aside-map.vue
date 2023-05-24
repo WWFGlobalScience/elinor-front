@@ -24,13 +24,14 @@
                             Current Assessment date<strong>12-12-2003</strong>
                         </p>
                     </div>
-                    <div class="card-map-col">
-                        <p>Total hectareas<strong>10.555 h</strong></p>
+                    <div class="card-map-col self-start">
                         <p>
-                            Previous Assessment date<strong>12-12-2003</strong>
+                            Type of Assessment date<strong
+                                >Government led
+                            </strong>
                         </p>
                         <p>
-                            Current Assessment date<strong>12-12-2003</strong>
+                            MA Governance type<strong>Lorem ipsum dolor</strong>
                         </p>
                     </div>
                 </div>

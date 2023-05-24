@@ -36,7 +36,7 @@
                 <h4 class="title uppercase font-montserratSemiBoldPdf">
                     Key governance needs
                 </h4>
-                <ul class="list-keys list-keys--xl key-ok">
+                <ul class="list-keys list-keys--xl key-ko">
                     <li class="text-medium">
                         Resource boundaries need to be clearly defined
                     </li>
