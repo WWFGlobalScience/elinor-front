@@ -30,3 +30,9 @@
 .dot-score {
     @apply flex justify-center items-center w-6 h-6 rounded-full text-white font-semibold text-[12px] ml-2;
 }
+
+.report-text {
+    strong {
+        @apply text-turqy font-montserratSemiBoldPdf;
+    }
+}

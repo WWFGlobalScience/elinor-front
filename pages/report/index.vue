@@ -1,7 +1,7 @@
 <template> </template>
 <script>
 export default {
-    name: "report",
+    name: "total scores",
     layout: "report",
     auth: false
 };

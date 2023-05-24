@@ -139,10 +139,10 @@
 
 .list-keys {
     li {
-        @apply mb-2 text-sm relative;
+        @apply mb-2 text-sm relative font-montserratMediumPdf;
         &::before {
             content: "";
-            @apply inline-block w-2 h-2 border-radius--50 bg-grayy-lighter mr-2;
+            @apply inline-block w-2 h-2 border-radius--50 bg-turqy mr-2;
         }
     }
     &.key-ok {

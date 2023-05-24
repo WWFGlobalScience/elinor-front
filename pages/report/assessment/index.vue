@@ -158,7 +158,7 @@ import "../../../assets/fonts/montserrat/Montserrat-Medium-normal.js";
 import "../../../assets/fonts/montserrat/Montserrat-SemiBold-bold.js";
 import "../../../assets/fonts/montserrat/Montserrat-Bold-bold.js";
 export default {
-    name: "report",
+    name: "score assessment",
     layout: "report",
     auth: false,
     methods: {
