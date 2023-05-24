@@ -16,7 +16,13 @@ export default {
             },
             { hid: "description", name: "description", content: "" }
         ],
-        link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+        link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+        script: [
+            {
+                src:
+                    "//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js"
+            }
+        ]
     },
     css: ["~/assets/scss/app.scss"],
     plugins: [

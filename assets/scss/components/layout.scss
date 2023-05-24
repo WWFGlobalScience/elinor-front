@@ -210,4 +210,18 @@ main {
     }
     .container-table {
     }
+    &--map {
+        grid-template-columns: 570px auto;
+        .aside-report {
+            @apply col-span-1 flex;
+            .map-content {
+                @apply absolute left-0 top-0 w-full h-full z-10 flex justify-between p-8 pb-12 flex-col;
+            }
+        }
+        .content-report {
+            header {
+                @apply ml-0 border-0;
+            }
+        }
+    }
 }

@@ -2,7 +2,7 @@
     <div class="popup__content">
         <form class="grid grid-cols-3 md:grid-cols-1 gap-x-4 gap-y-8 ">
             <div class="col-span-2 md:col-span-full">
-                <div class="uppercase keys-card ui-rounded-border">
+                <div class="uppercase keys-card text-sm ui-rounded-border">
                     <h4 class="title">Key governance strenghts</h4>
                     <ul class="list-keys key-ok">
                         <li>Capacity for adaptive management</li>
@@ -33,7 +33,7 @@
             </div>
             <hr class="col-span-full" />
             <div class="col-span-2 md:col-span-full">
-                <div class="uppercase keys-card ui-rounded-border">
+                <div class="uppercase keys-card text-sm ui-rounded-border">
                     <h4 class="title">Key governance needs</h4>
                     <ul class="list-keys key-ko">
                         <li>Resource boundaries need to be clearly defined</li>

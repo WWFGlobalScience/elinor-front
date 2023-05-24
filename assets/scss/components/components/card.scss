@@ -226,7 +226,7 @@
 .keys-card {
     @apply p-8 pb-4 relative;
     .title {
-        @apply text-sm font-semibold font-montserratSemiBoldPdf bg-white block absolute top-[-10px] left-6 px-2;
+        @apply font-semibold font-montserratSemiBoldPdf bg-white block absolute top-[-10px] left-6 px-2;
     }
 }
 
@@ -258,6 +258,22 @@
 
             span {
                 @apply font-montserratBoldPdf;
+            }
+        }
+    }
+}
+
+.card-map {
+    @apply bg-turqy-lighter p-8 rounded-huge grid grid-cols-2 gap-4;
+    .card-map-col {
+        @apply grid gap-4;
+        p {
+            @apply text-sm font-montserratMediumPdf text-grayy-lighter;
+            strong {
+                @apply block text-[18px] font-montserratBoldPdf text-grayy;
+                &.accent {
+                    @apply text-[24px];
+                }
             }
         }
     }

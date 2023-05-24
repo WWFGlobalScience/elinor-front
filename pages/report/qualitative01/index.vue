@@ -72,7 +72,7 @@ export default {
                     doc.setFont("Montserrat-SemiBold", "normal");
                     doc.setFont("Montserrat-Bold", "normal");
                     doc.internal.write(0, "Tw");
-                    doc.save("report-score-assessment.pdf");
+                    doc.save("report-qualitative-data-01.pdf");
                 },
                 x: 0,
                 y: 0

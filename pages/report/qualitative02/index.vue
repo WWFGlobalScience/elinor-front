@@ -18,7 +18,7 @@
                     >
                 </h2>
                 <div class="keys-card ui-rounded-border">
-                    <h4 class="title font-montserratSemiBoldPdf">
+                    <h4 class="title text-sm font-montserratSemiBoldPdf">
                         Social and ecological objectives
                     </h4>
                     <p class="font-montserratMediumPdf text-sm">
@@ -30,7 +30,7 @@
                     </p>
                 </div>
                 <div class="keys-card ui-rounded-border">
-                    <h4 class="title font-montserratSemiBoldPdf">
+                    <h4 class="title text-sm font-montserratSemiBoldPdf">
                         Protected biodiversity
                     </h4>
                     <p class="font-montserratMediumPdf text-sm">
@@ -42,7 +42,7 @@
                     </p>
                 </div>
                 <div class="keys-card ui-rounded-border">
-                    <h4 class="title font-montserratSemiBoldPdf">
+                    <h4 class="title text-sm font-montserratSemiBoldPdf">
                         Activities and social programs
                     </h4>
                     <p class="font-montserratMediumPdf text-sm">
@@ -62,7 +62,7 @@
                     >
                 </h2>
                 <div class="keys-card ui-rounded-border">
-                    <h4 class="title font-montserratSemiBoldPdf">
+                    <h4 class="title text-sm font-montserratSemiBoldPdf">
                         Partners
                     </h4>
                     <ul class="list-keys">
@@ -71,7 +71,7 @@
                     </ul>
                 </div>
                 <div class="keys-card ui-rounded-border">
-                    <h4 class="title font-montserratSemiBoldPdf">
+                    <h4 class="title text-sm font-montserratSemiBoldPdf">
                         Donors
                     </h4>
                     <ul class="list-keys">
@@ -103,7 +103,7 @@ export default {
                     doc.setFont("Montserrat-SemiBold", "normal");
                     doc.setFont("Montserrat-Bold", "normal");
                     doc.internal.write(0, "Tw");
-                    doc.save("report-score-assessment.pdf");
+                    doc.save("report-qualitative-data-02.pdf");
                 },
                 x: 0,
                 y: 0
