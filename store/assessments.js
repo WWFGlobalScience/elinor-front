@@ -1,6 +1,5 @@
 import qs from 'qs'
 import {required_fields, initProgress, calculateProgress} from "~/config/assessment-progress";
-import {calculateScore} from "~/config/assessment-score";
 
 export const state = () => ({
     list: [],
@@ -95,9 +94,6 @@ export const mutations = {
     setAttributes(state, attributes) {
         state.assessment.attributes = attributes;
     },
-    setScore(state, score) {
-        state.assessment.score = score;
-    },
     addSurveyAnswer(state, {answer, percent_complete}) {
         const surveyAnswers = [answer, ...state.assessment.surveyAnswers];
         state.assessment = {...state.assessment, surveyAnswers, percent_complete};
@@ -186,7 +182,6 @@ export const actions = {
                 url: `v2/surveyanswerlikerts/?assessment=${id}`,
             });
             state.commit('setSurveyAnswers', surveyAnswersResponse.data.results);
-            state.commit('setScore', calculateScore(assessment, surveyAnswersResponse.data.results)); // TODO: Remove when receive score from API
         } finally {
             this.dispatch('loader/loaderState', {
                 active: false,

@@ -1,10 +1,12 @@
 <template>
     <header class="header--page">
         <div class="container flex justify-start gap-8 items-start">
-            <div v-if="assessment.score" class="flex gap-2 flex-col items-center">
+            <div v-if="assesmentScore" class="flex gap-2 flex-col items-center">
                 <div class="flex justify-center items-center w-[80px] h-[80px] rounded-full"
-                    :class="'bg-' + getScoreColor(assessment.score)">
-                    <span class="text-white text-[40px] font-semibold">{{ assessment.score.toFixed(0) }}</span>
+                    :class="'bg-' + getScoreColor(assesmentScore)">
+                    <span class="text-white text-[40px] font-semibold">
+                        {{ assesmentScore }}
+                    </span>
                 </div>
                 <span class="uppercase text-grayy-lighter font-bold text-[12px]">out of 100</span>
             </div>
@@ -26,24 +28,14 @@
                     <button
                         type="submit"
                         form="form--assessment-edit"
-                        class="btn btn--opacity--child"
-                    >
+                        class="btn btn--opacity--child">
                         <span class="btn--opacity__target">{{
                             $t("pages.assessments.edit.saveButton")
                         }}</span>
                         <img src="~/assets/img/ico-save-white.svg" />
                     </button>
-                    <p
-                        v-if="
-                            assessment.last_edit !== null &&
-                                assessment.last_edit !== undefined
-                        "
-                    >
-                        {{
-                            $t("default.save.autosave") +
-                                " " +
-                                assessment.last_edit.fromNow()
-                        }}
+                    <p v-if="assessment.last_edit !== null && assessment.last_edit !== undefined" >
+                        {{ $t("default.save.autosave") + " " + assessment.last_edit.fromNow() }}
                     </p>
                 </template>
             </div>
@@ -64,7 +56,23 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment
-        })
+        }),
+        assesmentScore() {
+            if (this.assessment.attributes && this.assessment.surveyAnswers) {
+                var total = 0;
+                var assessment = this.assessment;
+                const { attributes, surveyAnswers } = assessment;
+
+                attributes.forEach((attr) => {
+                    var answers = surveyAnswers.filter(surveyAnswer => surveyAnswer.question.attribute === attr);
+                    var sumValues = answers.reduce((s, a) => s + a.choice, 0);
+                    total += 10 / 3 * (sumValues / answers.length);
+                });
+
+                return total.toFixed(0);
+            }
+            return null;
+        }
     },
     methods: {
         getScoreColor(score){
