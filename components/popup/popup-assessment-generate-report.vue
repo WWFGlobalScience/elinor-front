@@ -5,9 +5,9 @@
                 <div class="uppercase keys-card text-sm ui-rounded-border">
                     <h4 class="title">Key governance strenghts</h4>
                     <ul class="list-keys key-ok">
-                        <li>Capacity for adaptive management</li>
-                        <li>Clearly defined rights and decision making</li>
-                        <li>Transparency and accountability</li>
+                        <li v-for="key in sortedScores.slice(0, 3)">
+                            {{ key.name }}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -36,8 +36,9 @@
                 <div class="uppercase keys-card text-sm ui-rounded-border">
                     <h4 class="title">Key governance needs</h4>
                     <ul class="list-keys key-ko">
-                        <li>Resource boundaries need to be clearly defined</li>
-                        <li>Enhance monitoring and sanctioning</li>
+                        <li v-for="key in sortedScores.length > 3 ? sortedScores.slice(-3) : []">
+                            {{ key.name }}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -108,19 +109,70 @@ import { mapActions, mapState } from "vuex";
 
 export default {
     name: "popup-assessment-generate-report",
+    data() {
+        return {
+            sortedScores: [],
+            scoreColors: ["poor", "average", "good", "excellent"]
+        };
+    },
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
+            attributes: state => state.attributes,
             popup: state => state.popup.popup
         })
+    },
+    mounted() {
+        this.$nextTick(() => {
+            this.getAttributeScores();
+        });
     },
     methods: {
         ...mapActions({
             popupState: "popup/popupState"
         }),
-
         close() {
             this.popupState({ active: false });
+        },
+        getAttributeScores(){
+            var answers = this.assessment.surveyAnswers;
+            var attributes = this.attributes.list;
+            // Calculate the sums and group data (while tracking count)
+            const groupedAnswers = answers.reduce(function(acc, a){
+                if(!acc[a.question.attribute]){
+                    var name = attributes.find(obj => {return obj.id == a.question.attribute }).name;
+                    acc[a.question.attribute] = {
+                        name: name,
+                        sum: a.choice,
+                        count: 1
+                    };
+                    return acc;
+                }
+                acc[a.question.attribute].sum += a.choice;
+                acc[a.question.attribute].count += 1;
+                return acc;
+            },{});
+            
+            // Create new array from grouped data and compute the average
+            const result = Object.keys(groupedAnswers).map(function(k){
+                const item  = groupedAnswers[k];
+                return {
+                    name: item.name,
+                    score: 10 / 3 * item.sum/item.count,
+                }
+            })
+            this.sortedScores = result.sort((a, b)=> {return b.score - a.score});
+        },
+        getAttributteColor(score){            
+            if(score <= 2){
+                return this.scoreColors[0]
+            }else if(score <= 5){
+                return this.scoreColors[1]
+            }else if(score <= 8){
+                return this.scoreColors[2]
+            }else{
+                return this.scoreColors[3]
+            }
         }
     }
 };

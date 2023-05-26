@@ -64,7 +64,7 @@ export default {
                 const { attributes, surveyAnswers } = assessment;
 
                 attributes.forEach((attr) => {
-                    var answers = surveyAnswers.filter(surveyAnswer => surveyAnswer.question.attribute === attr);
+                    var answers = surveyAnswers.filter(answer => answer.question.attribute === attr);
                     var sumValues = answers.reduce((s, a) => s + a.choice, 0);
                     total += 10 / 3 * (sumValues / answers.length);
                 });
