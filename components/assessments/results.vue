@@ -97,12 +97,9 @@
                 </button>
             </div>
             <ul class="ma__results">
-                <li
-                    v-for="(assessment, index) in assessments"
-                    class="elinor__badge ui-rounded-border"
-                >
+                <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
                     <header class="header">
-                        <div class="flex gap-2 flex-col items-center">
+                        <div v-if="assessment.status == 10" class="flex gap-2 flex-col items-center">
                             <div class="flex justify-center items-center w-[56px] h-[56px] rounded-full"
                                 :class="'bg-' + getScoreColor(95)">
                                 <span class="text-white text-[24px] font-semibold">95</span>
