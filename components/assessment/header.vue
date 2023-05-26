@@ -54,9 +54,9 @@ export default {
                     total += 10 / 3 * (sumValues / answers.length);
                 });
 
-                return total;
+                return total.toFixed(0);
             }
-            return total.toFixed(0);
+            return null;
         }
     },
     methods: {
