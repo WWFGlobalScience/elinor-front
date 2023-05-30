@@ -58,10 +58,12 @@ export default {
             if(this.managementArea.polygon) {
                 const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
                 center = turf.centroid(polygon);
-            } else {
+            } else if(this.managementArea.point){
                 center = turf.point(this.managementArea.point.coordinates);
                 this.marker = new mapboxgl.Marker()
                     .setLngLat(this.managementArea.point.coordinates);
+            } else {
+                center = turf.point(["0","0"]);
             }
 
 
