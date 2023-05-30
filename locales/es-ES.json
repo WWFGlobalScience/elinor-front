@@ -462,7 +462,8 @@
                                         "3": "Most rights to harvest natural resources within the MA are somewhat defined",
                                         "4": "Rights to harvest natural resources within the MA are clearly defined",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Use rights"
                                 },
                                 "stakeholder_develop_rules": {
                                     "question": "Are there formal or informal mechanisms that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
@@ -474,7 +475,8 @@
                                         "3": "Rights to develop rules for the use of natural resources within the MA are somewhat defined",
                                         "4": "Rights to develop rules for the use of natural resources within the MA are clearly defined",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Management rights"
                                 },
                                 "stakeholder_exclude_others": {
                                     "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?",
@@ -486,7 +488,8 @@
                                         "3": "Rights to exclude other groups from harvesting natural resources within the MA are somewhat defined",
                                         "4": "Rights to exclude other groups from harvesting natural resources within the MA are clearly defined",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Exclusion rights"
                                 },
                                 "legislation_exists": {
                                     "question": "Is there legislation in place to enable resource management by local communities?",
@@ -498,7 +501,8 @@
                                         "3": "Legislation enables local stakeholders to develop their own rules governing resources within the MA, but there are some weaknesses\n\n",
                                         "4": "Legislation enables local stakeholders to develop their own rules governing resources within the MA",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Enabling legislation"
                                 },
                                 "exercise_rights": {
                                     "question": "Are local stakeholders able to exercise their rights to natural resources?",
@@ -510,7 +514,8 @@
                                         "3": "Local stakeholders are able to exercise their rights to resources but there are still some costs to doing so that need to be addressed",
                                         "4": "Local stakeholders are able to exercise their rights to resources without any significant costs to them",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Rights exercised"
                                 },
                                 "stakeholder_agency": {
                                     "question": "To what extent are stakeholders affected by the rules of the MA able to play a role in making changes to the rules?",
@@ -522,7 +527,8 @@
                                         "3": "Individuals affected by the rules of the MA are occasionally able to influence/modify them",
                                         "4": "Individuals affected by the rules of the MA are able to influence management decisions",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Participation rights"
                                 },
                                 "vulnerable_defined_rights": {
                                     "question": "Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?",
@@ -534,7 +540,8 @@
                                         "3": "Most rights to natural resources within the MA are clearly defined for women or other vulnerable groups",
                                         "4": "Women’s or other vulnerable group’s rights to natural resources are clearly defined",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Access rights for women and vulnerable groups"
                                 },
                                 "benefits_shared": {
                                     "question": "Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among local stakeholders?",
@@ -546,7 +553,8 @@
                                         "3": "A strategy or approach for equitable benefit sharing is being partially implemented",
                                         "4": "A strategy or approach for equitable benefit sharing is being fully implemented",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Equitable benefit sharing"
                                 },
                                 "supportive_networks": {
                                     "question": "Do networks exist that develop social relations and support mutual learning among local stakeholders?",
@@ -558,7 +566,8 @@
                                         "3": "Networks exist but they are not always effective at developing social relationships and supporting learning. ",
                                         "4": "Yes, networks exist that effectively develop social relations and support mutual learning.",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Social networks"
                                 },
                                 "climatechange_incorporated": {
                                     "question": "Is information on climate change being used to inform strategies to build community resilience to climate change?",
@@ -570,7 +579,8 @@
                                         "3": "Limited plans have been made on how to use information on climate change to inform strategies to build community resilience, which may or may not be implemented",
                                         "4": "Detailed plans have been made on how to use information on climate change to inform strategies that build community resilience, and these are being implemented",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Community resilience"
                                 },
                                 "governance_accountable": {
                                     "question": "Are those responsible for governance of the MA held to account if they do not perform their role?",
@@ -582,7 +592,8 @@
                                         "3": "Those responsible for governance of the MA are occasionally held to account when they do not perform their role",
                                         "4": "Those responsible for governance of the MA are always held to account when they do not perform their role",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Accountability"
                                 },
                                 "timely_information": {
                                     "question": "Do local stakeholders receive information from MA authorities in a timely manner?",
@@ -594,7 +605,8 @@
                                         "3": "Local stakeholders receive information from MA authorities but not always in a timely manner",
                                         "4": "Local stakeholders always receive information from MA authorities in a timely manner",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Timely information sharing"
                                 },
                                 "conflict_resolution_access": {
                                     "question": "Do local stakeholders have access to effective conflict resolution mechanisms?",
@@ -606,7 +618,8 @@
                                         "3": "Users sometimes have access to effective arenas",
                                         "4": "There is rapid access to effective arenas for users",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Conflict resolution"
                                 },
                                 "penalties_frequency": {
                                     "question": "How often are the penalties for breaking resource use rules administered?",
@@ -618,7 +631,8 @@
                                         "3": "Penalties are occasionally administered ",
                                         "4": "Penalties are usually administered",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Sanctioning for rule violations"
                                 },
                                 "penalties_fair": {
                                     "question": "To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity, or frequency of the infraction?",
@@ -630,7 +644,8 @@
                                         "3": "Most penalties increase with the nature, severity and frequency of the infraction",
                                         "4": "All penalties increase with the nature, severity and frequency of the infraction",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Graduated sanctions"
                                 },
                                 "ecological_monitoring_used": {
                                     "question": "Are systems in place to monitor and document ecological conditions in the MA?",
@@ -642,7 +657,8 @@
                                         "3": "Systems exist and are moderately effective in monitoring and documenting ecological conditions in the MA",
                                         "4": "Systems exist and are largely or wholly effective in monitoring and documenting ecological conditions in the MA",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Ecological monitoring"
                                 },
                                 "social_monitoring_used": {
                                     "question": "Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?",
@@ -654,7 +670,8 @@
                                         "3": "Systems exist and are moderately effective in monitoring and documenting social conditions in the MA",
                                         "4": "Systems exist and are largely or wholly effective in monitoring and documenting social conditions in the MA",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Social monitoring"
                                 },
                                 "climatechange_monitored": {
                                     "question": "Are systems in place to monitor and document impacts of climate change?",
@@ -666,7 +683,8 @@
                                         "3": "Systems exist and are moderately effective in monitoring and documenting impacts of climate change",
                                         "4": "Systems exist and are largely or wholly effective in monitoring and documenting impacts of climate change",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Climate change monitoring"
                                 },
                                 "multiple_knowledge_social": {
                                     "question": " Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?",
@@ -678,7 +696,8 @@
                                         "3": "Diverse knowledge types are included in management/decision making and plan outputs, but incorporation was not guided by relevant knowledge holders.",
                                         "4": "Yes, diverse knowledge types are included in the management/decision-making and plan outputs, and inclusion is guided by knowledge holders",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Knowledge integration"
                                 },
                                 "multiple_knowledge_integrated": {
                                     "question": "Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?",
@@ -690,7 +709,8 @@
                                         "3": "The results of monitoring, research and evaluation are routinely incorporated into management decisions but there are some weaknesses",
                                         "4": "The results of monitoring, research and evaluation are routinely incorporated into management decisions",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Knowledge feedbacks"
                                 },
                                 "climatechange_managed": {
                                     "question": "Is the MA consciously managed to adapt to climate change?",
@@ -702,7 +722,8 @@
                                         "3": "Limited plans have been drawn up about how to adapt management to current and anticipated climate change, which may or may not be implemented",
                                         "4": "Detailed plans have been drawn up about how to adapt management to current and anticipated climate change, and these are already being implemented",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Anticipatory planning"
                                 },
                                 "rights_governance": {
                                     "question": "Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?",
@@ -714,7 +735,8 @@
                                         "3": "Rights to harvest or benefit from resources are somewhat related to contributions to governance",
                                         "4": "Rights to harvest or benefit from resources are directly related to contributions to governance",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Proportionality"
                                 },
                                 "management_levels_cohesive": {
                                     "question": "Do different levels of management exist within the MA that function as a coordinated unit?",
@@ -726,7 +748,8 @@
                                         "3": "Different levels of management zones exist but there are some weaknesses in their cohesion",
                                         "4": "Different levels of management zones exist and function as a cohesive unit",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Nested governance"
                                 },
                                 "regulations_exist": {
                                     "question": "Are appropriate regulations in place to control natural resource-based activities in the MA?",
@@ -738,7 +761,8 @@
                                         "3": "Regulations for controlling natural resource based activities in the MA area exist but there are some weaknesses",
                                         "4": "Regulations for controlling inappropriate natural resource based activities in the MA exist and provide a good basis for management",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Appropriate level of regulations"
                                 },
                                 "management_plan": {
                                     "question": "Is there a management plan for the MA and is it being implemented?",
@@ -750,19 +774,21 @@
                                         "3": "A management plan exists but it is only being partially implemented because of funding constraints or other problems",
                                         "4": "A management plan exists and is being fully implemented",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Management plan"
                                 },
                                 "boundary_known": {
                                     "question": "Is the boundary known by all local stakeholder groups?",
                                     "information": "Knowledge of the range of stakeholders. If a stakeholder analysis or engagement plan exists this would make a good reference document for the range of stakeholders. Access to legal documents or management plans with information on the boundary of the MAAccess to informal information sources that may hold knowledge on boundaries (e.g., local historians)",
-                                    "guidance": "Note:    Answer this question for what you understand the boundary to be.For a boundary to be known by a stakeholder group at least one individual must be able to provide the information verbally/written or the information must be accessible to the group upon enquiry (e.g., through existing records).Few is approximately < 50% Some is approximately = 50%Most is approximately > 50% ",
+                                    "guidance": "Note: Answer this question for what you understand the boundary to be.For a boundary to be known by a stakeholder group at least one individual must be able to provide the information verbally/written or the information must be accessible to the group upon enquiry (e.g., through existing records).Few is approximately < 50% Some is approximately = 50%Most is approximately > 50% ",
                                     "answers": {
                                         "1": "The boundary of the MA is not known by relevant stakeholder groups",
                                         "2": "The boundary of the MA is known for a few stakeholder groups",
                                         "3": "The boundary of the MA is known by some stakeholder groups",
                                         "4": "The boundary of the MA is known by most of the relevant stakeholder groups",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Awareness of boundaries"
                                 },
                                 "boundary_defined": {
                                     "question": "Is the boundary clearly defined?",
@@ -774,7 +800,8 @@
                                         "3": "The boundary of the MA is demarcated but there are some deficiencies",
                                         "4": "The boundary of the MA is well demarcated",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Defined boundaries"
                                 },
                                 "outcomes_achieved_ecological": {
                                     "question": "To what extent do you feel the ecological outcomes are being achieved?",
@@ -786,7 +813,8 @@
                                         "3": "The ecological outcomes are mostly being achieved",
                                         "4": "The ecological outcomes are fully being achieved",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Perceived ecological outcomes"
                                 },
                                 "outcomes_achieved_social": {
                                     "question": "To what extent do you feel the social outcomes are being achieved?",
@@ -798,7 +826,8 @@
                                         "3": "The social outcomes are mostly being achieved",
                                         "4": "The social outcomes are fully being achieved",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Perceived social outcomes"
                                 },
                                 "management_capacity": {
                                     "question": "Do those responsible for managing the MA (e.g., staff, community associations, management groups) have the capacity to enforce the rules and regulations?",
@@ -810,7 +839,8 @@
                                         "3": "Those with responsibility for managing the MA can adequately enforce the rules and regulations",
                                         "4": "Those with responsibility for managing the MA can fully enforce the rules and regulations",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Enforcement capacity"
                                 },
                                 "sufficient_staff": {
                                     "question": "Are there enough people employed or engaged to manage the MA?",
@@ -822,7 +852,8 @@
                                         "3": "Numbers of people employed or engaged to manage the MA are below optimum level necessary to carry out management activities effectively",
                                         "4": "Numbers of people employed or engaged to manage the MA are sufficient to carry out management activities effectively",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Staff and human resources"
                                 },
                                 "staff_capacity": {
                                     "question": "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
@@ -834,7 +865,8 @@
                                         "3": "Training and skills of those responsible for managing the MA are adequate but could be further improved to fully achieve the objectives of management.",
                                         "4": "Training and skills of those responsible for managing the MA are aligned with the management objectives of the MA",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Skills and capacity"
                                 },
                                 "sufficient_budget": {
                                     "question": "Is the current budget or funds used to support MA activities sufficient?",
@@ -846,7 +878,8 @@
                                         "3": "The available budget or funds is acceptable but could be further improved to fully achieve effective management",
                                         "4": "The available budget or funds is sufficient and meets the full management needs of the MA",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Financial resources"
                                 },
                                 "budget_secure": {
                                     "question": "Is the budget or funding secure?",
@@ -858,7 +891,8 @@
                                         "3": "There is a reasonably secure core budget or funding for regular operation of the MA, but many innovations and initiatives are reliant on outside funding",
                                         "4": "There is a secure budget or funding for the MA and its management needs",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Secure funding"
                                 },
                                 "sufficient_equipment": {
                                     "question": "Is the equipment sufficient for management needs?",
@@ -870,7 +904,8 @@
                                         "3": "There are equipment and facilities, but still some gaps that constrain management",
                                         "4": "There are adequate equipment and facilities",
                                         "5": "Don't know"
-                                    }
+                                    },
+                                    "reportText": "Assets and equipment"
                                 }
                             }
                         }
@@ -1415,47 +1450,56 @@
                 "attribute1": {
                     "name": "1. Resource boundaries",
                     "description": "This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.",
-                    "useIf": "You wish to understand whether the boundaries of the MA are well established."
+                    "useIf": "You wish to understand whether the boundaries of the MA are well established.",
+                    "reportText": "Measures the extent that boundaries of the MA are clearly marked and understood by key rights holders and other actors"
                 },
                 "attribute2": {
                     "name": "2. Monitoring and enforcement",
                     "description": "This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored.",
-                    "useIf": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management."
+                    "useIf": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.",
+                    "reportText": "Measures how well the MA is able to enforce regulations"
                 },
                 "attribute3": {
                     "name": "3. Capacity for adaptive management",
                     "description": "This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.",
-                    "useIf": "You would like to know what sort of information informs management decisions in the MA."
+                    "useIf": "You would like to know what sort of information informs management decisions in the MA.",
+                    "reportText": "Measures whether MA managers incorporate different forms of knowledge into their decision-making"
                 },
                 "attribute4": {
                     "name": "4. Operational capacity",
                     "description": "This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.",
-                    "useIf": "You wish to assess the capacity of the MA’s management system."
+                    "useIf": "You wish to assess the capacity of the MA’s management system.",
+                    "reportText": "Measures whether those responsible for managing the MA have the resources to do so"
                 },
                 "attribute5": {
                     "name": "5. Inclusive and equitable management",
                     "description": "This attribute measures inclusivity and equity in MA management, two important components of good governance.Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.",
-                    "useIf": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes."
+                    "useIf": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.",
+                    "reportText": "Measures inclusivity and equity in MA managment, particulary regarding vulnerable groups"
                 },
                 "attribute6": {
                     "name": "6. Clearly defined rights and decision making",
                     "description": "This attribute measures community rights in natural resource management.Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.",
-                    "useIf": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work."
+                    "useIf": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.",
+                    "reportText": "Measures the extent that community rights in natural resource management are clearly understood by key rights holders and other actors"
                 },
                 "attribute7": {
                     "name": "7. Clear and congruent regulations",
                     "description": "This attribute measures the quality of MA regulations.    Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.",
-                    "useIf": "You wish to understand whether the regulations are clearly stated and fair."
+                    "useIf": "You wish to understand whether the regulations are clearly stated and fair.",
+                    "reportText": "Measures the extent that MA regulations are clear and align with rights-holders and other actors’ governance goals"
                 },
                 "attribute8": {
                     "name": "8. Transparency and accountability",
                     "description": "This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.",
-                    "useIf": "If you want to assess the quality of MA governance."
+                    "useIf": "If you want to assess the quality of MA governance.",
+                    "reportText": "Measures the extent that people directly impacted by management decisions are informed of them in advance, can hold decision-makers to account, and have opportunities for conflict resolution"
                 },
                 "attribute9": {
                     "name": "9. Perceived outcomes",
                     "description": "This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.",
-                    "useIf": "You wish to know whether those involved in the MA think its objectives are being achieved."
+                    "useIf": "You wish to know whether those involved in the MA think its objectives are being achieved.",
+                    "reportText": "Measures the general perceptions that those completing the Elinor assessment have on the ecological and social outcomes of the MA"
                 }
             },
             "elinorQuestions": {
