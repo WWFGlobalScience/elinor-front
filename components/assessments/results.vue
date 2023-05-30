@@ -44,14 +44,10 @@
                                     </div>
                                 </div>
                                 <label for="own" class="label">
-                                    <span>{{
-                                        $t("pages.assessments.list.type.own")
-                                    }}</span>
+                                    <span>{{ $t("pages.assessments.list.type.own") }}</span>
                                 </label>
                             </div>
-                            <div
-                                class="input input--radios input--radios-question"
-                            >
+                            <div class="input input--radios input--radios-question">
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                         <div class="radio">
@@ -67,16 +63,12 @@
                                                 "
                                                 :checked="listType === 'all'"
                                             />
-                                            <img
-                                                src="~/assets/img/ico-ok.svg"
-                                            />
+                                            <img src="~/assets/img/ico-ok.svg" />
                                         </div>
                                     </div>
                                 </div>
                                 <label for="all" class="label">
-                                    <span>{{
-                                        $t("pages.assessments.list.type.all")
-                                    }}</span>
+                                    <span>{{ $t("pages.assessments.list.type.all") }}</span>
                                 </label>
                             </div>
                         </div>
@@ -85,48 +77,41 @@
                 <button
                     type="button"
                     class="btn btn--border-turqy btn--sm ml-auto"
-                    @click="download()"
-                >
+                    @click="download()">
                     <img
                         src="~/assets/img/ico-download.svg"
                         alt="Download Data"
                     />
-                    <span class="btn--opacity__target">{{
-                        $t("pages.assessments.list.downloadButton")
-                    }}</span>
+                    <span class="btn--opacity__target">{{ $t("pages.assessments.list.downloadButton") }}</span>
                 </button>
             </div>
             <ul class="ma__results">
-                <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
+                <li v-for="(assessment, index) in assessments" 
+                    :set="score = reports.find(r => r.id == assessment.id)" 
+                    class="elinor__badge ui-rounded-border">
                     <header class="header">
-                        <div v-if="assessment.status == 10" class="flex gap-2 flex-col items-center">
+                        <div v-if="assessment.status == 10 && reports && score" class="flex gap-2 flex-col items-center">
                             <div class="flex justify-center items-center w-[56px] h-[56px] rounded-full"
-                                :class="'bg-' + getScoreColor(95)">
-                                <span class="text-white text-[24px] font-semibold">95</span>
+                                :class="'bg-' + getScoreColor(score.score)">
+                                <span class="text-white text-[24px] font-semibold">{{ score.score }}</span>
                             </div>
                             <span class="uppercase text-grayy-lighter font-bold text-[8px]">out of 100</span>
                         </div>
                         <div class="left">
-                            <span class="title">{{
-                                assessment.person_responsible.username
-                            }}</span>
+                            <span class="title">{{ assessment.person_responsible.username }}</span>
                             <NuxtLink
                                 class="subtitle"
                                 :to="
                                     isOpenAssessment(assessment)
                                         ? `/assessments/edit/${assessment.id}/assessment-data/`
                                         : `/assessments/${assessment.id}/info/`
-                                "
-                                >{{ assessment.name }}</NuxtLink
-                            >
+                                ">{{ assessment.name }}</NuxtLink>
                             <div
                                 class="search-criteria"
                                 v-if="assessment.management_area_countries"
                             >
                                 <span class="area">Managed Area</span>
-                                <span class="criteria">{{
-                                    assessment.management_area_countries.name
-                                }}</span>
+                                <span class="criteria">{{ assessment.management_area_countries.name }}</span>
                             </div>
                         </div>
                         <div class="right">
@@ -137,9 +122,9 @@
                                 "
                                 class="assessment-status status--ready"
                             >
-                                <span class="status-circle"
-                                    ><img src="~assets/img/ico-megaphone.svg"
-                                /></span>
+                                <span class="status-circle">
+                                    <img src="~assets/img/ico-megaphone.svg"/>
+                                </span>
                                 <span class="text">Published</span>
                             </div>
                             <div
@@ -216,25 +201,12 @@
                             }}</span>
                             <span class="data">{{ assessment.year }}</span>
                         </li>
-                        <li
-                            class="countries"
-                            v-if="
-                                assessment.management_area_countries &&
-                                    assessment.management_area_countries
-                                        .countries
-                            "
-                        >
-                            <span class="label">{{
-                                $t("pages.assessments.list.countries")
-                            }}</span>
-                            <span
-                                class="data"
-                                v-html="
-                                    assessment.management_area_countries.countries.join(
-                                        ', '
-                                    )
-                                "
-                            ></span>
+                        <li class="countries"
+                            v-if="assessment.management_area_countries && assessment.management_area_countries.countries">
+                            <span class="label">
+                                {{ $t("pages.assessments.list.countries") }}
+                            </span>
+                            <span class="data" v-html=" assessment.management_area_countries.countries.join( ', ' )"></span>
                         </li>
                         <li
                             class="view"
@@ -298,7 +270,8 @@ export default {
     name: "assessments-results",
     data() {
         return {
-            scoreColors: ['poor', 'average', 'good','excellent']
+            scoreColors: ['poor', 'average', 'good','excellent'],
+            reports: []
         };
     },
     computed: {
@@ -308,6 +281,12 @@ export default {
             listType: state => state.assessments.listType
         }),
         ...mapGetters(["assessments/getPercentage"])
+    },
+    created() {
+        this.$axios.get('v2/reports/assessments/')
+        .then((response) => {
+            this.reports = response.data.results
+        })
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,

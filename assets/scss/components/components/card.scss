@@ -236,7 +236,7 @@
         @apply uppercase text-sm text-[12px] font-montserratSemiBoldPdf bg-white block absolute top-[-10px] left-6 px-2;
     }
     .text {
-        @apply text-gray-500 text-[12px] font-montserratMediumPdf leading-5 pl-8 mt-3;
+        @apply text-gray-500 text-[12px] font-montserratMediumPdf leading-4 pl-8 pr-1 mt-3 min-h-[30px];
     }
     .dot-value {
         @apply absolute top-3 left-[-18px] w-9 h-9 flex justify-center items-center rounded-full text-white font-montserratSemiBoldPdf text-[18px];

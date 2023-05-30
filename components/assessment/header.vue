@@ -54,7 +54,7 @@ export default {
                     total += 10 / 3 * (sumValues / answers.length);
                 });
 
-                return total.toFixed(0);
+                return (10 / assessment.attributes.length * total).toFixed(0);
             }
             return null;
         }

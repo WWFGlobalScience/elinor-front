@@ -21,6 +21,7 @@
                             <textarea
                                 name="collection_method_text"
                                 placeholder=""
+                                v-model="form.strenghts"
                             ></textarea>
                         </div>
                     </div>
@@ -31,37 +32,40 @@
                     </div>
                 </div>
             </div>
-            <hr class="col-span-full" />
-            <div class="col-span-2 md:col-span-full">
-                <div class="uppercase keys-card text-sm ui-rounded-border">
-                    <h4 class="title">Key governance needs</h4>
-                    <ul class="list-keys key-ko">
-                        <li v-for="key in sortedScores.length > 3 ? sortedScores.slice(-3) : []">
-                            {{ key.name }}
-                        </li>
-                    </ul>
+            <template v-if="sortedScores.length > 3">
+                <hr class="col-span-full" />
+                <div class="col-span-2 md:col-span-full">
+                    <div class="uppercase keys-card text-sm ui-rounded-border">
+                        <h4 class="title">Key governance needs</h4>
+                        <ul class="list-keys key-ko">
+                            <li v-for="key in sortedScores.length > 3 ? sortedScores.slice(3).slice(-3) : []">
+                                {{ key.name }}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div action="" class="col-span-full grid gap-y-8">
-                <div class="grid grid-cols-3 md:grid-cols-1 gap-4">
-                    <div class="col-span-2 md:col-span-full">
-                        <div class="input input--pr">
-                            <div class="label">
-                                Explain Main Needs
+                <div action="" class="col-span-full grid gap-y-8">
+                    <div class="grid grid-cols-3 md:grid-cols-1 gap-4">
+                        <div class="col-span-2 md:col-span-full">
+                            <div class="input input--pr">
+                                <div class="label">
+                                    Explain Main Needs
+                                </div>
+                                <textarea
+                                    name="collection_method_text"
+                                    placeholder=""
+                                    v-model="form.needs"
+                                ></textarea>
                             </div>
-                            <textarea
-                                name="collection_method_text"
-                                placeholder=""
-                            ></textarea>
+                        </div>
+                        <div class="col-span-1">
+                            <p class="text-xs text-grayy-lighter pt-8">
+                                Lorem Ipsum dolor sid amet consectetur adipiscing
+                            </p>
                         </div>
                     </div>
-                    <div class="col-span-1">
-                        <p class="text-xs text-grayy-lighter pt-8">
-                            Lorem Ipsum dolor sid amet consectetur adipiscing
-                        </p>
-                    </div>
                 </div>
-            </div>
+            </template>
             <hr class="col-span-full" />
             <div action="" class="col-span-full grid gap-y-8">
                 <div class="grid grid-cols-3 md:grid-cols-1 gap-4">
@@ -73,6 +77,7 @@
                             <textarea
                                 name="collection_method_text"
                                 placeholder=""
+                                v-model="form.context"
                             ></textarea>
                         </div>
                     </div>
@@ -84,11 +89,9 @@
                 </div>
             </div>
             <div class="btn-row">
-                <button
-                    type="button"
-                    @click="close"
-                    class="btn--border-turqy btn--opacity--child"
-                >
+                <button type="button"
+                    @click="pdf"
+                    class="btn--border-turqy btn--opacity--child">
                     <svg>
                         <path
                             d="M8.75 8.75h5M8.75 11.25h5M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625ZM6.25 3.125v13.75"
@@ -101,18 +104,29 @@
                 <div style="clear: both"></div>
             </div>
         </form>
+        <div id="report-wrap">
+            <report-assessment :keys="sortedScores" :form="form"></report-assessment>
+        </div>
     </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
 
+import { jsPDF } from "jspdf";
+
+
 export default {
     name: "popup-assessment-generate-report",
     data() {
         return {
             sortedScores: [],
-            scoreColors: ["poor", "average", "good", "excellent"]
+            form: {
+                strenghts: '',
+                needs: '',
+                context: '',
+            },
+            scoreColors: ["poor", "average", "good", "excellent"],
         };
     },
     computed: {
@@ -123,6 +137,8 @@ export default {
         })
     },
     mounted() {
+        this.$store.dispatch( 'assessments/fetchReport', this.assessment.id )
+
         this.$nextTick(() => {
             this.getAttributeScores();
         });
@@ -173,7 +189,37 @@ export default {
             }else{
                 return this.scoreColors[3]
             }
+        },
+        pdf() {
+            var doc = new jsPDF("l", "px", [1440, 1024]);
+            doc.html(document.querySelector("#key-governances"), {
+                callback: function (doc) {
+                    doc.setFont("Montserrat-Medium", "normal");
+                    doc.setFont("Montserrat-SemiBold", "normal");
+                    doc.setFont("Montserrat-Bold", "normal");
+                    doc.internal.write(0, "Tw");
+
+                    doc.addPage([1440, 1024],"l");
+                    doc.html(document.querySelector("#total-scores"), {
+                        callback: function(doc) {
+                            doc.internal.write(0, "Tw");
+                            doc.save("report-score-assessment.pdf");
+                        },
+                        x: 0,
+                        y: 1024,
+                    });
+                },
+                x: 0,
+                y: 0,
+            });
         }
     }
 };
 </script>
+<style>
+/*#report-wrap{
+    height: 1px;
+    width: 1px;
+    overflow:hidden;
+}*/
+</style>
