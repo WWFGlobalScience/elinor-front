@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-span-1">
                         <p class="text-xs text-grayy-lighter pt-8">
-                            Lorem Ipsum dolor sid amet consectetur adipiscing
+                            <!--Lorem Ipsum dolor sid amet consectetur adipiscing-->
                         </p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-span-1">
                             <p class="text-xs text-grayy-lighter pt-8">
-                                Lorem Ipsum dolor sid amet consectetur adipiscing
+                                <!--Lorem Ipsum dolor sid amet consectetur adipiscing-->
                             </p>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-span-1">
                         <p class="text-xs text-grayy-lighter pt-8">
-                            Lorem Ipsum dolor sid amet consectetur adipiscing
+                            <!--Lorem Ipsum dolor sid amet consectetur adipiscing-->
                         </p>
                     </div>
                 </div>
