@@ -76,8 +76,8 @@ export default {
 </script>
 <style>
 #report-wrap{
-    height: 1px;
+    /*height: 1px;
     width: 1px;
-    overflow:hidden;
+    overflow:hidden;*/
 }
 </style>

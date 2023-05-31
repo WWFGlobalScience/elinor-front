@@ -58,6 +58,11 @@ export default {
             if(this.managementArea.polygon) {
                 const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
                 center = turf.centroid(polygon);
+                var bbox = turf.bbox(polygon)
+                
+                //console.log(new mapboxgl.Map({container: 'map',}).fitBounds(bbox))
+                console.log(bbox);
+
             } else if(this.managementArea.point){
                 center = turf.point(this.managementArea.point.coordinates);
                 this.marker = new mapboxgl.Marker()
@@ -70,65 +75,46 @@ export default {
             const token = mapboxgl.accessToken;
             const baseUrl =
                 "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/";
-            const zoom = 2;
+            const zoom = 'auto';
             const coordinates = center.geometry.coordinates;
             const size = "570x1024@2x";
-            //const overlay = `geojson(${this.getGeoJson()})/`;
-            const overlay = "";
-            const url = `${baseUrl}${overlay}${coordinates},${zoom},0.00,0.00/${size}?access_token=${token}`;
+            const overlay = `geojson(${this.getGeoJson()})/`;
+            //const url = `${baseUrl}${overlay}${coordinates},${zoom}/${size}?access_token=${token}`;
+            const url = `${baseUrl}${overlay}auto/${size}?padding=50,50&access_token=${token}`;
             return url;
         },
         getGeoJson(){
-            /*this.map.addSource('polygon', {
-                    'type': 'geojson',
-                    'data': this.managementArea.polygon
-                });
-
-                this.map.addLayer({
-                    'id': 'polygon',
-                    'type': 'fill',
-                    'source': 'polygon',
-                    'layout': {},
-                    'paint': {
-                        'fill-color': '#43A0BD',
-                        'fill-opacity': 0.5
-                    }
-                });
-
-
-                this.map.addLayer({
-                    'id': 'outline',
-                    'type': 'line',
-                    'source': 'polygon',
-                    'layout': {},
-                    'paint': {
-                        'line-color': '#43A0BD',
-                        'line-width': 3
-                    }
-                });*/
-
+            var colorMapping = {
+                'poor': '#EE8383',
+                'average': '#F5C243',
+                'good': '#CCCC25',
+                'excellent': '#4FAD5B'
+            }
+            var color = this.getAssessmentColor(this.report.score);
             var geojson = `{
-                        "type": "FeatureCollection",
-                        "features": [
-                            {
-                            "type": "Feature",
-                            "properties": {
-                                "stroke": "#ec3636",
-                                "stroke-width": 2,
-                                "stroke-opacity": 1,
-                                "fill": "#561515",
-                                "fill-opacity": 0.5
-                            },
-                            "geometry": {
-                                "coordinates": [${JSON.stringify( this.managementArea.polygon.coordinates[0] )}],
-                                "type": "Polygon"
-                            },
-                            "id": 0
-                            }
-                        ]
-                        }`
-                        console.log(geojson);
-            return encodeURI(geojson);
+                "type": "FeatureCollection",
+                "features": [  
+                    {
+                    "type": "Feature",
+                    "properties": {
+                        "stroke": "${colorMapping[color]}",
+                        "stroke-width": 3,
+                        "stroke-opacity": 1,
+                        "fill": "${colorMapping[color]}",
+                        "fill-opacity": 0.5
+                    },
+                    "geometry": {
+                        "coordinates": ${JSON.stringify(this.managementArea.polygon.coordinates.flat(1))},
+                        "type": "Polygon"
+                    },
+                    "id": 0
+                    }
+                ]
+            }`;
+            var url = geojson.replace(/\s/g, '')
+            url = encodeURI(url)
+            url = url.replace(/#/g, '%23');
+            return url;
         }
     }
 };

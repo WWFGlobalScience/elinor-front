@@ -6,7 +6,7 @@
                     <div class="title-border" :id="`anchor-attribute-${attribute.id}`">
                         <div class="title-dot-wrapper">
                             <span class="title-dot"
-                                :class="isAttributeChecked(attribute) ? 'bg-' + getAttributteColor(attribute) : 'bg-grayy-lighter'">
+                                :class="isAttributeChecked(attribute) ? 'bg-' + getAttributteColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
                                 <template v-if="isAttributeChecked(attribute)">
                                     {{ getScoreByAttribute(attribute).toFixed(0)}}
                                 </template>
@@ -207,8 +207,7 @@ export default {
                 1: 'average_1',
                 2: 'good_2',
                 3: 'excellent_3'
-            },
-            scoreColors: ['poor', 'average', 'good','excellent']
+            }
         };
     },
     computed: {
@@ -261,18 +260,6 @@ export default {
                 return 10 / 3 * sumValues / Object.keys(answers).length //score out of 10
             }else{
                 return 0
-            }
-        },
-        getAttributteColor(attribute){
-            var score = this.getScoreByAttribute(attribute)
-            if(score <= 2){
-                return this.scoreColors[0]
-            }else if(score <= 5){
-                return this.scoreColors[1]
-            }else if(score <= 8){
-                return this.scoreColors[2]
-            }else{
-                return this.scoreColors[3]
             }
         }
     }
