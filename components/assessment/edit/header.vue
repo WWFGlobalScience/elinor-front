@@ -1,11 +1,11 @@
 <template>
     <header class="header--page">
         <div class="container flex justify-start gap-8 items-start">
-            <div v-if="assesmentScore" class="flex gap-2 flex-col items-center">
+            <div v-if="assessment && assessment.score" class="flex gap-2 flex-col items-center">
                 <div class="flex justify-center items-center w-[80px] h-[80px] rounded-full"
-                    :class="'bg-' + getScoreColor(assesmentScore)">
+                    :class="'bg-' + getScoreColor(assessment.score)">
                     <span class="text-white text-[40px] font-semibold">
-                        {{ assesmentScore }}
+                        {{ assessment.score }}
                     </span>
                 </div>
                 <span class="uppercase text-grayy-lighter font-bold text-[12px]">out of 100</span>
@@ -56,23 +56,7 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment
-        }),
-        assesmentScore() {
-            if (this.assessment.attributes && this.assessment.surveyAnswers) {
-                var total = 0;
-                var assessment = this.assessment;
-                const { attributes, surveyAnswers } = assessment;
-
-                attributes.forEach((attr) => {
-                    var answers = surveyAnswers.filter(answer => answer.question.attribute === attr);
-                    var sumValues = answers.reduce((s, a) => s + a.choice, 0);
-                    total += 10 / 3 * (sumValues / answers.length);
-                });
-
-                return total.toFixed(0);
-            }
-            return null;
-        }
+        })
     },
     methods: {
         getScoreColor(score){

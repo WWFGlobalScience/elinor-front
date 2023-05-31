@@ -90,7 +90,7 @@ export default {
         activeQuestions() {
             return this.questions.filter(
                 question =>
-                    this.assessment.attributes.indexOf(question.attribute) !==
+                this.assessment.attributes.indexOf(question.attribute) !==
                     -1
             );
         },

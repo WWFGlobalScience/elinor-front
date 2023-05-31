@@ -86,14 +86,12 @@
                 </button>
             </div>
             <ul class="ma__results">
-                <li v-for="(assessment, index) in assessments" 
-                    :set="score = reports.find(r => r.id == assessment.id)" 
-                    class="elinor__badge ui-rounded-border">
+                <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
                     <header class="header">
-                        <div v-if="assessment.status == 10 && reports && score" class="flex gap-2 flex-col items-center">
+                        <div v-if="assessment.status == 10" class="flex gap-2 flex-col items-center">
                             <div class="flex justify-center items-center w-[56px] h-[56px] rounded-full"
-                                :class="'bg-' + getScoreColor(score.score)">
-                                <span class="text-white text-[24px] font-semibold">{{ score.score }}</span>
+                                :class="'bg-' + getScoreColor(assessment.score)">
+                                <span class="text-white text-[24px] font-semibold">{{ assessment.score }}</span>
                             </div>
                             <span class="uppercase text-grayy-lighter font-bold text-[8px]">out of 100</span>
                         </div>
@@ -270,8 +268,7 @@ export default {
     name: "assessments-results",
     data() {
         return {
-            scoreColors: ['poor', 'average', 'good','excellent'],
-            reports: []
+            scoreColors: ['poor', 'average', 'good','excellent']
         };
     },
     computed: {
@@ -281,12 +278,6 @@ export default {
             listType: state => state.assessments.listType
         }),
         ...mapGetters(["assessments/getPercentage"])
-    },
-    created() {
-        this.$axios.get('v2/reports/assessments/')
-        .then((response) => {
-            this.reports = response.data.results
-        })
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
