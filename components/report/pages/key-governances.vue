@@ -19,7 +19,7 @@
                         </p>
                     </div>
 
-                    <div v-if="keys.length > 3" class="keys-card ui-rounded-border">
+                    <div class="keys-card ui-rounded-border">
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
                             Key governance needs
                         </h4>
@@ -33,7 +33,7 @@
                         </p>
                     </div>
 
-                    <div v-if="form.context" class="keys-card ui-rounded-border">
+                    <div class="keys-card ui-rounded-border">
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
                             Context
                         </h4>

@@ -32,40 +32,39 @@
                     </div>
                 </div>
             </div>
-            <template v-if="sortedScores.length > 3">
-                <hr class="col-span-full" />
-                <div class="col-span-2 md:col-span-full">
-                    <div class="uppercase keys-card text-sm ui-rounded-border">
-                        <h4 class="title">Key governance needs</h4>
-                        <ul class="list-keys key-ko">
-                            <li v-for="key in sortedScores.length > 3 ? sortedScores.slice(3).slice(-3) : []">
-                                {{ key.name }}
-                            </li>
-                        </ul>
-                    </div>
+            <hr class="col-span-full" />
+            <div class="col-span-2 md:col-span-full">
+                <div class="uppercase keys-card text-sm ui-rounded-border">
+                    <h4 class="title">Key governance needs</h4>
+                    <ul class="list-keys key-ko">
+                        <li v-for="key in sortedScores.length > 3 ? sortedScores.slice(3).slice(-3) : []">
+                            {{ key.name }}
+                        </li>
+                    </ul>
                 </div>
-                <div action="" class="col-span-full grid gap-y-8">
-                    <div class="grid grid-cols-3 md:grid-cols-1 gap-4">
-                        <div class="col-span-2 md:col-span-full">
-                            <div class="input input--pr">
-                                <div class="label">
-                                    Explain Main Needs
-                                </div>
-                                <textarea
-                                    name="collection_method_text"
-                                    placeholder=""
-                                    v-model="form.needs"
-                                ></textarea>
+            </div>
+            <div action="" class="col-span-full grid gap-y-8">
+                <div class="grid grid-cols-3 md:grid-cols-1 gap-4">
+                    <div class="col-span-2 md:col-span-full">
+                        <div class="input input--pr">
+                            <div class="label">
+                                Explain Main Needs
                             </div>
-                        </div>
-                        <div class="col-span-1">
-                            <p class="text-xs text-grayy-lighter pt-8">
-                                <!--Lorem Ipsum dolor sid amet consectetur adipiscing-->
-                            </p>
+                            <textarea
+                                name="collection_method_text"
+                                placeholder=""
+                                v-model="form.needs"
+                            ></textarea>
                         </div>
                     </div>
+                    <div class="col-span-1">
+                        <p class="text-xs text-grayy-lighter pt-8">
+                            <!--Lorem Ipsum dolor sid amet consectetur adipiscing-->
+                        </p>
+                    </div>
                 </div>
-            </template>
+            </div>
+
             <hr class="col-span-full" />
             <div action="" class="col-span-full grid gap-y-8">
                 <div class="grid grid-cols-3 md:grid-cols-1 gap-4">
@@ -125,8 +124,7 @@ export default {
                 strenghts: '',
                 needs: '',
                 context: '',
-            },
-            scoreColors: ["poor", "average", "good", "excellent"],
+            }
         };
     },
     computed: {
@@ -178,17 +176,6 @@ export default {
                 }
             })
             this.sortedScores = result.sort((a, b)=> {return b.score - a.score});
-        },
-        getAttributteColor(score){            
-            if(score <= 2){
-                return this.scoreColors[0]
-            }else if(score <= 5){
-                return this.scoreColors[1]
-            }else if(score <= 8){
-                return this.scoreColors[2]
-            }else{
-                return this.scoreColors[3]
-            }
         },
         pdf() {
             var doc = new jsPDF("l", "px", [1440, 1024]);

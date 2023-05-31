@@ -10,7 +10,7 @@
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
-                            :class="'bg-' + (group ? getScoreColor(group.score) : 'grayy-lighter')">
+                            :class="'bg-' + (group ? getAttributteColor(group.score) : 'grayy-lighter')">
                             {{ group ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
@@ -36,7 +36,7 @@
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
-                            :class="'bg-' + (group ? getScoreColor(group.score) : 'grayy-lighter')">
+                            :class="'bg-' + (group ? getAttributteColor(group.score) : 'grayy-lighter')">
                             {{ group ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
@@ -62,7 +62,7 @@
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
-                            :class="'bg-' + (group ? getScoreColor(group.score) : 'grayy-lighter')">
+                            :class="'bg-' + (group ? getAttributteColor(group.score) : 'grayy-lighter')">
                             {{ group ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
@@ -173,30 +173,12 @@ import { mapState } from "vuex";
 
 export default {
     name: "report-pages-total-scores",
-    data() {
-        return {
-            scoreColors: ["poor", "average", "good", "excellent"]
-        };
-    },
     computed: {
         ...mapState({
             report: state => state.assessments.report,
             attributes: state => state.attributes.list,
             questions: state => state.surveyquestions.list,
         })
-    },
-    methods: {
-        getScoreColor(score) {
-            if(score <= 2){
-                return this.scoreColors[0]
-            }else if(score <= 5){
-                return this.scoreColors[1]
-            }else if(score <= 8){
-                return this.scoreColors[2]
-            }else{
-                return this.scoreColors[3]
-            }
-        }
     }
 };
 </script>

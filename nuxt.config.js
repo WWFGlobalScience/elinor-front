@@ -30,6 +30,7 @@ export default {
         "~/plugins/vue-select.js",
         "~/plugins/formDataStringify.js",
         "~/plugins/vue-date-picker.js",
+        "~/plugins/scoreColors.js",
         {
             src: "~/plugins/choices.js",
             mode: "client"
