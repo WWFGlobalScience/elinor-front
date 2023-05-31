@@ -1,32 +1,29 @@
 import Vue from "vue"
 
 export const ScoreColors = {
-    data() {
-        return {
-            scoreColors: ["poor", "average", "good", "excellent"]
-        };
-    },
     methods: {
         getAssessmentColor(score){
+            var scoreColors = ["poor", "average", "good", "excellent"]
             if(score <= 29){
-                return this.scoreColors[0]
+                return scoreColors[0]
             }else if(score <= 59){
-                return this.scoreColors[1]
+                return scoreColors[1]
             }else if(score <= 89){
-                return this.scoreColors[2]
+                return scoreColors[2]
             }else{
-                return this.scoreColors[3]
+                return scoreColors[3]
             }
         },
-        getAttributteColor(score){            
+        getAttributteColor(score){
+            var scoreColors = ["poor", "average", "good", "excellent"]
             if(score <= 2){
-                return this.scoreColors[0]
+                return scoreColors[0]
             }else if(score <= 5){
-                return this.scoreColors[1]
+                return scoreColors[1]
             }else if(score <= 8){
-                return this.scoreColors[2]
+                return scoreColors[2]
             }else{
-                return this.scoreColors[3]
+                return scoreColors[3]
             }
         },
     }

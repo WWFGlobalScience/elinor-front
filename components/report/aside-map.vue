@@ -11,14 +11,14 @@
                 <div v-if="report.management_area" class="card-map">
                     <div class="card-map-col">
                         <p>
-                            Total hectareas<strong class="accent">{{ report.management_area.reported_size.toLocaleString() }} h </strong>
+                            Total hectareas<strong class="accent">{{ hectareas.toLocaleString($i18n.locale) }} h </strong>
                         </p>
                         <!--<p>
                             Previous Assessment date<strong>12-12-2003</strong>
                         </p>-->
                         <p>
                             Current Assessment date
-                            <strong>{{ new Date(report.management_area.version_date).toLocaleDateString('es-ES') }}</strong>
+                            <strong>{{ new Date(report.management_area.version_date).toLocaleDateString($i18n.locale) }}</strong>
                         </p>
                     </div>
                     <div class="card-map-col self-start">
@@ -50,7 +50,12 @@ export default {
         ...mapState({
             report: state => state.assessments.report,
             managementArea: state => state.managementareas.instance
-        })
+        }),
+        hectareas() {
+            const polygon = turf.polygon(this.managementArea.polygon.coordinates.flat(1))
+            const area = (turf.area(polygon) * 0.0001).toFixed(0)
+            return this.managementArea.polygon.coordinates ? Number(area)  : 0
+        }
     },
     methods: {
         getMapImageUrl() {
@@ -61,7 +66,6 @@ export default {
                 var bbox = turf.bbox(polygon)
                 
                 //console.log(new mapboxgl.Map({container: 'map',}).fitBounds(bbox))
-                console.log(bbox);
 
             } else if(this.managementArea.point){
                 center = turf.point(this.managementArea.point.coordinates);
