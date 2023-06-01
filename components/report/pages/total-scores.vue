@@ -10,7 +10,7 @@
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
-                            :class="'bg-' + (group ? getAttributteColor(group.score) : 'grayy-lighter')">
+                            :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
                             {{ group ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
@@ -36,7 +36,7 @@
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
-                            :class="'bg-' + (group ? getAttributteColor(group.score) : 'grayy-lighter')">
+                            :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
                             {{ group ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
@@ -62,7 +62,7 @@
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
-                            :class="'bg-' + (group ? getAttributteColor(group.score) : 'grayy-lighter')">
+                            :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
                             {{ group ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>

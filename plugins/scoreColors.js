@@ -14,7 +14,7 @@ export const ScoreColors = {
                 return scoreColors[3]
             }
         },
-        getAttributteColor(score){
+        getAttributeColor(score){
             var scoreColors = ["poor", "average", "good", "excellent"]
             if(score <= 2){
                 return scoreColors[0]

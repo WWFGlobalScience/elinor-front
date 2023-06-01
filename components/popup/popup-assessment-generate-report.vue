@@ -103,7 +103,7 @@
                 <div style="clear: both"></div>
             </div>
         </form>
-        <div id="report-wrap">
+        <div class="report-wrap">
             <report-assessment :keys="sortedScores" :form="form"></report-assessment>
         </div>
     </div>
@@ -203,10 +203,3 @@ export default {
     }
 };
 </script>
-<style>
-/*#report-wrap{
-    height: 1px;
-    width: 1px;
-    overflow:hidden;
-}*/
-</style>

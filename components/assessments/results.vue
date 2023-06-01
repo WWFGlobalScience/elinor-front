@@ -2,26 +2,20 @@
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
             <div class="search__results g-grid--4-1-sm">
-                <div class="col-span-2">
+                <div :class="filters && filters.management_area_countries ? 'col-span-1' : 'col-span-2'">
                     <span>{{ $t("pages.assessments.list.total") }}</span> -
                     <span>{{ assessments.length }}</span>
-                    <span
-                        v-if="assessments.length > 1 || assessments.length == 0"
-                        >{{ $t("pages.assessments.list.totalPlural") }}</span
-                    >
-                    <span v-if="assessments.length == 1">{{
-                        $t("pages.assessments.list.totalSingular")
-                    }}</span>
+                    <span v-if="assessments.length > 1 || assessments.length == 0">
+                        {{ $t("pages.assessments.list.totalPlural") }}
+                    </span>
+                    <span v-if="assessments.length == 1">
+                        {{ $t("pages.assessments.list.totalSingular") }}
+                    </span>
                 </div>
-                <div
-                    class="form form--mt-0 ml-auto w-full"
-                    v-if="$auth.loggedIn"
-                >
+                <div class="form form--mt-0 ml-auto w-full" v-if="$auth.loggedIn" >
                     <div class="form__group">
                         <div class="form__row">
-                            <div
-                                class="input input--radios input--radios-question"
-                            >
+                            <div class="input input--radios input--radios-question" >
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                         <div class="radio">
@@ -30,16 +24,10 @@
                                                 name="assessmentType"
                                                 value="own"
                                                 id="own"
-                                                @change="
-                                                    filterAssessmentsBy(
-                                                        $event.target.value
-                                                    )
-                                                "
+                                                @change=" filterAssessmentsBy( $event.target.value ) "
                                                 :checked="listType === 'own'"
                                             />
-                                            <img
-                                                src="~/assets/img/ico-ok.svg"
-                                            />
+                                            <img src="~/assets/img/ico-ok.svg" />
                                         </div>
                                     </div>
                                 </div>
@@ -74,14 +62,14 @@
                         </div>
                     </div>
                 </div>
+                <template v-if="filters && filters.management_area_countries">
+                    <report-country></report-country>
+                </template>
                 <button
                     type="button"
                     class="btn btn--border-turqy btn--sm ml-auto"
                     @click="download()">
-                    <img
-                        src="~/assets/img/ico-download.svg"
-                        alt="Download Data"
-                    />
+                    <img src="~/assets/img/ico-download.svg" alt="Download Data" />
                     <span class="btn--opacity__target">{{ $t("pages.assessments.list.downloadButton") }}</span>
                 </button>
             </div>
@@ -104,38 +92,24 @@
                                         ? `/assessments/edit/${assessment.id}/assessment-data/`
                                         : `/assessments/${assessment.id}/info/`
                                 ">{{ assessment.name }}</NuxtLink>
-                            <div
-                                class="search-criteria"
-                                v-if="assessment.management_area_countries"
-                            >
+                            <div class="search-criteria" v-if="assessment.management_area_countries" >
                                 <span class="area">Managed Area</span>
                                 <span class="criteria">{{ assessment.management_area_countries.name }}</span>
                             </div>
                         </div>
                         <div class="right">
-                            <div
-                                v-if="
-                                    assessment.data_policy === 90 &&
-                                        assessment.status === 10
-                                "
-                                class="assessment-status status--ready"
-                            >
+                            <div v-if="assessment.data_policy === 90 && assessment.status === 10"
+                                class="assessment-status status--ready">
                                 <span class="status-circle">
                                     <img src="~assets/img/ico-megaphone.svg"/>
                                 </span>
                                 <span class="text">Published</span>
                             </div>
-                            <div
-                                v-if="
-                                    assessment.data_policy === 10 &&
-                                        assessment.status === 10
-                                "
-                                class="assessment-status status--ready"
-                            >
-                                <span class="status-circle"
-                                    ><img
-                                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K"
-                                /></span>
+                            <div v-if="assessment.data_policy === 10 && assessment.status === 10"
+                                class="assessment-status status--ready">
+                                <span class="status-circle">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K" />
+                                </span>
                                 <span class="text">Finalized</span>
                             </div>
                             <div
@@ -269,6 +243,7 @@ export default {
     computed: {
         ...mapState({
             assessments: state => state.assessments.list,
+            filters: state => state.assessments.filters,
             users: state => state.users.users,
             listType: state => state.assessments.listType
         }),

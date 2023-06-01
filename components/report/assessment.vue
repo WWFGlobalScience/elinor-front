@@ -33,17 +33,6 @@ export default {
         this.loaded = true
     },
     methods: {
-        getAttributteColor(score){            
-            if(score <= 2){
-                return this.scoreColors[0]
-            }else if(score <= 5){
-                return this.scoreColors[1]
-            }else if(score <= 8){
-                return this.scoreColors[2]
-            }else{
-                return this.scoreColors[3]
-            }
-        },
         pdf() {
             var doc = new jsPDF("l", "px", [1440, 1024]);
             var pdfjs = document.querySelector("#key-governances");
@@ -74,10 +63,3 @@ export default {
     }
 };
 </script>
-<style>
-#report-wrap{
-    height: 1px;
-    width: 1px;
-    overflow:hidden;
-}
-</style>

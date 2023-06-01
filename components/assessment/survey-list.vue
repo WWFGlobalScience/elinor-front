@@ -12,7 +12,7 @@
                     <div class="title-border" :id="`anchor-attribute-${attribute.id}`">
                         <div class="title-dot-wrapper">
                             <span class="title-dot"
-                                :class="isAttributeChecked(attribute) ? 'bg-' + getAttributteColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
+                                :class="isAttributeChecked(attribute) ? 'bg-' + getAttributeColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
                                 <template v-if="isAttributeChecked(attribute)">
                                     {{ getScoreByAttribute(attribute).toFixed(0)}}
                                 </template>
