@@ -116,7 +116,8 @@ export default {
                 1: 'average_1',
                 2: 'good_2',
                 3: 'excellent_3'
-            }
+            },
+            scoreColors: ["poor", "average", "good", "excellent"]
         };
     },
     computed: {
