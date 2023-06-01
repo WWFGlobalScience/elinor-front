@@ -84,7 +84,7 @@ export default {
             const size = "570x1024@2x";
             const overlay = `geojson(${this.getGeoJson()})/`;
             //const url = `${baseUrl}${overlay}${coordinates},${zoom}/${size}?access_token=${token}`;
-            const url = `${baseUrl}${overlay}auto/${size}?padding=50,50&access_token=${token}`;
+            const url = `${baseUrl}${overlay}auto/${size}?padding=300,130,400&access_token=${token}`;
             return url;
         },
         getGeoJson(){
@@ -103,9 +103,9 @@ export default {
                     "properties": {
                         "stroke": "${colorMapping[color]}",
                         "stroke-width": 3,
-                        "stroke-opacity": 1,
+                        "stroke-opacity": 0.5,
                         "fill": "${colorMapping[color]}",
-                        "fill-opacity": 0.5
+                        "fill-opacity": 0.1
                     },
                     "geometry": {
                         "coordinates": ${JSON.stringify(this.managementArea.polygon.coordinates.flat(1))},
