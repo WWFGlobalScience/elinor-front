@@ -29,7 +29,6 @@ export default {
     mounted() {
         this.$store.dispatch( 'assessments/fetchReport', this.assessment.id )
         this.$store.dispatch('surveyquestions/fetchSurveyQuestions');
-        //this.$store.dispatch( 'managementareas/fetchManagementArea', this.assessment.management_area )
         this.loaded = true
     },
     methods: {

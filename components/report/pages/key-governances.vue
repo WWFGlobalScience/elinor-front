@@ -24,7 +24,7 @@
                             Key governance needs
                         </h4>
                         <ul class="list-keys list-keys--xl key-ko">
-                            <li v-for="key in keys.length > 3 ? sortedScores.slice(3).slice(-3) : []" class="text-medium">
+                            <li v-for="key in keys.length > 3 ? keys.slice(3).slice(-3) : []" class="text-medium">
                                 {{ key.name }}
                             </li>
                         </ul>
