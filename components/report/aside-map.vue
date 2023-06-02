@@ -9,25 +9,33 @@
                     <img src="~/assets/img/report-brand.png" alt="logo" />
                 </div>
                 <div v-if="report.management_area" class="card-map">
+                    
                     <div class="card-map-col">
-                        <p>
-                            Total hectareas<strong class="accent">{{ hectareas.toLocaleString($i18n.locale) }} h </strong>
+                        <p v-if="report.management_area.date_established">
+                            Year established
+                            <strong>{{ new Date(report.management_area.date_established).toLocaleDateString($i18n.locale) }}</strong>
                         </p>
-                        <!--<p>
-                            Previous Assessment date<strong>12-12-2003</strong>
-                        </p>-->
-                        <p>
-                            Current Assessment date
-                            <strong>{{ new Date(report.management_area.version_date).toLocaleDateString($i18n.locale) }}</strong>
+                        <p v-if="report.management_area.governance_type">
+                            MA governance type
+                            <strong>{{ report.management_area.governance_type }}</strong>
+                        </p>
+                        <p v-if="hectareas">
+                            Total hectareas<strong>{{ hectareas.toLocaleString($i18n.locale) }} h </strong>
                         </p>
                     </div>
                     <div class="card-map-col self-start">
-                        <p>
-                            Type of Assessment date<strong> ???? </strong>
+                        <!--<p>
+                            Assessment type
+                            <strong>(focus group or desk-based)</strong>
+                        </p>-->
+                        <p v-if="report.management_area.version_date">
+                            Current assessment date
+                            <strong>{{ new Date(report.management_area.version_date).toLocaleDateString($i18n.locale) }}</strong>
                         </p>
-                        <p v-if="report.management_area.governance_type">
-                            MA Governance type<strong>{{ report.management_area.governance_type }}</strong>
-                        </p>
+                        <!--<p>
+                            previous assessment date
+                            <strong class="accent"></strong>
+                        </p>-->
                     </div>
                 </div>
             </div>
@@ -52,42 +60,32 @@ export default {
             managementArea: state => state.managementareas.instance
         }),
         hectareas() {
-            const polygon = turf.polygon(this.managementArea.polygon.coordinates.flat(1))
-            const area = (turf.area(polygon) * 0.0001).toFixed(0)
-            return this.managementArea.polygon.coordinates ? Number(area)  : 0
+            if(this.managementArea.polygon){
+                const polygon = turf.polygon(this.managementArea.polygon.coordinates.flat(1))
+                const area = (turf.area(polygon) * 0.0001).toFixed(0)
+                return this.managementArea.polygon.coordinates ? Number(area)  : 0
+            } else{
+                return null
+            }
         }
     },
     methods: {
         getMapImageUrl() {
-            let center;
-            if(this.managementArea.polygon) {
-                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
-                center = turf.centroid(polygon);
-                var bbox = turf.bbox(polygon)
-                
-                //console.log(new mapboxgl.Map({container: 'map',}).fitBounds(bbox))
-
-            } else if(this.managementArea.point){
-                center = turf.point(this.managementArea.point.coordinates);
-                this.marker = new mapboxgl.Marker()
-                    .setLngLat(this.managementArea.point.coordinates);
-            } else {
-                center = turf.point(["0","0"]);
-            }
-
-
             const token = mapboxgl.accessToken;
             const baseUrl =
                 "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/";
-            const zoom = 'auto';
-            const coordinates = center.geometry.coordinates;
             const size = "570x1024@2x";
-            const overlay = `geojson(${this.getGeoJson()})/`;
+
+            var geoJson = this.getGeoJson()
+            const overlay = geoJson ? `geojson(${geoJson})/` : '';
             //const url = `${baseUrl}${overlay}${coordinates},${zoom}/${size}?access_token=${token}`;
             const url = `${baseUrl}${overlay}auto/${size}?padding=300,130,400&access_token=${token}`;
             return url;
         },
         getGeoJson(){
+            if(!this.managementArea.polygon){
+                return null
+            }
             var colorMapping = {
                 'poor': '#EE8383',
                 'average': '#F5C243',
