@@ -1,5 +1,5 @@
 <template>
-    <button v-if="loaded && filteredAssessments.length > 0" @click="pdf" role="button"
+    <button v-if="assessments.length > 0" @click="pdf" role="button"
         class="btn btn--border-turqy btn--sm ml-auto"
         title="Report">
         <img src="~/assets/img/ico-download.png" alt="Download" />
@@ -23,27 +23,28 @@ export default {
     name: "report-country",
     data() {
         return {
-            loaded: false,
             report: []
         }
     },
     computed: {
         ...mapState({
-            filters: state => state.filters.list,
+            filters: state => state.assessments.filters,
+            assessments: state => state.assessments.list,
         }),
         filteredAssessments() {
             //return this.report.filter(a => a.id)
             return this.report.sort((a,b) => { return b.score - a.score } );
         }
     },
-    mounted() {
-        this.$axios({
-            method: 'get',
-            url: `v2/reports/assessments/`
-        }).then( ( response ) => {
-            this.report = response.data.results
-            this.loaded = true
-        })
+    watch: {
+        assessments() {
+            this.$axios({
+                method: 'get',
+                url: `v2/reports/assessments/?management_area_countries=${this.filters.management_area_countries}&status=${this.filters.status || ''}&year=${this.filters.year || ''}`
+            }).then( ( response ) => {
+                this.report = response.data.results
+            })
+        }
     },
     methods: {
         pdf() {
