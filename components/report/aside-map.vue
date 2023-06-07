@@ -24,10 +24,10 @@
                         </p>
                     </div>
                     <div class="card-map-col self-start">
-                        <!--<p>
+                        <p v-if="report.collection_method">
                             Assessment type
-                            <strong>(focus group or desk-based)</strong>
-                        </p>-->
+                            <strong>{{ report.collection_method }}</strong>
+                        </p>
                         <p v-if="report.management_area.version_date">
                             Current assessment date
                             <strong>{{ new Date(report.management_area.version_date).toLocaleDateString($i18n.locale) }}</strong>
