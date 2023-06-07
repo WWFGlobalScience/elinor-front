@@ -60,6 +60,23 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form__row">
+                                    <div class="input input--radios input--radios-question">
+                                        <div class="radios__wrap">
+                                            <div class="radio__wrap">
+                                                <div class="radio">
+                                                    <input type="radio" name="answer" id="answer-null" @click="saveChoice(null)" :checked="isAnsweredWith(null)">
+                                                    <img src="~/assets/img/ico-ok.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="answer-null" class="label">
+                                            <span></span>
+                                            <span>{{ $t("pages.assessments.edit.tabs.survey.questions.dontKnow") }}</span>
+                                        </label>
+                                    </div>
+                                </div>
+
                                 <div class="form__row form__row--mt-16">
                                     <div class="input input--pr">
                                         <div class="label">{{ $t( `pages.assessments.edit.tabs.survey.questions.explanation`) }}</div>
@@ -179,6 +196,7 @@ export default {
 
         save(choice, explanation) {
             const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
+            console.log(choice)
             if(answer.length === 0) {
                 const data = {assessmentId: this.assessment.id, questionId: this.question.id, choice};
                 if(explanation) {

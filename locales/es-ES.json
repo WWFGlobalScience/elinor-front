@@ -440,6 +440,7 @@
                             "answer": "Answer",
                             "score": "Score",
                             "unknown": "unknown",
+                            "dontKnow": "Don't know",
                             "explanation": "Explanation",
                             "notCompleted": "Not completed",
                             "answerQuestionButton": "Answer question",

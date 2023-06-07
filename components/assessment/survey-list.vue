@@ -70,8 +70,8 @@
                                     <div class="txt">
                                         {{$t("pages.assessments.edit.tabs.survey.questions.answer")}}
                                         |
-                                        {{$t("pages.assessments.edit.tabs.survey.questions.score")}}:&nbsp; 
-                                        <span class="inline-flex justify-center items-center w-[22px] h-[22px] rounded-full text-white font-semibold"
+                                        {{$t("pages.assessments.edit.tabs.survey.questions.score")}}:
+                                        <span class="dot-score"
                                             :class="'bg-' + scoreColors[getAnswerChoice(question)]">
                                             {{ getAnswerChoice(question) }}
                                         </span>
