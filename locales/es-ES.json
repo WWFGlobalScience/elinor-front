@@ -1601,6 +1601,20 @@
                     "text": "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
                 }
             }
+        },
+        "map": {
+            "home": {
+                "meta": {
+                    "title": "Mapa",
+                    "slug": "/mapa",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            }
         }
     },
     "sidebar": {

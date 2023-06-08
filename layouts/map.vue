@@ -5,7 +5,6 @@
             <main role="main">
                 <default-sidebar></default-sidebar>
                 <Nuxt keep-alive />
-                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>
@@ -15,10 +14,8 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-
 export default {
-    name: "layout-default",
+    name: "layout-map",
     computed: {
         loader() {
             return this.$store.state.loader.loader;
