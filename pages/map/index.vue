@@ -1,22 +1,24 @@
 <template>
-    <MglMap :accessToken="accessToken" :mapStyle="mapStyle">
-        <MglMarker :coordinates="coordinates" color="blue">
+    <MglMap
+        :accessToken="accessToken"
+        :mapStyle="mapStyle"
+        :center="coordinates"
+        class="min-h-screen"
+    >
+        <MglAttributionControl />
+        <MglNavigationControl position="top-right" />
+        <MglGeolocateControl position="top-right" />
+        <MglScaleControl />
+        <MglMarker :coordinates="coordinates" color="blue" button="none">
             <template slot="marker">
-                <div>
-                    <img
-                        src="~/assets/img/marks/mark-poor.svg"
-                        width="40"
-                        height="40"
-                    />
-                </div>
+                <img
+                    src="~/assets/img/marks/mark-poor.svg"
+                    width="24"
+                    alt="mark"
+                />
             </template>
             <MglPopup anchor="left">
-                <p class="font-montserrat text-xs font-bold">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ducimus aperiam possimus error officiis tempore voluptatem
-                    fugit perferendis, molestiae neque. Natus, non voluptatem
-                    sit eaque ex quo laboriosam deleniti impedit vel.
-                </p>
+                <map-popup />
             </MglPopup>
         </MglMarker>
     </MglMap>
@@ -24,7 +26,16 @@
 
 <script>
 import Mapbox from "mapbox-gl";
-import { MglMap, MglMarker, MglPopup } from "vue-mapbox";
+import {
+    MglMap,
+    MglMarker,
+    MglPopup,
+    MglAttributionControl,
+    MglNavigationControl,
+    MglGeolocateControl,
+    MglFullscreenControl,
+    MglScaleControl
+} from "vue-mapbox";
 
 export default {
     name: "map",
@@ -33,7 +44,12 @@ export default {
     components: {
         MglMap,
         MglMarker,
-        MglPopup
+        MglPopup,
+        MglNavigationControl,
+        MglGeolocateControl,
+        MglAttributionControl,
+        MglScaleControl,
+        MglFullscreenControl
     },
     data() {
         return {
@@ -45,7 +61,6 @@ export default {
     },
 
     created() {
-        // We need to set mapbox-gl library here in order to use it in template
         this.mapbox = Mapbox;
     },
 
