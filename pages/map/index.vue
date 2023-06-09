@@ -1,100 +1,54 @@
 <template>
-    <div style="height: 100vh; width: 100%">
-        <l-map
-            v-if="showMap"
-            :zoom="zoom"
-            :center="center"
-            :options="mapOptions"
-            style="height: 100%"
-            @update:center="centerUpdate"
-            @update:zoom="zoomUpdate"
-        >
-            <l-tile-layer :url="url" :attribution="attribution" />
-
-            <l-marker :lat-lng="withTooltip" :icon="icon">
-                <l-tooltip>
-                    <div @click="innerClick" class="w-[300px] ">
-                        <p class="w-[300px]">
-                            I am a tooltip Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Quisque sed pretium
-                            nisl, ut sagittis sapien. Sed vel sollicitudin nisi.
-                            Donec finibus semper metus id malesuada. Lorem ipsum
-                            dolor sit amet, consectetur adipiscing elit. Quisque
-                            sed pretium nisl, ut sagittis sapien. Sed vel
-                            sollicitudin nisi. Donec finibus semper metus id
-                            malesuada. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Quisque sed pretium nisl, ut
-                            sagittis sapien. Sed vel sollicitudin nisi. Donec
-                            finibus semper metus id malesuada.
-                        </p>
-                    </div>
-                </l-tooltip>
-            </l-marker>
-        </l-map>
-    </div>
+    <MglMap :accessToken="accessToken" :mapStyle="mapStyle">
+        <MglMarker :coordinates="coordinates" color="blue">
+            <template slot="marker">
+                <div>
+                    <img
+                        src="~/assets/img/marks/mark-poor.svg"
+                        width="40"
+                        height="40"
+                    />
+                </div>
+            </template>
+            <MglPopup anchor="left">
+                <p class="font-montserrat text-xs font-bold">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ducimus aperiam possimus error officiis tempore voluptatem
+                    fugit perferendis, molestiae neque. Natus, non voluptatem
+                    sit eaque ex quo laboriosam deleniti impedit vel.
+                </p>
+            </MglPopup>
+        </MglMarker>
+    </MglMap>
 </template>
 
 <script>
-import { latLng, icon } from "leaflet";
-import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
+import Mapbox from "mapbox-gl";
+import { MglMap, MglMarker, MglPopup } from "vue-mapbox";
 
 export default {
     name: "map",
     auth: false,
     layout: "map",
     components: {
-        LMap,
-        LTileLayer,
-        LMarker,
-        LPopup,
-        LTooltip
+        MglMap,
+        MglMarker,
+        MglPopup
     },
     data() {
         return {
-            zoom: 13,
-            center: latLng(47.41322, -1.219482),
-            url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-            attribution:
-                '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            withPopup: latLng(47.41322, -1.219482),
-            withTooltip: latLng(47.41422, -1.250482),
-            currentZoom: 11.5,
-            currentCenter: latLng(47.41322, -1.219482),
-            showParagraph: false,
-            mapOptions: {
-                zoomSnap: 0.5
-            },
-            showMap: true,
-            icon: icon({
-                iconUrl: require("~/assets/img/marks/mark-poor.svg"),
-                iconSize: [28, 36],
-                iconAnchor: [14, 36]
-            })
+            accessToken:
+                "pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ",
+            mapStyle: "mapbox://styles/mapbox/satellite-v9",
+            coordinates: [-111.549668, 39.014]
         };
     },
-    methods: {
-        zoomUpdate(zoom) {
-            this.currentZoom = zoom;
-        },
-        centerUpdate(center) {
-            this.currentCenter = center;
-        },
-        showLongText() {
-            this.showParagraph = !this.showParagraph;
-        },
-        innerClick() {
-            alert("Click!");
-        }
+
+    created() {
+        // We need to set mapbox-gl library here in order to use it in template
+        this.mapbox = Mapbox;
     },
-    head() {
-        return {
-            link: [
-                {
-                    rel: "stylesheet",
-                    href: "https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                }
-            ]
-        };
-    }
+
+    head() {}
 };
 </script>
