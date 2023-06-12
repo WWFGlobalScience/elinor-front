@@ -9,10 +9,15 @@
                     <div v-for="attribute in attributes.slice(0,4)" 
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
-                        <div class="dot-value"                        
-                            :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group ? group.score : '-' }}
-                        </div>
+                        <template v-if="isAttributeChecked(attribute)">
+                            <div class="dot-value"                        
+                                :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
+                                {{ group && group.score ? group.score : '-' }}
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="dot-value bg-grayy-lighter">-</div>
+                        </template>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
                             {{ $t('pages.about.elinorAttributes.attribute'+attribute.id+'.reportText') }}
@@ -37,7 +42,7 @@
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group ? group.score : '-' }}
+                            {{ group && group.score ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
@@ -63,7 +68,7 @@
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group ? group.score : '-' }}
+                            {{ group && group.score ? group.score : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
@@ -175,10 +180,21 @@ export default {
     name: "report-pages-total-scores",
     computed: {
         ...mapState({
+            assessment: state => state.assessments.assessment,
             report: state => state.assessments.report,
             attributes: state => state.attributes.list,
             questions: state => state.surveyquestions.list,
         })
+    },
+    methods: {
+        isAttributeChecked(attribute) {
+            if(this.assessment.attributes){
+                return this.assessment.attributes.indexOf(attribute.id) !== -1;
+            }
+            else{
+                return false
+            }
+        },
     }
 };
 </script>

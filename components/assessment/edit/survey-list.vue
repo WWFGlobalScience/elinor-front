@@ -6,9 +6,9 @@
                     <div class="title-border" :id="`anchor-attribute-${attribute.id}`">
                         <div class="title-dot-wrapper">
                             <span class="title-dot"
-                                :class="isAttributeChecked(attribute) ? 'bg-' + getAttributeColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
+                                :class="isAttributeChecked(attribute) && getScoreByAttribute(attribute) ? 'bg-' + getAttributeColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
                                 <template v-if="isAttributeChecked(attribute)">
-                                    {{ getScoreByAttribute(attribute).toFixed(0)}}
+                                    {{ getScoreByAttribute(attribute) ? getScoreByAttribute(attribute).toFixed(0) : '-'}}
                                 </template>
                             </span>
                             <h3 class="title uppercase">
@@ -175,9 +175,9 @@ export default {
         },
         getScoreByAttribute(attribute){
             if(this.isAttributeChecked(attribute)){
-                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.attribute === attribute.id)
+                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice && surveyAnswer.question.attribute === attribute.id)
                 if(answers.length == 0){
-                    return 0
+                    return null
                 }
                 var sumValues = answers.reduce(function (s, a) {return s + a.choice;}, 0);
 

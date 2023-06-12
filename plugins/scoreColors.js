@@ -16,7 +16,9 @@ export const ScoreColors = {
         },
         getAttributeColor(score){
             var scoreColors = ["poor", "average", "good", "excellent"]
-            if(score <= 2){
+            if(score == null){
+                return "grayy-lighter"
+            }else if(score <= 2){
                 return scoreColors[0]
             }else if(score <= 5){
                 return scoreColors[1]
