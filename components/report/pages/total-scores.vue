@@ -12,7 +12,7 @@
                         <template v-if="isAttributeChecked(attribute)">
                             <div class="dot-value"                        
                                 :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                                {{ group && group.score ? group.score : '-' }}
+                                {{ group && group.score ? group.score.toFixed(0) : '-' }}
                             </div>
                         </template>
                         <template v-else>
@@ -42,7 +42,7 @@
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group && group.score ? group.score : '-' }}
+                            {{ group && group.score ? group.score.toFixed(0) : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
@@ -68,7 +68,7 @@
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group && group.score ? group.score : '-' }}
+                            {{ group && group.score ? group.score.toFixed(0) : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
