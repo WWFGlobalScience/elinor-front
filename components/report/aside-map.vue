@@ -72,8 +72,7 @@ export default {
     methods: {
         getMapImageUrl() {
             const token = mapboxgl.accessToken;
-            const baseUrl =
-                "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/";
+            const baseUrl = "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/";
             const size = "570x1024@2x";
 
             var geoJson = this.getGeoJson()
@@ -83,7 +82,7 @@ export default {
             return url;
         },
         getGeoJson(){
-            if(!this.managementArea.polygon){
+            if(!this.managementArea.polygon || this.managementArea.polygon.coordinates.length == 0){
                 return null
             }
             var colorMapping = {
