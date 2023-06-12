@@ -3,7 +3,7 @@
     .form__group {
         .form__row {
             @apply flex space-x-5 mb-6 sm:flex-col sm:mb-0;
-            & > :not([hidden]) ~ :not([hidden]){
+            & > :not([hidden]) ~ :not([hidden]) {
                 @apply sm:mx-0;
             }
 
@@ -28,21 +28,20 @@
             &:last-child {
                 @apply mb-0;
             }
-            &.form__row--mt-24{
-                @apply mt-24
+            &.form__row--mt-24 {
+                @apply mt-24;
             }
-
         }
     }
     &.form--mt-0 {
         @apply mt-0;
     }
 
-    &.form--sign-in{
+    &.form--sign-in {
         @apply mt-11;
     }
 
-    &.form--organization{
+    &.form--organization {
         @apply mt-1;
     }
 }
@@ -53,7 +52,8 @@
     &--error {
         @apply border-red-500 #{!important};
     }
-    input:not(.vs__search), textarea:not(.vs__search) {
+    input:not(.vs__search),
+    textarea:not(.vs__search) {
         @apply w-full px-6 py-5 bg-white border border-solid border-grayy-border text-grayy text-base font-medium focus:border-grayy-lighter;
         &::placeholder {
             @apply text-grayy-lighter;
@@ -69,15 +69,15 @@
                 @apply bg-white z-10 pr-10;
             }
             &:after {
-                content: '';
+                content: "";
                 @apply center-v left-0 w-full h-px bg-grayy-border;
             }
         }
-        &.label--bold{
+        &.label--bold {
             @apply font-bold;
         }
 
-        &.label--tit{
+        &.label--tit {
             @apply font-bold text-[16px];
         }
     }
@@ -88,7 +88,8 @@
         @apply w-[22px] h-[22px] border-[2px] border-solid border-turqy border-radius--50 absolute right-6 top-7 flex items-center justify-center text-xs text-turqy cursor-pointer transition hover:opacity-60;
     }
     &.input--pr {
-        input, textarea {
+        input,
+        textarea {
             @apply pr-16;
         }
     }
@@ -105,7 +106,7 @@
                 @apply center-both opacity-0;
             }
             input {
-                @apply w-[25px] h-[25px] opacity-0 z-10 transition cursor-pointer;;
+                @apply w-[25px] h-[25px] opacity-0 z-10 transition cursor-pointer;
                 &:checked {
                     & + img {
                         @apply opacity-100 transition;
@@ -131,7 +132,7 @@
                     img {
                         @apply w-[22px] center-both z-10 pointer-events-none ml-[2px] transition opacity-0;
                     }
-                    input:checked+ img {
+                    input:checked + img {
                         @apply opacity-100;
                     }
                 }
@@ -155,32 +156,32 @@
             }
         }
     }
-    &.input--switch{
-        .switch__wrap{
+    &.input--switch {
+        .switch__wrap {
             @apply flex items-center;
-            .label{
+            .label {
                 @apply ml-4 mb-0;
             }
         }
-        .switch{
+        .switch {
             @apply relative inline-block w-12 h-7;
 
-            input{
+            input {
                 @apply opacity-0 w-full h-full absolute z-10;
 
-                &:checked + .switch__slider{
+                &:checked + .switch__slider {
                     @apply bg-turqy;
                 }
                 &:checked + .switch__slider:before {
                     transform: translate(1.25rem);
-                  }
-                &:focus + .switch__slider{
+                }
+                &:focus + .switch__slider {
                     @apply shadow-sm;
                 }
             }
-            .switch__slider{
+            .switch__slider {
                 @apply absolute cursor-pointer inset-0 bg-grayy-lighter rounded-full transition-all duration-500 ease-in-out;
-                &::before{
+                &::before {
                     content: "";
                     @apply absolute  w-5 h-5 left-1 bottom-1 bg-white rounded-full transition-all duration-500 ease-in-out;
                 }
@@ -251,19 +252,19 @@
         .vdp-datepicker__calendar header {
             @apply z-10;
         }
-        .vdp-datepicker__calendar .cell:hover{
+        .vdp-datepicker__calendar .cell:hover {
             @apply bg-transparent;
         }
-        .vdp-datepicker__calendar .cell{
+        .vdp-datepicker__calendar .cell {
             @apply text-[12px] text-grayy-lighter;
         }
-        .vdp-datepicker__calendar .cell.day:hover{
+        .vdp-datepicker__calendar .cell.day:hover {
             @apply border-turqy;
         }
-        .vdp-datepicker__calendar .cell.today{
+        .vdp-datepicker__calendar .cell.today {
             @apply bg-transparent border border-turqy;
         }
-        .vdp-datepicker__calendar .cell.selected{
+        .vdp-datepicker__calendar .cell.selected {
             @apply bg-turqy text-white;
         }
         .vdp-datepicker__calendar .day__month_btn.up {
@@ -286,7 +287,8 @@
                 @apply p-0 border-0 mb-0 min-h-0 focus:border-grayy-lighter;
             }
         }
-        .multiselect__placeholder, .multiselect__single {
+        .multiselect__placeholder,
+        .multiselect__single {
             @apply mb-0 p-0 text-grayy text-base font-medium min-h-0;
         }
         .multiselect__option--highlight {
@@ -312,23 +314,27 @@
             border-radius: 0;
             @apply hover:bg-grayy-border;
         }
-        .multiselect__wrap{
-            &.multiselect__wrap--1-3{
+        .multiselect__wrap {
+            &.multiselect__wrap--1-3 {
                 @apply w-1/3 sm:w-1/2;
             }
+            &--map {
+                .multiselect__tags {
+                    @apply py-2;
+                }
+            }
         }
-        .multiselect__extra{
-            @apply mt-8 ;
+        .multiselect__extra {
+            @apply mt-8;
 
-            .btn-row{
+            .btn-row {
                 display: flex;
             }
-
         }
-        .multiselect__form{
+        .multiselect__form {
             @apply relative ml-8 pl-14 pt-4 border-l border-grayy-border;
-            &:before{
-                content:'';
+            &:before {
+                content: "";
                 @apply absolute top-14 left-0 block w-12 h-px bg-grayy-border;
             }
         }
@@ -350,70 +356,65 @@
     }
 }
 
-.form__legend{
-    @apply text-sm ;
-    strong{
+.form__legend {
+    @apply text-sm;
+    strong {
         @apply text-xl font-bold mb-2;
     }
-    a{
-        @apply text-turqy
+    a {
+        @apply text-turqy;
     }
 }
 
-
-
-
 //mapboxgl-ctrl-geocoder
 
-.mapboxgl-ctrl-geocoder{
+.mapboxgl-ctrl-geocoder {
     @apply z-10;
-    .mapboxgl-ctrl-geocoder--icon{
+    .mapboxgl-ctrl-geocoder--icon {
         @apply absolute top-5 right-6 z-10;
-        &-search{
+        &-search {
             @apply w-12 h-7 fill-current text-turqy border-l border-grayy-border pl-3;
         }
     }
-    .mapboxgl-ctrl-geocoder--pin-right{
+    .mapboxgl-ctrl-geocoder--pin-right {
         @apply absolute right-0 top-0 py-6;
-        .mapboxgl-ctrl-geocoder--icon{
+        .mapboxgl-ctrl-geocoder--icon {
             @apply right-0 w-12 h-7 mr-20;
-            &-loading{
+            &-loading {
                 @apply hidden;
-                &>*{
-                    &:first-child{
+                & > * {
+                    &:first-child {
                         @apply fill-current text-turqy;
                     }
                     @apply fill-current text-grayy-lighter;
                 }
-
             }
         }
-        .mapboxgl-ctrl-geocoder--button{
+        .mapboxgl-ctrl-geocoder--button {
             @apply cursor-pointer hover:opacity-60;
-            .mapboxgl-ctrl-geocoder--icon{
+            .mapboxgl-ctrl-geocoder--icon {
                 @apply h-8 w-4 mr-1 mt-5 fill-current text-grayy hidden;
             }
         }
-
     }
-    .suggestions-wrapper{
+    .suggestions-wrapper {
         @apply border-b border-l border-r border-grayy-border rounded-b-lg absolute bg-white w-full;
 
-        .mapboxgl-ctrl-geocoder--suggestion{
+        .mapboxgl-ctrl-geocoder--suggestion {
             @apply text-xs p-3 cursor-pointer text-grayy hover:bg-turqy-lighter;
-            .mapboxgl-ctrl-geocoder--suggestion-address{
+            .mapboxgl-ctrl-geocoder--suggestion-address {
                 @apply text-grayy-lighter;
             }
         }
-        .mapbox-gl-geocoder--no-results{
+        .mapbox-gl-geocoder--no-results {
             @apply text-xs p-3 text-grayy;
         }
     }
 }
 
-.tit-row{
+.tit-row {
     @apply justify-between items-center;
-    .label{
+    .label {
         @apply mb-0;
     }
 }
