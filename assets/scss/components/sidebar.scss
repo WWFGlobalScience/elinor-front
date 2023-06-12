@@ -1,5 +1,6 @@
 .sidebar__main {
     margin-top: -69px;
+    & + .page{max-width: calc(100vw - 188px)}
     .sidebar__wrap {
         @apply bg-turqy h-screen sticky top-0 z-30 flex flex-col transition-all duration-500;
         width: 188px;
@@ -75,6 +76,7 @@
         }
     }
     &.sidebar__main--min{
+        & + .page{max-width: calc(100vw - 3rem)}
         .sidebar__wrap {
             @apply w-12 transition-all duration-500;
             .brand{
