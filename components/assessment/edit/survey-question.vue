@@ -3,7 +3,7 @@
         <div class="container">
             <header id="question" class="header--back">
                 <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
-                <nuxt-link to="./" class="elinor__back btn btn--border-turqy btn--opacity">
+                <nuxt-link :to="`/assessments/edit/${id}/the-survey`" class="elinor__back btn btn--border-turqy btn--opacity">
                     <img src="~/assets/img/ico-arrow-back-turqy.svg" alt="">
                     <span>{{ $t( 'pages.assessments.edit.tabs.survey.questions.back' ) }}</span>
                 </nuxt-link>
@@ -88,17 +88,23 @@
                         <nav class="question__nav">
                             <ul>
                                 <li>
-                                    <nuxt-link v-if="previousSurveyQuestion" :to="`/assessments/edit/${id}/the-survey/${previousSurveyQuestion}/#question`" class="btn--border-turqy btn--opacity--child">
+                                    <nuxt-link v-if="previousSurveyQuestion" :to="`/assessments/edit/${id}/the-survey/${previousSurveyQuestion}/#question`"
+                                        @click.native="updateState()"
+                                        class="btn--border-turqy btn--opacity--child">
                                         <img src="~/assets/img/ico-arrow-back-turqy.svg">
                                         <span>{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}</span>
                                     </nuxt-link>
                                 </li>
                                 <li>
-                                    <nuxt-link v-if="nextSurveyQuestion" :to="`/assessments/edit/${id}/the-survey/${nextSurveyQuestion}/#question`" class="btn--border-turqy btn--opacity--child">
+                                    <nuxt-link v-if="nextSurveyQuestion" :to="`/assessments/edit/${id}/the-survey/${nextSurveyQuestion}/#question`"
+                                        @click.native="updateState()"
+                                        class="btn--border-turqy btn--opacity--child">
                                         <span>{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}</span>
                                         <img src="~/assets/img/ico-button-arrow-turqy.svg">
                                     </nuxt-link>
-                                    <nuxt-link v-if="isLastQuestionInSurvey" :to="`/assessments/edit/${id}/collaborators`" class="btn--border-turqy btn--opacity--child">
+                                    <nuxt-link v-if="isLastQuestionInSurvey" :to="`/assessments/edit/${id}/collaborators`"
+                                        @click.native="updateState()"
+                                        class="btn--border-turqy btn--opacity--child">
                                         <span>{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
                                         <img src="~/assets/img/ico-button-arrow-turqy.svg">
                                     </nuxt-link>
@@ -196,7 +202,6 @@ export default {
 
         save(choice, explanation) {
             const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
-            console.log(choice)
             if(answer.length === 0) {
                 const data = {assessmentId: this.assessment.id, questionId: this.question.id, choice};
                 if(explanation) {
@@ -205,7 +210,7 @@ export default {
                 this.storeSurveyAnswer(data);
             } else {
                 this.updateSurveyAnswer( {id: answer[0].id, assessmentId: this.assessment.id, questionId: this.question.id, choice, explanation});
-            }
+            }    
         },
         saveChoice(choice) {
             this.save(choice);
@@ -224,6 +229,9 @@ export default {
         },
         totalSurveyQuestions,
         surveyQuestionNumber,
+        updateState() {
+            this.$store.dispatch( 'assessments/fetchAssessment', this.id )
+        }
 
     }
 }

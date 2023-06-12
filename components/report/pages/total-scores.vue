@@ -12,7 +12,7 @@
                         <template v-if="isAttributeChecked(attribute)">
                             <div class="dot-value"                        
                                 :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                                {{ group && group.score ? group.score.toFixed(0) : '-' }}
+                                {{ group && group.score !== null ? group.score.toFixed(0) : '-' }}
                             </div>
                         </template>
                         <template v-else>
@@ -26,7 +26,13 @@
                             <li v-for="question in questions.filter(q => q.attribute == attribute.id)">
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
-                                    <span>{{ group.answers.find(a => a.question == question.key).choice }}</span>
+                                    <span>
+                                        {{ 
+                                            group.answers.find(a => a.question == question.key).choice !== null ?
+                                            group.answers.find(a => a.question == question.key).choice :
+                                            '-'
+                                        }}
+                                    </span>
                                 </template>
                                 <template v-else>
                                     <span> - </span>
@@ -42,7 +48,7 @@
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group && group.score ? group.score.toFixed(0) : '-' }}
+                            {{ group && group.score !== null ? group.score.toFixed(0) : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
@@ -52,7 +58,13 @@
                             <li v-for="question in questions.filter(q => q.attribute == attribute.id)">
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
-                                    <span>{{ group.answers.find(a => a.question == question.key).choice }}</span>
+                                    <span>
+                                        {{ 
+                                            group.answers.find(a => a.question == question.key).choice !== null ?
+                                            group.answers.find(a => a.question == question.key).choice :
+                                            '-'
+                                        }}
+                                    </span>
                                 </template>
                                 <template v-else>
                                     <span> - </span>
@@ -68,7 +80,7 @@
                         class="card-report ui-rounded-border">
                         <div class="dot-value"                        
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
-                            {{ group && group.score ? group.score.toFixed(0) : '-' }}
+                            {{ group && group.score !== null ? group.score.toFixed(0) : '-' }}
                         </div>
                         <h3 class="title">{{ attribute.name }}</h3>
                         <h4 class="text">
@@ -78,7 +90,13 @@
                             <li v-for="question in questions.filter(q => q.attribute == attribute.id)">
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
-                                    <span>{{ group.answers.find(a => a.question == question.key).choice }}</span>
+                                    <span>
+                                        {{ 
+                                            group.answers.find(a => a.question == question.key).choice !== null ?
+                                            group.answers.find(a => a.question == question.key).choice :
+                                            '-'
+                                        }}
+                                    </span>
                                 </template>
                                 <template v-else>
                                     <span> - </span>

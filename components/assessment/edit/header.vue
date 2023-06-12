@@ -1,7 +1,7 @@
 <template>
     <header class="header--page">
         <div class="container flex justify-start gap-8 items-start">
-            <div v-if="assessment && assessment.score" class="flex gap-2 flex-col items-center">
+            <div v-if="assessment && assessment.score !== null" class="flex gap-2 flex-col items-center">
                 <div class="flex justify-center items-center w-[80px] h-[80px] rounded-full"
                     :class="'bg-' + getAssessmentColor(assessment.score)">
                     <span class="text-white text-[40px] font-semibold">

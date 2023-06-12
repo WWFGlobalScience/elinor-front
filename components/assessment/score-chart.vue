@@ -130,7 +130,7 @@ export default {
                     {"label": "2.5"},
                     {"label": "5.0"},
                     {"label": "7.5"},
-                    {"label": "10"},
+                    {"label": "10.0"},
                 ])
                 .join('g')
                     .attr('fill', 'none')

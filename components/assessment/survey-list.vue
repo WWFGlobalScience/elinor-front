@@ -12,9 +12,9 @@
                     <div class="title-border" :id="`anchor-attribute-${attribute.id}`">
                         <div class="title-dot-wrapper">
                             <span class="title-dot"
-                                :class="isAttributeChecked(attribute) && getScoreByAttribute(attribute) ? 'bg-' + getAttributeColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
+                                :class="isAttributeChecked(attribute) && getScoreByAttribute(attribute)!== null ? 'bg-' + getAttributeColor(getScoreByAttribute(attribute)) : 'bg-grayy-lighter'">
                                 <template v-if="isAttributeChecked(attribute)">
-                                    {{ getScoreByAttribute(attribute) ? getScoreByAttribute(attribute).toFixed(0) : '-'}}
+                                    {{ getScoreByAttribute(attribute) !== null ? getScoreByAttribute(attribute).toFixed(0) : '-'}}
                                 </template>
                             </span>
                             <h3 class="title uppercase">
@@ -72,8 +72,8 @@
                                         |
                                         {{$t("pages.assessments.edit.tabs.survey.questions.score")}}:
                                         <span class="dot-score"
-                                            :class="'bg-' + scoreColors[getAnswerChoice(question)]">
-                                            {{ getAnswerChoice(question) }}
+                                            :class="'bg-' + getAnswerColor(getAnswerChoice(question))">
+                                            {{ getAnswerChoice(question) !== null ? getAnswerChoice(question) : '-'}}
                                         </span>
                                     </div>
                                     <div class="answer">
@@ -161,7 +161,7 @@ export default {
         },
         getScoreByAttribute(attribute){
             if(this.isAttributeChecked(attribute)){
-                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice && surveyAnswer.question.attribute === attribute.id)
+                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
                 if(answers.length == 0){
                     return null
                 }
@@ -171,6 +171,9 @@ export default {
             }else{
                 return 0
             }
+        },
+        getAnswerColor(choice){
+            return choice !== null ? this.scoreColors[choice] : 'grayy-lighter'
         }
     }
 };
