@@ -72,7 +72,7 @@ export default {
                 .domain(this.attributes.map(function(d) { return d.name; }));
             var y = d3.scaleLinear()
                 .range([innerRadius, outerRadius])
-                .domain([0, 100]);
+                .domain([0, 10]);
 
             // Add the bars
             svg.append("g")
@@ -83,7 +83,7 @@ export default {
                 .attr("fill", (d) => {return getColor(this.getScoreByAttribute(d))})
                 .attr("d", d3.arc()
                     .innerRadius(innerRadius)
-                    .outerRadius((d) => { return y(this.getScoreByAttribute(d) * 33.33); })
+                    .outerRadius((d) => { return y(this.getScoreByAttribute(d) * 3.33); })
                     .startAngle(function(d, i) { return (i * 2 * Math.PI) / numBars; })
                     .endAngle(function(d,i) { return ((i + 1) * 2 * Math.PI) / numBars; })
                     .padAngle(0.01)
@@ -127,10 +127,10 @@ export default {
                 .attr('text-anchor', 'middle')
                 .selectAll("g")
                 .data([
-                    {"label": 25},
-                    {"label": 50},
-                    {"label": 75},
-                    {"label": 100},
+                    {"label": "2.5"},
+                    {"label": "5.0"},
+                    {"label": "7.5"},
+                    {"label": "10"},
                 ])
                 .join('g')
                     .attr('fill', 'none')
