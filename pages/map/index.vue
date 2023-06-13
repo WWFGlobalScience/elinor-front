@@ -19,10 +19,11 @@
                 <map-popup />
             </MglPopup>
         </MglMarker>
+        <map-title />
         <map-legend />
         <map-form />
-        <!-- <map-box-list /> -->
-        <map-box-assessment />
+        <map-box-list />
+        <!-- <map-box-assessment /> -->
     </MglMap>
 </template>
 
