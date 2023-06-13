@@ -2,7 +2,6 @@
     <section v-if="!loader.active" class="section section--assesment-edit-survey-question section--mt-0">
         <assessment-edit-survey-navigator mode="detail" :assessment="assessment" :id="id"></assessment-edit-survey-navigator>
         <assessment-edit-survey-question :assessment="assessment" :question="question" :qid="qid" :id="id"></assessment-edit-survey-question>
-        <assessment-edit-survey-question-help :qid="qid" ></assessment-edit-survey-question-help>
     </section>
 </template>
 

@@ -29,7 +29,7 @@
                     <div class="title-border">
                         <h3 class="title">Optional attributes</h3>
                     </div>
-                    <p class="text-intro">Unselect the attributes that do not correspond with your Assessment</p>
+                    <p class="text-intro">Select the attributes that correspond with your Assessment</p>
                     <ul class="elinor__survey-attribute-gird">
                         <li v-for="(attribute, index) in optionalAttributes" class="elinor__survey-attribute-item item--optional">
                             <div class="option-check">

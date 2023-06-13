@@ -1,39 +1,40 @@
 <template>
-
-    <ul v-if="$auth.loggedIn">
+    <ul>
         <default-language-selector />
-        <div class="elinor__dropdown">
-            <div class="elinor__dropdown-toggle">
-                <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
-                    <span>{{ user.username.charAt(0).toUpperCase() }}</span>
+        <template v-if="$auth.loggedIn">
+            <div class="elinor__dropdown">
+                <div class="elinor__dropdown-toggle">
+                    <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
+                        <span>{{ user.username.charAt(0).toUpperCase() }}</span>
+                    </div>
                 </div>
+                <ul
+                    class="elinor__dropdown-menu"
+                    v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
+                >
+                    <li class="elinor__dropdown-menu__item"><NuxtLink to="/profile">{{ $t('pages.home.header.profile') }}<img src="~assets/img/ico-users-access-turqy.svg" :alt="$t('pages.home.header.signOut')"></NuxtLink></li>
+                    <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">{{ $t('pages.home.header.signOut') }}<img src="~assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')"></a></li>
+                </ul>
             </div>
-            <ul
-                class="elinor__dropdown-menu"
-                v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
+    
+            <li
+                class="btn--opacity--child header--main__toggle-btn"
+                @click="toggleSidebar"
             >
-                <li class="elinor__dropdown-menu__item"><NuxtLink to="/profile">{{ $t('pages.home.header.profile') }}<img src="~assets/img/ico-users-access-turqy.svg" :alt="$t('pages.home.header.signOut')"></NuxtLink></li>
-                <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">{{ $t('pages.home.header.signOut') }}<img src="~assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')"></a></li>
-            </ul>
-        </div>
-
-        <li
-            class="btn--opacity--child header--main__toggle-btn"
-            @click="toggleSidebar"
-        >
-            <img
-                v-if="isSidebarOpen"
-                src="~/assets/img/ico-maximize-turqy.svg"
-                alt="maximize"
-                class="center-v w-12"
-            />
-            <img
-                v-else
-                src="~/assets/img/ico-minimize-turqy.svg"
-                alt="minimize"
-                class="center-v w-12 btn--opacity__target"
-            />
-        </li>
+                <img
+                    v-if="isSidebarOpen"
+                    src="~/assets/img/ico-maximize-turqy.svg"
+                    alt="maximize"
+                    class="center-v w-12"
+                />
+                <img
+                    v-else
+                    src="~/assets/img/ico-minimize-turqy.svg"
+                    alt="minimize"
+                    class="center-v w-12 btn--opacity__target"
+                />
+            </li>
+        </template>
 
     </ul>
 </template>

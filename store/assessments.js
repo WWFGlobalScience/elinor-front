@@ -12,6 +12,7 @@ export const state = () => ({
         prev: null
     },
     assessment: {last_edit: null, surveyAnswers: [], collaborators: []},
+    report: [],
     edit: {
         data: true,
         ma: false,
@@ -90,6 +91,9 @@ export const mutations = {
     },
     setSurveyAnswers(state, answers) {
         state.assessment.surveyAnswers = answers;
+    },
+    setReportData(state, data) {
+        state.report = data;
     },
     setAttributes(state, attributes) {
         state.assessment.attributes = attributes;
@@ -182,6 +186,26 @@ export const actions = {
                 url: `v2/surveyanswerlikerts/?assessment=${id}`,
             });
             state.commit('setSurveyAnswers', surveyAnswersResponse.data.results);
+        } finally {
+            this.dispatch('loader/loaderState', {
+                active: false,
+                text: ''
+            })
+        }
+    },
+
+    async fetchReport(state, id) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Getting report data...'
+        })
+        
+        try {
+            const assessmentReportResponse = await this.$axios({
+                method: 'get',
+                url: `v2/reports/assessments/${id}/`,
+            });
+            state.commit('setReportData', assessmentReportResponse.data);
         } finally {
             this.dispatch('loader/loaderState', {
                 active: false,

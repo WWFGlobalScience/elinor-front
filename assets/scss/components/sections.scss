@@ -26,7 +26,7 @@
         @apply sm:mt-6;
         ul {
             @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border sm:flex-wrap;
-            & > :not([hidden]) ~ :not([hidden]){
+            & > :not([hidden]) ~ :not([hidden]) {
                 @apply sm:mx-0 sm:flex-auto;
             }
             li {
@@ -43,17 +43,17 @@
     &.section--intro-full {
         @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
     }
-    
+
     &.section--tags {
         @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
-        &.section--tags-filter{
+        &.section--tags-filter {
             @apply mt-0 py-4 border-t-0;
-            ul{
+            ul {
                 @apply flex-wrap;
 
-                li{
+                li {
                     @apply mt-2;
-                    .tag__item{
+                    .tag__item {
                         @apply text-xs;
                     }
                 }
@@ -64,15 +64,14 @@
 
             li {
                 @apply flex items-center justify-between bg-turqy-lighter border-radius--20 px-4 py-3 mr-3;
-                &:last-child{
+                &:last-child {
                     @apply mr-0;
                 }
 
-                .tag__item{
+                .tag__item {
                     @apply text-[14px] mr-2;
-
                 }
-                .tag__close{
+                .tag__close {
                     @apply transition hover:opacity-60 w-3;
                 }
             }
@@ -109,12 +108,15 @@
             }
         }
     }
-    &.section--turqy-light{
+    &.section--turqy-light {
         @apply bg-turqy-lighter;
     }
 
-    &.section--text{
-        p, li{@apply mb-5 leading-relaxed;}
+    &.section--text {
+        p,
+        li {
+            @apply mb-5 leading-relaxed;
+        }
         @apply mt-0 py-32 lg:pt-16;
     }
     /*
@@ -124,7 +126,7 @@
         ul {
             @apply flex space-x-5 md:flex-col;
 
-            & > :not([hidden]) ~ :not([hidden]){
+            & > :not([hidden]) ~ :not([hidden]) {
                 @apply md:mx-0;
             }
 
@@ -154,7 +156,8 @@
     /*
         PAGE: Managed area
     */
-    &.section--ma-data {}
+    &.section--ma-data {
+    }
 
     /*
         PAGE: SIGN IN
@@ -165,10 +168,7 @@
         &--logged-in {
             height: calc(40vh - 70px);
         }
-        @media only screen
-            and (max-device-width: 823px)
-            and (-webkit-min-device-pixel-ratio: 2)
-            and (orientation: landscape) {
+        @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
             height: auto;
             @apply items-start py-6;
         }
@@ -182,10 +182,9 @@
         }
     }
 
-    .section__bottom{
-        @apply w-full mt-8 flex justify-end border-t border-grayy-border pt-8 mt-12 sm:mt-8 sm:justify-start
+    .section__bottom {
+        @apply w-full mt-8 flex justify-end border-t border-grayy-border pt-8 mt-12 sm:mt-8 sm:justify-start;
     }
-
 
     &.section--intro {
         @apply mt-0 pt-14 pb-24;
@@ -199,62 +198,64 @@
         }
     }
 
-    &.section--img-text{
-        .section--img-text__block{
+    &.section--img-text {
+        .section--img-text__block {
             @apply grid grid-cols-2 gap-4 lg:grid-cols-1;
 
-            .container{
+            .container {
                 @apply lg:order-2 lg:my-5;
             }
 
-            img{
-                    @apply lg:mx-auto lg:block lg:mb-4;
-                }
-            .btn{
+            img {
+                @apply lg:mx-auto lg:block lg:mb-4;
+            }
+            .btn {
                 @apply inline-flex;
-                img{
-                     @apply m-auto
+                img {
+                    @apply m-auto;
                 }
             }
 
-            &.is-flushed{
+            &.is-flushed {
                 @apply mt-12 gap-0 lg:mt-0;
-                &:first-child{
+                &:first-child {
                     @apply lg:-mt-16;
                 }
-                & + .is-flushed{
+                & + .is-flushed {
                     @apply pt-40 lg:pt-3;
                 }
             }
 
-            .btn{
+            .btn {
                 @apply mt-24;
+            }
+            .section--img-text__block-text {
+                .section--img-text__block-nested {
+                    @apply grid gap-4 mt-10;
+                }
             }
         }
     }
-    &.section--main{
+    &.section--main {
         @apply h-64 flex flex-col justify-center items-center mt-0 sm:h-32;
-        & + .section{
+        & + .section {
             @apply sm:mt-6;
         }
-        @media only screen
-            and (max-device-width: 823px)
-            and (-webkit-min-device-pixel-ratio: 2)
-            and (orientation: landscape) {
-                @apply h-24;
-                & + .section{
-                    @apply mt-6;
-                }
+        @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+            @apply h-24;
+            & + .section {
+                @apply mt-6;
             }
-        img{
+        }
+        img {
             @apply h-full w-full object-cover;
         }
     }
     &.section--latest-news {
-        .row{
+        .row {
             @apply flex flex-row justify-between;
 
-            &.row--cards{
+            &.row--cards {
                 @apply lg:flex-col;
             }
         }
@@ -284,15 +285,15 @@
             li {
                 @apply mb-8 leading-6 relative;
                 &::before {
-                    content: '';
+                    content: "";
                     @apply w-2 h-2 bg-turqy absolute top-2 -left-4 border-radius--50;
                 }
-                ul{
+                ul {
                     @apply pl-4 mt-4;
                     > li {
                         @apply mb-4 leading-6 relative;
                         &::before {
-                            content: '';
+                            content: "";
                             @apply w-2 h-2 border border-turqy bg-transparent top-2 -left-4 border-radius--50;
                         }
                     }
@@ -301,13 +302,13 @@
         }
         ol {
             @apply pl-6 mt-4;
-            counter-reset: section; 
+            counter-reset: section;
 
             li {
                 @apply mb-8 leading-6 relative;
                 &::before {
-                    content: counter(section)". ";
-                    counter-increment: section; 
+                    content: counter(section) ". ";
+                    counter-increment: section;
                     @apply w-0 h-0 top-0 -left-6 text-turqy font-bold;
                 }
             }

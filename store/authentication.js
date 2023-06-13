@@ -19,6 +19,9 @@ export const mutations = {
     setError(state, error) {
         state.error = error;
     },
+    clearError(state) {
+        state.error = null;
+    },
     resetAlerts(state) {
         state.alerts = {
             invalidCredentials: false,
@@ -52,13 +55,12 @@ export const actions = {
             this.$router.push('/assessments');
         } catch (error) {
             if (error.response.data.non_field_errors) {
-                if (error.response.data.non_field_errors[0] === 'E-mail is not verified.') {
+                if(error.response.data.non_field_errors[0].indexOf('email') !== -1 ||
+                    error.response.data.non_field_errors[0].indexOf('correo') !== -1) {
                     state.commit('setAlert', {name: 'emailVerificationRequired', value: true});
-                    state.commit('setAlert', {name: 'invalidCredentials', value: false});
-                }
-
-                if (error.response.data.non_field_errors[0] === 'Unable to log in with provided credentials.') {
-                    state.commit('setAlert', {name: 'invalidCredentials', value: true});
+                    state.commit('setError', null);
+                } else {
+                    state.commit('setError', error.response.data.non_field_errors[0]);
                 }
             }
         }
@@ -132,7 +134,7 @@ export const actions = {
                 this.$router.push(`/status/email-verification-sent`)
             })
             .catch((error) => {
-                state.commit('setError', error.response);
+                state.commit('setError', error.response.data.message || error.response.data.detail);
             });
 
         this.dispatch('loader/loaderState', {

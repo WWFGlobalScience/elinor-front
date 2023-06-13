@@ -65,6 +65,9 @@ export default {
       alerts: state => state.authentication.alerts
     })
   },
+    mounted() {
+        this.$store.commit('authentication/clearError');
+    },
   methods: {
     ...mapActions({
       forgotPassword: 'authentication/forgotPassword',

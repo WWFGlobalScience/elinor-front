@@ -2,7 +2,7 @@
 .elinor__badge {
     @apply mb-8 transition hover:bg-grayy-badge;
     .header {
-        @apply flex items-start justify-between border-b border-grayy-border pb-3 mb-5;
+        @apply flex items-start justify-between border-b border-grayy-border pb-3 mb-5 gap-6;
         .left {
             @apply flex-grow;
         }
@@ -57,11 +57,11 @@
         li {
             @apply flex flex-col mr-10 md:mb-3 sm:mr-auto;
 
-            &:not(.role):not(.avatar){
+            &:not(.role):not(.avatar) {
                 @apply md:flex-auto md:w-2/12 sm:w-full;
             }
 
-            &.role{
+            &.role {
                 @apply md:flex-auto md:w-10/12 sm:w-full;
             }
 
@@ -84,7 +84,7 @@
                 @apply mr-3;
             }
             &.view {
-               @apply flex-1 items-end mr-0;
+                @apply flex-1 items-end mr-0;
             }
         }
         &:last-child {
@@ -101,5 +101,4 @@
             }
         }
     }
-
 }

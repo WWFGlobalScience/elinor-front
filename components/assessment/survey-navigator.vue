@@ -6,19 +6,19 @@
                     <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
                         <template v-for="(question, number) in getAttributeQuestions(attribute)">
                             <a role="button"
-                               :content='getQuestionTooltip(number, attribute, question)'
-                               v-tippy="{
-                                        arrow : true,
+                                :content='getQuestionTooltip(number, attribute, question)'
+                                v-tippy="{
+                                        arrow : false,
                                         arrowType : 'round',
                                         animation : 'fade',
                                         theme : 'light',
-                                    }"
-                               class="btn-opacity"
-                               :class="{ 'is--uncomplete': !isAnswered(question) }"
-                               v-scroll-to="{
-                                    el: `.question-${question.id}`,
-                                    offset: -70
-                               }">
+                                        placement : 'bottom-start'}"
+                                    class="btn-opacity"
+                                    :class="!isAnswered(question) ? 'is--uncomplete' : 'bg-turqy'"
+                                    v-scroll-to="{
+                                        el: `.question-${question.id}`,
+                                        offset: -70
+                                    }">
                             </a>
                         </template>
                     </li>
@@ -27,35 +27,51 @@
                             {{ completedQuestions }}
                         </div>
                         <div class="text">
-                            <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.completed' ) }}</span>
-                            <span>{{ $t( 'pages.assessments.edit.tabs.survey.navigator.outOf' ) }} {{ totalQuestions }}</span>
+                            <span>{{
+                                $t(
+                                    "pages.assessments.edit.tabs.survey.navigator.completed"
+                                )
+                            }}</span>
+                            <span
+                                >{{
+                                    $t(
+                                        "pages.assessments.edit.tabs.survey.navigator.outOf"
+                                    )
+                                }}
+                                {{ totalQuestions }}</span
+                            >
                         </div>
                     </li>
-
                 </ul>
-
             </div>
-
         </div>
     </section>
 </template>
 
 <script>
-import {mapState} from "vuex";
+import { mapState } from "vuex";
 
 export default {
-    name: 'assessment-survey-navigator',
+    name: "assessment-survey-navigator",
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
             attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list,
+            questions: state => state.surveyquestions.list
         }),
         completedQuestions() {
-            return this.assessment.surveyAnswers.filter(surveyAnswer => this.isAttributeSelected({id: surveyAnswer.question.attribute})).length;
+            return this.assessment.surveyAnswers.filter(surveyAnswer =>
+                this.isAttributeSelected({
+                    id: surveyAnswer.question.attribute
+                })
+            ).length;
         },
         activeQuestions() {
-            return this.questions.filter(question => this.assessment.attributes.indexOf(question.attribute) !== -1);
+            return this.questions.filter(
+                question =>
+                    this.assessment.attributes.indexOf(question.attribute) !==
+                    -1
+            );
         },
         totalQuestions() {
             return this.activeQuestions.length;
@@ -63,24 +79,38 @@ export default {
     },
     methods: {
         isAnswered(question) {
-            return this.isAttributeSelected({id: question.attribute}) && this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === question.id).length === 1;
-
+            return (
+                this.isAttributeSelected({ id: question.attribute }) &&
+                this.assessment.surveyAnswers.filter(
+                    surveyAnswer => surveyAnswer.question.id === question.id
+                ).length === 1
+            );
         },
         getAttributeQuestions(attribute) {
-            return this.questions.filter(question => question.attribute === attribute.id);
+            return this.questions.filter(
+                question => question.attribute === attribute.id
+            );
         },
         isAttributeSelected(attribute) {
-            return this.assessment.attributes.indexOf(attribute.id) !== -1
+            return this.assessment.attributes.indexOf(attribute.id) !== -1;
         },
         isCurrentQuestionFromAttribute(attribute) {
             const questionId = this.$route.params.qid;
             if (questionId) {
-                return this.questions.filter(question => question.id === parseInt(questionId) && question.attribute === attribute.id).length !== 0;
+                return (
+                    this.questions.filter(
+                        question =>
+                            question.id === parseInt(questionId) &&
+                            question.attribute === attribute.id
+                    ).length !== 0
+                );
             }
         },
         getQuestionTooltip(number, attribute, question) {
-            return `${attribute.name}<strong>Q${number + 1} - ${question.text}</strong>`;
+            return `${attribute.name}<strong>Q${number + 1} - ${
+                question.text
+            }</strong>`;
         }
     }
-}
+};
 </script>

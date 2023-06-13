@@ -306,7 +306,7 @@ export default {
         },
         submit( ) {
             event.preventDefault()
-            this.$store.dispatch( 'managementareas/updateMa' )
+            this.$store.dispatch( 'managementareas/updateMap' )
             /*
             this.loader.active = true
             this.$axios({

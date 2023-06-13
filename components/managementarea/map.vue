@@ -104,13 +104,17 @@ export default {
 
     },
     mounted() {
-        if(this.managementArea && this.managementArea.polygon) {
-            this.mapCreate()
-        }
+        this.$nextTick(() => {
+            if(this.managementArea && this.managementArea.polygon) {
+                this.mapCreate()
+            }
+        })
     },
     watch: {
         managementArea() {
-            this.mapCreate()
+            if(this.managementArea && this.managementArea.polygon) {
+                this.mapCreate()
+            }
         }
     }
 }
