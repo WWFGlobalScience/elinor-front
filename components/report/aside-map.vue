@@ -1,5 +1,5 @@
 <template>
-    <aside v-if="report" class="aside-report">
+    <aside class="aside-report">
         <div id="mapContainer" class="relative">
             <img class="w-full h-full"
                 alt="mapox image"
@@ -77,8 +77,8 @@ export default {
 
             var geoJson = this.getGeoJson()
             const overlay = geoJson ? `geojson(${geoJson})/` : '';
-            //const url = `${baseUrl}${overlay}${coordinates},${zoom}/${size}?access_token=${token}`;
-            const url = `${baseUrl}${overlay}auto/${size}?padding=300,130,400&access_token=${token}`;
+            //const url = `${baseUrl}${overlay}auto/${size}?padding=300,130,400&access_token=${token}`;
+            const url = `${baseUrl}${this.getCenter()}/${size}?&access_token=${token}`;
             return url;
         },
         getGeoJson(){
@@ -116,6 +116,19 @@ export default {
             url = encodeURI(url)
             url = url.replace(/#/g, '%23');
             return url;
+        },
+        getCenter(){
+            let center;
+            if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length > 0) {
+                const polygon = turf.multiPolygon(this.managementArea.polygon.coordinates);
+                center = turf.centroid(polygon);
+                console.log(center)
+            } else if(this.managementArea.point && this.managementArea.polygon.point.length > 0) {
+                center = turf.point(this.managementArea.point.coordinates);
+            } else {
+                center = 'auto'
+            }
+            return center.geometry.coordinates+'14,0,0'
         }
     }
 };
