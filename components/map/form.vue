@@ -1,7 +1,7 @@
 <template>
     <form
         action=""
-        class="absolute z-50 top-4 right-[60px] flex flex-row gap-4"
+        class="absolute z-10 top-4 right-[60px] flex flex-row gap-4"
     >
         <div class="w-[230px]">
             <map-select />

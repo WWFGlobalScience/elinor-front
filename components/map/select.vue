@@ -10,11 +10,10 @@
                 :showLabels="false"
                 :allow-empty="true"
                 open-direction="bottom"
-                class="pt-0 pb-0"
             >
             </multiselect>
             <div class="multiselect__caret">
-                <img src="~/assets/img/ico-select-turqy.svg" />
+                <img src="~/assets/img/ico-select-turqy.svg" alt="" />
             </div>
         </div>
     </div>

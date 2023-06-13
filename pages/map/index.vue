@@ -21,11 +21,14 @@
         </MglMarker>
         <map-legend />
         <map-form />
+        <!-- <map-box-list /> -->
+        <map-box-assessment />
     </MglMap>
 </template>
 
 <script>
 import Mapbox from "mapbox-gl";
+
 import {
     MglMap,
     MglMarker,
@@ -59,11 +62,14 @@ export default {
             coordinates: [-111.549668, 39.014]
         };
     },
-
     created() {
         this.mapbox = Mapbox;
     },
-
-    head() {}
+    head() {},
+    computed: {
+        popup() {
+            return this.$store.state.popup.popup;
+        }
+    }
 };
 </script>

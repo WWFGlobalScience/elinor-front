@@ -12,3 +12,19 @@
         }
     }
 }
+
+.box-map {
+    @apply border-radius--card z-50 absolute -translate-y-1/2 left-8 top-1/2 bg-white w-[320px] overflow-hidden;
+    ul {
+        @apply h-[300px] overflow-y-scroll;
+        > li {
+            @apply border-b border-grayy-border;
+            &:last-child {
+                @apply border-none;
+            }
+            > * {
+                @apply py-2 #{!important};
+            }
+        }
+    }
+}
