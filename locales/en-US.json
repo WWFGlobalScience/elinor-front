@@ -361,7 +361,7 @@
                             "title": "Zones",
                             "name": "Name of new managed area",
                             "protectedArea": "Associated ID in World Database on Protected Areas",
-                            "containedBy": "Are there other Managed Areas related to this MA?",
+                            "containedBy": "Select any other Managed Areas related to this MA. If none, skip.",
                             "dateEstablished": "Date of formal establishment (if applicable)",
                             "reportedSize": "Size of MA (ha)",
                             "managementAuthority": "Name of management authority",
