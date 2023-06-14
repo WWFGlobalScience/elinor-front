@@ -15,7 +15,7 @@
                     alt="mark"
                 />
             </template>
-            <MglPopup anchor="left">
+            <MglPopup anchor="top-left">
                 <map-popup />
             </MglPopup>
         </MglMarker>

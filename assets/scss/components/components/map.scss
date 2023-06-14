@@ -1,11 +1,16 @@
 .mgl-map-wrapper {
-    .mapboxgl-popup-anchor-left {
-        @apply ml-3;
-        transform: translate(16px -0) !important;
+    .mapboxgl-popup-anchor-top-left {
+        @apply ml-3 flex-row;
         .mapboxgl-popup-tip {
+            border: 10px solid;
+            border-color: transparent;
+            align-self: flex-start;
+            border-left: none;
+            border-right-color: #fff;
+            @apply -mt-2;
         }
         .mapboxgl-popup-content {
-            @apply border-radius--card p-0 w-full;
+            @apply border-radius--card p-0 w-full -mt-8;
             .mapboxgl-popup-close-button {
                 display: none;
             }
