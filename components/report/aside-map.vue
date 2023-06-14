@@ -75,8 +75,8 @@ export default {
             const baseUrl = "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/";
             const size = "570x1024@2x";
 
-            if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length == 0){
-                return `${baseUrl}geojson(${geoJson})/auto/${size}?padding=300,130,400&access_token=${token}`;
+            if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length > 0){
+                return `${baseUrl}geojson(${this.getGeoJson()})/auto/${size}?padding=300,130,400&access_token=${token}`;
             }else if(this.managementArea.point && this.managementArea.point.coordinates.length == 0){
                 var center = turf.point(this.managementArea.point.coordinates)
                 return `${baseUrl}${center}/${size}?&access_token=${token}`;
@@ -110,7 +110,7 @@ export default {
                         "fill-opacity": 0.1
                     },
                     "geometry": {
-                        "coordinates": ${JSON.stringify(coordinates[0])},
+                        "coordinates": ${JSON.stringify(coordinates)},
                         "type": "Polygon"
                     },
                     "id": 0
