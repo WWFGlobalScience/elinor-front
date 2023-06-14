@@ -1,5 +1,5 @@
 <template>
-    <aside v-if="report" class="aside-report">
+    <aside class="aside-report">
         <div id="mapContainer" class="relative">
             <img class="w-full h-full"
                 alt="mapox image"
@@ -75,16 +75,16 @@ export default {
             const baseUrl = "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/";
             const size = "570x1024@2x";
 
-            var geoJson = this.getGeoJson()
-            const overlay = geoJson ? `geojson(${geoJson})/` : '';
-            //const url = `${baseUrl}${overlay}${coordinates},${zoom}/${size}?access_token=${token}`;
-            const url = `${baseUrl}${overlay}auto/${size}?padding=300,130,400&access_token=${token}`;
-            return url;
+            if(this.managementArea.polygon && this.managementArea.polygon.coordinates.length > 0){
+                return `${baseUrl}geojson(${this.getGeoJson()})/auto/${size}?padding=300,130,400&access_token=${token}`;
+            }else if(this.managementArea.point && this.managementArea.point.coordinates.length == 0){
+                var center = turf.point(this.managementArea.point.coordinates)
+                return `${baseUrl}${center}/${size}?&access_token=${token}`;
+            }else{
+                return `${baseUrl}auto/${size}?padding=300,130,400&access_token=${token}`;
+            }
         },
         getGeoJson(){
-            if(!this.managementArea.polygon || this.managementArea.polygon.coordinates.length == 0){
-                return null
-            }
             var colorMapping = {
                 'poor': '#EE8383',
                 'average': '#F5C243',
@@ -92,6 +92,11 @@ export default {
                 'excellent': '#4FAD5B'
             }
             var color = this.getAssessmentColor(this.report.score);
+            var coordinates = turf.simplify(
+                turf.cleanCoords(this.managementArea.polygon),
+                {tolerance: 0.008, highQuality: false}
+            ).coordinates;
+            
             var geojson = `{
                 "type": "FeatureCollection",
                 "features": [  
@@ -105,7 +110,7 @@ export default {
                         "fill-opacity": 0.1
                     },
                     "geometry": {
-                        "coordinates": ${JSON.stringify(this.managementArea.polygon.coordinates.flat(1))},
+                        "coordinates": ${JSON.stringify(coordinates)},
                         "type": "Polygon"
                     },
                     "id": 0

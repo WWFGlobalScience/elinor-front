@@ -27,16 +27,14 @@
                                     v-if="isAttributeSelected(attribute)"
                                     role="button"
                                     class="btn-opacity"
-                                    :class="{
-                                        'is--uncomplete': !isAnswered(question)
-                                    }"
+                                    :class="!isAnswered(question) ? 'is--uncomplete' : 'bg-turqy'"
                                     :to="`/assessments/edit/${assessment.id}/the-survey/${question.id}`"
                                 >
                                 </nuxt-link>
                                 <a
                                     v-if="!isAttributeSelected(attribute)"
                                     role="button"
-                                    class="btn-opacity"
+                                    class="btn-opacity is--uncomplete cursor-default"
                                 >
                                 </a>
                             </template>
