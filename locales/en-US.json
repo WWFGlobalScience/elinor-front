@@ -436,7 +436,7 @@
                         },
                         "questions": {
                             "question": "Question",
-                            "back": "Back to resume",
+                            "back": "Back to Survey Home",
                             "answer": "Answer",
                             "score": "Score",
                             "unknown": "unknown",
