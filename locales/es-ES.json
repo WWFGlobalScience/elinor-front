@@ -434,6 +434,8 @@
                             "completed": "Completed",
                             "outOf": "Out of"
                         },
+                        "uncheckAttributeTitle": "Unselect attribute",
+                        "uncheckAttributeText": "You are unselecting an attribute that contains questions that have been answered. If you unselect it, all the answers to its questions will be deleted. Are you sure you want to proceed and unselect this attribute?",
                         "questions": {
                             "question": "Question",
                             "back": "Back to Survey Home",
