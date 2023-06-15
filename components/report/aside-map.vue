@@ -110,7 +110,7 @@ export default {
                         "fill-opacity": 0.1
                     },
                     "geometry": {
-                        "coordinates": ${JSON.stringify(coordinates)},
+                        "coordinates": ${JSON.stringify(coordinates.flat(1))},
                         "type": "Polygon"
                     },
                     "id": 0
