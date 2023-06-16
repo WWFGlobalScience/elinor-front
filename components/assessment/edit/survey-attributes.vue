@@ -91,7 +91,7 @@ export default {
                 surveyAnswer => surveyAnswer.question.attribute === attribute.id
             )
         },
-        onConfirmDelete(attribute) {
+        onConfirmRemove(attribute) {
             return () => {
                 var answers = this.getAttributeAnswers(attribute)
                 answers.forEach(answer => {
@@ -99,7 +99,7 @@ export default {
                 })
                 this.toggleAttribute({assessmentId: this.assessment.id, attributeId: attribute.id});
                 this.popupState(false, '', '')
-                //this.$store.dispatch( 'assessments/fetchReport', this.assessment.id )
+                this.updateState()
             }
         },
         unCheckAttribute(attribute, event) {
@@ -111,11 +111,14 @@ export default {
                     type:'confirmation',
                     component: 'popup-assessment-toggle-attribute',
                     title: 'pages.assessments.edit.tabs.survey.uncheckAttributeTitle',
-                    onConfirm: this.onConfirmDelete(attribute)
+                    onConfirm: this.onConfirmRemove(attribute)
                 })
             }else{
                 this.toggleAttribute({assessmentId: this.assessment.id, attributeId: attribute.id});
             }
+        },
+        updateState() {
+            this.$store.dispatch( 'assessments/fetchAssessment', this.assessment.id )
         }
     }
 }
