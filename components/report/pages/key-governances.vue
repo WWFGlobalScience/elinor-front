@@ -15,7 +15,7 @@
                             </li>
                         </ul>
                         <p class="font-montserratMediumPdf mt-4 text-grayy-lighter">
-                            {{ form.strenghts }}
+                            {{ form.strengths }}
                         </p>
                     </div>
 

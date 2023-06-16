@@ -140,12 +140,14 @@ export default {
         this.$store.dispatch( 'assessments/fetchReport', this.assessment.id )
 
         this.$nextTick(() => {
-            this.getAttributeScores();
+            this.getAttributeScores()
+            this.initFields()
         });
     },
     methods: {
         ...mapActions({
-            popupState: "popup/popupState"
+            popupState: "popup/popupState",
+            editAssessmentField: 'assessments/editAssessmentField',
         }),
         close() {
             this.popupState({ active: false });
@@ -179,6 +181,22 @@ export default {
             })
             this.sortedScores = result.sort((a, b)=> {return b.score - a.score});
         },
+        initFields(){
+            this.form.strengths = this.assessment.strengths_explanation
+            this.form.needs = this.assessment.needs_explanation
+            this.form.context = this.assessment.context
+        },
+        async saveFields(){
+            if(this.form.strengths !== this.assessment.strengths_explanation){
+                await this.editAssessmentField({field: 'strengths_explanation', value: this.form.strengths, id: this.assessment.id});
+            }
+            if(this.form.needs !== this.assessment.needs_explanation){
+                await this.editAssessmentField({field: 'needs_explanation', value: this.form.needs, id: this.assessment.id});
+            }
+            if(this.form.strengths !== this.assessment.context){
+                await this.editAssessmentField({field: 'context', value: this.form.context, id: this.assessment.id});
+            }
+        },
         pdf() {
             var doc = new jsPDF("l", "px", [1440, 1024]);
             doc.html(document.querySelector("#key-governances"), {
@@ -201,6 +219,7 @@ export default {
                 x: 0,
                 y: 0,
             });
+            this.saveFields()
             this.close()
         }
     }
