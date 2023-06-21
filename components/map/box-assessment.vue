@@ -1,90 +1,86 @@
 <template>
     <div class="box-map font-montserrat">
-        <button type="button" class="btn--opacity absolute right-4 top-4 z-50">
+        <button @click="close" type="button" class="btn--opacity absolute right-4 top-4 z-50">
             <img src="~/assets/img/ico-close-popup.svg" />
         </button>
-        <div
-            class="flex flex-row flex-wrap items-center justify-start gap-2 p-4 border-b-1 border-grayy font-montserrat"
-        >
-            <div
-                class="flex justify-center items-center w-[52px] h-[52px] rounded-full bg-poor"
-            >
-                <p class="text-white text-[24px] font-bold leading-4 ">70</p>
+        <div class="flex flex-row flex-wrap items-center justify-start gap-2 p-4 border-b-1 border-grayy font-montserrat">
+            <div class="flex justify-center items-center w-[52px] h-[52px] rounded-full" :class="'bg-' + getAssessmentColor(assessment.properties.score)">
+                <p class="text-white text-[24px] font-bold leading-4 ">
+                    {{ assessment.properties.score }}
+                </p>
             </div>
             <div class="flex flex-1 flex-col gap-0">
-                <p
-                    class="font-montserrat font-semibold text-turqy text-[14px] leading-4"
-                >
-                    Assessment name
+                <p class="font-montserrat font-semibold text-turqy text-[14px] leading-4">
+                    {{ assessment.properties.name }}
                 </p>
             </div>
         </div>
 
-        <div
-            class="p-4 flex flex-col justify-start gap-4 bg-turqy-lighter border-t border-grayy-border"
-        >
-            <div class="flex flex-col">
+        <div class="p-4 flex flex-col justify-start gap-4 bg-turqy-lighter border-t border-grayy-border">
+            <div v-if="assessment.properties.management_area" class="flex flex-col">
                 <p class="text-xs font-semibold text-grayy-lighter leading-4">
                     Name of Management Area
                 </p>
                 <p class="text-s font-semibold leading-6">
-                    Lorem ipsum dolor sit amet, et vero consectetur adipiscing
-                    elit
+                    {{ assessment.properties.management_area.name }}
                 </p>
             </div>
             <div class="flex flex-row justify-start gap-8">
-                <div class="flex flex-col ">
-                    <p
-                        class="text-xs font-semibold text-grayy-lighter leading-4"
-                    >
+                <div v-if="assessment.properties.year" class="flex flex-col ">
+                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
                         Year
                     </p>
                     <p class="text-s font-semibold leading-6">
-                        2022
+                        {{ assessment.properties.year }}
                     </p>
                 </div>
-                <div class="flex flex-col ">
-                    <p
-                        class="text-xs font-semibold text-grayy-lighter leading-4"
-                    >
+                <div v-if="assessment.properties.published_version" class="flex flex-col ">
+                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
                         Version
                     </p>
                     <p class="text-s font-semibold leading-6">
-                        2.1
+                        {{ assessment.properties.published_version }}
                     </p>
                 </div>
-                <div class="flex flex-col ">
-                    <p
-                        class="text-xs font-semibold text-grayy-lighter leading-4"
-                    >
+                <div v-if="assessment.properties.reported_size" class="flex flex-col">
+                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
                         Area Size
                     </p>
                     <p class="text-s font-semibold leading-6">
-                        10.555 h
+                        {{ assessment.properties.reported_size }} h
                     </p>
                 </div>
             </div>
         </div>
-        <div
-            class="flex flex-col chart-content p-4 border-grayy-borde border-t border-b"
-        >
-            ---- Aquí el chart ----
+        <div class="flex flex-col chart-content p-4 border-grayy-borde border-t border-b">
+            <map-score-chart v-if="loaded" :width="288" :height="288"></map-score-chart>
             <p class="text-s font-semibold leading-4 mt-4">
-                By Attributes
+                By <br>Attributes
             </p>
         </div>
         <div class="flex justify-center p-4">
-            <buttons-btn-cta name="hola que ase" />
+            <nuxt-link
+                :to="`/assessments/${assessment.id}/info/`"
+                class="btn btn--opacity--child">
+                <span class="btn--opacity__target">Go to Full Assessment</span>
+                <img src="~/assets/img/ico-button-arrow.svg" />
+            </nuxt-link>
         </div>
     </div>
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-import btnMore from "../documentation/btn-more.vue";
-import BtnMore1 from "../news/btn-more.vue";
 export default {
-    components: { btnMore, BtnMore1 },
-    name: "map-box-list"
+    name: "map-box-list",
+    props: ["assessment", "close"],
+    data() {
+        return {
+            loaded: false,
+        }
+    },
+    async mounted(){
+        await this.$store.dispatch( 'assessments/fetchAssessment', this.assessment.id )
+        this.loaded = true
+    }
 };
 </script>

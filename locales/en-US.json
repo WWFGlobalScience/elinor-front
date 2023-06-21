@@ -204,7 +204,7 @@
                             "status": "by Publication"
                         },
                         "placeholders": {
-                            "countries": "",
+                            "countries": "Country",
                             "year": "",
                             "status": ""
                         },
@@ -1614,6 +1614,14 @@
                         "og_image": ""
                     }
                 }
+            },
+            "filters": {
+                "form": {
+                    "placeholders": {
+                        "countries": "Country",
+                        "attributes": "By Attributes"
+                    }
+                }
             }
         }
     },
@@ -1640,6 +1648,11 @@
         "finalized": "Finalized",
         "submit": "Submit",
         "close": "Close",
+        "filters":{
+            "popup":{
+                "title": ""
+            }
+        },
         "upload-file": {
             "placeholder": "Drag and drop a PDF file here",
             "buttons": {

@@ -18,8 +18,18 @@
     }
 }
 
+.map-filters{
+    .multiselect__single, .multiselect__option > span{
+        @apply truncate max-w-full;
+        display:block;
+    }
+    .multiselect__content, .multiselect__option{
+        @apply max-w-full;
+    }
+}
+
 .box-map {
-    @apply border-radius--card z-50 absolute -translate-y-1/2 left-8 top-1/2 bg-white w-[320px] overflow-hidden;
+    @apply border-radius--card z-50 absolute -translate-y-1/2 left-8 top-1/2 bg-white w-[320px];
     ul {
         @apply h-[300px] overflow-y-scroll;
         > li {
