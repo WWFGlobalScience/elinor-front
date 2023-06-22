@@ -204,7 +204,7 @@
                             "status": "by Publication"
                         },
                         "placeholders": {
-                            "countries": "",
+                            "countries": "Country",
                             "year": "",
                             "status": ""
                         },
@@ -1603,6 +1603,28 @@
                     "text": "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
                 }
             }
+        },
+        "map": {
+            "home": {
+                "meta": {
+                    "title": "Map",
+                    "slug": "/map",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
+            "filters": {
+                "form": {
+                    "placeholders": {
+                        "countries": "Country",
+                        "attributes": "By Attributes"
+                    }
+                }
+            }
         }
     },
     "sidebar": {
@@ -1628,6 +1650,11 @@
         "finalized": "Finalized",
         "submit": "Submit",
         "close": "Close",
+        "filters":{
+            "popup":{
+                "title": ""
+            }
+        },
         "upload-file": {
             "placeholder": "Drag and drop a PDF file here",
             "buttons": {

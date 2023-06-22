@@ -5,7 +5,7 @@
             <main role="main">
                 <default-sidebar></default-sidebar>
                 <Nuxt keep-alive />
-                <default-footer>aaaa</default-footer>
+                <default-footer></default-footer>
             </main>
         </div>
         <default-loader></default-loader>

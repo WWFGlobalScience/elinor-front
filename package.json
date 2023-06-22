@@ -22,12 +22,15 @@
     "countries-api": "^2.0.2",
     "d3": "^7.8.4",
     "jspdf": "^2.5.1",
+    "mapbox-gl": "^2.15.0",
     "nuxt": "^2.15.3",
     "nuxt-dropzone": "^1.0.4",
     "sass": "^1.49.11",
     "shapefile": "^0.6.6",
+    "vue-mapbox": "^0.4.1",
     "vue-multiselect": "^2.1.6",
     "vue-select": "^3.11.2",
+    "vue2-leaflet": "^2.7.1",
     "vuejs-datepicker": "^1.6.2"
   },
   "devDependencies": {
@@ -39,7 +42,6 @@
     "cors": "^2.8.5",
     "gtran-shapefile": "^1.1.4",
     "js-cookie": "^2.2.1",
-    "mapbox-gl": "^2.3.0",
     "moment": "^2.29.1",
     "nuxt-i18n": "^6.27.0",
     "nuxt-vue-multiselect": "^1.0.4",
