@@ -105,7 +105,7 @@ export default {
         unCheckAttribute(attribute, event) {
             event.preventDefault();
             event.stopPropagation();
-            if(this.isAttributeChecked(attribute)){
+            if(this.isAttributeChecked(attribute) && this.getAttributeAnswers(attribute).length > 0){
                 this.popupState({
                     active: true,
                     type:'confirmation',
