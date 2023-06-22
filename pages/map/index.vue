@@ -1,9 +1,11 @@
 <template>
     <MglMap
+        class="min-h-[93vh] relative"
         :accessToken="accessToken"
         :mapStyle="mapStyle"
         :center="coordinates"
-        class="min-h-[93vh] relative"
+        :min-zoom="1"
+        :max-zoom="18"
         @load="onMapLoaded"
     >
         <MglNavigationControl position="top-right" />
@@ -98,6 +100,7 @@ export default {
     data() {
         return {
             loaded: false,
+            map: null,
             mapbox: null,
             accessToken: "pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ",
             mapStyle: "mapbox://styles/mapbox/satellite-v9",
@@ -262,31 +265,56 @@ export default {
             country: state => state.reports.filters.management_area_countries,
             attribute: state => state.reports.filters.attributes,
             management_area_countries: state => state.countries.management_area_countries,
+            attributes: state => state.attributes.list,
         }),
-        filteredData(){
+        mappedData(){
             if(!this.reports) return null
-            
+    
             var filtered = this.reports.filter((report) => 
                 report.geometry && 
-                report.geometry.coordinates.length > 0)
+                report.geometry.coordinates.length > 0 
+            )
             
-            let mapped = filtered.map((x) => {
-                const polygon = turf.multiPolygon(x.geometry.coordinates);
-                let center = turf.centroid(polygon);
-                center.id = x.id
-                center.properties = x.properties
-                return center
-            });
-            return mapped
-        }
+            if(filtered){
+                return filtered.map((x) => {
+                    if(x.geometry.type == "MultiPolygon"){
+                        const polygon = turf.multiPolygon(x.geometry.coordinates)
+                        let center = turf.centroid(polygon)
+                        center.id = x.id
+                        center.properties = x.properties
+                        center.properties.hectares = (turf.area(polygon) * 0.0001).toFixed(0)
+                        return center
+                    }else if(x.geometry.type == "Point"){
+                        let center = turf.point(x.geometry.coordinates)
+                        center.id = x.id
+                        center.properties = x.properties
+                        return center
+                    }
+                })
+            }else{
+                return []
+            }
+        },
+        filteredData(){
+            return this.mappedData.filter((report) => 
+                (this.country ? report.properties.management_area.countries && report.properties.management_area.countries.includes(this.countryFilter) : true) &&
+                (this.attributeFilter ? JSON.stringify(report.properties.attributes).includes(this.attributeFilter) : true)
+            )
+        },
+        countryFilter(){
+            return this.getCountryNameByCode(this.country)
+        },
+        attributeFilter(){
+            return this.getAttributeNameById(this.attribute)
+        },
     },
     watch: {
         async reports () {
             this.geoJsonSource.data.features = this.filteredData
-            //this.map.getSource('assessmentsReport').setData(this.geoJsonSource)
         },
         country () {
             this.getCountryGeoJson(this.country)
+            this.map.setLayoutProperty('countryLayer', 'visibility', 'visible');
         }
     },
     methods: {
@@ -344,6 +372,7 @@ export default {
                 if (e.defaultPrevented === false) {
                     map.setLayoutProperty('polygonLayer', 'visibility', 'none');
                     map.setLayoutProperty('polygonLineLayer', 'visibility', 'none');
+                    map.setLayoutProperty('countryLayer', 'visibility', 'none');
                 }
             });
         },
@@ -371,11 +400,6 @@ export default {
             
             
         },
-        getCountryNameByCode(code) {
-            if(code) {
-                return this.management_area_countries.filter(country => country.code === code)[0].name;
-            }
-        },
         toggleDetail(){
             this.showDetail = !this.showDetail
             if(this.showDetail){
@@ -394,7 +418,17 @@ export default {
                     padding: 40
                 });
             }
-        }
+        },
+        getCountryNameByCode(code) {
+            if(code) {
+                return this.management_area_countries.filter(country => country.code === code)[0].name;
+            }
+        },
+        getAttributeNameById(id) {
+            if(id) {
+                return this.attributes.filter(attribute => attribute.id === id)[0].name;
+            }
+        },
     },
     created() {
         this.mapbox = Mapbox;

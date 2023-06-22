@@ -29,8 +29,8 @@
                         <p v-if="report.properties.name" class="font-montserrat font-semibold text-turqy text-[14px] leading-4">
                             {{ report.properties.name }}
                         </p>
-                        <p v-if="report.geometry && report.geometry.type == 'MultiPolygon'" class="text-dark text-xs font-semibold leading-4">
-                            {{ getHectareas(report).toLocaleString($i18n.locale) }} ha
+                        <p v-if="report.properties.hectares" class="text-dark text-xs font-semibold leading-4">
+                            {{ Number(report.properties.hectares).toLocaleString($i18n.locale) }} ha
                         </p>
                     </div>
                 </div>
@@ -40,7 +40,6 @@
 </template>
 
 <script>
-import * as turf from '@turf/turf'
 import { mapState } from "vuex";
 
 export default {
@@ -61,9 +60,9 @@ export default {
             return this.list.reduce((a, b) => { return a + b.properties.score}, 0) / this.reports.length
         },
         countryHa(){
-            var filtered = this.list.filter((report) => report.geometry && report.geometry.type == "MultiPolygon")
+            var filtered = this.list.filter((report) => report.properties.hectares)
             if(filtered.length > 0){
-                return (filtered.reduce((a, b) => { return a + this.getHectareas(b)}, 0) / filtered.length)
+                return (filtered.reduce((a, b) => { return a + Number(b.properties.hectares)}, 0) / filtered.length)
             }else{
                 return 0
             }
@@ -73,15 +72,6 @@ export default {
         getCountryNameByCode(code) {
             if(code) {
                 return this.management_area_countries.filter(country => country.code === code)[0].name;
-            }
-        },
-        getHectareas(report) {
-            if(report.geometry.type == "MultiPolygon"){
-                const polygon = turf.polygon(report.geometry.coordinates.flat(1))
-                const area = (turf.area(polygon) * 0.0001).toFixed(0)
-                return Number(area)
-            }else{
-                return 0
             }
         }
     },

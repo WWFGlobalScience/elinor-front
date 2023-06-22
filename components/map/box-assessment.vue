@@ -42,12 +42,12 @@
                         {{ assessment.properties.published_version }}
                     </p>
                 </div>
-                <div v-if="assessment.properties.reported_size" class="flex flex-col">
+                <div v-if="assessment.properties.hectares || assessment.properties.reported_size" class="flex flex-col">
                     <p class="text-xs font-semibold text-grayy-lighter leading-4">
                         Area Size
                     </p>
                     <p class="text-s font-semibold leading-6">
-                        {{ assessment.properties.reported_size }} h
+                        {{ assessment.properties.hectares || assessment.properties.reported_size }} h
                     </p>
                 </div>
             </div>
