@@ -25,7 +25,7 @@
                         :show-labels="false"
                         label="name"
                         :placeholder="$t('pages.map.filters.form.placeholders.countries')"
-                        @input="onFilterChanged('management_area_countries', $event.code)"
+                        @input="onFilterChanged('management_area_countries', $event? $event.code : null)"
                     ></multiselect>
                     <div class="multiselect__caret">
                         <img src="~/assets/img/ico-select-turqy.svg" alt="" />
@@ -42,12 +42,12 @@
                         :placeholder="$t('pages.map.filters.form.placeholders.attributes')"
                         track-by="id"
                         label="name"
-                        :options="attributes"
+                        :options="getAttributes()"
                         :multiple="false"
                         :showLabels="false"
                         :allow-empty="true"
                         open-direction="bottom"
-                        @input="onFilterChanged('attributes', $event.id)"
+                        @input="onFilterChanged('attributes', $event ? $event.id : null)"
                     >
                     </multiselect>
                     <div class="multiselect__caret">
@@ -90,6 +90,10 @@ export default {
         },
         getCountryByCode() {
             return this.management_area_countries.filter(country => country.code === this.management_area_country)[0];
+        },
+        getAttributes(){
+            var empty = {'id':0,'name':''}
+            return [empty].concat(this.attributes)
         },
         getAttributeById(id) {
             if(id) {

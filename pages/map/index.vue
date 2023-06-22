@@ -49,6 +49,13 @@
             :layer="polygonLineLayer"
         />
 
+        <MglGeojsonLayer
+            :sourceId="countrySource.data.id"
+            :source="countrySource"
+            layerId="countryLayer"
+            :layer="countryLayer"
+        />
+
         <map-title />
         <map-legend />
         <map-form />
@@ -122,7 +129,19 @@ export default {
                     type: 'Feature',
                     properties: {},
                     geometry: {
-                        type: 'MultiPolygon',
+                        type: "MultiPolygon",
+                        coordinates: []
+                    }
+                }
+            },
+            countrySource: {
+                type: 'geojson',
+                data: {
+                    id: "countrySource",
+                    type: 'Feature',
+                    properties: {},
+                    geometry: {
+                        type: "MultiPolygon",
                         coordinates: []
                     }
                 }
@@ -137,21 +156,16 @@ export default {
                         'step',
                         ["/", ["number", ["get", "sum"]], ["number", ["get", "point_count"]]],
                         '#EE8383',
-                        29,
-                        '#CCCC25',
-                        59,
-                        '#F5C243',
-                        89,
-                        '#4FAD5B',
+                        29, '#CCCC25',
+                        59, '#F5C243',
+                        89, '#4FAD5B',
                     ],
                     'circle-radius': [
                         'step',
                         ['get', 'point_count'],
                         13,
-                        3,
-                        16,
-                        8,
-                        18 
+                        3, 16,
+                        8, 18 
                     ]
                 }
             },
@@ -173,13 +187,10 @@ export default {
                     "text-color": [
                         'step',
                         ["/", ["number", ["get", "sum"]], ["number", ["get", "point_count"]]],
-                        '#EE8383', //default
-                        29,
-                        '#CCCC25', // greater than 29
-                        59,
-                        '#F5C243',
-                        89,
-                        '#4FAD5B'
+                        '#EE8383',
+                        29, '#CCCC25',
+                        59, '#F5C243',
+                        89, '#4FAD5B'
                     ]
                 }
             },
@@ -191,12 +202,9 @@ export default {
                         'step',
                         ['get', 'score'],
                         'mark-poor',
-                        29,
-                        'mark-average',
-                        59,
-                        'mark-good',
-                        89,
-                        'mark-excellent',
+                        29, 'mark-average',
+                        59, 'mark-good',
+                        89, 'mark-excellent',
                     ]
                 }
             },
@@ -235,6 +243,16 @@ export default {
                     'line-width': 3
                 }
             },
+
+            countryLayer: {
+                'type': 'line',
+                'source': 'countrySource',
+                'layout': {},
+                'paint': {
+                    'line-color': 'white',
+                    'line-width': 3,
+                }
+            },
         };
     },
     fetchOnServer: false,
@@ -266,61 +284,81 @@ export default {
         async reports () {
             this.geoJsonSource.data.features = this.filteredData
             //this.map.getSource('assessmentsReport').setData(this.geoJsonSource)
+        },
+        country () {
+            this.getCountryGeoJson(this.country)
         }
     },
     methods: {
         async onMapLoaded(e) {
-            this.map = e.map;
-            e.map.loadImage('/img/marks/mark-poor.png', (error, image) => { if (error) {throw error;}
-                e.map.addImage('mark-poor', image);
+            var map = this.map = e.map;
+            map.loadImage('/img/marks/mark-poor.png', (error, image) => { if (error) {throw error;}
+                map.addImage('mark-poor', image);
             });
-            e.map.loadImage('/img/marks/mark-average.png', (error, image) => { if (error) {throw error;}
-                e.map.addImage('mark-average', image);
+            map.loadImage('/img/marks/mark-average.png', (error, image) => { if (error) {throw error;}
+                map.addImage('mark-average', image);
             });
-            e.map.loadImage('/img/marks/mark-good.png', (error, image) => { if (error) {throw error;}
-                e.map.addImage('mark-good', image);
+            map.loadImage('/img/marks/mark-good.png', (error, image) => { if (error) {throw error;}
+                map.addImage('mark-good', image);
             });
-            e.map.loadImage('/img/marks/mark-excellent.png', (error, image) => { if (error) {throw error;}
-                e.map.addImage('mark-excellent', image);
+            map.loadImage('/img/marks/mark-excellent.png', (error, image) => { if (error) {throw error;}
+                map.addImage('mark-excellent', image);
             });
 
-            e.map.on('mouseenter', 'clusterLayer', () => {
-                e.map.getCanvas().style.cursor = 'pointer';
-            });
-            e.map.on('mouseleave', 'clusterLayer', () => {
-                e.map.getCanvas().style.cursor = '';
-            });
-            e.map.on('mouseenter', 'markersLayer', () => {
-                e.map.getCanvas().style.cursor = 'pointer';
-            });
-            e.map.on('mouseleave', 'markersLayer', () => {
-                e.map.getCanvas().style.cursor = '';
-            });
-            e.map.on('click', 'clusterLayer', (f) => {
+            map.on('mouseenter', 'clusterLayer',() => { map.getCanvas().style.cursor = 'pointer' });
+            map.on('mouseleave', 'clusterLayer', () => { map.getCanvas().style.cursor = 'default' });
+            map.on('mouseenter', 'markersLayer', () => { map.getCanvas().style.cursor = 'pointer' });
+            map.on('mouseleave', 'markersLayer', () => { map.getCanvas().style.cursor = 'default' });
+
+            map.on('click', 'clusterLayer', (f) => {
                 const features = e.map.queryRenderedFeatures(f.point, {
                     layers: ['clusterLayer']
                 });
                 const clusterId = features[0].properties.cluster_id;
-                e.map.getSource('assessmentsReport').getClusterExpansionZoom(
+                map.getSource('assessmentsReport').getClusterExpansionZoom(
                     clusterId,
                     (err, zoom) => {
                         if (err) return;
     
-                        e.map.easeTo({
+                        map.easeTo({
                             center: features[0].geometry.coordinates,
                             zoom: zoom
                         });
                     }
                 );
             });
-            e.map.on('click', 'markersLayer', (f) => {
+
+            map.on('click', 'markersLayer', (f) => {
                 const coordinates = f.features[0].geometry.coordinates.slice();
                 this.popup.coordinates = coordinates
                 this.popup.showed = true
                 this.popup.assessment = f.features[0]
-
                 this.$refs.mapMarker.togglePopup()
             });
+        },
+        getCountryGeoJson(code){
+            if(code){
+                fetch(`/geojson/${code}.json`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("HTTP error " + response.status);
+                        }
+                        return response.json();
+                    })
+                    .then(json => {
+                        this.countrySource.data.geometry = json.geometry
+                        var bbox = turf.bbox(json.geometry)
+                
+                        this.map.fitBounds(bbox, {
+                            padding: {top: 10, bottom:25, left: 15, right: 5}
+                        });
+                    })
+            } else {
+                this.countrySource.data.geometry.coordinates = []
+                this.map.flyTo({ center: this.coordinates, zoom: 1 });
+            }
+            
+            
         },
         getCountryNameByCode(code) {
             if(code) {

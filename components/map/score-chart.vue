@@ -90,7 +90,7 @@ export default {
                 .attr("fill", (d) => {return getColor(this.getScoreByAttribute(d))})
                 .attr("d", d3.arc()
                     .innerRadius(innerRadius)
-                    .outerRadius((d) => { return y(this.getScoreByAttribute(d) * 10); })
+                    .outerRadius((d) => { return y(this.getScoreByAttribute(d) * 33.33); })
                     .startAngle(function(d, i) { return (i * 2 * Math.PI) / numBars; })
                     .endAngle(function(d,i) { return ((i + 1) * 2 * Math.PI) / numBars; })
                     .padAngle(0.01)
@@ -175,7 +175,7 @@ export default {
                 .data(this.attributes)
                 .enter()
                 .append("g")
-                    .attr("transform", function(d) { return "rotate(" + ((x(d.name) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")"+"translate(" + (outerRadius - 20) + ",0)"; })
+                    .attr("transform", function(d) { return "rotate(" + ((x(d.name) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")"+"translate(" + (outerRadius - 20) + ",-35)"; })
                     .style('pointer-events', 'none')
                     .append("foreignObject")
                         .attr("transform", function(d) { return "rotate(" + -1 * ((x(d.name) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")"})
@@ -184,8 +184,8 @@ export default {
                         .style('font', '16px Montserrat')
                         .html((d) => { return `
                             <div id="tooltip-${d.id}" class="chart-tooltip">
-                                <span class="flex justify-center items-center w-[35px] h-[35px] rounded-full bg-${this.getAttributeColor(this.getScoreByAttribute(d))}">
-                                    ${this.getScoreByAttribute(d)}
+                                <span class="flex justify-center items-center w-[35px] h-[35px] rounded-full bg-${this.isAttributeChecked(d) ? this.getAttributeColor(Math.round( 10 / 3 * this.getScoreByAttribute(d), 0)) : 'grayy-lighter'}">
+                                    ${this.isAttributeChecked(d) ? Math.round( 10 / 3 *this.getScoreByAttribute(d), 0) : '-'}                                    
                                 </span>
                                 ${d.name}</div>
                         `})
