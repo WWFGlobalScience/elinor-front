@@ -166,7 +166,8 @@
         @apply relative flex items-center mt-0;
         height: calc(100vh - 70px);
         &--logged-in {
-            height: calc(40vh - 70px);
+            //height: calc(40vh - 70px);
+            height: calc(50vh - 70px);
         }
         @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
             height: auto;
@@ -237,7 +238,7 @@
         }
     }
     &.section--main {
-        @apply h-64 flex flex-col justify-center items-center mt-0 sm:h-32;
+        @apply h-96 flex flex-col justify-center items-center mt-0 sm:h-32;
         & + .section {
             @apply sm:mt-6;
         }

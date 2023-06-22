@@ -335,6 +335,17 @@ export default {
                 this.popup.assessment = f.features[0]
                 this.$refs.mapMarker.togglePopup()
             });
+
+            map.on('click', 'polygonLayer', function(e) {
+                e.preventDefault();
+            });
+
+            map.on('click', (e) => {
+                if (e.defaultPrevented === false) {
+                    map.setLayoutProperty('polygonLayer', 'visibility', 'none');
+                    map.setLayoutProperty('polygonLineLayer', 'visibility', 'none');
+                }
+            });
         },
         getCountryGeoJson(code){
             if(code){
@@ -373,6 +384,9 @@ export default {
 
                 this.polygonSource.data.geometry = selected.geometry
                 this.polygonSource.data.properties.score = selected.properties.score
+
+                this.map.setLayoutProperty('polygonLayer', 'visibility', 'visible');
+                this.map.setLayoutProperty('polygonLineLayer', 'visibility', 'visible');
                 
                 var bbox = turf.bbox(this.reports.find(e => e.id == this.popup.assessment.id).geometry)
                 
