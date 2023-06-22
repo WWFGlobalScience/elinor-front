@@ -60,7 +60,7 @@
         <map-legend />
         <map-form />
         <map-box-list v-if="country" :list="filteredData" />
-        <map-box-assessment :close="toggleDetail" v-show="showDetail" v-if="popup.assessment" :assessment="popup.assessment" />
+        <map-box-assessment :close="toggleDetail" v-if="popup.assessment && showDetail" :assessment="popup.assessment" />
     </MglMap>
 </template>
 
