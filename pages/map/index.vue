@@ -63,6 +63,9 @@
         <map-form />
         <map-box-list v-if="country" :list="filteredData" />
         <map-box-assessment :close="toggleDetail" v-if="popup.assessment && showDetail" :assessment="popup.assessment" />
+        <div class="flex align-items-center justify-center py-2 px-4 text-sm text-gray-800 border border-gray-400 rounded bg-white content-center" style="height: 30px;width: 150px;position: absolute;bottom: 20px;right: 20px;">
+            Zoom level: {{ zoomLevel.toFixed(1) }}
+        </div>
     </MglMap>
 </template>
 
@@ -105,6 +108,7 @@ export default {
             accessToken: "pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ",
             mapStyle: "mapbox://styles/mapbox/satellite-v9",
             coordinates: [0, 39.014],
+            zoomLevel: 0,
             popup: {
                 coordinates: [-122.9, 50.1], // this can't be blank!  it won't be shown but pick something
                 showed: false,
@@ -375,6 +379,10 @@ export default {
                     map.setLayoutProperty('countryLayer', 'visibility', 'none');
                 }
             });
+
+            map.on('zoom', () => {
+                this.zoomLevel = map.getZoom()
+            })
         },
         getCountryGeoJson(code){
             if(code){
