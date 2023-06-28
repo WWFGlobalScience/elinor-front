@@ -184,8 +184,8 @@ export default {
                         .style('font', '16px Montserrat')
                         .html((d) => { return `
                             <div id="tooltip-${d.id}" class="chart-tooltip">
-                                <span class="flex justify-center items-center w-[35px] h-[35px] rounded-full bg-${this.isAttributeChecked(d) ? this.getAttributeColor(Math.round( 10 / 3 * this.getScoreByAttribute(d), 0)) : 'grayy-lighter'}">
-                                    ${this.isAttributeChecked(d) ? Math.round( 10 / 3 *this.getScoreByAttribute(d), 0) : '-'}                                    
+                                <span class="flex justify-center items-center w-[35px] h-[35px] rounded-full bg-${this.isAttributeChecked(d) && this.getScoreByAttribute(d) ? this.getAttributeColor(Math.round( 10 / 3 * this.getScoreByAttribute(d), 0)) : 'grayy-lighter'}">
+                                    ${this.isAttributeChecked(d) && this.getScoreByAttribute(d) ? Math.round( 10 / 3 * this.getScoreByAttribute(d), 0) : '-'}
                                 </span>
                                 ${d.name}</div>
                         `})
