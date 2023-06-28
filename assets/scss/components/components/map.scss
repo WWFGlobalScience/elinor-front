@@ -43,6 +43,6 @@
         }
     }
     .wrap{
-        @apply h-[450px] overflow-y-auto;
+        @apply max-h-[450px] overflow-y-auto;
     }
 }

@@ -5,7 +5,7 @@
             <h1 class="text-m font-montserrat font-bold text-white text-shadow">MAP</h1>
         </div>
         <h2 v-if="attribute" class="text-m font-montserrat font-semibold text-white ml-8 text-shadow">
-            {{ getAttributeById(attribute).name }}
+            {{ attribute || country }}
         </h2>
     </div>
 </template>
@@ -17,16 +17,9 @@ export default {
     name: "map-title",
     computed: {
         ...mapState({
-            attributes: state => state.attributes.list,
-            attribute: state => state.reports.filters.attributes
+            attribute: state => state.map.filters.attribute,
+            country: state => state.map.filters.country
         })
-    },
-    methods: {
-        getAttributeById(id) {
-            if(id) {
-                return this.attributes.filter(attribute => attribute.id === id)[0];
-            }
-        },
     }
 };
 </script>

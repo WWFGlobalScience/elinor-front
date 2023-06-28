@@ -6,7 +6,7 @@
         <div class="p-4 flex gap-2 items-center">
             <span class="w-3 h-3 block rounded-full" :class="'bg-' + getAssessmentColor(countryScore)"></span>
             <p class="text-[14px]">
-                {{ getCountryNameByCode(country) }}
+                {{ country }}
             </p>
         </div>
         <div class="p-4 flex items-center justify-start gap-2 bg-turqy-lighter border-t border-grayy-border">
@@ -51,7 +51,7 @@ export default {
     computed: {
         ...mapState({
             reports: state => state.reports.list,
-            country: state => state.reports.filters.management_area_countries,
+            country: state => state.map.filters.country,
             management_area_countries: state => state.countries.management_area_countries,
         }),
         countryScore(){
@@ -63,13 +63,6 @@ export default {
                 return (filtered.reduce((a, b) => { return a + Number(b.properties.hectares)}, 0) / filtered.length)
             }else{
                 return 0
-            }
-        }
-    },
-    methods: {
-        getCountryNameByCode(code) {
-            if(code) {
-                return this.management_area_countries.filter(country => country.code === code)[0].name;
             }
         }
     },

@@ -17,7 +17,7 @@
         </div>
 
         <div class="wrap">
-            <div class="p-4 flex flex-col justify-start gap-4 bg-turqy-lighter border-t border-grayy-border">
+            <div class="pt-2 pb-2 pr-4 pl-4 flex flex-col justify-start gap-2 bg-turqy-lighter border-t border-grayy-border">
                 <div v-if="assessment.properties.management_area" class="flex flex-col">
                     <p class="text-xs font-semibold text-grayy-lighter leading-4">
                         Name of Management Area
@@ -60,7 +60,7 @@
                 </p>
             </div>
         </div>
-        <div class="flex justify-center p-4">
+        <div class="flex justify-center p-2">
             <nuxt-link
                 :to="`/assessments/${assessment.id}/info/`"
                 class="btn btn--opacity--child">
