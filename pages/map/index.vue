@@ -57,7 +57,7 @@
     <map-form :countries="countries" :attributes="attributes" />
 
     
-    <map-box-list v-if="country && activeCountryList" :close="closeCountryList" :list="filteredData" />
+    <map-box-list v-if="country && activeCountryList" :close="closeCountryList" :detail="setDetail" :list="filteredData" />
     <map-box-assessment v-if="popup.assessment && activeDetail" :close="closeDetail" :assessment="popup.assessment" />
 
 </MglMap>
@@ -403,6 +403,10 @@ export default {
 
             return results
         },
+        setDetail(assessment){
+            this.popup.assessment = assessment
+            this.showDetail()
+        },
         showDetail(){
             this.activeCountryList=false
             this.countrySource.data.geometry.coordinates = []
@@ -416,6 +420,7 @@ export default {
         closeDetail(){
             this.activeDetail = false
             this.filter({"name": "country", "value": this.popup.assessment.properties.management_area.countries[0]})
+            this.getCountryGeoJson()
         },
         closeCountryList(){
             this.activeCountryList=false

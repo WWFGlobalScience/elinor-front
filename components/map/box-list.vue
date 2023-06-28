@@ -26,7 +26,10 @@
                         </p>
                     </div>
                     <div class="flex flex-1 flex-col gap-0">
-                        <p v-if="report.properties.name" class="font-montserrat font-semibold text-turqy text-[14px] leading-4">
+                        <p v-if="report.properties.name" 
+                            @click="detail(report)"
+                            class="font-montserrat font-semibold text-turqy text-[14px] leading-4 cursor-pointer"
+                            >
                             {{ report.properties.name }}
                         </p>
                         <p v-if="report.properties.hectares" class="text-dark text-xs font-semibold leading-4">
@@ -44,7 +47,7 @@ import { mapState } from "vuex";
 
 export default {
     name: "map-box-list",
-    props: ["list", "close"],
+    props: ["list", "close","detail"],
     computed: {
         ...mapState({
             reports: state => state.reports.list,
