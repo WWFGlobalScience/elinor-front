@@ -236,13 +236,14 @@ export default {
             data: state => state.map.list,
             country: state => state.map.filters.country,
             attribute: state => state.map.filters.attribute,
+            range: state => state.map.filters.range,
             management_area_countries: state => state.countries.management_area_countries
         }),
         filteredData(){
             if(this.data){
                 var filtered = this.formatData().filter((f) => 
                     (this.country ? f.properties.management_area.countries && f.properties.management_area.countries.includes(this.country) : true) &&
-                    (this.attribute ? f.properties.attributes.find(e => e.attribute == this.attribute) : true) 
+                    (this.attribute ? f.properties.attributes.find(e => e.attribute == this.attribute) : true)
                 )
 
                 if(this.attribute){
@@ -250,6 +251,19 @@ export default {
                 }else{
                     filtered.map(x => x.properties.filterScore = x.properties.score)
                 }
+
+                if(this.range){
+                    var ranges = {
+                        "plan": [0,29],
+                        "build": [30, 59],
+                        "strengthen": [60,89],
+                        "mantain": [90, 100]
+                    }
+                    filtered = filtered.filter(x => 
+                        Number(x.properties.score) >= ranges[this.range][0] && Number(x.properties.score) < ranges[this.range][1]
+                    )
+                }
+
                 return filtered
             }
         },

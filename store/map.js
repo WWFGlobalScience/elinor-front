@@ -1,6 +1,6 @@
 export const state = () => ({
     list: [],
-    filters: {country: undefined, attribute: undefined, score: undefined},
+    filters: {country: undefined, attribute: undefined, range: undefined},
 })
 
 export const mutations = {
@@ -14,7 +14,7 @@ export const mutations = {
         state.filters[payload] = undefined;
     },
     resetFilters(state) {
-        state.filters = {country: undefined, attribute: undefined, score: undefined};
+        state.filters = {country: undefined, attribute: undefined, range: undefined};
     },
 }
 
