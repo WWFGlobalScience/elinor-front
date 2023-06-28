@@ -3,29 +3,14 @@
         <div class="w-[230px]">
             <div class="input input--multiselect">
                 <div class="multiselect__wrap multiselect__wrap--map">
-                    <!--<multiselect
-                        :value="getCountryByCode(management_area_country)"
-                        :placeholder="$t('pages.map.filters.form.placeholders.countries')"
-                        track-by="code"
-                        label="name"
-                        :options="management_area_countries"
-                        :multiple="false"
-                        :showLabels="false"
-                        :allow-empty="true"
-                        open-direction="bottom"
-                        @input="onFilterChanged('management_area_countries', $event.code)"
-                    >
-                    </multiselect>-->
                     <multiselect 
-                        :value="getCountryByCode(management_area_country)"
-                        :options="management_area_countries"
-                        track-by="code"
+                        :value="country"
+                        :options="['', ...this.countries]"
                         :searchable="false"
                         :close-on-select="true"
                         :show-labels="false"
-                        label="name"
                         :placeholder="$t('pages.map.filters.form.placeholders.countries')"
-                        @input="onFilterChanged('management_area_countries', $event? $event.code : null)"
+                        @input="onFilterChanged('country', $event ? $event : null)"
                     ></multiselect>
                     <div class="multiselect__caret">
                         <img src="~/assets/img/ico-select-turqy.svg" alt="" />
@@ -38,16 +23,14 @@
             <div class="input input--multiselect">
                 <div class="multiselect__wrap multiselect__wrap--map">
                     <multiselect
-                        :value="getAttributeById(attribute)"
+                        :value="attribute"
                         :placeholder="$t('pages.map.filters.form.placeholders.attributes')"
-                        track-by="id"
-                        label="name"
-                        :options="getAttributes()"
+                        :options="['', ...this.attributes]"
                         :multiple="false"
                         :showLabels="false"
                         :allow-empty="true"
                         open-direction="bottom"
-                        @input="onFilterChanged('attributes', $event ? $event.id : null)"
+                        @input="onFilterChanged('attribute', $event ? $event : null)"
                     >
                     </multiselect>
                     <div class="multiselect__caret">
@@ -64,22 +47,17 @@ import {mapState, mapActions} from "vuex";
 
 export default {
     name: "map-form",
-    mounted() {
-        this.$store.dispatch('countries/fetchCountries');
-    },
+    props: ['countries', 'attributes'],
     computed: {
         ...mapState({
-            attributes: state => state.attributes.list,
-            attribute: state => state.reports.filters.attributes,
-            management_area_countries: state => state.countries.management_area_countries,
-            management_area_country: state => state.reports.filters.management_area_countries
+            attribute: state => state.map.filters.attribute,
+            country: state => state.map.filters.country
         })
     },
     methods: {
         ...mapActions({
-            resetFilters: 'reports/resetFilters',
-            filter: 'reports/filter',
-            removeFilter: 'reports/removeFilter'
+            filter: 'map/filter',
+            removeFilter: 'map/removeFilter'
         }),
         onFilterChanged(name, value) {
             if(value) {
@@ -87,13 +65,6 @@ export default {
             } else {
                 this.removeFilter(name);
             }
-        },
-        getCountryByCode() {
-            return this.management_area_countries.filter(country => country.code === this.management_area_country)[0];
-        },
-        getAttributes(){
-            var empty = {'id':0,'name':''}
-            return [empty].concat(this.attributes)
         },
         getAttributeById(id) {
             if(id) {

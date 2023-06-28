@@ -16,47 +16,49 @@
             </div>
         </div>
 
-        <div class="p-4 flex flex-col justify-start gap-4 bg-turqy-lighter border-t border-grayy-border">
-            <div v-if="assessment.properties.management_area" class="flex flex-col">
-                <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                    Name of Management Area
-                </p>
-                <p class="text-s font-semibold leading-6">
-                    {{ assessment.properties.management_area.name }}
+        <div class="wrap">
+            <div class="p-4 flex flex-col justify-start gap-4 bg-turqy-lighter border-t border-grayy-border">
+                <div v-if="assessment.properties.management_area" class="flex flex-col">
+                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
+                        Name of Management Area
+                    </p>
+                    <p class="text-s font-semibold leading-6">
+                        {{ assessment.properties.management_area.name }}
+                    </p>
+                </div>
+                <div class="flex flex-row justify-start gap-8">
+                    <div v-if="assessment.properties.year" class="flex flex-col ">
+                        <p class="text-xs font-semibold text-grayy-lighter leading-4">
+                            Year
+                        </p>
+                        <p class="text-s font-semibold leading-6">
+                            {{ assessment.properties.year }}
+                        </p>
+                    </div>
+                    <div v-if="assessment.properties.published_version" class="flex flex-col ">
+                        <p class="text-xs font-semibold text-grayy-lighter leading-4">
+                            Version
+                        </p>
+                        <p class="text-s font-semibold leading-6">
+                            {{ assessment.properties.published_version }}
+                        </p>
+                    </div>
+                    <div v-if="assessment.properties.hectares || assessment.properties.reported_size" class="flex flex-col">
+                        <p class="text-xs font-semibold text-grayy-lighter leading-4">
+                            Area Size
+                        </p>
+                        <p class="text-s font-semibold leading-6">
+                            {{ assessment.properties.hectares || assessment.properties.reported_size }} h
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col chart-content pb-4 pr-4 pl-4 border-grayy-borde border-t border-b">
+                <map-score-chart v-if="loaded" :width="288" :height="288"></map-score-chart>
+                <p class="text-s font-semibold leading-4">
+                    By <br>Attributes
                 </p>
             </div>
-            <div class="flex flex-row justify-start gap-8">
-                <div v-if="assessment.properties.year" class="flex flex-col ">
-                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                        Year
-                    </p>
-                    <p class="text-s font-semibold leading-6">
-                        {{ assessment.properties.year }}
-                    </p>
-                </div>
-                <div v-if="assessment.properties.published_version" class="flex flex-col ">
-                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                        Version
-                    </p>
-                    <p class="text-s font-semibold leading-6">
-                        {{ assessment.properties.published_version }}
-                    </p>
-                </div>
-                <div v-if="assessment.properties.hectares || assessment.properties.reported_size" class="flex flex-col">
-                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                        Area Size
-                    </p>
-                    <p class="text-s font-semibold leading-6">
-                        {{ assessment.properties.hectares || assessment.properties.reported_size }} h
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col chart-content p-4 border-grayy-borde border-t border-b">
-            <map-score-chart v-if="loaded" :width="288" :height="288"></map-score-chart>
-            <p class="text-s font-semibold leading-4 mt-4">
-                By <br>Attributes
-            </p>
         </div>
         <div class="flex justify-center p-4">
             <nuxt-link

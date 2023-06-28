@@ -197,8 +197,11 @@ export default {
 }
 </script>
 <style lang="scss">
-    #map-score-chart > svg{
-        overflow:visible;
+    #map-score-chart{
+        margin: 5px auto -20px;
+        & > svg{
+            overflow:visible;
+        }
     }
     .chart-tooltip{
         opacity:0;

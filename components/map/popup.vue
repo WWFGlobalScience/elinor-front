@@ -10,8 +10,8 @@
             </div>
             <div v-if="assessment.properties.management_area" class="flex flex-col font-montserrat">
                 <p class="text-xs leading-4">Managed Area</p>
-                <p class="text-s leading-4 text-turqy font-semibold">
-                    {{ JSON.parse(assessment.properties.management_area).name}}
+                <p class="text-s leading-4 text-turqy font-semibold break-words">
+                    {{ assessment.properties.management_area.name}}
                 </p>
             </div>
         </div>

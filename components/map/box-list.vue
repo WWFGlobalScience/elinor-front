@@ -1,6 +1,6 @@
 <template>
-    <div v-if="visible" class="box-map font-montserrat">
-        <button @click="visible = false" type="button" class="btn--opacity absolute right-4 top-4 z-50">
+    <div class="box-map font-montserrat">
+        <button @click="close" type="button" class="btn--opacity absolute right-4 top-4 z-50">
             <img src="~/assets/img/ico-close-popup.svg" />
         </button>
         <div class="p-4 flex gap-2 items-center">
@@ -18,7 +18,7 @@
             </p>
         </div>
         <ul>
-            <li v-for="report in list">
+            <li v-for="report in list.filter(element => element.geometry.type == 'MultiPolygon')">
                 <div class="flex flex-row flex-wrap items-center justify-start gap-2 p-4 border-b-1 border-grayy font-montserrat">
                     <div v-if="report.properties.score" class="flex justify-center items-center w-[40px] h-[40px] rounded-full" :class="'bg-' + getAssessmentColor(report.properties.score)">
                         <p class="text-white text-s font-bold leading-4 ">
@@ -44,12 +44,7 @@ import { mapState } from "vuex";
 
 export default {
     name: "map-box-list",
-    props: ["list"],
-    data() {
-        return {
-            visible: true,
-        }
-    },
+    props: ["list", "close"],
     computed: {
         ...mapState({
             reports: state => state.reports.list,

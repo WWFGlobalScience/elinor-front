@@ -42,4 +42,7 @@
             }
         }
     }
+    .wrap{
+        @apply h-[450px] overflow-y-auto;
+    }
 }
