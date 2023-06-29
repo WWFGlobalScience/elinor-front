@@ -6,6 +6,10 @@
     :center="coordinates"
     :min-zoom="1"
     :max-zoom="16"
+    :doubleClickZoom=false
+    :dragRotate="false"
+    :keyboard=false
+    :scrollZoom=false
     @load="onMapLoaded"
     >
     <MglNavigationControl position="top-right" />
@@ -413,9 +417,13 @@ export default {
 
             this.activeDetail = true
             this.$refs.mapMarker.togglePopup()
-            var bbox = turf.bbox(this.popup.assessment.geometry)
             
-            this.map.fitBounds(bbox, { padding: 40});
+            if(this.popup.assessment.geometry.type == 'MultiPolygon'){
+                var bbox = turf.bbox(this.popup.assessment.geometry)
+                this.map.fitBounds(bbox, { padding: 40});
+            }else{
+                this. map.easeTo({center: this.popup.assessment.geometry.coordinates, zoom: 8});
+            }
         },
         closeDetail(){
             this.activeDetail = false

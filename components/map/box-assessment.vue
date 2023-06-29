@@ -56,7 +56,7 @@
             <div class="flex flex-col chart-content pb-4 pr-4 pl-4 border-grayy-borde border-t border-b">
                 <map-score-chart v-if="loaded" :width="288" :height="288"></map-score-chart>
                 <p class="text-s font-semibold leading-4">
-                    By <br>Attributes
+                    By Attributes
                 </p>
             </div>
         </div>
