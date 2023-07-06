@@ -105,7 +105,7 @@
                         </ul>
                     </div>
                     <div class="rounded-3xl bg-turqy-lighter p-3">
-                        <table class="table-score-values table-score-values--report overflow-x-scroll block">
+                        <table class="table-score-values table-score-values--report block">
                             <tr>
                                 <th></th>
                                 <th>Indicator<br />value</th>
@@ -126,7 +126,7 @@
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description">Collaborate with stakeholders to develop plans for addressing major governance gaps</span>
+                                        <span class="description">Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps</span>
                                     </div>
                                 </td>
                             </tr>
@@ -139,12 +139,12 @@
                                 </td>
                                 <td class="num">1</td>
                                 <td class="num">3-5</td>
-                                <td class="num">0-29</td>
+                                <td class="num">30-59</td>
                             </tr>
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description">Collaborate with stakeholders to develop plans for addressing major governance gaps</span>
+                                        <span class="description">Collaborate with rights holders and other actors to build upon initial progress to address major governance gap</span>
                                     </div>
                                 </td>
                             </tr>
@@ -157,12 +157,12 @@
                                 </td>
                                 <td class="num">2</td>
                                 <td class="num">6-8</td>
-                                <td class="num">0-29</td>
+                                <td class="num">60-89</td>
                             </tr>
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description">Collaborate with stakeholders to develop plans for addressing major governance gaps</span>
+                                        <span class="description">Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps</span>
                                     </div>
                                 </td>
                             </tr>
@@ -175,12 +175,12 @@
                                 </td>
                                 <td class="num">3</td>
                                 <td class="num">9-10</td>
-                                <td class="num">0-29</td>
+                                <td class="num">90-100</td>
                             </tr>
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description border-transparent">Collaborate with stakeholders to develop plans for addressing major governance gaps</span>
+                                        <span class="description border-transparent">Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats</span>
                                     </div>
                                 </td>
                             </tr>

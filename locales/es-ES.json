@@ -1644,6 +1644,7 @@
         "accept": "Accept",
         "cancel": "Cancel",
         "delete": "Delete",
+        "create": "Create",
         "contactAdministrator": "Contact Administrator",
         "downloadData": "Download Data",
         "published": "Published",
