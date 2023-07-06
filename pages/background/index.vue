@@ -140,20 +140,20 @@
                         </tr>
                         <tr>
                             <td>1. Resource boundaries</td>
-                            <td><p>This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.</p></td>
+                            <td><p>This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant rights-holders and other actors.</p></td>
                             <td><p>You wish to understand whether the boundaries of the MA are well established.</p></td>
                         </tr>
                         <tr>
-                            <td>2. Monitoring and enforcement</td>
+                            <td>2. Enforcement</td>
                             <td>
-                                <p>This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.</p>
-                                <p>It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored. </p>
+                                <p>This attribute measures how well the MA is able to enforce regulations.</p>
+                                <p>It looks specifically at penalties for breaking MA rules and their nature and extent.</p>
                             </td>
                             <td><p>You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.</p></td>
                         </tr>
                         <tr>
                             <td>3. Capacity for adaptive management</td>
-                            <td><p>This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.</p></td>
+                            <td><p>This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making. It also asks whether social, ecological or climate change conditions are monitored.</p></td>
                             <td><p>You would like to know what sort of information informs management decisions in the MA.</p></td>
                         </tr>
                         <tr>
@@ -165,7 +165,7 @@
                             <td>5. Inclusive and equitable management</td>
                             <td>
                                 <p>This attribute measures inclusivity and equity in MA management, two important components of good governance.</p>
-                                <p>Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.</p>
+                                <p>Questions on inclusion and equity ask whether the MA authorities allow for rights-holders and other actors to contribute to management decisions, if there is a strategy for sharing the benefits equitably among them, and whether community resilience to climate change is factored into management.</p>
                             </td>
                             <td><p>You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.</p></td>
                         </tr>
@@ -179,21 +179,26 @@
                         </tr>
                         <tr>
                             <td>7. Clear and congruent regulations</td>
-                            <td><p>This attribute measures the quality of MA regulations. Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.</p></td>
+                            <td><p>This attribute measures the quality of MA regulations.  Specifically i) how clear they are and ii) how well they align with rights-holders and other actors’ input into MA governance, other levels of management authority, and the social and environmental context in which they operate.</p></td>
                             <td><p>You wish to understand whether the regulations are clearly stated and fair.</p></td>
                         </tr>
                         <tr>
                             <td>8. Transparency and accountability</td>
                             <td>
-                                <p>This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.</p>
-                                <p>Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is. </p>
+                                <p>This attribute measures transparency, accountability, and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision-makers are held to account and there are opportunities for conflict resolution.</p>
+                                <p>Transparency is measured by asking whether the MA authority’s communication of information to rights-holders and other actors is timely, and accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.</p>
                             </td>
                             <td><p>If you want to assess the quality of MA governance.</p></td>
                         </tr>
                         <tr>
-                            <td>9. Perceived outcomes</td>
-                            <td><p>This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.</p></td>
-                            <td><p>You wish to know whether those involved in the MA think its objectives are being achieved.</p></td>
+                            <td>9. Perceived ecological outcomes</td>
+                            <td><p>This attribute measures the general perceptions that those completing the Elinor assessment have on the ecological outcomes of the MA.</p></td>
+                            <td><p>You wish to know whether those involved in the MA think its ecological objectives are being achieved.</p></td>
+                        </tr>
+			<tr>
+                            <td>10. Perceived social outcomes</td>
+                            <td><p>This attribute measures the general perceptions that those completing the Elinor assessment have on the social outcomes of the MA.</p></td>
+                            <td><p>You wish to know whether those involved in the MA think its social objectives are being achieved.</p></td>
                         </tr>
                     </table>
                 </div>
@@ -207,23 +212,23 @@
                         <tr>
                             <td><p>1. Resource boundaries</p></td>
                             <td>
-                                <p>(Q1) Is the boundary known by all local stakeholder groups?</p>
+                                <p>(Q1) Is the boundary known by all rights-holders and other actors?</p>
                                 <p>(Q2) Is the boundary clearly defined?</p>
                             </td>
                         </tr>
                         <tr>
-                            <td><p>2. Monitoring and enforcement</p></td>
+                            <td><p>2. Enforcement</p></td>
                             <td>
                                 <p>(Q3) How often are the penalties for breaking resource use rules administered?</p>
                                 <p>(Q4) To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity, or frequency of the infraction?</p>
-                                <p>(Q5) Are systems in place to monitor and document ecological conditions in the MA?</p>
-                                <p>(Q6) Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?</p>
-                                <p>(Q7) Are systems in place to monitor and document the impacts of climate change?</p>
                             </td>
                         </tr>
                         <tr>
                             <td><p>3. Capacity for adaptive management</p></td>
                             <td>
+				<p>(Q5) Are systems in place to monitor and document ecological conditions in the MA?</p>
+                                <p>(Q6) Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?</p>
+                                <p>(Q7) Are systems in place to monitor and document the impacts of climate change?</p>
                                 <p>(Q8) Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?</p>
                                 <p>(Q9) Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?</p>
                                 <p>(Q10) Is the MA consciously managed to adapt to climate change?</p>
@@ -243,27 +248,27 @@
                         <tr>
                             <td><p>5. Inclusive and equitable management</p></td>
                             <td>
-                                <p>(Q17) To what extent are stakeholders affected by the rules of the MA able to play a role in making changes to the rules?</p>
+                                <p>(Q17) To what extent are rights-holders and other actors affected by the rules of the MA able to play a role in making changes to the rules?</p>
                                 <p>(Q18) Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?</p>
-                                <p>(Q19) Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among local stakeholders?</p>
-                                <p>(Q20) Do networks exist that develop social relations and support mutual learning among local stakeholders?</p>
+                                <p>(Q19) Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among rights-holders and other actors?</p>
+                                <p>(Q20) Do networks exist that develop social relations and support mutual learning among rights-holders and other actors?</p>
                                 <p>(Q21) Is the information on climate change being used to inform strategies to build community resilience to climate change?</p>
                             </td>
                         </tr>
                         <tr>
                             <td><p>6. Clearly defined rights and decision making</p></td>
                             <td>
-                                <p>(Q22) Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?</p>
-                                <p>(Q23) Do formal or informal mechanisms exist that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?</p>
+                                <p>(Q22) Are there formal or informal rules that clearly define who has what rights to harvest resources within the MA?</p>
+                                <p>(Q23) Are there formal or informal mechanisms that clearly define who has what rights to develop rules for the use of resources within the MA?</p>
                                 <p>(Q24) Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?</p>
-                                <p>(Q25) Is there legislation in place to enable resource management by local communities?</p>
-                                <p>(Q26) Are local stakeholders able to exercise their rights to natural resources?</p>
+                                <p>(Q25) Is there legislation in place to enable resource management by rights-holders and other actors?</p>
+                                <p>(Q26) Are those with rights to access natural resources able to exercise their rights?</p>
                             </td>
                         </tr>
                         <tr>
                             <td><p>7. Clear and congruent regulations</p></td>
                             <td>
-                                <p>(Q27) Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?</p>
+                                <p>(Q27) Is the amount that a person is allowed to benefit from resources within the MA related to their contributions to the governance of the MA (in terms of time and/or resources contributed)?</p>
                                 <p>(Q28) Do different levels of management exist within the MA that function as a coordinated unit?</p>
                                 <p>(Q29) Are appropriate regulations in place to control natural resource-based activities in the MA?</p>
                                 <p>(Q30) Is there a management plan for the MA and is it being implemented?</p>
@@ -273,14 +278,19 @@
                             <td><p>8. Transparency and accountability</p></td>
                             <td>
                                 <p>(Q31) Are those responsible for the governance of the MA held to account if they do not perform their role?</p>
-                                <p>(Q32) Do local stakeholders receive information from MA authorities in a timely manner?</p>
-                                <p>(Q33) Do local stakeholders have access to effective conflict resolution mechanisms?</p>
+                                <p>(Q32) Do rights-holders and other actors receive information from MA authorities in a timely manner?</p>
+                                <p>(Q33) Do rights-holders and other actors have access to effective conflict resolution mechanisms?</p>
                             </td>
                         </tr>
                         <tr>
-                            <td>9. Perceived outcomes</td>
+                            <td>9. Perceived ecological outcomes</td>
                             <td>
                                 <p>(Q34) To what extent do you feel the ecological outcomes are being achieved?</p>
+                                </td>
+                        </tr>
+                        <tr>
+			                <td>9. Perceived social outcomes</td>
+                            <td>
                                 <p>(Q35) To what extent do you feel the social outcomes are being achieved?</p>
                             </td>
                         </tr>
