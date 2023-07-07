@@ -63,7 +63,7 @@
                 },
                 "content": {
                     "introduction": {
-                        "text": "Elinor is a flexible tool and data system designed to track equitable management and governance status in areas under protection or management. Elinor seeks to streamline data collection, entry, and visualization for information on management, governance, and equity while also allowing flexibility on how data is gathered.",
+                        "text": "Elinor is a free and open-source monitoring tool that helps users gather, store, share, and use data on environmental governance and management to support more effective area-based conservation.",
                         "createAccountLink": "Create Account"
                     },
                     "explanation": {
@@ -95,6 +95,7 @@
                     "methodology": {
                         "title": "METHODOLOGY",
                         "text": "Learn more about how you can use the Elinor assessment and download the field protocol and assessment tool.",
+                        "text2": "Elinor includes 35 questions across 10 governance and management attributes. Each question is scored 0-3 and those scores equally contribute to their respective attribute scores. In turn, the attribute scores equally contribute to the overall score. Depending on the given score, Elinor suggests different actions steps, including Plan, Build, Strengthen, and Maintain. It is important to note that although these scores provide important insights, they should be used together with the qualitative data entered into Elinor when deciding what adaptive management actions to take.",
                         "button": "Go to Methodology"
                     },
                     "about": {

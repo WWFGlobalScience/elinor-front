@@ -488,12 +488,9 @@
                         <div class="section--img-text__block-nested">
                             <h5 class="c-epi">SCORE</h5>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Amet expedita, aut aliquam
-                                doloribus veritatis veniam corrupti, quisquam
-                                qui possimus quo ad deleniti voluptatem
-                                pariatur? Sit ullam dicta iure incidunt
-                                recusandae.
+                                {{
+                                    $t("pages.home.public.content.methodology.text2")
+                                }}
                             </p>
                             <div class="score-legend ui-rounded-border">
                                 <div class="item-legend">
