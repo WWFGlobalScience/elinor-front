@@ -9,8 +9,19 @@ import {mapState} from "vuex";
 
 export default {
     name: 'assessment-score-chart',
+    props: {
+        width: {
+            default: 460,
+            type: Number
+        },
+        height: {
+            default: 460,
+            type: Number
+        }
+    },
     data() {
         return {
+            loaded: false,
             colorMapping: [
                 '#EE8383', //poor
                 '#F5C243', //average
@@ -52,8 +63,8 @@ export default {
 
             // set the dimensions and margins of the graph
             var margin = {top: 20, right: 20, bottom: 20, left: 20},
-                width = 460 - margin.left - margin.right,
-                height = 460 - margin.top - margin.bottom,
+                width = this.width - margin.left - margin.right,
+                height = this.height - margin.top - margin.bottom,
                 innerRadius = 0,
                 outerRadius = Math.min(width, height) / 2;
 
@@ -165,8 +176,8 @@ export default {
         }
     },
     mounted() {
-      this.renderChart()  
-    },
+        this.renderChart()  
+    }
 }
 </script>
 <style>

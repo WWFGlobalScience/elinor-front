@@ -7,7 +7,7 @@
                 <div class="flex flex-col gap-10">
                     <div class="keys-card ui-rounded-border">
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
-                            Key governance strenght
+                            Key governance strengths
                         </h4>
                         <ul class="list-keys list-keys--xl key-ok">
                             <li v-for="key in keys.slice(0, 3)" class="text-medium">
@@ -15,7 +15,7 @@
                             </li>
                         </ul>
                         <p class="font-montserratMediumPdf mt-4 text-grayy-lighter">
-                            {{ form.strenghts }}
+                            {{ form.strengths }}
                         </p>
                     </div>
 

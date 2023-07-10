@@ -63,7 +63,7 @@
                 },
                 "content": {
                     "introduction": {
-                        "text": "Elinor is a flexible tool and data system designed to track equitable management and governance status in areas under protection or management. Elinor seeks to streamline data collection, entry, and visualization for information on management, governance, and equity while also allowing flexibility on how data is gathered.",
+                        "text": "Elinor is a free and open-source monitoring tool that helps users gather, store, share, and use data on environmental governance and management to support more effective area-based conservation.",
                         "createAccountLink": "Create Account"
                     },
                     "explanation": {
@@ -95,6 +95,7 @@
                     "methodology": {
                         "title": "METHODOLOGY",
                         "text": "Learn more about how you can use the Elinor assessment and download the field protocol and assessment tool.",
+                        "text2": "Elinor includes 35 questions across 10 governance and management attributes. Each question is scored 0-3 and those scores equally contribute to their respective attribute scores. In turn, the attribute scores equally contribute to the overall score. Depending on the given score, Elinor suggests different actions steps, including Plan, Build, Strengthen, and Maintain. It is important to note that although these scores provide important insights, they should be used together with the qualitative data entered into Elinor when deciding what adaptive management actions to take.",
                         "button": "Go to Methodology"
                     },
                     "about": {
@@ -204,7 +205,7 @@
                             "status": "by Publication"
                         },
                         "placeholders": {
-                            "countries": "",
+                            "countries": "Country",
                             "year": "",
                             "status": ""
                         },
@@ -434,6 +435,8 @@
                             "completed": "Completed",
                             "outOf": "Out of"
                         },
+                        "uncheckAttributeTitle": "Unselect attribute",
+                        "uncheckAttributeText": "You are unselecting an attribute that contains questions that have been answered. If you unselect it, all the answers to its questions will be deleted. Are you sure you want to proceed and unselect this attribute?",
                         "questions": {
                             "question": "Question",
                             "back": "Back to Survey Home",
@@ -1601,6 +1604,28 @@
                     "text": "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
                 }
             }
+        },
+        "map": {
+            "home": {
+                "meta": {
+                    "title": "Mapa",
+                    "slug": "/map",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
+            "filters": {
+                "form": {
+                    "placeholders": {
+                        "countries": "Country",
+                        "attributes": "By Attributes"
+                    }
+                }
+            }
         }
     },
     "sidebar": {
@@ -1620,12 +1645,18 @@
         "accept": "Accept",
         "cancel": "Cancel",
         "delete": "Delete",
+        "create": "Create",
         "contactAdministrator": "Contact Administrator",
         "downloadData": "Download Data",
         "published": "Published",
         "finalized": "Finalized",
         "submit": "Submit",
         "close": "Close",
+        "filters":{
+            "popup":{
+                "title": ""
+            }
+        },
         "upload-file": {
             "placeholder": "Drag and drop a PDF file here",
             "buttons": {

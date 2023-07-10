@@ -11,6 +11,7 @@
         >
         <template v-if="$auth.loggedIn">
             <a
+                v-if="isAssessmentCollaborator($auth, assessment)"
                 @click="
                     popupState({
                         active: true,
@@ -77,6 +78,8 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+import {isAssessmentCollaborator} from "~/config/assessment-roles";
+
 export default {
     name: "assessment-actions",
     props: ["type"],
@@ -127,7 +130,8 @@ export default {
         },
         download() {
             this.downloadAssessment(this.assessment.id);
-        }
+        },
+        isAssessmentCollaborator
     }
 };
 </script>

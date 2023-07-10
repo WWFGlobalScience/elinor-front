@@ -109,6 +109,11 @@ export const mutations = {
         state.assessment = {...state.assessment, surveyAnswers} ;
         state.progress = calculateProgress(state.assessment);
     },
+    removeSurveyAnswer(state, id) {
+        const surveyAnswers = [...state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== id)]
+        state.assessment.surveyAnswers = surveyAnswers;
+        state.progress = calculateProgress(state.assessment);
+    },
     setManagementArea(state, managementArea) {
         console.log(managementArea);
         state.assessment = {...state.assessment, management_area_countries: managementArea};
@@ -427,6 +432,25 @@ export const actions = {
         });
 
         state.commit('updateSurveyAnswer', response.data)
+    },
+
+    async removeSurveyAnswer(state, id) {
+        this.dispatch('loader/loaderState', {active: true,text: 'Deleting servey answer...'})
+
+        this.$axios({
+            method: 'delete',
+            url: `v2/surveyanswerlikerts/${id}/`
+        })
+        .then((response) => {
+            state.commit('removeSurveyAnswer', id)
+            this.dispatch('popup/popupState', {active: false})
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+        .finally(() => {
+            this.dispatch('loader/loaderState', {active: false, text: ''})
+        })
     },
 
     async contactAssessmentAdmin(state, {assessmentId, name, email, subject, message, recaptcha}) {

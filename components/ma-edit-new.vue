@@ -233,7 +233,7 @@
                                             role="button"
                                             class="btn btn--sm btn--border-turqy mt-2"
                                         >
-                                            {{ $t("default.create") }}
+                                            {{ $t('default.create') }}
                                         </button></span
                                     >
                                 </multiselect>

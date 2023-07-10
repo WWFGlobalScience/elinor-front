@@ -65,6 +65,9 @@ button {
             transform: translateX(5px);
         }
     }
+    &--small {
+        @apply h-[40px] py-0 px-4;
+    }
 }
 .btn--arrow-down {
     img {

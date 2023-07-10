@@ -33,7 +33,9 @@
                     <ul class="elinor__survey-attribute-gird">
                         <li v-for="(attribute, index) in optionalAttributes" class="elinor__survey-attribute-item item--optional">
                             <div class="option-check">
-                                <input :checked="isAttributeChecked(attribute)" @change="onChangeAttribute(attribute)" type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1">
+                                <input :checked="isAttributeChecked(attribute)" 
+                                    @click.stop="unCheckAttribute(attribute, $event)" 
+                                    type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1">
                                 <div class="radio">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                                 </div>
@@ -77,13 +79,46 @@ export default {
     },
     methods: {
         ...mapActions({
-            toggleAttribute: 'assessments/toggleAttribute'
+            toggleAttribute: 'assessments/toggleAttribute',
+            removeSurveyAnswer: 'assessments/removeSurveyAnswer',
+            popupState: "popup/popupState",
         }),
         isAttributeChecked(attribute) {
             return this.assessment.attributes.indexOf(attribute.id) !== -1;
         },
-        onChangeAttribute(attribute) {
-            this.toggleAttribute({assessmentId: this.assessment.id, attributeId: attribute.id});
+        getAttributeAnswers(attribute) {
+            return this.assessment.surveyAnswers.filter(
+                surveyAnswer => surveyAnswer.question.attribute === attribute.id
+            )
+        },
+        onConfirmRemove(attribute) {
+            return () => {
+                var answers = this.getAttributeAnswers(attribute)
+                answers.forEach(answer => {
+                    this.removeSurveyAnswer(answer.id);
+                })
+                this.toggleAttribute({assessmentId: this.assessment.id, attributeId: attribute.id});
+                this.popupState(false, '', '')
+                this.updateState()
+            }
+        },
+        unCheckAttribute(attribute, event) {
+            event.preventDefault();
+            event.stopPropagation();
+            if(this.isAttributeChecked(attribute) && this.getAttributeAnswers(attribute).length > 0){
+                this.popupState({
+                    active: true,
+                    type:'confirmation',
+                    component: 'popup-assessment-toggle-attribute',
+                    title: 'pages.assessments.edit.tabs.survey.uncheckAttributeTitle',
+                    onConfirm: this.onConfirmRemove(attribute)
+                })
+            }else{
+                this.toggleAttribute({assessmentId: this.assessment.id, attributeId: attribute.id});
+            }
+        },
+        updateState() {
+            this.$store.dispatch( 'assessments/fetchAssessment', this.assessment.id )
         }
     }
 }

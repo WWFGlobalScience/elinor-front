@@ -12,7 +12,7 @@
         <div class="flex flex-col gap-10">
             <div class="keys-card ui-rounded-border">
                 <h4 class="title uppercase font-montserratSemiBoldPdf">
-                    Key governance strenght
+                    Key governance strengths
                 </h4>
                 <ul class="list-keys list-keys--xl key-ok">
                     <li class="text-medium">

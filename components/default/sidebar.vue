@@ -6,7 +6,7 @@
     >
         <div class="sidebar__wrap">
             <div class="brand">
-                <NuxtLink to="/report" class="flex items-center">
+                <NuxtLink to="/" class="flex items-center">
                     <img
                         src="~/assets/img/elinor-icon-white.svg"
                         class="brand__icon"

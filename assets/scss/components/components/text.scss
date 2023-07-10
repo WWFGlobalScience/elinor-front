@@ -2,7 +2,7 @@
 .c-title {
     @apply text-5xl w-6/12 mb-12 xl:w-8/12 uppercase sm:text-4xl;
 }
-.c-epi{
+.c-epi {
     @apply text-2xl text-grayy uppercase;
 }
 .c-title--block {
@@ -11,21 +11,22 @@
 .c-title--lg {
     @apply text-medium;
 }
-.c-title--md{
+.c-title--md {
     @apply text-xl font-bold;
 }
 .c-title--sm {
     @apply text-xl uppercase;
 }
-.c-title--main{
+.c-title--main {
     @apply text-huge text-grayy border-b border-grayy-border pb-6 sm:text-4xl;
 }
-.c-title--base, .c--text-base{
+.c-title--base,
+.c--text-base {
     @apply text-base text-grayy;
 }
-.c-title--modal{
+.c-title--modal {
     @apply text-lg font-bold;
-    &.c-title--modal--alert{
+    &.c-title--modal--alert {
         @apply text-yellowy-lighter;
     }
 }
@@ -34,10 +35,10 @@
 }
 
 //text color
-.c-text--warning{
+.c-text--warning {
     @apply text-yellowy;
 }
-.c-text--warning-secondary{
+.c-text--warning-secondary {
     @apply text-yellowy-lighter;
 }
 
@@ -49,10 +50,14 @@
 .c-icon {
     @apply flex items-center justify-end;
     .ico-circle {
-        @apply  p-3 rounded-full border border-solid border-turqy-border flex items-center justify-center;
+        @apply p-3 rounded-full border border-solid border-turqy-border flex items-center justify-center;
     }
-    span{
+    span {
         @apply text-xs text-turqy ml-3;
     }
 }
 
+//text shadow
+.text-shadow {
+    text-shadow: 0px 2px 2px rgba(#000000, 0.5);
+}
