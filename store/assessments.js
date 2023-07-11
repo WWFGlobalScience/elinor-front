@@ -4,7 +4,7 @@ import {required_fields, initProgress, calculateProgress} from "~/config/assessm
 export const state = () => ({
     list: [],
     search: null,
-    listType: 'own',
+    listType: 'all',
     filters: {management_area_countries: null, status: null, year: null},
     pagination: {
         count: 0,
