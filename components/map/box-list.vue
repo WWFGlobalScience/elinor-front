@@ -7,7 +7,6 @@
             <span class="w-3 h-3 block rounded-full" :class="'bg-' + getAssessmentColor(countryScore)"></span>
             <p class="text-[14px]">
                 {{ country }}
-                {{ countryScore }}
             </p>
         </div>
         <div class="p-4 flex items-center justify-start gap-2 bg-turqy-lighter border-t border-grayy-border">
@@ -64,9 +63,8 @@ export default {
             return this.assessments.reduce((a, b) => { return a + b.properties.score}, 0) / this.assessments.length
         },
         countryHa(){
-            var filtered = this.assessments.filter((report) => report.properties.hectares)
-            if(filtered.length > 0){
-                return (filtered.reduce((a, b) => { return a + Number(b.properties.hectares)}, 0) / filtered.length)
+            if(this.assessments.length > 0){
+                return (this.assessments.reduce((a, b) => { return a + Number(b.properties.hectares)}, 0))
             }else{
                 return 0
             }
