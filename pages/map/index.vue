@@ -182,7 +182,8 @@ export default {
                     'icon-image': [
                     'step',
                     ['get', 'filterScore'],
-                    'mark-poor',
+                    'mark-grey',
+                    0,  'mark-poor',
                     29, 'mark-average',
                     59, 'mark-good',
                     89, 'mark-excellent',
@@ -198,7 +199,8 @@ export default {
                     'fill-color': [
                         'step',
                         ['get', 'filterScore'],
-                        '#EE8383',
+                        '#9E9E9E',
+                        0,  '#EE8383',
                         29, '#F5C243',
                         59, '#CCCC25',
                         89, '#4FAD5B',
@@ -214,7 +216,8 @@ export default {
                     'line-color': [
                     'step',
                     ['get', 'filterScore'],
-                    '#EE8383',
+                    '#585858',
+                    0,  '#EE8383',
                     29, '#F5C243',
                     59, '#CCCC25',
                     89, '#4FAD5B',
@@ -246,12 +249,19 @@ export default {
         filteredData(){
             if(this.data){
                 var filtered = this.formatData().filter((f) => 
-                    (this.country ? f.properties.management_area.countries && f.properties.management_area.countries.includes(this.country) : true) &&
-                    (this.attribute ? f.properties.attributes.find(e => e.attribute == this.attribute) : true)
+                    (this.country ? f.properties.management_area.countries && f.properties.management_area.countries.includes(this.country) : true) 
+                    // && (this.attribute ? f.properties.attributes.find(e => e.attribute == this.attribute) : true)
                 )
 
                 if(this.attribute){
-                    filtered.map(x => x.properties.filterScore = x.properties.attributes.find(e => e.attribute == this.attribute).score * 10)
+                    filtered.map(x => {
+                        let coincident = x.properties.attributes.find(e => e.attribute == this.attribute)
+                        if(coincident){
+                            x.properties.filterScore = coincident.score * 10    
+                        }else{
+                            x.properties.filterScore = -1
+                        }
+                    })
                 }else{
                     filtered.map(x => x.properties.filterScore = x.properties.score)
                 }
@@ -335,6 +345,9 @@ export default {
         }),
         async onMapLoaded(e) {
             var map = this.map = e.map;
+            map.loadImage('/img/marks/mark-grey.png', (error, image) => { if (error) {throw error;}
+                map.addImage('mark-grey', image);
+            });
             map.loadImage('/img/marks/mark-poor.png', (error, image) => { if (error) {throw error;}
                 map.addImage('mark-poor', image);
             });
