@@ -14,7 +14,7 @@
                                 {{ key.name }}
                             </li>
                         </ul>
-                        <p class="font-montserratMediumPdf mt-4 text-grayy-lighter">
+                        <p class="break-words font-montserratMediumPdf mt-4 text-grayy-lighter max-w-{720px}">
                             {{ form.strengths }}
                         </p>
                     </div>
@@ -28,7 +28,7 @@
                                 {{ key.name }}
                             </li>
                         </ul>
-                        <p class="font-montserratMediumPdf mt-4 text-grayy-lighter">
+                        <p class="break-words font-montserratMediumPdf mt-4 text-grayy-lighter max-w-{720px}">
                             {{ form.needs }}
                         </p>
                     </div>
@@ -37,7 +37,7 @@
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
                             Context
                         </h4>
-                        <p class="font-montserratMediumPdf  text-grayy-lighter">
+                        <p class="font-montserratMediumPdf text-grayy-lighter max-w-{720px}">
                             {{ form.context }}
                         </p>
                     </div>

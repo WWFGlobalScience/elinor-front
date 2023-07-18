@@ -22,6 +22,7 @@
                                 name="collection_method_text"
                                 placeholder=""
                                 v-model="form.strengths"
+                                maxlength="168"
                             ></textarea>
                         </div>
                     </div>
@@ -54,6 +55,7 @@
                                 name="collection_method_text"
                                 placeholder=""
                                 v-model="form.needs"
+                                maxlength="168"
                             ></textarea>
                         </div>
                     </div>
@@ -77,6 +79,7 @@
                                 name="collection_method_text"
                                 placeholder=""
                                 v-model="form.context"
+                                maxlength="168"
                             ></textarea>
                         </div>
                     </div>
