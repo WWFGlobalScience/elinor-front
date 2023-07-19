@@ -36,8 +36,7 @@ export default {
                 center = turf.centroid(polygon);
             } else {
                 center = turf.point(this.managementArea.point.coordinates);
-                this.marker = new mapboxgl.Marker()
-                    .setLngLat(this.managementArea.point.coordinates);
+                this.marker = new mapboxgl.Marker().setLngLat(this.managementArea.point.coordinates);
             }
 
             this.map = new mapboxgl.Map({
