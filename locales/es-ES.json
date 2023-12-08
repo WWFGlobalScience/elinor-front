@@ -164,7 +164,7 @@
     "assessments": {
       "meta": {
         "title": "Evaluaciones",
-        "slug": "/evaluaciones"
+        "slug": "/assessments"
       },
       "list": {
         "title": "Evaluaciones",
@@ -1146,7 +1146,7 @@
       "home": {
         "meta": {
           "title": "Noticias",
-          "slug": "/noticias",
+          "slug": "/news",
           "seo": {
             "title": "",
             "description": "",
@@ -1171,7 +1171,7 @@
       "home": {
         "meta": {
           "title": "Preguntas frecuentes",
-          "slug": "/preguntas frecuentes",
+          "slug": "/faq",
           "seo": {
             "title": "",
             "description": "",
@@ -1328,7 +1328,7 @@
       "home": {
         "meta": {
           "title": "Contacto",
-          "slug": "/contacto",
+          "slug": "/contact",
           "seo": {
             "title": "",
             "description": "",
@@ -1360,7 +1360,7 @@
       "home": {
         "meta": {
           "title": "Colaboración",
-          "slug": "/colaboración",
+          "slug": "/collaboration",
           "seo": {
             "title": "",
             "description": "",
@@ -1411,7 +1411,7 @@
     "about": {
       "meta": {
         "title": "Fondo",
-        "slug": "/fondo",
+        "slug": "/background",
         "seo": {
           "title": "",
           "description": "",
@@ -1616,7 +1616,7 @@
       "home": {
         "meta": {
           "title": "Mapa",
-          "slug": "/mapa",
+          "slug": "/map",
           "seo": {
             "title": "",
             "description": "",
