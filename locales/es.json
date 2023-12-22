@@ -213,6 +213,20 @@
             "apply": "Aplicar filtros"
           }
         },
+        "country-report": {
+            "button": "Country report",
+            "popup": {
+                "title": "Export assessments report by country",
+                "placeholders": {
+                    "countries": "Country",
+                    "year": "",
+                    "status": ""
+                },
+                "reset": "Reset",
+                "apply": "Download",
+                "countryWithoutAssessments": "This country dont have assessments to generate a report"
+            }
+        },
         "type": {
           "own": "Miembro",
           "all": "Todo"

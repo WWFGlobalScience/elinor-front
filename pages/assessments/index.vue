@@ -19,8 +19,7 @@ export default {
         return {loaded: false}
     },
     async mounted() {
-        console.log(localStorage.getItem('onboarding'));
-        if(localStorage.getItem('onboarding') !== '0') {
+        if(localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {
             this.$store.dispatch('popup/popupState', { active: true, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' });
         }
         this.$store.dispatch( 'loader/loaderState', {

@@ -13,12 +13,9 @@
                     <span class="uppercase text-grayy-lighter font-bold text-[12px] font-montserratSemiBoldPdf">out of 100</span>
                 </div>
                 <div class="text">
-                    <h1 v-if="filters.management_area_countries" class="text-[56px] leading-none font-montserratSemiBoldPdf text-grayy">
-                        {{ countries.find(c => c.code ==  filters.management_area_countries).name }}
+                    <h1 class="text-[56px] leading-none font-montserratSemiBoldPdf text-grayy">
+                        {{ countries.find(c => c.code ==  selectedCountry).name }}
                     </h1>
-                    <p v-if="filters.year" class=" mt-2 text-[24px] font-montserratSemiBoldPdf uppercase text-grayy-lighter">
-                        {{ $t("pages.assessments.list.year") }} {{ filters.year }}
-                    </p>
                 </div>
             </header>
 
@@ -40,16 +37,16 @@
                         </tr>
                         <tr class="wrapper-row">
                             <td><span class="dot-row" :class="'bg-' + getAssessmentColor(assessment.score)">{{ assessment.score }}</span></td>
-                            
+
                             <td v-for="attribute in attributes"
                                 :set="att = assessment.attributes.find(a => a.attribute == attribute.name)">
                                     <span class="dot-col" :class="[att ? 'bg-' + getAttributeColor(att.score) : 'bg-grayy-lighter']">
                                         {{ att ? att.score : '-' }}
-                                    </span>                               
+                                    </span>
                             </td>
                         </tr>
                     </tbody>
-                    
+
                 </table>
             </div>
         </div>
@@ -60,11 +57,10 @@ import { mapState } from "vuex";
 
 export default {
     name: 'report-pages-country',
-    props: ['index','assessments'],
+    props: ['index','assessments', 'selectedCountry'],
     computed: {
         ...mapState({
             attributes: state => state.attributes.list,
-            filters: state => state.assessments.filters,
             countries: state => state.countries.list
         }),
         countryScore(){

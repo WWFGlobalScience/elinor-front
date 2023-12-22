@@ -62,9 +62,6 @@
                         </div>
                     </div>
                 </div>
-                <template v-if="filters && filters.management_area_countries">
-                    <report-country></report-country>
-                </template>
                 <button
                     type="button"
                     class="btn btn--border-turqy btn--sm ml-auto"

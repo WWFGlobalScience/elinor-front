@@ -21,6 +21,13 @@
                 </li>
                 <li>
                     <button type="button" class="btn--border-turqy btn--opacity--child"
+                    @click="popupState( {active: true, component : 'popup-assessments-country-report', title: 'pages.assessments.list.country-report.popup.title' })">
+                        <span class="btn--opacity__target">{{ $t( 'pages.assessments.list.country-report.button' ) }}</span>
+                        <img src="~/assets/img/ico-filters-turqy.svg">
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn--border-turqy btn--opacity--child"
                     @click="popupState( {active: true, component : 'popup-assessments-filter', title: 'pages.assessments.list.filters.popup.title' })">
                         <span class="btn--opacity__target"><template v-if="filtersApplied > 0">({{ filtersApplied }})</template> {{ $t( 'pages.assessments.list.filters.button' ) }}</span>
                         <img src="~/assets/img/ico-filters-turqy.svg">
