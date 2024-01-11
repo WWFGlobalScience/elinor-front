@@ -11,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, surveyAnswers: [], collaborators: []},
+    assessment: {last_edit: null, surveyAnswers: [], collaborators: [], offline: true},
     report: [],
     edit: {
         data: true,
@@ -32,6 +32,10 @@ export const state = () => ({
         sent: false
     }
 })
+
+export const getters = {
+    getOffline: state => !!state.assessment.offline
+}
 
 export const mutations = {
     setAssessments(state, payload) {
@@ -204,7 +208,7 @@ export const actions = {
             active: true,
             text: 'Getting report data...'
         })
-        
+
         try {
             const assessmentReportResponse = await this.$axios({
                 method: 'get',
@@ -572,5 +576,8 @@ export const actions = {
     filterAssessmentsBy(state, type) {
         state.commit('setListType', type);
         state.dispatch('fetchAssessments');
+    },
+    getOffline(state) {
+        return getters.getOffline(state)
     }
 }

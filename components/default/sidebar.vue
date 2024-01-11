@@ -126,11 +126,7 @@ export default {
         isLinkActive(page) {
             const slug = this.$t(page.slug);
             if (this.$route.fullPath === "/") {
-                if (slug === "") {
-                    return true;
-                } else {
-                    return false;
-                }
+                return slug === "";
             } else {
                 if (slug === "") {
                     return false;
@@ -138,7 +134,7 @@ export default {
                     return this.$route.fullPath.indexOf(slug) !== -1;
                 }
             }
-        }
+        },
     }
 };
 </script>

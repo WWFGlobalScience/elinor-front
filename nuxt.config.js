@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import * as fs from 'fs';
+import { overrideSW } from './plugins/sw-generate';
 
 export default async () => {
     const locales = [];
@@ -70,6 +71,7 @@ export default async () => {
         modules: [
             "@nuxtjs/auth-next",
             "@nuxtjs/axios",
+            "@nuxtjs/pwa",
             [
                 "nuxt-i18n",
                 {
@@ -162,6 +164,38 @@ export default async () => {
                         dompurify: "dompurify"
                     }
                 }
+            }
+        },
+        hooks: {
+            generate: {
+                done(a) {
+                    overrideSW(a);
+                }
+            }
+        },
+        pwa: {
+            icon: {},
+            manifest: {
+                name: 'Elinor'
+            },
+            workbox: {
+                swTemplate: './sw.template.js',
+                enabled: true,
+                offlineStrategy: 'CacheFirst'
+                /*runtimeCaching: [
+                    {
+                        urlPattern: /\.(?:js)$/,
+                        handler: 'CacheFirst'
+                    },
+                    {
+                        urlPattern: /\.(?:html)$/,
+                        handler: 'NetworkFirst'
+                    },
+                    {
+                        urlPattern: /\.(?:css)$/,
+                        handler: 'StaleWhileRevalidate'
+                    }
+                ]*/
             }
         }
     }

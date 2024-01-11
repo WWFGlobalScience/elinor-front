@@ -12,13 +12,20 @@
 
 <script>
 import { mapState } from 'vuex'
+
 export default {
     name: 'assessments',
     auth: false,
     data() {
-        return {loaded: false}
+        return {
+            loaded: false,
+            isOffline: this.$store.getters['assessments/getOffline']
+        }
     },
     async mounted() {
+        // if (this.isOffline) {
+          // return this.$router.push(`/assessments/edit/${this.assessmentId || 157}/the-survey`)
+        // }
         if(localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {
             this.$store.dispatch('popup/popupState', { active: true, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' });
         }
@@ -35,7 +42,8 @@ export default {
     computed: {
         ...mapState({
             loader: state => state.loader,
-            onboarding: state => state.assessments.onboarding
+            onboarding: state => state.assessments.onboarding,
+            assessmentId: state => state.assessments.assessment.id,
         })
     }
 }
