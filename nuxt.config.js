@@ -8,8 +8,12 @@ export default async () => {
     const apiLocales = await response.json();
 
     apiLocales.results.forEach((locale) => {
-        const file = `${locale.code}.json`;
-        if(fs.existsSync(langDir + file)) {
+        if(locale.active) {
+            let file = `${locale.code}.json`;
+            if(!fs.existsSync(langDir + file)) {
+                file = 'en.json';
+            }
+
             locales.push({
                 code: locale.code,
                 name: locale.name,
