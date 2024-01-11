@@ -164,7 +164,7 @@
         "assessments": {
             "meta": {
                 "title": "Tathmini",
-                "slug": "/tathmini"
+                "slug": "/assessments"
             },
             "list": {
                 "title": "Tathmini",
@@ -1135,7 +1135,7 @@
             "home": {
                 "meta": {
                     "title": "Nyaraka",
-                    "slug": "/nyaraka",
+                    "slug": "/documentation",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -1160,7 +1160,7 @@
             "home": {
                 "meta": {
                     "title": "Habari",
-                    "slug": "/habari",
+                    "slug": "/news",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -1185,7 +1185,7 @@
             "home": {
                 "meta": {
                     "title": "Maswali yanayoulizwa mara kwa mara",
-                    "slug": "/maswali yanayoulizwa mara kwa mara",
+                    "slug": "/faq",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -1342,7 +1342,7 @@
             "home": {
                 "meta": {
                     "title": "Wasiliana",
-                    "slug": "/wasiliana",
+                    "slug": "/contact",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -1374,7 +1374,7 @@
             "home": {
                 "meta": {
                     "title": "Ushirikiano",
-                    "slug": "/ushirikiano",
+                    "slug": "/collaboration",
                     "seo": {
                         "title": "",
                         "description": "",
@@ -1425,7 +1425,7 @@
         "about": {
             "meta": {
                 "title": "Usuli",
-                "slug": "/usuli",
+                "slug": "/background",
                 "seo": {
                     "title": "",
                     "description": "",
@@ -1631,7 +1631,7 @@
             "home": {
                 "meta": {
                     "title": "Ramani",
-                    "slug": "/ramani",
+                    "slug": "/map",
                     "seo": {
                         "title": "",
                         "description": "",
