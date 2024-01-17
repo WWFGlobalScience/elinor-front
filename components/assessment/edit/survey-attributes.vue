@@ -33,8 +33,8 @@
                     <ul class="elinor__survey-attribute-gird">
                         <li v-for="(attribute, index) in optionalAttributes" class="elinor__survey-attribute-item item--optional">
                             <div class="option-check">
-                                <input :checked="isAttributeChecked(attribute)" 
-                                    @click.stop="unCheckAttribute(attribute, $event)" 
+                                <input :checked="isAttributeChecked(attribute)"
+                                    @click.stop="unCheckAttribute(attribute, $event)"
                                     type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1">
                                 <div class="radio">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
@@ -65,6 +65,19 @@ import {mapActions, mapState} from "vuex";
 
 export default {
     name: 'assessment-edit-survey-attributes',
+    mounted() {
+        const assessmentOffline = this.$store.getters["assessments/getAssessmentOffline"];
+
+        if (!!assessmentOffline && this.$auth.loggedIn && assessmentOffline.id !== this.$auth.user?.id) {
+            this.popupState({
+                active: true,
+                component: 'popup-assessment-offline',
+                type: 'xs',
+                onClose: () => this.$router.back(),
+                title: 'pages.assessments.edit.tabs.survey.offlinePopupTitle',
+            })
+        }
+    },
     computed: {
         ...mapState({
             attributes: state => state.attributes.list,

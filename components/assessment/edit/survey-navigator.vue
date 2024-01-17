@@ -79,7 +79,7 @@ export default {
             questions: state => state.surveyquestions.list
         }),
         completedQuestions() {
-            return this.assessment.surveyAnswers.filter(surveyAnswer =>
+            return (this.assessment.surveyAnswers || []).filter(surveyAnswer =>
                 this.isAttributeSelected({
                     id: surveyAnswer.question.attribute
                 })
@@ -111,7 +111,7 @@ export default {
             );
         },
         isAttributeSelected(attribute) {
-            return this.assessment.attributes.indexOf(attribute.id) !== -1;
+            return (this.assessment.attributes || []).indexOf(attribute.id) !== -1;
         },
         isCurrentQuestionFromAttribute(attribute) {
             const questionId = this.$route.params.qid;

@@ -8,9 +8,7 @@ export const state = () => ({
 
 export const mutations = {
     loaderState( state, {active, text}) {
-        const isOffline = this.app.store.getters['assessments/getOffline'];
-
-        if (isOffline) {
+        if (this.$isOffline.isOffline) {
             state.loader.active = 0;
         } else {
             state.loader.active = active ? state.loader.active + 1 : state.loader.active - 1;

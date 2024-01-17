@@ -9,6 +9,7 @@
                     </div>
                 </div>
                 <ul
+                    v-if="!this.$isOffline.isOffline"
                     class="elinor__dropdown-menu"
                     v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
                 >
@@ -16,7 +17,7 @@
                     <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">{{ $t('pages.home.header.signOut') }}<img src="~assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')"></a></li>
                 </ul>
             </div>
-    
+
             <li
                 class="btn--opacity--child header--main__toggle-btn"
                 @click="toggleSidebar"

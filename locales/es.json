@@ -449,6 +449,8 @@
               "completed": "Terminado",
               "outOf": "Fuera de"
             },
+            "offlinePopupTitle": "No disponible",
+            "offlinePopupDescription": "Otro usuario está editando esta evaluación. Cuando la haya guardado volverá a estar disponible.",
             "uncheckAttributeTitle": "Deseleccionar atributo",
             "uncheckAttributeText": "Está anulando la selección de un atributo que contiene preguntas que han sido respondidas. Si lo deseleccionas, se eliminarán todas las respuestas a sus preguntas. ¿Está seguro de que desea continuar y anular la selección de este atributo?",
             "questions": {

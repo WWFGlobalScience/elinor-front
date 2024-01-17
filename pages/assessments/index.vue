@@ -19,13 +19,12 @@ export default {
     data() {
         return {
             loaded: false,
-            isOffline: this.$store.getters['assessments/getOffline']
         }
     },
     async mounted() {
-        // if (this.isOffline) {
-          // return this.$router.push(`/assessments/edit/${this.assessmentId || 157}/the-survey`)
-        // }
+        if (this.$isOffline.isOffline && this.assessmentId) {
+          return this.$router.push(`/assessments/edit/${this.assessmentId}/the-survey`)
+        }
         if(localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {
             this.$store.dispatch('popup/popupState', { active: true, type: 'onboarding', component: 'popup-assessment-onboarding', title: 'pages.assessments.list.create.popup.title' });
         }

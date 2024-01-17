@@ -4,13 +4,14 @@
             <div class="elinor__dropdown-toggle">
                 <div class="current" @click="toggleLangDropdown">
                     <span>{{ currentLanguage.name }}</span>
-                    <div class="multiselect__caret">
+                    <div class="multiselect__caret" v-if="!this.$isOffline.isOffline">
                         <img src="~/assets/img/ico-select-turqy.svg" alt="">
                     </div>
                 </div>
             </div>
         </div>
         <ul
+            v-if="!this.$isOffline.isOffline"
             class="lang-dropdown-menu"
             v-bind:class="[!isLangDropdownOpen ? 'isOpen' : null]"
         >

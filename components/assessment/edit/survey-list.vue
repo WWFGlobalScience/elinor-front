@@ -150,7 +150,7 @@ export default {
         },
         isAnswered(question) {
             return (
-                this.assessment.surveyAnswers.filter(
+                (this.assessment.surveyAnswers || []).filter(
                     surveyAnswer => surveyAnswer.question.id === question.id
                 ).length === 1
             );

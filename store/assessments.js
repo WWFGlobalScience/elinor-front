@@ -11,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, surveyAnswers: [], collaborators: [], offline: true},
+    assessment: {last_edit: null, surveyAnswers: [], collaborators: [], offline: null},
     report: [],
     edit: {
         data: true,
@@ -34,7 +34,7 @@ export const state = () => ({
 })
 
 export const getters = {
-    getOffline: state => !!state.assessment.offline
+    getAssessmentOffline: () => null //({id: 203}) - state.assessment?.offline
 }
 
 export const mutations = {
@@ -94,7 +94,7 @@ export const mutations = {
         state.listType = value;
     },
     setSurveyAnswers(state, answers) {
-        state.assessment.surveyAnswers = answers;
+        state.assessment.surveyAnswers = answers || [];
     },
     setReportData(state, data) {
         state.report = data;
@@ -578,6 +578,7 @@ export const actions = {
         state.dispatch('fetchAssessments');
     },
     getOffline(state) {
+        console.log(state.assessments.assessment)
         return getters.getOffline(state)
     }
 }

@@ -9,7 +9,7 @@
             ><img src="~/assets/img/ico-download.svg" alt="Download Data" />
             <span>{{ $t("default.downloadData") }}</span></a
         >
-        <template v-if="$auth.loggedIn">
+        <template v-if="$auth.loggedIn && !this.$isOffline.isOffline">
             <a
                 v-if="isAssessmentCollaborator($auth, assessment)"
                 @click="

@@ -1,11 +1,11 @@
 <template>
     <transition name="elinor-fade">
         <div class="elinor__popup" v-show="popup.active" :class="{'popup__onboarding': popup.type ==='onboarding', 'popup__xs': popup.type ==='xs'}">
-            <div class="popup__overlay" @click="popupState( false, '', '' )"></div>
+            <div class="popup__overlay" @click="close"></div>
             <div class="popup__box" :class="{'popup__box--min': popup.type ==='confirmation'}">
                 <header class="popup__header">
                     <span>{{ $t( popup.title ) }}</span>
-                    <button type="button" class="btn--opacity" @click="popupState( false, '', '' )">
+                    <button  type="button" class="btn--opacity" @click="close">
                         <img src="~/assets/img/ico-close-popup.svg">
                     </button>
                 </header>
@@ -30,7 +30,11 @@ export default {
     methods: {
         ...mapActions({
             popupState: 'popup/popupState'
-        })
+        }),
+        close: function () {
+            this.popup.onClose && this.popup.onClose();
+            this.popupState( false, '', '' )
+        }
     }
 }
 </script>

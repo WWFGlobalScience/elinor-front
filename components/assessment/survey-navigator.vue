@@ -81,7 +81,7 @@ export default {
         isAnswered(question) {
             return (
                 this.isAttributeSelected({ id: question.attribute }) &&
-                this.assessment.surveyAnswers.filter(
+                (this.assessment.surveyAnswers || []).filter(
                     surveyAnswer => surveyAnswer.question.id === question.id
                 ).length === 1
             );
@@ -92,7 +92,7 @@ export default {
             );
         },
         isAttributeSelected(attribute) {
-            return this.assessment.attributes.indexOf(attribute.id) !== -1;
+            return this.assessment.attributes?.indexOf(attribute.id) !== -1;
         },
         isCurrentQuestionFromAttribute(attribute) {
             const questionId = this.$route.params.qid;

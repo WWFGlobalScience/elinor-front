@@ -5,12 +5,13 @@ export const state = () => ({
         title: 'default.filters.popup.title',
         type: 'default',
         props: null,
-        onConfirm: null
+        onConfirm: null,
+        onClose: null
     }
 })
 
 export const mutations = {
-    popupState(state, {active, type, component, title, onConfirm, props}) {
+    popupState(state, {active, type, component, title, onConfirm, onClose, props}) {
         state.popup.active = active
         if (state.popup.active) {
             state.popup.component = component
@@ -18,6 +19,7 @@ export const mutations = {
             state.popup.type = type
             state.popup.props = props
             state.popup.onConfirm = onConfirm
+            state.popup.onClose = onClose
         }  else {
             state.popup.component = state.popup.component
             state.popup.title = state.popup.title
@@ -28,14 +30,15 @@ export const mutations = {
 }
 
 export const actions = {
-    popupState( state, { active, type, component, title, onConfirm, props  } ) {
+    popupState( state, { active, type, component, title, onConfirm, onClose, props  } ) {
         state.commit( 'popupState', {
-            active: active,
-            component: component,
-            title: title,
-            onConfirm: onConfirm,
-            type: type,
-            props: props
+            active,
+            component,
+            title,
+            onConfirm,
+            type,
+            onClose,
+            props
         })
     }
 }

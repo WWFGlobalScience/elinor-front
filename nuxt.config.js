@@ -124,7 +124,10 @@ export default async () => {
                 login: "/assessments",
                 logout: "/",
                 home: "/assessments"
-            }
+            },
+            plugins: [
+                "~/plugins/isOffline.js"
+            ]
         },
         axios: {
             baseUrl: "https://dev-api.elinordata.org/"
