@@ -22,7 +22,7 @@ export default {
         }
     },
     async mounted() {
-        if (this.$isOffline.isOffline && this.assessmentId) {
+        if (this.$isOffline && this.assessmentId) {
           return this.$router.push(`/assessments/edit/${this.assessmentId}/the-survey`)
         }
         if(localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {

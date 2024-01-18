@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <ul
-                    v-if="!this.$isOffline.isOffline"
+                    v-if="!this.$isOffline"
                     class="elinor__dropdown-menu"
                     v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
                 >

@@ -1,8 +1,8 @@
 <template>
     <section class="section section--tab section--mt-10">
         <div class="container">
-            <ul class="elinor__tabs">
-                <li v-if="!this.$isOffline.isOffline">
+            <ul v-if="!isOffline()" class="elinor__tabs">
+                <li>
                     <nuxt-link :to="`/assessments/edit/${id}/assessment-data/`"
                                :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.data.complete } ]">
                         <span class="bullet bullet--status">
@@ -12,7 +12,7 @@
                         <span class="txt">{{ $t('pages.assessments.edit.tabs.data.tabButton') }}</span>
                     </nuxt-link>
                 </li>
-                <li v-if="!this.$isOffline.isOffline">
+                <li>
                     <nuxt-link :to="`/assessments/edit/${id}/managed-area`"
                                :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.managed_area.complete } ]">
                         <span class="bullet bullet--status">
@@ -32,7 +32,7 @@
                         <span class="txt">{{ $t('pages.assessments.edit.tabs.survey.tabButton') }}</span>
                     </nuxt-link>
                 </li>
-                <li v-if="!this.$isOffline.isOffline">
+                <li>
                     <nuxt-link :to="`/assessments/edit/${id}/collaborators`"
                                :class="[ 'btn--tab', { 'btn--error': !progress.collaborators.complete } ]">
                         <span class="bullet">{{ progress.collaborators.filled }}</span>
@@ -41,11 +41,23 @@
                         </span>
                     </nuxt-link>
                 </li>
-                <li class="elinor__tab--end" v-if="!progress.published && !this.$isOffline.isOffline">
+                <li class="elinor__tab--end" v-if="!progress.published">
                     <nuxt-link :to="`/assessments/edit/${id}/publish-settings`"
                                :class="[ 'btn--tab btn--tab-percent', { 'btn--error': progress.overall_percentage < 100, 'btn--tab-disabled': progress.overall_percentage < 100 } ]">
                         <span class="bullet">{{ getPublishPercentage() }}%</span>
                         <span class="txt">{{ getPublishTabText() }}</span>
+                    </nuxt-link>
+                </li>
+            </ul>
+            <ul v-else class="elinor__tabs">
+                <li>
+                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/`"
+                               :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.survey.complete } ]">
+                        <span class="bullet bullet--status">
+                            <img v-if="progress.survey.complete" src="~/assets/img/ico-ok.svg">
+                            <img v-else src="~/assets/img/ico-error.svg">
+                        </span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.survey.tabButton') }}</span>
                     </nuxt-link>
                 </li>
             </ul>
@@ -79,6 +91,9 @@ export default {
         },
         getPublishPercentage() {
             return isNaN(this.progress.overall_percentage) ? 0 : Math.floor(this.progress.overall_percentage)
+        },
+        isOffline() {
+            return this.assessment.offline?.id === this.$auth.user.id
         }
     },
     computed: {

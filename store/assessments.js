@@ -34,7 +34,7 @@ export const state = () => ({
 })
 
 export const getters = {
-    getAssessmentOffline: () => null //({id: 203}) - state.assessment?.offline
+    getAssessmentOffline: state => ({id: 210}) //({id: 203}) - state.assessment?.offline
 }
 
 export const mutations = {
@@ -119,7 +119,6 @@ export const mutations = {
         state.progress = calculateProgress(state.assessment);
     },
     setManagementArea(state, managementArea) {
-        console.log(managementArea);
         state.assessment = {...state.assessment, management_area_countries: managementArea};
     },
     setContactErrors(state, errors) {
@@ -577,8 +576,7 @@ export const actions = {
         state.commit('setListType', type);
         state.dispatch('fetchAssessments');
     },
-    getOffline(state) {
-        console.log(state.assessments.assessment)
-        return getters.getOffline(state)
-    }
+    async toggleOffline({state, dispatch}, assessmentId) {
+        await dispatch('editAssessmentField', {field: 'offline', value: state.assessment.offline ? null: this.$auth.user, id: assessmentId });
+    },
 }

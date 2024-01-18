@@ -160,6 +160,7 @@ export default async () => {
         },
         vue: {
             config: {
+                devtools: true,
                 configureWebpack: {
                     externals: {
                         canvg: "canvg",

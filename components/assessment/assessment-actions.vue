@@ -1,17 +1,17 @@
 <template>
     <div class="assessment__btns">
-        <a
+<!--        <a
             v-if="false && assessment.status === 10"
             @click="download"
             role="button"
-            class="btn btn--border-turqy btn--sm"
+            class="btn btn&#45;&#45;border-turqy btn&#45;&#45;sm"
             title="Download Data"
             ><img src="~/assets/img/ico-download.svg" alt="Download Data" />
             <span>{{ $t("default.downloadData") }}</span></a
-        >
-        <template v-if="$auth.loggedIn && !this.$isOffline.isOffline">
+        >-->
+        <template v-if="$auth.loggedIn">
             <a
-                v-if="isAssessmentCollaborator($auth, assessment)"
+                v-if="isAssessmentCollaborator($auth, assessment) && !isOffline"
                 @click="
                     popupState({
                         active: true,
@@ -31,9 +31,25 @@
                 </svg>
                 <span>Generate Report</span></a
             >
-
             <a
-                v-if="!isCreator()"
+                v-if="isSurveyTab"
+                @click="onToggleOffline(assessment.id)"
+                role="button"
+                class="btn btn--border-turqy btn--sm"
+                title="Offline"
+                ><svg>
+                    <path
+                        d="M8.75 8.75h5M8.75 11.25h5M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625ZM6.25 3.125v13.75"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+                <span>
+                    Turn {{ isOffline ? 'online': 'offline' }}
+                </span>
+            </a>
+            <a
+                v-if="!isCreator() && !isOffline"
                 @click="contact"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
@@ -42,7 +58,7 @@
                 <span>{{ $t("default.contactAdministrator") }}</span></a
             >
             <a
-                v-if="!isCreator()"
+                v-if="!isCreator() && !isOffline"
                 @click="flag"
                 role="button"
                 class="btn btn--rounded"
@@ -51,7 +67,7 @@
                 <span class="visually-hidden">Flag</span></a
             >
             <a
-                v-if="isCreator() && assessment.status !== 10"
+                v-if="isCreator() && assessment.status !== 10 && !isOffline"
                 @click="destroy"
                 role="button"
                 class="btn btn--rounded"
@@ -62,7 +78,7 @@
                 }}</span></a
             >
             <a
-                v-if="isCreator() && assessment.status === 10"
+                v-if="isCreator() && assessment.status === 10 && !isOffline"
                 @click="infoToDestroy"
                 role="button"
                 class="btn btn--rounded"
@@ -83,18 +99,37 @@ import {isAssessmentCollaborator} from "~/config/assessment-roles";
 export default {
     name: "assessment-actions",
     props: ["type"],
+    data() {
+        return {
+            isSurveyTab: this.isSurveyRoute(),
+            isOffline: this.$store.getters["assessments/getAssessmentOffline"]
+        }
+    },
     computed: {
         ...mapState({
-            assessment: state => state.assessments.assessment
-        })
+            assessment: state => state.assessments.assessment,
+        }),
+    },
+    watch: {
+        $route (){
+            this.isSurveyTab = this.isSurveyRoute()
+        },
     },
     methods: {
         ...mapActions({
             popupState: "popup/popupState",
-            downloadAssessment: "assessments/downloadAssessment"
+            downloadAssessment: "assessments/downloadAssessment",
+            toggleOffline: "assessments/toggleOffline",
         }),
+        async onToggleOffline(assessmentId) {
+            await this.toggleOffline(assessmentId);
+            this.isOffline = !!this.assessment.offline;
+        },
         isCreator() {
             return this.assessment.created_by === this.$auth.user.id;
+        },
+        isSurveyRoute() {
+            return this.$router.currentRoute.name === 'assessments-edit-id-the-survey';
         },
         contact() {
             this.popupState({
