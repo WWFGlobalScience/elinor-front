@@ -33,7 +33,7 @@
             >
             <a
                 v-if="isSurveyTab"
-                @click="onToggleOffline(assessment.id)"
+                @click="isOffline? onSetOnline(assessment.id) : onSetOffline(assessment.id)"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
                 title="Offline"
@@ -120,16 +120,25 @@ export default {
             popupState: "popup/popupState",
             downloadAssessment: "assessments/downloadAssessment",
             toggleOffline: "assessments/toggleOffline",
+            setOffline: "assessments/setOffline",
+            setOnline: "assessments/setOnline",
         }),
-        async onToggleOffline(assessmentId) {
-            await this.toggleOffline(assessmentId);
-            this.isOffline = !!this.assessment.offline;
+        async onSetOffline(assessmentId) {
+            await this.setOffline(assessmentId);
+            this.isOffline = true;
+        },
+        async onSetOnline(assessmentId) {
+            await this.setOnline(assessmentId);
+            this.isOffline = false;
         },
         isCreator() {
             return this.assessment.created_by === this.$auth.user.id;
         },
         isSurveyRoute() {
-            return this.$router.currentRoute.name === 'assessments-edit-id-the-survey';
+            return [
+                'assessments-edit-id-the-survey-qid',
+                'assessments-edit-id-the-survey'
+            ].includes(this.$router.currentRoute.name);
         },
         contact() {
             this.popupState({

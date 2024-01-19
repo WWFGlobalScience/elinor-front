@@ -127,13 +127,13 @@ export default {
             const slug = this.$t(page.slug);
             if (this.$route.fullPath === "/") {
                 return slug === "";
-            } else {
-                if (slug === "") {
-                    return false;
-                } else {
-                    return this.$route.fullPath.indexOf(slug) !== -1;
-                }
             }
+
+            if (slug === "") {
+                return false;
+            }
+
+            return this.$route.fullPath.indexOf(slug) !== -1;
         },
     }
 };

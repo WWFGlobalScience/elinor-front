@@ -8210,6 +8210,11 @@
     "ufo" "^0.7.7"
     "vue-i18n" "^8.25.0"
 
+"nuxt-storage@^1.2.2":
+  "integrity" "sha512-quJbZ87NO7QRCSp7YZolot6VwktciSLuTS/sRl8NPz5rAWA84U5Py0y9FmAsbKTiaqJtFcCKSaJGzky948jA3w=="
+  "resolved" "https://registry.npmjs.org/nuxt-storage/-/nuxt-storage-1.2.2.tgz"
+  "version" "1.2.2"
+
 "nuxt-vue-multiselect@^1.0.4":
   "integrity" "sha512-xfm9upHmxd5ZDNSEpT0ZOAtSqJackO6LEos+deNMZ3Bxh+mg4Oz6cTX9niwKnHk0J6EqMjFsGjsq8JihxoLhWQ=="
   "resolved" "https://registry.npmjs.org/nuxt-vue-multiselect/-/nuxt-vue-multiselect-1.0.4.tgz"

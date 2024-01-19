@@ -18,7 +18,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import {mapActions} from 'vuex'
+import {setData} from "nuxt-storage/src/local-storage";
+
 export default {
     name: 'layout-assessment-edit',
     data() {
@@ -44,6 +46,11 @@ export default {
     },
     created() {
         this.fetchAssessment( this.id )
+        this.$store.watch(
+            state => state.assessments?.assessment,
+            assessment => setData("assessment", assessment),
+            { deep: true }
+        )
     }
 }
 </script>
