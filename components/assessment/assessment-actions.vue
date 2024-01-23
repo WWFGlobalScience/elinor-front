@@ -33,6 +33,28 @@
             >
 
             <a
+                v-if="isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
+                @click="downloadSurveyFile"
+                role="button"
+                class="btn btn--border-turqy btn--sm"
+                title="Download survey"
+            ><img src="~/assets/img/ico-arrow-down.svg" alt="Download survey" />
+                <span>{{
+                        $t("default.downloadSurveyFile")
+                    }}</span></a
+            >
+            <a
+                v-if="isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
+                @click="uploadSurveyFile"
+                role="button"
+                class="btn btn--border-turqy btn--sm"
+                title="Upload survey"
+            ><img src="~/assets/img/ico-arrow-up.svg" alt="Upload survey" />
+                <span>{{
+                        $t("default.uploadSurveyFile")
+                    }}</span></a
+            >
+            <a
                 v-if="!isCreator()"
                 @click="contact"
                 role="button"
@@ -78,7 +100,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import {isAssessmentCollaborator} from "~/config/assessment-roles";
+import {isAssessmentCollaborator, isAssessmentObserver} from "~/config/assessment-roles";
 
 export default {
     name: "assessment-actions",
@@ -89,6 +111,7 @@ export default {
         })
     },
     methods: {
+        isAssessmentObserver,
         ...mapActions({
             popupState: "popup/popupState",
             downloadAssessment: "assessments/downloadAssessment"
@@ -131,7 +154,21 @@ export default {
         download() {
             this.downloadAssessment(this.assessment.id);
         },
-        isAssessmentCollaborator
+        isAssessmentCollaborator,
+        downloadSurveyFile() {
+            this.popupState( {
+                active: true,
+                component: 'popup-assessment-download-survey-file',
+                title: 'pages.assessment.downloadSurveyFile.title'
+            })
+        },
+        uploadSurveyFile() {
+            this.popupState( {
+                active: true,
+                component: 'popup-assessment-upload-survey-file',
+                title: 'pages.assessment.uploadSurveyFile.title'
+            })
+        }
     }
 };
 </script>
