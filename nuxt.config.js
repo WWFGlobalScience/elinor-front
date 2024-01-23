@@ -36,7 +36,8 @@ export default {
         {
             src: "~/plugins/choices.js",
             mode: "client"
-        }
+        },
+        { src: '~/plugins/vuex-persist', ssr: false }
     ],
     buildModules: [
         "@nuxtjs/tailwindcss",

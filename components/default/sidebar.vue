@@ -45,15 +45,15 @@
                                             ? page.icons.turqy
                                             : page.icons.white
                                     "
-                                    :alt="$t(page.title)"
+                                    :alt="getPageTitle(page)"
                                     class="center-v"
                                 />
                                 <span class="btn--opacity__target">{{
-                                    $t(page.title)
+                                    getPageTitle(page)
                                 }}</span>
                                 <div
                                     class="input__tooltip"
-                                    :content="$t(page.title)"
+                                    :content="getPageTitle(page)"
                                     v-tippy="{ placement: 'right' }"
                                 >
                                     &nbsp;
@@ -103,6 +103,7 @@ export default {
     name: "default-sidebar",
     computed: {
         pages() {
+            console.log(this.$isOffline)
             return this.$store.state.pages.list;
         },
         isSidebarOpen() {
@@ -135,6 +136,10 @@ export default {
 
             return this.$route.fullPath.indexOf(slug) !== -1;
         },
+        getPageTitle(page) {
+            const title = this.$isOffline && page.offlineTitle ? page.offlineTitle: page.title;
+            return this.$t(title);
+        }
     }
 };
 </script>

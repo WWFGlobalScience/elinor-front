@@ -33,7 +33,7 @@
             >
             <a
                 v-if="isSurveyTab"
-                @click="isOffline? onSetOnline(assessment.id) : onSetOffline(assessment.id)"
+                @click="isOffline? onSetOnline() : onSetOffline()"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
                 title="Offline"
@@ -123,12 +123,12 @@ export default {
             setOffline: "assessments/setOffline",
             setOnline: "assessments/setOnline",
         }),
-        async onSetOffline(assessmentId) {
-            await this.setOffline(assessmentId);
+        async onSetOffline() {
+            await this.setOffline(this.assessment.id);
             this.isOffline = true;
         },
-        async onSetOnline(assessmentId) {
-            await this.setOnline(assessmentId);
+        async onSetOnline() {
+            await this.setOnline(this.assessment.id);
             this.isOffline = false;
         },
         isCreator() {

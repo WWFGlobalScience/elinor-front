@@ -1,6 +1,5 @@
 import qs from 'qs'
 import {required_fields, initProgress, calculateProgress} from "~/config/assessment-progress";
-import {getData, setData} from "nuxt-storage/src/local-storage";
 
 export const state = () => ({
     list: [],
@@ -12,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, surveyAnswers: [], collaborators: [], offline: null},
+    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], offline: null},
     report: [],
     edit: {
         data: true,
@@ -578,11 +577,9 @@ export const actions = {
         state.dispatch('fetchAssessments');
     },
     async setOffline({state, dispatch}, assessmentId) {
-        await dispatch('editAssessmentField', {field: 'offline', value: null, id: assessmentId });
-        setData("assessment", state.assessment)
+        await dispatch('editAssessmentField', {field: 'offline', value: this.$auth.user, id: assessmentId });
     },
     async setOnline({state, dispatch, commit}, assessmentId) {
         await dispatch('editAssessmentField', {field: 'offline', value: null, id: assessmentId });
-        commit('assessments/setAssessment', getData("assessment"))
     },
 }
