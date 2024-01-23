@@ -16,21 +16,33 @@
                     <h1 class="text-[56px] leading-none font-montserratSemiBoldPdf text-grayy">
                         {{ name }}
                     </h1>
-                    <template v-for="(managementArea, index) in selectedFilters.managementAreas">
-                        <span>{{ managementArea.name }}</span>
-                    </template>
-                    <template v-for="(country, index) in selectedFilters.countries">
-                        <span>{{ country.name }}</span>
-                    </template>
-                    <template v-if="selectedFilters.year">
-                        <span>{{ selectedFilters.year }}</span>
-                    </template>
-                    <template v-if="selectedFilters.realm">
-                        <span>{{ selectedFilters.realm }}</span>
-                    </template>
-                    <template v-if="selectedFilters.type">
-                        <span>{{ selectedFilters.type }}</span>
-                    </template>
+                    <ul class="mt-5 flex flex-row justify-items-start items-center gap-2">
+                      <template v-for="(managementArea, index) in selectedFilters.managementAreas">
+                        <li class="elinor__tag elinor__tag--sm">
+                          <span class="text font-montserratSemiBoldPdf">{{ managementArea.name }}</span>
+                        </li>
+                      </template>
+                      <template v-for="(country, index) in selectedFilters.countries">
+                        <li class="elinor__tag elinor__tag--sm">
+                          <span class="text font-montserratSemiBoldPdf">{{ country.name }}</span>
+                        </li>
+                      </template>
+                      <template v-if="selectedFilters.year">
+                        <li class="elinor__tag elinor__tag--sm">
+                          <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.year }}</span>
+                        </li>
+                      </template>
+                      <template v-if="selectedFilters.realm">
+                        <li class="elinor__tag elinor__tag--sm">
+                          <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.realm }}</span>
+                        </li>
+                      </template>
+                      <template v-if="selectedFilters.type">
+                        <li class="elinor__tag elinor__tag--sm">
+                          <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.type }}</span>
+                        </li>
+                      </template>
+                    </ul>
                 </div>
             </header>
 

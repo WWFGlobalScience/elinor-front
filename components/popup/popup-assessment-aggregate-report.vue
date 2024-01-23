@@ -108,63 +108,64 @@
                     </div>
                 </div>
             </form>
-            <ul class="filters-selected" v-if="filters.managementAreas.length || filters.countries.length || filters.year || filters.realm || filters.type">
-                <li v-for="(managementArea, index) in filters.managementAreas">
-                    {{ managementArea.name }}
+            <ul class="filters-selected flex flex-row justify-items-start items-center flex-wrap gap-3" v-if="filters.managementAreas.length || filters.countries.length || filters.year || filters.realm || filters.type">
+                <li class="elinor__tag" v-for="(managementArea, index) in filters.managementAreas">
+                    <span class="text">{{ managementArea.name }}</span>
                     <a
                         @click="onRemoveFilter('managementAreas', index)"
                         role="button"
-                        class="btn btn--rounded"
+                        class="icon"
                         title="Delete"
                     >
-                        <img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+                        <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
                         <span class="visually-hidden">{{$t("default.delete") }}</span>
                     </a>
                 </li>
-                <li v-for="(country, index) in filters.countries">
-                    {{ country.name }}
+                <li class="elinor__tag" v-for="(country, index) in filters.countries">
+                    <span class="text">{{ country.name }}</span>
                     <a
                         @click="onRemoveFilter('countries', index)"
                         role="button"
-                        class="btn btn--rounded"
+                        class="icon"
                         title="Delete"
                     >
-                        <img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+                        <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
                         <span class="visually-hidden">{{$t("default.delete") }}</span>
                     </a>
                 </li>
-                <li v-if="filters.year">
-                    {{ filters.year }}
+                <li class="elinor__tag" v-if="filters.year">
+                    <span class="text">{{ filters.year }}</span>
                     <a
                         @click="onRemoveFilter('year')"
                         role="button"
-                        class="btn btn--rounded"
+                        class="icon"
                         title="Delete"
                     >
-                        <img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+                        <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
                         <span class="visually-hidden">{{$t("default.delete") }}</span>
                     </a>
                 </li>
-                <li v-if="filters.realm">
-                    {{ filters.realm }}
+                <li class="elinor__tag" v-if="filters.realm">
+                    <span class="text">{{ filters.realm }}</span>
                     <a
                         @click="onRemoveFilter('realm')"
                         role="button"
-                        class="btn btn--rounded"
+                        class="icon"
                         title="Delete"
                     >
-                        <img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+                        <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
                         <span class="visually-hidden">{{$t("default.delete") }}</span>
                     </a>
                 </li>
-                <li v-if="filters.type">
-                    {{ filters.type }}<a
+                <li class="elinor__tag" v-if="filters.type">
+                  <span class="text">{{ filters.type }}</span>
+                  <a
                     @click="onRemoveFilter('type')"
                     role="button"
-                    class="btn btn--rounded"
+                    class="icon"
                     title="Delete"
                 >
-                    <img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+                    <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
                     <span class="visually-hidden">{{$t("default.delete") }}</span>
                 </a>
                 </li>
@@ -173,7 +174,7 @@
         <div class="assessments">
             <ul>
                 <li v-for="(assessment, index) in assessments" :key="index">
-                    {{assessment.name}}
+                    {{assessment.name}} {{assessment.score}} {{assessment.year}}
                     <input type="checkbox" @change="onToggleAssessment(assessment.id, $event.target.value)" :checked="selectedAssessments.indexOf(assessment.id) !== -1">
                 </li>
             </ul>
