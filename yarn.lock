@@ -1520,7 +1520,7 @@
   dependencies:
     "http-proxy-middleware" "^1.0.6"
 
-"@nuxtjs/pwa@^3.3.5":
+"@nuxtjs/pwa@^3.3.4":
   "integrity" "sha512-8tTmW8DBspWxlJwTimOHTkwfkwPpL9wIcGmy75Gcmin+c9YtX2Ehxmhgt/TLFOC9XsLAqojqynw3/Agr/9OE1w=="
   "resolved" "https://registry.npmjs.org/@nuxtjs/pwa/-/pwa-3.3.5.tgz"
   "version" "3.3.5"

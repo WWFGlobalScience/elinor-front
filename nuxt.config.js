@@ -1,3 +1,5 @@
+import { overrideSW } from './plugins/sw-generate';
+
 export default {
     ssr: false,
     loading: false,
@@ -39,6 +41,7 @@ export default {
     buildModules: [
         "@nuxtjs/tailwindcss",
         "@nuxtjs/composition-api/module",
+        "@nuxtjs/pwa",
         [
             "@nuxtjs/moment",
             {
@@ -50,7 +53,6 @@ export default {
     modules: [
         "@nuxtjs/auth-next",
         "@nuxtjs/axios",
-        "@nuxtjs/pwa",
         [
             "nuxt-i18n",
             {
@@ -175,22 +177,12 @@ export default {
             },
             workbox: {
                 swTemplate: './sw.template.js',
+                // offline: true,
                 enabled: true,
-                offlineStrategy: 'CacheFirst'
-                /*runtimeCaching: [
-                    {
-                        urlPattern: /\.(?:js)$/,
-                        handler: 'CacheFirst'
-                    },
-                    {
-                        urlPattern: /\.(?:html)$/,
-                        handler: 'NetworkFirst'
-                    },
-                    {
-                        urlPattern: /\.(?:css)$/,
-                        handler: 'StaleWhileRevalidate'
-                    }
-                ]*/
+                // dev: process.env.NODE_ENV === 'development',
+                // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
+                // cacheAssets: true,
+                // offlineStrategy: 'NetworkFirst'
             }
         }
     }

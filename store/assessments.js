@@ -35,7 +35,7 @@ export const state = () => ({
 })
 
 export const getters = {
-    getAssessmentOffline: state => ({id: 210}) //({id: 203}) - state.assessment?.offline
+    getAssessmentOffline: state => null// - state.assessment?.offline
 }
 
 export const mutations = {
