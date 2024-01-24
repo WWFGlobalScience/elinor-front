@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 export default ({ app, store, $auth }, inject) => {
-    inject('isOffline', !!$auth.user && store.getters['assessments/getAssessmentOffline']?.id === $auth.user?.id)
+    inject('isOffline', !!store.state.assessment?.offline)//!!$auth.user && store.state.assessment?.offline?.id === $auth.user?.id)
 }

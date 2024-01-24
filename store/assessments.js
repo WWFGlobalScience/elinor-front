@@ -33,10 +33,6 @@ export const state = () => ({
     }
 })
 
-export const getters = {
-    getAssessmentOffline: state => null// - state.assessment?.offline
-}
-
 export const mutations = {
     setAssessments(state, payload) {
         state.list = payload.results
@@ -186,6 +182,7 @@ export const actions = {
             if(assessment.management_area) {
                 state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
             }
+
             state.commit('setAssessment', assessment);
             state.commit('setProgress', calculateProgress(assessment));
 
@@ -576,10 +573,14 @@ export const actions = {
         state.commit('setListType', type);
         state.dispatch('fetchAssessments');
     },
-    async setOffline({state, dispatch}, assessmentId) {
-        await dispatch('editAssessmentField', {field: 'offline', value: this.$auth.user, id: assessmentId });
+    async setOffline(state, assessmentId) {
+        state.dispatch('layout/setOffline', {isOffline: true}, {root: true})
+        state.commit('setAssessmentField', {field: 'offline', value: this.$auth.user})
+        await state.dispatch('editAssessmentField', {field: 'offline', value: this.$auth.user, id: assessmentId });
     },
-    async setOnline({state, dispatch, commit}, assessmentId) {
-        await dispatch('editAssessmentField', {field: 'offline', value: null, id: assessmentId });
+    async setOnline(state, assessmentId) {
+        state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
+        state.commit('setAssessmentField', {field: 'offline', value: null})
+        await state.dispatch('editAssessmentField', {field: 'offline', value: null, id: assessmentId });
     },
 }

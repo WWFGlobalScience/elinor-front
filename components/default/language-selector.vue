@@ -4,14 +4,14 @@
             <div class="elinor__dropdown-toggle">
                 <div class="current" @click="toggleLangDropdown">
                     <span>{{ currentLanguage.name }}</span>
-                    <div class="multiselect__caret" v-if="!this.$isOffline">
+                    <div class="multiselect__caret" v-if="!isOffline">
                         <img src="~/assets/img/ico-select-turqy.svg" alt="">
                     </div>
                 </div>
             </div>
         </div>
         <ul
-            v-if="!this.$isOffline"
+            v-if="!isOffline"
             class="lang-dropdown-menu"
             v-bind:class="[!isLangDropdownOpen ? 'isOpen' : null]"
         >
@@ -39,7 +39,8 @@ export default {
             return this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
         },
         ...mapState({
-            isLangDropdownOpen: state => state.langdropdown.langdropdown
+            isLangDropdownOpen: state => state.langdropdown.langdropdown,
+            isOffline: state => state.layout.offline
         })
     },
     methods: {

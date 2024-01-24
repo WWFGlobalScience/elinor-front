@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <ul
-                    v-if="!this.$isOffline"
+                    v-if="!isOffline"
                     class="elinor__dropdown-menu"
                     v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
                 >
@@ -41,20 +41,17 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import {mapActions, mapState} from "vuex";
 
 export default {
     name: "default-header-profile",
     computed: {
-        isSidebarOpen() {
-            return this.$store.state.layout.sidebar;
-        },
-        isDropdownOpen() {
-            return this.$store.state.dropdown.dropdown;
-        },
-        user() {
-            return this.$store.state.auth.user;
-        },
+        ...mapState({
+            isSidebarOpen: state => state.layout.sidebar,
+            isDropdownOpen: state => state.dropdown.dropdown,
+            user: state => state.auth.user,
+            isOffline: state => state.layout.offline,
+        })
     },
     methods: {
         ...mapActions({

@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
-
 export default {
     name: "layout-default",
     computed: {
@@ -26,6 +24,10 @@ export default {
         popup() {
             return this.$store.state.popup.popup;
         }
+    },
+    mounted() {
+        const isOffline = this.$auth.loggedIn && this.$store.state.assessments.assessment?.offline?.id === this.$auth.user.id;
+        this.$store.dispatch( 'layout/setOffline', { isOffline } )
     }
 };
 </script>

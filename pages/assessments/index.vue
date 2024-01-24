@@ -22,7 +22,7 @@ export default {
         }
     },
     async mounted() {
-        if (this.$isOffline && this.assessmentId) {
+        if (this.isOffline && this.assessmentId) {
           return this.$router.push(`/assessments/edit/${this.assessmentId}/the-survey`)
         }
         if(localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {
@@ -35,7 +35,6 @@ export default {
         await this.$store.dispatch( 'assessments/fetchAssessments' )
         this.$store.dispatch( 'loader/loaderState', {active: false} )
         this.loaded = true;
-
     },
     fetchOnServer: false,
     computed: {
@@ -43,6 +42,7 @@ export default {
             loader: state => state.loader,
             onboarding: state => state.assessments.onboarding,
             assessmentId: state => state.assessments.assessment.id,
+            isOffline: state => state.layout.offline,
         })
     }
 }

@@ -102,12 +102,12 @@ export default {
     data() {
         return {
             isSurveyTab: this.isSurveyRoute(),
-            isOffline: this.$store.getters["assessments/getAssessmentOffline"]
         }
     },
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
+            isOffline: state => state.layout.offline,
         }),
     },
     watch: {

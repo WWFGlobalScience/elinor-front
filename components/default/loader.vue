@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div class="elinor__loader" v-if="loader.active > 0 && !this.$isOffline">
+        <div class="elinor__loader" v-if="loader.active > 0 && !isOffline">
             <div class="loader__group">
                 <svg class="animate-spin mb-2 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="#43A0BD" stroke-width="4"></circle>
@@ -19,8 +19,9 @@ export default {
     name: 'default-loader',
     computed: {
         ...mapState({
-            loader: state => state.loader.loader
+            loader: state => state.loader.loader,
+            isOffline: state => state.layout.offline
         })
-    }
+    },
 }
 </script>

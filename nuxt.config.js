@@ -119,10 +119,7 @@ export default {
             login: "/assessments",
             logout: "/",
             home: "/assessments"
-        },
-        plugins: [
-            "~/plugins/isOffline.js"
-        ]
+        }
     },
     axios: {
         baseUrl: "https://api.elinordata.org/"

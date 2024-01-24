@@ -164,6 +164,7 @@
         "assessments": {
             "meta": {
                 "title": "Assessments",
+                "offlineTitle": "Offline Survey",
                 "slug": "/assessments"
             },
             "list": {

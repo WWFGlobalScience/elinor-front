@@ -1,5 +1,5 @@
 <template>
-    <section v-if="!loader.active" class="section section--assesment-edit-survey-question section--mt-0">
+    <section v-if="!loader.active || isOffline" class="section section--assesment-edit-survey-question section--mt-0">
         <assessment-edit-survey-navigator mode="detail" :assessment="assessment" :id="id"></assessment-edit-survey-navigator>
         <assessment-edit-survey-question :assessment="assessment" :question="question" :qid="qid" :id="id"></assessment-edit-survey-question>
     </section>
@@ -22,7 +22,8 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             questions: state => state.surveyquestions.list,
-            loader: state => state.loader.loader
+            loader: state => state.loader.loader,
+            isOffline: state => state.layout.offline,
         }),
         question() {
             const filtered = this.questions.filter(question => question.id === parseInt(this.qid));

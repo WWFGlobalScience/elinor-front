@@ -103,11 +103,13 @@ export default {
     name: "default-sidebar",
     computed: {
         pages() {
-            console.log(this.$isOffline)
             return this.$store.state.pages.list;
         },
         isSidebarOpen() {
             return this.$store.state.layout.sidebar;
+        },
+        isOffline() {
+            return this.$store.state.layout.offline;
         },
         isUserAuthenticated() {
             return this.$auth.loggedIn;
@@ -137,7 +139,7 @@ export default {
             return this.$route.fullPath.indexOf(slug) !== -1;
         },
         getPageTitle(page) {
-            const title = this.$isOffline && page.offlineTitle ? page.offlineTitle: page.title;
+            const title = this.isOffline && page.offlineTitle ? page.offlineTitle: page.title;
             return this.$t(title);
         }
     }
