@@ -1,5 +1,8 @@
 .ui-rounded-border {
     @apply border-radius--20 border border-grayy-border p-10;
+    &.p-0 {
+        @apply p-0;
+    }
 }
 .ui-rounded-turqy {
     @apply border-radius--20 bg-turqy p-10;

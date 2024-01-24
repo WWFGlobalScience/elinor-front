@@ -95,8 +95,14 @@
 
 .elinor-card--question {
     @apply flex items-start pt-12 pb-6;
+    &.pt-0 {
+        @apply pt-0;
+    }
     .elinor-card--question__number {
         @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
+        &.text-black {
+            @apply text-black border-black;
+        }
     }
     .elinor-card--question__info {
         @apply flex-1;
