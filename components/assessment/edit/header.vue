@@ -8,7 +8,7 @@
                         {{ assessment.score }}
                     </span>
                 </div>
-                <span class="uppercase text-grayy-lighter font-bold text-[12px]">out of 100</span>
+                <span class="uppercase text-grayy-lighter font-bold text-[12px]">{{ $t("pages.assessments.outOf100") }}</span>
             </div>
             <div class="text flex-1">
                 <h1 class="mb-0">

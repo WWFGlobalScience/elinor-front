@@ -3,7 +3,7 @@
         <form class="grid grid-cols-3 md:grid-cols-1 gap-x-4 gap-y-8 ">
             <div class="col-span-2 md:col-span-full">
                 <div class="uppercase keys-card text-sm ui-rounded-border">
-                    <h4 class="title">Key governance strengths</h4>
+                    <h4 class="title">{{ $t('pages.assessments.actions.generateReport.strengths.title') }}</h4>
                     <ul class="list-keys key-ok">
                         <li v-for="key in sortedScores.slice(0, 3)">
                             {{ key.name }}
@@ -16,7 +16,7 @@
                     <div class="col-span-2 md:col-span-full">
                         <div class="input input--pr">
                             <div class="label">
-                                Explain Main Strengths*
+                                {{ $t('pages.assessments.actions.generateReport.strengths.label') }}*
                             </div>
                             <textarea
                                 name="collection_method_text"
@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-span-1">
                         <p class="text-xs text-grayy-lighter pt-8">
-                            The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area.
+                            {{ $t('pages.assessments.actions.generateReport.strengths.explanation') }}
                         </p>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
             <hr class="col-span-full" />
             <div class="col-span-2 md:col-span-full">
                 <div class="uppercase keys-card text-sm ui-rounded-border">
-                    <h4 class="title">Key governance needs</h4>
+                    <h4 class="title">{{ $t('pages.assessments.actions.generateReport.needs.title') }}</h4>
                     <ul class="list-keys key-ko">
                         <li v-for="key in sortedScores.length > 3 ? sortedScores.slice(3).slice(-3) : []">
                             {{ key.name }}
@@ -49,7 +49,7 @@
                     <div class="col-span-2 md:col-span-full">
                         <div class="input input--pr">
                             <div class="label">
-                                Explain Main Needs*
+                                {{ $t('pages.assessments.actions.generateReport.needs.label') }}*
                             </div>
                             <textarea
                                 name="collection_method_text"
@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-span-1">
                         <p class="text-xs text-grayy-lighter pt-8">
-                            The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection.
+                            {{ $t('pages.assessments.actions.generateReport.needs.explanation') }}
                         </p>
                 </div>
           </div>
@@ -73,7 +73,7 @@
                     <div class="col-span-2 md:col-span-full">
                         <div class="input input--pr">
                             <div class="label">
-                                Context*
+                                {{ $t('pages.assessments.actions.generateReport.context.label') }}*
                             </div>
                             <textarea
                                 name="collection_method_text"
@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-span-1">
                         <p class="text-xs text-grayy-lighter pt-8">
-                            Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area.
+                            {{ $t('pages.assessments.actions.generateReport.context.explanation') }}
                         </p>
                 </div>
           </div>
@@ -103,7 +103,7 @@
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <span class="btn--opacity__target">Generate</span>
+                    <span class="btn--opacity__target">{{ $t('pages.assessments.actions.generateReport.button') }}</span>
                 </button>
                 <div style="clear: both"></div>
             </div>
@@ -173,7 +173,7 @@ export default {
                 acc[a.question.attribute].count += 1;
                 return acc;
             },{});
-            
+
             // Create new array from grouped data and compute the average
             const result = Object.keys(groupedAnswers).map(function(k){
                 const item  = groupedAnswers[k];

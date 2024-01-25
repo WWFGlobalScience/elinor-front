@@ -96,13 +96,23 @@
                         "title": "METHODOLOGY",
                         "text": "Learn more about how you can use the Elinor assessment and download the field protocol and assessment tool.",
                         "text2": "Elinor includes 35 questions across 10 governance and management attributes. Each question is scored 0-3 and those scores equally contribute to their respective attribute scores. In turn, the attribute scores equally contribute to the overall score. Depending on the given score, Elinor suggests different actions steps, including Plan, Build, Strengthen, and Maintain. It is important to note that although these scores provide important insights, they should be used together with the qualitative data entered into Elinor when deciding what adaptive management actions to take.",
-                        "button": "Go to Methodology"
+                        "button": "Go to Methodology",
+                        "score": "Score",
+                        "plan": "Plan",
+                        "build": "Build",
+                        "strengthen": "Strengthen",
+                        "maintain": "Maintain"
                     },
                     "about": {
                         "title": "About the assessment",
                         "paragraph": "Read about the information that Elinor assessment can help you gather and track.",
                         "button": "Go to About the assessment"
                     }
+                },
+                "latestNews": {
+                    "title": "LATEST NEWS",
+                    "readMore": "Read more",
+                    "seeMoreNews": "See more news"
                 }
             },
             "private": {}
@@ -213,24 +223,28 @@
                         "apply": "Apply filters"
                     }
                 },
-                "country-report": {
-                    "button": "Country report",
-                    "popup": {
-                        "title": "Export assessments report by country",
-                        "placeholders": {
-                            "countries": "Country",
-                            "year": "",
-                            "status": ""
-                        },
-                        "reset": "Reset",
-                        "apply": "Download",
-                        "countryWithoutAssessments": "This country dont have assessments to generate a report"
-                    }
-                },
                 "type": {
                     "own": "Member",
                     "all": "All"
+                },
+                "aggregateReport": {
+                    "button": "Aggregate report",
+                    "title": "Create Aggregate Report",
+                    "subtitle": "Select Assessments to Aggregate",
+                    "byManagementAreas": "by MA",
+                    "byCountries": "by Countries",
+                    "byYear": "by Year",
+                    "byRealm": "by Realm",
+                    "byType": "by Type of assessment",
+                    "year": "Year",
+                    "giveName": "Give it a name",
+                    "assessments": "Selected Assessments",
+                    "create": "Create Aggregate Report",
+                    "covering": "Assessments covering",
+                    "coveringHA": "ha",
+                    "filtersSelected": "Filters selected"
                 }
+
             },
             "view": {
                 "title": "View assessment",
@@ -1047,7 +1061,14 @@
                             }
                         }
                     }
-                }
+                },
+                "attributes": "Attributes",
+                "seeQuestions": "See Questions",
+                "optionalAttributesTitle": "Optional attributes",
+                "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
+                "mandatoryAttribute": "Mandatory",
+                "inactiveAttribute": "Inactive attribute",
+                "activeAttribute": "Active attribute"
             },
             "roles": {
                 "admin": "Admin",
@@ -1110,7 +1131,10 @@
                     "subtitle": "Fill this form to contact with the administrator",
                     "text": "We will send a message to the administrator of this assessment",
                     "labelTextarea": "Message",
-                    "okMessage": "Thank you for the contact!"
+                    "okMessage": "Thank you for the contact!",
+                    "namePlaceholder": "Your name",
+                    "subjectPlaceholder": "Subject",
+                    "emailPlaceholder": "Your Email"
                 },
                 "flag": {
                     "title": "Flag title",
@@ -1128,8 +1152,31 @@
                     "title": "Delete assessment",
                     "subtitle": "Assessment is finalized and is not possible to delete it",
                     "text": "Contact elinor administrator to edit or delete your assessment"
+                },
+                "generateReport": {
+                    "strengths": {
+                        "title": "Key governance strengths",
+                        "label": "Explain Main Strengths",
+                        "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
+                    },
+                    "needs": {
+                        "title": "Key governance strengths",
+                        "label": "Explain Main Needs",
+                        "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
+                    },
+                    "context": {
+                        "title": "Context",
+                        "label": "Context",
+                        "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
+                    },
+                    "button": "Generate"
                 }
-            }
+            },
+            "outOf100": "out of 100",
+            "published": "Published",
+            "finalized": "Finalized",
+            "readyToPublish": "Ready to publish",
+            "preparingToPublish": "Preparing to publish"
         },
         "documentation": {
             "home": {
@@ -1367,7 +1414,12 @@
                 "contact": {
                     "strong": "Or if you prefer send a e-mail to",
                     "link": ""
-                }
+                },
+                "confirmation": "Thank you for contacting elinor",
+                "namePlaceholder": "Name",
+                "subjectPlaceholder": "Subject",
+                "mailPlaceholder": "Mail",
+                "messagePlaceholder": "Message"
             }
         },
         "collaboration": {
@@ -1660,7 +1712,6 @@
         "cancel": "Cancel",
         "delete": "Delete",
         "create": "Create",
-        "contactAdministrator": "Contact Administrator",
         "downloadData": "Download Data",
         "published": "Published",
         "finalized": "Finalized",
@@ -1694,7 +1745,15 @@
         },
         "save": {
             "autosave": "Data saved"
-        }
+        },
+        "flag": "Flag",
+        "uploadSurveyFile": "Upload survey",
+        "downloadSurveyFile": "Download survey",
+        "contactAdministrator": "Contact Administrator",
+        "generateReport": "Generate Report",
+        "version": "Version",
+        "description": "Description",
+        "areaSize": "Area Size"
     },
     "footer": {
         "faqs": "FAQs",

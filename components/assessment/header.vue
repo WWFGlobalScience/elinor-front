@@ -8,7 +8,7 @@
                         {{ assessment.score }}
                     </span>
                 </div>
-                <span class="uppercase text-grayy-lighter font-bold text-[12px]">out of 100</span>
+                <span class="uppercase text-grayy-lighter font-bold text-[12px]">{{ $t("pages.assessments.outOf100") }}</span>
             </div>
             <div class="text">
                 <h1 class="mb-0">
@@ -18,7 +18,7 @@
                 <h2 class="assessment__name">{{ assessment.name }}</h2>
                 <p class="assessment__year">
                     {{ $t("pages.assessments.view.year") }}
-                    {{ assessment.year }} - Version
+                    {{ assessment.year }} - {{ $t("default.version") }}
                     {{ assessment.published_version }}
                 </p>
                 <assessment-actions type="show" />

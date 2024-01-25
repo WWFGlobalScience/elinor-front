@@ -7,10 +7,10 @@
                     {{ report.score }}
                 </span>
             </div>
-            <span class="uppercase text-grayy-lighter font-bold text-[12px] font-montserratSemiBoldPdf">out of 100</span>
+            <span class="uppercase text-grayy-lighter font-bold text-[12px] font-montserratSemiBoldPdf">{{ $t("pages.assessments.outOf100") }}</span>
         </div>
         <div class="text">
-            <p v-if="report.management_area_countries && report.management_area_countries.countries" 
+            <p v-if="report.management_area_countries && report.management_area_countries.countries"
                 class="text-[14px] font-semibold uppercase text-grayy-lighter font-montserratNormalPdf">
                     {{ report.management_area.countries.join( ', ' ) }}
             </p>

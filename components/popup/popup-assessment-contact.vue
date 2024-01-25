@@ -11,7 +11,7 @@
                 <div class="form__group">
                     <div class="form__row">
                         <div class="input">
-                            <input type="text" value="" placeholder="Your name" v-model="form.name">
+                            <input type="text" value="" :placeholder="$t('pages.assessments.actions.contact.namePlaceholder')" v-model="form.name">
                             <template v-if="errors.name">
                                 <p class="msg msg--error" v-for="error in errors.name">
                                     {{ error }}
@@ -21,7 +21,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <input type="text" value="" placeholder="Subject" v-model="form.subject">
+                            <input type="text" value="" :placeholder="$t('pages.assessments.actions.contact.subjectPlaceholder')" v-model="form.subject">
                             <template v-if="errors.subject">
                                 <p class="msg msg--error" v-for="error in errors.subject">
                                     {{ error }}
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <input type="text" value="" placeholder="Your Email" v-model="form.email">
+                            <input type="text" value="" :placeholder="$t('pages.assessments.actions.contact.emailPlaceholder')" v-model="form.email">
                             <template v-if="errors.email">
                                 <p class="msg msg--error" v-for="error in errors.email">
                                     {{ error }}

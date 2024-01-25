@@ -29,7 +29,9 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <span>Generate Report</span></a
+                <span>{{
+                        $t("default.generateReport")
+                    }}</span></a
             >
 
             <a
@@ -70,7 +72,10 @@
                 class="btn btn--rounded"
                 title="Flag"
                 ><img src="~/assets/img/ico-flag.svg" alt="Flag" />
-                <span class="visually-hidden">Flag</span></a
+                <span class="visually-hidden">{{
+                        $t("default.flag")
+                    }}
+                </span></a
             >
             <a
                 v-if="isCreator() && assessment.status !== 10"
