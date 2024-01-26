@@ -540,7 +540,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import news from "../../locales/en/content/news";
+import locales from '../../locales';
 const numNews = 3;
 const maxCharacters = 300;
 
@@ -551,7 +551,6 @@ export default {
             username: null,
             password: null,
             remember: false,
-            latestNews: [...news].splice(0, numNews),
             maxCharacters
         };
     },
@@ -559,7 +558,12 @@ export default {
         ...mapState({
             alerts: state => state.authentication.alerts,
             error: state => state.authentication.error
-        })
+        }),
+        latestNews() {
+            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const news = locales[currentLanguage.code].news;
+            return [...news].splice(0, numNews);
+        },
     },
     mounted() {
         this.$store.commit("authentication/clearError");

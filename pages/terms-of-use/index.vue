@@ -17,15 +17,16 @@
   </article>
 </template>
 <script>
-import content from '../../locales/en/content/terms-of-use';
+import locales from '../../locales';
 
 export default {
     name: "terms-of-use",
     auth: false,
-    data() {
-        return {
-            content
-        }
-    }
+    computed: {
+        content() {
+            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            return locales[currentLanguage.code].termsOfUse;
+        },
+    },
 };
 </script>

@@ -14,29 +14,31 @@
 </template>
 
 <script>
-import news from '../../locales/en/content/news.js'
-const perPage = 5;
-
+import locales from '../../locales';
+const perPage = 2;
 export default {
     name: 'news',
     auth: false,
     data() {
         return {
-            visibleNews: [],
-            news,
             page: 1,
             perPage
         }
     },
-    methods: {
-        load() {
+    computed: {
+        news() {
+            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            return locales[currentLanguage.code].news;
+        },
+        visibleNews() {
             const position = perPage * (this.page - 1);
-            this.visibleNews = [...this.visibleNews, ...this.news.slice(position, position + perPage)];
-            this.page++;
+            return [...this.news.slice(0, position + perPage)];
         }
     },
-    mounted() {
-        this.load();
+    methods: {
+        load() {
+            this.page++;
+        }
     }
 }
 </script>
