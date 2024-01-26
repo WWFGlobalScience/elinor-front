@@ -9,9 +9,9 @@ export default async () => {
 
     apiLocales.results.forEach((locale) => {
         if(locale.active) {
-            let file = `${locale.code}.json`;
+            let file = `${locale.code}/translations.json`;
             if(!fs.existsSync(langDir + file)) {
-                file = 'en.json';
+                file = 'en/translations.json';
             }
 
             locales.push({

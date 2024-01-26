@@ -244,7 +244,6 @@
                     "coveringHA": "ha",
                     "filtersSelected": "Filters selected"
                 }
-
             },
             "view": {
                 "title": "View assessment",
@@ -408,7 +407,9 @@
                             "zoneDescription": "Describe this zone and its attributes, including allowable or restricted uses, seasonality, and people who can and cannot access it",
                             "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
                             "protectedAreaWdpaIdHelpLink": "Click here to search",
-                            "geospatialSources": "Please list the source of the geospatial information"
+                            "geospatialSources": "Please list the source of the geospatial information",
+                            "yes": "Yes",
+                            "no": "No"
                         },
                         "buttons": {
                             "addZone": "Add a new Zone"
@@ -1137,7 +1138,7 @@
                     "emailPlaceholder": "Your Email"
                 },
                 "flag": {
-                    "title": "Flag title",
+                    "title": "Flag assessment",
                     "subtitle": "Fill this form to flag the assessment",
                     "text": "We will send a message to the administrator of this assessment",
                     "labelTextarea": "Message",
@@ -1660,7 +1661,6 @@
                     }
                 }
             },
-
             "popup": {
                 "title": "Delete Account",
                 "header": {
@@ -1717,8 +1717,8 @@
         "finalized": "Finalized",
         "submit": "Submit",
         "close": "Close",
-        "filters":{
-            "popup":{
+        "filters": {
+            "popup": {
                 "title": ""
             }
         },

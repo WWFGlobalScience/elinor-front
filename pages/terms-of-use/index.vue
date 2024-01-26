@@ -17,7 +17,7 @@
   </article>
 </template>
 <script>
-import content from '../../content/terms-of-use';
+import content from '../../locales/en/content/terms-of-use';
 
 export default {
     name: "terms-of-use",

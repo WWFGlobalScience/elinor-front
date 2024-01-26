@@ -580,7 +580,7 @@
                                         />
                                     </div>
                                     <label for="zone-yes" class="label"
-                                        >Yes</label
+                                        >{{ $t('pages.assessments.edit.tabs.managementArea.labels.yes') }}</label
                                     >
                                 </div>
                                 <div class="radio__wrap">
@@ -602,7 +602,7 @@
                                         />
                                     </div>
                                     <label for="zone-no" class="label"
-                                        >No</label
+                                        >{{ $t('pages.assessments.edit.tabs.managementArea.labels.no') }}</label
                                     >
                                 </div>
                             </div>

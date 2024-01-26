@@ -96,13 +96,23 @@
                         "title": "MBINU",
                         "text": "Pata maelezo zaidi kuhusu jinsi unavyoweza kutumia tathmini ya Elinor na kupakua itifaki ya uga na zana ya kutathmini.",
                         "text2": "Elinor inajumuisha maswali 35 katika sifa 10 za utawala na usimamizi. Kila swali lina alama 0-3 na alama hizo huchangia kwa usawa alama zao za sifa. Kwa upande mwingine, alama za sifa huchangia kwa usawa alama ya jumla. Kulingana na alama iliyotolewa, Elinor anapendekeza hatua tofauti za vitendo, ikiwa ni pamoja na Panga, Jenga, Imarisha na Dumisha. Ni muhimu kutambua kwamba ingawa alama hizi hutoa maarifa muhimu, zinapaswa kutumiwa pamoja na data ya ubora iliyoingizwa katika Elinor wakati wa kuamua ni hatua gani za usimamizi zinazobadilika za kuchukua.",
-                        "button": "Nenda kwa Methodology"
+                        "button": "Nenda kwa Methodology",
+                        "score": "Score",
+                        "plan": "Plan",
+                        "build": "Build",
+                        "strengthen": "Strengthen",
+                        "maintain": "Maintain"
                     },
                     "about": {
                         "title": "Kuhusu tathmini",
                         "paragraph": "Soma kuhusu taarifa ambayo tathmini ya Elinor inaweza kukusaidia kukusanya na kufuatilia.",
                         "button": "Nenda kwa Kuhusu tathmini"
                     }
+                },
+                "latestNews": {
+                    "title": "LATEST NEWS",
+                    "readMore": "Read more",
+                    "seeMoreNews": "See more news"
                 }
             },
             "private": {}
@@ -213,23 +223,26 @@
                         "apply": "Weka vichujio"
                     }
                 },
-                "country-report": {
-                    "button": "Country report",
-                    "popup": {
-                        "title": "Export assessments report by country",
-                        "placeholders": {
-                            "countries": "Country",
-                            "year": "",
-                            "status": ""
-                        },
-                        "reset": "Weka upya",
-                        "apply": "Shusha",
-                        "countryWithoutAssessments": "Nchi hii haina tathmini za kuunda ripoti"
-                    }
-                },
                 "type": {
                     "own": "Mwanachama",
                     "all": "Wote"
+                },
+                "aggregateReport": {
+                    "button": "Aggregate report",
+                    "title": "Create Aggregate Report",
+                    "subtitle": "Select Assessments to Aggregate",
+                    "byManagementAreas": "by MA",
+                    "byCountries": "by Countries",
+                    "byYear": "by Year",
+                    "byRealm": "by Realm",
+                    "byType": "by Type of assessment",
+                    "year": "Year",
+                    "giveName": "Give it a name",
+                    "assessments": "Selected Assessments",
+                    "create": "Create Aggregate Report",
+                    "covering": "Assessments covering",
+                    "coveringHA": "ha",
+                    "filtersSelected": "Filters selected"
                 }
             },
             "view": {
@@ -1047,7 +1060,14 @@
                             }
                         }
                     }
-                }
+                },
+                "attributes": "Attributes",
+                "seeQuestions": "See Questions",
+                "optionalAttributesTitle": "Optional attributes",
+                "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
+                "mandatoryAttribute": "Mandatory",
+                "inactiveAttribute": "Inactive attribute",
+                "activeAttribute": "Active attribute"
             },
             "roles": {
                 "admin": "Msimamizi",
@@ -1110,7 +1130,10 @@
                     "subtitle": "Jaza fomu hii ili kuwasiliana na msimamizi",
                     "text": "Tutatuma ujumbe kwa msimamizi wa tathmini hii",
                     "labelTextarea": "Ujumbe",
-                    "okMessage": "Asante kwa mawasiliano!"
+                    "okMessage": "Asante kwa mawasiliano!",
+                    "namePlaceholder": "Your name",
+                    "subjectPlaceholder": "Subject",
+                    "emailPlaceholder": "Your Email"
                 },
                 "flag": {
                     "title": "Kichwa cha bendera",
@@ -1118,6 +1141,24 @@
                     "text": "Tutatuma ujumbe kwa msimamizi wa tathmini hii",
                     "labelTextarea": "Ujumbe",
                     "okMessage": "Asante kwa mawasiliano!"
+                },
+                "generateReport": {
+                    "strengths": {
+                        "title": "Key governance strengths",
+                        "label": "Explain Main Strengths",
+                        "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
+                    },
+                    "needs": {
+                        "title": "Key governance strengths",
+                        "label": "Explain Main Needs",
+                        "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
+                    },
+                    "context": {
+                        "title": "Context",
+                        "label": "Context",
+                        "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
+                    },
+                    "button": "Generate"
                 },
                 "delete": {
                     "title": "Futa kichwa",
@@ -1129,7 +1170,12 @@
                     "subtitle": "Tathmini imekamilika na haiwezekani kuifuta",
                     "text": "Wasiliana na msimamizi wa elinor ili kuhariri au kufuta tathmini yako"
                 }
-            }
+            },
+            "outOf100": "out of 100",
+            "published": "Published",
+            "finalized": "Finalized",
+            "readyToPublish": "Ready to publish",
+            "preparingToPublish": "Preparing to publish"
         },
         "documentation": {
             "home": {
@@ -1367,7 +1413,12 @@
                 "contact": {
                     "strong": "Au ukipenda tuma barua pepe kwa",
                     "link": ""
-                }
+                },
+                "confirmation": "Thank you for contacting elinor",
+                "namePlaceholder": "Name",
+                "subjectPlaceholder": "Subject",
+                "mailPlaceholder": "Mail",
+                "messagePlaceholder": "Message"
             }
         },
         "collaboration": {
@@ -1668,7 +1719,6 @@
         "cancel": "Ghairi",
         "delete": "Futa",
         "create": "Unda",
-        "contactAdministrator": "Wasiliana na Msimamizi",
         "downloadData": "Pakua Data",
         "published": "Imechapishwa",
         "finalized": "Imekamilika",
@@ -1702,7 +1752,15 @@
         },
         "save": {
             "autosave": "Data imehifadhiwa"
-        }
+        },
+        "flag": "Flag",
+        "uploadSurveyFile": "Upload survey",
+        "downloadSurveyFile": "Download survey",
+        "contactAdministrator": "Wasiliana na Msimamizi",
+        "generateReport": "Generate Report",
+        "version": "Version",
+        "description": "Description",
+        "areaSize": "Area Size"
     },
     "footer": {
         "faqs": "Maswali yanayoulizwa mara kwa mara",

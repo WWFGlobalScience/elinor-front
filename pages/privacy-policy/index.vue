@@ -4,7 +4,7 @@
     </article>
 </template>
 <script>
-import content from '../../content/privacy-policy';
+import content from '../../locales/en/content/privacy-policy';
 
 export default {
     name: "privacy-policy",

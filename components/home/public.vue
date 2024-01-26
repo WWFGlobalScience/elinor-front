@@ -540,7 +540,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import news from "../../content/news";
+import news from "../../locales/en/content/news";
 const numNews = 3;
 const maxCharacters = 300;
 

@@ -46,15 +46,16 @@
 </template>
 
 <script>
-import faqs from '../../content/faqs.js';
+import locales from '../../locales';
 
 export default {
     name: "faq",
     auth: false,
-    data() {
-        return {
-            faqs
-        }
+    computed: {
+        faqs() {
+            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            return locales[currentLanguage.code].faqs;
+        },
     }
 };
 </script>

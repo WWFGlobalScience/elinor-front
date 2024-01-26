@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import news from '../../content/news.js'
+import news from '../../locales/en/content/news.js'
 const perPage = 5;
 
 export default {
