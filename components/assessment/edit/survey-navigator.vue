@@ -76,7 +76,9 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list
+            questions: state => state.surveyquestions.list,
+            isOffline: state => state.layout.offline,
+            offlineSurveyAnswers: state => state.assessments.offlineSurveyAnswers,
         }),
         completedQuestions() {
             return (this.assessment.surveyAnswers || []).filter(surveyAnswer =>
@@ -94,13 +96,16 @@ export default {
         },
         totalQuestions() {
             return this.activeQuestions.length;
-        }
+        },
+        surveyAnswers() {
+            return this.isOffline? this.offlineSurveyAnswers: this.assessment.surveyAnswers || []
+        },
     },
     methods: {
         isAnswered(question) {
             return (
                 this.isAttributeSelected({ id: question.attribute }) &&
-                this.assessment.surveyAnswers.filter(
+                this.surveyAnswers.filter(
                     surveyAnswer => surveyAnswer.question.id === question.id
                 ).length === 1
             );

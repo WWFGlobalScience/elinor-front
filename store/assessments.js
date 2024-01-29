@@ -1,5 +1,5 @@
 import qs from 'qs'
-import {required_fields, initProgress, calculateProgress} from "~/config/assessment-progress";
+import {calculateProgress, initProgress, required_fields} from "~/config/assessment-progress";
 
 export const state = () => ({
     list: [],
@@ -12,6 +12,7 @@ export const state = () => ({
         prev: null
     },
     assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], offline: null},
+    offlineSurveyAnswers: [],
     report: [],
     edit: {
         data: true,
@@ -46,6 +47,9 @@ export const mutations = {
     setAssessmentField(state, payload) {
         const {field, value} = payload;
         state.assessment[field] = value;
+    },
+    setOfflineSurveyAnswers(state, payload) {
+        state.offlineSurveyAnswers = payload;
     },
     setLastEdit(state) {
         state.assessment.last_edit = this.$moment();
@@ -108,6 +112,13 @@ export const mutations = {
         const surveyAnswers = [answer, ...filtered];
         state.assessment = {...state.assessment, surveyAnswers} ;
         state.progress = calculateProgress(state.assessment);
+    },
+    updateOfflineSurveyAnswer(state, answer) {
+        const filtered = state.offlineSurveyAnswers.filter(surveyAnswer => surveyAnswer.question.id !== answer.question.id);
+        state.offlineSurveyAnswers = [answer, ...filtered]
+    },
+    removeOfflineSurveyAnswer(state, answer) {
+        state.offlineSurveyAnswers = state.offlineSurveyAnswers.filter(surveyAnswer => surveyAnswer.id !== answer.id)
     },
     removeSurveyAnswer(state, id) {
         const surveyAnswers = [...state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== id)]
@@ -182,7 +193,9 @@ export const actions = {
             if(assessment.management_area) {
                 state.dispatch('managementareas/fetchManagementArea', assessment.management_area, { root: true })
             }
-
+            if(!assessment.surveyAnswers) {
+                assessment.surveyAnswers = []
+            }
             state.commit('setAssessment', assessment);
             state.commit('setProgress', calculateProgress(assessment));
 
@@ -271,16 +284,18 @@ export const actions = {
     },
 
     async editAssessmentField(state, {field, value, id}) {
-        const response = await this.$axios({
+        this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
             data: {
                 [field]: value && value.id || value
             }
+        }).then(response => {
+            state.commit('setProgress', calculateProgress(response?.data));
+        }).finally(async () => {
+            await state.commit('setAssessmentField', {field, value})
+            state.commit('setLastEdit');
         });
-        await state.commit('setAssessmentField', {field, value})
-        state.commit('setLastEdit');
-        state.commit('setProgress', calculateProgress(response.data));
     },
 
     async updateAssessmentProgress(state) {
@@ -403,6 +418,13 @@ export const actions = {
     },
 
     async storeSurveyAnswer(state, {assessmentId, questionId, choice, explanation}) {
+        state.commit('updateOfflineSurveyAnswer', {
+            question: { id: questionId },
+            assessment: { id: assessmentId },
+            choice,
+            explanation
+        })
+
         const response = await this.$axios({
             method: 'post',
             url: `/v2/surveyanswerlikerts/`,
@@ -420,6 +442,14 @@ export const actions = {
     },
 
     async updateSurveyAnswer(state, {id, assessmentId, questionId, choice, explanation}) {
+        state.commit('updateOfflineSurveyAnswer', {
+            id,
+            question: { id: questionId },
+            assessment: { id: assessmentId },
+            choice,
+            explanation
+        })
+
         const response = await this.$axios({
             method: 'patch',
             url: `/v2/surveyanswerlikerts/${id}/`,
@@ -435,6 +465,8 @@ export const actions = {
     },
 
     async removeSurveyAnswer(state, id) {
+        state.commit('removeOfflineSurveyAnswer', { id })
+
         this.dispatch('loader/loaderState', {active: true,text: 'Deleting servey answer...'})
 
         this.$axios({
@@ -573,14 +605,33 @@ export const actions = {
         state.commit('setListType', type);
         state.dispatch('fetchAssessments');
     },
-    async setOffline(state, assessmentId) {
+    async setOffline(state) {
         state.dispatch('layout/setOffline', {isOffline: true}, {root: true})
+        state.commit('setOfflineSurveyAnswers', state.state.assessment.surveyAnswers.map(answer => ({
+            id: answer.id,
+            assessment: {id: answer.assessment.id},
+            question: {id: answer.question.id},
+            choice: answer.choice,
+            explanation: answer.explanation,
+        })))
         state.commit('setAssessmentField', {field: 'offline', value: this.$auth.user})
-        await state.dispatch('editAssessmentField', {field: 'offline', value: this.$auth.user, id: assessmentId });
+        await state.dispatch('editAssessmentField', {field: 'offline', value: this.$auth.user, id: state.state.assessment.id });
     },
-    async setOnline(state, assessmentId) {
+    async setOnline(state) {
         state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
+
+        state.state.offlineSurveyAnswers.forEach(answer => {
+            state.dispatch(answer.id ? 'updateSurveyAnswer': 'storeSurveyAnswer',{
+                ...answer.id && { id: answer.id },
+                assessmentId: answer.assessment.id,
+                questionId: answer.question.id,
+                choice: answer.choice,
+                explanation: answer.explanation
+            })
+        })
+
+        state.commit('setOfflineSurveyAnswers', [])
         state.commit('setAssessmentField', {field: 'offline', value: null})
-        await state.dispatch('editAssessmentField', {field: 'offline', value: null, id: assessmentId });
+        await state.dispatch('editAssessmentField', {field: 'offline', value: null, id: state.state.assessment.id });
     },
 }

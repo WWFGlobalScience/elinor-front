@@ -18,5 +18,6 @@ export const actions = {
     },
     setOffline( state, { isOffline } ) {
         state.commit( 'setOffline', { isOffline })
+        state.commit('loader/disableLoader', null, {root: true})
     }
 }

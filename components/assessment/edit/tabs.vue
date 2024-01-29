@@ -1,7 +1,7 @@
 <template>
     <section class="section section--tab section--mt-10">
         <div class="container">
-            <ul v-if="!isOffline()" class="elinor__tabs">
+            <ul v-if="!isOffline" class="elinor__tabs">
                 <li>
                     <nuxt-link :to="`/assessments/edit/${id}/assessment-data/`"
                                :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.data.complete } ]">
@@ -91,15 +91,13 @@ export default {
         },
         getPublishPercentage() {
             return isNaN(this.progress.overall_percentage) ? 0 : Math.floor(this.progress.overall_percentage)
-        },
-        isOffline() {
-            return this.assessment.offline?.id === this.$auth.user.id
         }
     },
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            progress: state => state.assessments.progress
+            progress: state => state.assessments.progress,
+            isOffline: state => state.layout.offline
         })
     }
 }

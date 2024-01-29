@@ -33,7 +33,7 @@
             >
             <a
                 v-if="isSurveyTab"
-                @click="isOffline? onSetOnline() : onSetOffline()"
+                @click="isOffline? setOnline() : setOffline()"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
                 title="Offline"
@@ -119,18 +119,9 @@ export default {
         ...mapActions({
             popupState: "popup/popupState",
             downloadAssessment: "assessments/downloadAssessment",
-            toggleOffline: "assessments/toggleOffline",
             setOffline: "assessments/setOffline",
             setOnline: "assessments/setOnline",
         }),
-        async onSetOffline() {
-            await this.setOffline(this.assessment.id);
-            this.isOffline = true;
-        },
-        async onSetOnline() {
-            await this.setOnline(this.assessment.id);
-            this.isOffline = false;
-        },
         isCreator() {
             return this.assessment.created_by === this.$auth.user.id;
         },
