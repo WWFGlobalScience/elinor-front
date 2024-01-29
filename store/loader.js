@@ -8,7 +8,6 @@ export const state = () => ({
 
 export const mutations = {
     loaderState( state, {active, isOffline, text}) {
-        console.log({isOffline})
         if (isOffline) {
             state.loader.active = 0;
         } else {

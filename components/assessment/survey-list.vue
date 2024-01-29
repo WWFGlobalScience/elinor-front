@@ -129,7 +129,7 @@ export default {
             offlineSurveyAnswers: state => state.assessments.offlineSurveyAnswers,
         }),
         surveyAnswers() {
-            return this.isOffline? this.offlineSurveyAnswers: this.assessment.surveyAnswers
+            return this.assessment.surveyAnswers || []
         },
     },
     methods: {

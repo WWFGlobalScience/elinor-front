@@ -78,7 +78,6 @@ export default {
             attributes: state => state.attributes.list,
             questions: state => state.surveyquestions.list,
             isOffline: state => state.layout.offline,
-            offlineSurveyAnswers: state => state.assessments.offlineSurveyAnswers,
         }),
         completedQuestions() {
             return (this.assessment.surveyAnswers || []).filter(surveyAnswer =>
@@ -98,7 +97,7 @@ export default {
             return this.activeQuestions.length;
         },
         surveyAnswers() {
-            return this.isOffline? this.offlineSurveyAnswers: this.assessment.surveyAnswers || []
+            return this.assessment.surveyAnswers || []
         },
     },
     methods: {

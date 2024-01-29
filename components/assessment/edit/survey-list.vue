@@ -142,10 +142,9 @@ export default {
             attributes: state => state.attributes.list,
             questions: state => state.surveyquestions.list,
             isOffline: state => state.layout.offline,
-            offlineSurveyAnswers: state => state.assessments.offlineSurveyAnswers,
         }),
         surveyAnswers() {
-            return this.isOffline? this.offlineSurveyAnswers: this.assessment.surveyAnswers || []
+            return this.assessment.surveyAnswers || []
         },
     },
     methods: {
@@ -156,10 +155,10 @@ export default {
         },
         isAnswered(question) {
             return (
-                (this.surveyAnswers || []).filter(
+                this.surveyAnswers.filter(
                     surveyAnswer => surveyAnswer.question.id === question.id
                 ).length === 1
-            );
+            )
         },
         getAnswerChoice(question) {
             const answer = this.surveyAnswers.filter(

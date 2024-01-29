@@ -149,7 +149,7 @@
 </template>
 
 <script>
-import {mapActions, mapState, mapMutations} from 'vuex'
+import {mapActions, mapState} from 'vuex'
 import {surveyQuestionNumber, totalSurveyQuestions, previousSurveyQuestion, nextSurveyQuestion, isLastQuestionInSurvey} from '../../../config/assessment-progress';
 export default {
     name: 'assessment-edit-survey-question',
@@ -183,8 +183,7 @@ export default {
             return filtered[0];
         },
         answer() {
-            const answer = (this.isOffline ? this.offlineSurveyAnswers: this.assessment.surveyAnswers).filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
-            return answer[0] || null;
+            return this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === this.question.id);
         },
         previousSurveyQuestion() {
             return previousSurveyQuestion(this.questionId, this.assessment, this.attributes, this.questions);
@@ -202,26 +201,25 @@ export default {
             updateSurveyAnswer: 'assessments/updateSurveyAnswer'
         }),
         save(choice) {
-            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
             const data = {
-                ...answer.length && {id: answer[0].id},
+                ...this.answer && {id: this.answer.id},
                 assessmentId: this.assessment.id,
                 questionId: this.question.id,
                 choice,
                 explanation: this.$refs.textareaExplanation.value
             };
 
-            if (!answer.length) {
+            if (!this.answer) {
                 this.storeSurveyAnswer(data);
             } else {
-                this.updateSurveyAnswer( data);
+                this.updateSurveyAnswer(data);
             }
         },
         saveChoice(choice) {
             this.save(choice);
         },
-        saveExplanation(explanation) {
-            if(this.answer !== null) {
+        saveExplanation() {
+            if(this.answer) {
                 this.save(this.answer.choice);
             }
         },
@@ -231,7 +229,9 @@ export default {
         totalSurveyQuestions,
         surveyQuestionNumber,
         updateState() {
-            this.$store.dispatch( 'assessments/fetchAssessment', this.id )
+            if (!this.isOffline) {
+                this.$store.dispatch( 'assessments/fetchAssessment', this.id)
+            }
         }
 
     }
