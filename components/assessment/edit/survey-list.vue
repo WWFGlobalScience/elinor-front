@@ -142,10 +142,7 @@ export default {
             attributes: state => state.attributes.list,
             questions: state => state.surveyquestions.list,
             isOffline: state => state.layout.offline,
-        }),
-        surveyAnswers() {
-            return this.assessment.surveyAnswers || []
-        },
+        })
     },
     methods: {
         getAttributeQuestions(attribute) {
@@ -154,34 +151,20 @@ export default {
             );
         },
         isAnswered(question) {
-            return (
-                this.surveyAnswers.filter(
-                    surveyAnswer => surveyAnswer.question.id === question.id
-                ).length === 1
-            )
+            return !!this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === question.id)
         },
         getAnswerChoice(question) {
-            const answer = this.surveyAnswers.filter(
-                surveyAnswer => surveyAnswer.question.id === question.id
-            );
-            if (answer.length === 1) {
-                return answer[0].choice;
-            }
+            return this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === question.id)?.choice
         },
         getAnswerExplanation(question) {
-            const answer = this.surveyAnswers.filter(
-                surveyAnswer => surveyAnswer.question.id === question.id
-            );
-            if (answer.length === 1) {
-                return answer[0].explanation;
-            }
+            return this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === question.id)?.explanation
         },
         isAttributeChecked(attribute) {
             return this.assessment.attributes.indexOf(attribute.id) !== -1;
         },
         getScoreByAttribute(attribute){
             if(this.isAttributeChecked(attribute)){
-                const answers = this.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
+                const answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
                 if(!answers.length){
                     return null
                 }

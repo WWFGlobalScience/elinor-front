@@ -96,17 +96,14 @@ export default {
         totalQuestions() {
             return this.activeQuestions.length;
         },
-        surveyAnswers() {
-            return this.assessment.surveyAnswers || []
-        },
     },
     methods: {
         isAnswered(question) {
             return (
                 this.isAttributeSelected({ id: question.attribute }) &&
-                this.surveyAnswers.filter(
+                !!(this.assessment.surveyAnswers || []).find(
                     surveyAnswer => surveyAnswer.question.id === question.id
-                ).length === 1
+                )
             );
         },
         getAttributeQuestions(attribute) {
