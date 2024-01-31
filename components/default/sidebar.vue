@@ -6,7 +6,7 @@
     >
         <div class="sidebar__wrap">
             <div class="brand">
-                <NuxtLink to="/" class="flex items-center">
+                <NuxtLink :class="isOffline ? 'pointer-events-none': ''" :event="isOffline ? '': 'click'" to="/" class="flex items-center">
                     <img
                         src="~/assets/img/elinor-icon-white.svg"
                         class="brand__icon"
@@ -35,7 +35,8 @@
                                 @click="goTo(page)"
                                 class="btn--opacity--child nav__main__link"
                                 :class="{
-                                    'nuxt-link-active': isLinkActive(page)
+                                    'nuxt-link-active': isLinkActive(page),
+                                    'pointer-events-none opacity-50': isOffline && !page.offlineTitle
                                 }"
                             >
                                 <img

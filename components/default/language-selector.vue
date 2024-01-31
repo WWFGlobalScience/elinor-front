@@ -1,6 +1,6 @@
 <template>
     <div class="elinor__dropdown lang-dropdown">
-        <div class="elinor__dropdown-toggle">
+        <div class="elinor__dropdown-toggle" :class="isOffline ? 'pointer-events-none': ''">
             <div class="elinor__dropdown-toggle">
                 <div class="current" @click="toggleLangDropdown">
                     <span>{{ currentLanguage.name }}</span>

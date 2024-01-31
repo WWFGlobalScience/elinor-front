@@ -2,7 +2,7 @@
     <ul>
         <default-language-selector />
         <template v-if="$auth.loggedIn">
-            <div class="elinor__dropdown">
+            <div class="elinor__dropdown" :class="isOffline ? 'pointer-events-none': ''">
                 <div class="elinor__dropdown-toggle">
                     <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
                         <span>{{ user.username.charAt(0).toUpperCase() }}</span>
