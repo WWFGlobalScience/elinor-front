@@ -337,8 +337,7 @@ export default {
                 }
             }
 
-            console.log(this.errors);
-            return this.errors.name.length === 0 && this.errors.assessments === null;
+            return this.errors.name.length === 0 && this.errors.assessments === null &&  this.errors.year !== null &&  this.errors.type !== null &&  this.errors.countries.length;
         },
         pdf() {
             if(this.validate()) {
