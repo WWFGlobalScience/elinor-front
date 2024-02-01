@@ -101,9 +101,9 @@
                     }
                 },
                 "latestNews": {
-                    "title": "LATEST NEWS",
-                    "readMore": "Read more",
-                    "seeMoreNews": "See more news"
+                    "title": "HABARI MPYA",
+                    "readMore": "Soma zaidi",
+                    "seeMoreNews": "Angalia habari zingine"
                 }
             },
             "private": {}
