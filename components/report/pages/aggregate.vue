@@ -32,11 +32,6 @@
                           <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.year }}</span>
                         </li>
                       </template>
-                      <template v-if="selectedFilters.realm">
-                        <li class="elinor__tag elinor__tag--sm">
-                          <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.realm }}</span>
-                        </li>
-                      </template>
                       <template v-if="selectedFilters.type">
                         <li class="elinor__tag elinor__tag--sm">
                           <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.type }}</span>

@@ -33,10 +33,6 @@
                 "forgotPasswordLink": "¿Has olvidado tu contraseña?",
                 "signInButton": "Registro",
                 "alerts": {
-                    "invalidCredentials": {
-                        "title": "¡Credenciales no válidas!",
-                        "subtitle": "¿No recuerdas la contraseña? Pruebe la contraseña olvidada"
-                    },
                     "emailVerificationSent": {
                         "title": "Verificación de E-mail enviada!",
                         "subtitle": "Recibirás un mensaje para verificar tu E-mail"
@@ -103,11 +99,6 @@
                         "build": "Build",
                         "strengthen": "Strengthen",
                         "maintain": "Maintain"
-                    },
-                    "about": {
-                        "title": "Acerca de la evaluación",
-                        "paragraph": "Lea acerca de la información que la evaluación de Elinor puede ayudarlo a recopilar y rastrear.",
-                        "button": "Ir a Acerca de la evaluación"
                     }
                 },
                 "latestNews": {
@@ -152,20 +143,13 @@
                 "subtitle": "Ingrese su E-mail para recibir una nueva verificación de correo electrónico",
                 "emailInput": "E-mail",
                 "sendEmailButton": "Enviar E-mail",
-                "tryAgainButton": "Intentar otra vez",
-                "alerts": {
-                    "resendVerificationEmailSent": {
-                        "title": "¡El mensaje de verificación ha sido enviado!",
-                        "subtitle": "Revise su E-mail para ver el enlace de verificación"
-                    }
-                }
+                "tryAgainButton": "Intentar otra vez"
             },
             "resetPassword": {
                 "title": "RESTABLECER LA CONTRASEÑA",
                 "subtitle": "Introduzca una nueva contraseña a continuación",
                 "error": {
-                    "title": "¡Error!",
-                    "subtitle": "Problema con tu nueva contraseña"
+                    "title": "¡Error!"
                 },
                 "password1Input": "Contraseña",
                 "password2Input": "Confirmación de contraseña",
@@ -190,7 +174,6 @@
                 "year": "Año",
                 "countries": "Países",
                 "create": {
-                    "title": "Crear evaluación",
                     "popup": {
                         "title": "Crear Evaluación",
                         "labels": {
@@ -198,8 +181,7 @@
                             "year": "Seleccionar Año"
                         },
                         "placeholders": {
-                            "name": "Nombre de la evaluación",
-                            "year": ""
+                            "name": "Nombre de la evaluación"
                         },
                         "nameCriteria": "Ingrese un nombre corto y fácil de recordar, como Evaluación anual de Cabo Pulmo 2021",
                         "submit": "Crear Evaluación"
@@ -235,15 +217,20 @@
                     "byManagementAreas": "by MA",
                     "byCountries": "by Countries",
                     "byYear": "by Year",
-                    "byRealm": "by Realm",
                     "byType": "by Type of assessment",
                     "year": "Year",
                     "giveName": "Give it a name",
+                    "giveNamePlaceholder": "Name here",
                     "assessments": "Selected Assessments",
                     "create": "Create Aggregate Report",
                     "covering": "Assessments covering",
                     "coveringHA": "ha",
-                    "filtersSelected": "Filters selected"
+                    "filtersSelected": "Filters selected",
+                    "managementAreaNoOptions": "Type the name of MA",
+                    "managementAreaNoResults": "No matching MAs found",
+                    "selectedAssessmentsError": "You have to select at least 1 assessment",
+                    "nameRequiredError": "The name of the report is required",
+                    "nameLengthError": "The name of the report is too long"
                 }
             },
             "view": {
@@ -269,7 +256,6 @@
                             "supportSources": "¿La autoridad de gestión de la área de gestión recibe apoyo técnico, financiero o de otro tipo de alguno de los siguientes grupos u organizaciones?",
                             "countries": "País/Países donde se encuentra área de gestión",
                             "regions": "Estado(s)/Provincia(s) donde se encuentra área de gestión",
-                            "managementPlanFile": "Descarga el documento del plan de manejo",
                             "zones": {
                                 "title": "ZONAS",
                                 "zoneName": "Nombre de la zona",
@@ -289,15 +275,10 @@
                             "government": "Gobierno",
                             "indigenous": "Pueblos indígenas",
                             "private": "Sector privado",
-                            "user": "Grupo de usuario",
                             "total": "Total consultado"
                         },
                         "gender": {
                             "title": "8. Representación de género de los titulares de derechos y otros actores consultados",
-                            "female": "Femenina",
-                            "male": "Masculino",
-                            "nonBinary": "No binario/a",
-                            "preferNotToSay": "Prefiero no decirlo",
                             "total": "Totales por género"
                         }
                     },
@@ -350,8 +331,7 @@
                             "academic": "Académico",
                             "government": "Gobierno",
                             "indigenous": "Pueblos indígenas",
-                            "private": "Sector privado",
-                            "user": "Grupo de usuario"
+                            "private": "Sector privado"
                         },
                         "gender": {
                             "title": "Representación de género de los titulares de derechos y otros actores consultados",
@@ -402,10 +382,8 @@
                             "countries": "País/Países donde se encuentra el área de gestión",
                             "regions": "Estado(s)/Provincia(s) donde se encuentra el área de gestión",
                             "zones": "¿Esta área de gestión tiene zonas?",
-                            "zonesQuantity": "¿Cuántas zonas tiene el área de gestión?",
                             "zoneName": "Nombre de la zona",
                             "zoneLevel": "Seleccione el nivel de acceso que mejor describa esta zona",
-                            "zoneDescription": "Describa esta zona y sus atributos, incluidos los usos permitidos o restringidos, la estacionalidad y las personas que pueden y no pueden acceder a ella",
                             "protectedAreaWdpaIdHelp": "El ID de WDPA se puede encontrar en el sitio web de protected planet.",
                             "protectedAreaWdpaIdHelpLink": "Haga clic aquí para buscar",
                             "geospatialSources": "Indique la fuente de la información geoespacial"
@@ -437,7 +415,6 @@
                                 "fileCorrectlyFormatedText": "Su archivo ha sido verificado con éxito y está listo para cargar",
                                 "importFileError": "Lo siento, algo anda mal",
                                 "formatNotSupported": "Este formato no es compatible",
-                                "youCan": "Puede",
                                 "tryAgain": "intentarlo de nuevo",
                                 "help": "<h4>¿Qué archivo subir?</h4>Cargue un archivo de forma comprimido de los límites de la área de gestión. El zip debe contener los archivos componentes del archivo de forma y solo debe ser un archivo de forma del límite. Si no tiene el tipo de archivo correcto, convierta primero antes de cargarlo.",
                                 "condition1": "zip que contiene todos los archivos shapefile necesarios (o un zip con una carpeta que contiene esos archivos)",
@@ -482,464 +459,7 @@
                             "next": "Próximo",
                             "information": "Requisitos de información",
                             "guidance": "Guía",
-                            "rationale": "¿Qué está preguntando esta pregunta?",
-                            "items": {
-                                "stakeholder_harvest_rights": {
-                                    "question": "¿Existen normas formales o informales que definen claramente quien tiene derechos a cosechar los recursos de la AG?",
-                                    "information": "Conocimiento de la gama de los titulares de derechos y otros actores involucradas en la AG. Acceso a la información que abarque los derechos de la gente a cosechar los recursos naturales dentro de la AG, p. ej., un plan de gestión/legislatura/informadores clave con conocimientos convencionales.",
-                                    "guidance": "Claramente definidos significa que están escritos en documentos jurídicos o de gestión, o que son comunicados verbalmente por parte de los garantes. Nota: esta pregunta no aborda/no debe confundirse con el nivel de conocimiento de los titulares de derechos y otros actores sobre la distribución de derechos entre las partes interesadas. ",
-                                    "answers": {
-                                        "1": "Los derechos a cosechar los recursos naturales dentro de la AG no están claramente definidos",
-                                        "2": "Algunos derechos a cosechar los recursos naturales de la AG están ligeramente definidos",
-                                        "3": "La mayoría de los derechos a cosechar los recursos naturales de la AG están algo definidos",
-                                        "4": "Los derechos a cosechar los recursos naturales de la AG están claramente definidos",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Derechos de uso"
-                                },
-                                "stakeholder_develop_rules": {
-                                    "question": " ¿Existen mecanismos formales o informales que definan claramente quien tiene derechos a desarrollar normas para el uso de los recursos de la AG?",
-                                    "information": " Conocimiento de la gama de los titulares de derechos y otros actores involucradas en la AG. Conocimiento de los diferentes mecanismos que puedan existir (consultar los ejemplos a continuación). Estos mecanismos deben expresar claramente quien tiene el derecho a desarrollar normas. Entre los ejemplos de mecanismos formales se encuentran un plan de gestión de la AG o legislatura nacional en la que se expresen los derechos de la gente a desarrollar normas.",
-                                    "guidance": "Claramente definidos significa que están escritos en documentos jurídicos o de gestión, o que son comunicados verbalmente por parte de los garantes. En los casos en que existan mecanismos tanto formales como informales, usted deberá centrarse en los más predominantes y usar la casilla de explicación para explicar sus variaciones. Note:    i) No debe confundirse con el nivel de conocimiento de los titulares de derechos y otros actores; ii)  Esta pregunta no aborda/no debe confundirse con la distribución de derechos entre los titulares de derechos y otros actores; iii) Esta pregunta no indaga sobre cuán eficaces son los mecanismos, solo si existen y si se basan en derechos.",
-                                    "answers": {
-                                        "1": "Los derechos a desarrollar normas sobre el uso de los recursos naturales de la AG no están claramente definidos",
-                                        "2": "Algunos derechos a desarrollar normas sobre el uso de los recursos naturales de la AG están ligeramente definidos",
-                                        "3": "La mayoría de los derechos a derechos a desarrollar normas sobre el uso de los recursos naturales de la AG están algo definidos",
-                                        "4": "Los derechos a desarrollar normas sobre el uso de los recursos naturales de la AG están claramente definidos",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Management rights"
-                                },
-                                "stakeholder_exclude_others": {
-                                    "question": "¿Existen normas formales e informales que definan claramente los derechos de excluir a otros grupos de la cosecha de los recursos naturales de la AG?",
-                                    "information": " Conocimiento de la gama de los titulares de derechos y otros actores involucradas en la AG. Acceso a la información que abarca quien tiene los derechos de las partes interesadas a excluir a otros grupos de la cosecha de los recursos naturales de la AG, p. ej., plan de gestión/legislación/informadores clave con conocimiento convenciona.",
-                                    "guidance": "Claramente definidos significa que están escritos en documentos jurídicos o de gestión, o que son comunicados verbalmente por parte de los garantes.  'Otros grupos' se refiere a actores que no han utilizado, tradicional ni históricamente, los recursos de la AG. Nota: i) No debe confundirse con el nivel de conocimiento de los titulares de derechos y otros actores ii) Esta pregunta no aborda/no debe confundirse con la distribución de los derechos entre las los titulares de derechos y otros actores.",
-                                    "answers": {
-                                        "1": "Los derechos a excluir a otros grupos de la cosecha de los recursos naturales de la AG no están claramente definidos",
-                                        "2": "Los derechos a excluir a otros grupos de la cosecha de los recursos naturales de la AG están ligeramente definidos ",
-                                        "3": "Los derechos a excluir a otros grupos de la cosecha de los recursos naturales de la AG están algo definidos",
-                                        "4": "Los derechos a excluir a otros grupos de la cosecha de los recursos naturales de la AG están claramente definidos",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Exclusion rights"
-                                },
-                                "legislation_exists": {
-                                    "question": " ¿Existe una legislación implementada que permita que los titulares de derechos y otros actores gestionen los recursos?",
-                                    "information": " Conocimiento de la legislación regional/nacional y de los mecanismos para respaldar su implementación. Necesidades de gobernanza de la comunidad local; p. ej., la capacidad de restringir el acceso a la AG/AC de grupos externos o de hacer cumplir la legislación local respecto de su uso.",
-                                    "guidance": "<strong> Permitir </strong>  en este contexto significa que existen mecanismos eficaces de rendición de cuentas implementados, que respaldan la implementación significativa de la gestión de los recursos naturales por parte de las comunidades locales. Los <strong>mecanismos de rendición de cuentas</strong>  incluyen procesos de reclamaciones y quejas.",
-                                    "answers": {
-                                        "1": "Existe una legislación que permite que los titulares de derechos y otros actores locales desarrollen sus propias normas que rijan los recursos de la AG",
-                                        "2": "La legislación permite a los titulares de derechos y otros actores desarrollar sus propias normas, que rijan los recursos de la AG, pero existen problemas importantes que requieren solución.",
-                                        "3": "La legislación permite a los titulares de derechos y otros actores desarrollar sus propias normas que rijan los recursos de la AG, pero existen algunas debilidades",
-                                        "4": "La legislación permite a los titulares de derechos y otros actores desarrollar sus propias normas que rijan los recursos de la AG",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Enabling legislation"
-                                },
-                                "exercise_rights": {
-                                    "question": " ¿Pueden los actores locales con derechos a acceso a los recursos naturales ejercer sus derechos?",
-                                    "information": "Los derechos a los recursos naturales que tienen las comunidades locales. La índole de dificultades que presentan para ejercer estos derechos los titulares de derechos y otros actores (sobre todo, los grupos marginados o grupos muy dependientes de los recursos de la AG para satisfacer sus necesidades) Los informadores clave pueden ser una fuente útil de información para esclarecer algunos de los costos ocultos.",
-                                    "guidance": "<strong>Titulares de derechos y otros actores:</strong>  este es un término amplio que incluye varios grupos de interés. Algunos grupos, como los pueblos indígenas o los propietarios, pueden tener derechos específicos sobre un área que otros grupos no pueden tener. A los efectos de esta pregunta, considere las siguientes opciones, ya que se aplican a la mayoría de los titulares de derechos y otros actores. Incluye en la respuesta cualitativa cualquier variación entre los diferentes titulares de derechos y/u otros actores interesados, especialmente mujeres y otros grupos vulnerables, en el cuadro de explicación. <strong>Ejercicio</strong> –  la capacidad de actuar para reclamar o garantizar los derechos propios Esta capacidad pudiera ser financiera, de conocimientos, de conexiones sociales u otros mecanismos necesarios para ejercer los derechos propios. <strong>Costo</strong> –  es el esfuerzo, pérdida o sacrificio necesario para ejercer los derechos propios.",
-                                    "answers": {
-                                        "1": "Los titulares de derechos y otros actores no pueden ejercer sus derechos a los recursos",
-                                        "2": "Los titulares de derechos y otros actores pueden ejercer sus derechos a los recursos, pero existen costos significativos que limitan severamente su capacidad para hacerlo ",
-                                        "3": "Los titulares de derechos y otros actores pueden ejercer sus derechos a los recursos, pero existen algunos costos al hacerlo que necesitan ser abordados",
-                                        "4": "Los titulares de derechos y otros actores pueden ejercer sus derechos a los recursos sin ningún costo significativo para ellos",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Rights exercised"
-                                },
-                                "stakeholder_agency": {
-                                    "question": "¿En qué medida los titulares de derechos y otros actores influidos por las normas de la AG pueden hacer cambios en las normas?",
-                                    "information": " Conocimiento de la gama de plataformas de toma de decisiones que existen para la AG.  Conocimiento de las decisiones de gestión que se han tomado en los últimos 5 años.",
-                                    "guidance": "Los titulares de derechos y otros actores: esto es un término amplio que incluye a varios grupos de interés. Algunos grupos, como los pueblos indígenas o los dueños de propiedades, pueden tener derechos específicos sobre un área que otros grupos pueden no tener. Para esta pregunta, por favor, considere las opciones siguientes ya que se aplican a la mayoría de Los titulares de derechos y otros actores. La influencia es el poder de tener un efecto sobre las personas o las cosas. Esto puede ser directamente a través de la participación de los titulares de derechos y otros actores o indirectamente mediante representantes. Al responder esta pregunta, tenga en cuenta el poder de las mujeres u otros grupos en situación de vulnerabilidad/marginados y asegúrese de documentar estas diferencias en la casilla de explicación. La capacidad para influenciar/modificar significa que las normas/reglamentos reflejan los puntos de vista de los individuos afectados.  Casi nunca significa que la evidencia para influenciar/modificar las normas es escasa.  Ocasionalmente, significa que en ocasiones, pero no siempre, los puntos de vista de las los titulares de derechos y otros actores han sido incorporados en la gestión.",
-                                    "answers": {
-                                        "1": "Los individuos afectados por las normas de la AG no pueden influenciarlas/modificarlas.",
-                                        "2": "Los individuos afectados por las reglas de la AG casi nunca pueden influirlas/modificarlas",
-                                        "3": "Los individuos influenciados por las normas de la AG ocasionalmente pueden influirlas/modificarlas",
-                                        "4": "Los individuos afectados por las normas de la AG pueden influir en las decisiones de gestión",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Participation rights"
-                                },
-                                "vulnerable_defined_rights": {
-                                    "question": "¿Las mujeres y otros grupos vulnerables que viven en la comunidad local tienen derechos claramente definidos a los recursos naturales en la AG?",
-                                    "information": "Conocimiento de la gama de los titulares de derechos y otros actores involucrados en la AG. Acceso a la información sobre los derechos de los titulares de derechos y otros actores, p. ej., un plan de gestión/documentos jurídicos/informadores clave con conocimientos convencionales.",
-                                    "guidance": "Esta pregunta está diseñada para medir la gobernanza equitativa de los recursos naturales entre diferentes grupos de las Los titulares de derechos y otros actores. Claramente definidos: significa que están escritos en documentos jurídicos o de gestión, o que son comunicados verbalmente por parte de los garantes. Las mujeres u otros grupos vulnerables: Para esta pregunta, por favor, tenga en cuenta las opciones siguientes ya que se aplican a la mayoría de las mujeres/los titulares de derechos y otros actores vulnerables e incluya en la respuesta cualitativa cualquier variación entre ellas. Nota: i) No debe confundirse con el nivel de conocimiento de los titulares de derechos y otros actores; ii) Esta pregunta no trata/no debe confundirse con la distribución de los derechos de los titulares de derechos y otros actores.",
-                                    "answers": {
-                                        "1": "Los derechos de las mujeres o de grupos vulnerables, a los recursos naturales no están claramente definidos",
-                                        "2": "Algunos derechos a los recursos naturales en la AG están claramente definidos para las mujeres y otros grupos vulnerables",
-                                        "3": "La mayoría de los derechos a los recursos naturales en la AG están claramente definidos para las mujeres y otros grupos vulnerables",
-                                        "4": "Los derechos de las mujeres y otros grupos vulnerables a los recursos naturales están claramente definidos",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Access rights for women and vulnerable groups"
-                                },
-                                "benefits_shared": {
-                                    "question": "¿Existe una estrategia o método eficaz que garantice que los beneficios de la AG se compartan equitativamente entre las los titulares de derechos y otros actores?",
-                                    "information": "Conocimiento de la gama de plataformas de toma de decisiones que existen para la AG. Conocimiento de las decisiones de gestión que se han tomado en los últimos 5 años.",
-                                    "guidance": "La influencia es el poder de tener un efecto sobre las personas o las cosas. Esto puede ser directamente a través de la participación de las los titulares de derechos y otros actores o indirectamente, mediante representantes. Tenga en cuenta el poder de las mujeres y grupos marginados.  Equitativo: significa que los titulares de derechos y otros actores reciben beneficios que son proporcionales a los costos que asumen por respetar las normas. Pocas: significa aproximadamente < 50%. Algunas: significa aproximadamente = 50%. La mayoría: significa aproximadamente > 50%",
-                                    "answers": {
-                                        "1": "No existe estrategia ni método para la distribución equitativa de los beneficios entre las correspondientes partes interesadas",
-                                        "2": "Una estrategia o método para la distribución equitativa se está preparando o ha sido preparada, pero no implementada",
-                                        "3": "Una estrategia o método para la distribución equitativa de beneficios está parcialmente implementada",
-                                        "4": "Una estrategia o método para la distribución equitativa está completamente implementada",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Equitable benefit sharing"
-                                },
-                                "supportive_networks": {
-                                    "question": "¿Existen redes para desarrollar las relaciones sociales y apoyar el aprendizaje mutuo entre los titulares de derechos y otros actores?",
-                                    "information": "Conocimiento de la gama y alcance de redes formales e informales. Un informador clave con amplias redes sociales puede ser útil para consultar.",
-                                    "guidance": "N/A",
-                                    "answers": {
-                                        "1": "No existen redes que puedan desarrollar relaciones sociales y apoyar el aprendizaje mutuo.",
-                                        "2": "No existen tales redes, pero existe interés por desarrollarlas",
-                                        "3": "Existen redes, pero no siempre son eficaces para desarrollar las relaciones sociales y apoyar el aprendizaje.",
-                                        "4": "Sí, existen redes que, de manera eficaz, desarrollan relaciones sociales y apoyan el aprendizaje mutuo.",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Social networks"
-                                },
-                                "climatechange_incorporated": {
-                                    "question": "¿Se está utilizando la información sobre el cambio climático para desarrollar resiliencia comunitaria al cambio climático?",
-                                    "information": "Conocimiento de fuentes de información sobre el cambio climático, la planificación de procesos para abordar la resiliencia comunitaria, nivel de avance en la planificación, y cómo los planes ya se están implementando.",
-                                    "guidance": "N/A",
-                                    "answers": {
-                                        "1": "No han existido esfuerzos ni planes para emplear la información sobre el cambio climático para proveer de información a las estrategias de desarrollo de resiliencia comunitaria",
-                                        "2": "Se ha realizado cierto esfuerzo inicial sobre cómo emplear la información sobre el cambio climático para proveer de información a las estrategias de desarrollo de resiliencia comunitaria, pero esto aún está por implementarse.",
-                                        "3": "Se han desarrollado planes limitados sobre cómo utilizar la información sobre el cambio climático para proveer de información a las estrategias de desarrollo de resiliencia comunitaria, los cuales pueden o no estar implementados.",
-                                        "4": "Se han desarrollado planes sobre cómo utilizar la información sobre el cambio climático para proveer de nformación a las estrategias de desarrollo de resiliencia comunitaria, y estos se están implementando.",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Community resilience"
-                                },
-                                "governance_accountable": {
-                                    "question": "¿A los responsables de la gobernanza de la AG se les pide rendir cuentas si no realizan su función?",
-                                    "information": "Conocimiento de los mecanismos formales o informales de rendición de cuentas En el caso de los organismos y procesos informales que no son documentados, quizá deba preguntar a un informador clave. Conocimiento de los problemas/desafíos pasados o presentes de gobernanza y de cómo estos sean abordado.",
-                                    "guidance": "La intención de esta pregunta es comprender si existen mecanismos o sistemas implantados que puedan ayudar a asegurar que los responsables de gestionar y administrar la AG están llevando a cabo sus responsabilidades de manera eficaz. Casi nunca significa que los eventos de rendición de cuentas son escasos. Ocasionalmente significa que ha habido, al menos, una instancia en la que a los administradores se les ha pedido rendir cuentas.",
-                                    "answers": {
-                                        "1": "No pasa nada",
-                                        "2": "A los responsables de la gobernanza de la AG casi nunca se les pide rendir cuentas por no realizar su función",
-                                        "3": "A los responsables de la gobernanza de la AG se les pide rendir cuentas ocasionalmente cuando no realizan sus funciones",
-                                        "4": "A los responsables de la gobernanza de la AG siempre se les pide rendir cuentas cuando no realizan su función",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Accountability"
-                                },
-                                "timely_information": {
-                                    "question": " ¿Los titulares de derechos y otros actores reciben información de las autoridades de la AG oportunamente?",
-                                    "information": "Conocimiento de los procesos de distribución de información dentro de la AG y de las percepciones de las autoridades y los titulares de derechos y otros actores",
-                                    "guidance": "Oportunamente: significa que la información se recibe en un momento que se considera útil, efectivo o pertinente para los titulares de derechos y otros actores.",
-                                    "answers": {
-                                        "1": "Los titulares de derechos y otros actores no reciben información de parte de las autoridades de la AG",
-                                        "2": "Los titulares de derechos y otros actores reciben información de parte de las autoridades de la AG, pero no de manera oportuna",
-                                        "3": "Los titulares de derechos y otros actores reciben información de parte de las autoridades de la AG, pero no siempre de manera oportuna",
-                                        "4": "Los titulares de derechos y otros actores siempre reciben información de parte de las autoridades de la AG de manera oportuna",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Timely information sharing"
-                                },
-                                "conflict_resolution_access": {
-                                    "question": " ¿Tienen los titulares de derechos y otros actores acceso a mecanismos eficaces de resolución de conflictos?",
-                                    "information": "Los mecanismos de resolución de conflictos en el sitio, incluyendo procedimientos de quejas y reclamaciones y otros mecanismos de rendición de cuentas Estos pueden ser procedimientos formales o informales.",
-                                    "guidance": "Esta pregunta es sobre la presencia y eficacia de los mecanismos de resolución de conflictos; en particular, los relacionados con el acceso/uso de los recursos naturales. Los mecanismos eficaces de resolución de conflictos se caracterizan por ser 1) de acceso rápido, 2) bajo costo, 3) locales y 4) fiables. Las cuatro condiciones tienen que cumplirse para que se consideren eficaces. Casi nunca significa que la evidencia de un acceso rápido y de bajo costo, a los espacios de resolución de conflictos, es escasa. En ocasiones significa que existe evidencia que demuestra que esto ha sucedido en más de una ocasión, pero no de manera periódica.",
-                                    "answers": {
-                                        "1": "Los usuarios no tienen acceso a espacios eficaces para solucionar conflictos entre los usuarios",
-                                        "2": "Casi nunca los usuarios tienen acceso a espacios locales eficaces para resolver conflictos",
-                                        "3": "En ocasiones los usuarios tienen acceso a espacios eficaces",
-                                        "4": "Existe un acceso rápido para los usuarios a los espacios eficaces",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Conflict resolution"
-                                },
-                                "penalties_frequency": {
-                                    "question": " ¿Con qué frecuencia se aplican las penalizaciones por violación de normas del uso de los recursos?",
-                                    "information": "Acceso a los datos de ejecución normativa o personal de ejecución normativa",
-                                    "guidance": "Las penalizaciones pueden incluir desde sanciones locales hasta nacionales. Una sanción puede ser leve como advertencia o severa como una multa o la confiscación de bienes personales.  Casi nunca - significa que las sanciones apenas se administran cuando se ifringen las reglas de recursos, por ejemplo, no se puede identificar un solo caso de infracción de reglas que haya sido penalizado en el último año. Ocasionalmente - significa que a veces se administran sanciones cuando se infringen las reglas de recursos, p. hubo al menos un caso de incumplimiento de las reglas que fue penalizado en el último año. Habitualmente - significa que se aplican penalizaciones la mayoría de las veces cuando se violan las normas. Especifique en la casilla de explicación quién emite la penalización.",
-                                    "answers": {
-                                        "1": "Nunca se aplican penalizaciones",
-                                        "2": "Casi nunca se aplican penalizaciones",
-                                        "3": "Ocasionalmente se aplican penalizaciones",
-                                        "4": "Habitualmente se aplican penalizaciones",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Sanctioning for rule violations"
-                                },
-                                "penalties_fair": {
-                                    "question": " ¿En qué medida las penalizaciones por violación de normas de uso de recursos dependen de la naturaleza, severidad o frecuencia de la infracción?",
-                                    "information": "Datos sobre ejecución normativa o personal de ejecución normativa",
-                                    "guidance": "Igual - a los usuarios que violan las normas sobre el uso de recursos se les penaliza en correspondencia con la gravedad de la infracción. Penalizaciones pueden incluir desde sanciones locales hasta nacionales, especificar en la casilla de explicación quién expide la penalización. ¿Existen diferentes penalizaciones dependiendo de la magnitud/escala de la infracción? Pocos es aproximadamente < 50 %. Algunos es aproximadamente = 50 %. La mayoría es aproximadamente > 50%.",
-                                    "answers": {
-                                        "1": "Las penalizaciones son fijas y no dependen de la naturaleza, gravedad o frecuencia de la infracción.",
-                                        "2": "Algunas penalizaciones dependen de la naturaleza, gravedad o frecuencia de la infracción",
-                                        "3": "La mayoría de las penalizaciones dependen de la naturaleza, gravedad o frecuencia de la infracción",
-                                        "4": "Todas las penalizaciones dependen de la naturaleza, gravedad o frecuencia de la penalización",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Graduated sanctions"
-                                },
-                                "ecological_monitoring_used": {
-                                    "question": " ¿Existen sistemas implementados para supervisar y documentar las condiciones ecológicas en la AG?",
-                                    "information": " Conocimiento del estado de sistemas y prácticas de supervisión para registrar y dar seguimiento a condiciones ecológicas de la AG.",
-                                    "guidance": "Esta pregunta trata menos sobre la capacidad y recursos para supervisar las condiciones ecológicas en la AG y está más dirigida a si la capacidad existente se emplea e implementa de manera eficaz. Si existe un plan de monitoreo, pero aún no ha sido implementado, indíquelo en la sección Explicación y elija como respuesta “Los sistemas no existen o no son efectivos para monitorear y documentar las condiciones ecológicas en la EM”",
-                                    "answers": {
-                                        "1": "No existen sistemas o no son efectivos para supervisar y documentar las condiciones ecológicas en la AG",
-                                        "2": "Existen sistemas pero solo son parcialmente efectivos para supervisar y documentar las condiciones ecológicas en la AG",
-                                        "3": "Existen sistemas y son moderadamente efectivos para supervisar y documentar las condiciones ecológicas en la AG",
-                                        "4": "Existen sistemas y son en gran parte o totalmente efectivos para supervisar y documentar las condiciones ecológicas en la AG",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Ecological monitoring"
-                                },
-                                "social_monitoring_used": {
-                                    "question": " ¿Existen sistemas implementados para supervisar y documentar las condiciones sociales de las comunidades en la AG y/o adyacentes a ella?",
-                                    "information": "Conocimiento del estado de los sistemas y prácticas de supervisión para registrar y dar seguimiento a las condiciones sociales en la AG.",
-                                    "guidance": "Esta pregunta trata menos sobre la capacidad y los recursos para supervisar las condiciones sociales en la AG y está más dirigida a si la capacidad existente se está empleando de manera efectiva.",
-                                    "answers": {
-                                        "1": "No existen sistemas o no son efectivos para supervisar y documentar las condiciones en la AG",
-                                        "2": "Existen sistemas pero solo son parcialmente efectivos para supervisar y documentar las condiciones en la AG",
-                                        "3": "Existen sistemas y son moderadamente efectivos para supervisar y documentar las condiciones en la AG",
-                                        "4": "Existen sistemas y son en gran parte o totalmente efectivos para supervisar y documentar las condiciones en la AG",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Social monitoring"
-                                },
-                                "climatechange_monitored": {
-                                    "question": "¿Existen sistemas implementados para supervisar y documentar los impactos del cambio climático?",
-                                    "information": "Conocimiento del estado de los sistemas y prácticas de supervisión para registrar y dar seguimiento a impactos del cambio climático",
-                                    "guidance": "Esta pregunta trata menos sobre la capacidad y recursos para supervisar los impactos del cambio climático y está más dirigida a si la capacidad existente se emplea de manera efectiva.",
-                                    "answers": {
-                                        "1": "No existen sistemas o no son efectivos para supervisar y documentar los impactos del cambio climático",
-                                        "2": "Existen sistemas pero solo son parcialmente efectivos para supervisar y documentar los impactos del cambio climático",
-                                        "3": "Existen sistemas y son moderadamente efectivos para supervisar y documentar los impactos del cambio climático",
-                                        "4": "Existen sistemas y son en gran parte o totalmente efectivos para supervisar y documentar los impactos del cambio climático",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Climate change monitoring"
-                                },
-                                "multiple_knowledge_social": {
-                                    "question": "¿Los responsables de la gestión de la AG integran diferentes tipos de conocimiento (científico, experimental, local y tradicional) en las decisiones de gestión?",
-                                    "information": "Entre los diferentes tipos de conocimiento se encuentran:  conocimientos indígenas y locales (generalmente incorporados mediante la implicación de los pueblos indígenas y comunidades locales en los procesos de toma de decisiones), conocimiento experimental, y varios tipos de conocimientos científicos convencionales (CCC); entre ellos, la información de las ciencias naturales y sociales y de la supervisión ecológica y social de la AG (consultar las preguntas de la 5 a la 7). La diversidad en este caso se refiere a más de dos tipos diferentes de conocimiento",
-                                    "guidance": " Los poseedores de conocimientos pertinentes son individuos o grupos que representan diferentes sistemas, como el tradicional, indígena o los sistemas de conocimiento locales",
-                                    "answers": {
-                                        "1": "No, los tipos de conocimientos diversos no se incluyen en la gestión/toma de decisiones",
-                                        "2": "Algunos tipos de conocimientos diversos se incluyen de formas limitadas dentro de la gestión/toma de decisiones, pero no se reflejan o se reflejan de forma limitada en los resultados del plan",
-                                        "3": "Los tipos de conocimientos diversos se incluyen en la gestión/toma de decisiones y en los resultados del plan, pero su incorporación no está orientada por los poseedores de conocimiento pertinente.",
-                                        "4": "Sí, los tipos de conocimientos diversos se incluyen en la gestión/toma de decisiones y los resultados del plan, y su inclusión está orientada por los poseedores de conocimientos",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Knowledge integration"
-                                },
-                                "multiple_knowledge_integrated": {
-                                    "question": " ¿Se incorporan rutinariamente los resultados de la supervisión, investigación y evaluación en las decisiones y/o políticas relacionadas con la gestión de la AG?",
-                                    "information": "Conocimiento de la supervisión, investigación y evaluación que tiene lugar en la AG (p. ej., puede hacer referencia a las preguntas de la 5 a la 7).  Conocimiento de los procedimientos de toma de decisiones de la AG (p. ej., quién está implicado y cómo) ",
-                                    "guidance": "Se incorporan rutinariamente - existen procedimientos establecidos o claramente reconocibles para incluir de manera activa los resultados de la supervisión, investigación o evaluación, cuando se toman decisiones. Debilidades importantes - la debilidad identificada que evita su integración adecuada en la toma decisiones de gestión. Algunas debilidades - los resultados se incorporan pero se puede hacer más para mejorar su eficacia.",
-                                    "answers": {
-                                        "1": "Los resultados de la supervisión, investigación y evaluación no se incorporan de manera rutinaria en las decisiones de gestión",
-                                        "2": "Los resultados de la supervisión, investigación y evaluación se incorporan de manera rutinaria en las decisiones de gestión, pero existen debilidades importantes",
-                                        "3": "Los resultados de la supervisión, investigación y evaluación se incorporan rutinariamente en las decisiones de gestión, pero existen algunas debilidades",
-                                        "4": "Los resultados de la supervisión, investigación y evaluación se incorporan rutinariamente en las decisiones de gestión",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Knowledge feedbacks"
-                                },
-                                "climatechange_managed": {
-                                    "question": "¿La AG está concienzudamente gestionada para adaptarse al cambio climático?",
-                                    "information": " Conocimiento de las adaptaciones para anticipar el cambio climático y cómo estas ya se están implementando.",
-                                    "guidance": " La adaptación al cambio climático significa reducir la vulnerabilidad de la integridad ecológica de la AG a los efectos reales o anticipados del cambio climático.",
-                                    "answers": {
-                                        "1": "No han existido ni esfuerzos ni planes para considerar la adaptación a la gestión del cambio climático",
-                                        "2": "Hubo algunas ideas iniciales sobre los impactos actuales y anticipados del cambio climático, pero esto aún tiene que traducirse en planes de gestión",
-                                        "3": "Se han trazado planes limitados sobre cómo adaptar la gestión al cambio climático actual y anticipado, lo cual podría o no implementarse",
-                                        "4": "Se han trazado planes detallados sobre cómo adaptar la gestión al cambio climático actual y anticipado, y estos ya se están implementando",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Anticipatory planning"
-                                },
-                                "rights_governance": {
-                                    "question": " ¿La cantidad que una persona puede beneficiarse de los recursos dentro de la AG está relacionada con sus contribuciones a la gobernanza de la AG (en términos de tiempo y/o recursos aportados)?",
-                                    "information": "Conocimiento de la implicación de los diferentes titulares de derechos y otros actores en la gobernanza y de sus derechos a acceder/beneficiarse de los recursos",
-                                    "guidance": "Aportes: A continuación, se relacionan algunas preguntas como ejemplos para describir los tipos de aportes que pueden hacer las los titulares de derechos y otros actores.  ¿Se les exige a los usuarios de los recursos asistir a reuniones de gestión si ellos quieren incrementar el acceso a recursos?  ¿Se les exige a los usuarios de los recursos pagar honorarios a una organización de gestión local o regional si ellos quieren incrementar el acceso a recursos?  ¿Se les exige a los usuarios dedicar su tiempo voluntariamente a actividades de gestión como la supervisión, penalización, resolución de conflictos o mantenimiento de la infraestructura si ellos quieren incrementar acceso a recursos?",
-                                    "answers": {
-                                        "1": "Los derechos a cosechar o beneficiarse de los recursos no están relacionados con los aportes a la gobernanza",
-                                        "2": "Los derechos a cosechar o beneficiarse de los recursos están ligeramente relacionados con las contribuciones a la gobernanza",
-                                        "3": "Los derechos a cosechar o beneficiarse de los recursos están algo relacionados con los aportes a la gobernanza",
-                                        "4": "Los derechos a cosechar o beneficiarse de los recursos están directamente relacionados con los aportes a la gobernanza",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Proportionality"
-                                },
-                                "management_levels_cohesive": {
-                                    "question": " ¿Existen diferentes niveles dentro de la AG que funcionen como una unidad coordinada?",
-                                    "information": "Las diferentes autoridades de gestión (formales o informales) que pueden existir dentro de la AG y el grado de sinergia entre ellas.",
-                                    "guidance": "Niveles - Formal o informal Pueden existir jurisdicciones de gestión solapadas pertenecientes a diferentes departamentos gubernamentales. Coordinada significa unida y funcionando en conjunto de manera eficaz.  Debilidad importante - la debilidad identificada que impide la gestión correcta de la AG.  Algunas debilidades - la debilidad identificada puede mejorarse, pero es posible operar para cumplir los requisitos de gestión básicos",
-                                    "answers": {
-                                        "1": "Existen diferentes niveles de zonas de gestión, pero no funcionan como una unidad cohesionada ",
-                                        "2": "Existen diferentes niveles de zonas de gestión, pero hay debilidades importantes en su cohesión",
-                                        "3": "Existen diferentes niveles de zonas de gestión, pero hay algunas debilidades en su cohesión",
-                                        "4": "Existen diferentes niveles de zonas de gestión y funcionan como una unidad cohesionada",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Nested governance"
-                                },
-                                "regulations_exist": {
-                                    "question": "¿Están implementados los reglamentos adecuados para controlar las actividades relacionadas con los recursos en la AG?",
-                                    "information": "Acceso a la información (formal) sobre los reglamentos; p. ej., un plan de gestión o documentos jurídicos/gubernamentales.  Acceso a información informal/no documentada sobre reglamentos convencionales asociados a los titulares de derechos y otros actores; esto podría incluir normas verbales.",
-                                    "guidance": "Esta pregunta trata sobre los reglamentos de conservación; entre ellos, los reglamentos internos, locales y nacionales. Adecuados significa reglamentos que promuevan el uso sostenible sin desfavorecer a los titulares de derechos y otros actores.  Debilidades importantes: Esto podría entrar en el campo de los reglamentos; p. ej., actividades esenciales que no reguladas o instancias en las que existen reglamentos que perjudican severamente a los titulares de derechos y otros actores. Algunas debilidades: Las actividades esenciales están cubiertas por regulaciones, pero hay más actividades que deben incluirse y/o hay problemas de los titulares de derechos y otros actores perjudicadas. Bases óptimas: Esto podría significar que las regulaciones cubren todas las actividades relacionadas con los recursos naturales que se consideran necesarias para promover el uso sostenible, sin provocar perjuicios a los titulares de derechos y otros actores.",
-                                    "answers": {
-                                        "1": "No existen reglamentos para controlar las actividades relacionadas con los recursos naturales de la AG.",
-                                        "2": "Existen los reglamentos para controlar las actividades relacionadas con los recursos naturales de la AG, pero existen debilidades importantes",
-                                        "3": "Existen reglamentos para controlar las actividades relacionadas con los recursos naturales de la AG, pero hay algunas debilidades",
-                                        "4": "Existen los reglamentos para controlar las actividades relacionadas con los recursos naturales y proveen unas bases óptimas para la gestión",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Appropriate level of regulations"
-                                },
-                                "management_plan": {
-                                    "question": "¿Existe un plan de gestión para la AG y se está implementando?",
-                                    "information": "Acceso al plan de gestión más reciente (incluso si fuera obsoleto) o al personal responsable de redactar uno",
-                                    "guidance": "La definición de plan de gestión puede ampliarse para que incluya cualquier proceso formal o informal que describa cómo se va a gestionar la AG. Si esto fuera aplicable a la AG que está evaluando, por favor, incluya esto en la casilla de explicación junto a su respuesta.  La segunda respuesta tiene dos opciones. Por favor, especifique en la casilla de explicación qué opción se aplica a su AG. Los planes de gestión puede cargarse en Elinordata.org.",
-                                    "answers": {
-                                        "1": "No existe un plan de gestión para la AG",
-                                        "2": "Se está preparando un plan de gestión O Se ha preparado un plan de gestión, pero no se está implementando",
-                                        "3": "Existe un plan de gestión, pero solo se está implementando parcialmente, debido a restricciones de inanciación u otros problemas",
-                                        "4": "Existe un plan de gestión y se está implementando completamente",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Management plan"
-                                },
-                                "boundary_known": {
-                                    "question": "¿Conocen la frontera todos los grupos locales de los titulares de derechos y otros actores?",
-                                    "information": " Conocimiento de la gama de los titulares de derechos y otros actores. Si existiera un análisis de partes interesadas o plan de implicación, constituiría un buen documento de referencia del rango de los titulares de derechos y otros actores. Acceso a los documentos legales o planes de gestión que tengan información sobre la frontera de la AG. Acceso a los recursos de información informal que podrían incluir conocimientos sobre las fronteras (p. ej., historiadores locales).",
-                                    "guidance": "Nota: Responda esta pregunta de lo que entiende usted que es la frontera. Para que una frontera sea conocida por un grupo de los titulares de derechos y otros actores, al menos un individuo tiene que poder ofrecer la información de forma verbal o escrita o la información tiene que ser accesible al grupo cuando se le pregunte (p. ej., mediante los registros existentes). Pocos es aproximadamente <50%. Algunos es aproximadamente = 50%. La mayoría es aproximadamente > 50%.",
-                                    "answers": {
-                                        "1": "La frontera de la AG no es conocida por los grupos pertinentes de los titulares de derechos y otros actores",
-                                        "2": "La frontera de la AG es conocida por unos pocos grupos de los titulares de derechos y otros actores",
-                                        "3": "La frontera de la AG es conocida por algunos grupos de los titulares de derechos y otros actores",
-                                        "4": "La frontera de la AG es conocida por la mayoría de los grupos de los titulares de derechos y otros actores",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Awareness of boundaries"
-                                },
-                                "boundary_defined": {
-                                    "question": "¿Está claramente definida la frontera?",
-                                    "information": "Acceso a los documentos legales o planes de gestión que tengan información sobre la frontera de la AG.  Acceso a informadores locales clave o al personal del sitio que pueda identificar las demarcacionest.",
-                                    "guidance": "Nota: Esta pregunta tiene relación con lo que usted o las participantes del grupo focal entienden que es la frontera. Las demarcaciones ayudan a marcar las fronteras y pueden ser construidas (p. ej., señales, boyas) o ser rasgos naturales del paisaje. Pueden o no estar físicamente presentes en el paisaje, pero pueden aparecer en los mapas de los planes/documentos de gestión o cuentas locales. Deficiencias críticas, pueden ser interpretadas como algunas áreas de la AG/AC que no estén demarcadas o tengan demarcaciones no seguras. Algunas deficiencias, pueden ser interpretadas como que se requieren algunos ajustes, pero estos no interfieren con su habilidad para funcionar adecuadamente. Bien demarcadas, pueden ser interpretadas como que no requieren más mejoras.",
-                                    "answers": {
-                                        "1": "La frontera de la AG no está demarcada",
-                                        "2": "La frontera de la AG está demarcada pero existen deficiencias críticas",
-                                        "3": "La frontera de la AG está demarcada, pero existen algunas deficiencias",
-                                        "4": "La frontera de la AG está bien demarcada",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Defined boundaries"
-                                },
-                                "outcomes_achieved_ecological": {
-                                    "question": "¿En qué medida cree usted que se están logrando los resultados ecológicos?",
-                                    "information": "Documentos como un plan de gestión que relacione los objetivos ecológicos para el área. En el caso de los objetivos que no están documentados, quizá deba pedir a un informador clave relacionado con la autoridad responsable que establezca los objetivos (esto puede ser a través de procesos formales e informales). Documentos/datos de supervisión y evaluación; información de la percepción de los usuarios u otros informadores clave (p. ej., investigadores); observaciones personales y conocimientos de la ecología del sistema.",
-                                    "guidance": "No - no hay resultados ecológicos notables < Parcialmente - hay algunos resultados, pero no suficientes para lograr los objetivos ecológicos <En su mayoría - los resultados son suficientes para lograr algunos objetivos ecológicos clave < Completamente - los resultados son suficientes para lograr todos los objetivos ecológicos clave.<",
-                                    "answers": {
-                                        "1": "Los resultados ecológicos no se están logrando",
-                                        "2": "Los resultados ecológicos solo se están logrando parcialmente",
-                                        "3": "Los resultados ecológicos se están logrando en su mayoría",
-                                        "4": "Los resultados ecológicos se están logrando completamente",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Perceived ecological outcomes"
-                                },
-                                "outcomes_achieved_social": {
-                                    "question": "¿En qué medida cree usted que se están logrando los resultados sociales?",
-                                    "information": "Los documentos como un plan de gestión que relacione los objetivos sociales para el área. En el caso de los objetivos que no están documentados, quizá deba pedir a un informador clave relacionado con la autoridad responsable que establezca los objetivos (esto puede ser a través de procesos formales e informales). Documentos/datos de supervisión y evaluación; información de percepción de los usuarios o de informadores clave (p. ej., investigadores); observaciones personales y conocimientos de las características socioeconómicas del sistema.",
-                                    "guidance": " Los resultados sociales incluyen impactos sobre el bienestar humano y el sustento de los titulares de derechos y otros actores. No - no hay resultados sociales notables.  Parcialmente - los resultados no son suficientes para lograr los objetivos sociales.  En su mayoría - los resultados son suficientes para lograr algunos de los objetivos clave.  Completamente - los resultados son suficientes para lograr todos los objetivos sociales clave",
-                                    "answers": {
-                                        "1": "Los resultados sociales no se están logrando",
-                                        "2": "Los resultados sociales solo se están logrando parcialmente",
-                                        "3": "Los resultados sociales se están logrando en su mayoría",
-                                        "4": "Los resultados sociales se están logrando completamente",
-                                        "5": "No sé"
-                                    },
-                                    "reportText": "Perceived social outcomes"
-                                },
-                                "management_capacity": {
-                                    "question": "Do those responsible for managing the MA (e.g., staff, community associations, management groups) have the capacity to enforce the rules and regulations?",
-                                    "information": "Access to the site manager/local authority/duty-bearers,    or equivalent to ask about enforcement capacity Knowledge of the (informal/formal) rules and regulationsAny available databases/documents on enforcement targets, evaluation or monitoring",
-                                    "guidance": "Note: rules and regulations may not always be legal laws, and may include local rules and normsCapacity: This is related to a person’s ability: it could mean the necessary skill set(s) required for enforcement; it could also refer to level of authority e.g., legal capacityResources: This could mean technical equipment, time, money, skillsPartial enforcement: means that there are major weaknesses that need to be addressed to ensure the proper functioning of the MAAcceptable enforcement can mean that a minimum level of enforcement exists which allows the functioning of the MA but there are some gaps/weaknesses that need to be addressed to ensure its sustainability into the futureFully enforce means that an adequate level of enforcement exists which allows the functioning of the MA and there are no significant (negligible) gaps/weaknesses and cannot affect its sustainability into the future.",
-                                    "answers": {
-                                        "1": "Those with responsibility for managing the MA do not have the capacity to enforce the rules and regulations",
-                                        "2": "Those with responsibility for managing the MA can only partially enforce the rules and regulations",
-                                        "3": "Those with responsibility for managing the MA can adequately enforce the rules and regulations",
-                                        "4": "Those with responsibility for managing the MA can fully enforce the rules and regulations",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Enforcement capacity"
-                                },
-                                "sufficient_staff": {
-                                    "question": "Are there enough people employed or engaged to manage the MA?",
-                                    "information": "Information on the number of people involved in MA managementProposal/management plan for the site to understand the priority management activitiesInformal communication with those involved in management activities may help to assess what is enough",
-                                    "guidance": "The question is in reference to all people who manage the MA on a regular basis or are employed as staff.",
-                                    "answers": {
-                                        "1": "No one is employed or engaged to manage the MA",
-                                        "2": "Numbers of people employed or engaged to manage the MA are insufficient to carry out management activities effectively ",
-                                        "3": "Numbers of people employed or engaged to manage the MA are below optimum level necessary to carry out management activities effectively",
-                                        "4": "Numbers of people employed or engaged to manage the MA are sufficient to carry out management activities effectively",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Staff and human resources"
-                                },
-                                "staff_capacity": {
-                                    "question": "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
-                                    "information": "Proposal/management plan for the MA to understand the management activitiesKnowledge of the full range of personnel involved in MA management",
-                                    "guidance": "Personnel includes all individuals responsible for MA management activities",
-                                    "answers": {
-                                        "1": "Those responsible for managing the MA lack the skills needed for MA management objectives",
-                                        "2": "Training and skills of those responsible for managing the MA are low relative to the management objectives of the MA",
-                                        "3": "Training and skills of those responsible for managing the MA are adequate but could be further improved to fully achieve the objectives of management.",
-                                        "4": "Training and skills of those responsible for managing the MA are aligned with the management objectives of the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Skills and capacity"
-                                },
-                                "sufficient_budget": {
-                                    "question": "Is the current budget or funds used to support MA activities sufficient?",
-                                    "information": "MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently.Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines how the financial or management objectives on the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).",
-                                    "guidance": "If the budget information is not available please select “Do not know”",
-                                    "answers": {
-                                        "1": "There is no budget or funds for management of the MA",
-                                        "2": "The available budget or funds is inadequate for basic management needs and presents a serious constraint to the capacity to manage the MA",
-                                        "3": "The available budget or funds is acceptable but could be further improved to fully achieve effective management",
-                                        "4": "The available budget or funds is sufficient and meets the full management needs of the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Financial resources"
-                                },
-                                "budget_secure": {
-                                    "question": "Is the budget or funding secure?",
-                                    "information": "MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently (see previous question on budget sufficiency)Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines the financial or management objectives of the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).",
-                                    "guidance": "Secure budget    = 5 years or longer",
-                                    "answers": {
-                                        "1": "There is no secure budget or funding for the MA and management is wholly reliant on outside or highly variable funding",
-                                        "2": "There is very little secure budget or funding, and the protected area could not function adequately without outside funding",
-                                        "3": "There is a reasonably secure core budget or funding for regular operation of the MA, but many innovations and initiatives are reliant on outside funding",
-                                        "4": "There is a secure budget or funding for the MA and its management needs",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Secure funding"
-                                },
-                                "sufficient_equipment": {
-                                    "question": "Is the equipment sufficient for management needs?",
-                                    "information": "Proposal/management plan for the site to understand the management needsInventory of equipment/facilities accessible to the siteSite level equipment facilitiesKnowledge of equipment maintenance requirements",
-                                    "guidance": "Consider to what extent the available equipment and facilities are adequately maintained.",
-                                    "answers": {
-                                        "1": "There is little or no equipment and facilities for management needs ",
-                                        "2": "There are some equipment and facilities, but these are inadequate for most management needs",
-                                        "3": "There are equipment and facilities, but still some gaps that constrain management",
-                                        "4": "There are adequate equipment and facilities",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Assets and equipment"
-                                }
-                            }
+                            "rationale": "¿Qué está preguntando esta pregunta?"
                         }
                     },
                     "collaborators": {
@@ -998,8 +518,6 @@
                     },
                     "publish-settings": {
                         "tabButton": {
-                            "ready": "Listo para publicar",
-                            "preparing": "Preparándose para publicar",
                             "edit": "Editar configuración de publicación"
                         },
                         "title": "Finalizar y publicar",
@@ -1047,18 +565,6 @@
                                 "confirmationTitle": "¿Estás seguro de que quieres anular la publicación de tu evaluación?",
                                 "confirmationDescription": "Confirmar"
                             }
-                        },
-                        "statuses": {
-                            "public": {
-                                "name": "Público",
-                                "paragraph1": "Usted pone a disposición del público su evaluación.",
-                                "paragraph2": "Aparecerá como datos agregados en insights y mapas."
-                            },
-                            "private": {
-                                "name": "Privado",
-                                "paragraph1": "La Evaluación sólo será visible para ti y tus colaboradores",
-                                "paragraph2": "Aparecerá como datos agregados en insights y mapas."
-                            }
                         }
                     }
                 },
@@ -1069,11 +575,6 @@
                 "mandatoryAttribute": "Mandatory",
                 "inactiveAttribute": "Inactive attribute",
                 "activeAttribute": "Active attribute"
-            },
-            "roles": {
-                "admin": "Administrador",
-                "contributor": "Contribuyente",
-                "observer": "Observador"
             },
             "statuses": {
                 "90": "Abierto",
@@ -1182,13 +683,7 @@
             "home": {
                 "meta": {
                     "title": "Documentación",
-                    "slug": "/documentation",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/documentation"
                 }
             },
             "header": {
@@ -1207,20 +702,11 @@
             "home": {
                 "meta": {
                     "title": "Noticias",
-                    "slug": "/news",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/news"
                 }
             },
             "header": {
                 "title": "Noticias"
-            },
-            "intro": {
-                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             },
             "body": {
                 "cards": {
@@ -1232,142 +718,11 @@
             "home": {
                 "meta": {
                     "title": "Preguntas frecuentes",
-                    "slug": "/faq",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/faq"
                 }
             },
             "header": {
                 "title": "Preguntas frecuentes"
-            },
-            "survey": {
-                "data": {
-                    "questions": {
-                        "items": {
-                            "main_purpose": {
-                                "question": "¿Cuál es el objetivo principal de la herramienta?",
-                                "information": "El objetivo principal de Elinor es rastrear los atributos críticos para el éxito de la conservación basada en áreas a lo largo del tiempo y compartir esta información con tomadores de decisiones y partidarios de la conservación que trabajan a escala local, nacional o internacional. La herramienta fue diseñada específicamente sabiendo que muchos profesionales de la conservación (1) están familiarizados con y utilizan una versión adoptada del METT en su trabajo y (2) enfrentan limitaciones de presupuesto y tiempo para el monitoreo y evaluación de la conservación, y pueden necesitar enfoques flexibles para recopilar datos estandarizados. . Debido a esto, esta evaluación simple y de bajo costo se ha desarrollado en colaboración con miembros de la comunidad conservacionista, basándose en el sistema de puntuación del METT y preguntas de los protocolos existentes (ver lista de referencias), y cubre una variedad de aspectos de gestión y gobernanza. cuestión considerada importante para el éxito.",
-                                "detail": ""
-                            },
-                            "decisions": {
-                                "question": "¿Qué tipo de decisiones ayudará esta herramienta a informar?",
-                                "information": "Para los administradores de proyectos y sitios, la información de la evaluación puede ayudar a:<ul><li>Comunicar con los titulares de derechos y otros actores clave a qué cuestiones de gestión y gobernanza equitativas es importante prestar atención.</li><li>Identificar qué acciones podrían ser más adecuadas para un área bajo protección o gestión para ayudar a mejorar su estado de gestión y gobernanza.</li><li>Identificar dónde se necesita una evaluación más profunda de la gestión, la gobernanza, la equidad o el clima.</li></ul>Para los tomadores de decisiones regionales e internacionales, los datos de la evaluación pueden ayudar a:<ul>\n<li>Proporcionar una visión general amplia del estado percibido y las tendencias en gestión y gobernanza.</li><li>Impulsar conversaciones sobre gestión y gobernanza equitativas a escala nacional e internacional para inspirar cambios en las políticas y las prácticas.</li><li>Identificar áreas que requieren una investigación más profunda.</li></ul>",
-                                "detail": ""
-                            },
-                            "complete": {
-                                "question": "¿Quién debe completar una evaluación?",
-                                "information": "La evaluación de Elinor se diseñó inicialmente para satisfacer las necesidades de los conservacionistas que trabajan para organizaciones no gubernamentales (ONG), pero puede ser utilizada por cualquier individuo que trabaje para apoyar un área gestionada. La evaluación se puede completar de dos maneras:<ol><li>Como <strong>grupo focal de campo.</strong> Esta es la forma en que tradicionalmente se completan muchas evaluaciones de gobernanza; Aprovechar las diversas percepciones de los titulares de derechos y otros actores clave involucradas en la gestión y gobernanza de un área en particular. En el sitio web ElinorData.org, encontrará un protocolo de campo completo que puede usarse para guiar la recopilación de datos éticos con los titulares de derechos y otros actores. Esta guía ofrece información sobre cómo liderar éticamente un grupo, obtener los permisos adecuados para utilizar los datos y buscar diversas perspectivas; especialmente de aquellos que pueden haber sido tradicionalmente marginados. Esta es la vía preferida, ya que permite que diversas voces contribuyan a la evaluación, proporcionando una perspectiva más holística sobre el estado de la gestión y la gobernanza en un área. Consulte la herramienta de evaluación y el protocolo de Elinor para obtener orientación sobre cómo dirigir un grupo focal.</li><li><strong>Como evaluación documental.</strong> Este camino es para aquellos que tienen tiempo o recursos limitados para llevar a cabo un grupo focal participativo. Esta opción permite generar algunos datos sobre el área gestionada, lo que puede proporcionar una evaluación a menudo adecuada y útil sobre el estado actual y las tendencias en el área, y puede ayudar a los usuarios a identificar cualquier brecha crítica de conocimiento que requeriría más investigación e inversión.</li></ol>Al ingresar datos en el sistema ElinorData, los usuarios pueden indicar qué camino tomaron para generar los datos en la evaluación para que cualquier usuario futuro de los datos pueda considerar quiénes fueron las perspectivas representadas en los datos.",
-                                "detail": "¡La consulta es un requisito previo para el éxito! Consultar con una variedad de titulares de derechos y otros actores aumentará la legitimidad de la herramienta. También es una forma rápida y sencilla de incluir a los titulares de derechos y otros actores en parte del proceso de planificación y toma de decisiones de la AG."
-                            },
-                            "rights_access": {
-                                "question": "¿Quién tiene los derechos y acceso a los datos ingresados ​​en esta herramienta?",
-                                "information": "La ética, los derechos y la privacidad de los datos son un componente central de la herramienta y el sistema de datos de Elinor. La herramienta de evaluación y el documento de protocolo de Elinor ofrecen orientación sobre cómo discutir la privacidad y la ética de los datos con los participantes de los grupos focales, para aquellos que recopilan datos sobre Elinor a través de una discusión de grupo focal. Los Términos de servicio y principios de colaboración de Elinor describen en detalle cómo se almacenan y utilizan los datos en la plataforma.",
-                                "detail": ""
-                            },
-                            "usage": {
-                                "question": "¿Sabré cómo se utilizan mis datos?",
-                                "information": "Para los datos que se ponen a disposición del público, los usuarios eventualmente podrán \"optar por\" recibir notificaciones que les indiquen dónde y cuándo se descargan sus datos de evaluación para ayudarlos a comprender para qué se utilizan sus datos de evaluación.",
-                                "detail": ""
-                            },
-                            "mett": {
-                                "question": "Ya uso METT (o una versión modificada de METT) en mis proyectos. ¿Cómo se relaciona Elinor con METT?",
-                                "information": "Elinor se basa directamente en los años de experiencia que tienen los equipos de proyectos utilizando la evaluación METT y otras herramientas diseñadas para medir la gobernanza ambiental. La evaluación de Elinor fue diseñada para reflejar el METT lo más fielmente posible, extrae preguntas directamente del METT y utiliza la misma escala. Consulte este cruce entre METT, SAGE y Elinor para ayudar a los usuarios a comprender las similitudes y diferencias entre las diferentes herramientas. Si utiliza METT actualmente, si obtiene el consentimiento informado de los participantes en su evaluación METT, puede ingresar los datos recopilados de METT en la base de datos de Elinor. Preste especial atención a la configuración de privacidad de datos y asegúrese de tener los derechos para ingresar los datos en el sistema ElinorData.",
-                                "detail": ""
-                            },
-                            "track": {
-                                "question": "¿Cuáles son las cosas específicas que esta herramienta me ayudará a rastrear?",
-                                "information": "Esta herramienta se centra en recopilar información básica sobre áreas bajo gestión o protección y evaluar el estado de <strong>diez atributos importantes para la conservación y gestión basada en áreas:</strong><ol><li>Límites de recursos</li><li>Cumplimiento</li><li>Capacidad de gestión adaptativa</li><li>Capacidad operacional</li><li>Gestión inclusiva y equitativa</li><li>Derechos y toma de decisiones claramente definidos</li><li>Regulaciones claras y congruentes</li><li>Transparencia y rendición de cuentas</li><li>Resultados ecológicos percibidos</li><li>Resultados sociales percibidos</li></ol>El sistema de datos también permitirá a los usuarios de la herramienta adjuntar documentos relevantes, como planes de gestión y archivos geoespaciales, para facilitar la gestión y el intercambio de conocimientos a través de escalas espaciales y acceder a visualizaciones fáciles de tomar de datos a nivel de sitio y datos agregados.",
-                                "detail": ""
-                            },
-                            "data": {
-                                "question": "¿Cómo se analizarán y presentarán los datos?",
-                                "information": "La base de datos y la plataforma web de Elinor proporcionarán imágenes simples a nivel de sitio, regional e internacional que muestran tendencias a lo largo del tiempo, agregadas por los nueve atributos enumerados anteriormente. Se pueden realizar análisis más sólidos de los datos recopilados utilizando las teorías y marcos de las ciencias sociales que sustentan las preguntas de esta herramienta, a saber, la teoría de Elinor Ostrom sobre la gobernanza de recursos de uso común, la equidad en la gobernanza de recursos (por ejemplo, Bennett y Satterfield 2018) y la resiliencia. pensamiento. Dependiendo de la configuración de privacidad de datos elegida por los usuarios, los datos de todas las regiones estarán disponibles para uso público.",
-                                "detail": ""
-                            },
-                            "collect_data": {
-                                "question": "Ya recopilo datos de gestión y gobernanza a través de encuestas sobre el terreno. ¿Necesito detener eso y usar esta herramienta?",
-                                "information": "¡No! Esta herramienta fue diseñada para complementar la recopilación de datos en profundidad y basada en el campo. Si actualmente recopila datos mediante encuestas de campo o grupos focales, puede utilizar los datos que ya recopila para informar las respuestas a las preguntas formuladas en Elinor; solo asegúrese de tener los derechos y permisos para hacerlo. Por el contrario, la información recopilada mediante esta herramienta puede ayudarle a comprender qué temas requieren encuestas de campo más profundas.",
-                                "detail": ""
-                            },
-                            "advantages": {
-                                "question": "¿Cuáles son las principales ventajas de utilizar esta herramienta?",
-                                "information": "La herramienta y el sistema de datos de Elinor fueron diseñados para agilizar el proceso de entrada, almacenamiento y visualización de datos. Al hacerlo, los usuarios obtienen tres ventajas clave:<ol><li><strong>El proceso de recopilación, entrada y visualización de datos se simplifica.</strong> Para los usuarios que trabajan en varios sitios, todos los datos se pueden almacenar y organizar de la misma manera y generarse en formularios que sean útiles para comunicar los resultados a audiencias clave.</li><li><strong>Los usuarios están conectados a una comunidad global de conservacionistas que se esfuerzan por mejorar la gestión y la gobernanza.</strong> La gestión y la gobernanza han sido durante mucho tiempo un tema importante en la conservación, pero recopilar y compartir datos sobre este tema ha sido difícil. Una de las principales barreras para el intercambio de datos es el tiempo y la energía que a menudo se requieren para formalizar y limpiar los datos para que otros los utilicen: Elinor automatiza esto y permite a los usuarios compartir datos de forma selectiva con usuarios individuales o con el público en general con solo un clic de un botón</li></ol>",
-                                "detail": ""
-                            },
-                            "stored": {
-                                "question": "¿Dónde se almacenan mis datos?",
-                                "information": "ElinorData.org utiliza Amazon Web Services para almacenar los datos.",
-                                "detail": ""
-                            },
-                            "things_elinor": {
-                                "question": "¿Cuáles son algunas cosas que debo tener en cuenta al tomar una decisión sobre el uso de esta herramienta?",
-                                "information": "Ninguna herramienta hace todos los trabajos. Es importante recordar que:<ol class='list-inside list-disc'> <li><strong>Esta herramienta no recopila datos en profundidad.</strong> Esta herramienta no reemplaza la necesidad de trabajar con las comunidades en una evaluación en profundidad de los problemas identificados por la herramienta.</li><li><strong>Esta herramienta es independiente de las leyes y regulaciones locales.</strong> Esta herramienta fue desarrollada para rastrear indicadores comúnmente reconocidos como importantes para la gestión y gobernanza de áreas costeras gestionadas y conservadas. No mide cambios específicos en leyes y regulaciones, que pueden tener grandes impactos en las actividades de conservación en un lugar determinado.</li></ol>",
-                                "detail": ""
-                            },
-                            "counts": {
-                                "question": "Bien, estoy usando la herramienta. ¿Cómo decido qué \"cuenta\" como área gestionada o conservada?",
-                                "information": "Esto depende de su contexto. En esta herramienta, nos referimos al límite del área a evaluar como área de manejo (AM). Un área de gestión se refiere a un sitio/lugar al que se dirigen las acciones de gestión. Un área de gestión (AG) puede ser un área protegida, un área conservada (consulte el glosario para las definiciones) o un área más amplia que abarque varias áreas protegidas/áreas conservadas.<ol class='list-inside list-disc'> <li>Un área protegida individual o un área conservada. Por ejemplo, esto podría ser una evaluación de un área administrada por una Unidad de Gestión de Playas (BMU). Alternativamente, podría ser una evaluación de una única Área Protegida.</li><li>Un mar/paisaje más amplio con múltiples áreas conservadas y áreas protegidas y considerarlas como un área de gestión, respondiendo las preguntas con todas estas áreas en mente. Por ejemplo, una Reserva de la Biosfera con múltiples áreas protegidas o áreas conservadas.</li></ol>",
-                                "detail": ""
-                            },
-                            "ngo": {
-                                "question": "Trabajo para una ONG nacional. ¿Cómo decido en qué sitios utilizar la evaluación de Elinor?",
-                                "information": "Consulte la Parte 1 de la herramienta de evaluación y el protocolo de Elinor para obtener orientación sobre cómo realizar el muestreo.",
-                                "detail": ""
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "methodology": {
-            "title": "Metodología",
-            "timeframe": "Anual o bianual",
-            "numberQuestions": "35 preguntas",
-            "backgroundInformation": "Información de contexto",
-            "assessment": "Evaluación",
-            "paragraph1": "La evaluación de Elinor se puede completar de dos maneras diferentes: a través de un grupo focal facilitado con diferentes titulares de derechos y otros actores involucradas y afectadas por la AG, o como una evaluación documental dirigida por un profesional de la conservación. Al ingresar datos, los usuarios pueden indicar qué camino tomaron para generar los datos en la evaluación y qué tipos de titulares de derechos y otros actores participaron en la evaluación.",
-            "focusGroup": "<strong>Elinor como grupo de discusión sobre el terreno</strong>",
-            "focusGroupText": "La mayoría de las evaluaciones de gobernanza tradicionalmente se completan mediante discusiones participativas en grupos focales; Aprovechar las diversas percepciones de los titulares de derechos y otros actores clave involucradas en la gestión y gobernanza de un área en particular. Para aquellos que tienen el tiempo y la capacidad para recopilar diversas perspectivas sobre gestión y gobernanza, recomendamos descargar la herramienta de evaluación y el protocolo de Elinor para guiar sus esfuerzos. Esta guía ofrece información sobre cómo liderar éticamente un grupo, obtener los permisos adecuados para utilizar los datos y buscar diversas perspectivas; especialmente de aquellos que pueden haber sido tradicionalmente marginados. Esta es la vía preferida, ya que permite que diversas voces contribuyan a la evaluación, proporcionando una perspectiva más holística sobre el estado de la gestión y la gobernanza en un área.",
-            "protocolLink": "Descargar protocolo",
-            "deskBased": "<strong>Elinor como evaluación documental dirigida por profesionales.</strong>",
-            "deskBasedText": "Este camino es para aquellos que tienen tiempo, recursos o capacidades limitadas para llevar a cabo un grupo focal participativo. Si bien una evaluación documental ofrece una opción limitada, permite generar algunos datos sobre el área gestionada, lo que puede proporcionar una evaluación a menudo adecuada y útil sobre el estado actual y las tendencias en el área, y puede ayudar a los usuarios a identificar cualquier situación crítica. lagunas de conocimiento que requerirían más investigación e inversión. Si decide tomar esta vía, asigne tiempo a usted y a sus colegas familiarizados con la maestría para discutir y responder cada pregunta, según su experiencia y conocimiento de la maestría. Si es posible, recomendamos involucrar a diferentes titulares de derechos y otros actores de cualquier manera posible para obtener información sobre las diferentes preguntas.",
-            "surveyQuestions": "Preguntas de la encuesta",
-            "goToCategory": "Ir a la categoría",
-            "questions": {
-                "1": {
-                    "title": "Derechos y toma de decisiones claramente definidos",
-                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
-                    "answers": {
-                        "1": "¿Existen reglas formales o informales que definan claramente quién tiene qué derechos para aprovechar los recursos dentro de la AG?",
-                        "2": "¿Existe legislación que permita la gestión de recursos por parte de los titulares de derechos y otros actores?",
-                        "3": "¿Pueden ejercer sus derechos quienes tienen derecho a acceder a los recursos naturales?",
-                        "4": "¿En qué medida los titulares de derechos y otros actores afectados por las reglas de la AG pueden desempeñar un papel en la realización de cambios en las reglas?"
-                    }
-                },
-                "2": {
-                    "title": "Derechos y toma de decisiones claramente definidos",
-                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
-                    "answers": {
-                        "1": "¿Existen reglas formales o informales que definan claramente quién tiene qué derechos para aprovechar los recursos dentro de la AG?",
-                        "2": "¿Existe legislación que permita la gestión de recursos por parte de los titulares de derechos y otros actores?",
-                        "3": "¿Pueden ejercer sus derechos quienes tienen derecho a acceder a los recursos naturales?",
-                        "4": "¿En qué medida los titulares de derechos y otros actores afectados por las reglas de la AG pueden desempeñar un papel en la realización de cambios en las reglas?"
-                    }
-                },
-                "3": {
-                    "title": "Derechos y toma de decisiones claramente definidos",
-                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
-                    "answers": {
-                        "1": "¿Existen reglas formales o informales que definan claramente quién tiene qué derechos para aprovechar los recursos dentro de la AG?",
-                        "2": "¿Existe legislación que permita la gestión de recursos por parte de los titulares de derechos y otros actores?",
-                        "3": "¿Pueden ejercer sus derechos quienes tienen derecho a acceder a los recursos naturales?",
-                        "4": "¿En qué medida los titulares de derechos y otros actores afectados por las reglas de la AG pueden desempeñar un papel en la realización de cambios en las reglas?"
-                    }
-                }
             }
         },
         "methodologyPage": {
@@ -1389,13 +744,7 @@
             "home": {
                 "meta": {
                     "title": "Contacto",
-                    "slug": "/contact",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/contact"
                 }
             },
             "header": {
@@ -1411,10 +760,6 @@
                 "mail": "Tu correo electrónico",
                 "message": "Mensaje",
                 "submit": "Enviar mensaje",
-                "contact": {
-                    "strong": "O si lo prefieres envía un email a",
-                    "link": ""
-                },
                 "confirmation": "Thank you for contacting elinor",
                 "namePlaceholder": "Name",
                 "subjectPlaceholder": "Subject",
@@ -1426,13 +771,7 @@
             "home": {
                 "meta": {
                     "title": "Colaboración",
-                    "slug": "/collaboration",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/collaboration"
                 }
             },
             "title": "Principios de colaboración y directrices para citar",
@@ -1470,10 +809,6 @@
                 }
             }
         },
-        "tos": {
-            "title": "Términos de servicio",
-            "text": "Los términos de servicio están actualmente en desarrollo."
-        },
         "about": {
             "meta": {
                 "title": "Fondo",
@@ -1485,38 +820,7 @@
                     "og_image": ""
                 }
             },
-            "title": "Sobre la evaluación",
-            "paragraph1": "La evaluación de Elinor recopila información general sobre el área gestionada e información sobre nueve atributos importantes para la conservación y gestión basada en áreas a través de 35 preguntas.",
-            "backgroundItems": {
-                "header": "Información de contexto",
-                "1": "1. Nombre del facilitador responsable de presentar la evaluación.",
-                "2": "2. Nombre de la institución asociada con esta AG",
-                "3": "3. Rol del facilitador responsable de presentar la evaluación",
-                "4": "4. Datos de contacto del facilitador que envía la evaluación.",
-                "5": "5. Fecha de evaluación (día/mes/año)",
-                "6": "6. ¿Cómo se recopiló la información en esta evaluación?",
-                "7": "7. Número de personas involucradas de grupos de titulares de derechos y otros actores clave",
-                "8": "8. Representación de género de los titulares de derechos y otros actores consultadas",
-                "9": "9. Justificación de la evaluación (por ejemplo, seguimiento anual, línea de base del proyecto)",
-                "10": "10. Nombre de la AG",
-                "11": "11. País/Países donde se encuentra AG",
-                "12": "12. Estado(s)/Provincia(s) donde se encuentra AG",
-                "13": "13. Fecha de establecimiento formal (si corresponde)",
-                "14": "14. ¿Están reconocidos formalmente los derechos de la autoridad de AG en...",
-                "15": "15. Tamaño de AG (ha)",
-                "16A": "16A. Coordenadas GPS en AG",
-                "16B": "16B. Mapa o archivo espacial de AG",
-                "17": "17. Tipo de gobierno de AG",
-                "18": "18. Objetivos de la maestría",
-                "19": "19. Nombre de la autoridad de gestión",
-                "20": "20. ¿La autoridad de gestión de la MA recibe apoyo técnico, financiero o de otro tipo de alguno de los siguientes grupos u organizaciones?",
-                "21A": "21A. Área focal dentro de AG",
-                "21B": "21B. Nombre de la AP/CA más grande dentro de la cual se encuentra esta área focal",
-                "22": "22. ID asociado en la base de datos mundial sobre áreas protegidas",
-                "23": "23. Consentimiento de la autoridad AG"
-            },
             "elinorAttributes": {
-                "header": "Un resumen de los atributos medidos con Elinor",
                 "attribute1": {
                     "name": "1. Fronteras de los recursos",
                     "description": "Este atributo mide la calidad de las fronteras de la AG. Las preguntas indagan sobre si las fronteras de la AG son i) fácilmente identificables y ii) conocidas por todas los titulares de derechos y otros actores.",
@@ -1577,64 +881,6 @@
                     "useIf": "Su fin es saber si los individuos involucrados en la AG creen que sus objetivos sociales se están logrando.",
                     "reportText": "Mide las percepciones generales que tienen quienes completan la evaluación de Elinor sobre los resultados sociales de la AG."
                 }
-            },
-            "elinorQuestions": {
-                "header": "Preguntas utilizadas para medir los atributos de Elinor",
-                "resourceBoundaries": {
-                    "Q1": "(P1) ¿Conocen la frontera todos los titulares de derechos y otros actores?",
-                    "Q2": "(P2) ¿Está claramente definida la frontera?"
-                },
-                "monitoringEnforcement": {
-                    "Q3": "(P3) ¿Con qué frecuencia se aplican las penalizaciones por la violación de normas sobre el uso de los recursos?",
-                    "Q4": "(P4) ¿En qué medida las penalizaciones por violación de las normas sobre el uso de los recursos dependen de la naturaleza, severidad o frecuencia de la infracción?"
-                },
-                "adaptiveManagement": {
-                    "Q5": "(P5) ¿Existen sistemas establecidos para supervisar y documentar las condiciones ecológicas en la AG (área gestionada)?",
-                    "Q6": "(P6) ¿Existen sistemas establecidos para supervisar y documentar las condiciones sociales de las comunidades ubicadas dentro de las AG o adyacentes a ellas?",
-                    "Q7": "(P7) ¿Existen sistemas establecidos para supervisar y documentar los impactos del cambio climático?",
-                    "Q8": "(P8) ¿Los responsables de gestionar la AG integran diferentes tipos de conocimiento (científico, experimental, local y tradicional) en las decisiones de gestión?",
-                    "Q9": "(P9) ¿Se incluyen rutinariamente los resultados de la supervisión, investigación y evaluación en las decisiones y/o políticas relacionadas con la gestión de la AG?",
-                    "Q10": "(P10) ¿Se gestiona la AG concienzudamente para adaptarse al cambio climático?"
-                },
-                "operationalCapacity": {
-                    "Q11": "(P11) ¿Los responsables de gestionar la AG (como personal, asociaciones comunitarias y grupos de gestión) tienen la capacidad para hacer cumplir las normas y reglamentos?",
-                    "Q12": "(P12) ¿Hay suficientes personas empleadas o contratadas para gestionar la AG?",
-                    "Q13": "(P13) ¿Los responsables de gestionar la AG tienen suficiente capacidad (p. ej., información y las habilidades adecuadas) para lograr los objetivos de gestión?",
-                    "Q14": "(P14) ¿Son suficientes el presupuesto o los fondos empleados para apoyar las actividades de la AG?",
-                    "Q15": "(P15) ¿Están garantizados el presupuesto o los fondos?",
-                    "Q16": "(P16) ¿Es suficiente el equipamiento para las necesidades de gestión?"
-                },
-                "inclusive": {
-                    "Q17": "(P17) ¿En qué medida los titulares de derechos y otros actores influenciadas por las normas de la AG pueden desempeñar un papel al hacer cambios en las normas?",
-                    "Q18": "(P18) ¿Las mujeres u otros grupos vulnerables que viven en la comunidad local tienen derechos claramente definidos a los recursos naturales dentro de la AG?",
-                    "Q19": "(P19) ¿Existe una estrategia eficaz o método para garantizar que los beneficios de la AG se compartan equitativamente entre los titulares de derechos y otros actores?",
-                    "Q20": "(P20) ¿Existen redes que desarrollen relaciones sociales y apoyen el aprendizaje mutuo ente los titulares de derechos y otros actores locales?",
-                    "Q21": "(P21) ¿Se está utilizando la información sobre el cambio climático para dotar de información a las estrategias a fin de crear resiliencia comunitaria frente al cambio climático?"
-                },
-                "rights": {
-                    "Q22": "(P22) ¿Existen normas formales o informales que definan claramente quien tiene derechos a cosechar los recursos en la AG?",
-                    "Q23": "(P23) ¿Existen mecanismos formales o informales que definan claramente quien tiene derechos a desarrollar normas para el uso de los recursos en la AG?",
-                    "Q24": "(P24) ¿Existen normas formales o informales que definan claramente los derechos a excluir a otros grupos de la cosecha de los recursos en la AG?",
-                    "Q25": "(P25) ¿Existe una legislación establecida que permita que los titulares de derechos y otros actores gestionen los recursos?",
-                    "Q26": "(P26) ¿Pueden los titulares de derechos y otros actores ejercer sus derechos a los recursos naturales?"
-                },
-                "clearRegulations": {
-                    "Q27": "(P27) ¿La cantidad que una persona puede beneficiarse de los recursos dentro de la AG está relacionada con sus contribuciones a la gobernanza de la AG (en términos de tiempo y/o recursos aportados)?",
-                    "Q28": "(P28) ¿Existen diferentes niveles de gestión en la AG, que funcionen como una unidad coordinada?",
-                    "Q29": "(P29) ¿Existen reglamentos pertinentes establecidos para controlar las actividades basadas en recursos naturales en la AG?",
-                    "Q30": "(P30) ¿Existe un plan de gestión para la AG y se está implementando?"
-                },
-                "transparency": {
-                    "Q31": "(P31) ¿Se les pide rendir cuentas a los responsables de la gobernanza de la AG si no cumplen su función?",
-                    "Q32": "(P32) ¿Las los titulares de derechos y otros actores reciben información de las autoridades de la AG oportunamente?",
-                    "Q33": "(P33) ¿Tienen los titulares de derechos y otros actores acceso a mecanismos eficaces de resolución de conflictos?"
-                },
-                "outcomesEcological": {
-                    "Q34": "(P34) ¿En qué medida cree usted que se están logrando los resultados ecológicos?"
-                },
-                "outcomesSocial": {
-                    "Q35": "(P35) ¿En qué medida cree usted que se están logrando los resultados sociales?"
-                }
             }
         },
         "profile": {
@@ -1682,13 +928,7 @@
             "home": {
                 "meta": {
                     "title": "Mapa",
-                    "slug": "/map",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/map"
                 }
             },
             "filters": {
@@ -1760,7 +1000,8 @@
         "generateReport": "Generate Report",
         "version": "Version",
         "description": "Description",
-        "areaSize": "Area Size"
+        "areaSize": "Area Size",
+        "required": "Required"
     },
     "footer": {
         "faqs": "Preguntas frecuentes",

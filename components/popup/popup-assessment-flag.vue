@@ -32,7 +32,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">{{ $t('pages.assessments.actions.contact.labelTextarea') }}</label>
+                            <label class="label">{{ $t('pages.assessments.actions.flag.labelTextarea') }}</label>
                             <textarea v-model="form.explanation"></textarea>
                             <template v-if="errors.explanation">
                                 <p class="msg msg--error" v-for="error in errors.explanation">
@@ -46,7 +46,7 @@
         </template>
         <template v-if="sent">
             <h4 class="c-title--modal mb-2">
-                {{ $t('pages.assessments.actions.contact.okMessage') }}
+                {{ $t('pages.assessments.actions.flag.okMessage') }}
             </h4>
         </template>
         <section class="mt-10">

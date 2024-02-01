@@ -32,10 +32,6 @@
                 "forgotPasswordLink": "Umesahau nywila?",
                 "signInButton": "Weka sahihi",
                 "alerts": {
-                    "invalidCredentials": {
-                        "title": "Vitambulisho batili!",
-                        "subtitle": "Je, hukumbuki nenosiri? Jaribu nenosiri lililosahau"
-                    },
                     "emailVerificationSent": {
                         "title": "Uthibitishaji wa barua pepe umetumwa!",
                         "subtitle": "Utapokea ujumbe wa kuthibitisha barua pepe yako"
@@ -102,11 +98,6 @@
                         "build": "Build",
                         "strengthen": "Strengthen",
                         "maintain": "Maintain"
-                    },
-                    "about": {
-                        "title": "Kuhusu tathmini",
-                        "paragraph": "Soma kuhusu taarifa ambayo tathmini ya Elinor inaweza kukusaidia kukusanya na kufuatilia.",
-                        "button": "Nenda kwa Kuhusu tathmini"
                     }
                 },
                 "latestNews": {
@@ -151,20 +142,13 @@
                 "subtitle": "Weka barua pepe yako ili kupokea uthibitishaji mpya wa barua pepe",
                 "emailInput": "Barua pepe",
                 "sendEmailButton": "Kutuma barua pepe",
-                "tryAgainButton": "Jaribu tena",
-                "alerts": {
-                    "resendVerificationEmailSent": {
-                        "title": "Barua pepe ya uthibitishaji imetumwa!",
-                        "subtitle": "Angalia barua pepe yako kwa kiungo cha uthibitishaji"
-                    }
-                }
+                "tryAgainButton": "Jaribu tena"
             },
             "resetPassword": {
                 "title": "WEKA UPYA NENOSIRI",
                 "subtitle": "Weka nenosiri jipya hapa chini",
                 "error": {
-                    "title": "Hitilafu!",
-                    "subtitle": "Tatizo na nenosiri lako jipya"
+                    "title": "Hitilafu!"
                 },
                 "password1Input": "Nenosiri",
                 "password2Input": "Uthibitishaji wa nenosiri",
@@ -189,7 +173,6 @@
                 "year": "Mwaka",
                 "countries": "Nchi",
                 "create": {
-                    "title": "Tengeneza tathmini",
                     "popup": {
                         "title": "Tengeneza Tathmini",
                         "labels": {
@@ -197,8 +180,7 @@
                             "year": "Chagua Mwaka"
                         },
                         "placeholders": {
-                            "name": "Jina la tathmini",
-                            "year": ""
+                            "name": "Jina la tathmini"
                         },
                         "nameCriteria": "Weka jina fupi na rahisi kukumbuka kama vile Tathmini ya Kila Mwaka ya Tsavo 2021",
                         "submit": "Tengeneza Tathmini"
@@ -234,15 +216,20 @@
                     "byManagementAreas": "by MA",
                     "byCountries": "by Countries",
                     "byYear": "by Year",
-                    "byRealm": "by Realm",
                     "byType": "by Type of assessment",
                     "year": "Year",
                     "giveName": "Give it a name",
+                    "giveNamePlaceholder": "Name here",
                     "assessments": "Selected Assessments",
                     "create": "Create Aggregate Report",
                     "covering": "Assessments covering",
                     "coveringHA": "ha",
-                    "filtersSelected": "Filters selected"
+                    "filtersSelected": "Filters selected",
+                    "managementAreaNoOptions": "Type the name of MA",
+                    "managementAreaNoResults": "No matching MAs found",
+                    "selectedAssessmentsError": "You have to select at least 1 assessment",
+                    "nameRequiredError": "The name of the report is required",
+                    "nameLengthError": "The name of the report is too long"
                 }
             },
             "view": {
@@ -268,7 +255,6 @@
                             "supportSources": "Je, mamlaka ya usimamizi wa MA inapokea usaidizi wa kiufundi, kifedha au aina nyingine kutoka kwa mojawapo ya vikundi au mashirika yafuatayo?",
                             "countries": "Nchi/Nchi ambako MA iko",
                             "regions": "Jimbo/Mkoa ambapo MA inapatikana",
-                            "managementPlanFile": "Pakua hati ya mpango wa usimamizi",
                             "zones": {
                                 "title": "MAENEO",
                                 "zoneName": "Jina la eneo",
@@ -288,15 +274,10 @@
                             "government": "Serikali",
                             "indigenous": "Watu wa asili",
                             "private": "Sekta binafsi",
-                            "user": "Kikundi cha watumiaji",
                             "total": "jumla ya ushauri"
                         },
                         "gender": {
                             "title": "8. Uwakilishi wa jinsia wa wenye haki na wahusika wengine ulishauriwa",
-                            "female": "Mwanamke",
-                            "male": "Mwanaume",
-                            "nonBinary": "Isiyo ya binary",
-                            "preferNotToSay": "Pendelea kutosema",
                             "total": "jumla kwa jinsia"
                         }
                     },
@@ -345,7 +326,6 @@
                         "people": {
                             "title": "Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
                             "community": "Jumuiya ya mtaa",
-                            "user": "Kikundi cha watumiaji",
                             "ngo": "NGO",
                             "academic": "Kitaaluma",
                             "government": "Serikali",
@@ -401,10 +381,8 @@
                             "countries": "Nchi/Nchi ambako MA iko",
                             "regions": "Jimbo/Mkoa ambapo MA inapatikana",
                             "zones": "Je hii MA ina kanda?",
-                            "zonesQuantity": "MA ina kanda ngapi?",
                             "zoneName": "Jina la eneo",
                             "zoneLevel": "Chagua kiwango cha ufikiaji kinachoelezea vyema eneo hili",
-                            "zoneDescription": "Eleza eneo hili na sifa zake, ikiwa ni pamoja na matumizi yanayoruhusiwa au vikwazo, msimu na watu wanaoweza na wasioweza kulifikia.",
                             "protectedAreaWdpaIdHelp": "Kitambulisho cha WDPA kinaweza kupatikana kwenye tovuti ya sayari iliyolindwa.",
                             "protectedAreaWdpaIdHelpLink": "Bofya hapa kutafuta",
                             "geospatialSources": "Tafadhali orodhesha chanzo cha maelezo ya kijiografia"
@@ -436,7 +414,6 @@
                                 "fileCorrectlyFormatedText": "Faili yako imethibitishwa kwa ufanisi na iko tayari kupakiwa",
                                 "importFileError": "Samahani kuna kitu kibaya",
                                 "formatNotSupported": "Umbizo hili halitumiki",
-                                "youCan": "Unaweza",
                                 "tryAgain": "jaribu tena",
                                 "help": "<h4>Ni faili gani ya kupakia?</h4>Pakia faili ya umbo iliyofungwa ya mipaka ya eneo linalodhibitiwa. Zip inapaswa kuwa na faili za sehemu ya faili ya umbo na inapaswa kuwa faili moja tu ya umbo la mpaka. Ikiwa huna aina sahihi ya faili, tafadhali badilisha kwanza kabla ya kupakia.",
                                 "condition1": "zip iliyo na faili zote muhimu za umbo (au zip iliyo na folda iliyo na faili hizo)",
@@ -481,464 +458,7 @@
                             "next": "Inayofuata",
                             "information": "Mahitaji ya habari",
                             "guidance": "Mwongozo",
-                            "rationale": "Swali hili linauliza nini?",
-                            "items": {
-                                "stakeholder_harvest_rights": {
-                                    "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to harvest resources within the MA?",
-                                    "information": "Knowledge of the range of local stakeholders involved with the MA.Access to information covering the rights of stakeholders to harvest natural resources within the MA (e.g., a management plan/ legislature / key informants with customary knowledge)",
-                                    "guidance": "Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Note: this question does not address/is not to be confused with local stakeholders’ level of awareness or the distribution of rights among stakeholders.",
-                                    "answers": {
-                                        "1": "Rights to harvest natural resources within the MA are not clearly defined ",
-                                        "2": "Some rights to harvest natural resources within the MA are slightly defined",
-                                        "3": "Most rights to harvest natural resources within the MA are somewhat defined",
-                                        "4": "Rights to harvest natural resources within the MA are clearly defined",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Use rights"
-                                },
-                                "stakeholder_develop_rules": {
-                                    "question": "Are there formal or informal mechanisms that clearly define the rights of local stakeholders to develop rules for the use of resources within the MA?",
-                                    "information": "Knowledge of the range of local stakeholders involved with the MA..Knowledge of the different mechanisms (see examples below) that may exist. These mechanisms should clearly state that local stakeholders have the right to develop rules. Some example formal mechanisms include an MA management plan or National legislature in which local stakeholder rights to develop rules are stated.",
-                                    "guidance": "Clearly defined means written in legal or management documents or verbally communicated through duty bearers.In the cases where both formal and informal mechanisms exist you may wish to focus on the most prevalent and use the explanation box to explain their variationNote:    i) Not to be confused with local stakeholders' level of awareness; ii)This question does not address/is not to be confused with the distribution of rights among stakeholders;    iii) This question does not ask how effective the mechanisms are, only whether they exist and if they are rights-based.",
-                                    "answers": {
-                                        "1": "Rights to develop rules for the use of natural resources within the MA are not clearly defined",
-                                        "2": "Rights to develop rules for the use of natural resources within the MA are slightly defined",
-                                        "3": "Rights to develop rules for the use of natural resources within the MA are somewhat defined",
-                                        "4": "Rights to develop rules for the use of natural resources within the MA are clearly defined",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Management rights"
-                                },
-                                "stakeholder_exclude_others": {
-                                    "question": "Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?",
-                                    "information": "Knowledge of the range of local stakeholders involved with the MA.Access to information covering the rights of stakeholders to exclude other groups from harvesting resources within the MA (e.g., a management plan/ legislature / key informants with customary knowledge)",
-                                    "guidance": "Clearly defined means written in legal or management documents or verbally communicated through duty bearers.Other groups refer to stakeholders who have not traditionally or historically used resources in the MANote: i) Not to be confused with local stakeholders' level of awareness; ii) This question does not address/is not to be confused with the distribution of rights among stakeholders.",
-                                    "answers": {
-                                        "1": "Rights to exclude other groups from harvesting natural resources within the MA are not clearly defined",
-                                        "2": "Rights to exclude other groups from harvesting natural resources within the MA are slightly defined",
-                                        "3": "Rights to exclude other groups from harvesting natural resources within the MA are somewhat defined",
-                                        "4": "Rights to exclude other groups from harvesting natural resources within the MA are clearly defined",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Exclusion rights"
-                                },
-                                "legislation_exists": {
-                                    "question": "Is there legislation in place to enable resource management by local communities?",
-                                    "information": "Knowledge of the regional/national legislation and the mechanisms to support its implementation.Local community’s governance needs, e.g., ability to restrict access to the MA/CA by outside groups, or enforce local laws concerning use",
-                                    "guidance": "<strong>Enable</strong> in this context means that there are effective accountability mechanisms in place that support the meaningful implementation of natural resource management by local communities.<strong>Accountability mechanisms</strong> may include complaints and grievance procedures",
-                                    "answers": {
-                                        "1": "There is no legislation that enables local stakeholders to develop their own rules governing resources within the MA",
-                                        "2": "Legislation enables local stakeholders to develop their own rules governing resources within the MA, but there are major issues that need to be resolved\n\n",
-                                        "3": "Legislation enables local stakeholders to develop their own rules governing resources within the MA, but there are some weaknesses\n\n",
-                                        "4": "Legislation enables local stakeholders to develop their own rules governing resources within the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Enabling legislation"
-                                },
-                                "exercise_rights": {
-                                    "question": "Are local stakeholders able to exercise their rights to natural resources?",
-                                    "information": "The rights to natural resources held by local communitiesThe sorts of challenges local stakeholders (particularly marginalized groups or groups that are highly dependent on the resources in the MA to fulfill their basic needs) have in exercising these rights. Key informants may be a useful source of information to elucidate some of the hidden costs.",
-                                    "guidance": "<strong>Local stakeholders:</strong> this is a broad term that includes various interest groups. For the purpose of this question please consider the options below as they apply to the majority of local stakeholders and include in the qualitative response any variation among different stakeholders, especially women and other vulnerable groups<strong>Exercise</strong> – the ability to act to claim and secure one’s rights. This ability could be financial, knowledge, social connections, or any other mechanisms required to realize one’s rights<strong>Cost</strong> – this is the effort, loss, or sacrifice required to exercise one’s rights.",
-                                    "answers": {
-                                        "1": "Local stakeholders are not able to exercise their rights to resources",
-                                        "2": "Local stakeholders are able to exercise their rights to resources but there are significant costs that severely limit their ability to do so",
-                                        "3": "Local stakeholders are able to exercise their rights to resources but there are still some costs to doing so that need to be addressed",
-                                        "4": "Local stakeholders are able to exercise their rights to resources without any significant costs to them",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Rights exercised"
-                                },
-                                "stakeholder_agency": {
-                                    "question": "To what extent are stakeholders affected by the rules of the MA able to play a role in making changes to the rules?",
-                                    "information": "Knowledge of the range of decision-making platforms that exist for the MAKnowledge of management decisions that have taken place in approximately the last 5 years",
-                                    "guidance": "Stakeholders: this is a broad term that includes various interest groups. For the purpose of this question please consider the options below as they apply to the majority of stakeholders.Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and other groups in vulnerable/marginalized situations when answering this question and be sure to document these differences in the explanation box.The ability to influence/modify means existing rules/regulations reflect the views of affected individualsRarely means that evidence for influence/modification of rules is scarceOccasionally means that on occasion stakeholders’ views have been incorporated into management",
-                                    "answers": {
-                                        "1": "Individuals affected by the rules of the MA are not able to influence/modify them",
-                                        "2": "Individuals affected by the rules of the MA are rarely able to influence/modify them",
-                                        "3": "Individuals affected by the rules of the MA are occasionally able to influence/modify them",
-                                        "4": "Individuals affected by the rules of the MA are able to influence management decisions",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Participation rights"
-                                },
-                                "vulnerable_defined_rights": {
-                                    "question": "Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?",
-                                    "information": "Knowledge of the range of stakeholders involved with the MA.Access to information covering the rights of stakeholders e.g., a management plan/ legal documents / key informants with customary knowledge",
-                                    "guidance": "This question is designed to measure the equitable governance of the natural resource base amongst different stakeholder groups.Clearly defined means written in legal or management documents or verbally communicated through duty bearers. Not to be confused with local stakeholders’ level of awareness.Note: this question does not address/is not to be confused with the distribution of rights among stakeholders.",
-                                    "answers": {
-                                        "1": "Women’s or other vulnerable group’s rights to natural resources are not clearly defined",
-                                        "2": "Some rights to natural resources within the MA are clearly defined for women or other vulnerable groups",
-                                        "3": "Most rights to natural resources within the MA are clearly defined for women or other vulnerable groups",
-                                        "4": "Women’s or other vulnerable group’s rights to natural resources are clearly defined",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Access rights for women and vulnerable groups"
-                                },
-                                "benefits_shared": {
-                                    "question": "Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among local stakeholders?",
-                                    "information": "Knowledge of the range of decision-making platforms that exist for the MA. Knowledge of management decisions that have taken place in approximately the last 5 years",
-                                    "guidance": "Influence is the power to have an effect on people or things. This can be through direct participation of stakeholders themselves or indirectly through representatives. Consider the power of women and marginalized groups when answering this question.The ability to influence/modify means existing rules/regulations reflect the views of affected individualsFew is approximately < 50%Some is approximately = 50%p>Most is approximately > 50%",
-                                    "answers": {
-                                        "1": "There is no strategy or approach for equitable benefit sharing among the relevant stakeholders",
-                                        "2": "A strategy or approach for equitable benefit sharing is being prepared or has been prepared but not implemented",
-                                        "3": "A strategy or approach for equitable benefit sharing is being partially implemented",
-                                        "4": "A strategy or approach for equitable benefit sharing is being fully implemented",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Equitable benefit sharing"
-                                },
-                                "supportive_networks": {
-                                    "question": "Do networks exist that develop social relations and support mutual learning among local stakeholders?",
-                                    "information": "Knowledge of the range and scope of formal or informal networks.A key informant with extensive social networks may be useful to consult.",
-                                    "guidance": "The intent of this question is to understand if formal or informal networks exist that facilitate positive social relationships and opportunities for knowledge exchange amongst different local stakeholders in a MA.",
-                                    "answers": {
-                                        "1": "No networks exist that develop social relations and support mutual learning",
-                                        "2": "No such networks exist but there is interest in developing them",
-                                        "3": "Networks exist but they are not always effective at developing social relationships and supporting learning. ",
-                                        "4": "Yes, networks exist that effectively develop social relations and support mutual learning.",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Social networks"
-                                },
-                                "climatechange_incorporated": {
-                                    "question": "Is information on climate change being used to inform strategies to build community resilience to climate change?",
-                                    "information": "Knowledge of information sources on climate change, planning process to address community resilience, level of progress in the planning, and how plans are already being implemented",
-                                    "guidance": "",
-                                    "answers": {
-                                        "1": "There have been no efforts or plans to use information on climate change to inform strategies to build community resilience",
-                                        "2": "Some initial effort has taken place about how to use information on climate change to inform strategies to build community resilience, but this has yet to be implemented",
-                                        "3": "Limited plans have been made on how to use information on climate change to inform strategies to build community resilience, which may or may not be implemented",
-                                        "4": "Detailed plans have been made on how to use information on climate change to inform strategies that build community resilience, and these are being implemented",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Community resilience"
-                                },
-                                "governance_accountable": {
-                                    "question": "Are those responsible for governance of the MA held to account if they do not perform their role?",
-                                    "information": "Knowledge of formal or informal accountability mechanisms. For informal bodies and processes that are not documented you may wish to ask a key informant.Knowledge of past or present governance issues/challenges and how these have been addressed",
-                                    "guidance": "The intent of this question is to understand if there are mechanisms or systems in place that can help ensure that those responsible for managing and governing the MA are carrying out their responsibilities effectively.Rarely means that events of accountability are scarceOccasionally means there has been at least one instance where governors have been held accountable",
-                                    "answers": {
-                                        "1": "Nothing happens",
-                                        "2": "Those responsible for governance of the MA are rarely held to account for not performing their role",
-                                        "3": "Those responsible for governance of the MA are occasionally held to account when they do not perform their role",
-                                        "4": "Those responsible for governance of the MA are always held to account when they do not perform their role",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Accountability"
-                                },
-                                "timely_information": {
-                                    "question": "Do local stakeholders receive information from MA authorities in a timely manner?",
-                                    "information": "Information may include such things as the management plan, income/expenditure, benefit sharing, threats, rules and regulations, changes, or amendments to national laws, etc.",
-                                    "guidance": "Timely means that information is received at a point in time that is considered useful, effective, or relevant for stakeholders. ",
-                                    "answers": {
-                                        "1": "Local stakeholders do not receive information from MA authorities",
-                                        "2": "Local stakeholders receive information from MA authorities but not in a timely manner",
-                                        "3": "Local stakeholders receive information from MA authorities but not always in a timely manner",
-                                        "4": "Local stakeholders always receive information from MA authorities in a timely manner",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Timely information sharing"
-                                },
-                                "conflict_resolution_access": {
-                                    "question": "Do local stakeholders have access to effective conflict resolution mechanisms?",
-                                    "information": "Conflict resolution mechanisms at the site including complaints and grievance procedures and other accountability mechanisms. This can be either formal or informal procedures.",
-                                    "guidance": "This question is about the presence and effectiveness of conflict resolution mechanisms, particularly as they relate to natural resource use/access.Effective conflict resolution mechanisms are characterized as being 1) rapid to access, 2) low-cost,3) local, and 4) trusted. All four conditions must be met to be considered effective.Rare means that evidence for rapid, low-cost access to arenas to resolve conflict is scarce.Sometimes means that there is evidence to show this has occurred on more than one occasion but not on a regular basis",
-                                    "answers": {
-                                        "1": "Users do not have access to effective arenas to resolve conflict among users",
-                                        "2": "It is rare that users have access to effective local arenas to resolve conflict",
-                                        "3": "Users sometimes have access to effective arenas",
-                                        "4": "There is rapid access to effective arenas for users",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Conflict resolution"
-                                },
-                                "penalties_frequency": {
-                                    "question": "How often are the penalties for breaking resource use rules administered?",
-                                    "information": "Enforcement data or enforcement personnel",
-                                    "guidance": "Penalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty. Rarely - means that instances penalties have been administered are scarce e.g., not one occasion can be identified in the past yearOccasionally - means there has been at least one instance in the past year when a penalty for breaking resource rules has been administeredUsually - means that penalties are administered in most of the instances when rules are broken",
-                                    "answers": {
-                                        "1": "Penalties are never administered",
-                                        "2": "Penalties are rarely administered",
-                                        "3": "Penalties are occasionally administered ",
-                                        "4": "Penalties are usually administered",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Sanctioning for rule violations"
-                                },
-                                "penalties_fair": {
-                                    "question": "To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity, or frequency of the infraction?",
-                                    "information": "Enforcement data or enforcement personnel",
-                                    "guidance": "Equal - users who violate resource use rules are given penalties that correspond to the seriousness of the offensePenalties may include local sanctions all the way through to national sanctions- specify in the explanation box who is issuing the penalty.Are there different penalties depending on the size/scale of the infraction?Few is approximately < 50%Some is approximately = 50%Most is approximately > 50%",
-                                    "answers": {
-                                        "1": "Penalties are fixed and do not change with the nature, severity or frequency of the infraction",
-                                        "2": "Some penalties increase with the nature, severity and frequency of the infraction",
-                                        "3": "Most penalties increase with the nature, severity and frequency of the infraction",
-                                        "4": "All penalties increase with the nature, severity and frequency of the infraction",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Graduated sanctions"
-                                },
-                                "ecological_monitoring_used": {
-                                    "question": "Are systems in place to monitor and document ecological conditions in the MA?",
-                                    "information": "Knowledge of the state of monitoring systems and practices to collect and track ecological conditions in the MA",
-                                    "guidance": "This question is less about capacity and resources for monitoring ecological conditions in the MA and more aimed at whether existing capacity is being used and implemented effectively.",
-                                    "answers": {
-                                        "1": "Systems do not exist or are not effective in monitoring and documenting ecological conditions in the MA",
-                                        "2": "Systems exist but are only partially effective in monitoring and documenting ecological conditions in the MA",
-                                        "3": "Systems exist and are moderately effective in monitoring and documenting ecological conditions in the MA",
-                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting ecological conditions in the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Ecological monitoring"
-                                },
-                                "social_monitoring_used": {
-                                    "question": "Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?",
-                                    "information": "Knowledge of the state of monitoring systems and practices to collect and track social conditions in the MA",
-                                    "guidance": "This question is less about capacity and resources for monitoring social conditions in the MA and more aimed at whether existing capacity is being used and implemented effectively.",
-                                    "answers": {
-                                        "1": "Systems do not exist or are not effective in monitoring and documenting social conditions in the MA",
-                                        "2": "Systems exist but are only partially effective in monitoring and documenting social conditions in the MA",
-                                        "3": "Systems exist and are moderately effective in monitoring and documenting social conditions in the MA",
-                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting social conditions in the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Social monitoring"
-                                },
-                                "climatechange_monitored": {
-                                    "question": "Are systems in place to monitor and document impacts of climate change?",
-                                    "information": "Knowledge of the state of monitoring systems and practices to collect and track impacts of climate change",
-                                    "guidance": " This question is less about capacity and resources for monitoring climate change impacts and more aimed at whether existing capacity is being used effectively.",
-                                    "answers": {
-                                        "1": "Systems do not exist or are not effective in monitoring and documenting impacts of climate change",
-                                        "2": "Systems exist but are only partially effective in monitoring and documenting impacts of climate change",
-                                        "3": "Systems exist and are moderately effective in monitoring and documenting impacts of climate change",
-                                        "4": "Systems exist and are largely or wholly effective in monitoring and documenting impacts of climate change",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Climate change monitoring"
-                                },
-                                "multiple_knowledge_social": {
-                                    "question": " Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?",
-                                    "information": "Different knowledge types include:local and indigenous knowledge (often integrated through engaging IPLC in decision-making processes),experiential knowledge, and various types of conventional scientific knowledge (CSK) (including information from the natural and social sciences and from MA social and ecological monitoring )Diversity here refers to more than two different types of knowledge",
-                                    "guidance": "Relevant knowledge holders are individuals or groups who represent different knowledge systems, such as traditional, indigenous or local knowledge systems",
-                                    "answers": {
-                                        "1": "No, diverse knowledge types are not included in management/decision making",
-                                        "2": "Some diverse knowledge types are included in limited ways in management/decision-making, but not reflected or reflected in limited ways in the plan outputs",
-                                        "3": "Diverse knowledge types are included in management/decision making and plan outputs, but incorporation was not guided by relevant knowledge holders.",
-                                        "4": "Yes, diverse knowledge types are included in the management/decision-making and plan outputs, and inclusion is guided by knowledge holders",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Knowledge integration"
-                                },
-                                "multiple_knowledge_integrated": {
-                                    "question": "Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?",
-                                    "information": "Knowledge of monitoring, research and evaluation that occurs at the MA.Knowledge of decision-making procedures (e.g., who is involved and how) for the MA",
-                                    "guidance": "Routinely incorporated – there are established or clearly recognizable procedures for actively including the results of monitoring, research or evaluation when making management decisions.Major weaknesses - the weaknesses identified prevent their proper integration into management decision making.Some weaknesses – results are incorporated but more could be done to improve their efficacy.",
-                                    "answers": {
-                                        "1": "The results of monitoring, research and evaluation are not routinely incorporated into management decisions",
-                                        "2": "The results of monitoring, research and evaluation are routinely incorporated into management decisions but there are major weaknesses",
-                                        "3": "The results of monitoring, research and evaluation are routinely incorporated into management decisions but there are some weaknesses",
-                                        "4": "The results of monitoring, research and evaluation are routinely incorporated into management decisions",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Knowledge feedbacks"
-                                },
-                                "climatechange_managed": {
-                                    "question": "Is the MA consciously managed to adapt to climate change?",
-                                    "information": "Knowledge of management adaptations to anticipated climate change, and how these are already being implemented. ",
-                                    "guidance": "Adaptation to climate change means reducing the vulnerability of the MA to actual or anticipated climate change effects",
-                                    "answers": {
-                                        "1": "There have been no efforts or plans to consider adaptation to climate change management",
-                                        "2": "Some initial thought has taken place about current and anticipated impacts of climate change, but this has yet to be translated into management plans",
-                                        "3": "Limited plans have been drawn up about how to adapt management to current and anticipated climate change, which may or may not be implemented",
-                                        "4": "Detailed plans have been drawn up about how to adapt management to current and anticipated climate change, and these are already being implemented",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Anticipatory planning"
-                                },
-                                "rights_governance": {
-                                    "question": "Are rights to harvest or benefit from resources within the MA related to the contributions of local stakeholders to the governance of the MA (in terms of time and/or resources contributed)?",
-                                    "information": "Knowledge of different stakeholder’s involvement in governance and their rights to acess/benefit from resources",
-                                    "guidance": "This question is about whether or not those involved in governing resources receive any direct benefits as a result of their role in governing the MA",
-                                    "answers": {
-                                        "1": "Rights to harvest or benefit from resources are not related to contributions to governance",
-                                        "2": "Rights to harvest or benefit from resources are slightly related to contributions to governance",
-                                        "3": "Rights to harvest or benefit from resources are somewhat related to contributions to governance",
-                                        "4": "Rights to harvest or benefit from resources are directly related to contributions to governance",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Proportionality"
-                                },
-                                "management_levels_cohesive": {
-                                    "question": "Do different levels of management exist within the MA that function as a coordinated unit?",
-                                    "information": "The different management authorities (formal and informal) that may exist within the MA and the degree of synergy across them.",
-                                    "guidance": "Levels – Formal or informal. There may be overlapping management jurisdictions of different government departments. Coordinated means united and working together effectively.Major weaknesses – the weaknesses identified prevent the proper management of the MASome weaknesses – the weaknesses identified have room for improvement, but they are able to operate to fulfill the basic management requirements",
-                                    "answers": {
-                                        "1": "Different levels of management zones exist but they do not function as a cohesive unit",
-                                        "2": "Different levels of management zones exist but there are major weaknesses in their cohesion",
-                                        "3": "Different levels of management zones exist but there are some weaknesses in their cohesion",
-                                        "4": "Different levels of management zones exist and function as a cohesive unit",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Nested governance"
-                                },
-                                "regulations_exist": {
-                                    "question": "Are appropriate regulations in place to control natural resource-based activities in the MA?",
-                                    "information": "Access to (formal) information covering the regulations e.g., a management plan or legal/ government documents.Access to informal/undocumented information covering customary regulations associated with local stakeholders/communities, this could be verbal rules ",
-                                    "guidance": "This question concerns conservation regulations, including local, national, and internal regulations. Appropriate means regulations that promote sustainable use without disadvantaging local communities/stakeholders Major weaknesses: This could be in the scope of regulations e.g., key activities are not regulated, or in instances where the regulations exist, they severely disadvantage local communities/stakeholders.Some weaknesses: The key activities are covered by regulations, but more activities need to be included and/or there are issues with local communities/stakeholders being disadvantaged.Good basis: This could mean that the regulations cover all the natural based activities considered necessary to promote sustainable use without causing disadvantages to local communities/stakeholders.",
-                                    "answers": {
-                                        "1": "There are no regulations for controlling natural resource based activities in the MA.",
-                                        "2": "Regulations for controlling natural resource based activities in the MA area exist but there are major weaknesses",
-                                        "3": "Regulations for controlling natural resource based activities in the MA area exist but there are some weaknesses",
-                                        "4": "Regulations for controlling inappropriate natural resource based activities in the MA exist and provide a good basis for management",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Appropriate level of regulations"
-                                },
-                                "management_plan": {
-                                    "question": "Is there a management plan for the MA and is it being implemented?",
-                                    "information": "Access to the most recent (even if out of date) management plan or personnel responsible for writing one",
-                                    "guidance": "The definition of a management plan can be broadened to include any formal or informal process that outlines how the MA is to be managed. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response.",
-                                    "answers": {
-                                        "1": "There is no management plan for the MA.",
-                                        "2": "A management plan is being prepared OR a management plan has been prepared but is not being implemented.",
-                                        "3": "A management plan exists but it is only being partially implemented because of funding constraints or other problems",
-                                        "4": "A management plan exists and is being fully implemented",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Management plan"
-                                },
-                                "boundary_known": {
-                                    "question": "Is the boundary known by all local stakeholder groups?",
-                                    "information": "Knowledge of the range of stakeholders. If a stakeholder analysis or engagement plan exists this would make a good reference document for the range of stakeholders. Access to legal documents or management plans with information on the boundary of the MAAccess to informal information sources that may hold knowledge on boundaries (e.g., local historians)",
-                                    "guidance": "Note: Answer this question for what you understand the boundary to be.For a boundary to be known by a stakeholder group at least one individual must be able to provide the information verbally/written or the information must be accessible to the group upon enquiry (e.g., through existing records).Few is approximately < 50% Some is approximately = 50%Most is approximately > 50% ",
-                                    "answers": {
-                                        "1": "The boundary of the MA is not known by relevant stakeholder groups",
-                                        "2": "The boundary of the MA is known for a few stakeholder groups",
-                                        "3": "The boundary of the MA is known by some stakeholder groups",
-                                        "4": "The boundary of the MA is known by most of the relevant stakeholder groups",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Awareness of boundaries"
-                                },
-                                "boundary_defined": {
-                                    "question": "Is the boundary clearly defined?",
-                                    "information": "Access to legal documents or management plans with information on the boundary of the MAAccess to local key informant or site level personnel who is able to identify demarcations.",
-                                    "guidance": "Note: This question relates to what you understand the boundary to be.Demarcations can be man-made (e.g., signs, buoys) or landscape features. They may or may not be physically present in the landscape but may exist in maps in management plans/ documents or local accounts.Major deficiencies may be interpreted as some areas of the MA/CA that are not demarcated or insecure demarcations.Some deficiencies may be interpreted as needing some adjustments, but these do not interfere with its ability to function adequately.Well demarcated may be interpreted as requiring no further improvements.",
-                                    "answers": {
-                                        "1": "The boundary of the MA is not demarcated",
-                                        "2": "The boundary of the MA is demarcated but there are major deficiencies",
-                                        "3": "The boundary of the MA is demarcated but there are some deficiencies",
-                                        "4": "The boundary of the MA is well demarcated",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Defined boundaries"
-                                },
-                                "outcomes_achieved_ecological": {
-                                    "question": "To what extent do you feel the ecological outcomes are being achieved?",
-                                    "information": "Documents such as a management plan that list the ecological objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the ecology of the system.",
-                                    "guidance": "Are not – there are no notable ecological outcomes.<Partially – there are some outcomes, but they are not sufficient to meet the ecological objectives<Mostly - outcomes are sufficient enough to meet some key ecological objectives<Fully – outcomes sufficient to meet all key ecological objectives.<",
-                                    "answers": {
-                                        "1": "The ecological outcomes are not being achieved",
-                                        "2": "The ecological outcomes are only partially being achieved",
-                                        "3": "The ecological outcomes are mostly being achieved",
-                                        "4": "The ecological outcomes are fully being achieved",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Perceived ecological outcomes"
-                                },
-                                "outcomes_achieved_social": {
-                                    "question": "To what extent do you feel the social outcomes are being achieved?",
-                                    "information": "Documents such as a management plan that list the social objectives for the area. For objectives that are not documented you may wish to ask a key informant related to the authority responsible for setting the objectives (this can be through formal or informal processes)Monitoring and evaluation documents/data; perception information from users or other key informants (e.g., researchers); personal observations and knowledge of the socioeconomic characteristics of the system",
-                                    "guidance": "Social outcomes include social impacts on human well-being and livelihoods of local stakeholdersAre not – there are no notable social outcomes.Partially - outcomes are not sufficient to meet the social objectives.Mostly - outcomes are sufficient enough to meet some key social objectives.",
-                                    "answers": {
-                                        "1": "The social outcomes are not being achieved",
-                                        "2": "The social outcomes are only partially being achieved",
-                                        "3": "The social outcomes are mostly being achieved",
-                                        "4": "The social outcomes are fully being achieved",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Perceived social outcomes"
-                                },
-                                "management_capacity": {
-                                    "question": "Do those responsible for managing the MA (e.g., staff, community associations, management groups) have the capacity to enforce the rules and regulations?",
-                                    "information": "Access to the site manager/local authority/duty-bearers,    or equivalent to ask about enforcement capacity Knowledge of the (informal/formal) rules and regulationsAny available databases/documents on enforcement targets, evaluation or monitoring",
-                                    "guidance": "Note: rules and regulations may not always be legal laws, and may include local rules and normsCapacity: This is related to a person’s ability: it could mean the necessary skill set(s) required for enforcement; it could also refer to level of authority e.g., legal capacityResources: This could mean technical equipment, time, money, skillsPartial enforcement: means that there are major weaknesses that need to be addressed to ensure the proper functioning of the MAAcceptable enforcement can mean that a minimum level of enforcement exists which allows the functioning of the MA but there are some gaps/weaknesses that need to be addressed to ensure its sustainability into the futureFully enforce means that an adequate level of enforcement exists which allows the functioning of the MA and there are no significant (negligible) gaps/weaknesses and cannot affect its sustainability into the future.",
-                                    "answers": {
-                                        "1": "Those with responsibility for managing the MA do not have the capacity to enforce the rules and regulations",
-                                        "2": "Those with responsibility for managing the MA can only partially enforce the rules and regulations",
-                                        "3": "Those with responsibility for managing the MA can adequately enforce the rules and regulations",
-                                        "4": "Those with responsibility for managing the MA can fully enforce the rules and regulations",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Enforcement capacity"
-                                },
-                                "sufficient_staff": {
-                                    "question": "Are there enough people employed or engaged to manage the MA?",
-                                    "information": "Information on the number of people involved in MA managementProposal/management plan for the site to understand the priority management activitiesInformal communication with those involved in management activities may help to assess what is enough",
-                                    "guidance": "The question is in reference to all people who manage the MA on a regular basis or are employed as staff.",
-                                    "answers": {
-                                        "1": "No one is employed or engaged to manage the MA",
-                                        "2": "Numbers of people employed or engaged to manage the MA are insufficient to carry out management activities effectively ",
-                                        "3": "Numbers of people employed or engaged to manage the MA are below optimum level necessary to carry out management activities effectively",
-                                        "4": "Numbers of people employed or engaged to manage the MA are sufficient to carry out management activities effectively",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Staff and human resources"
-                                },
-                                "staff_capacity": {
-                                    "question": "Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?",
-                                    "information": "Proposal/management plan for the MA to understand the management activitiesKnowledge of the full range of personnel involved in MA management",
-                                    "guidance": "Personnel includes all individuals responsible for MA management activities",
-                                    "answers": {
-                                        "1": "Those responsible for managing the MA lack the skills needed for MA management objectives",
-                                        "2": "Training and skills of those responsible for managing the MA are low relative to the management objectives of the MA",
-                                        "3": "Training and skills of those responsible for managing the MA are adequate but could be further improved to fully achieve the objectives of management.",
-                                        "4": "Training and skills of those responsible for managing the MA are aligned with the management objectives of the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Skills and capacity"
-                                },
-                                "sufficient_budget": {
-                                    "question": "Is the current budget or funds used to support MA activities sufficient?",
-                                    "information": "MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently.Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines how the financial or management objectives on the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).",
-                                    "guidance": "If the budget information is not available please select “Do not know”",
-                                    "answers": {
-                                        "1": "There is no budget or funds for management of the MA",
-                                        "2": "The available budget or funds is inadequate for basic management needs and presents a serious constraint to the capacity to manage the MA",
-                                        "3": "The available budget or funds is acceptable but could be further improved to fully achieve effective management",
-                                        "4": "The available budget or funds is sufficient and meets the full management needs of the MA",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Financial resources"
-                                },
-                                "budget_secure": {
-                                    "question": "Is the budget or funding secure?",
-                                    "information": "MA budget or funding information. This should be adequate to cover the full costs of the MA (direct and indirect) and to ensure that the MA is managed effectively and efficiently (see previous question on budget sufficiency)Management or financial plan (You may want to broaden the definition of a management plan to include any formal or informal process that outlines the financial or management objectives of the MA. If this is applicable to the MA you are assessing please include this in the explanation box alongside your response).",
-                                    "guidance": "Secure budget    = 5 years or longer",
-                                    "answers": {
-                                        "1": "There is no secure budget or funding for the MA and management is wholly reliant on outside or highly variable funding",
-                                        "2": "There is very little secure budget or funding, and the protected area could not function adequately without outside funding",
-                                        "3": "There is a reasonably secure core budget or funding for regular operation of the MA, but many innovations and initiatives are reliant on outside funding",
-                                        "4": "There is a secure budget or funding for the MA and its management needs",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Secure funding"
-                                },
-                                "sufficient_equipment": {
-                                    "question": "Is the equipment sufficient for management needs?",
-                                    "information": "Proposal/management plan for the site to understand the management needsInventory of equipment/facilities accessible to the siteSite level equipment facilitiesKnowledge of equipment maintenance requirements",
-                                    "guidance": "Consider to what extent the available equipment and facilities are adequately maintained.",
-                                    "answers": {
-                                        "1": "There is little or no equipment and facilities for management needs ",
-                                        "2": "There are some equipment and facilities, but these are inadequate for most management needs",
-                                        "3": "There are equipment and facilities, but still some gaps that constrain management",
-                                        "4": "There are adequate equipment and facilities",
-                                        "5": "Don't know"
-                                    },
-                                    "reportText": "Assets and equipment"
-                                }
-                            }
+                            "rationale": "Swali hili linauliza nini?"
                         }
                     },
                     "collaborators": {
@@ -997,8 +517,6 @@
                     },
                     "publish-settings": {
                         "tabButton": {
-                            "ready": "Tayari kuchapishwa",
-                            "preparing": "Inajitayarisha kuchapisha",
                             "edit": "Badilisha mipangilio ya uchapishaji"
                         },
                         "title": "Maliza na Uchapishe",
@@ -1046,18 +564,6 @@
                                 "confirmationTitle": "Je, una uhakika unataka kubatilisha uchapishaji wa tathmini yako?",
                                 "confirmationDescription": "Thibitisha"
                             }
-                        },
-                        "statuses": {
-                            "public": {
-                                "name": "Hadharani",
-                                "paragraph1": "Unatoa Tathmini yako kwa umma",
-                                "paragraph2": "Itaonekana kama data iliyojumlishwa katika maarifa na ramani"
-                            },
-                            "private": {
-                                "name": "Privat",
-                                "paragraph1": "Tathmini itaonekana kwako na kwa washirika wako pekee",
-                                "paragraph2": "Itaonekana kama data iliyojumlishwa katika maarifa na ramani"
-                            }
                         }
                     }
                 },
@@ -1068,11 +574,6 @@
                 "mandatoryAttribute": "Mandatory",
                 "inactiveAttribute": "Inactive attribute",
                 "activeAttribute": "Active attribute"
-            },
-            "roles": {
-                "admin": "Msimamizi",
-                "contributor": "Mchangiaji",
-                "observer": "Mtazamaji"
             },
             "statuses": {
                 "90": "Fungua",
@@ -1181,13 +682,7 @@
             "home": {
                 "meta": {
                     "title": "Nyaraka",
-                    "slug": "/documentation",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/documentation"
                 }
             },
             "header": {
@@ -1206,20 +701,11 @@
             "home": {
                 "meta": {
                     "title": "Habari",
-                    "slug": "/news",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/news"
                 }
             },
             "header": {
                 "title": "Habari"
-            },
-            "intro": {
-                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             },
             "body": {
                 "cards": {
@@ -1231,142 +717,11 @@
             "home": {
                 "meta": {
                     "title": "Maswali yanayoulizwa mara kwa mara",
-                    "slug": "/faq",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/faq"
                 }
             },
             "header": {
                 "title": "Maswali yanayoulizwa mara kwa mara"
-            },
-            "survey": {
-                "data": {
-                    "questions": {
-                        "items": {
-                            "main_purpose": {
-                                "question": "Kusudi kuu la chombo ni nini?",
-                                "information": "Kusudi kuu la Elinor ni kufuatilia sifa muhimu kwa mafanikio ya uhifadhi wa eneo kwa muda, na kushiriki habari hii na watoa maamuzi na wafuasi wa uhifadhi wanaofanya kazi katika viwango vya ndani, kitaifa au kimataifa. Zana hii iliundwa mahususi kujua watendaji wengi wa uhifadhi ( 1) wanafahamu na kutumia toleo lililopitishwa la METT katika kazi zao na (2) wanakabiliana na bajeti na vikwazo vya muda kwa ufuatiliaji na tathmini ya uhifadhi, na huenda wakahitaji mbinu rahisi za kukusanya data sanifu. Kwa sababu hii, gharama hii ya chini na tathmini rahisi imeandaliwa kwa ushirikiano na wanachama wa jumuiya ya uhifadhi, ikijengwa na mfumo wa alama wa METT na maswali kutoka kwa itifaki zilizopo (angalia orodha ya marejeleo), na inashughulikia masuala mbalimbali ya usimamizi na utawala yanayozingatiwa kuwa muhimu kwa mafanikio.",
-                                "detail": ""
-                            },
-                            "decisions": {
-                                "question": "Je, ni aina gani ya maamuzi ambayo chombo hiki kitasaidia kufahamisha?",
-                                "information": "Kwa wasimamizi wa mradi na tovuti, taarifa kutoka kwa tathmini inaweza kusaidia:<ul><li>Kuwasiliana na wenye hakimiliki wakuu na wahusika wengine masuala ya usimamizi na utawala wenye usawa ni muhimu kuzingatiwa.</li><li>Tambua ni hatua gani zinazoweza kufaa zaidi kwa eneo lililo chini ya ulinzi au usimamizi ili kusaidia kuboresha hali ya usimamizi na utawala wake</li><li>Tambua ambapo tathmini ya kina zaidi ya usimamizi, utawala, usawa au hali ya hewa inahitajika.</li></ul>Kwa watoa maamuzi wa kikanda na kimataifa, data ya tathmini inaweza kusaidia:<ul>\n<li>Toa muhtasari mpana wa hali inayoonekana na mienendo katika usimamizi na utawala</li><li>Mazungumzo ya haraka juu ya usimamizi na utawala sawa katika mizani ya kitaifa na kimataifa ili kuhamasisha mabadiliko katika sera na utendaji.</li><li>Tambua maeneo yanayohitaji utafiti wa kina zaidi</li></ul>",
-                                "detail": ""
-                            },
-                            "complete": {
-                                "question": "Nani anapaswa kukamilisha tathmini?",
-                                "information": "Tathmini ya Elinor hapo awali iliundwa ili kukidhi mahitaji ya wahifadhi wanaofanya kazi kwa mashirika yasiyo ya kiserikali (NGOs) lakini inaweza kutumiwa na mtu yeyote anayefanya kazi kusaidia eneo linalosimamiwa. Tathmini inaweza kukamilishwa kwa njia mojawapo kati ya mbili:<ol><li>Kama<strong>kikundi cha kuzingatia uwanjani.</strong> Hii ndiyo njia ambayo tathmini nyingi za utawala hukamilishwa kimila; kuongeza mitazamo tofauti kutoka kwa wenye hakimiliki wakuu na watendaji wengine wanaohusika katika usimamizi na utawala wa eneo fulani. Kwenye tovuti ya ElinorData.org, utapata itifaki kamili ya uga ambayo inaweza kutumika kuongoza ukusanyaji wa data ya kimaadili na wenye haki na wahusika wengine. Mwongozo huu unatoa maarifa kuhusu jinsi ya kuongoza kikundi kimaadili, kupata ruhusa zinazofaa za kutumia data, na kuchunguza mitazamo tofauti; hasa ya wale ambao wanaweza kuwa wametengwa kimila. Hii ndiyo njia inayopendekezwa, kwani inaruhusu sauti tofauti kuchangia katika tathmini, ikitoa mtazamo kamili zaidi juu ya hali ya usimamizi na utawala katika eneo. Tazama zana ya tathmini ya Elinor na itifaki kwa mwongozo wa jinsi ya kuongoza kikundi cha kuzingatia.</li><li><strong>Kama tathmini ya msingi wa dawati.</strong> Njia hii ni kwa wale ambao wana muda mdogo au rasilimali za kutekeleza kikundi cha kuzingatia shirikishi. Chaguo hili huruhusu baadhi ya data kuzalishwa kwenye eneo linalodhibitiwa, ambalo linaweza kutoa tathmini ya kutosha na yenye manufaa mara nyingi kuhusu hali ya sasa na mitindo katika eneo hilo, na inaweza kuwasaidia watumiaji kutambua mapungufu yoyote muhimu ya maarifa ambayo yangehitaji utafiti na uwekezaji zaidi.</li></ol>Wakati wa kuingiza data kwenye mfumo wa ElinorData, watumiaji wanaweza kuonyesha ni njia gani walichukua ili kutoa data katika tathmini ili watumiaji wowote wa baadaye wa data waweze kuzingatia mitazamo ya nani iliyowakilishwa kwenye data.",
-                                "detail": "Ushauri ni sharti la mafanikio! Kushauriana na anuwai ya wenye haki na wahusika wengine kutaongeza uhalali wa chombo. Pia ni njia ya haraka na rahisi ya kuwajumuisha wenye haki na wahusika wengine katika sehemu ya mchakato wa kupanga na kufanya maamuzi kwa MA."
-                            },
-                            "rights_access": {
-                                "question": "Nani ana haki na ufikiaji wa data iliyoingizwa kwenye zana hii?",
-                                "information": "Maadili ya data, haki, na faragha ni sehemu kuu ya zana na mfumo wa data wa Elinor. Zana ya kutathmini ya Elinor na hati ya itifaki inatoa mwongozo wa jinsi ya kujadili faragha na maadili ya data na washiriki wa vikundi lengwa, kwa wale wanaokusanya data kuhusu Elinor kupitia majadiliano ya kikundi. Sheria na Masharti na Kanuni za Ushirikiano za Elinor zinaonyesha kwa kina jinsi data inavyohifadhiwa na kutumiwa kwenye jukwaa.",
-                                "detail": ""
-                            },
-                            "usage": {
-                                "question": "Je! nitajua jinsi data yangu inatumiwa?",
-                                "information": "Kwa data inayotolewa hadharani, watumiaji hatimaye wataweza ‘kujijumuisha’ kupokea arifa zinazowaambia watumiaji ni wapi na lini data yao ya tathmini inapakuliwa ili kuwasaidia watumiaji kuelewa ni nini data yao ya tathmini inatumiwa.",
-                                "detail": ""
-                            },
-                            "mett": {
-                                "question": "Tayari ninatumia METT (au toleo lililorekebishwa la METT) katika miradi yangu - Elinor anahusiana vipi na METT?",
-                                "information": "Elinor huunda moja kwa moja kutokana na uzoefu wa miaka mingi wa timu za mradi kutumia tathmini ya METT na zana zingine zilizoundwa kupima usimamizi wa mazingira. Tathmini ya Elinor iliundwa ili kuakisi METT kwa karibu iwezekanavyo, na huchota maswali moja kwa moja kutoka kwa METT na kutumia kipimo sawa. Rejelea makutano haya kati ya METT, SAGE na Elinor ili kuwasaidia watumiaji kuelewa mfanano na tofauti kati ya zana tofauti. Ikiwa unatumia METT kwa sasa, ukipata kibali kutoka kwa washiriki katika tathmini yako ya METT, unaweza kuingiza data iliyokusanywa kutoka METT kwenye hifadhidata ya Elinor. Zingatia kwa uangalifu mipangilio ya faragha ya data na uhakikishe kuwa una haki za kuingiza data katika mfumo wa ElinorData.",
-                                "detail": ""
-                            },
-                            "track": {
-                                "question": "Je, ni mambo gani mahususi ambayo chombo hiki kitanisaidia kufuatilia?",
-                                "information": "Zana hii inalenga katika kukusanya taarifa za msingi kuhusu maeneo yaliyo chini ya usimamizi au ulinzi, na kutathmini hali ya <strong>sifa tisa muhimu kwa uhifadhi na usimamizi wa eneo:</strong><ol><li>Mipaka ya rasilimali</li> li>Ufuatiliaji na utekelezaji</li><li>Uwezo wa usimamizi unaobadilika</li><li>Uwezo wa kiutendaji</li><li>Usimamizi jumuishi na wenye usawa</li><li>Haki zilizobainishwa wazi na kufanya maamuzi<li> /li><li>Kanuni zilizo wazi na zinazolingana</li><li>Uwazi na uwajibikaji</li><li>Matokeo ya ikolojia yanayotambulika</li></li>Matokeo ya kijamii yanayotambuliwa<li></ol>Data mfumo pia utaruhusu watumiaji wa zana kuambatanisha hati zinazofaa kama vile mipango ya usimamizi na faili za kijiografia ili kuwezesha usimamizi wa maarifa na kushiriki katika mizani ya anga na kufikia taswira zinazofaa maamuzi za data ya kiwango cha tovuti na data iliyojumlishwa.",
-                                "detail": ""
-                            },
-                            "data": {
-                                "question": "Je, data itachambuliwa na kuwasilishwa vipi?",
-                                "information": "Hifadhidata ya Elinor na jukwaa la wavuti litatoa vielelezo rahisi katika kiwango cha tovuti, kikanda, na kimataifa ambavyo vinaonyesha mitindo kwa wakati, ikijumlishwa na sifa tisa zilizoorodheshwa hapo juu. Uchambuzi thabiti zaidi unaweza kufanywa kwenye data iliyokusanywa kwa kutumia nadharia na mifumo ya sayansi ya jamii ambayo inashikilia maswali katika zana hii - yaani nadharia ya Elinor Ostrom ya utawala wa pamoja wa rasilimali, usawa katika usimamizi wa rasilimali (k.m. Bennett na Satterfield 2018), na uthabiti. kufikiri. Kulingana na mipangilio ya faragha ya data iliyochaguliwa na watumiaji, data kutoka maeneo mbalimbali itapatikana kwa matumizi ya umma.",
-                                "detail": ""
-                            },
-                            "collect_data": {
-                                "question": "Tayari ninakusanya data za usimamizi na utawala kupitia tafiti za uga. Je! ninahitaji kuacha hiyo na kutumia zana hii?",
-                                "information": "Hapana! Zana hii iliundwa ili kukamilisha ukusanyaji wa data wa kina, unaozingatia uga. Iwapo kwa sasa unakusanya data kwa kutumia tafiti za msingi au vikundi lengwa, unaweza kutumia data ambayo tayari unakusanya kujulisha majibu ya maswali yaliyoulizwa katika Elinor - hakikisha tu una haki na ruhusa za kufanya hivyo. Kinyume chake, maelezo yaliyokusanywa kwa kutumia zana hii yanaweza kukusaidia kuelewa ni mada gani zinahitaji uchunguzi wa kina zaidi unaozingatia uga.",
-                                "detail": ""
-                            },
-                            "advantages": {
-                                "question": "Je, ni faida gani kuu za kutumia chombo hiki?",
-                                "information": "Zana ya Elinor na mfumo wa data uliundwa ili kurahisisha uingiaji wa data, uhifadhi, na mchakato wa kuona. Kwa kufanya hivyo, watumiaji wanapata faida tatu muhimu:<ol><li><strong>Mchakato wa ukusanyaji, uwekaji na taswira wa data unakuwa rahisi.</strong> Kwa watumiaji wanaofanya kazi kwenye tovuti nyingi, data zote zinaweza kuhifadhiwa na kupangwa katika kwa njia hiyo hiyo, na kutolewa katika fomu ambazo ni muhimu kwa kuwasilisha matokeo kwa hadhira kuu.</li><li><strong>Watumiaji wameunganishwa na jumuiya ya kimataifa ya wahifadhi wanaojitahidi kuboresha usimamizi na utawala.</strong> Usimamizi na utawala kwa muda mrefu imekuwa mada muhimu katika uhifadhi, lakini kukusanya na kubadilishana data juu ya somo hili imekuwa vigumu. Mojawapo ya vizuizi vikuu vya kushiriki data ni wakati na nishati ambayo mara nyingi inahitajika ili kurasimisha na kusafisha data kwa wengine kutumia: Elinor hubadilisha hii kiotomatiki, na huwaruhusu watumiaji kushiriki data kwa hiari na watumiaji binafsi au umma kwa mbofyo mmoja. kitufe!</li></ol>",
-                                "detail": ""
-                            },
-                            "stored": {
-                                "question": "Data yangu imehifadhiwa wapi?",
-                                "information": "ElinorData.org hutumia Huduma za Wavuti za Amazon kuhifadhi data.",
-                                "detail": ""
-                            },
-                            "things_elinor": {
-                                "question": "Je, ni baadhi ya mambo gani ninayopaswa kukumbuka ninapofanya uamuzi wangu kuhusu kutumia zana hii?",
-                                "information": "Hakuna chombo kinachofanya kila kazi. Ni muhimu kukumbuka kwamba:<ol class='list-inside list-disc'> <li><strong>Zana hii haikusanyi data ya kina.</strong> Zana hii haichukui nafasi ya hitaji la kufanya kazi na jumuiya. kwa tathmini ya kina ya masuala yaliyoainishwa na zana.</li><li><strong>Zana hii haiaminiki kwa sheria na kanuni za eneo.</strong> Zana hii iliundwa ili kufuatilia viashiria vinavyotambulika kwa kawaida kuwa muhimu. kwa usimamizi na utawala wa maeneo ya pwani yanayosimamiwa na kuhifadhiwa. Haipimi mabadiliko maalum katika sheria na kanuni, ambayo inaweza kuwa na athari kubwa kwa shughuli za uhifadhi mahali popote. </li></ol>",
-                                "detail": ""
-                            },
-                            "counts": {
-                                "question": "Sawa, ninatumia zana. Je, nitaamuaje kile 'kinachohesabiwa' kama eneo linalosimamiwa au kuhifadhiwa?",
-                                "information": "Hii inategemea muktadha wako. Katika zana hii, tunarejelea mpaka wa eneo litakalopimwa kama eneo linalosimamiwa (MA). Eneo linalosimamiwa hurejelea tovuti/mahali ambapo vitendo vya usimamizi vinaelekezwa. Eneo linalosimamiwa (MA) linaweza kuwa eneo moja lililohifadhiwa, au eneo moja lililohifadhiwa (tazama faharasa kwa ufafanuzi), au eneo pana linalojumuisha maeneo kadhaa yaliyohifadhiwa/maeneo yaliyohifadhiwa. Kwa hivyo, mtumiaji wa zana hii anaweza kuamua kufanya tathmini hii kwenye:<ol class='list-inside list-disc'> <li>Eneo la mtu binafsi lililohifadhiwa au eneo lililohifadhiwa. Kwa mfano, hii inaweza kuwa tathmini ya eneo linalosimamiwa na Kitengo cha Usimamizi wa Ufukwe (BMU). Vinginevyo, inaweza kuwa tathmini ya Eneo Moja Lililohifadhiwa.</li><li>Bahari/mazingira mapana yenye maeneo mengi yaliyohifadhiwa na maeneo yaliyohifadhiwa na kuyazingatia haya kama eneo moja linalosimamiwa, kujibu maswali kwa kuzingatia maeneo haya yote. . Kwa mfano, Hifadhi ya Mazingira yenye maeneo mengi yaliyohifadhiwa au maeneo yaliyohifadhiwa.</li></ol>",
-                                "detail": ""
-                            },
-                            "ngo": {
-                                "question": "Ninafanya kazi katika shirika lisilo la kiserikali la kitaifa - ninawezaje kuamua ni tovuti gani nitatumia tathmini ya Elinor?",
-                                "information": "Rejelea Sehemu ya 1 ya zana ya tathmini ya Elinor na itifaki kwa mwongozo wa jinsi ya kufanya sampuli.",
-                                "detail": ""
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "methodology": {
-            "title": "Mbinu",
-            "timeframe": "Kila mwaka au mbili kwa mwaka",
-            "numberQuestions": "maswali 35",
-            "backgroundInformation": "Maelezo ya usuli",
-            "assessment": "Tathmini",
-            "paragraph1": "Tathmini ya Elinor inaweza kukamilishwa kwa njia mbili tofauti: Kupitia kikundi cha kuzingatia kilichowezeshwa na wenye hakimiliki tofauti na wahusika wengine wanaohusika na kuathiriwa na MA, au kama tathmini inayotegemea dawati inayoongozwa na mtaalamu wa uhifadhi. Wakati wa kuingiza data, watumiaji wanaweza kuonyesha ni njia gani walichukua ili kutoa data katika tathmini na ni aina gani za wenye hakimiliki na wahusika wengine walihusika katika tathmini.",
-            "focusGroup": "<strong>Elinor kama mjadala wa kikundi lengwa wa uga</strong>",
-            "focusGroupText": "Tathmini nyingi za utawala hukamilishwa kimila kupitia mijadala shirikishi ya vikundi; kuongeza mitazamo tofauti kutoka kwa wenye hakimiliki wakuu na watendaji wengine wanaohusika katika usimamizi na utawala wa eneo fulani. Kwa wale walio na muda na uwezo wa kukusanya mitazamo mbalimbali kuhusu usimamizi na utawala, tunapendekeza upakue zana ya kutathmini ya Elinor na itifaki ili kuongoza juhudi zako. Mwongozo huu unatoa maarifa kuhusu jinsi ya kuongoza kikundi kimaadili, kupata ruhusa zinazofaa za kutumia data. , na kuchunguza mitazamo mbalimbali; hasa ya wale ambao wanaweza kuwa wametengwa kimila. Hii ndiyo njia inayopendekezwa, kwani inaruhusu sauti tofauti kuchangia katika tathmini, ikitoa mtazamo kamili zaidi juu ya hali ya usimamizi na utawala katika eneo.",
-            "protocolLink": "ONGEZA KIUNGO CHA PROTOCOL HAPA",
-            "deskBased": "<strong>Elinor kama tathmini inayoongozwa na daktari, inayotegemea dawati.</strong>",
-            "deskBasedText": "Njia hii ni kwa wale ambao wana muda mdogo, rasilimali, au uwezo wa kutekeleza kikundi shirikishi cha lengo. Ingawa tathmini inayotegemea dawati inatoa chaguo chache, inaruhusu baadhi ya data kuzalishwa kwenye eneo linalodhibitiwa, ambayo inaweza kutoa tathmini ya kutosha na yenye manufaa mara nyingi kuhusu hali ya sasa na mitindo katika eneo hilo, na inaweza kuwasaidia watumiaji kutambua jambo lolote muhimu. mapungufu ya maarifa ambayo yangehitaji utafiti zaidi na uwekezaji. Iwapo utachagua kuchukua njia hii, tenga muda kwa ajili yako na wenzako wanaofahamu MA ili kujadili na kujibu kila swali, kulingana na uzoefu wako na ujuzi wa MA. Ikiwezekana, tunapendekeza kuwashirikisha wenye hakimiliki tofauti na watendaji wengine kwa njia yoyote unayoweza ili kupata maarifa kuhusu maswali tofauti.",
-            "surveyQuestions": "Maswali ya uchunguzi",
-            "goToCategory": "Nenda kwa kategoria",
-            "questions": {
-                "1": {
-                    "title": "Haki zilizofafanuliwa wazi na kufanya maamuzi",
-                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
-                    "answers": {
-                        "1": "Je, kuna sheria rasmi au zisizo rasmi zinazofafanua wazi ni nani ana haki gani ya kuvuna rasilimali ndani ya MA?",
-                        "2": "Je, kuna sheria kuwezesha usimamizi wa rasilimali kwa wenye haki na wahusika wengine?",
-                        "3": "Je, wale walio na haki ya kupata maliasili wanaweza kutumia haki zao?",
-                        "4": "Je, kuna mifumo rasmi au isiyo rasmi ambayo inafafanua wazi ni nani ana haki gani ya kuunda sheria za matumizi ya rasilimali ndani ya MA?"
-                    }
-                },
-                "2": {
-                    "title": "Haki zilizofafanuliwa wazi na kufanya maamuzi",
-                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
-                    "answers": {
-                        "1": "Je, kuna sheria rasmi au zisizo rasmi zinazofafanua wazi ni nani ana haki gani ya kuvuna rasilimali ndani ya MA?",
-                        "2": "Je, kuna sheria kuwezesha usimamizi wa rasilimali kwa wenye haki na wahusika wengine?",
-                        "3": "Je, wale walio na haki ya kupata maliasili wanaweza kutumia haki zao?",
-                        "4": "Je, kuna mifumo rasmi au isiyo rasmi ambayo inafafanua wazi ni nani ana haki gani ya kuunda sheria za matumizi ya rasilimali ndani ya MA?"
-                    }
-                },
-                "3": {
-                    "title": "Haki zilizofafanuliwa wazi na kufanya maamuzi",
-                    "explanation": "Explanation lorem iosum dolor sid amet adipiscin et ipsum",
-                    "answers": {
-                        "1": "Je, kuna sheria rasmi au zisizo rasmi zinazofafanua wazi ni nani ana haki gani ya kuvuna rasilimali ndani ya MA?",
-                        "2": "Je, kuna sheria kuwezesha usimamizi wa rasilimali kwa wenye haki na wahusika wengine?",
-                        "3": "Je, wale walio na haki ya kupata maliasili wanaweza kutumia haki zao?",
-                        "4": "Je, kuna mifumo rasmi au isiyo rasmi ambayo inafafanua wazi ni nani ana haki gani ya kuunda sheria za matumizi ya rasilimali ndani ya MA?"
-                    }
-                }
             }
         },
         "methodologyPage": {
@@ -1388,13 +743,7 @@
             "home": {
                 "meta": {
                     "title": "Wasiliana",
-                    "slug": "/contact",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/contact"
                 }
             },
             "header": {
@@ -1410,10 +759,6 @@
                 "mail": "Barua pepe yako",
                 "message": "Ujumbe",
                 "submit": "Tuma ujumbe",
-                "contact": {
-                    "strong": "Au ukipenda tuma barua pepe kwa",
-                    "link": ""
-                },
                 "confirmation": "Thank you for contacting elinor",
                 "namePlaceholder": "Name",
                 "subjectPlaceholder": "Subject",
@@ -1425,13 +770,7 @@
             "home": {
                 "meta": {
                     "title": "Ushirikiano",
-                    "slug": "/collaboration",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/collaboration"
                 }
             },
             "title": "Kanuni za Ushirikiano na Miongozo ya Manukuu",
@@ -1469,10 +808,6 @@
                 }
             }
         },
-        "tos": {
-            "title": "Masharti ya Huduma",
-            "text": "Masharti ya huduma kwa sasa yanaandaliwa."
-        },
         "about": {
             "meta": {
                 "title": "Usuli",
@@ -1484,38 +819,7 @@
                     "og_image": ""
                 }
             },
-            "title": "Kuhusu Tathmini",
-            "paragraph1": "Tathmini ya Elinor hukusanya taarifa za usuli kuhusu eneo linalosimamiwa, na taarifa kuhusu sifa tisa muhimu kwa uhifadhi na usimamizi wa eneo kupitia maswali 35.",
-            "backgroundItems": {
-                "header": "Maelezo ya Usuli",
-                "1": "1. Jina la mwezeshaji anayehusika na kuwasilisha tathmini",
-                "2": "2. Jina la taasisi inayohusishwa na tathmini hii",
-                "3": "3. Wajibu wa mwezeshaji kuwajibika kuwasilisha tathmini",
-                "4": "4. Maelezo ya mawasiliano ya mwezeshaji anayewasilisha tathmini",
-                "5": "5. Tarehe ya tathmini (siku / mwezi / mwaka)",
-                "6": "6. Je, taarifa za tathmini hii zilikusanywa vipi?",
-                "7": "7. Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
-                "8": "8. Uwakilishi wa jinsia wa wenye haki na wahusika wengine ulishauriwa",
-                "9": "9. Sababu za tathmini (k.m. ufuatiliaji wa kila mwaka, msingi wa mradi)",
-                "10": "10. Jina la MA",
-                "11": "11. Nchi/Nchi ambako MA iko",
-                "12": "12. Jimbo/Mkoa ambapo MA inapatikana",
-                "13": "13. Tarehe ya kuanzishwa rasmi (ikiwa inafaa)",
-                "14": "14. Je, haki za mamlaka ya MA zinatambuliwa rasmi katika…",
-                "15": "15. Ukubwa wa MA (ha)",
-                "16A": "16A. GPS kuratibu za MA",
-                "16B": "16B. Ramani au faili ya anga ya MA",
-                "17": "17. Aina ya utawala wa MA",
-                "18": "18. Malengo ya MA",
-                "19": "19. Jina la mamlaka ya usimamizi",
-                "20": "20. Je, mamlaka ya usimamizi wa MA inapokea usaidizi wa kiufundi, kifedha au aina nyingine kutoka kwa mojawapo ya vikundi au mashirika yafuatayo?",
-                "21A": "21A. Eneo la kuzingatia ndani ya MA",
-                "21B": "21B. Jina la PA/CA kubwa eneo hili la kuzingatia liko ndani",
-                "22": "22. Kitambulisho Kinachohusishwa katika Hifadhidata ya Dunia ya Maeneo Yanayolindwa",
-                "23": "23. Idhini kutoka kwa mamlaka ya MA"
-            },
             "elinorAttributes": {
-                "header": "Muhtasari wa sifa zilizopimwa na Elinor",
                 "attribute1": {
                     "name": "1. Mipaka ya rasilimali",
                     "description": "Sifa hii inapima ubora wa mipaka ya maeneo ya usimamizi (MA). Maswali yanayoulizwa hapa ni kama maeneo ya usimamizi ni: i) Rahisi kutambulikana na ii) yanajulikana na wenye haki na watendaji wengine wote husika.",
@@ -1576,64 +880,6 @@
                     "useIf": "Kama ungetaka kujua iwapo wale wanaohusika na maeneo ya usimamizi (MA) ya kijamii wanadhani malengo yao yanatimizwa.",
                     "reportText": "Hupima mitazamo ya jumla ambayo wale wanaokamilisha tathmini ya Elinor wanayo juu ya matokeo na kijamii ya MA."
                 }
-            },
-            "elinorQuestions": {
-                "header": "Maswali yanayotumika kupima sifa za Elinor",
-                "resourceBoundaries": {
-                    "Q1": "(Q1) Je, mpaka unajulikana na wenye haki na wahusika wengine? ",
-                    "Q2": "(Q2) Je, mpaka umeelezwa waziwazi?"
-                },
-                "monitoringEnforcement": {
-                    "Q3": "(Q3) Je, adhabu za kuvunja sheria za matumizi ya rasilimali zinatekelezwa mara ngapi?",
-                    "Q4": "(Q4) Je, ni kwa kiwango gani adhabu za kuvunja sheria kwa kutumia rasilimali zinavyotegemea asilia ya kosa, ukali wa adhabu au kiwango cha ukiukaji?"
-                },
-                "adaptiveManagement": {
-			"Q5": "(Q5) Je, kuna mifumo ya kufuatilia na kunakili hali za kiekolojia katika eneo la usimamizi (MA)?",
-                    "Q6": "(Q6) Je, mifumo ipo ya kufuatilia na kunakili hali za kijamii za jumuiya ndani na karibu na maeneo ya usimamizi (MA)? ",
-                    "Q7": "(Q7) Je, mifumo ipo ya kufuatilia na kunakili athari za mabadiliko ya hali ya hewa?",
-                    "Q8": "(Q8) Je, wale wanaohusika na usimamizi wa Maeneo ya Usimamizi (MA) wanajumuisha ujuzi tofauti (wa kisayansi, majaribio, kienyeji, jadi) katika maamuzi ya usimamizi?",
-                    "Q9": "(Q9) Je, matokeo ya ufuatilizi, utafiti na utathmini kwa kawaida yanaingizwa katika maamuzi na/au sera zinazohusiana na usimamizi wa maeneo ya usimamizi?",
-                    "Q10": "(Q10) Je, maeneo ya usimamizi yanasimamiwa kwa uangalifu ili kukabiliana na mabadiliko ya hali ya hewa?"
-                },
-                "operationalCapacity": {
-                    "Q11": "(Q11) Je, wale walio na jukumu la usimamizi wa maeneo ya usimamizi ( Kwa mfano wafanyikazi, vyama vya jumuiya, makundi ya usimamizi) wana uwezo wa kutekeleza sheria na",
-                    "Q12": "(Q12) Je, kuna watu walioajiriwa wa kutosha katika maeneo ya usimamizi?",
-                    "Q13": "(Q13) Je, wale wanaohusika na usimamizi wa eneo la usimamizi wana uwezo wa kutosha (Kwa mfano, wana taarifa na ujuzi wa kutosha) wa kutekeleza malengo ya usimamizi?",
-                    "Q14": "(Q14) Je, bajeti iliyopo sasa au pesa zinazotumika kusaidia shughuli za maeneo ya usimamizi zinatosha?",
-                    "Q15": "(Q15) Je, bajeti au ufadhili uko salama? ",
-                    "Q16": "(Q16) Je, zana zinatosha kwa mahitaji ya usimamizi?"
-                },
-                "inclusive": {
-                    "Q17": "(Q17) Je, ni kwa kiwango gani wenye haki na watendaji wengine wanaoathiriwa na sheria za MA wanavyoweza kuchukua jukumu la kubadilisha sheria hizo?",
-                    "Q18": "(Q18) Je, wanawake au makundi ya watu wasiojiweza/walio hatarini katika jumuiya wana haki zilizo wazi za maliasili ndani ya eneo la usimamizi?",
-                    "Q19": "(Q19) Je, kuna mkakati kamili au mtazamo wa kuhakikisha kwamba faida kutoka kwa eneo la usimamizi zinagawanywa kwa usawa miongoni mwa wenye haki na wahusika wengine?",
-                    "Q20": "(Q20) Je, kuna mitandao au watu mbalimbali ambao wanaendeleza mahusiano ya kijamii na kuunga mkono ujifunzaji miongoni mwa wenye haki na wahusika wengine?",
-                    "Q21": "(Q21) Je, taarifa kuhusu mabadiliko ya hali ya hewa inatumika ili kutoa mwelekeo kuhusu mikakati ya kujenga jumuiya inayoweza kukabiliana na mabadiliko ya hali ya hewa?"
-                },
-                "rights": {
-                    "Q22": "(Q22) Je, kuna sheria rasmi na zisizo rasmi ambazo zinafafanua waziwazi nani ana haki gani ya kuvuna rasilimali zilizo ndani maeneo ya usimamizi?",
-                    "Q23": "(Q23) Je, kuna njia rasmi au zisizo rasmi za kueleza nani ana haki gani ya kuunda sheria za kutumiwa katika maeneo ya usimamizi?",
-                    "Q24": "(Q24) Je, kuna sheria rasmi na zisizo rasmi ambazo zinaeleza waziwazi nani ana haki gani yakutenga makundi kutokana na kuvuna rasilimali za maeneo ya usimamizi?",
-                    "Q25": "(Q25) Je, kuna sheria za kuwezesha wenye haki na watendaji wengine kusimamia rasilimali?",
-                    "Q26": "(Q26) Je, wale walio na haki ya kupata maliasili wanaoweza kutumia haki zao?"
-                },
-                "clearRegulations": {
-                    "Q27": "(Q27) Je, kiasi ambacho mtu anaruhusiwa kufaidika na rasilimali ndani ya eneo linalosimamiwa kinahusiana na michango yao katika usimamizi wa eneo linalosimamiwa  (kwa kuzingatia muda na /au mali iliyochangiwa)?",
-                    "Q28": "(Q28) Je, kuna viwango mbalimbali vya usimamizi katika eneo la usimamizi ambavyo vinafanya kazi pamoja kama kitengo kimoja?",
-                    "Q29": "(Q29) Je, kuna kanuni mwafaka za kudhibiti shughuli zinazohusiana na maliasili katika eneo la usimamizi?",
-                    "Q30": "(Q30) Je, kuna mpango wa usimamizi unaotekelezwa katika eneo la usimamizi?"
-                },
-                "transparency": {
-                    "Q31": "(Q31) Je, walio na jukumu ya kuongoza eneo la usimamizi huadhibiwa iwapo hawajawajibika katika jukumu lao?",
-                    "Q32": "(Q32) Je, wenye haki na watendaji wengine hupokea taarifa kutoka kwa mamlaka ya eneo la usimamizi kwa muda unaofaa?",
-                    "Q33": "(Q33) Je, wenye haki na watendaji wengine wana mbinu mwafaka ya kutatua mizozo?"
-                },
-                "outcomesEcological": {
-                    "Q34": "(Q34) Je, ni kwa kiwango gani unahisi matokeo ya kiikolojia yameweza kufikiwa?"
-		},
-                "outcomesSocial": {
-                    "Q35": "(Q35) Je, ni kwa kiwango gani unahisi matokeo ya kijamii yameweza kufikiwa?"
-                }
             }
         },
         "profile": {
@@ -1682,13 +928,7 @@
             "home": {
                 "meta": {
                     "title": "Ramani",
-                    "slug": "/map",
-                    "seo": {
-                        "title": "",
-                        "description": "",
-                        "keywords": "",
-                        "og_image": ""
-                    }
+                    "slug": "/map"
                 }
             },
             "filters": {
@@ -1760,7 +1000,8 @@
         "generateReport": "Generate Report",
         "version": "Version",
         "description": "Description",
-        "areaSize": "Area Size"
+        "areaSize": "Area Size",
+        "required": "Required"
     },
     "footer": {
         "faqs": "Maswali yanayoulizwa mara kwa mara",

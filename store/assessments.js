@@ -36,7 +36,6 @@ export const state = () => ({
             managementAreas: [],
             countries: [],
             year: null,
-            realm: null,
             type: null
         },
         assessments: []
@@ -586,7 +585,7 @@ export const actions = {
         })
         try {
             const responseType = 'blob';
-            const response = await this.$axios.get(`/v2/assessments/${assessmentId}/survey-file/`, {responseType});
+            const response = await this.$axios.get(`/v2/assessments/${assessmentId}/xlsx/`, {responseType});
             const objectURL = window.URL.createObjectURL(new Blob([response.data]));
             const link = window.document.createElement('a');
             link.href = objectURL;
@@ -611,12 +610,8 @@ export const actions = {
             queryParams.push(`year=${filters.year}`);
         }
 
-        if(filters.realm) {
-            queryParams.push(`realm=${filters.realm}`);
-        }
-
         if(filters.type) {
-            queryParams.push(`type=${filters.type}`);
+            queryParams.push(`collection_method=${filters.type.id}`);
         }
         const queryParamsString = `&${queryParams.join('&')}`;
         let results = [];
@@ -627,6 +622,11 @@ export const actions = {
 
         for(const country of filters.countries) {
             const response = await this.$axios.get(`v2/reports/assessments/?management_area_countries=${country.code}${queryParamsString}`);
+            results = results.concat(response.data.results);
+        }
+
+        if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
+            const response = await this.$axios.get(`v2/reports/assessments/?${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
@@ -643,8 +643,12 @@ export const actions = {
 
     async removeFilterAggregateReport(store, {field, index}) {
         store.commit('removeFilterAggregateReport', {field, index});
-        const filters = store.state.aggregateReport.filters;
-        filters[field] = value;
+        const filters = {...store.state.aggregateReport.filters};
+        if(Array.isArray(filters[field])) {
+            filters[field].splice(index, 1)
+        } else {
+            filters[field] = null;
+        }
 
         let queryParams = [];
 
@@ -652,12 +656,8 @@ export const actions = {
             queryParams.push(`year=${filters.year}`);
         }
 
-        if(filters.realm) {
-            queryParams.push(`realm=${filters.realm}`);
-        }
-
         if(filters.type) {
-            queryParams.push(`type=${filters.type}`);
+            queryParams.push(`collection_method=${filters.type.id}`);
         }
         const queryParamsString = `&${queryParams.join('&')}`;
         let results = [];
@@ -668,6 +668,12 @@ export const actions = {
 
         for(const country of filters.countries) {
             const response = await this.$axios.get(`v2/reports/assessments/?management_area_countries=${country.code}${queryParamsString}`);
+            results = results.concat(response.data.results);
+        }
+
+
+        if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
+            const response = await this.$axios.get(`v2/reports/assessments/?${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 

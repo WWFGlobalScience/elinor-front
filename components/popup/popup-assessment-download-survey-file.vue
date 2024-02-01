@@ -14,7 +14,7 @@
         <br /><br />
         <div class="file__buttons">
             <button
-                @click="downloadSurveyFile"
+                @click="onDownloadSurveyFile"
                 type="button"
                 class="btn--border-turqy btn--opacity--child"
             >
@@ -30,26 +30,19 @@ import {mapActions, mapState} from "vuex";
 
 export default {
     name: "popup-assessment-download-survey-file",
-    data() {
-        return {
-        };
-    },
     computed: {
         ...mapState({
-            assessment: (state) => state.assessments.instance
+            assessment: (state) => state.assessments.assessment
         }),
     },
     methods: {
         ...mapActions({
             downloadSurveyFile: "assessments/downloadSurveyFile",
-            resetDownloadSurveyFileError: "assessments/resetDownloadSurveyFileError",
             popupState: "popup/popupState",
         }),
 
         async onDownloadSurveyFile() {
-            await this.downloadSurveyFile({
-                id: this.assessment.id,
-            });
+            await this.downloadSurveyFile(this.assessment.id);
         },
     },
 };

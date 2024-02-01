@@ -276,6 +276,11 @@
         }
     }
     &.input--multiselect {
+        &.input--error {
+            .multiselect__tags {
+                @apply border-red-500 #{!important};
+            }
+        }
         .multiselect {
             @apply min-h-0;
         }
