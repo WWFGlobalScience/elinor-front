@@ -94,10 +94,10 @@
                         "text2": "Elinor inajumuisha maswali 35 katika sifa 10 za utawala na usimamizi. Kila swali lina alama 0-3 na alama hizo huchangia kwa usawa alama zao za sifa. Kwa upande mwingine, alama za sifa huchangia kwa usawa alama ya jumla. Kulingana na alama iliyotolewa, Elinor anapendekeza hatua tofauti za vitendo, ikiwa ni pamoja na Panga, Jenga, Imarisha na Dumisha. Ni muhimu kutambua kwamba ingawa alama hizi hutoa maarifa muhimu, zinapaswa kutumiwa pamoja na data ya ubora iliyoingizwa katika Elinor wakati wa kuamua ni hatua gani za usimamizi zinazobadilika za kuchukua.",
                         "button": "Nenda kwa Methodology",
                         "score": "Score",
-                        "plan": "Plan",
-                        "build": "Build",
-                        "strengthen": "Strengthen",
-                        "maintain": "Maintain"
+                        "plan": "Panga",
+                        "build": "Jenga",
+                        "strengthen": "Imarisha",
+                        "maintain": "Dumisha"
                     }
                 },
                 "latestNews": {
@@ -308,7 +308,7 @@
                         "tabButton": "Data ya tathmini",
                         "title": "Hariri Data ya Tathmini",
                         "labels": {
-                            "year": "Select Year",
+                            "year": "Chagua mwaka",
                             "name": "Jina la tathmini",
                             "organization": "Jina la taasisi inayohusishwa na tathmini hii",
                             "personResponsibleRole": "Wajibu wa mtu anayehusika na kukamilisha Tathmini hii",
@@ -567,13 +567,13 @@
                         }
                     }
                 },
-                "attributes": "Attributes",
-                "seeQuestions": "See Questions",
-                "optionalAttributesTitle": "Optional attributes",
-                "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
-                "mandatoryAttribute": "Mandatory",
-                "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
+                "attributes": "Sifa",
+                "seeQuestions": "Angalia maswali",
+                "optionalAttributesTitle": "Sifa za hiari",
+                "optionalAttributesDescription": "Chagua sifa zinasohusiana na tathmini yako",
+                "mandatoryAttribute": "Lazima",
+                "inactiveAttribute": "Sifa isiyotumiks",
+                "activeAttribute": "Sifa inayotumika"
             },
             "statuses": {
                 "90": "Fungua",
@@ -672,11 +672,11 @@
                     "text": "Wasiliana na msimamizi wa elinor ili kuhariri au kufuta tathmini yako"
                 }
             },
-            "outOf100": "out of 100",
-            "published": "Published",
-            "finalized": "Finalized",
-            "readyToPublish": "Ready to publish",
-            "preparingToPublish": "Preparing to publish"
+            "outOf100": "juu ya 100",
+            "published": "Imechapishwa",
+            "finalized": "Imekamilika",
+            "readyToPublish": "Tayari kuchapishwa",
+            "preparingToPublish": "Inatayarishwa kuchapishwa"
         },
         "documentation": {
             "home": {
@@ -994,14 +994,14 @@
             "autosave": "Data imehifadhiwa"
         },
         "flag": "Flag",
-        "uploadSurveyFile": "Upload survey",
-        "downloadSurveyFile": "Download survey",
+        "uploadSurveyFile": "Pakia utafiti",
+        "downloadSurveyFile": "Pakua utafiti",
         "contactAdministrator": "Wasiliana na Msimamizi",
-        "generateReport": "Generate Report",
-        "version": "Version",
-        "description": "Description",
-        "areaSize": "Area Size",
-        "required": "Required"
+        "generateReport": "Toa Ripoti",
+        "version": "Toleo",
+        "description": "Maelezo",
+        "areaSize": "Ukubwa wa Eneo",
+        "required": "Inahitajika"
     },
     "footer": {
         "faqs": "Maswali yanayoulizwa mara kwa mara",
