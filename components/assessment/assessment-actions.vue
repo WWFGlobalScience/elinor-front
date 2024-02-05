@@ -16,7 +16,7 @@
                     popupState({
                         active: true,
                         component: 'popup-assessment-generate-report',
-                        title: 'Generate Report'
+                        title: 'default.generateReport'
                     })
                 "
                 role="button"
