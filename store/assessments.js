@@ -586,10 +586,14 @@ export const actions = {
         try {
             const responseType = 'blob';
             const response = await this.$axios.get(`/v2/assessments/${assessmentId}/xlsx/`, {responseType});
-            const objectURL = window.URL.createObjectURL(new Blob([response.data]));
+            const blob = new Blob(
+                [response.data],
+                {type: response.headers["content-type"]}
+            );
+            const objectURL = window.URL.createObjectURL(blob);
             const link = window.document.createElement('a');
             link.href = objectURL;
-            link.setAttribute('download', `assessment-${assessmentId}.xslx`);
+            link.setAttribute('download', `assessment-${assessmentId}.xlsx`);
             window.document.body.appendChild(link);
             link.click();
         } catch (error) {
@@ -616,17 +620,17 @@ export const actions = {
         const queryParamsString = `&${queryParams.join('&')}`;
         let results = [];
         for(const managementArea of filters.managementAreas) {
-            const response = await this.$axios.get(`v2/reports/assessments/?management_area=${managementArea.id}${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
         for(const country of filters.countries) {
-            const response = await this.$axios.get(`v2/reports/assessments/?management_area_countries=${country.code}${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
         if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
-            const response = await this.$axios.get(`v2/reports/assessments/?${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
@@ -662,18 +666,18 @@ export const actions = {
         const queryParamsString = `&${queryParams.join('&')}`;
         let results = [];
         for(const managementArea of filters.managementAreas) {
-            const response = await this.$axios.get(`v2/reports/assessments/?management_area=${managementArea.id}${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
         for(const country of filters.countries) {
-            const response = await this.$axios.get(`v2/reports/assessments/?management_area_countries=${country.code}${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
 
         if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
-            const response = await this.$axios.get(`v2/reports/assessments/?${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 

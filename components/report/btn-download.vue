@@ -14,8 +14,7 @@
                 d="M12.484 11.953a.797.797 0 1 0 0-1.593.797.797 0 0 0 0 1.593Z"
             />
         </svg>
-        <span>Download Report</span></a
-    >
+        <span>{{ $t('pages.report.btnDownload') }}</span></a>
 </template>
 <script>
 export default {

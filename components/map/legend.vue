@@ -8,7 +8,9 @@
             >
                 <span class="block bg-poor w-3 h-3 rounded-full"></span>
             </span>
-            <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'plan'}">Plan</div>
+            <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'plan'}">
+                {{ $t('pages.map.legend.plan') }}
+            </div>
         </div>
         <div @click="changeFilter('build')" class="flex flex-row justify-start items-center gap-2 cursor-pointer">
             <span
@@ -16,7 +18,9 @@
             >
                 <span class="block bg-average w-3 h-3 rounded-full"></span>
             </span>
-            <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'build'}">Build</div>
+            <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'build'}">
+                {{ $t('pages.map.legend.build') }}
+            </div>
         </div>
         <div @click="changeFilter('strengthen')" class="flex flex-row justify-start items-center gap-2 cursor-pointer">
             <span
@@ -25,7 +29,7 @@
                 <span class="block bg-good w-3 h-3 rounded-full"></span>
             </span>
             <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'strengthen'}">
-                Strengthen
+                {{ $t('pages.map.legend.strengthen') }}
             </div>
         </div>
         <div @click="changeFilter('mantain')" class="flex flex-row justify-start items-center gap-2 cursor-pointer">
@@ -34,7 +38,9 @@
             >
                 <span class="block bg-excellent w-3 h-3 rounded-full"></span>
             </span>
-            <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'mantain'}">Mantain</div>
+            <div class="text-xs font-montserrat font-semibold hover:text-black" :class="{'text-black': range == 'mantain'}">
+                {{ $t('pages.map.legend.mantain') }}
+            </div>
         </div>
     </div>
 </template>

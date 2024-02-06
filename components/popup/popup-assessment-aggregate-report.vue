@@ -272,7 +272,7 @@ export default {
             assessments: (state) => state.assessments.aggregateReport.assessments,
             report: (state) => state.assessments.aggregateReport.report,
             managementAreas: state => state.managementareas.list,
-            countries: state => state.countries.list,
+            countries: state => state.countries.management_area_countries,
         }),
         covering() {
             return this.assessments.reduce(function (a, b) {
@@ -280,6 +280,9 @@ export default {
                 return a + (size ? size : 0);
             }, 0);
         }
+    },
+    mounted() {
+        this.$store.dispatch('countries/fetchCountries');
     },
     methods: {
         ...mapActions({
@@ -312,7 +315,7 @@ export default {
         },
         validate() {
             this.errors = {name: [], assessments: null, countries: null, year: null, type: null};
-
+/*
             if(this.filters.countries.length === 0){
                 this.errors.countries = this.$t('default.required');
             }
@@ -324,7 +327,7 @@ export default {
             if(this.filters.type === null) {
                 this.errors.type = this.$t('default.required');
             }
-
+*/
             if(this.selectedAssessments.length === 0){
                 this.errors.assessments = this.$t('pages.assessments.list.aggregateReport.selectedAssessmentsError');
             }
@@ -337,7 +340,7 @@ export default {
                 }
             }
 
-            return this.errors.name.length === 0 && this.errors.assessments === null &&  this.errors.year !== null &&  this.errors.type !== null &&  this.errors.countries.length;
+            return this.errors.name.length === 0 && this.errors.assessments === null;
         },
         pdf() {
             if(this.validate()) {

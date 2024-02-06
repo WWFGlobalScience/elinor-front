@@ -12,7 +12,7 @@
                     <div class="form__row">
                         <div class="input input--multiselect input--1-4">
                             <div class="multiselect__wrap">
-                                <multiselect placeholder="Flag type" track-by="id" label="name" :options="flagTypes" :multiple="false" :searchable="false" :showLabels="false" :allow-empty="false" open-direction="bottom" :hide-selected="false" @input="onFlagTypeChange($event)" :value="getFlagTypeOption(form.flag_type)">
+                                <multiselect :placeholder="$t('pages.assessments.actions.flag.placeholder')" track-by="id" label="name" :options="flagTypes" :multiple="false" :searchable="false" :showLabels="false" :allow-empty="false" open-direction="bottom" :hide-selected="false" @input="onFlagTypeChange($event)" :value="getFlagTypeOption(form.flag_type)">
                                  </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
@@ -69,10 +69,10 @@ export default {
     data() {
         return {
             flagTypes: [
-                {id: 'inappropriate', name: 'Inappropriate'},
-                {id: 'personal', name: 'Personal'},
-                {id: 'inaccurate', name: 'Inaccurate'},
-                {id: null, name: 'Other'}
+                {id: 'inappropriate', name: this.$t('pages.assessments.actions.flag.types.inappropriate')},
+                {id: 'personal', name: this.$t('pages.assessments.actions.flag.types.personal')},
+                {id: 'inaccurate', name: this.$t('pages.assessments.actions.flag.types.inaccurate')},
+                {id: null, name: this.$t('pages.assessments.actions.flag.types.other')}
             ],
             form: {
                 flag_type: false,

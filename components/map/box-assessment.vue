@@ -20,7 +20,7 @@
             <div class="pt-2 pb-2 pr-4 pl-4 flex flex-col justify-start gap-2 bg-turqy-lighter border-t border-grayy-border">
                 <div v-if="assessment.properties.management_area" class="flex flex-col">
                     <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                        Name of Management Area
+                        {{ $t('pages.map.boxAssessment.managedArea') }}
                     </p>
                     <p class="text-s font-semibold leading-6">
                         {{ assessment.properties.management_area.name }}
@@ -56,7 +56,7 @@
             <div class="flex flex-col chart-content pb-4 pr-4 pl-4 border-grayy-borde border-t border-b">
                 <map-score-chart v-if="loaded" :width="288" :height="288"></map-score-chart>
                 <p class="text-s font-semibold leading-4">
-                    By Attributes
+                    {{ $t('pages.map.boxAssessment.byAttributes') }}
                 </p>
             </div>
         </div>
@@ -64,7 +64,7 @@
             <nuxt-link
                 :to="`/assessments/${assessment.id}/info/`"
                 class="btn btn--opacity--child">
-                <span class="btn--opacity__target">Go to Full Assessment</span>
+                <span class="btn--opacity__target">{{ $t('pages.map.boxAssessment.goToAssessment') }}</span>
                 <img src="~/assets/img/ico-button-arrow.svg" />
             </nuxt-link>
         </div>

@@ -9,7 +9,7 @@
                 </strong></p>
             </div>
             <div v-if="assessment.properties.management_area" class="flex flex-col font-montserrat">
-                <p class="text-xs leading-4">Managed Area</p>
+                <p class="text-xs leading-4">{{ $t('pages.map.popup.managedArea') }}</p>
                 <p class="text-s leading-4 text-turqy font-semibold break-words">
                     {{ assessment.properties.management_area.name}}
                 </p>
@@ -20,7 +20,7 @@
                 @click="viewFunction"
                 role="button"
                 class="btn--border-turqy btn--border-turqy--small btn--opacity--child">
-                    <span class="btn--opacity__target pt-2 pb-2">View</span>
+                    <span class="btn--opacity__target pt-2 pb-2">{{ $t('pages.map.popup.view') }}</span>
                     <img src="~/assets/img/ico-button-arrow-turqy.svg" alt="" />
             </a>
         </div>
