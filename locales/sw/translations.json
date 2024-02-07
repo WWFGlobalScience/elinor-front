@@ -521,7 +521,7 @@
             "tabButton" : {
               "edit" : "Badilisha mipangilio ya uchapishaji",
               "ready" : "Tayari kuchapishwa",
-              "Preparing" : "Inatayarishwa kuchapishwa"
+              "preparing" : "Inatayarishwa kuchapishwa"
             },
             "title" : "Maliza na Uchapishe",
             "finalize" : {
