@@ -630,7 +630,7 @@ export const actions = {
         }
 
         if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
-            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999${queryParamsString}`);
+            const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
