@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div :class="{'input--error': errors.year !== null}" class="input input--multiselect col-span-1 md:col-span-4">
-                    <label class="label">{{ $t('pages.assessments.list.aggregateReport.byYear') }}*</label>
+                    <label class="label">{{ $t('pages.assessments.list.aggregateReport.byYear') }}</label>
                     <div class="multiselect__wrap">
                         <multiselect
                             :value="filters.year"
@@ -56,7 +56,7 @@
                 </div>
                 <div :class="{'input--error': errors.countries !== null}" class="input input--multiselect col-span-2 md:col-span-4">
                     <label class="label"
-                    >{{ $t("pages.assessments.list.aggregateReport.byCountries") }}*</label>
+                    >{{ $t("pages.assessments.list.aggregateReport.byCountries") }}</label>
                     <div class="multiselect__wrap">
                         <multiselect
                             :value="filters.countries"
@@ -84,7 +84,7 @@
                     </p>
                 </div>
                 <div :class="{'input--error': errors.type !== null}" class="input input--multiselect col-span-2 md:col-span-4">
-                    <label class="label">{{ $t('pages.assessments.list.aggregateReport.byType') }}*</label>
+                    <label class="label">{{ $t('pages.assessments.list.aggregateReport.byType') }}</label>
                     <div class="multiselect__wrap">
                         <multiselect :value="filters.type" :options="types.map(type => { return {id: type, name: $t('pages.assessments.collectionMethods.' + type)}})" :multiple="false"
                                      track-by="id"
