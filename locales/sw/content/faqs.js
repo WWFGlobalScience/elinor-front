@@ -1,7 +1,7 @@
 export default [
     {
         type: 'default',
-        title : '¿Cuál es el propósito principal de la herramienta?',
+        title : 'Je, kusudi kubwa la kifaa cha Elinor ni nini?',
         text: `
             <p>
                 The main purpose of Elinor is to track attributes critical to the success of area-based conservation
