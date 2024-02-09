@@ -1003,7 +1003,10 @@
           "description" : "Shirikiana na wenye haki na wahusika wengine ili kudumisha utawala thabiti na kufuatilia vitisho vinavyoweza kutokea"
         }
       },
-      "totalScores" : {}
+      "totalScores" : {
+        "value" : "",
+        "indicator" : "kiashiria"
+      }
     }
   },
   "sidebar" : {
