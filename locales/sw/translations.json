@@ -521,7 +521,7 @@
             "tabButton" : {
               "edit" : "Badilisha mipangilio ya uchapishaji",
               "ready" : "Tayari kuchapishwa",
-              "preparing" : "Inatayarishwa kuchapishwa"
+              "Preparing" : "Inatayarishwa kuchapishwa"
             },
             "title" : "Maliza na Uchapishe",
             "finalize" : {
@@ -948,7 +948,41 @@
             "attributes" : "Kwa Sifa"
           }
         }
+      },
+      "legend" : {
+        "plan" : "Panga",
+        "build" : "Jenga",
+        "strengthen" : "Imarisha",
+        "maintain" : "Dumisha"
+      },
+      "popup" : {
+        "managedArea" : ""
+      },
+      "title" : "RAMANI",
+      "boxList" : {
+        "covering" : "",
+        "ha" : "hekta"
+      },
+      "boxAssessment" : {
+        "managedArea" : "Jina la Eneo Linalosimamiwa",
+        "byAttributes" : "Kwa Sifa",
+        "goToAssessment" : "Nenda kwa Tathmini Kamili"
       }
+    },
+    "report" : {
+      "aside" : {
+        "year" : "Mwaka ulioanzishwa",
+        "maGovernanceType" : "Aina ya utawala wa MA",
+        "totalHa" : "Jumla ya hekta",
+        "assessmentType" : "Aina ya tathmini",
+        "maVersionDate" : "Current assessment date"
+      },
+      "country" : {
+        "download" : "Pakua ripoti"
+      },
+      "btnDownload" : "Pakua ripoti",
+      "scoreTable" : {},
+      "totalScores" : {}
     }
   },
   "sidebar" : {
