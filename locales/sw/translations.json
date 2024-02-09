@@ -953,14 +953,14 @@
         "plan" : "Panga",
         "build" : "Jenga",
         "strengthen" : "Imarisha",
-        "maintain" : "Dumisha"
+        "mantain" : "Dumisha"
       },
       "popup" : {
-        "managedArea" : ""
+        "managedArea" : "Eneo Linalosimamiwa"
       },
       "title" : "RAMANI",
       "boxList" : {
-        "covering" : "",
+        "covering" : "ukubwa wa",
         "ha" : "hekta"
       },
       "boxAssessment" : {
@@ -981,7 +981,28 @@
         "download" : "Pakua ripoti"
       },
       "btnDownload" : "Pakua ripoti",
-      "scoreTable" : {},
+      "scoreTable" : {
+        "value" : "",
+        "indicator" : "",
+        "attribute" : "Sifa",
+        "aggregate" : "Jumla",
+        "plan" : {
+          "title" : "Panga",
+          "description" : "Shirikiana na wenye haki na wahusika wengine kuunda mipango ya kushughulikia mapungufu makubwa ya utawala"
+        },
+        "build" : {
+          "title" : "Jenga",
+          "description" : "Shirikiana na wenye haki na wahusika wengine ili kujenga juu ya maendeleo ya awali ili kushughulikia pengo kubwa la utawala"
+        },
+        "strengthen" : {
+          "title" : "Imarisha",
+          "description" : "Shirikiana na wenye haki na wahusika wengine ili kuimarisha utawala kwa kushughulikia mapungufu madogo"
+        },
+        "maintain" : {
+          "title" : "Dumisha",
+          "description" : "Shirikiana na wenye haki na wahusika wengine ili kudumisha utawala thabiti na kufuatilia vitisho vinavyoweza kutokea"
+        }
+      },
       "totalScores" : {}
     }
   },
