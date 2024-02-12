@@ -345,7 +345,8 @@ export default {
         pdf() {
             if(this.validate()) {
                 var doc = new jsPDF("l", "px", [1440, 1024]);
-                this.generatePDFRecursive(0, doc)
+                this.generatePDFRecursive(0, doc);
+                this.popupState({ active: false });
             }
         },
         generatePDFRecursive(i, doc) {

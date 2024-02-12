@@ -9,18 +9,18 @@
                                 <div class="file">
                                     <dropzone
                                         v-if="!fileAdded"
-                                        id="import_file"
-                                        ref="importFile"
+                                        id="survey_file"
+                                        ref="surveyFile"
                                         :options="dropzone"
                                         :useStyling="false"
                                         :destroyDropzone="true"
                                         :useCustomSlot="true"
-                                        @vdropzone-file-added="onImportFileAdded"
+                                        @vdropzone-file-added="onSurveyFileAdded"
                                         @vdropzone-upload-progress="onUploadSurveyFileProgress"
                                     >
                                         <div class="file__drag">
                                             <img src="~/assets/img/ico-file-drag-turqy.svg"/>
-                                            <span>{{ $t("pages.assessment.uploadSurveyFile.filePlaceholder") }}</span>
+                                            <span>{{ $t("pages.assessments.uploadSurveyFile.filePlaceholder") }}</span>
                                         </div>
                                     </dropzone>
 
@@ -29,7 +29,7 @@
                                     <!--STEP 2 - FILE UPLOAD-->
                                     <template v-if="fileAdded && progress < 100">
                                         <label class="label label--bold">
-                                            {{ $t('pages.assessment.uploadSurveyFile.validatingFileFormat') }}</label>
+                                            {{ $t('pages.assessments.uploadSurveyFile.validatingFileFormat') }}</label>
                                         <div class="elinor__progress-bar">
                                             <span class="elinor__progress-bar-status" :style="{width: progress + '%'}"></span>
                                         </div>
@@ -38,27 +38,36 @@
                                     <!--//STEP 2 - FILE UPLOAD-->
 
                                     <!--STEP 3 - SUCCESS-->
-                                    <div v-if="progress === 100 && !uploadSurveyFileError" class="description">
+                                    <div v-if="progress === 100 && !surveyFileError" class="description">
                                         <img
                                             src="~/assets/img/ico-file-gray.svg"
                                             alt="file uploaded successfully"
                                         />
-                                        <h4>{{ $t('pages.assessment.uploadSurveyFile.fileCorrectlyFormated') }}</h4>
-                                        <p>{{ $t('pages.assessment.uploadSurveyFile.fileCorrectlyFormatedText') }}</p>
+                                        <h4>{{ $t('pages.assessments.uploadSurveyFile.fileCorrectlyFormated') }}</h4>
+                                        <p>{{ $t('pages.assessments.uploadSurveyFile.fileCorrectlyFormatedText') }}</p>
+                                        <br />
+                                        <br />
+                                        <img
+                                            src="~/assets/img/ico-file-error.svg"
+                                        />
+                                        <p style="color: red">{{ $t('pages.assessments.uploadSurveyFile.uploadWarning') }}</p>
+                                        <br />
+                                        <br />
                                     </div>
                                     <!--//STEP 3 - SUCCESS-->
 
                                     <!--STEP 3 - ERROR-->
-                                    <div v-if="fileAdded && progress === 100 && uploadSurveyFileError" class="description">
+                                    <div v-if="fileAdded && progress === 100 && surveyFileError" class="description">
                                         <img
                                             src="~/assets/img/ico-file-error.svg"
                                             alt="file error"
                                         />
-                                        <h4>{{ $t('pages.assessment.uploadSurveyFile.importFileError') }}</h4>
-                                        <p>
-                                            {{ uploadSurveyFileError.message.import_file[0] }}
+                                        <h4>{{ $t('pages.assessments.uploadSurveyFile.surveyFileErrorTitle') }}</h4>
+                                        <p>{{ $t('pages.assessments.uploadSurveyFile.surveyFileErrorDescription') }}</p>
+                                        <p style="color: red" v-for="(error) in getErrors(surveyFileError)">
+                                            {{ error }}
                                         </p>
-                                        <p>{{ $t('pages.assessment.uploadSurveyFile.tryAgain') }} <a @click="clearImportFile" role="button">{{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.tryAgain') }}</a></p>
+                                        <p>{{ $t('pages.assessments.uploadSurveyFile.tryAgainText') }} <a @click="clearSurveyFile" role="button">{{ $t('pages.assessments.uploadSurveyFile.tryAgainButton') }}</a></p>
                                     </div>
                                     <!--//STEP 3 - ERROR-->
                                 </div>
@@ -66,21 +75,21 @@
                                     <!--STEP 1 - DROPZONE-->
                                     <button
                                         v-if="!fileAdded"
-                                        @click="importFileTrigger"
+                                        @click="surveyFileTrigger"
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                     >
-                                        <span class="btn--opacity__target">{{ $t("pages.assessment.uploadSurveyFile.buttons.select") }}</span>
+                                        <span class="btn--opacity__target">{{ $t("pages.assessments.uploadSurveyFile.triggerButton") }}</span>
                                         <img src="~/assets/img/ico-file-turqy.svg"/>
                                     </button>
                                     <!--<p class="msg msg--error">This format is not supported</p>-->
                                     <!--//STEP 1 - DROPZONE-->
-                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">{{ $t('pages.assessment.uploadSurveyFile.formatNotSupported') }}</p>
+                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">{{ $t('pages.assessments.uploadSurveyFile.formatNotSupported') }}</p>
 
                                     <!--STEP 2 - FILE UPLOAD-->
                                     <button
                                         v-if="fileAdded && progress < 100"
-                                        @click="cancelImportFile"
+                                        @click="cancelSurveyFile"
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                     >
@@ -92,7 +101,7 @@
                                     <!--STEP 3 - SUCCESS -->
                                     <button
                                         @click="accept"
-                                        v-if="fileAdded && progress === 100 && !uploadSurveyFileError"
+                                        v-if="fileAdded && progress === 100 && !surveyFileError"
                                         type="button"
                                         class="btn btn--opacity--child"
                                     >
@@ -104,7 +113,7 @@
                                     <!--STEP 3 - ERROR -->
                                     <button
                                         @click="cancel"
-                                        v-if="fileAdded && progress === 100 && uploadSurveyFileError"
+                                        v-if="fileAdded && progress === 100 && surveyFileError"
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                     >
@@ -120,21 +129,16 @@
                 </form>
             </div>
             <div class="right">
-                <template v-if="!fileAdded || progress < 100 || uploadSurveyFileError">
+                <template v-if="!fileAdded || progress < 100 || surveyFileError">
+                    <div class="description"><strong>{{ $t('pages.assessments.uploadSurveyFile.helpTitle') }}</strong></div>
+                    <br />
                     <div class="description">
-                        <div v-html="$t('pages.assessment.uploadSurveyFile.help')" />
-                        <ul class="list-disc list-inside mt-10" v-if="!fileAdded || progress < 100 || uploadSurveyFileError">
-                            <li>{{ $t('pages.assessment.uploadSurveyFile.condition1') }}</li>
-                            <li>{{ $t('pages.assessment.uploadSurveyFile.condition2') }}</li>
-                            <li>{{ $t('pages.assessment.uploadSurveyFile.condition3') }}</li>
-                            <li>{{ $t('pages.assessment.uploadSurveyFile.condition4') }}</li>
-                            <li>{{ $t('pages.assessment.uploadSurveyFile.condition5') }}</li>
-                        </ul>
+                        <p v-html="$t('pages.assessments.uploadSurveyFile.help')" v-if="!fileAdded || progress < 100 || surveyFileError" />
                     </div>
                 </template>
             </div>
             <!--STEP 3 - SUCCESS -->
-            <div v-show="fileAdded && progress === 100 && !uploadSurveyFileError" class="popup__map-img" style="top: 10rem !important;">
+            <div v-show="fileAdded && progress === 100 && !surveyFileError" class="popup__map-img" style="top: 10rem !important;">
                 <h1>Success!!</h1>
             </div>
             <!--//STEP 3 - SUCCESS-->
@@ -154,47 +158,50 @@ export default {
     data() {
         return {
             fileAdded: false,
+            file: null,
             progress: 0,
             dropzoneAccepted: null,
             dropzone: {
                 url: "none",
                 previewTemplate: this.template(),
                 uploadMultiple: false,
-                acceptedFiles: ".xslx",
+                acceptedFiles: ".xlsx",
                 autoQueue: false,
             },
         };
     },
     computed: {
         ...mapState({
-            assessment: (state) => state.assessments.instance,
-            uploadSurveyFileError: (state) => state.assessments.uploadSurveyFileError,
+            assessment: (state) => state.assessments.assessment,
+            surveyFileError: (state) => state.assessments.surveyFile.error,
         }),
     },
     methods: {
         ...mapActions({
             uploadSurveyFile: "assessments/uploadSurveyFile",
-            resetUploadSurveyFileError: "assessments/resetUploadSurveyFileError",
+            resetSurveyFileError: "assessments/resetSurveyFileError",
             popupState: "popup/popupState",
         }),
-        importFileTrigger() {
-            this.$refs.importFile.$el.click();
+        surveyFileTrigger() {
+            this.$refs.surveyFile.$el.click();
         },
-        clearImportFile() {
+        clearSurveyFile() {
             this.fileAdded = false;
-            this.resetImportFileError();
+            this.resetSurveyFileError();
             this.progress = 0;
-            this.$refs.importFile.removeAllFiles();
+            this.$refs.surveyFile && this.$refs.surveyFile.removeAllFiles();
         },
-        async onImportFileAdded(file) {
+        async onSurveyFileAdded(file) {
             await this.$nextTick(async () => {
                 if(file.status === "error") {
                     this.dropzoneAccepted = false;
                 } else {
                     this.dropzoneAccepted = true;
+                    this.file = file;
                     await this.uploadSurveyFile({
+                        assessmentId: this.assessment.id,
                         file,
-                        id: this.assessment.id,
+                        dryRun: true,
                         onUploadProgress: this.onUploadSurveyFileProgress
                     });
                     this.fileAdded = true;
@@ -204,21 +211,29 @@ export default {
         onUploadSurveyFileProgress(progressEvent) {
             this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
         },
-        cancelImportFile() {
+        cancelSurveyFile() {
             this.fileAdded = false;
             this.progress = 0;
-            this.resetImportFileError();
+            this.resetSurveyFileError();
         },
-        accept() {
-            this.cancelImportFile();
-            this.popupState({active: false});
+        async accept() {
+            this.cancelSurveyFile();
+            await this.uploadSurveyFile({
+                assessmentId: this.assessment.id,
+                file: this.file,
+                dryRun: false
+            });
+            await this.popupState({active: false});
         },
         cancel() {
-            this.cancelImportFile();
+            this.cancelSurveyFile();
             this.popupState({active: false});
         },
         template() {
             return "<div></div>";
+        },
+        getErrors(errors) {
+            return Object.keys(errors).map(key => errors[key].message);
         }
     },
 };

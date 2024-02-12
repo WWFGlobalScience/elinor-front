@@ -39,6 +39,9 @@ export const state = () => ({
             type: null
         },
         assessments: []
+    },
+    surveyFile: {
+        error: null
     }
 })
 
@@ -140,11 +143,7 @@ export const mutations = {
         state.flag.sent = sent;
     },
     filterAggregateReport(state, {field, value}) {
-        if(Array.isArray(state.aggregateReport.filters[field])) {
-            state.aggregateReport.filters[field].push(value);
-        } else {
-            state.aggregateReport.filters[field] = value
-        }
+        state.aggregateReport.filters[field] = value
     },
     removeFilterAggregateReport(state, {field, index}) {
         if(Array.isArray(state.aggregateReport.filters[field])) {
@@ -155,6 +154,12 @@ export const mutations = {
     },
     assessmentAggregateReport(state, assessments) {
         state.aggregateReport.assessments = assessments;
+    },
+    setSurveyFileError(state, error) {
+        state.surveyFile.error = error;
+    },
+    resetSurveyFileError(state) {
+        state.surveyFile.error = null;
     }
 }
 
@@ -600,12 +605,40 @@ export const actions = {
             console.log(error);
         } finally {
             this.dispatch('loader/loaderState', {active: false})
+            state.dispatch('popup/popupState', {active: false}, {root: true})
         }
+    },
+
+    async uploadSurveyFile(state, {assessmentId, file, dryRun, onUploadProgress}) {
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: 'Uploading survey file...'
+        });
+
+        let formData = new FormData()
+        if(dryRun) {
+            formData.append('dryrun', '1')
+        }
+
+        formData.append('file', file, file.name)
+
+        try {
+            const config = {onUploadProgress, headers: {'Content-Type': 'multipart/form-data'}};
+            const response = await this.$axios.$post(`/v2/assessments/${assessmentId}/xlsx/`, formData, config);
+        } catch (error) {
+            state.commit('setSurveyFileError', error.response.data);
+        } finally {
+            this.dispatch('loader/loaderState', {active: false});
+        }
+    },
+
+    async resetSurveyFileError(state) {
+        state.commit('resetSurveyFileError');
     },
 
     async filterAggregateReport(store, {field, value}) {
         store.commit('filterAggregateReport', {field, value});
-        const filters = store.state.aggregateReport.filters;
+        const filters = {...store.state.aggregateReport.filters};
         filters[field] = value;
 
         let queryParams = [];

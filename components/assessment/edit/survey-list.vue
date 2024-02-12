@@ -94,8 +94,7 @@
                             </div>
                             <div v-if="!isAttributeChecked(attribute)" class="q-msg">
                                 <p class="txt__inactive">
-                                    To activate this question, you must activate
-                                    the attribute
+                                    {{ $t("pages.assessments.edit.tabs.survey.inactiveAttribute")}}
                                 </p>
                             </div>
                         </div>

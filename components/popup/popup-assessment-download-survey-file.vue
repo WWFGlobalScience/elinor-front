@@ -1,13 +1,12 @@
 <template>
     <div class="popup__content">
         <div class="description">
-            <div v-html="$t('pages.assessment.downloadSurveyFile.help')" />
+            <div v-html="$t('pages.assessments.downloadSurveyFile.helpTitle')" />
             <ul class="list-disc list-inside mt-10">
-                <li>{{ $t('pages.assessment.downloadSurveyFile.condition1') }}</li>
-                <li>{{ $t('pages.assessment.downloadSurveyFile.condition2') }}</li>
-                <li>{{ $t('pages.assessment.downloadSurveyFile.condition3') }}</li>
-                <li>{{ $t('pages.assessment.downloadSurveyFile.condition4') }}</li>
-                <li>{{ $t('pages.assessment.downloadSurveyFile.condition5') }}</li>
+                <li>{{ $t('pages.assessments.downloadSurveyFile.help1') }}</li>
+                <li>{{ $t('pages.assessments.downloadSurveyFile.help2') }}</li>
+                <li>{{ $t('pages.assessments.downloadSurveyFile.help3') }}</li>
+                <li>{{ $t('pages.assessments.downloadSurveyFile.help4') }}</li>
             </ul>
         </div>
         <br /><br />
@@ -18,7 +17,7 @@
                 type="button"
                 class="btn--border-turqy btn--opacity--child"
             >
-                <span class="btn--opacity__target">{{ $t("pages.assessment.downloadSurveyFile.buttons.select") }}</span>
+                <span class="btn--opacity__target">{{ $t("pages.assessments.downloadSurveyFile.downloadButton") }}</span>
                 <img src="~/assets/img/ico-file-turqy.svg"/>
             </button>
         </div>

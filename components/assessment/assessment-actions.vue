@@ -164,14 +164,14 @@ export default {
             this.popupState( {
                 active: true,
                 component: 'popup-assessment-download-survey-file',
-                title: 'pages.assessment.downloadSurveyFile.title'
+                title: 'pages.assessments.downloadSurveyFile.title'
             })
         },
         uploadSurveyFile() {
             this.popupState( {
                 active: true,
                 component: 'popup-assessment-upload-survey-file',
-                title: 'pages.assessment.uploadSurveyFile.title'
+                title: 'pages.assessments.uploadSurveyFile.title'
             })
         }
     }
