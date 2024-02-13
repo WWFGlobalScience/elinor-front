@@ -77,6 +77,10 @@
 <script>
 import { mapState } from "vuex";
 
+import "../../../assets/fonts/montserrat/Montserrat-Medium-normal.js";
+import "../../../assets/fonts/montserrat/Montserrat-SemiBold-bold.js";
+import "../../../assets/fonts/montserrat/Montserrat-Bold-bold.js";
+
 export default {
     name: 'report-pages-aggregate',
     props: ['index','assessments', 'name', 'selectedFilters'],
