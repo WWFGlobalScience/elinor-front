@@ -243,8 +243,7 @@ export default {
             filters: state => state.assessments.filters,
             users: state => state.users.users,
             listType: state => state.assessments.listType
-        }),
-        ...mapGetters(["assessments/getPercentage"])
+        })
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
