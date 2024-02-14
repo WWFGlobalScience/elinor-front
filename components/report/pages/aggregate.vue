@@ -34,7 +34,7 @@
                       </template>
                       <template v-if="selectedFilters.type">
                         <li class="elinor__tag elinor__tag--sm">
-                          <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.type }}</span>
+                          <span class="text font-montserratSemiBoldPdf">{{ selectedFilters.type.name }}</span>
                         </li>
                       </template>
                     </ul>
