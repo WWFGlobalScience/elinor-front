@@ -283,7 +283,12 @@
           },
           "survey" : {
             "tabButton" : "Utafiti huo",
-            "title" : "Utafiti huo"
+            "title" : "Utafiti huo",
+            "attributes" : {
+              "mandatory" : "Lazima",
+              "active" : "Sifa inayotumika",
+              "inactive" : "Sifa isiyotumiks"
+            }
           },
           "collaborators" : {
             "tabButton" : "Washiriki",
