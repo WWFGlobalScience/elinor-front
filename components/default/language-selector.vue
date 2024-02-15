@@ -47,8 +47,7 @@ export default {
         }),
         onLanguageChange(language) {
             this.$i18n.setLocale(language.code);
-            const locale = this.$i18n.locales.find(lang => lang.code !== this.$i18n.locale);
-            this.$axios.setHeader('Accept-Language', locale.code);
+            this.$axios.setHeader('Accept-Language', language.code);
             this.$store.dispatch('attributes/fetchAttributes');
             this.$store.dispatch('surveyquestions/fetchSurveyQuestions');
             this.toggleLangDropdown();
