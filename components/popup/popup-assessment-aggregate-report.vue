@@ -196,7 +196,8 @@
                     <div class="flex-grow-0 border-l p-6 flex flex-col justify-center items-center">
                         <div class="input input--checkbox">
                             <div class="checkbox">
-                                <input type="checkbox" @change="onToggleAssessment(assessment.id, $event.target.value)"
+                                <input type="checkbox" @change="onToggleAssessment(assessment.id)"
+                                       :value="true"
                                        :checked="selectedAssessments.indexOf(assessment.id) !== -1">
                                 <img src="~/assets/img/ico-checkbox.svg">
                             </div>
@@ -262,7 +263,6 @@ export default {
             name: null,
             years: [new Date().getFullYear(), new Date().getFullYear() - 1, new Date().getFullYear() - 2, new Date().getFullYear() - 3, new Date().getFullYear() - 4],
             types: [10, 30],
-            selectedAssessments: [],
             errors: {name: [], assessments: null, countries: null, year: null, type: null}
         };
     },
@@ -270,6 +270,7 @@ export default {
         ...mapState({
             filters: (state) => state.assessments.aggregateReport.filters,
             assessments: (state) => state.assessments.aggregateReport.assessments,
+            selectedAssessments: (state) => state.assessments.aggregateReport.selectedAssessments,
             report: (state) => state.assessments.aggregateReport.report,
             managementAreas: state => state.managementareas.list,
             countries: state => state.countries.management_area_countries,
@@ -288,6 +289,7 @@ export default {
         ...mapActions({
             filterAggregateReport: "assessments/filterAggregateReport",
             removeFilterAggregateReport: "assessments/removeFilterAggregateReport",
+            toggleAssessmentAggregateReport: "assessments/toggleAssessmentAggregateReport",
             fetchManagementAreas: 'managementareas/fetchManagementAreas',
             popupState: "popup/popupState",
         }),
@@ -304,11 +306,8 @@ export default {
         onTypeSelect(type) {
             this.filterAggregateReport({field: 'type', value: type});
         },
-        onToggleAssessment(assessmentId, value) {
-            this.selectedAssessments = this.selectedAssessments.filter(id => id !== assessmentId);
-            if (value) {
-                this.selectedAssessments.push(assessmentId)
-            }
+        onToggleAssessment(assessmentId, selected) {
+            this.toggleAssessmentAggregateReport({assessmentId, selected})
         },
         onRemoveFilter(field, index = null) {
             this.removeFilterAggregateReport({field, index});

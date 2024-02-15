@@ -38,7 +38,8 @@ export const state = () => ({
             year: null,
             type: null
         },
-        assessments: []
+        assessments: [],
+        selectedAssessments: []
     },
     surveyFile: {
         error: null
@@ -153,6 +154,8 @@ export const mutations = {
         }
     },
     assessmentAggregateReport(state, assessments) {
+        const assessmentIds = assessments.map(assessment => assessment.id);
+        state.aggregateReport.selectedAssessments = state.aggregateReport.selectedAssessments.filter(assessmentId => assessmentIds.indexOf(assessmentId) !== -1);
         state.aggregateReport.assessments = assessments;
     },
     setSurveyFileError(state, error) {
@@ -160,6 +163,18 @@ export const mutations = {
     },
     resetSurveyFileError(state) {
         state.surveyFile.error = null;
+    },
+    toggleAssessmentAggregateReport(state, {assessmentId}) {
+        let found = false;
+        state.aggregateReport.selectedAssessments = state.aggregateReport.selectedAssessments.filter(id => {
+            if(id === assessmentId) {
+                found = true;
+            }
+            return id !== assessmentId
+        });
+        if (!found) {
+            state.aggregateReport.selectedAssessments.push(assessmentId)
+        }
     }
 }
 
@@ -724,7 +739,6 @@ export const actions = {
 
         store.commit('assessmentAggregateReport', withoutDuplicates);
     },
-
     reset(state) {
         state.dispatch('fetchAssessments');
     },
@@ -748,5 +762,8 @@ export const actions = {
     filterAssessmentsBy(state, type) {
         state.commit('setListType', type);
         state.dispatch('fetchAssessments');
+    },
+    toggleAssessmentAggregateReport(state, {assessmentId, selected}) {
+        state.commit('toggleAssessmentAggregateReport', {assessmentId, selected})
     }
 }
