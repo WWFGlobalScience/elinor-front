@@ -3,7 +3,7 @@
     @apply w-full mb-12;
 
     thead {
-        @apply relative h-14;
+        @apply relative;
         &::after {
             content: "";
             @apply absolute h-14 w-screen bg-turqy-lighter right-0 top-0 mx-auto;
@@ -16,7 +16,7 @@
             }
         }
         th {
-            @apply text-xs text-grayy font-normal text-left z-10 w-16;
+            @apply text-xs text-grayy font-normal text-left z-10 w-16 h-14;
             &.c-data-table__main-cell {
                 @apply w-7/12;
             }
