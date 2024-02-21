@@ -10,11 +10,6 @@
             li {
                 @apply text-turqy text-sm pl-2 sm:text-xs;
 
-                &::after {
-                    content: "|";
-                    @apply pl-2;
-                }
-
                 &:nth-last-child(-n + 2) {
                     &::after {
                         @apply hidden md:inline-block;

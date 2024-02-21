@@ -7,7 +7,7 @@
                 <div class="flex flex-col gap-10">
                     <div class="keys-card ui-rounded-border">
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
-                            Key governance strengths
+                            {{ $t('pages.assessments.actions.generateReport.strengths.title') }}
                         </h4>
                         <ul class="list-keys list-keys--xl key-ok">
                             <li v-for="key in keys.slice(0, 3)" class="text-medium">
@@ -21,7 +21,7 @@
 
                     <div class="keys-card ui-rounded-border">
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
-                            Key governance needs
+                            {{ $t('pages.assessments.actions.generateReport.needs.title') }}
                         </h4>
                         <ul class="list-keys list-keys--xl key-ko">
                             <li v-for="key in keys.length > 3 ? keys.slice(3).slice(-3) : []" class="text-medium">
@@ -35,7 +35,7 @@
 
                     <div class="keys-card ui-rounded-border">
                         <h4 class="title uppercase font-montserratSemiBoldPdf">
-                            Context
+                            {{ $t('pages.assessments.actions.generateReport.context.title') }}
                         </h4>
                         <p class="font-montserratMediumPdf text-grayy-lighter max-w-{720px}">
                             {{ form.context }}

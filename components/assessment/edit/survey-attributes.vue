@@ -6,7 +6,7 @@
                     <h1>{{ $t( 'pages.assessments.edit.tabs.survey.title' ) }}</h1>
                 </header>
                 <div class="elinor__survey-attribute-group">
-                    <h2 class="title-up uppercase">Attributes</h2>
+                    <h2 class="title-up uppercase">{{ $t("pages.assessments.edit.attributes") }}</h2>
                     <ul class="elinor__survey-attribute-gird">
                         <li v-for="(attribute, index) in requiredAttributes" class="elinor__survey-attribute-item item--mandatory">
                             <div class="item-pic">
@@ -19,7 +19,7 @@
                                     el: '#anchor-attribute-' + attribute.id,
                                     offset: -80,
                                 }">
-                                    See Questions
+                                    {{ $t("pages.assessments.edit.seeQuestions") }}
                                 </a>
                             </div>
                         </li>
@@ -27,14 +27,14 @@
                 </div>
                 <div class="elinor__survey-attribute-group">
                     <div class="title-border">
-                        <h3 class="title">Optional attributes</h3>
+                        <h3 class="title">{{ $t("pages.assessments.edit.optionalAttributesTitle") }}</h3>
                     </div>
-                    <p class="text-intro">Select the attributes that correspond with your Assessment</p>
+                    <p class="text-intro">{{ $t("pages.assessments.edit.optionalAttributesDescription") }}</p>
                     <ul class="elinor__survey-attribute-gird">
                         <li v-for="(attribute, index) in optionalAttributes" class="elinor__survey-attribute-item item--optional">
                             <div class="option-check">
-                                <input :checked="isAttributeChecked(attribute)" 
-                                    @click.stop="unCheckAttribute(attribute, $event)" 
+                                <input :checked="isAttributeChecked(attribute)"
+                                    @click.stop="unCheckAttribute(attribute, $event)"
                                     type="checkbox" name="survey-attribute-optional" id="survey-attribute-optional-1">
                                 <div class="radio">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">

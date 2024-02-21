@@ -278,9 +278,10 @@
         <section class="section section--latest-news">
             <div class="container">
                 <div class="row">
-                    <div class="text-medium uppercase">LATEST NEWS</div>
+                    <div class="text-medium uppercase">
+                        {{ $t("pages.home.public.latestNews.title") }}</div>
                     <nuxt-link to="/news" role="button" class="link-arrow">
-                        <span>See more news</span>
+                        <span>{{ $t("pages.home.public.latestNews.seeMoreNews") }}</span>
                         <img
                             class="ico"
                             src="~/assets/img/ico-arrow-right.svg"
@@ -309,9 +310,7 @@
                                         : newsInstance.text
                                 }}
                             </p>
-                            <nuxt-link to="news" class="link-more mt-4"
-                                >Read more</nuxt-link
-                            >
+                            <nuxt-link to="news" class="link-more mt-4">{{ $t("pages.home.public.latestNews.readMore") }}</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -486,7 +485,7 @@
                             }}
                         </p>
                         <div class="section--img-text__block-nested">
-                            <h5 class="c-epi">SCORE</h5>
+                            <h5 class="c-epi">{{ $t("pages.home.public.content.methodology.score")}}</h5>
                             <p>
                                 {{
                                     $t("pages.home.public.content.methodology.text2")
@@ -497,25 +496,25 @@
                                     <span
                                         class="w-7 h-7 rounded-full bg-poor"
                                     ></span>
-                                    <span class="text">Plan</span>
+                                    <span class="text">{{ $t("pages.home.public.content.methodology.plan") }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-average"
                                     ></span>
-                                    <span class="text">Build</span>
+                                    <span class="text">{{ $t("pages.home.public.content.methodology.build") }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-good"
                                     ></span>
-                                    <span class="text">Strengthen</span>
+                                    <span class="text">{{ $t("pages.home.public.content.methodology.strengthen") }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-excellent"
                                     ></span>
-                                    <span class="text">Maintain</span>
+                                    <span class="text">{{ $t("pages.home.public.content.methodology.maintain") }}</span>
                                 </div>
                             </div>
                         </div>
@@ -541,7 +540,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import news from "../../content/news";
+import locales from '../../locales';
 const numNews = 3;
 const maxCharacters = 300;
 
@@ -552,7 +551,6 @@ export default {
             username: null,
             password: null,
             remember: false,
-            latestNews: [...news].splice(0, numNews),
             maxCharacters
         };
     },
@@ -560,7 +558,12 @@ export default {
         ...mapState({
             alerts: state => state.authentication.alerts,
             error: state => state.authentication.error
-        })
+        }),
+        latestNews() {
+            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const news = locales[currentLanguage.code].news;
+            return [...news].splice(0, numNews);
+        },
     },
     mounted() {
         this.$store.commit("authentication/clearError");

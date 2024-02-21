@@ -3,7 +3,7 @@
         class="btn btn--border-turqy btn--sm ml-auto"
         title="Report">
         <img src="~/assets/img/ico-download.png" alt="Download" />
-        <span>Download Report</span>
+        <span>{{ $t('pages.report.country.download') }}</span>
         <div class="report-wrap">
             <template v-for="(item, index) in Math.ceil(report.length/6)">
                 <report-pages-country :index="index" :assessments="filteredAssessments"></report-pages-country>

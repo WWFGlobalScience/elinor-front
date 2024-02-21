@@ -62,9 +62,6 @@
                         </div>
                     </div>
                 </div>
-                <template v-if="filters && filters.management_area_countries">
-                    <report-country></report-country>
-                </template>
                 <button
                     type="button"
                     class="btn btn--border-turqy btn--sm ml-auto"
@@ -81,7 +78,7 @@
                                 :class="'bg-' + getAssessmentColor(assessment.score)">
                                 <span class="text-white text-[24px] font-semibold">{{ assessment.score }}</span>
                             </div>
-                            <span class="uppercase text-grayy-lighter font-bold text-[8px]">out of 100</span>
+                            <span class="uppercase text-grayy-lighter font-bold text-[8px]">{{ $t("pages.assessments.outOf100") }}</span>
                         </div>
                         <div class="left">
                             <span class="title">{{ assessment.person_responsible.username }}</span>
@@ -103,14 +100,14 @@
                                 <span class="status-circle">
                                     <img src="~assets/img/ico-megaphone.svg"/>
                                 </span>
-                                <span class="text">Published</span>
+                                <span class="text">{{ $t("pages.assessments.published") }}</span>
                             </div>
                             <div v-if="assessment.data_policy === 10 && assessment.status === 10"
                                 class="assessment-status status--ready">
                                 <span class="status-circle">
                                     <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K" />
                                 </span>
-                                <span class="text">Finalized</span>
+                                <span class="text">{{ $t("pages.assessments.finalized") }}</span>
                             </div>
                             <div
                                 v-if="
@@ -123,7 +120,7 @@
                                 <span class="status-circle"
                                     ><span>100%</span></span
                                 >
-                                <span class="text">Ready to Publish</span>
+                                <span class="text">{{ $t("pages.assessments.readyToPublish") }}</span>
                             </div>
                             <div
                                 v-if="
@@ -140,7 +137,7 @@
                                         }}%</span
                                     ></span
                                 >
-                                <span class="text">Preparing to Publish</span>
+                                <span class="text">{{ $t("pages.assessments.preparingToPublish") }}</span>
                             </div>
                         </div>
                     </header>
@@ -246,8 +243,7 @@ export default {
             filters: state => state.assessments.filters,
             users: state => state.users.users,
             listType: state => state.assessments.listType
-        }),
-        ...mapGetters(["assessments/getPercentage"])
+        })
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,

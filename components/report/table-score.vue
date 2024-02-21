@@ -5,16 +5,16 @@
         >
             <tr>
                 <th></th>
-                <th>Indicator<br />value</th>
-                <th>Attribute<br />value</th>
-                <th>Aggregate<br />value</th>
+                <th>{{ $t('pages.report.scoreTable.indicator') }}<br />{{ $t('pages.report.scoreTable.value') }}</th>
+                <th>{{ $t('pages.report.scoreTable.attribute') }}<br />{{ $t('pages.report.scoreTable.value') }}</th>
+                <th>{{ $t('pages.report.scoreTable.aggregate') }}<br />{{ $t('pages.report.scoreTable.value') }}</th>
             </tr>
             <tr>
                 <td>
                     <div class="item-legend">
                         <span class="w-5 h-5 rounded-full bg-poor"></span>
                         <p class="text">
-                            Plan
+                            {{ $t('pages.report.scoreTable.plan.title') }}
                         </p>
                     </div>
                 </td>
@@ -25,10 +25,7 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description">{{ $t('pages.report.scoreTable.plan.description') }}</span>
                     </div>
                 </td>
             </tr>
@@ -37,7 +34,7 @@
                     <div class="item-legend">
                         <span class="w-5 h-5 rounded-full bg-average"></span>
                         <p class="text">
-                            Build
+                            {{ $t('pages.report.scoreTable.build.title') }}
                         </p>
                     </div>
                 </td>
@@ -48,10 +45,7 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description">{{ $t('pages.report.scoreTable.build.description') }}</span>
                     </div>
                 </td>
             </tr>
@@ -60,7 +54,7 @@
                     <div class="item-legend">
                         <span class="w-5 h-5 rounded-full bg-good"></span>
                         <p class="text">
-                            Strengthen
+                            {{ $t('pages.report.scoreTable.strengthen.title') }}
                         </p>
                     </div>
                 </td>
@@ -71,10 +65,7 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description">{{ $t('pages.report.scoreTable.strengthen.description') }}</span>
                     </div>
                 </td>
             </tr>
@@ -83,7 +74,7 @@
                     <div class="item-legend">
                         <span class="w-5 h-5 rounded-full bg-excellent"></span>
                         <p class="text">
-                            Maintain
+                            {{ $t('pages.report.scoreTable.maintain.title') }}
                         </p>
                     </div>
                 </td>
@@ -94,10 +85,7 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description border-transparent"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description border-transparent">{{ $t('pages.report.scoreTable.maintain.description') }}</span>
                     </div>
                 </td>
             </tr>

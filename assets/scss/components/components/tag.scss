@@ -1,0 +1,20 @@
+.elinor__tag {
+  @apply inline-flex flex-row flex-nowrap items-center gap-2 bg-turqy-lighter border-radius--20 h-[40px] pl-4 pr-4;
+  .text {
+    @apply font-medium text-base text-[14px];
+  }
+  .icon {
+    @apply w-[12px] h-[12px] relative;
+    img {
+      @apply absolute object-contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &--sm {
+    @apply h-[30px] gap-0;
+    .text {
+      @apply text-[12px];
+    }
+  }
+}

@@ -1,20 +1,18 @@
 <template>
     <div class="popup__content">
         <template v-if="!sent">
-
             <h4 class="c-title--modal mb-2">
                 {{ $t('pages.assessments.actions.flag.subtitle') }}
             </h4>
             <h5 class="c-title--modal mb-6" style="font-size: 1em; font-weight: normal">
-            {{ $t('pages.assessments.actions.flag.text') }}
-                We will send a message to the ELinor administrators to review this assessment
+                {{ $t('pages.assessments.actions.flag.text') }}
             </h5>
             <form @submit="onSubmit" class="form form--ma-selector form--mt-0">
                 <div class="form__group">
                     <div class="form__row">
                         <div class="input input--multiselect input--1-4">
                             <div class="multiselect__wrap">
-                                <multiselect placeholder="Flag type" track-by="id" label="name" :options="flagTypes" :multiple="false" :searchable="false" :showLabels="false" :allow-empty="false" open-direction="bottom" :hide-selected="false" @input="onFlagTypeChange($event)" :value="getFlagTypeOption(form.flag_type)">
+                                <multiselect :placeholder="$t('pages.assessments.actions.flag.placeholder')" track-by="id" label="name" :options="flagTypes" :multiple="false" :searchable="false" :showLabels="false" :allow-empty="false" open-direction="bottom" :hide-selected="false" @input="onFlagTypeChange($event)" :value="getFlagTypeOption(form.flag_type)">
                                  </multiselect>
                                 <div class="multiselect__caret">
                                     <img src="~/assets/img/ico-select-turqy.svg">
@@ -34,7 +32,7 @@
                     </div>
                     <div class="form__row">
                         <div class="input">
-                            <label class="label">{{ $t('pages.assessments.actions.contact.labelTextarea') }}Explanation</label>
+                            <label class="label">{{ $t('pages.assessments.actions.flag.labelTextarea') }}</label>
                             <textarea v-model="form.explanation"></textarea>
                             <template v-if="errors.explanation">
                                 <p class="msg msg--error" v-for="error in errors.explanation">
@@ -48,16 +46,15 @@
         </template>
         <template v-if="sent">
             <h4 class="c-title--modal mb-2">
-                {{ $t('pages.assessments.actions.contact.okMessage') }}
-                Thank you for sending the flag!
+                {{ $t('pages.assessments.actions.flag.okMessage') }}
             </h4>
         </template>
         <section class="mt-10">
             <button type="button" @click="close" class="btn--border-turqy btn--opacity--child mr-5" style="float: left">
-                <span class="btn--opacity__target">Close</span>
+                <span class="btn--opacity__target">{{ $t('default.close') }}</span>
             </button>
             <button v-if="!sent" @click="onSubmit" class="btn--border-turqy btn--opacity--child"  style="float: left">
-                <span class="btn--opacity__target">Submit</span>
+                <span class="btn--opacity__target">{{ $t('default.submit') }}</span>
             </button>
             <div style="clear: both"></div>
         </section>
@@ -72,10 +69,10 @@ export default {
     data() {
         return {
             flagTypes: [
-                {id: 'inappropriate', name: 'Inappropriate'},
-                {id: 'personal', name: 'Personal'},
-                {id: 'inaccurate', name: 'Inaccurate'},
-                {id: null, name: 'Other'}
+                {id: 'inappropriate', name: this.$t('pages.assessments.actions.flag.types.inappropriate')},
+                {id: 'personal', name: this.$t('pages.assessments.actions.flag.types.personal')},
+                {id: 'inaccurate', name: this.$t('pages.assessments.actions.flag.types.inaccurate')},
+                {id: null, name: this.$t('pages.assessments.actions.flag.types.other')}
             ],
             form: {
                 flag_type: false,

@@ -13,8 +13,8 @@
             <p class="text-m font-light">
                 <strong class="font-bold text-turqy">{{ assessments.length }}</strong>
                 Assessments
-                <span v-if="countryHa > 0"> covering <br>
-                    {{ countryHa.toLocaleString($i18n.locale, { minimumFractionDigits: 0, maximumFractionDigits: 0}) }} ha</span>
+                <span v-if="countryHa > 0"> {{ $t('pages.map.boxList.covering') }} <br>
+                    {{ countryHa.toLocaleString($i18n.locale, { minimumFractionDigits: 0, maximumFractionDigits: 0}) }} {{ $t('pages.map.boxList.ha') }}</span>
             </p>
         </div>
         <ul>
@@ -26,7 +26,7 @@
                         </p>
                     </div>
                     <div class="flex flex-1 flex-col gap-0">
-                        <p v-if="report.properties.name" 
+                        <p v-if="report.properties.name"
                             @click="detail(report)"
                             class="font-montserrat font-semibold text-turqy text-[14px] leading-4 cursor-pointer"
                             >
@@ -55,7 +55,7 @@ export default {
             management_area_countries: state => state.countries.management_area_countries,
         }),
         assessments(){
-            return this.list.filter((value, index, self) => 
+            return this.list.filter((value, index, self) =>
                 self.findIndex(v => v.id === value.id) === index
             );
         },

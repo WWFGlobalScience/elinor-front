@@ -11,7 +11,7 @@
                         <form v-if="sent === true" class="form">
                             <fieldset class="form__group px-0">
                                 <legend class="form__legend mb-10">
-                                    <strong>Thank you for contacting elinor</strong>
+                                    <strong>{{ $t('pages.contact.form.confirmation') }}</strong>
                                 </legend>
                             </fieldset>
                         </form>
@@ -25,7 +25,7 @@
                                 <div class="form__row">
                                     <div class="input">
                                         <label for="name" class="label">{{ $t('pages.contact.form.name') }}</label>
-                                        <input type="text" id="name" :class="{'input--error': errors.name}" placeholder="Name" v-model="name">
+                                        <input type="text" id="name" :class="{'input--error': errors.name}" :placeholder="$t('pages.contact.form.namePlaceholder')" v-model="name">
                                         <template v-if="errors.name">
                                             <p class="msg msg--error" v-for="error in errors.name">
                                                 {{ error }}
@@ -39,7 +39,7 @@
                                         <label for="subject" class="label">{{
                                                 $t('pages.contact.form.subject')
                                             }}</label>
-                                        <input type="text" id="subject" :class="{'input--error': errors.subject}" placeholder="Subject" v-model="subject">
+                                        <input type="text" id="subject" :class="{'input--error': errors.subject}" :placeholder="$t('pages.contact.form.subjectPlaceholder')" v-model="subject">
                                         <template v-if="errors.subject">
                                             <p class="msg msg--error" v-for="error in errors.subject">
                                                 {{ error }}
@@ -51,7 +51,7 @@
                                 <div class="form__row">
                                     <div class="input">
                                         <label for="mail" class="label">{{ $t('pages.contact.form.mail') }}</label>
-                                        <input type="mail" id="mail" :class="{'input--error': errors.email}" placeholder="Mail" v-model="email">
+                                        <input type="mail" id="mail" :class="{'input--error': errors.email}" :placeholder="$t('pages.contact.form.mailPlaceholder')" v-model="email">
                                         <template v-if="errors.email">
                                             <p class="msg msg--error" v-for="error in errors.email">
                                                 {{ error }}
@@ -65,7 +65,7 @@
                                         <label for="message" class="label">{{
                                                 $t('pages.contact.form.message')
                                             }}</label>
-                                        <textarea type="text" id="message" :class="{'input--error': errors.message}" placeholder="Message"
+                                        <textarea type="text" id="message" :class="{'input--error': errors.message}" :placeholder="$t('pages.contact.form.messagePlaceholder')"
                                                   rows="4" v-model="message"></textarea>
                                         <template v-if="errors.message">
                                             <p class="msg msg--error" v-for="error in errors.message">

@@ -9,27 +9,27 @@
                     <img src="~/assets/img/report-brand.png" alt="logo" />
                 </div>
                 <div v-if="report.management_area" class="card-map">
-                    
+
                     <div class="card-map-col">
                         <p v-if="report.management_area.date_established">
-                            Year established
+                            {{ $t('pages.report.aside.year') }}
                             <strong>{{ new Date(report.management_area.date_established).toLocaleDateString($i18n.locale) }}</strong>
                         </p>
                         <p v-if="report.management_area.governance_type">
-                            MA governance type
+                            {{ $t('pages.report.aside.maGovernanceType') }}
                             <strong>{{ report.management_area.governance_type }}</strong>
                         </p>
                         <p v-if="hectareas">
-                            Total hectareas<strong>{{ hectareas.toLocaleString($i18n.locale) }} h </strong>
+                            {{ $t('pages.report.aside.totalHa') }} <strong>{{ hectareas.toLocaleString($i18n.locale) }} h </strong>
                         </p>
                     </div>
                     <div class="card-map-col self-start">
                         <p v-if="report.collection_method">
-                            Assessment type
+                            {{ $t('pages.report.aside.assessmentType') }}
                             <strong>{{ report.collection_method }}</strong>
                         </p>
                         <p v-if="report.management_area.version_date">
-                            Current assessment date
+                            {{ $t('pages.report.aside.maVersionDate') }}
                             <strong>{{ new Date(report.management_area.version_date).toLocaleDateString($i18n.locale) }}</strong>
                         </p>
                         <!--<p>
@@ -96,10 +96,10 @@ export default {
                 turf.cleanCoords(this.managementArea.polygon),
                 {tolerance: 0.008, highQuality: false}
             ).coordinates;
-            
+
             var geojson = `{
                 "type": "FeatureCollection",
-                "features": [  
+                "features": [
                     {
                     "type": "Feature",
                     "properties": {

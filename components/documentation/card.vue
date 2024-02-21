@@ -23,11 +23,11 @@
         </div>
         <div class="body">
             <div class="text-group">
-                <h4 class="title">Version</h4>
+                <h4 class="title">{{ $t("default.version") }}</h4>
                 <p class="text">{{ document.version }}</p>
             </div>
             <div class="text-group">
-                <h4 class="title">Description</h4>
+                <h4 class="title">{{ $t("default.description") }}</h4>
                 <p class="text">{{ document.description }}</p>
             </div>
         </div>

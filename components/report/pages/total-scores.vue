@@ -3,14 +3,14 @@
         <report-aside />
         <div class="content-report">
             <report-header />
-          
+
             <div v-if="report.attributes" class="container-report">
                 <div class="col-report">
-                    <div v-for="attribute in attributes.slice(0,4)" 
+                    <div v-for="attribute in attributes.slice(0,4)"
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
                         <template v-if="isAttributeChecked(attribute)">
-                            <div class="dot-value"                        
+                            <div class="dot-value"
                                 :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
                                 {{ group && group.score !== null ? group.score.toFixed(0) : '-' }}
                             </div>
@@ -27,7 +27,7 @@
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
                                     <span>
-                                        {{ 
+                                        {{
                                             group.answers.find(a => a.question == question.key).choice !== null ?
                                             group.answers.find(a => a.question == question.key).choice :
                                             '-'
@@ -43,10 +43,10 @@
                 </div>
 
                 <div class="col-report">
-                    <div v-for="attribute in attributes.slice(4,8)" 
+                    <div v-for="attribute in attributes.slice(4,8)"
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
-                        <div class="dot-value"                        
+                        <div class="dot-value"
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
                             {{ group && group.score !== null ? group.score.toFixed(0) : '-' }}
                         </div>
@@ -59,7 +59,7 @@
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
                                     <span>
-                                        {{ 
+                                        {{
                                             group.answers.find(a => a.question == question.key).choice !== null ?
                                             group.answers.find(a => a.question == question.key).choice :
                                             '-'
@@ -75,10 +75,10 @@
                 </div>
 
                 <div class="col-report">
-                    <div v-for="attribute in attributes.slice(8,10)" 
+                    <div v-for="attribute in attributes.slice(8,10)"
                         :set="group = report.attributes.find(a => a.attribute == attribute.name)"
                         class="card-report ui-rounded-border">
-                        <div class="dot-value"                        
+                        <div class="dot-value"
                             :class="'bg-' + (group ? getAttributeColor(group.score) : 'grayy-lighter')">
                             {{ group && group.score !== null ? group.score.toFixed(0) : '-' }}
                         </div>
@@ -91,7 +91,7 @@
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
                                     <span>
-                                        {{ 
+                                        {{
                                             group.answers.find(a => a.question == question.key).choice !== null ?
                                             group.answers.find(a => a.question == question.key).choice :
                                             '-'
@@ -108,15 +108,15 @@
                         <table class="table-score-values table-score-values--report block">
                             <tr>
                                 <th></th>
-                                <th>Indicator<br />value</th>
-                                <th>Attribute<br />value</th>
-                                <th>Aggregate<br />value</th>
+                                <th>{{ $t('pages.report.totalScores.indicator') }}<br />{{ $t('pages.report.totalScores.value') }}</th>
+                                <th>{{ $t('pages.report.totalScores.attribute') }}<br />{{ $t('pages.report.totalScores.value') }}</th>
+                                <th>{{ $t('pages.report.totalScores.aggregate') }}<br />{{ $t('pages.report.totalScores.value') }}</th>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="item-legend">
                                         <span class="w-5 h-5 rounded-full bg-poor"></span>
-                                        <p class="text">Plan</p>
+                                        <p class="text">{{ $t('pages.report.totalScores.plan.title') }}</p>
                                     </div>
                                 </td>
                                 <td class="num">0</td>
@@ -126,7 +126,7 @@
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description">Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps</span>
+                                        <span class="description">{{ $t('pages.report.totalScores.plan.description') }}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -134,7 +134,7 @@
                                 <td>
                                     <div class="item-legend">
                                         <span class="w-5 h-5 rounded-full bg-average"></span>
-                                        <p class="text">Build</p>
+                                        <p class="text">{{ $t('pages.report.totalScores.build.title') }}</p>
                                     </div>
                                 </td>
                                 <td class="num">1</td>
@@ -144,7 +144,7 @@
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description">Collaborate with rights holders and other actors to build upon initial progress to address major governance gap</span>
+                                        <span class="description">{{ $t('pages.report.totalScores.build.description') }}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -152,7 +152,7 @@
                                 <td>
                                     <div class="item-legend">
                                         <span class="w-5 h-5 rounded-full bg-good"></span>
-                                        <p class="text">Strengthen</p>
+                                        <p class="text">{{ $t('pages.report.totalScores.strengthen.title') }}</p>
                                     </div>
                                 </td>
                                 <td class="num">2</td>
@@ -162,7 +162,7 @@
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description">Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps</span>
+                                        <span class="description">{{ $t('pages.report.totalScores.strengthen.description') }}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -170,7 +170,7 @@
                                 <td>
                                     <div class="item-legend">
                                         <span class="w-5 h-5 rounded-full bg-excellent"></span>
-                                        <p class="text">Maintain</p>
+                                        <p class="text">{{ $t('pages.report.totalScores.maintain.title') }}</p>
                                     </div>
                                 </td>
                                 <td class="num">3</td>
@@ -180,7 +180,7 @@
                             <tr>
                                 <td colspan="4" class="hr">
                                     <div class="flex justify-center items-center">
-                                        <span class="description border-transparent">Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats</span>
+                                        <span class="description border-transparent">{{ $t('pages.report.totalScores.maintain.description') }}</span>
                                     </div>
                                 </td>
                             </tr>

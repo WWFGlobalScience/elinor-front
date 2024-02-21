@@ -2,30 +2,27 @@
     <div class="rounded-3xl bg-turqy-lighter px-4 py-8">
         <table class="table-score-values overflow-x-scroll block">
             <caption>
-                <p>Values</p>
+                <p>{{ $t('pages.methodologyPage.scoreTable.values') }}</p>
             </caption>
             <tr>
                 <th></th>
                 <th></th>
-                <th>Indicator<br />value</th>
-                <th>Attribute<br />value</th>
-                <th>Aggregate<br />value</th>
+                <th>{{ $t('pages.methodologyPage.scoreTable.indicator') }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}</th>
+                <th>{{ $t('pages.methodologyPage.scoreTable.attribute') }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}</th>
+                <th>{{ $t('pages.methodologyPage.scoreTable.aggregate') }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}</th>
             </tr>
             <tr>
                 <td>
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-poor"></span>
                         <p class="text">
-                            Plan
+                            {{ $t('pages.methodologyPage.scoreTable.plan.title') }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description">{{ $t('pages.methodologyPage.scoreTable.plan.description') }}</span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
@@ -38,15 +35,14 @@
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-average"></span>
                         <p class="text">
-                            Build
+                            {{ $t('pages.methodologyPage.scoreTable.build.title') }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps
+                        <span class="description">
+                            {{ $t('pages.methodologyPage.scoreTable.build.description') }}
                         </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
@@ -60,16 +56,15 @@
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-good"></span>
                         <p class="text">
-                            Strengthen
+                            {{ $t('pages.methodologyPage.scoreTable.strengthen.title') }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description">
+                            {{ $t('pages.methodologyPage.scoreTable.strengthen.description') }}
+                        </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
@@ -82,16 +77,15 @@
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-excellent"></span>
                         <p class="text">
-                            Maintain
+                            {{ $t('pages.methodologyPage.scoreTable.maintain.title') }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
-                        <span class="description"
-                            >Collaborate with stakeholders to develop plans for
-                            addressing major governance gaps</span
-                        >
+                        <span class="description">
+                            {{ $t('pages.methodologyPage.scoreTable.maintain.description') }}
+                        </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
