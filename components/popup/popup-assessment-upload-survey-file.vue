@@ -233,7 +233,9 @@ export default {
             return "<div></div>";
         },
         getErrors(errors) {
-            return Object.keys(errors).map(key => errors[key].message);
+            return Object.keys(errors).map(key => {
+                return this.$t('pages.assessments.uploadSurveyFile.errors.' + key, errors[key].data);
+            });
         }
     },
 };

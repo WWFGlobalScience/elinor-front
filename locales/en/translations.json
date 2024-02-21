@@ -717,7 +717,24 @@
                 "tryAgainButton": "try again",
                 "formatNotSupported": "try again",
                 "help": "Please, upload the xlsx file for the survey in the exact same format that it was downloaded. No change can be done to the structure. If the upload fails. please review the format and make sure it is the same as the downloaded file.",
-                "helpTitle": "What files to Upload?"
+                "helpTitle": "What files to Upload?",
+                "errors": {
+                    "missing_file": "missing file",
+                    "unsupported_file_type": "file type not supported; supported types: {supported_mime_types}",
+                    "file_too_large": "uploaded file larger than {maximum_filesize}",
+                    "unsupported_zip": "zip file contains more than one file, or is empty. Number of files in zip: {num_files}",
+                    "invalid_zip": "invalid zip",
+                    "missing_sheet": "missing sheet with name '{sheetname}'",
+                    "invalid_header": "no header found for sheet {sheetname}",
+                    "invalid_header_cells": "invalid headers in cells: {header_error_cells}",
+                    "invalid_file_load": "invalid xlsx file",
+                    "assessment_id_mismatch": "assessment id {user_assessmment_id} in {cell} does not match requested assessment {assessment_id}",
+                    "invalid_sheet": "invalid sheet",
+                    "invalid_questions": "invalid question keys in cells: {question_error_cells}",
+                    "invalid_choices": "invalid choices in cells: {choice_error_cells}",
+                    "invalid_answers": "invalid answers",
+                    "answer_save": "error saving answers to database"
+                }
             }
         },
         "documentation": {
