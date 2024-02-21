@@ -6,7 +6,7 @@ export default [
             <p>
                 The main purpose of Elinor is to track attributes critical to the success of area-based conservation
                 over time,and share this information with decision makers and conservation supporters working at local,
-                national or international scales....
+                national or international scales.
             </p>
             <p>
                 The tool was specifically designed knowing many conservation practitioners (1) are familiar with and
