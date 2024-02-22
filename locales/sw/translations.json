@@ -697,7 +697,8 @@
         "admin" : "Msimamizi",
         "collaborator" : "Mshiriki",
         "observer" : "Mtazamaji"
-      }
+      },
+      "managedArea" : "Eneo la Usimamizi"
     },
     "documentation" : {
       "home" : {
