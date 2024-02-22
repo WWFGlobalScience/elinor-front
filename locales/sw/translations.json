@@ -92,7 +92,7 @@
             "title" : "MBINU",
             "text" : "Pata maelezo zaidi kuhusu jinsi unavyoweza kutumia tathmini ya Elinor na kupakua itifaki ya uga na zana ya kutathmini.",
             "text2" : "Elinor inajumuisha maswali 35 katika sifa 10 za utawala na usimamizi. Kila swali lina alama 0-3 na alama hizo huchangia kwa usawa alama zao za sifa. Kwa upande mwingine, alama za sifa huchangia kwa usawa alama ya jumla. Kulingana na alama iliyotolewa, Elinor anapendekeza hatua tofauti za vitendo, ikiwa ni pamoja na Panga, Jenga, Imarisha na Dumisha. Ni muhimu kutambua kwamba ingawa alama hizi hutoa maarifa muhimu, zinapaswa kutumiwa pamoja na data ya ubora iliyoingizwa katika Elinor wakati wa kuamua ni hatua gani za usimamizi zinazobadilika za kuchukua.",
-            "button" : "Nenda kwa Methodology",
+            "button" : "Nenda kwa Mbinu",
             "score" : "Alama",
             "plan" : "Panga",
             "build" : "Jenga",
@@ -692,7 +692,12 @@
       "published" : "Imechapishwa",
       "finalized" : "Imekamilika",
       "readyToPublish" : "Tayari kuchapishwa",
-      "preparingToPublish" : "Inatayarishwa kuchapishwa"
+      "preparingToPublish" : "Inatayarishwa kuchapishwa",
+      "roles" : {
+        "admin" : "Msimamizi",
+        "collaborator" : "Mshiriki",
+        "observer" : "Mtazamaji"
+      }
     },
     "documentation" : {
       "home" : {
