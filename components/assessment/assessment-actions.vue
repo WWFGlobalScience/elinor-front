@@ -9,31 +9,29 @@
             ><img src="~/assets/img/ico-download.svg" alt="Download Data" />
             <span>{{ $t("default.downloadData") }}</span></a
         >
-        <template v-if="$auth.loggedIn">
-            <a
-                v-if="isAssessmentCollaborator($auth, assessment)"
-                @click="
+        <a
+            @click="
                     popupState({
                         active: true,
                         component: 'popup-assessment-generate-report',
                         title: 'default.generateReport'
                     })
                 "
-                role="button"
-                class="btn btn--border-turqy btn--sm"
-                title="Report"
-                ><svg>
-                    <path
-                        d="M8.75 8.75h5M8.75 11.25h5M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625ZM6.25 3.125v13.75"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
-                <span>{{
-                        $t("default.generateReport")
-                    }}</span></a
-            >
-
+            role="button"
+            class="btn btn--border-turqy btn--sm"
+            title="Report"
+        ><svg>
+            <path
+                d="M8.75 8.75h5M8.75 11.25h5M16.25 3.125H3.75a.625.625 0 0 0-.625.625v12.5c0 .345.28.625.625.625h12.5c.345 0 .625-.28.625-.625V3.75a.625.625 0 0 0-.625-.625ZM6.25 3.125v13.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+            <span>{{
+                    $t("default.generateReport")
+                }}</span></a
+        >
+        <template v-if="$auth.loggedIn">
             <a
                 v-if="isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
                 @click="downloadSurveyFile"

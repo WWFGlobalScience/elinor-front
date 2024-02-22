@@ -90,7 +90,7 @@
                                         : `/assessments/${assessment.id}/info/`
                                 ">{{ assessment.name }}</NuxtLink>
                             <div class="search-criteria" v-if="assessment.management_area_countries" >
-                                <span class="area">Managed Area</span>
+                                <span class="area">{{ $t("pages.assessments.managedArea") }}</span>
                                 <span class="criteria">{{ assessment.management_area_countries.name }}</span>
                             </div>
                         </div>

@@ -735,7 +735,13 @@
                     "invalid_answers": "invalid answers",
                     "answer_save": "error saving answers to database"
                 }
-            }
+            },
+            "roles": {
+                "admin": "Admin",
+                "contributor": "Contributor",
+                "observer": "Observer"
+            },
+            "managedArea": "Managed Area"
         },
         "documentation": {
             "home": {
