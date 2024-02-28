@@ -1,4 +1,31 @@
 export default [
+        {
+          date: "2-28-2024",
+          title: "Announcing new features in Elinor",
+          text: `
+              In a bid to make Elinor more usable, we are happy to announce three new features:
+              1. Aggregate Reports: You can now generate an aggregate report for multiple assessments selecting by countries,
+              Year or type of assessment. You will find the Aggregate report button on the assessments page.
+              2. There is now support for multiple languages. Switch to your favorite language using the switcher at the
+              top right of the page. Note that the languages will come online as they are prepared
+              3. Offline capability: If you are working on an unstable Internet and compeleting the survey may be a problem,
+              you may now download your survey as an Excel file, complete it offline then upload it to update your assessment
+              online. More offline features will be added soon.
+          `
+    },
+    {
+          date: "2-28-2024",
+          title: "A comparison of governance and management assessment tools",
+          text: `
+              There are many tools designed to assess governance and management for area-based conservation. This knowledge
+              brief is designed to assist individuals in identifying and understanding the synergies and differences between
+              three conservation management and governance assessment tools: Elinor, the Management Effectiveness Tracking
+              Tool 4 (METT 4), and Site-level Assessment of Governance and Equity (SAGE). The first part of this document
+              compares the background/site information sections of Elinor, METT 4, and SAGE. The second part compares the
+              assessment questions in Elinor (35), METT 4 (38), and SAGE (50). Finally, the document ends with a guide to
+              help users determine which assessment to use based on their management and governance objectives.
+          `
+    },
     {
           date: "6-20-2022",
           title: "New Elinor updates allow automated reporting and more user-friendly features",
