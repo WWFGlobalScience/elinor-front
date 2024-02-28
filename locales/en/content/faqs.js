@@ -128,7 +128,7 @@ export default [
                 ElinorData system.
             </p>
             <p>
-                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf">Click here to view a comparison of governance and management assessment tools</a>
+                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view a comparison of governance and management assessment tools</a>
             </p>
         `
     },
