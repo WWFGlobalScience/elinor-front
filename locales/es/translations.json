@@ -283,7 +283,7 @@
                     },
                     "survey": {
                         "tabButton": "La encuesta",
-                        "title": "La encuesta"
+                        "title": "La encuesta",
                         "attributes": {
                             "mandatory": "Mandatory",
                             "active": "Active attribute",
@@ -390,7 +390,7 @@
                             "zoneLevel": "Seleccione el nivel de acceso que mejor describa esta zona",
                             "protectedAreaWdpaIdHelp": "El ID de WDPA se puede encontrar en el sitio web de protected planet.",
                             "protectedAreaWdpaIdHelpLink": "Haga clic aquí para buscar",
-                            "geospatialSources": "Indique la fuente de la información geoespacial"
+                            "geospatialSources": "Indique la fuente de la información geoespacial",
                             "yes": "Yes",
                             "no": "No"
                         },
@@ -466,8 +466,8 @@
                             "information": "Requisitos de información",
                             "guidance": "Guía",
                             "rationale": "¿Qué está preguntando esta pregunta?"
-                        }
-                        "inactiveAttribute": "To activate this question, you must activate the attribute"
+                        },
+                        "inactiveAttribute": "To activate this question, you must activate the attribute",
                     },
                     "collaborators": {
                         "tabButton": "Colaboradores",
@@ -525,7 +525,7 @@
                     },
                     "publish-settings": {
                         "tabButton": {
-                            "edit": "Editar configuración de publicación"
+                            "edit": "Editar configuración de publicación",
                             "preparing": "Preparing to publish",
                             "edit": "Edit publish settings"
                         },
@@ -693,7 +693,7 @@
             "published": "Published",
             "finalized": "Finalized",
             "readyToPublish": "Ready to publish",
-            "preparingToPublish": "Preparing to publish"
+            "preparingToPublish": "Preparing to publish",
             "downloadSurveyFile": {
                 "title": "Download Survey",
                 "helpTitle": "You can fill in the survey offline and upload it when ready. If you select to download the survey:",
@@ -799,7 +799,7 @@
             "subtitle2": "Elinor como evaluación documental dirigida por profesionales.",
             "paragraph4": "Este camino es para aquellos que tienen tiempo, recursos o capacidades limitadas para llevar a cabo un grupo focal participativo. Si bien una evaluación documental ofrece una opción limitada, permite generar algunos datos sobre el área gestionada, lo que puede proporcionar una evaluación a menudo adecuada y útil sobre el estado actual y las tendencias en el área, y puede ayudar a los usuarios a identificar cualquier situación crítica. lagunas de conocimiento que requerirían más investigación e inversión. Si decide tomar esta vía, asigne tiempo a usted y a sus colegas familiarizados con la maestría para discutir y responder cada pregunta, según su experiencia y conocimiento de la maestría. Si es posible, recomendamos involucrar a diferentes titulares de derechos y otros actores de cualquier manera posible para obtener información sobre las diferentes preguntas.",
             "subtitle3": "El marcador",
-            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "scoreTable": {
                 "value": "value",
                 "values": "Values",
