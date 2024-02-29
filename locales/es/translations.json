@@ -467,7 +467,7 @@
                             "guidance": "Guía",
                             "rationale": "¿Qué está preguntando esta pregunta?"
                         },
-                        "inactiveAttribute": "To activate this question, you must activate the attribute",
+                        "inactiveAttribute": "To activate this question, you must activate the attribute"
                     },
                     "collaborators": {
                         "tabButton": "Colaboradores",
@@ -525,9 +525,9 @@
                     },
                     "publish-settings": {
                         "tabButton": {
-                            "edit": "Editar configuración de publicación",
+                            "ready": "Ready to publish",
                             "preparing": "Preparing to publish",
-                            "edit": "Edit publish settings"
+                            "edit": "Editar configuración de publicación"
                         },
                         "title": "Finalizar y publicar",
                         "finalize": {
