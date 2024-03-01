@@ -386,8 +386,8 @@
               "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
               "protectedAreaWdpaIdHelpLink": "Click here to search",
               "geospatialSources": "Liste a fonte das informações geoespaciais",
-              "yes": "Yes",
-              "no": "No"
+              "yes": "Sim",
+              "no": "Não"
             },
             "buttons": {
               "addZone": "Adicionar uma nova zona"
