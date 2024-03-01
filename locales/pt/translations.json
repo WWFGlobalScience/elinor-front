@@ -1,1014 +1,1002 @@
 {
-    "pages": {
-        "home": {
-            "meta": {
-                "title": "Home",
-                "slug": "",
-                "seo": {
-                    "title": "",
-                    "description": "",
-                    "keywords": "",
-                    "og_image": ""
-                }
-            },
-            "header": {
-                "aboutLink": "About",
-                "faqsLink": "FAQs",
-                "methodologyLink": "Methodology",
-                "contactLink": "Contact",
-                "createAccountLink": "Create Account",
-                "signOut": "Sign Out",
-                "profile": "Profile"
-            },
-            "public": {
-                "signInTitle": "SIGN IN",
-                "signInSubtitle": "Use your username or email and password to access Elinor",
-                "signInTitleAndCreateAccountSeparator": " or ",
-                "createAccountLink": "create account",
-                "resendVerificationLink": "Resend",
-                "usernameInput": "Username or Email",
-                "passwordInput": "Password",
-                "rememberMeCheckbox": "Remember me",
-                "forgotPasswordLink": "Forgot password?",
-                "signInButton": "Sign In",
-                "alerts": {
-                    "emailVerificationSent": {
-                        "title": "Email verification sent!",
-                        "subtitle": "You will receive a message to verify your email"
-                    },
-                    "emailVerificationRequired": {
-                        "title": "Email verification required!",
-                        "subtitle": "Have you not received the verification email? If not resend it"
-                    },
-                    "passwordChangedSuccessfully": {
-                        "title": "Password changed successfully!",
-                        "subtitle": "Now you can access with the new password."
-                    },
-                    "emailVerifiedSuccessfully": {
-                        "title": "Email verified successfully!",
-                        "subtitle": "Now you can access with your credentials."
-                    },
-                    "profileUpdatedSuccessfully": {
-                        "title": "Profile updated successfully!",
-                        "subtitle": "Now your profile data is up to date."
-                    },
-                    "accountDeletedSuccessfully": {
-                        "title": "Account deleted successfully!",
-                        "subtitle": "To restore your account contact elinor administrators"
-                    }
-                },
-                "content": {
-                    "introduction": {
-                        "text": "Elinor is a free and open-source monitoring tool that helps users gather, store, share, and use data on environmental governance and management to support more effective area-based conservation.",
-                        "createAccountLink": "Create Account"
-                    },
-                    "explanation": {
-                        "title": "WHY SHOULD I USE IT?",
-                        "paragraph1": "Elinor can be applied as either a field-based assessment with a trained facilitator or as a desk-based tool that harnesses local and practitioner knowledge.",
-                        "paragraph2": "The questions within Elinor are high-level, covering a broad range of topics and can help stakeholders better understand issues related to the equitable governance and management of areas under protection or management.",
-                        "trackingChange": {
-                            "title": "TRACKING CHANGE",
-                            "text": "Elinor has been designed primarily to help track changes over time, thus can be used at any stage in the project cycle to:",
-                            "list": "<li>Indicate the suitability of a site for different types of interventions</li><li>Highlight areas that require more focused interventions to enhance implementation efforts.</li><li>Invite stakeholders to collaboratively reflect on a broad range of issues important for area-based conservation</li>"
-                        }
-                    },
-                    "elinor": {
-                        "title": "In Honor",
-                        "subtitle": "Elinor “Lin” Ostrom",
-                        "paragraph1": "Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.",
-                        "paragraph2": "Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.",
-                        "paragraph3": "Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.",
-                        "quote": {
-                            "text": "Little by little, bit by bit, family by family, so much good can be done on so many levels.",
-                            "author": "ELINOR OSTROM"
-                        }
-                    },
-                    "faqs": {
-                        "title": "FAQs",
-                        "text": "Just getting started with Elinor or would like to learn more about use cases and common applications? Visit the FAQ section to see these common questions answered.",
-                        "button": "Go to FAQs"
-                    },
-                    "methodology": {
-                        "title": "METHODOLOGY",
-                        "text": "Learn more about how you can use the Elinor assessment and download the field protocol and assessment tool.",
-                        "text2": "Elinor includes 35 questions across 10 governance and management attributes. Each question is scored 0-3 and those scores equally contribute to their respective attribute scores. In turn, the attribute scores equally contribute to the overall score. Depending on the given score, Elinor suggests different actions steps, including Plan, Build, Strengthen, and Maintain. It is important to note that although these scores provide important insights, they should be used together with the qualitative data entered into Elinor when deciding what adaptive management actions to take.",
-                        "button": "Go to Methodology",
-                        "score": "Score",
-                        "plan": "Plan",
-                        "build": "Build",
-                        "strengthen": "Strengthen",
-                        "maintain": "Maintain"
-                    }
-                },
-                "latestNews": {
-                    "title": "LATEST NEWS",
-                    "readMore": "Read more",
-                    "seeMoreNews": "See more news"
-                }
-            },
-            "private": {}
-        },
-        "auth": {
-            "registration": {
-                "title": "CREATE AN ACCOUNT",
-                "subtitle": "Complete the form below to start using Elinor",
-                "inputs": {
-                    "email": "Email",
-                    "password1": "Password",
-                    "password2": "Password confirmation",
-                    "firstname": "First name",
-                    "lastname": "Last name",
-                    "username": "Username"
-                },
-                "termsOfServiceCheckbox": "I agree with the terms of service*",
-                "validationErrorTitle": "Validation error!",
-                "createAccountButton": "Create an account"
-            },
-            "forgotPassword": {
-                "title": "FORGOT PASSWORD",
-                "subtitle": "Enter your email to recieve a password reset link",
-                "emailInput": "Email",
-                "sendEmailButton": "Send Email",
-                "tryAgainButton": "Try Again",
-                "alerts": {
-                    "forgotPasswordEmailSent": {
-                        "title": "Forgot password email sent!",
-                        "subtitle": "Check your email for password reset link"
-                    }
-                }
-            },
-            "resendVerificationEmail": {
-                "title": "RESEND VERIFICATION EMAIL",
-                "subtitle": "Enter your email to receive a new email verification",
-                "emailInput": "Email",
-                "sendEmailButton": "Send Email",
-                "tryAgainButton": "Try Again"
-            },
-            "resetPassword": {
-                "title": "RESET PASSWORD",
-                "subtitle": "Enter a new password below",
-                "error": {
-                    "title": "Error!"
-                },
-                "password1Input": "Password",
-                "password2Input": "Password confirmation",
-                "changePasswordButton": "Reset password"
-            }
-        },
-        "assessments": {
-            "meta": {
-                "title": "Assessments",
-                "slug": "/assessments"
-            },
-            "list": {
-                "title": "Assessments",
-                "total": "Showing",
-                "totalPlural": "assessments",
-                "totalSingular": "assessment",
-                "myRole": "My Role",
-                "viewButton": "View",
-                "editButton": "Edit",
-                "createButton": "Create Assessment",
-                "downloadButton": "Download All",
-                "year": "Year",
-                "countries": "Countries",
-                "create": {
-                    "popup": {
-                        "title": "Create Assessment",
-                        "labels": {
-                            "name": "Name of assessment",
-                            "year": "Select Year"
-                        },
-                        "placeholders": {
-                            "name": "Name of assessment"
-                        },
-                        "nameCriteria": "Enter a short and easy to remember name such as Tsavo Annual Assessment 2021",
-                        "submit": "Create Assessment"
-                    }
-                },
-                "filters": {
-                    "search": "Search by assessment name or managed area name",
-                    "button": "Filters",
-                    "popup": {
-                        "title": "Filter assessments",
-                        "labels": {
-                            "countries": "by Countries",
-                            "year": "by Year",
-                            "status": "by Publication"
-                        },
-                        "placeholders": {
-                            "countries": "Country",
-                            "year": "",
-                            "status": ""
-                        },
-                        "reset": "Reset",
-                        "apply": "Apply filters"
-                    }
-                },
-                "type": {
-                    "own": "Member",
-                    "all": "All"
-                },
-                "aggregateReport": {
-                    "button": "Aggregate report",
-                    "title": "Create Aggregate Report",
-                    "subtitle": "Select Assessments to Aggregate",
-                    "byManagementAreas": "by MA",
-                    "byCountries": "by Countries",
-                    "byYear": "by Year",
-                    "byType": "by Type of assessment",
-                    "year": "Year",
-                    "giveName": "Give it a name",
-                    "giveNamePlaceholder": "Name here",
-                    "assessments": "Selected Assessments",
-                    "create": "Create Aggregate Report",
-                    "covering": "Assessments covering",
-                    "coveringHA": "ha",
-                    "filtersSelected": "Filters selected",
-                    "managementAreaNoOptions": "Type the name of MA",
-                    "managementAreaNoResults": "No matching MAs found",
-                    "selectedAssessmentsError": "You have to select at least 1 assessment",
-                    "nameRequiredError": "The name of the report is required",
-                    "nameLengthError": "The name of the report is too long"
-                }
-            },
-            "view": {
-                "title": "View assessment",
-                "year": "Year",
-                "tabs": {
-                    "info": {
-                        "tabButton": "Info",
-                        "title": "View Assessment",
-                        "managementPlanFileTitle": "Management plan document",
-                        "buttons": {
-                            "managementPlanFile": "Download"
-                        },
-                        "labels": {
-                            "managementAreaName": "Name of Managment Area",
-                            "protectedArea": "Name of larger PA/CA this focal area is contained within",
-                            "dateEstablished": "Date of formal establishment (if applicable)",
-                            "reportedSize": "Size of MA (ha)",
-                            "containedBy": "Name of the related Managment Area",
-                            "governanceType": "MA Governance type (tick box)",
-                            "managementAuthority": "Name of management authority",
-                            "recognitionLevel": "Are the rights of the MA authority formally recognized at the… \n\n(tick box)",
-                            "supportSources": "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
-                            "countries": "Country/Countries where MA is located",
-                            "regions": "State(s)/Province(s) where MA is located",
-                            "zones": {
-                                "title": "ZONES",
-                                "zoneName": "Name of zone",
-                                "zoneLevel": "Does this zone restrict any activites or use?",
-                                "zoneDescription": "Description and Attributes"
-                            }
-                        },
-                        "map": {
-                            "title": "Map or Spatial File of the MA",
-                            "subtitle": "Geospatial information"
-                        },
-                        "people": {
-                            "title": "7. Number of people engaged from key stakeholder groups",
-                            "community": "Local community",
-                            "ngo": "NGO",
-                            "academic": "Academic",
-                            "government": "Government",
-                            "indigenous": "Indigenous people",
-                            "private": "Private sector",
-                            "total": "total consulted"
-                        },
-                        "gender": {
-                            "title": "8. Gender representation of stakeholders consulted",
-                            "total": "total by gender"
-                        }
-                    },
-                    "survey": {
-                        "tabButton": "The survey",
-                        "title": "The survey"
-                    },
-                    "collaborators": {
-                        "tabButton": "Collaborators",
-                        "title": "Collaborators",
-                        "description": "Collaborators are persons that work with you on this assessment or need to have access to the data.",
-                        "table": {
-                            "name": "Name",
-                            "admin": "Admin",
-                            "contributor": "Contributor",
-                            "observer": "Observer"
-                        }
-                    }
-                }
-            },
-            "edit": {
-                "title": "Edit assessment",
-                "year": "Year",
-                "saveButton": "Save",
-                "tabs": {
-                    "nextStep": "Next step",
-                    "data": {
-                        "tabButton": "Assessment data",
-                        "title": "Edit Assessment Data",
-                        "labels": {
-                            "year": "Select Year",
-                            "name": "Name of assessment",
-                            "organization": "Name of institution associated with this assessment",
-                            "personResponsibleRole": "Role of the person responsible for completing this Assessment",
-                            "collectionMethods": "How was the information in this assessment gathered?",
-                            "collectionMethodsText": "Rationale for assessment (e.g. annual monitoring, project baseline)",
-                            "consentGiven": "Has someone in the governance authority provided his or her consent for this assessment to take place?",
-                            "consentGivenWritten": "Has the governance authority provided written consent?",
-                            "managementPlan": {
-                                "title": "Upload a Management Plan File",
-                                "maxSize": "max size: 100M",
-                                "maxUploadTime": "max upload time: 5 mins (so don't attempt large uploads on slow connection)",
-                                "anyFile": "can be any file"
-                            }
-                        },
-                        "people": {
-                            "title": "Number of people engaged    from key stakeholder groups",
-                            "community": "Local community",
-                            "ngo": "NGO",
-                            "academic": "Academic",
-                            "government": "Government",
-                            "indigenous": "Indigenous peoples",
-                            "private": "Private sector"
-                        },
-                        "gender": {
-                            "title": "Gender representation of stakeholders consulted",
-                            "female": "Female",
-                            "male": "Male",
-                            "nonBinary": "Non binary",
-                            "preferNotToSay": "Prefer not to say"
-                        }
-                    },
-                    "managementArea": {
-                        "tabButton": "Managed area",
-                        "title": "Edit Managed Area",
-                        "selector": {
-                            "title": "Select managed area",
-                            "existing": "Select a Managed Area",
-                            "existingGuide": "You can select an already created Managed Area, or if you don’t find it you can create a new one from here",
-                            "orNew": "OR CREATE A NEW ONE",
-                            "newButton": "Create New Managed Area"
-                        },
-                        "zones": {
-                            "accessLevels": {
-                                "OPEN_ACCESS": "Open access (open for extraction and entering)",
-                                "PARTIALLY_RESTRICTED": "Fully restricted access (total extraction ban)",
-                                "FULLY_RESTRICTED": "Partially Restricted (e.g., periodic closures, restriction by use type, restriction by activity type, species restrictions, gear restrictions, etc.)"
-                            }
-                        },
-                        "recognitionLevels": {
-                            "local": "Local level",
-                            "local_guide": "Recognized by the community",
-                            "national": "National level",
-                            "national_guide": "Recognized by national government",
-                            "international": "International level",
-                            "international_guide": "Is there a valid other effective area-based conservation measures [OECM] that contributes to global targets"
-                        },
-                        "labels": {
-                            "title": "Zones",
-                            "name": "Name of new managed area",
-                            "protectedArea": "Associated ID in World Database on Protected Areas",
-                            "containedBy": "Select any other Managed Areas related to this MA. If none, skip.",
-                            "dateEstablished": "Date of formal establishment (if applicable)",
-                            "reportedSize": "Size of MA (ha)",
-                            "managementAuthority": "Name of management authority",
-                            "governanceType": "MA Governance type",
-                            "objectives": "MA objectives",
-                            "recognitionLevel": "Are the rights of the MA authority formally recognized at the…",
-                            "stakeholderGroups": "Number of people engaged from key stakeholder groups",
-                            "supportSources": "Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?",
-                            "countries": "Country/Countries where MA is located",
-                            "regions": "State(s)/Province(s) where MA is located",
-                            "zones": "Does this MA have zones?",
-                            "zoneName": "Name of the zone",
-                            "zoneLevel": "Select the level of access that best describes this zone",
-                            "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
-                            "protectedAreaWdpaIdHelpLink": "Click here to search",
-                            "geospatialSources": "Please list the source of the geospatial information",
-                            "yes": "Yes",
-                            "no": "No"
-                        },
-                        "buttons": {
-                            "addZone": "Add a new Zone"
-                        },
-                        "map": {
-                            "polygonParagraph1": "Indicate the boundaries of the Managed Area",
-                            "polygonParagraph2": "Use the tools over the map to create a Polygon of the Managed Area",
-                            "drawPolygonStartText": "Click over the Map to create a polygon",
-                            "drawPolygonCloseText": "To Close a polygon click over a created Point",
-                            "newPolygon": "Create a new polygon",
-                            "deletePolygon": "Delete selected polygon",
-                            "help": "Click over the map to draw a polygon",
-                            "area": "Area",
-                            "indicateBoundaries": "Indicate the boundaries of the Managed Area",
-                            "spatialFile": "Upload spatial area file",
-                            "preferredMethod": "PREFERRED METHOD",
-                            "preferredMethodText": "Upload a spatial file in Shapefile format",
-                            "spatialFileAndMapImageSeparator": "OR",
-                            "imageFile": "Upload map image"
-                        },
-                        "popups": {
-                            "spatialFile": {
-                                "title": "Upload Map Area File",
-                                "validatingFileFormat": "Validating file format...",
-                                "fileCorrectlyFormated": "The file is correctly formatted",
-                                "fileCorrectlyFormatedText": "Your file has been successfully verified and is ready for upload",
-                                "importFileError": "Sorry something is wrong",
-                                "formatNotSupported": "This format is not supported",
-                                "tryAgain": "try again",
-                                "help": "<h4>What file to upload?</h4>Upload a zipped shapefile of the boundaries of the managed area. The zip should contain the component files of the shapefile and should only be one shapefile of the boundary. If you do not have the correct file type, please convert first before you upload.",
-                                "condition1": "zip file containing all necessary shapefile files (or a zip with a folder containing those files)",
-                                "condition2": "<= 10MB",
-                                "condition3": "shapefile only -- including all required sidecar files (.shp, .shx, .dbf, .prj)",
-                                "condition4": "polygon or multipolygon",
-                                "condition5": "no null, empty, or otherwise invalid geometries"
-                            },
-                            "imageFile": {
-                                "title": "Upload Map Image File",
-                                "formatNotSupported": "This format is not supported",
-                                "gpsCoordinatesTitle": "Indicate GPS coordinates",
-                                "gpsCoordinatesExample": "Latitude , Longitude<br>(e.g 40.741895,-73.989308)",
-                                "dragMapIcon": "You can Drag the icon in the map to select the coordinates",
-                                "help": "<h4>What file to upload?</h4>If you do not have a shapefile but have an image map of the managed area you may upload it here and it will be processed manually. "
-                            }
-                        }
-                    },
-                    "survey": {
-                        "tabButton": "The survey",
-                        "title": "The survey",
-                        "navigator": {
-                            "completed": "Completed",
-                            "outOf": "Out of"
-                        },
-                        "uncheckAttributeTitle": "Unselect attribute",
-                        "uncheckAttributeText": "You are unselecting an attribute that contains questions that have been answered. If you unselect it, all the answers to its questions will be deleted. Are you sure you want to proceed and unselect this attribute?",
-                        "questions": {
-                            "question": "Question",
-                            "back": "Back to Survey Home",
-                            "answer": "Answer",
-                            "score": "Score",
-                            "unknown": "unknown",
-                            "dontKnow": "Don't know",
-                            "explanation": "Explanation",
-                            "notCompleted": "Not completed",
-                            "answerQuestionButton": "Answer question",
-                            "editQuestionButton": "Edit response",
-                            "selectAnswer": "Select answer",
-                            "help": "Need help? See below",
-                            "prev": "Prev",
-                            "next": "Next",
-                            "information": "Information requirements",
-                            "guidance": "Guidance",
-                            "rationale": "What is this question asking?"
-                        }
-                    },
-                    "collaborators": {
-                        "tabButton": "Collaborators",
-                        "title": "Collaborators",
-                        "description": "Collaborators are people who are involved in completing this assessment or need access that is not available to other users",
-                        "addCollaboratorButton": "Add collaborator",
-                        "table": {
-                            "name": "Name",
-                            "admin": "Admin",
-                            "contributor": "Contributor",
-                            "observer": "Observer"
-                        },
-                        "popups": {
-                            "delete": {
-                                "title": "Deleting Collaborator",
-                                "confirmationTitle": "Are you sure?",
-                                "confirmationDescription": "By clicking yes you will remove the collaborator making them unable to access the assessment."
-                            },
-                            "add": {
-                                "title": "Add Collaborator",
-                                "description": "Type the first few characters of the collaborator username then select collaborator below and specify the level of access that you would like them to have. Collaborators must create accounts before you can add them.",
-                                "selectCollaboratorTitle": "Select collaborator",
-                                "selectCollaboratorLabel": "Collaborator",
-                                "roleAndPermissions": "Select role & permissions",
-                                "submit": "Add collaborator",
-                                "help": "Didn’t you find your Collaborator? Ask them to create an Elinor account first",
-                                "roles": {
-                                    "admin": {
-                                        "name": "Admin",
-                                        "permission1": "Edit the Assessment data",
-                                        "permission2": "Edit Survey data",
-                                        "permission3": "Edit MA location",
-                                        "permission4": "Add/Edit Admin, Contributors & Observers",
-                                        "permission5": "Delete the Assessment",
-                                        "permission6": "Publish & Unpublish Assessment"
-                                    },
-                                    "contributor": {
-                                        "name": "Contributor",
-                                        "permission1": "Edit the Survey data",
-                                        "permission2": "Edit the MA location data",
-                                        "permission3": "View the Assessment data",
-                                        "permission4": "View the Survey data",
-                                        "permission5": "View the MA location"
-                                    },
-                                    "observer": {
-                                        "name": "Observer",
-                                        "permission1": "View the Assessment data",
-                                        "permission2": "View the Survey data",
-                                        "permission3": "View the MA location"
-                                    }
-                                },
-                                "error": "Validation error"
-                            }
-                        }
-                    },
-                    "publish-settings": {
-                        "tabButton": {
-                            "edit": "Edit publish settings"
-                        },
-                        "title": "Finalize & Publish",
-                        "finalize": {
-                            "title": "Finalize",
-                            "whatHappenTitle": "What happens when you finalize",
-                            "whatHappenList1": "<li>You mark your Assessment as Finished</li><li>You will not be able to edit the Survey Data</li><li>You will not be able to edit the Assessment Data</li><li>Your Assessment will continue only visible by you and your Collaborators</li><li>Will appear as Aggregated data in insights and maps</li>",
-                            "whatHappenList2": "<li>You could still edit or change the Managed Area</li><li>You could still add collaborators</li><li>You could still unpublish the Assessment</li>",
-                            "button": "Finalize",
-                            "warning": "Warning!!",
-                            "warningText": "Once finalized you can not edit the Survey or Assessment Data, so finalize only when you finish your Assessment",
-                            "popup": {
-                                "title": "Finalize Assessment",
-                                "confirmationTitle": "Are you sure you want to finalize your assessment?",
-                                "confirmationDescription": "Once finalized you can not edit the Survey or Assessment Data, so finalize only when you finish your Assessment"
-                            }
-                        },
-                        "publish": {
-                            "title": "Publish",
-                            "whatHappenTitle": "What happens when you publish",
-                            "whatHappenList1": "<li>You make available your Assessment to public users</li><li>Will appear as Aggregated data in insights and maps</li>",
-                            "whatHappenList2": "<li>You could still edit or change the Managed Area</li><li>You could still add collaborators</li><li>You could still unpublish the Assessment</li>",
-                            "button": "Publish Assessment",
-                            "popup": {
-                                "title": "Publish Assessment",
-                                "confirmationTitle": "Are you sure you want to publish your assessment?",
-                                "confirmationDescription": "Once published you cannot edit the Survey or Assessment Data, so publish only when you finish your Assessment"
-                            },
-                            "alert": {
-                                "popup": {
-                                    "title": "Publish Assessment",
-                                    "confirmationTitle": "You have to finalize your assessment to be able to publish",
-                                    "confirmationDescription": "Go back and finalize first"
-                                }
-                            }
-                        },
-                        "unpublish": {
-                            "title": "Unpublish",
-                            "whatHappenTitle": "What happens when you unpublish",
-                            "whatHappenList1": "<li>Assessment will not be visible to non-collaborators</li>",
-                            "whatHappenList2": "<li>You could still publish the Assessment</li>",
-                            "button": "Unpublish Assessment",
-                            "popup": {
-                                "title": "Unpublish Assessment",
-                                "confirmationTitle": "Are you sure you want to unpublish your assessment?",
-                                "confirmationDescription": "Confirm"
-                            }
-                        }
-                    }
-                },
-                "attributes": "Attributes",
-                "seeQuestions": "See Questions",
-                "optionalAttributesTitle": "Optional attributes",
-                "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
-                "mandatoryAttribute": "Mandatory",
-                "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
-            },
-            "statuses": {
-                "90": "Open",
-                "10": "Published"
-            },
-            "personResponsibleRoles": {
-                "10": "Non-profit staff",
-                "20": "Managed area manager",
-                "30": "Managed area personnel",
-                "40": "Government personnel",
-                "50": "Members of local community or indigenous committees",
-                "60": "Community leaders or representatives"
-            },
-            "collectionMethods": {
-                "10": "Desk-based assessment",
-                "30": "Facilitated focus group discussion"
-            },
-            "popup": {
-                "title": "How to create an Assessment",
-                "text": "Use the process below to create an assessment. You will need to provide information relating to the assessment, create or select a managed area and then complete the actual survey questions. Collaborators functionality enables you to add people to your assessment.",
-                "step-1": {
-                    "title": "Choose your pathway for data collection",
-                    "text": "Elinor can be completed in one of two ways:",
-                    "li-1": "Through a facilitated focus group with different stakeholders involved in and affected by the MA",
-                    "li-2": "As a desk-based assessment led by for example, a conservation practitioner or a site manager."
-                },
-                "step-2": {
-                    "title": "Assessment Data",
-                    "text": "Complete the information related to the ASSESSMENT, such as the number of people consulted or related institutions"
-                },
-                "step-3": {
-                    "title": "Management Area",
-                    "text": "Identify the Management Area, its belonging to some PA and upload the shape or draw on the map its location."
-                },
-                "step-4": {
-                    "title": "The survey",
-                    "text": "Answer the questions from the Survey. You can select those attributes that are relevant to your Assessment"
-                },
-                "step-5": {
-                    "title": "Collaborators",
-                    "text": "Invite collaborators to help you complete the Assessment, or share only as an observer"
-                },
-                "step-6": {
-                    "title": "Publish",
-                    "text": "Once the Assessment is complete you can publish it, making it accessible from the public zone of the web"
-                },
-                "question": "What can I do from here?",
-                "answer-1": "Go to assessments",
-                "answer-2": "Create an assessment",
-                "label": "Don’t show this initial modal screen again"
-            },
-            "actions": {
-                "contact": {
-                    "title": "Contact Administrator",
-                    "subtitle": "Fill this form to contact with the administrator",
-                    "text": "We will send a message to the administrator of this assessment",
-                    "labelTextarea": "Message",
-                    "okMessage": "Thank you for the contact!",
-                    "namePlaceholder": "Your name",
-                    "subjectPlaceholder": "Subject",
-                    "emailPlaceholder": "Your Email"
-                },
-                "flag": {
-                    "title": "Flag assessment",
-                    "subtitle": "Fill this form to flag the assessment",
-                    "text": "We will send a message to the administrator of this assessment",
-                    "labelTextarea": "Message",
-                    "okMessage": "Thank you for the contact!"
-                },
-                "delete": {
-                    "title": "Delete title",
-                    "subtitle": "Are you sure you want to delete your assessment",
-                    "text": "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
-                },
-                "delete-info": {
-                    "title": "Delete assessment",
-                    "subtitle": "Assessment is finalized and is not possible to delete it",
-                    "text": "Contact elinor administrator to edit or delete your assessment"
-                },
-                "generateReport": {
-                    "strengths": {
-                        "title": "Key governance strengths",
-                        "label": "Explain Main Strengths",
-                        "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
-                    },
-                    "needs": {
-                        "title": "Key governance strengths",
-                        "label": "Explain Main Needs",
-                        "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
-                    },
-                    "context": {
-                        "title": "Context",
-                        "label": "Context",
-                        "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
-                    },
-                    "button": "Generate"
-                }
-            },
-            "outOf100": "out of 100",
-            "published": "Published",
-            "finalized": "Finalized",
-            "readyToPublish": "Ready to publish",
-            "preparingToPublish": "Preparing to publish"
-        },
-        "documentation": {
-            "home": {
-                "meta": {
-                    "title": "Documentation",
-                    "slug": "/documentation"
-                }
-            },
-            "header": {
-                "title": "Documentation"
-            },
-            "intro": {
-                "text": "Below are documents that are important for full understanding and use of the Elinor tool. Each document has a short description. Please download as required."
-            },
-            "body": {
-                "cards": {
-                    "button": "More documents"
-                }
-            }
-        },
-        "news": {
-            "home": {
-                "meta": {
-                    "title": "News",
-                    "slug": "/news"
-                }
-            },
-            "header": {
-                "title": "News"
-            },
-            "body": {
-                "cards": {
-                    "button": "More news"
-                }
-            }
-        },
-        "faqs": {
-            "home": {
-                "meta": {
-                    "title": "FAQs",
-                    "slug": "/faq"
-                }
-            },
-            "header": {
-                "title": "FAQs"
-            }
-        },
-        "methodologyPage": {
-            "title": "Methodology",
-            "paragraph1": "The Elinor assessment can be completed in two different ways: Through a facilitated focus group with different stakeholders involved in and affected by the MA, or as a desk-based assessment led by a conservation practitioner. When inputting data, users can indicate which pathway they took to generate the data in the assessment and what types of stakeholders were engaged in the assessment.",
-            "subtitle1": "Elinor as a field-based focus group discussion",
-            "paragraph2": "Most governance assessments are traditionally completed through participatory focus group discussions; leveraging diverse perceptions from key stakeholders involved in the management and governance of a particular area. For those with the time and capacity to gather diverse perspectives on management and governance, we recommend downloading the Elinor assessment tool and protocol to guide your efforts.",
-            "paragraph3": "This guidance offers insights on how to ethically lead a group, obtain the right permissions for using the data, and to probe for diverse perspectives; especially of those who may have been traditionally marginalized. This is the preferred pathway, as it allows diverse voices to contribute to the assessment, providing a more holistic perspective on the status of management and governance in an area.",
-            "cta1": "Download Protocol",
-            "subtitle2": "Elinor as a practitioner-led, desk-based assessment.",
-            "paragraph4": "This pathway is for those who have limited time, resources, or capacities for carrying out a participatory focus group. While a desk-based assessment offers a limited option, it allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment. Should you choose to take this pathway, allocate time for you and your colleagues familiar with the MA to discuss and answer each question, based on your experience and knowledge of the MA. If possible, we recommend engaging different stakeholders in whatever way you can to gain insights on the different questions.",
-            "subtitle3": "The Score",
-            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        "termsOfUse": {
-            "title": "Terms of Service"
-        },
-        "contact": {
-            "home": {
-                "meta": {
-                    "title": "Contact",
-                    "slug": "/contact"
-                }
-            },
-            "header": {
-                "title": "Contact"
-            },
-            "form": {
-                "legend": {
-                    "strong": "Use the form below to contact us",
-                    "default": "We will respond as soon as possible"
-                },
-                "name": "Your Name",
-                "subject": "Subject",
-                "mail": "Your E-Mail",
-                "message": "Message",
-                "submit": "Send message",
-                "confirmation": "Thank you for contacting elinor",
-                "namePlaceholder": "Name",
-                "subjectPlaceholder": "Subject",
-                "mailPlaceholder": "Mail",
-                "messagePlaceholder": "Message"
-            }
-        },
-        "collaboration": {
-            "home": {
-                "meta": {
-                    "title": "Collaboration",
-                    "slug": "/collaboration"
-                }
-            },
-            "title": "Principles of Collaboration and Citation Guidelines",
-            "intro": {
-                "title": "Principles to guide transparent and collaborative data sharing",
-                "paragraph1": "The Elinor tool and data system helps users track management and governance status over time. It also provides the opportunity for sharing data on management and governance between users, which can in the long term, foster more transparency in management and governance and improve area-based conservation efforts.",
-                "paragraph2": "To achieve this vision, all users should adhere to the principles outlined below that will guide collaborative, fair, and transparent sharing and use of data. Doing so will ensure all users are motivated to contribute data openly to improve area-based conservation.",
-                "paragraph3": "Data owners who use the Elinor assessment tool and data system have contributed time and resources into collecting data, and in many cases, choose to make their assessments public. Thus all users should act openly, respectfully, transparently, and honestly in engaging on the platform to guide effective and inclusive collaboration. The principles below are designed to facilitate fair and transparent collaboration between data owners and data users, and offer guidance on how users should engage with private and public data, as well as one another.",
-                "paragraph4": "Please contact us if you have suggestions on how we can improve our collaborative principles",
-                "blockquote": "All users should act openly, respectfully, transparently, and honestly in engaging on the platform to guide effective and inclusive collaboration"
-            },
-            "guidelines1": {
-                "title": "Guiding principles for sharing and using data with Elinor",
-                "subtitle": "For use of public and private data",
-                "question1": "Always represent information accurately",
-                "answer1": "Assessment results are provided with additional supporting metadata, which describes its source, how it was compiled, its quality and any limitations, please make sure this is reflected in how you use and present the data.",
-                "question2": "Always acknowledge the data owners in any presentation, publication or report, and cite the Elinor data system as the source of information.",
-                "answer2-1": "We recommend using the following statement when using data from the Elinor platform “We express our gratitude to the individuals and institutions who supported generating data for the Elinor Assessment in [INSERT MA OR REGION HERE], including any focus group participants and facilitators”",
-                "answer2-2": {
-                    "paragraph1": "Please use the following citation to refer to the Elinor data system:",
-                    "paragraph2": " Elinor: A tool and data system for assessing equitable management and governance for area-based conservation. (YEAR) Available at: elinordata.org [Access Date]"
-                }
-            },
-            "guidelines2": {
-                "subtitle": "Principles to guide the request and use of private data in Elinor",
-                "text": "Not all data in the Elinor platform is made public, however data users can contact data owners and request that data be shared. Data owners have no obligation to share data, but should they choose to do so, data users should adhere to the following principles:",
-                "question1": "Always use the information granted by users solely in connection with the original request.",
-                "answer1": "If your initial request was to use the information in a presentation and you later decide it may be useful in a paper or funding proposal, please make a new request to the user.",
-                "question2": "Never share the information with any third party without the express permission of the user. ",
-                "answer2": "If you wish to share the information with a third party who you may be collaborating with, please inform the data owner first.",
-                "question3": "Follow acknowledgement guidelines as suggested by the data owner.",
-                "answer3": {
-                    "paragraph1": "The data owners have the right to request how they want data to be credited for publication. We suggest using the citation format listed below. We also suggest when possible, authors of reports and publications consider inviting data collectors to co-author publications, given their contributions in collecting data.",
-                    "paragraph2": "DATA OWNER NAMES (ASSESSMENT YEAR). ASSESSMENT LOCATION. INSTITUTION. Occurrence dataset accessed via Elinordata.org on DATE. "
-                }
-            }
-        },
-        "about": {
-            "meta": {
-                "title": "Background",
-                "slug": "/background",
-                "seo": {
-                    "title": "",
-                    "description": "",
-                    "keywords": "",
-                    "og_image": ""
-                }
-            },
-            "elinorAttributes": {
-                "attribute1": {
-                    "name": "1. Resource boundaries",
-                    "description": "This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.",
-                    "useIf": "You wish to understand whether the boundaries of the MA are well established.",
-                    "reportText": "Measures the extent that boundaries of the MA are clearly marked and understood by key rights holders and other actors"
-                },
-                "attribute2": {
-                    "name": "2. Monitoring and enforcement",
-                    "description": "This attribute measures how well the MA is able to enforce regulations and whether there is a system for monitoring important information on the social and ecological conditions in the MA.It looks specifically at penalties for breaking MA rules and their nature and extent. It also measures whether social, ecological or climate change conditions are monitored.",
-                    "useIf": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.",
-                    "reportText": "Measures how well the MA is able to enforce regulations"
-                },
-                "attribute3": {
-                    "name": "3. Capacity for adaptive management",
-                    "description": "This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making.",
-                    "useIf": "You would like to know what sort of information informs management decisions in the MA.",
-                    "reportText": "Measures whether MA managers incorporate different forms of knowledge into their decision-making"
-                },
-                "attribute4": {
-                    "name": "4. Operational capacity",
-                    "description": "This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.",
-                    "useIf": "You wish to assess the capacity of the MA’s management system.",
-                    "reportText": "Measures whether those responsible for managing the MA have the resources to do so"
-                },
-                "attribute5": {
-                    "name": "5. Inclusive and equitable management",
-                    "description": "This attribute measures inclusivity and equity in MA management, two important components of good governance.Questions on inclusion and equity ask whether the MA authorities allow for local stakeholders to contribute to management decisions, if there is a strategy for sharing the benefits equitably among stakeholders and whether community resilience to climate change is factored into management.",
-                    "useIf": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.",
-                    "reportText": "Measures inclusivity and equity in MA managment, particulary regarding vulnerable groups"
-                },
-                "attribute6": {
-                    "name": "6. Clearly defined rights and decision making",
-                    "description": "This attribute measures community rights in natural resource management.Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.",
-                    "useIf": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.",
-                    "reportText": "Measures the extent that community rights in natural resource management are clearly understood by key rights holders and other actors"
-                },
-                "attribute7": {
-                    "name": "7. Clear and congruent regulations",
-                    "description": "This attribute measures the quality of MA regulations.    Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.",
-                    "useIf": "You wish to understand whether the regulations are clearly stated and fair.",
-                    "reportText": "Measures the extent that MA regulations are clear and align with rights-holders and other actors’ governance goals"
-                },
-                "attribute8": {
-                    "name": "8. Transparency and accountability",
-                    "description": "This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.",
-                    "useIf": "If you want to assess the quality of MA governance.",
-                    "reportText": "Measures the extent that people directly impacted by management decisions are informed of them in advance, can hold decision-makers to account, and have opportunities for conflict resolution"
-                },
-                "attribute9": {
-                    "name": "9. Perceived outcomes",
-                    "description": "This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.",
-                    "useIf": "You wish to know whether those involved in the MA think its objectives are being achieved.",
-                    "reportText": "Measures the general perceptions that those completing the Elinor assessment have on the ecological and social outcomes of the MA"
-                }
-            }
-        },
-        "profile": {
-            "header": {
-                "title": "Your account",
-                "subtitle": "Use this page to update your account"
-            },
-            "form": {
-                "legend": "Your data",
-                "email": "Email",
-                "password": "Password",
-                "username": "Username",
-                "first_name": "First name",
-                "last_name": "Last name",
-                "submit": "Save changes"
-            },
-            "delete": {
-                "title": "Delete Account",
-                "subtitle": "What happen when you delete your account",
-                "list": {
-                    "1": "We will contact all your collaborators",
-                    "2": "If any assessments you completed are related to an organization, we shall notify the organization",
-                    "3": "You will lose access to all the assessments you have entered in the system",
-                    "4": "Your account will be removed from the system including all your identifying information"
-                },
-                "confirm": {
-                    "title": "Delete your Account",
-                    "message": {
-                        "strong": "Warning!!",
-                        "text": "This action can not be undone"
-                    }
-                }
-            },
-            "popup": {
-                "title": "Delete Account",
-                "header": {
-                    "title": "Are you sure you want to delete your account"
-                },
-                "body": {
-                    "text": "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
-                }
-            }
-        },
-        "map": {
-            "home": {
-                "meta": {
-                    "title": "Map",
-                    "slug": "/map"
-                }
-            },
-            "filters": {
-                "form": {
-                    "placeholders": {
-                        "countries": "Country",
-                        "attributes": "By Attributes"
-                    }
-                }
-            }
+  "pages": {
+    "home": {
+      "meta": {
+        "title": "Lar",
+        "slug": "",
+        "seo": {
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
         }
-    },
-    "sidebar": {
-        "minimize": "Minimize"
-    },
-    "popup": {
-        "organization": {
-            "title": "What is your organization or institution?",
-            "placeholder": "Affiliation",
-            "tooltip": "Affiliation tooltip content"
+      },
+      "header": {
+        "aboutLink": "Sobre",
+        "faqsLink": "Perguntas frequentes",
+        "methodologyLink": "Metodologia",
+        "contactLink": "Contato",
+        "createAccountLink": "Criar uma conta",
+        "signOut": "Sair",
+        "profile": "Perfil"
+      },
+      "public": {
+        "signInTitle": "ENTRAR",
+        "signInSubtitle": "Use seu nome de usuário ou e-mail e senha para acessar Elinor",
+        "signInTitleAndCreateAccountSeparator": " ou ",
+        "createAccountLink": "criar conta",
+        "resendVerificationLink": "Reenviar",
+        "usernameInput": "Nome de usuário ou e-mail",
+        "passwordInput": "Senha",
+        "rememberMeCheckbox": "Lembre de mim",
+        "forgotPasswordLink": "Esqueceu sua senha?",
+        "signInButton": "Entrar",
+        "alerts": {
+          "emailVerificationSent": {
+            "title": "Verificação de e-mail enviada!",
+            "subtitle": "Você receberá uma mensagem para verificar seu e-mail"
+          },
+          "emailVerificationRequired": {
+            "title": "Verificação de e-mail necessária!",
+            "subtitle": "Você não recebeu o e-mail de verificação? Se não reenviar"
+          },
+          "passwordChangedSuccessfully": {
+            "title": "Senha alterada com sucesso!",
+            "subtitle": "Agora você pode acessar com a nova senha."
+          },
+          "emailVerifiedSuccessfully": {
+            "title": "E-mail verificado com sucesso!",
+            "subtitle": "Agora você pode acessar com suas credenciais."
+          },
+          "profileUpdatedSuccessfully": {
+            "title": "Perfil atualizado com sucesso!",
+            "subtitle": "Agora os dados do seu perfil estão atualizados."
+          },
+          "accountDeletedSuccessfully": {
+            "title": "Conta excluída com sucesso!",
+            "subtitle": "Para restaurar sua conta, entre em contato com os administradores da Elinor"
+          }
+        },
+        "content": {
+          "introduction": {
+            "text": "Elinor é uma ferramenta de monitoramento gratuita e de código aberto que ajuda os usuários a coletar, armazenar, compartilhar e usar dados sobre governança e gestão ambiental para apoiar uma conservação baseada em áreas mais eficaz.",
+            "createAccountLink": "Criar uma conta"
+          },
+          "explanation": {
+            "title": "POR QUE DEVO USAR?",
+            "paragraph1": "O Elinor pode ser aplicado como uma avaliação baseada em campo com um facilitador treinado ou como uma ferramenta documental que aproveita o conhecimento local e profissional.",
+            "paragraph2": "As questões da Elinor são de alto nível, abrangendo uma ampla gama de tópicos e podem ajudar as detentores de direitos e outros atores a compreender melhor as questões relacionadas à governança e gestão equitativas de áreas sob proteção ou gestão.",
+            "trackingChange": {
+              "title": "MUDANÇA DE RASTREAMENTO",
+              "text": "Elinor foi projetado principalmente para ajudar a monitorar mudanças ao longo do tempo, portanto pode ser usado em qualquer estágio do ciclo do projeto para:",
+              "list": "<li>Indicar a adequação de um local para diferentes tipos de intervenções</li><li>Destacar áreas que requerem intervenções mais focadas para melhorar os esforços de implementação.</li><li>Convidar as detentores de direitos e outros atores a refletirem de forma colaborativa sobre uma ampla gama de questões importantes para a conservação baseada em área</li>"
+            }
+          },
+          "elinor": {
+            "title": "EM HONRA",
+            "subtitle": "Elinor “Lin” Ostrom",
+            "paragraph1": "Elinor Ostrom foi a primeira mulher a ganhar o Prémio Nobel de Economia em 2009, mas o seu legado vai muito além dessa honra singular. Ostrom e os seus colegas contrariaram a narrativa dominante em torno da tragédia dos comuns (que argumentava que os indivíduos perseguem os seus próprios interesses mesmo quando estes vão contra o bem colectivo – que ficou famoso por um ecologista que era um conhecido racista e eugenista). A teoria de Ostrom sobre governar os bens comuns provou que o nosso planeta poderia ser protegido através da comunidade, colaboração e cooperação.",
+            "paragraph2": "A investigação sobre a governação da gestão de recursos comuns ultrapassou os limites da ciência e desafiou as divisões habituais entre disciplinas. Trabalhando em verdadeira parceria com outras pessoas que entendiam o mundo de maneiras diferentes, Ostrom e seus colegas abriram caminho para uma nova comunidade de pesquisa e corpo de conhecimento que abrange a diversidade e a natureza interligada dos sistemas humanos e naturais.",
+            "paragraph3": "O legado de Ostrom molda a forma como trabalhamos hoje na conservação e, ao homenageá-la no nosso trabalho, esperamos que as suas ideias possam ajudar-nos a todos a apoiar melhor as comunidades e os sistemas de governação que protegem os nossos recursos naturais agora e no futuro.",
+            "quote": {
+              "text": "“Pouco a pouco, pouco a pouco, família por família, tanto bem pode ser feito em tantos níveis.”",
+              "author": "ELINOR OSTROM"
+            }
+          },
+          "faqs": {
+            "title": "Perguntas frequentes",
+            "text": "Está apenas começando com Elinor ou gostaria de saber mais sobre casos de uso e aplicativos comuns? Visite a seção FAQ para ver essas perguntas comuns respondidas.",
+            "button": "Vá para perguntas frequentes"
+          },
+          "methodology": {
+            "title": "METODOLOGIA",
+            "text": "Saiba mais sobre como você pode usar a avaliação Elinor e baixe o protocolo de campo e a ferramenta de avaliação.",
+            "text2": "Elinor inclui 35 perguntas sobre 10 atributos de governança e gestão. Cada pergunta recebe uma pontuação de 0 a 3 e essas pontuações contribuem igualmente para as respectivas pontuações de atributos. Por sua vez, as pontuações dos atributos contribuem igualmente para a pontuação geral. Dependendo da pontuação dada, Elinor sugere diferentes etapas de ação, incluindo Planejar, Construir, Fortalecer e Manter. É importante observar que, embora essas pontuações forneçam informações importantes, elas devem ser usadas em conjunto com os dados qualitativos inseridos na Elinor ao decidir quais ações de gestão adaptativa tomar.",
+            "button": "Ir para Metodologia",
+            "score": "Score",
+            "plan": "Plan",
+            "build": "Build",
+            "strengthen": "Strengthen",
+            "maintain": "Maintain"
+          }
+        },
+        "latestNews": {
+          "title": "LATEST NEWS",
+          "readMore": "Read more",
+          "seeMoreNews": "See more news"
         }
+      },
+      "private": {}
     },
-    "default": {
-        "noresults": "No results",
-        "yes": "Yes",
-        "no": "No",
-        "accept": "Accept",
-        "cancel": "Cancel",
-        "delete": "Delete",
-        "create": "Create",
-        "downloadData": "Download Data",
-        "published": "Published",
-        "finalized": "Finalized",
-        "submit": "Submit",
-        "close": "Close",
+    "auth": {
+      "registration": {
+        "title": "CRIE A SUA CONTA AQUI",
+        "subtitle": "Preencha o formulário abaixo para começar a usar Elinor",
+        "inputs": {
+          "email": "E-mail",
+          "password1": "Senha",
+          "password2": "ConfirmaÇão Da Senha",
+          "firstname": "Primeiro nome",
+          "lastname": "Sobrenome",
+          "username": "Nome de usuário"
+        },
+        "termsOfServiceCheckbox": "Concordo com os termos de serviço*",
+        "validationErrorTitle": "Erro de validação!",
+        "createAccountButton": "Crie a sua conta aqui"
+      },
+      "forgotPassword": {
+        "title": "ESQUECEU SUA SENHA",
+        "subtitle": "Digite seu e-mail para receber um link de redefinição de senha",
+        "emailInput": "E-mail",
+        "sendEmailButton": "Enviar e-mail",
+        "tryAgainButton": "Tente novamente",
+        "alerts": {
+          "forgotPasswordEmailSent": {
+            "title": "Esqueci a senha do e-mail enviado!",
+            "subtitle": "Verifique seu e-mail para obter o link de redefinição de senha"
+          }
+        }
+      },
+      "resendVerificationEmail": {
+        "title": "REENVIAR EMAIL DE VERIFICAÇÃO",
+        "subtitle": "Digite seu e-mail para receber uma nova verificação de e-mail",
+        "emailInput": "E-mail",
+        "sendEmailButton": "Enviar e-mail",
+        "tryAgainButton": "Tente novamente"
+      },
+      "resetPassword": {
+        "title": "REINICIAR SENHA",
+        "subtitle": "Digite uma nova senha abaixo",
+        "error": {
+          "title": "Erro!"
+        },
+        "password1Input": "Senha",
+        "password2Input": "ConfirmaÇão Da Senha",
+        "changePasswordButton": "Redefinir senha"
+      }
+    },
+    "assessments": {
+      "meta": {
+        "title": "Avaliações",
+        "slug": "/avaliações"
+      },
+      "list": {
+        "title": "Avaliações",
+        "total": "Exibindo ",
+        "totalPlural": "avaliações",
+        "totalSingular": "avaliação",
+        "myRole": "Minha função",
+        "viewButton": "Visualizar",
+        "editButton": "Editar",
+        "createButton": "Criar avaliação",
+        "downloadButton": "Baixar tudo",
+        "year": "Ano",
+        "countries": "Países",
+        "create": {
+          "popup": {
+            "title": "Criar avaliação",
+            "labels": {
+              "name": "Nome da avaliação",
+              "year": "Selecione o ano"
+            },
+            "placeholders": {
+              "name": "Nome da avaliação"
+            },
+            "nameCriteria": "Insira um nome curto e fácil de lembrar, como Avaliação Anual Tsavo 2021",
+            "submit": "Criar avaliação"
+          }
+        },
         "filters": {
-            "popup": {
-                "title": ""
-            }
+          "search": "Pesquise por nome de avaliação ou nome de área gerenciada",
+          "button": "Filtros",
+          "popup": {
+            "title": "Filtrar avaliações",
+            "labels": {
+              "countries": "por Países",
+              "year": "por ano",
+              "status": "por publicação"
+            },
+            "placeholders": {
+              "countries": "País",
+              "year": "",
+              "status": ""
+            },
+            "reset": "Reiniciar",
+            "apply": "Aplicar filtros"
+          }
         },
-        "upload-file": {
-            "placeholder": "Drag and drop a PDF file here",
+        "type": {
+          "own": "Membro",
+          "all": "Todos"
+        },
+        "aggregateReport": {
+          "button": "Aggregate report",
+          "title": "Create Aggregate Report",
+          "subtitle": "Select Assessments to Aggregate",
+          "byManagementAreas": "by MA",
+          "byCountries": "by Countries",
+          "byYear": "by Year",
+          "byType": "by Type of assessment",
+          "year": "Year",
+          "giveName": "Give it a name",
+          "giveNamePlaceholder": "Name here",
+          "assessments": "Selected Assessments",
+          "create": "Create Aggregate Report",
+          "covering": "Assessments covering",
+          "coveringHA": "ha",
+          "filtersSelected": "Filters selected",
+          "managementAreaNoOptions": "Type the name of MA",
+          "managementAreaNoResults": "No matching MAs found",
+          "selectedAssessmentsError": "You have to select at least 1 assessment",
+          "nameRequiredError": "The name of the report is required",
+          "nameLengthError": "The name of the report is too long"
+        }
+      },
+      "view": {
+        "title": "Ver avaliação",
+        "year": "Ano",
+        "tabs": {
+          "info": {
+            "tabButton": "Informações",
+            "title": "Ver avaliação",
+            "managementPlanFileTitle": "Documento do plano de manejo",
             "buttons": {
-                "select": "Select a file",
-                "clear": "Clear"
+              "managementPlanFile": "Download"
+            },
+            "labels": {
+              "managementAreaName": "Nome da Área de Gestão",
+              "protectedArea": "Nome do PA/CA maior, esta área focal está contida em",
+              "dateEstablished": "Data de estabelecimento formal (se aplicável)",
+              "reportedSize": "Tamanho do AG (ha)",
+              "containedBy": "Nome da Área de Gestão relacionada",
+              "governanceType": "Tipo de governança AG (caixa de seleção)",
+              "managementAuthority": "Nome da autoridade de gestão",
+              "recognitionLevel": "Os direitos da autoridade AG são formalmente reconhecidos em… (caixa de seleção)",
+              "supportSources": "A autoridade de gestão da AG recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+              "countries": "País/países onde AG está localizada",
+              "regions": "Estado(s)/província(s) onde AG está localizado",
+              "zones": {
+                "title": "ZONAS",
+                "zoneName": "Nome da zona",
+                "zoneLevel": "Esta zona restringe alguma atividade ou uso?",
+                "zoneDescription": "Descrição e atributos"
+              }
+            },
+            "map": {
+              "title": "Mapa ou Arquivo Espacial do AG",
+              "subtitle": "Informação geoespacial"
+            },
+            "people": {
+              "title": "7. Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
+              "community": "Comunidade local",
+              "ngo": "ONG",
+              "academic": "Acadêmica",
+              "government": "Governo",
+              "indigenous": "Povo indígena",
+              "private": "Setor privado",
+              "user": "Grupo de usuários"
+            },
+            "gender": {
+              "title": "8. Representação de género dos titulares de direitos e outros atores consultadas",
+              "total": "total por gênero"
             }
-        },
-        "upload-import-file": {
-            "placeholder": "Drag and drop a zip file here",
+          },
+          "survey": {
+            "tabButton": "A pesquisa",
+            "title": "A pesquisa"
+          },
+          "collaborators": {
+            "tabButton": "Contribuidores",
+            "title": "Contribuidores",
+            "description": "Colaboradores são pessoas que trabalham com você nesta avaliação ou que precisam ter acesso aos dados.",
+            "table": {
+              "name": "Nome",
+              "admin": "Administrador",
+              "contributor": "Contribuidores",
+              "observer": "Observador"
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "Editar avaliação",
+        "year": "Ano",
+        "saveButton": "Salvar",
+        "tabs": {
+          "nextStep": "Próxima Etapa",
+          "data": {
+            "tabButton": "Dados de avaliação",
+            "title": "Editar dados de avaliação",
+            "labels": {
+              "year": "Selecione o ano",
+              "name": "Nome da avaliação",
+              "organization": "Nome da instituição associada a esta avaliação",
+              "personResponsibleRole": "Papel da pessoa responsável por concluir esta avaliação",
+              "collectionMethods": "Como foi recolhida a informação nesta avaliação?",
+              "collectionMethodsText": "Justificativa para avaliação (por exemplo, monitoramento anual, linha de base do projeto)",
+              "consentGiven": "Alguém na autoridade de governação deu o seu consentimento para que esta avaliação fosse realizada?",
+              "consentGivenWritten": "A autoridade de governança forneceu consentimento por escrito?",
+              "managementPlan": {
+                "title": "Carregar um arquivo de plano de manejo",
+                "maxSize": "Tamanho máximo: 100M",
+                "maxUploadTime": "tempo máximo de upload: 5 minutos (portanto, não tente fazer uploads grandes em conexões lentas)",
+                "anyFile": "pode ser qualquer arquivo"
+              }
+            },
+            "people": {
+              "title": "Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
+              "community": "Comunidade local",
+              "ngo": "ONG",
+              "academic": "Acadêmica",
+              "government": "Governo",
+              "indigenous": "Pessoas indígenas",
+              "private": "Setor privado"
+            },
+            "gender": {
+              "title": "Representação de género dos titulares de direitos e outros atores consultadas",
+              "female": "Fêmea",
+              "male": "Macho",
+              "nonBinary": "Não binário",
+              "preferNotToSay": "Prefiro não dizer"
+            }
+          },
+          "managementArea": {
+            "tabButton": "Área gerenciada",
+            "title": "Editar área gerenciada",
+            "selector": {
+              "title": "Selecione a área gerenciada",
+              "existing": "Selecione uma área gerenciada",
+              "existingGuide": "Você pode selecionar uma área gerenciada já criada ou, se não encontrá-la, pode criar uma nova aqui",
+              "orNew": "OU CRIE UM NOVO",
+              "newButton": "Criar nova área gerenciada"
+            },
+            "zones": {
+              "accessLevels": {
+                "OPEN_ACCESS": "Acesso aberto (aberto para extração e entrada)",
+                "PARTIALLY_RESTRICTED": "Acesso totalmente restrito (proibição total de extração)",
+                "FULLY_RESTRICTED": "Parcialmente restrito (por exemplo, fechamentos periódicos, restrição por tipo de uso, restrição por tipo de atividade, restrições de espécies, restrições de equipamentos, etc.)"
+              }
+            },
+            "recognitionLevels": {
+              "local": "Nível local",
+              "local_guide": "Reconhecido pela comunidade",
+              "national": "Nível naçional",
+              "national_guide": "Reconhecido pelo governo nacional",
+              "international": "Nível internacional",
+              "international_guide": "Existem outras medidas válidas e eficazes de conservação baseadas na área [OECM] que contribuam para as metas globais"
+            },
+            "labels": {
+              "title": "Zonas",
+              "name": "Nome da nova área gerenciada",
+              "protectedArea": "ID Associada na Base de Dados Mundial sobre Áreas Protegidas",
+              "containedBy": "Selecione quaisquer outras Áreas Gerenciadas relacionadas a esta AG. Se não houver, pule.",
+              "dateEstablished": "Data de estabelecimento formal (se aplicável)",
+              "reportedSize": "Tamanho do AG (ha)",
+              "managementAuthority": "Nome da autoridade de gestão",
+              "governanceType": "Tipo de governança AG",
+              "objectives": "Objetivos do AG",
+              "recognitionLevel": "Os direitos da autoridade AG são formalmente reconhecidos no…",
+              "stakeholderGroups": "Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
+              "supportSources": "A autoridade de gestão da AG recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+              "countries": "País/países onde AG está localizada",
+              "regions": "Estado(s)/província(s) onde AG está localizado",
+              "zones": "Este AG tem zonas?",
+              "zoneName": "Nome da zona",
+              "zoneLevel": "Selecione o nível de acesso que melhor descreve esta zona",
+              "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
+              "protectedAreaWdpaIdHelpLink": "Click here to search",
+              "geospatialSources": "Liste a fonte das informações geoespaciais",
+              "yes": "Yes",
+              "no": "No"
+            },
             "buttons": {
-                "select": "Select a file",
-                "clear": "Clear"
+              "addZone": "Adicionar uma nova zona"
+            },
+            "map": {
+              "polygonParagraph1": "Indique os limites da Área Gerenciada",
+              "polygonParagraph2": "Use as ferramentas sobre o mapa para criar um polígono da área gerenciada",
+              "drawPolygonStartText": "Clique sobre o mapa para criar um polígono",
+              "drawPolygonCloseText": "Para fechar um polígono clique sobre um ponto criado",
+              "newPolygon": "Crie um novo polígono",
+              "deletePolygon": "Excluir polígono selecionado",
+              "help": "Clique sobre o mapa para desenhar um polígono",
+              "area": "Área",
+              "indicateBoundaries": "Indique os limites da Área Gerenciada",
+              "spatialFile": "Carregar arquivo de área espacial",
+              "preferredMethod": "MÉTODO PREFERIDO",
+              "preferredMethodText": "Carregar um arquivo espacial no formato Shapefile",
+              "spatialFileAndMapImageSeparator": "OU",
+              "imageFile": "Carregar imagem do mapa"
+            },
+            "popups": {
+              "spatialFile": {
+                "title": "Carregar arquivo de área do mapa",
+                "validatingFileFormat": "Validando formato de arquivo...",
+                "fileCorrectlyFormated": "O arquivo está formatado corretamente",
+                "fileCorrectlyFormatedText": "Seu arquivo foi verificado com sucesso e está pronto para upload",
+                "importFileError": "Desculpe, algo está errado",
+                "formatNotSupported": "Este formato não é suportado",
+                "tryAgain": "tente novamente",
+                "help": "<h4>Qual arquivo carregar?</h4>Carregue um shapefile compactado dos limites da área gerenciada. O zip deve conter os arquivos componentes do shapefile e deve ser apenas um shapefile do limite. Se você não tiver o tipo de arquivo correto, converta primeiro antes de fazer o upload.",
+                "condition1": "zip contendo todos os arquivos shapefile necessários (ou um zip com uma pasta contendo esses arquivos)",
+                "condition2": "<= 10MB",
+                "condition3": "somente shapefile - incluindo todos os arquivos secundários necessários (.shp, .shx, .dbf, .prj)",
+                "condition4": "polígono ou multipolígono",
+                "condition5": "sem geometrias nulas, vazias ou inválidas"
+              },
+              "imageFile": {
+                "title": "Carregar arquivo de imagem do mapa",
+                "formatNotSupported": "Este formato não é suportado",
+                "gpsCoordinatesTitle": "Indicar coordenadas GPS",
+                "gpsCoordinatesExample": "Latitude, longitude<br>(por exemplo, 40.741895,-73.989308)",
+                "dragMapIcon": "Você pode arrastar o ícone no mapa para selecionar as coordenadas",
+                "help": "<h4>Qual arquivo carregar?</h4>Se você não possui um shapefile, mas possui um mapa de imagem da área gerenciada, poderá carregá-lo aqui e ele será processado manualmente."
+              }
             }
-        },
-        "upload-mapimage": {
-            "placeholder": "Drag and drop an image file here",
-            "buttons": {
-                "select": "Select a file",
-                "clear": "Clear"
+          },
+          "survey": {
+            "tabButton": "The survey",
+            "title": "The survey",
+            "navigator": {
+              "completed": "Completed",
+              "outOf": "Out of"
+            },
+            "uncheckAttributeTitle": "Unselect attribute",
+            "uncheckAttributeText": "You are unselecting an attribute that contains questions that have been answered. If you unselect it, all the answers to its questions will be deleted. Are you sure you want to proceed and unselect this attribute?",
+            "questions": {
+              "question": "Question",
+              "back": "Back to Survey Home",
+              "answer": "Answer",
+              "score": "Score",
+              "unknown": "unknown",
+              "dontKnow": "Don't know",
+              "explanation": "Explanation",
+              "notCompleted": "Not completed",
+              "answerQuestionButton": "Answer question",
+              "editQuestionButton": "Edit response",
+              "selectAnswer": "Select answer",
+              "help": "Need help? See below",
+              "prev": "Prev",
+              "next": "Next",
+              "information": "Information requirements",
+              "guidance": "Guidance",
+              "rationale": "What is this question asking?"
             }
+          },
+          "collaborators": {
+            "tabButton": "Contribuidores",
+            "title": "Contribuidores",
+            "description": "Colaboradores são pessoas envolvidas na conclusão desta avaliação ou que precisam de acesso que não está disponível para outros usuários",
+            "addCollaboratorButton": "Adicionar colaborador",
+            "table": {
+              "name": "Nome",
+              "admin": "Administrador",
+              "contributor": "Contribuinte",
+              "observer": "Observador"
+            },
+            "popups": {
+              "delete": {
+                "title": "Excluindo Colaborador",
+                "confirmationTitle": "Tem certeza?",
+                "confirmationDescription": "Ao clicar em sim você removerá o colaborador impossibilitando-o de acessar a avaliação."
+              },
+              "add": {
+                "title": "Adicionar colaborador",
+                "description": "Digite os primeiros caracteres do nome de usuário do colaborador, selecione o colaborador abaixo e especifique o nível de acesso que você gostaria que ele tivesse. Os colaboradores devem criar contas antes de você poder adicioná-los.",
+                "selectCollaboratorTitle": "Selecione o colaborador",
+                "selectCollaboratorLabel": "Colaborador",
+                "roleAndPermissions": "Selecione função e permissões",
+                "submit": "Adicionar colaborador",
+                "help": "Você não encontrou seu colaborador? Peça-lhes para criarem uma conta Elinor primeiro",
+                "roles": {
+                  "admin": {
+                    "name": "Administrador",
+                    "permission1": "Edite os dados da avaliação",
+                    "permission2": "Editar dados da pesquisa",
+                    "permission3": "Editar localização do AG",
+                    "permission4": "Adicionar/editar administradores, colaboradores e observadores",
+                    "permission5": "Excluir a avaliação",
+                    "permission6": "Publicar e cancelar publicação da avaliação"
+                  },
+                  "contributor": {
+                    "name": "Contribuinte",
+                    "permission1": "Edite os dados da avaliação",
+                    "permission2": "Edite os dados de localização do AG",
+                    "permission3": "Visualizar os dados da avaliação",
+                    "permission4": "Visualizar os dados da pesquisa",
+                    "permission5": "Veja a localização do AG"
+                  },
+                  "observer": {
+                    "name": "Observador",
+                    "permission1": "Visualizar os dados da avaliação",
+                    "permission2": "Visualizar os dados da pesquisa",
+                    "permission3": "Veja a localização do AG"
+                  }
+                },
+                "error": "Erro de validação"
+              }
+            }
+          },
+          "publish-settings": {
+            "tabButton": {
+              "ready": "Pronto para publicar"
+            },
+            "title": "Finalizar e publicar",
+            "finalize": {
+              "title": "Finalizar",
+              "whatHappenTitle": "O que acontece quando você finaliza",
+              "whatHappenList1": "<li>Você marca sua avaliação como concluída</li><li>Você não poderá editar os dados da pesquisa</li><li>Você não poderá editar os dados da avaliação</li><li>Sua Avaliação continuará visível apenas para você e seus Colaboradores</li><li>Aparecerão como dados agregados em insights e mapas</li>",
+              "whatHappenList2": "<li>Você ainda pode editar ou alterar a área gerenciada</li><li>Você ainda pode adicionar colaboradores</li><li>Você ainda pode cancelar a publicação da avaliação</li>",
+              "button": "Finalizar",
+              "warning": "Aviso!!",
+              "warningText": "Depois de finalizado, você não poderá editar os dados da pesquisa ou da avaliação, portanto, finalize somente quando terminar sua avaliação",
+              "popup": {
+                "title": "Finalizar Avaliação",
+                "confirmationTitle": "Tem certeza de que deseja finalizar sua avaliação?",
+                "confirmationDescription": "Depois de finalizado, você não poderá editar os dados da pesquisa ou da avaliação, portanto, finalize somente quando terminar sua avaliação"
+              }
+            },
+            "publish": {
+              "title": "Publicar",
+              "whatHappenTitle": "O que acontece quando você publica",
+              "whatHappenList1": "<li>Você disponibiliza sua avaliação para usuários públicos</li><li>Aparecerão como dados agregados em insights e mapas</li>",
+              "whatHappenList2": "<li>Você ainda pode editar ou alterar a área gerenciada</li><li>Você ainda pode adicionar colaboradores</li><li>Você ainda pode cancelar a publicação da avaliação</li>",
+              "button": "Publicar avaliação",
+              "popup": {
+                "title": "Publicar avaliação",
+                "confirmationTitle": "Tem certeza de que deseja publicar sua avaliação?",
+                "confirmationDescription": "Depois de publicado, você não poderá editar os dados da pesquisa ou da avaliação; portanto, publique apenas quando terminar sua avaliação"
+              },
+              "alert": {
+                "popup": {
+                  "title": "Publicar avaliação",
+                  "confirmationTitle": "Você deve finalizar sua avaliação para poder publicar",
+                  "confirmationDescription": "Volte e finalize primeiro"
+                }
+              }
+            },
+            "unpublish": {
+              "title": "Cancelar publicação",
+              "whatHappenTitle": "O que acontece quando você cancela a publicação",
+              "whatHappenList1": "<li>A avaliação não ficará visível para não colaboradores</li>",
+              "whatHappenList2": "<li>Você ainda pode publicar a Avaliação</li>",
+              "button": "Cancelar publicação da avaliação",
+              "popup": {
+                "title": "Cancelar publicação da avaliação",
+                "confirmationTitle": "Tem certeza de que deseja cancelar a publicação da sua avaliação?",
+                "confirmationDescription": "confirme"
+              }
+            }
+          }
         },
-        "save": {
-            "autosave": "Data saved"
+        "attributes": "Attributes",
+        "seeQuestions": "See Questions",
+        "optionalAttributesTitle": "Optional attributes",
+        "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
+        "mandatoryAttribute": "Mandatory",
+        "inactiveAttribute": "Inactive attribute",
+        "activeAttribute": "Active attribute"
+      },
+      "statuses": {
+        "10": "Publicados",
+        "90": "Abrir"
+      },
+      "personResponsibleRoles": {
+        "10": "Pessoal sem fins lucrativos",
+        "20": "Gerente de área gerenciada",
+        "30": "Pessoal da área gerenciada",
+        "40": "Pessoal do governo",
+        "50": "Membros da comunidade local ou de comitês indígenas",
+        "60": "Líderes ou representantes comunitários"
+      },
+      "collectionMethods": {
+        "10": "Avaliação documental",
+        "30": "Discussão facilitada em grupo focal"
+      },
+      "popup": {
+        "title": "Como criar uma avaliação",
+        "text": "Use o processo abaixo para criar uma avaliação. Você precisará fornecer informações relacionadas à avaliação, criar ou selecionar uma área gerenciada e, em seguida, responder às perguntas da pesquisa propriamente dita. A funcionalidade Colaboradores permite adicionar pessoas à sua avaliação.",
+        "step-1": {
+          "title": "Escolha seu caminho para coleta de dados",
+          "text": "Elinor pode ser completada de duas maneiras:",
+          "li-1": "Através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidas e afetadas pela AG.",
+          "li-2": "Como uma avaliação documental liderada, por exemplo, por um conservacionista ou um gestor do sítio."
         },
-        "flag": "Flag",
-        "uploadSurveyFile": "Upload survey",
-        "downloadSurveyFile": "Download survey",
-        "contactAdministrator": "Contact Administrator",
-        "generateReport": "Generate Report",
-        "version": "Version",
-        "description": "Description",
-        "areaSize": "Area Size",
-        "required": "Required"
+        "step-2": {
+          "title": "Dados de avaliação",
+          "text": "Preencha as informações relacionadas à AVALIAÇÃO, como número de pessoas consultadas ou instituições vinculadas"
+        },
+        "step-3": {
+          "title": "Área de Gestão",
+          "text": "Identifique a Área de Gestão, pertença a alguma UC e carregue a forma ou desenhe no mapa a sua localização."
+        },
+        "step-4": {
+          "title": "A pesquisa",
+          "text": "Responda às perguntas da Pesquisa. Você pode selecionar os atributos que são relevantes para sua avaliação"
+        },
+        "step-5": {
+          "title": "Contribuidores",
+          "text": "Convide colaboradores para ajudá-lo a concluir a Avaliação ou compartilhe apenas como observador"
+        },
+        "step-6": {
+          "title": "Publicar",
+          "text": "Uma vez concluída a Avaliação, você poderá publicá-la, tornando-a acessível na zona pública da web"
+        },
+        "question": "O que posso fazer a partir daqui?",
+        "answer-1": "Ir para avaliações",
+        "answer-2": "Crie uma avaliação",
+        "label": "Não mostre esta tela modal inicial novamente"
+      },
+      "actions": {
+        "contact": {
+          "title": "Entrar em contato com o administrador",
+          "subtitle": "Preencha este formulário para entrar em contato com o administrador",
+          "text": "Enviaremos uma mensagem ao administrador desta avaliação",
+          "labelTextarea": "Mensagem",
+          "okMessage": "Obrigado pelo contato!",
+          "namePlaceholder": "Your name",
+          "subjectPlaceholder": "Subject",
+          "emailPlaceholder": "Your Email"
+        },
+        "flag": {
+          "title": "Título da bandeira",
+          "subtitle": "Preencha este formulário para sinalizar a avaliação",
+          "text": "Enviaremos uma mensagem ao administrador desta avaliação",
+          "labelTextarea": "Mensagem",
+          "okMessage": "Obrigado pelo contato!"
+        },
+        "delete": {
+          "title": "Excluir título",
+          "subtitle": "Tem certeza de que deseja excluir sua avaliação",
+          "text": "Depois de excluí-lo, você não poderá acessar suas Avaliações novamente e seus dados serão excluídos permanentemente."
+        },
+        "delete-info": {
+          "title": "Excluir avaliação",
+          "subtitle": "A avaliação está finalizada e não é possível excluí-la",
+          "text": "Entre em contato com o administrador da Elinor para editar ou excluir sua avaliação"
+        }
+      },
+      "outOf100": "out of 100",
+      "published": "Published",
+      "finalized": "Finalized",
+      "readyToPublish": "Ready to publish",
+      "preparingToPublish": "Preparing to publish"
     },
-    "footer": {
-        "faqs": "FAQs",
-        "methodology": "Methodology",
-        "createAccount": "Create Account",
-        "copyright": "© Copyright",
-        "copyrightAfterYear": "Elinor. All rights reserved.",
-        "termsOfUse": "Terms of Use",
-        "privacyPolicy": "Privacy Policy"
+    "documentation": {
+      "home": {
+        "meta": {
+          "title": "Documentação",
+          "slug": "/documentation"
+        }
+      },
+      "header": {
+        "title": "Documentação"
+      },
+      "intro": {
+        "text": "Abaixo estão documentos importantes para o pleno entendimento e utilização da ferramenta Elinor. Cada documento possui uma breve descrição. Faça o download conforme necessário."
+      },
+      "body": {
+        "cards": {
+          "button": "Mais documentos"
+        }
+      }
     },
-    "buttons": {
-        "seeMore": "See more",
-        "seeLess": "See less"
+    "news": {
+      "home": {
+        "meta": {
+          "title": "Notícias",
+          "slug": "/news"
+        }
+      },
+      "header": {
+        "title": "Notícias"
+      },
+      "body": {
+        "cards": {
+          "button": "Mais notícias"
+        }
+      }
+    },
+    "faqs": {
+      "home": {
+        "meta": {
+          "title": "Perguntas frequentes",
+          "slug": "/faq"
+        }
+      },
+      "header": {
+        "title": "Perguntas frequentes"
+      }
+    },
+    "methodologyPage": {
+      "title": "Metodologia",
+      "paragraph1": "A avaliação da Elinor pode ser concluída de duas maneiras diferentes: através de um grupo focal facilitado com diferentes detentores de direitos e detentores de direitos e outros atores envolvidas e afetadas pelo AG, ou como uma avaliação documental liderada por um profissional de conservação. Ao inserir dados, os usuários podem indicar qual caminho seguiram para gerar os dados na avaliação e que tipos de detentores de direitos e outros atores estiveram envolvidas na avaliação.",
+      "subtitle1": "Elinor como uma discussão de grupo focal baseada em campo",
+      "paragraph2": "A maioria das avaliações de governação são tradicionalmente concluídas através de discussões participativas em grupos focais; alavancar percepções diversas das principais detentores de direitos e outros atores envolvidas na gestão e governança de uma área específica. Para aqueles com tempo e capacidade para reunir diversas perspectivas sobre gestão e governança, recomendamos baixar a ferramenta e o protocolo de avaliação Elinor para orientar seus esforços.",
+      "paragraph3": "Esta orientação oferece insights sobre como liderar eticamente um grupo, obter as permissões corretas para usar os dados , e sondar diversas perspectivas; especialmente daqueles que podem ter sido tradicionalmente marginalizados. Este é o caminho preferido, pois permite que diversas vozes contribuam para a avaliação, proporcionando uma perspectiva mais holística sobre a situação da gestão e governação numa área.",
+      "cta1": "Baixar protocolo",
+      "subtitle2": "Elinor como uma avaliação documental conduzida por profissionais.",
+      "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos. lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com o AG discutirem e responderem cada pergunta, com base em sua experiência e conhecimento do AG. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
+      "subtitle3": "A pontuação",
+      "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "termsOfUse": {
+      "title": "Termos de serviço"
+    },
+    "contact": {
+      "home": {
+        "meta": {
+          "title": "Contact",
+          "slug": "/contact"
+        }
+      },
+      "header": {
+        "title": "Contato"
+      },
+      "form": {
+        "legend": {
+          "strong": "Utilize o formulário abaixo para entrar em contato conosco",
+          "default": "Responderemos o mais breve possível"
+        },
+        "name": "Seu nome",
+        "subject": "Assunto",
+        "mail": "Seu email",
+        "message": "Mensagem",
+        "submit": "Enviar mensagem",
+        "confirmation": "Thank you for contacting elinor",
+        "namePlaceholder": "Name",
+        "subjectPlaceholder": "Subject",
+        "mailPlaceholder": "Mail",
+        "messagePlaceholder": "Message"
+      }
+    },
+    "collaboration": {
+      "home": {
+        "meta": {
+          "title": "Colaboração",
+          "slug": "/collaboration"
+        }
+      },
+      "title": "Princípios de Colaboração e Diretrizes de Citação",
+      "intro": {
+        "title": "Princípios para orientar o compartilhamento transparente e colaborativo de dados",
+        "paragraph1": "A ferramenta e o sistema de dados Elinor ajudam os usuários a acompanhar o status de gerenciamento e governança ao longo do tempo. Também proporciona a oportunidade de partilhar dados sobre gestão e governação entre utilizadores, o que pode, a longo prazo, promover mais transparência na gestão e governação e melhorar os esforços de conservação baseados em áreas.",
+        "paragraph2": "Para alcançar esta visão, todos os utilizadores devem aderir aos princípios descritos abaixo que orientarão a partilha e utilização colaborativa, justa e transparente de dados. Isso garantirá que todos os usuários estejam motivados a contribuir abertamente com dados para melhorar a conservação baseada na área.",
+        "paragraph3": "Os proprietários de dados que utilizam a ferramenta de avaliação e o sistema de dados da Elinor contribuíram com tempo e recursos para a recolha de dados e, em muitos casos, optaram por tornar públicas as suas avaliações. Assim, todos os utilizadores devem agir de forma aberta, respeitosa, transparente e honesta ao interagirem na plataforma para orientar uma colaboração eficaz e inclusiva. Os princípios abaixo foram concebidos para facilitar a colaboração justa e transparente entre proprietários de dados e utilizadores de dados, e oferecer orientação sobre como os utilizadores devem interagir com dados privados e públicos, bem como entre si.",
+        "paragraph4": "Entre em contato conosco se tiver sugestões sobre como podemos melhorar nossos princípios colaborativos",
+        "blockquote": "Todos os usuários devem agir de forma aberta, respeitosa, transparente e honesta ao se envolverem na plataforma para orientar uma colaboração eficaz e inclusiva"
+      },
+      "guidelines1": {
+        "title": "Princípios orientadores para compartilhar e usar dados com Elinor",
+        "subtitle": "Para uso de dados públicos e privados",
+        "question1": "Sempre represente as informações com precisão",
+        "answer1": "Os resultados da avaliação são fornecidos com metadados de apoio adicionais, que descrevem sua fonte, como foram compilados, sua qualidade e quaisquer limitações. Certifique-se de que isso se reflita na forma como você usa e apresenta os dados.",
+        "question2": "Sempre reconheça os proprietários dos dados em qualquer apresentação, publicação ou relatório e cite o sistema de dados da Elinor como fonte de informação.",
+        "answer2-1": "Recomendamos usar a seguinte declaração ao usar dados da plataforma Elinor “Expressamos nossa gratidão aos indivíduos e instituições que apoiaram a geração de dados para a Avaliação Elinor em [INSERIR AG OU REGIÃO AQUI], incluindo quaisquer participantes e facilitadores de grupos focais”",
+        "answer2-2": {
+          "paragraph1": "Use a seguinte citação para se referir ao sistema de dados Elinor:",
+          "paragraph2": "Elinor: Uma ferramenta e sistema de dados para avaliar a gestão e governança equitativas para a conservação baseada em áreas. (ANO) Disponível em: elinordata.org [Data de acesso]"
+        }
+      },
+      "guidelines2": {
+        "subtitle": "Princípios para orientar a solicitação e uso de dados privados na Elinor",
+        "text": "Nem todos os dados da plataforma Elinor são tornados públicos, mas os usuários dos dados podem entrar em contato com os proprietários dos dados e solicitar que os dados sejam compartilhados. Os proprietários dos dados não têm obrigação de partilhar dados, mas caso optem por fazê-lo, os utilizadores dos dados devem aderir aos seguintes princípios:",
+        "question1": "Sempre utilize as informações fornecidas pelos usuários exclusivamente em conexão com a solicitação original.",
+        "answer1": "Se o seu pedido inicial foi para utilizar a informação numa apresentação e posteriormente decidir que pode ser útil num artigo ou proposta de financiamento, faça um novo pedido ao utilizador.",
+        "question2": "Nunca compartilhe as informações com terceiros sem a permissão expressa do usuário.",
+        "answer2": "Se desejar compartilhar as informações com terceiros com quem você possa estar colaborando, informe primeiro o proprietário dos dados.",
+        "question3": "Siga as diretrizes de confirmação sugeridas pelo proprietário dos dados.",
+        "answer3": {
+          "paragraph1": "Os titulares dos dados têm o direito de solicitar como desejam que os dados sejam creditados para publicação. Sugerimos usar o formato de citação listado abaixo. Sugerimos também que, quando possível, os autores de relatórios e publicações considerem convidar coletores de dados para publicações em coautoria, dadas as suas contribuições na coleta de dados.",
+          "paragraph2": "NOMES DOS PROPRIETÁRIOS DOS DADOS (ANO DE AVALIAÇÃO). LOCAL DE AVALIAÇÃO. INSTITUIÇÃO. Conjunto de dados de ocorrência acessado via Elinordata.org em DATE."
+        }
+      }
+    },
+    "about": {
+      "meta": {
+        "title": "Background",
+        "slug": "/background",
+        "seo": {
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
+        }
+      },
+      "elinorAttributes": {
+        "attribute1": {
+          "name": "1. Fronteiras dos recursos",
+          "description": "Este atributo mede a qualidade dos limites do AG. As questões questionam se os limites da AG são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.",
+          "useIf": "Você deseja entender se os limites do AG estão bem estabelecidos.",
+          "reportText": "Mede até que ponto os limites da AG são claramente marcados e compreendidos pelos principais detentores de direitos e outros intervenientes"
+        },
+        "attribute2": {
+          "name": "2. Aplicação da lei",
+          "description": "Este atributo mede quão bem a AG é capaz de fazer cumprir os regulamentos. Analisa especificamente as sanções por violação das regras da AG e a sua natureza e extensão.",
+          "useIf": "Você gostaria de ter uma compreensão preliminar sobre a violação de regras na AM e se existe informação que possa facilitar as atividades de M&A ou contribuir para a gestão adaptativa.",
+          "reportText": "Mede quão bem a AG é capaz de fazer cumprir os regulamentos"
+        },
+        "attribute3": {
+          "name": "3. Capacidade de gestão adaptativa",
+          "description": "Este atributo mede se os decisores responsáveis ​​pela gestão do AG incorporam diferentes formas de conhecimento na sua tomada de decisão. Também pergunta se as condições sociais, ecológicas ou de alterações climáticas são monitorizadas.",
+          "useIf": "Você gostaria de saber que tipo de informação informa as decisões de gestão na AG.",
+          "reportText": "Mede se os gestores de CG incorporam diferentes formas de conhecimento na sua tomada de decisão"
+        },
+        "attribute4": {
+          "name": "4. Capacidade operacional",
+          "description": "Este atributo mede se os responsáveis ​​pela gestão da AG possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+          "useIf": "Pretende avaliar a capacidade do sistema de gestão da AG.",
+          "reportText": "Mede se os responsáveis pela gestão da AG têm recursos para fazê-lo"
+        },
+        "attribute5": {
+          "name": "5. Gestão inclusiva e equitativa",
+          "description": "Este atributo mede se os responsáveis ​​pela gestão da AG possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+          "useIf": "Pretende avaliar a capacidade do sistema de gestão da AG.",
+          "reportText": "Mede a inclusão e a equidade na gestão das AG, especialmente no que diz respeito aos grupos vulneráveis"
+        },
+        "attribute6": {
+          "name": "6. Direitos e tomada de decisões claramente definidos",
+          "description": "Este atributo mede a inclusão e a equidade na gestão das AG, duas componentes importantes da boa governação. As questões sobre inclusão e equidade questionam se as autoridades da AG permitem que os titulares de direitos e outros intervenientes contribuam para as decisões de gestão, se existe uma estratégia para partilhar os benefícios de forma equitativa entre eles, e se a resiliência da comunidade às alterações climáticas é tida em conta na gestão.",
+          "useIf": "Você deseja compreender se a AG inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
+          "reportText": "Mede até que ponto os direitos da comunidade na gestão dos recursos naturais são claramente compreendidos pelos principais detentores de direitos e outros intervenientes"
+        },
+        "attribute7": {
+          "name": "7. Regulamentos claros e coerentes",
+          "description": "Este atributo mede a qualidade dos regulamentos do AG. Especificamente i) até que ponto são claros e ii) até que ponto se alinham com o contributo dos titulares de direitos e de outros intervenientes na governação do AG, noutros níveis de autoridade de gestão e no contexto social e ambiental em que operam.",
+          "useIf": "Você deseja entender se os regulamentos são claramente definidos e justos.",
+          "reportText": "Mede até que ponto os regulamentos de AG são claros e alinhados com os objetivos de governação dos titulares de direitos e de outros intervenientes"
+        },
+        "attribute8": {
+          "name": "8. Transparência e prestação de contas",
+          "description": "Este atributo mede a transparência, a responsabilização e a resolução de conflitos, aspectos importantes para a boa governação. É importante que as pessoas directamente afectadas pelas decisões de gestão sejam informadas das mesmas antes da sua implementação, que os decisores sejam responsabilizados e que haja oportunidades para a resolução de conflitos. A transparência é medida perguntando se a comunicação de informações da autoridade da AG aos titulares de direitos e outros intervenientes é oportuna, e a responsabilização é medida perguntando se a autoridade da AG enfrenta consequências se não cumprir as suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à forma como eficaz é.",
+          "useIf": "Se quiser avaliar a qualidade da governação do AG.",
+          "reportText": "Mede até que ponto as pessoas diretamente afetadas pelas decisões de gestão são informadas delas com antecedência, podem responsabilizar os tomadores de decisão e têm oportunidades de resolução de conflitos."
+        },
+        "attribute9": {
+          "name": "9. Resultados ecológicos percebidos",
+          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação da Elinor têm sobre os resultados ecológicos da AG.",
+          "useIf": "Pretende saber se os envolvidos na AG consideram que os seus objectivos ecológicos estão a ser alcançados.",
+          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais do AG."
+        },
+        "attribute10": {
+          "name": "10. Resultados sociais percebidos",
+          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da AG.",
+          "useIf": "Pretende saber se os envolvidos na AG consideram que os seus objectivos sociais estão a ser alcançados.",
+          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais do AG."
+        }
+      }
+    },
+    "profile": {
+      "header": {
+        "title": "Sua conta",
+        "subtitle": "Use esta página para atualizar sua conta"
+      },
+      "form": {
+        "legend": "Seus dados",
+        "email": "Email",
+        "password": "Senha",
+        "username": "Nome de usuário",
+        "first_name": "Primeiro nome",
+        "last_name": "Sobrenome",
+        "submit": "Salvar alterações"
+      },
+      "delete": {
+        "title": "Deletar conta",
+        "subtitle": "O que acontece quando você exclui sua conta",
+        "list": {
+          "1": "Entraremos em contato com todos os seus colaboradores",
+          "2": "Se alguma avaliação que você concluiu estiver relacionada a uma organização, notificaremos a organização",
+          "3": "Você perderá o acesso a todas as avaliações inseridas no sistema",
+          "4": "Sua conta será removida do sistema, incluindo todas as suas informações de identificação"
+        },
+        "confirm": {
+          "title": "Deletar conta",
+          "message": {
+            "strong": "Aviso!!",
+            "text": "Essa ação não pode ser desfeita"
+          }
+        }
+      },
+      "popup": {
+        "title": "Deletar conta",
+        "header": {
+          "title": "Tem certeza de que deseja excluir sua conta"
+        },
+        "body": {
+          "text": "Depois de excluí-lo, você não poderá acessar suas avaliações novamente e seus dados serão excluídos permanentemente."
+        }
+      }
+    },
+    "map": {
+      "home": {
+        "meta": {
+          "title": "Mapa",
+          "slug": "/map"
+        }
+      },
+      "filters": {
+        "form": {
+          "placeholders": {
+            "countries": "País",
+            "attributes": "Por atributos"
+          }
+        }
+      }
     }
+  },
+  "sidebar": {
+    "minimize": "Minimizar"
+  },
+  "popup": {
+    "organization": {
+      "title": "Qual é a sua organização ou instituição?",
+      "placeholder": "Afiliação",
+      "tooltip": "Conteúdo da dica de afiliação"
+    }
+  },
+  "default": {
+    "noresults": "Nenhum resultado",
+    "yes": "Sim",
+    "no": "Não",
+    "accept": "Aceitar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "create": "Criar",
+    "downloadData": "Baixar dados",
+    "published": "Publicados",
+    "finalized": "Finalizado",
+    "submit": "Enviar",
+    "close": "Fechar",
+    "filters": {
+      "popup": {
+        "title": ""
+      }
+    },
+    "upload-file": {
+      "placeholder": "Arraste e solte um arquivo PDF aqui",
+      "buttons": {
+        "select": "Selecione um arquivo",
+        "clear": "Excluir"
+      }
+    },
+    "upload-import-file": {
+      "placeholder": "Arraste e solte um arquivo zip aqui",
+      "buttons": {
+        "select": "Selecione um arquivo",
+        "clear": "Excluir"
+      }
+    },
+    "upload-mapimage": {
+      "placeholder": "Arraste e solte um arquivo de imagem aqui",
+      "buttons": {
+        "select": "Selecione um arquivo",
+        "clear": "Excluir"
+      }
+    },
+    "save": {
+      "autosave": "Dados salvos"
+    },
+    "flag": "Flag",
+    "uploadSurveyFile": "Upload survey",
+    "downloadSurveyFile": "Download survey",
+    "contactAdministrator": "Contact Administrator",
+    "generateReport": "Generate Report",
+    "version": "Version",
+    "description": "Description",
+    "areaSize": "Area Size",
+    "required": "Required"
+  },
+  "footer": {
+    "faqs": "Perguntas frequentes",
+    "methodology": "Metodologia",
+    "createAccount": "Criar uma conta",
+    "copyright": "© direito autoral",
+    "copyrightAfterYear": "Elinor. Todos os direitos reservados.",
+    "termsOfUse": "Termos de uso",
+    "privacyPolicy": "política de Privacidade"
+  },
+  "buttons": {
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos"
+  }
 }
