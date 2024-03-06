@@ -3,22 +3,22 @@ export default [
         type: 'default',
         title : 'Je, kusudi kubwa la kifaa cha Elinor ni nini?',
         text: `
-            <p>
-                The main purpose of Elinor is to track attributes critical to the success of area-based conservation
-                over time,and share this information with decision makers and conservation supporters working at local,
-                national or international scales....
-            </p>
-            <p>
-                The tool was specifically designed knowing many conservation practitioners (1) are familiar with and
-                use an adopted version of the METT in their work and (2) face budget and time constraints for conservation
-                monitoring and evaluation, and may need flexible  approaches for collecting standardized data.
-            </p>
-            <p>
-                Because of this, this low-cost and simple assessment has been developed collaboratively with members
-                of the conservation community, building off of the scoring system of the METT and questions from
-                existing protocols (see reference list), and covers a range of management and governance issue
-                considered important to success.
-            </p>
+             <p>
+                 Kusudi kuu la Elinor ni kufuatilia sifa muhimu kwa mafanikio ya uhifadhi wa eneo
+                 baada ya muda, na kushiriki habari hii na watoa maamuzi na wafuasi wa uhifadhi wanaofanya kazi katika eneo hilo,
+                 viwango vya kitaifa au kimataifa.
+             </ p>
+             <p>
+                 Chombo hiki kiliundwa mahsusi kwa kujua watendaji wengi wa uhifadhi (1) wanafahamiana na
+                 kutumia toleo lililopitishwa la METT katika kazi zao na (2) kukabiliana na bajeti na vikwazo vya muda kwa ajili ya uhifadhi
+                 ufuatiliaji na tathmini, na inaweza kuhitaji mbinu rahisi za kukusanya data sanifu.
+             </ p>
+             <p>
+                 Kwa sababu hii, tathmini hii ya gharama nafuu na rahisi imeandaliwa kwa ushirikiano na wanachama
+                 ya jumuiya ya uhifadhi, kujenga kutoka kwa mfumo wa bao wa METT na maswali kutoka
+                 itifaki zilizopo (tazama orodha ya marejeleo), na inashughulikia masuala mbalimbali ya usimamizi na utawala
+                 inachukuliwa kuwa muhimu kwa mafanikio.
+             </ p>
         `
     },
     {
