@@ -283,7 +283,12 @@
                     },
                     "survey": {
                         "tabButton": "The survey",
-                        "title": "The survey"
+                        "title": "The survey",
+                        "attributes": {
+                            "mandatory": "Mandatory",
+                            "active": "Active attribute",
+                            "inactive": "Inactive attribute"
+                        }
                     },
                     "collaborators": {
                         "tabButton": "Collaborators",
@@ -461,7 +466,8 @@
                             "information": "Information requirements",
                             "guidance": "Guidance",
                             "rationale": "What is this question asking?"
-                        }
+                        },
+                        "inactiveAttribute": "To activate this question, you must activate the attribute"
                     },
                     "collaborators": {
                         "tabButton": "Collaborators",
@@ -519,6 +525,8 @@
                     },
                     "publish-settings": {
                         "tabButton": {
+                            "ready": "Ready to publish",
+                            "preparing": "Preparing to publish",
                             "edit": "Edit publish settings"
                         },
                         "title": "Finalize & Publish",
@@ -643,7 +651,14 @@
                     "subtitle": "Fill this form to flag the assessment",
                     "text": "We will send a message to the administrator of this assessment",
                     "labelTextarea": "Message",
-                    "okMessage": "Thank you for the contact!"
+                    "okMessage": "Thank you for the contact!",
+                    "placeholder": "Flag type",
+                    "types": {
+                        "inappropriate": "Inappropriate",
+                        "personal": "Personal",
+                        "inaccurate": "Inaccurate",
+                        "other": "Other"
+                    }
                 },
                 "delete": {
                     "title": "Delete title",
@@ -678,7 +693,55 @@
             "published": "Published",
             "finalized": "Finalized",
             "readyToPublish": "Ready to publish",
-            "preparingToPublish": "Preparing to publish"
+            "preparingToPublish": "Preparing to publish",
+            "downloadSurveyFile": {
+                "title": "Download Survey",
+                "helpTitle": "You can fill in the survey offline and upload it when ready. If you select to download the survey:",
+                "help1": "You will obtain a .xlsx file with the questions and answers to the survey.",
+                "help2": "You can edit it offline in Excel, Numbers or any xlsx processing program. Please don't change the structure of the xlsx in any way or form.",
+                "help3": "Save the file as a .xlsx file",
+                "help4": "When the survey is finished, click on the upload button to upload the xlsx and the online survey will automatically update the survey information.",
+                "downloadButton": "Start downloading"
+            },
+            "uploadSurveyFile": {
+                "title": "Upload survey file",
+                "triggerButton": "Select a file",
+                "filePlaceholder": "Drag and drop de .xlsx file",
+                "validatingFileFormat": "Validating file format...",
+                "fileCorrectlyFormated": "The file is correctly formatted",
+                "fileCorrectlyFormatedText": "The data structure is correct and the xlsx is ready to be imported",
+                "uploadWarning": "Remember that if you accept, all the information of the survey online will be overwritten by the information on the xlsx",
+                "surveyFileErrorTitle": "Sorry something went wrong",
+                "surveyFileErrorDescription": "We are not able to import the xlsx you tried to upload. Please make sure that the format is correct. The structure of the xlsx need to be exactly the same one that was downloaded.",
+                "tryAgainText": "If you want you can",
+                "tryAgainButton": "try again",
+                "formatNotSupported": "try again",
+                "help": "Please, upload the xlsx file for the survey in the exact same format that it was downloaded. No change can be done to the structure. If the upload fails. please review the format and make sure it is the same as the downloaded file.",
+                "helpTitle": "What files to Upload?",
+                "errors": {
+                    "missing_file": "missing file",
+                    "unsupported_file_type": "file type not supported; supported types: {supported_mime_types}",
+                    "file_too_large": "uploaded file larger than {maximum_filesize}",
+                    "unsupported_zip": "zip file contains more than one file, or is empty. Number of files in zip: {num_files}",
+                    "invalid_zip": "invalid zip",
+                    "missing_sheet": "missing sheet with name '{sheetname}'",
+                    "invalid_header": "no header found for sheet {sheetname}",
+                    "invalid_header_cells": "invalid headers in cells: {header_error_cells}",
+                    "invalid_file_load": "invalid xlsx file",
+                    "assessment_id_mismatch": "assessment id {user_assessmment_id} in {cell} does not match requested assessment {assessment_id}",
+                    "invalid_sheet": "invalid sheet",
+                    "invalid_questions": "invalid question keys in cells: {question_error_cells}",
+                    "invalid_choices": "invalid choices in cells: {choice_error_cells}",
+                    "invalid_answers": "invalid answers",
+                    "answer_save": "error saving answers to database"
+                }
+            },
+            "roles": {
+                "admin": "Admin",
+                "contributor": "Contributor",
+                "observer": "Observer"
+            },
+            "managedArea": "Managed Area"
         },
         "documentation": {
             "home": {
@@ -736,7 +799,30 @@
             "subtitle2": "Elinor as a practitioner-led, desk-based assessment.",
             "paragraph4": "This pathway is for those who have limited time, resources, or capacities for carrying out a participatory focus group. While a desk-based assessment offers a limited option, it allows for some data to be generated on the managed area, which can provide an often adequate and helpful assessment on the current status and trends in the area, and can help users identify any critical knowledge gaps that would require further research and investment. Should you choose to take this pathway, allocate time for you and your colleagues familiar with the MA to discuss and answer each question, based on your experience and knowledge of the MA. If possible, we recommend engaging different stakeholders in whatever way you can to gain insights on the different questions.",
             "subtitle3": "The Score",
-            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "scoreTable": {
+                "value": "value",
+                "values": "Values",
+                "indicator": "Indicator",
+                "attribute": "Attribute",
+                "aggregate": "Aggregate",
+                "plan": {
+                    "title": "Plan",
+                    "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+                },
+                "build": {
+                    "title": "Build",
+                    "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+                },
+                "strengthen": {
+                    "title": "Strengthen",
+                    "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+                },
+                "maintain": {
+                    "title": "Maintain",
+                    "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+                }
+            }
         },
         "termsOfUse": {
             "title": "Terms of Service"
@@ -932,6 +1018,82 @@
                         "countries": "Country",
                         "attributes": "By Attributes"
                     }
+                }
+            },
+            "legend": {
+                "plan": "Plan",
+                "build": "Build",
+                "strengthen": "Strengthen",
+                "mantain": "Mantain"
+            },
+            "popup": {
+                "managedArea": "Managed Area"
+            },
+            "title": "MAP",
+            "boxList": {
+                "covering": "covering",
+                "ha": "ha"
+            },
+            "boxAssessment": {
+                "managedArea": "Name of Management Area",
+                "byAttributes": "By Attributes",
+                "goToAssessment": "Go to Full Assessment"
+            }
+        },
+        "report": {
+            "aside": {
+                "year": "Year established",
+                "maGovernanceType": "MA governance type",
+                "totalHa": "Total hectareas",
+                "assessmentType": "Assessment type",
+                "maVersionDate": "Current assessment date"
+            },
+            "country": {
+                "download": "Download Report"
+            },
+            "btnDownload": "Download Report",
+            "scoreTable": {
+                "value": "value",
+                "indicator": "Indicator",
+                "attribute": "Attribute",
+                "aggregate": "Aggregate",
+                "plan": {
+                    "title": "Plan",
+                    "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+                },
+                "build": {
+                    "title": "Build",
+                    "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+                },
+                "strengthen": {
+                    "title": "Strengthen",
+                    "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+                },
+                "maintain": {
+                    "title": "Maintain",
+                    "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+                }
+            },
+            "totalScores": {
+                "value": "value",
+                "indicator": "Indicator",
+                "attribute": "Attribute",
+                "aggregate": "Aggregate",
+                "plan": {
+                    "title": "Plan",
+                    "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+                },
+                "build": {
+                    "title": "Build",
+                    "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+                },
+                "strengthen": {
+                    "title": "Strengthen",
+                    "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+                },
+                "maintain": {
+                    "title": "Maintain",
+                    "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
                 }
             }
         }
