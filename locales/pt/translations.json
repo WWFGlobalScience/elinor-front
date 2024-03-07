@@ -283,7 +283,7 @@
                     },
                     "survey": {
                         "tabButton": "A pesquisa",
-                        "title": "A pesquisa"
+                        "title": "A pesquisa",
                         "attributes": {
                             "mandatory": "Mandatory",
                             "active": "Active attribute",
@@ -466,7 +466,7 @@
                             "information": "Information requirements",
                             "guidance": "Guidance",
                             "rationale": "What is this question asking?"
-                        }
+                        },
                         "inactiveAttribute": "To activate this question, you must activate the attribute"
                     },
                     "collaborators": {
@@ -525,7 +525,7 @@
                     },
                     "publish-settings": {
                         "tabButton": {
-                            "ready": "Pronto para publicar"
+                            "ready": "Pronto para publicar",
                             "preparing": "Preparing to publish",
                             "edit": "Edit publish settings"
                         },
@@ -651,7 +651,7 @@
                     "subtitle": "Preencha este formulário para sinalizar a avaliação",
                     "text": "Enviaremos uma mensagem ao administrador desta avaliação",
                     "labelTextarea": "Mensagem",
-                    "okMessage": "Obrigado pelo contato!"
+                    "okMessage": "Obrigado pelo contato!",
                     "placeholder": "Flag type",
                     "types": {
                         "inappropriate": "Inappropriate",
@@ -693,7 +693,7 @@
             "published": "Published",
             "finalized": "Finalized",
             "readyToPublish": "Pronto para publicar",
-            "preparingToPublish": "Preparing to publish"
+            "preparingToPublish": "Preparing to publish",
             "downloadSurveyFile": {
                 "title": "Download Survey",
                 "helpTitle": "You can fill in the survey offline and upload it when ready. If you select to download the survey:",
@@ -799,7 +799,7 @@
             "subtitle2": "Elinor como uma avaliação documental conduzida por profissionais.",
             "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos. lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com o AG discutirem e responderem cada pergunta, com base em sua experiência e conhecimento do AG. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
             "subtitle3": "A pontuação",
-            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "scoreTable": {
                 "value": "value",
                 "values": "Values",
