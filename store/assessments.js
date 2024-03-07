@@ -11,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], offline: null},
+    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
     report: [],
     edit: {
         data: true,
@@ -614,10 +614,10 @@ export const actions = {
     },
     async setOffline(state) {
         state.dispatch('layout/setOffline', {isOffline: true}, {root: true})
-        state.commit('setAssessmentField', {field: 'offline', value: this.$auth.user})
+        state.commit('setAssessmentField', {field: 'checkout', value: this.$auth.user.id})
         await state.dispatch('editAssessmentField', {
-            field: 'offline',
-            value: this.$auth.user,
+            field: 'checkout',
+            value: this.$auth.user.id,
             id: state.state.assessment.id
         });
     },
@@ -634,7 +634,7 @@ export const actions = {
             })
         })
 
-        state.commit('setAssessmentField', {field: 'offline', value: null})
-        await state.dispatch('editAssessmentField', {field: 'offline', value: null, id: state.state.assessment.id});
+        state.commit('setAssessmentField', {field: 'checkout', value: null})
+        await state.dispatch('editAssessmentField', {field: 'checkout', value: null, id: state.state.assessment.id});
     },
 }

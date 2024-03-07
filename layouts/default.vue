@@ -26,7 +26,7 @@ export default {
         }
     },
     mounted() {
-        const isOffline = this.$auth.loggedIn && this.$store.state.assessments.assessment?.offline?.id === this.$auth.user.id;
+        const isOffline = this.$auth.loggedIn && this.$store.state.assessments.assessment?.checkout === this.$auth.user.id;
         this.$store.dispatch( 'layout/setOffline', { isOffline } )
     }
 };
