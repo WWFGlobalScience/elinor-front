@@ -68,7 +68,7 @@ export default [
           text: `
               Designing and architecting web based tools takes a lot of effort. Realizing the Elinor tool took time and
               effort from three distinct groups: scientists who researched and developed the protocol, backend engineers
-              who designed the architecture to deliver a modern and stable structure and frontend developers and UX/UX
+              who designed the architecture to deliver a modern and stable structure and frontend developers and UI/UX
               specialists who made the tool interface flexible, beautiful and easy to use. Part of the engineering in
               based on past experience building similar tools like the MERMAID which brough efficiency and stability.
               Taking an iterative approach, we continue to consult with various stakeholders and experts both on
