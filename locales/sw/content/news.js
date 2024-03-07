@@ -1,9 +1,33 @@
 export default [
+        {
+          date: "2-28-2024",
+          title: "Announcing new features in Elinor",
+          text: `
+              In a bid to make Elinor more usable, we are happy to announce three new features:
+              1. Aggregate Reports:
+              You can now generate an aggregate report for multiple assessments selections  by country, year or type of assessment. The Aggregate Report button is located on the assessments page.
+              2.Multiple languages: You can switch to your favorite language using the switcher at the top right of the page.  More languages will be uploaded soon.
+              3. Offline capability: This allows you to download a survey as an Excel file if you have an unstable Internet connection. This capability gives you the flexibility to complete a survey offline then upload it once you are connected to the internet .  More offline features will be added soon.
+          `
+    },
+    {
+          date: "2-28-2024",
+          title: "A comparison of governance and management assessment tools",
+          text: `
+              There are many tools designed to assess governance and management for area-based conservation. This knowledge
+              brief is designed to assist individuals in identifying and understanding the synergies and differences between
+              three conservation management and governance assessment tools: Elinor, the Management Effectiveness Tracking
+              Tool 4 (METT 4), and Site-level Assessment of Governance and Equity (SAGE). The first part of this document
+              compares the background/site information sections of Elinor, METT 4, and SAGE. The second part compares the
+              assessment questions in Elinor (35), METT 4 (38), and SAGE (50). Finally, the document ends with a guide to
+              help users determine which assessment to use based on their management and governance objectives.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
+          `
+    },
     {
           date: "6-20-2022",
           title: "New Elinor updates allow automated reporting and more user-friendly features",
           text: `
-              We are happy to announce that the latest version of the Elinor tool (v2023.1) has been released and is ready for online use! This version contains several new exciting features. ElinorData.org can now automatically produce reports for completed assessments that provide high-level overviews of the results for easier learning and reporting. Users can also see their preliminary results update as they enter data into the system. We have made minor revisions to the assessment text, including fixing typos, edits for inclusive language, and improve clarity in question wording. Some questions have been reorganized under different attributes as well. None of these changes affect existing data already entered into the system. These features are the result of a year-long effort to continually improve the Elinor tool. We encourage you to try them out and send us any feedback you may have. Thanks so much for your continued use of ElinorData.org. We'll be back in August with more news after we present Elinor at the International Congress on Conservation Biology in Kigali, Rwanda!...
+              We are happy to announce that the latest version of the Elinor tool (v2023.1) has been released and is ready for online use! This version contains several new exciting features. ElinorData.org can now automatically produce reports for completed assessments that provide high-level overviews of the results for easier learning and reporting. Users can also see their preliminary results update as they enter data into the system. We have made minor revisions to the assessment text, including fixing typos, edits for inclusive language, and improve clarity in question wording. Some questions have been reorganized under different attributes as well. None of these changes affect existing data already entered into the system. These features are the result of a year-long effort to continually improve the Elinor tool. We encourage you to try them out and send us any feedback you may have. Thanks so much for your continued use of ElinorData.org. We'll be back in August with more news after we present Elinor at the International Congress on Conservation Biology in Kigali, Rwanda!
           `
       },
       {
