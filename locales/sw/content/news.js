@@ -1,6 +1,6 @@
 export default [
         {
-          date: "2-28-2024",
+          date: "Februari 28, 2024",
           title: "Matangazo ya vipengele vipya katika Elinor",
           text: `
 Katika nia ya kufanya Elinor itumike zaidi, tuna furaha kutangaza vipengele vitatu vipya:
@@ -10,7 +10,7 @@ Katika nia ya kufanya Elinor itumike zaidi, tuna furaha kutangaza vipengele vita
                3. Uwezo wa nje ya mtandao: Hii hukuruhusu kupakua utafiti kama faili ya Excel ikiwa una muunganisho wa Mtandao usio thabiti. Uwezo huu hukupa wepesi wa kukamilisha utafiti nje ya mtandao kisha upakie mara tu unapounganishwa kwenye mtandao. Vipengele zaidi vya nje ya mtandao vitaongezwa hivi karibuni.          `
     },
     {
-          date: "2-28-2024",
+          date: "Februari 28, 2024",
           title: "Ulinganisho wa zana za tathmini za utawala na usimamizi",
           text: `
 Kuna zana nyingi iliyoundwa kutathmini utawala na usimamizi kwa uhifadhi wa eneo. Maarifa haya
@@ -22,13 +22,13 @@ Kuna zana nyingi iliyoundwa kutathmini utawala na usimamizi kwa uhifadhi wa eneo
                kusaidia watumiaji kubainisha tathmini ya kutumia kulingana na usimamizi na malengo yao ya utawala. <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Bofya hapa ili kuona ulinganifu. </a>          `
     },
     {
-          date: "6-20-2022",
+          date: "Juni 20, 2024",
           title: "Masasisho mapya ya Elinor huruhusu kuripoti kiotomatiki na vipengele vinavyofaa zaidi mtumiaji",
           text: `
 Tuna furaha kutangaza kwamba toleo jipya zaidi la zana ya Elinor (v2023.1) imetolewa na iko tayari kwa matumizi ya mtandaoni! Toleo hili lina vipengele vingi vipya vya kusisimua. ElinorData.org sasa inaweza kutoa ripoti kiotomatiki kwa tathmini zilizokamilika ambazo hutoa muhtasari wa hali ya juu wa matokeo kwa urahisi wa kujifunza na kuripoti. Watumiaji wanaweza pia kuona sasisho lao la awali la matokeo wanapoingiza data kwenye mfumo. Tumefanya masahihisho madogo kwa maandishi ya tathmini, ikiwa ni pamoja na kurekebisha makosa ya kuandika, kuhariri kwa lugha-jumuishi, na kuboresha uwazi katika maneno ya maswali. Baadhi ya maswali yamepangwa upya chini ya sifa tofauti pia. Hakuna mabadiliko haya yanayoathiri data iliyopo ambayo tayari imeingizwa kwenye mfumo. Vipengele hivi ni matokeo ya juhudi ya mwaka mzima ya kuboresha zana ya Elinor kila wakati. Tunakuhimiza kuzijaribu na ututumie maoni yoyote ambayo unaweza kuwa nayo. Asante sana kwa kuendelea kutumia ElinorData.org. Tutarejea mwezi wa Agosti na habari zaidi baada ya kumwasilisha Elinor katika Kongamano la Kimataifa la Biolojia ya Uhifadhi jijini Kigali, Rwanda!          `
       },
       {
-          date: "7-21-2022",
+          date: "Julai 21, 2022",
           title: "Elinor 2022.1 yatolewa",
           text: `
 Tunafurahi kutoa toleo la kwanza la Elinor - v2022.1. Hiki ni kilele cha miaka miwili ya kazi
@@ -45,7 +45,7 @@ Tunafurahi kutoa toleo la kwanza la Elinor - v2022.1. Hiki ni kilele cha miaka m
                usimamizi na utawala.          `
       },
       {
-          date: "7-21-2022",
+          date: "Julai 21, 2022",
           title: "Elinor inakamilisha zana zingine",
           text: `
 Kuna zana nyingi zinazoweza kutumika kutathmini utawala na usimamizi wa maeneo yanayosimamiwa kwa misingi ya eneo
@@ -58,7 +58,7 @@ Kuna zana nyingi zinazoweza kutumika kutathmini utawala na usimamizi wa maeneo y
                soma <a href="/background">maelezo ya usuli</a>.          `
       },
       {
-          date: "7-21-2022",
+          date: "Julai 21, 2022",
           title: "Jinsi tulivyojenga Elinor",
           text: `
 Kubuni na kusanifu zana za msingi za wavuti huchukua juhudi nyingi. Kutambua chombo cha Elinor kulichukua muda na
