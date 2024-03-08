@@ -1,7 +1,7 @@
 <template>
     <div class="popup__content">
         <p class="c-text--base mb-6">
-            {{ $t('pages.assessments.edit.tabs.survey.offlinePopupDescription') }}
+            {{ $t('pages.assessments.edit.tabs.survey.offlinePopupDescription', { username }) }}
         </p>
     </div>
 </template>
@@ -14,7 +14,11 @@ export default {
     computed: {
         ...mapState({
             popup: state => state.popup.popup,
-        })
+            assessment: state => state.assessments.assessment
+        }),
+        username() {
+            return this.assessment.collaborators.find(({user}) => user.id === this.assessment.checkout)?.user.username
+        }
     },
     methods: {
         ...mapActions({

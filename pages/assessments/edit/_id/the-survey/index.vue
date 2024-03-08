@@ -12,10 +12,14 @@ import {mapState} from "vuex";
 export default {
     name: 'assessnent-survey',
     layout: 'assessment-edit',
+    mounted() {
+        this.$store.dispatch( 'assessments/fetchAssessment', this.assessmentId )
+    },
     computed: {
         ...mapState({
             loader: state => state.loader.loader,
-            isOffline: state => state.layout.offline
+            isOffline: state => state.layout.offline,
+            assessmentId: state => state.assessments.assessment.id
         })
     }
 }

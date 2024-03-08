@@ -915,7 +915,7 @@
                             }
                         },
                         "offlinePopupTitle": "Not available",
-                        "offlinePopupDescription": "This assessment is being edited by another user. It will available once the user turns online."
+                        "offlinePopupDescription": "This assessment is being edited by {username}. It will available once the other user turns online."
                     },
                     "collaborators": {
                         "tabButton": "Collaborators",
