@@ -1,4 +1,28 @@
 export default [
+        {
+          date: "2-28-2024",
+          title: "Announcing new features in Elinor",
+          text: `
+              In a bid to make Elinor more usable, we are happy to announce three new features:
+              1. Aggregate Reports:
+              You can now generate an aggregate report for multiple assessments selections  by country, year or type of assessment. The Aggregate Report button is located on the assessments page.
+              2.Multiple languages: You can switch to your favorite language using the switcher at the top right of the page.  More languages will be uploaded soon.
+              3. Offline capability: This allows you to download a survey as an Excel file if you have an unstable Internet connection. This capability gives you the flexibility to complete a survey offline then upload it once you are connected to the internet .  More offline features will be added soon.
+          `
+    },
+    {
+          date: "2-28-2024",
+          title: "A comparison of governance and management assessment tools",
+          text: `
+              There are many tools designed to assess governance and management for area-based conservation. This knowledge
+              brief is designed to assist individuals in identifying and understanding the synergies and differences between
+              three conservation management and governance assessment tools: Elinor, the Management Effectiveness Tracking
+              Tool 4 (METT 4), and Site-level Assessment of Governance and Equity (SAGE). The first part of this document
+              compares the background/site information sections of Elinor, METT 4, and SAGE. The second part compares the
+              assessment questions in Elinor (35), METT 4 (38), and SAGE (50). Finally, the document ends with a guide to
+              help users determine which assessment to use based on their management and governance objectives.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
+          `
+    },
     {
           date: "6-20-2022",
           title: "New Elinor updates allow automated reporting and more user-friendly features",
@@ -44,7 +68,7 @@ export default [
           text: `
               Designing and architecting web based tools takes a lot of effort. Realizing the Elinor tool took time and
               effort from three distinct groups: scientists who researched and developed the protocol, backend engineers
-              who designed the architecture to deliver a modern and stable structure and frontend developers and UX/UX
+              who designed the architecture to deliver a modern and stable structure and frontend developers and UI/UX
               specialists who made the tool interface flexible, beautiful and easy to use. Part of the engineering in
               based on past experience building similar tools like the MERMAID which brough efficiency and stability.
               Taking an iterative approach, we continue to consult with various stakeholders and experts both on
