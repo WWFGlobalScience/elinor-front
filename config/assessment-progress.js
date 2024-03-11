@@ -74,7 +74,7 @@ export const calculateProgress = (assessment) => {
     for (let field of required_fields.managed_area) {
         const managementArea = assessment.management_area_countries;
         if (managementArea && managementArea[field]) progress.managed_area.filled++;
-        else console.log(field);
+        // else console.log(field);
     }
 
     progress.managed_area.percentage = progress.managed_area.filled / progress.managed_area.required * 100;

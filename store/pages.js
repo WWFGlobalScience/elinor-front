@@ -33,6 +33,7 @@ export const state = () => ({
                 }
             },
             title: "pages.assessments.meta.title",
+            offlineTitle: "pages.assessments.meta.offlineTitle",
             slug: "pages.assessments.meta.slug",
             icons: {
                 gray: require("~/assets/img/nav-icons/ico-assessments-gray.svg"),

@@ -124,8 +124,13 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list
-        })
+            questions: state => state.surveyquestions.list,
+            isOffline: state => state.layout.offline,
+            offlineSurveyAnswers: state => state.assessments.offlineSurveyAnswers,
+        }),
+        surveyAnswers() {
+            return this.assessment.surveyAnswers || []
+        },
     },
     methods: {
         getAttributeQuestions(attribute) {
@@ -135,13 +140,13 @@ export default {
         },
         isAnswered(question) {
             return (
-                this.assessment.surveyAnswers.filter(
+                this.surveyAnswers.filter(
                     surveyAnswer => surveyAnswer.question.id === question.id
                 ).length === 1
             );
         },
         getAnswerChoice(question) {
-            const answer = this.assessment.surveyAnswers.filter(
+            const answer = this.surveyAnswers.filter(
                 surveyAnswer => surveyAnswer.question.id === question.id
             );
             if (answer.length === 1) {
@@ -149,7 +154,7 @@ export default {
             }
         },
         getAnswerExplanation(question) {
-            const answer = this.assessment.surveyAnswers.filter(
+            const answer = this.surveyAnswers.filter(
                 surveyAnswer => surveyAnswer.question.id === question.id
             );
             if (answer.length === 1) {
@@ -161,8 +166,8 @@ export default {
         },
         getScoreByAttribute(attribute){
             if(this.isAttributeChecked(attribute)){
-                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
-                if(answers.length == 0){
+                var answers = this.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
+                if(!answers.length){
                     return null
                 }
                 var sumValues = answers.reduce(function (s, a) {return s + a.choice;}, 0);

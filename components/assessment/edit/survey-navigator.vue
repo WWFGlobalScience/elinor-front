@@ -76,10 +76,11 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list
+            questions: state => state.surveyquestions.list,
+            isOffline: state => state.layout.offline,
         }),
         completedQuestions() {
-            return this.assessment.surveyAnswers.filter(surveyAnswer =>
+            return (this.assessment.surveyAnswers || []).filter(surveyAnswer =>
                 this.isAttributeSelected({
                     id: surveyAnswer.question.attribute
                 })
@@ -94,15 +95,15 @@ export default {
         },
         totalQuestions() {
             return this.activeQuestions.length;
-        }
+        },
     },
     methods: {
         isAnswered(question) {
             return (
                 this.isAttributeSelected({ id: question.attribute }) &&
-                this.assessment.surveyAnswers.filter(
+                !!(this.assessment.surveyAnswers || []).find(
                     surveyAnswer => surveyAnswer.question.id === question.id
-                ).length === 1
+                )
             );
         },
         getAttributeQuestions(attribute) {
@@ -111,7 +112,7 @@ export default {
             );
         },
         isAttributeSelected(attribute) {
-            return this.assessment.attributes.indexOf(attribute.id) !== -1;
+            return (this.assessment.attributes || []).indexOf(attribute.id) !== -1;
         },
         isCurrentQuestionFromAttribute(attribute) {
             const questionId = this.$route.params.qid;

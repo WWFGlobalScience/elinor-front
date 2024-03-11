@@ -6,7 +6,7 @@
     >
         <div class="sidebar__wrap">
             <div class="brand">
-                <NuxtLink to="/" class="flex items-center">
+                <NuxtLink :class="isOffline ? 'pointer-events-none': ''" :event="isOffline ? '': 'click'" to="/" class="flex items-center">
                     <img
                         src="~/assets/img/elinor-icon-white.svg"
                         class="brand__icon"
@@ -35,7 +35,8 @@
                                 @click="goTo(page)"
                                 class="btn--opacity--child nav__main__link"
                                 :class="{
-                                    'nuxt-link-active': isLinkActive(page)
+                                    'nuxt-link-active': isLinkActive(page),
+                                    'pointer-events-none opacity-50': isOffline && !page.offlineTitle
                                 }"
                             >
                                 <img
@@ -45,15 +46,15 @@
                                             ? page.icons.turqy
                                             : page.icons.white
                                     "
-                                    :alt="$t(page.title)"
+                                    :alt="getPageTitle(page)"
                                     class="center-v"
                                 />
                                 <span class="btn--opacity__target">{{
-                                    $t(page.title)
+                                    getPageTitle(page)
                                 }}</span>
                                 <div
                                     class="input__tooltip"
-                                    :content="$t(page.title)"
+                                    :content="getPageTitle(page)"
                                     v-tippy="{ placement: 'right' }"
                                 >
                                     &nbsp;
@@ -108,6 +109,9 @@ export default {
         isSidebarOpen() {
             return this.$store.state.layout.sidebar;
         },
+        isOffline() {
+            return this.$store.state.layout.offline;
+        },
         isUserAuthenticated() {
             return this.$auth.loggedIn;
         }
@@ -126,18 +130,18 @@ export default {
         isLinkActive(page) {
             const slug = this.$t(page.slug);
             if (this.$route.fullPath === "/") {
-                if (slug === "") {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                if (slug === "") {
-                    return false;
-                } else {
-                    return this.$route.fullPath.indexOf(slug) !== -1;
-                }
+                return slug === "";
             }
+
+            if (slug === "") {
+                return false;
+            }
+
+            return this.$route.fullPath.indexOf(slug) !== -1;
+        },
+        getPageTitle(page) {
+            const title = this.isOffline && page.offlineTitle ? page.offlineTitle: page.title;
+            return this.$t(title);
         }
     }
 };

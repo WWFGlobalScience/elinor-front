@@ -2,7 +2,7 @@
     <section class="section section--assessment-survey-list mt-8">
         <div class="container">
             <div class="elinor__survey-list">
-                <template v-for="(attribute, index) in attributes">
+                <template v-for="attribute in attributes">
                     <div class="title-border" :id="`anchor-attribute-${attribute.id}`">
                         <div class="title-dot-wrapper">
                             <span class="title-dot"
@@ -107,6 +107,7 @@
                 <NuxtLink
                     @click.prevent
                     :to="`/assessments/edit/${assessment.id}/collaborators`"
+                    v-if="!isOffline"
                     class="btn btn--opacity--child">
                     <span class="btn--opacity__target">
                         {{ $t("pages.assessments.edit.tabs.nextStep") }}
@@ -138,7 +139,8 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list
+            questions: state => state.surveyquestions.list,
+            isOffline: state => state.layout.offline,
         })
     },
     methods: {
@@ -148,43 +150,29 @@ export default {
             );
         },
         isAnswered(question) {
-            return (
-                this.assessment.surveyAnswers.filter(
-                    surveyAnswer => surveyAnswer.question.id === question.id
-                ).length === 1
-            );
+            return !!this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === question.id)
         },
         getAnswerChoice(question) {
-            const answer = this.assessment.surveyAnswers.filter(
-                surveyAnswer => surveyAnswer.question.id === question.id
-            );
-            if (answer.length === 1) {
-                return answer[0].choice;
-            }
+            return this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === question.id)?.choice
         },
         getAnswerExplanation(question) {
-            const answer = this.assessment.surveyAnswers.filter(
-                surveyAnswer => surveyAnswer.question.id === question.id
-            );
-            if (answer.length === 1) {
-                return answer[0].explanation;
-            }
+            return this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === question.id)?.explanation
         },
         isAttributeChecked(attribute) {
             return this.assessment.attributes.indexOf(attribute.id) !== -1;
         },
         getScoreByAttribute(attribute){
             if(this.isAttributeChecked(attribute)){
-                var answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
-                if(answers.length == 0){
+                const answers = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.choice !== null && surveyAnswer.question.attribute === attribute.id)
+                if(!answers.length){
                     return null
                 }
-                var sumValues = answers.reduce(function (s, a) {return s + a.choice;}, 0);
 
+                const sumValues = answers.reduce(function (s, a) {return s + a.choice;}, 0);
                 return 10 / 3 * sumValues / Object.keys(answers).length //score out of 10
-            }else{
-                return 0
             }
+
+            return 0
         },
         getAnswerColor(choice){
             return choice !== null ? this.scoreColors[choice] : 'grayy-lighter'

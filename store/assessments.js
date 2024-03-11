@@ -1,5 +1,5 @@
 import qs from 'qs'
-import {required_fields, initProgress, calculateProgress} from "~/config/assessment-progress";
+import {calculateProgress, initProgress, required_fields} from "~/config/assessment-progress";
 
 export const state = () => ({
     list: [],
@@ -11,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, surveyAnswers: [], collaborators: []},
+    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
     report: [],
     edit: {
         data: true,
@@ -103,7 +103,7 @@ export const mutations = {
         state.listType = value;
     },
     setSurveyAnswers(state, answers) {
-        state.assessment.surveyAnswers = answers;
+        state.assessment.surveyAnswers = answers || [];
     },
     setReportData(state, data) {
         state.report = data;
@@ -117,18 +117,20 @@ export const mutations = {
         state.progress = calculateProgress(state.assessment);
     },
     updateSurveyAnswer(state, answer) {
-        const filtered = state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== answer.id);
-        const surveyAnswers = [answer, ...filtered];
-        state.assessment = {...state.assessment, surveyAnswers};
+        state.assessment.surveyAnswers = state.assessment.surveyAnswers.map(surveyAnswer => {
+            if (answer.id && surveyAnswer.id === answer.id || surveyAnswer.question.id === answer.questionId) {
+                return {...surveyAnswer, ...answer}
+            }
+
+            return surveyAnswer
+        });
         state.progress = calculateProgress(state.assessment);
     },
     removeSurveyAnswer(state, id) {
-        const surveyAnswers = [...state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== id)]
-        state.assessment.surveyAnswers = surveyAnswers;
+        state.assessment.surveyAnswers = [...state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== id)];
         state.progress = calculateProgress(state.assessment);
     },
     setManagementArea(state, managementArea) {
-        console.log(managementArea);
         state.assessment = {...state.assessment, management_area_countries: managementArea};
     },
     setContactErrors(state, errors) {
@@ -229,6 +231,9 @@ export const actions = {
             if (assessment.management_area) {
                 state.dispatch('managementareas/fetchManagementArea', assessment.management_area, {root: true})
             }
+            if (!assessment.surveyAnswers) {
+                assessment.surveyAnswers = []
+            }
             state.commit('setAssessment', assessment);
             state.commit('setProgress', calculateProgress(assessment));
 
@@ -317,16 +322,18 @@ export const actions = {
     },
 
     async editAssessmentField(state, {field, value, id}) {
-        const response = await this.$axios({
+        this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
             data: {
                 [field]: value && value.id || value
             }
+        }).then(response => {
+            state.commit('setProgress', calculateProgress(response?.data));
+        }).finally(async () => {
+            await state.commit('setAssessmentField', {field, value})
+            state.commit('setLastEdit');
         });
-        await state.commit('setAssessmentField', {field, value})
-        state.commit('setLastEdit');
-        state.commit('setProgress', calculateProgress(response.data));
     },
 
     async updateAssessmentProgress(state) {
@@ -449,6 +456,19 @@ export const actions = {
     },
 
     async storeSurveyAnswer(state, {assessmentId, questionId, choice, explanation}) {
+        const isOffline = state.rootState.layout.offline;
+
+        if (isOffline) {
+            const answer = {
+                question: state.rootState.surveyquestions.list.find(({id}) => id === questionId),
+                assessment: state.state.list.find(assessment => assessment.id === assessmentId),
+                choice,
+                explanation
+            };
+
+            return state.commit('addSurveyAnswer', {answer, percent_complete: 10}); //Todo
+        }
+
         const response = await this.$axios({
             method: 'post',
             url: `/v2/surveyanswerlikerts/`,
@@ -461,7 +481,6 @@ export const actions = {
         });
 
         const assessmentResponse = await this.$axios.get(`v2/assessments/${assessmentId}/`);
-
         state.commit('addSurveyAnswer', {
             answer: response.data,
             percent_complete: assessmentResponse.data.percent_complete
@@ -469,6 +488,17 @@ export const actions = {
     },
 
     async updateSurveyAnswer(state, {id, assessmentId, questionId, choice, explanation}) {
+        const isOffline = state.rootState.layout.offline;
+
+        if (isOffline) {
+            return state.commit('updateSurveyAnswer', {
+                ...id && { id },
+                questionId,
+                choice,
+                explanation
+            })
+        }
+
         const response = await this.$axios({
             method: 'patch',
             url: `/v2/surveyanswerlikerts/${id}/`,
@@ -484,7 +514,13 @@ export const actions = {
     },
 
     async removeSurveyAnswer(state, id) {
-        this.dispatch('loader/loaderState', {active: true, text: 'Deleting servey answer...'})
+        const isOffline = state.rootState.layout.offline;
+
+        if (isOffline) {
+            state.commit('removeSurveyAnswer', id)
+        }
+
+        this.dispatch('loader/loaderState', {active: true, text: 'Deleting survey answer...'})
 
         this.$axios({
             method: 'delete',
@@ -765,5 +801,30 @@ export const actions = {
     },
     toggleAssessmentAggregateReport(state, {assessmentId, selected}) {
         state.commit('toggleAssessmentAggregateReport', {assessmentId, selected})
-    }
+    },
+    async setOffline(state) {
+        state.dispatch('layout/setOffline', {isOffline: true}, {root: true})
+        state.commit('setAssessmentField', {field: 'checkout', value: this.$auth.user.id})
+        await state.dispatch('editAssessmentField', {
+            field: 'checkout',
+            value: this.$auth.user.id,
+            id: state.state.assessment.id
+        });
+    },
+    async setOnline(state) {
+        state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
+
+        state.state.assessment.surveyAnswers.forEach(answer => {
+            state.dispatch(answer.id ? 'updateSurveyAnswer' : 'storeSurveyAnswer', {
+                ...answer.id && {id: answer.id},
+                assessmentId: answer.assessment.id,
+                questionId: answer.question.id,
+                choice: answer.choice,
+                explanation: answer.explanation
+            })
+        })
+
+        state.commit('setAssessmentField', {field: 'checkout', value: null})
+        await state.dispatch('editAssessmentField', {field: 'checkout', value: null, id: state.state.assessment.id});
+    },
 }
