@@ -32,7 +32,7 @@
                 <span>{{$t("default.generateReport") }}</span>
             </a>
             <a
-                v-if="isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
+                v-if="!isOffline && isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
                 @click="downloadSurveyFile"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
@@ -43,7 +43,7 @@
                     }}</span></a
             >
             <a
-                v-if="isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
+                v-if="!isOffline && isAssessmentCollaborator($auth, assessment) && !isAssessmentObserver($auth, assessment)"
                 @click="uploadSurveyFile"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
