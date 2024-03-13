@@ -11,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit:  this.$moment(), attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
+    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
     report: [],
     edit: {
         data: true,
