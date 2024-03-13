@@ -461,7 +461,7 @@ export const actions = {
         if (isOffline) {
             const answer = {
                 question: state.rootState.surveyquestions.list.find(({id}) => id === questionId),
-                assessment: state.state.list.find(assessment => assessment.id === assessmentId),
+                assessment: state.state.assessment,
                 choice,
                 explanation
             };
@@ -814,11 +814,19 @@ export const actions = {
     async setOnline(state) {
         state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
 
+        const attributes = [];
+        state.state.assessment.surveyAnswers.forEach(answer => {
+            if(attributes.indexOf(answer.question.attribute) === -1) {
+                attributes.push(answer.question.attribute);
+            }
+        })
+
         await this.$axios({
             method: 'patch',
-            url: `/v2/assessments/${id}/`,
+            url: `/v2/assessments/${state.state.assessment.id}/`,
             data: {
-                checkout: null
+                checkout: null,
+                attributes
             }
         }).then(response => {
             state.commit('setProgress', calculateProgress(response?.data));
