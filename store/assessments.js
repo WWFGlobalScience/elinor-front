@@ -816,7 +816,7 @@ export const actions = {
 
         await this.$axios({
             method: 'patch',
-            url: `/v2/assessments/${id}/`,
+            url: `/v2/assessments/${state.state.assessment.id}/`,
             data: {
                 checkout: null
             }
