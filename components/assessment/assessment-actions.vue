@@ -55,9 +55,10 @@
             >
             <a
                 v-if="isSurveyTab"
-                @click="isOffline? setOnline() : setOffline()"
+                @click="onClickOfflineButton"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
+                :class="{ 'disabled': !hasConnection }"
                 title="Offline"
                 ><svg>
                     <path
@@ -127,7 +128,12 @@ export default {
     data() {
         return {
             isSurveyTab: this.isSurveyRoute(),
+            hasConnection: navigator.onLine,
         }
+    },
+    mounted() {
+        window.addEventListener('online', this.updateOnlineStatus);
+        window.addEventListener('offline', this.updateOnlineStatus);
     },
     computed: {
         ...mapState({
@@ -206,7 +212,29 @@ export default {
                 component: 'popup-assessment-upload-survey-file',
                 title: 'pages.assessments.uploadSurveyFile.title'
             })
+        },
+        updateOnlineStatus({ type }) {
+            this.hasConnection = type === 'online';
+        },
+        onClickOfflineButton() {
+            if (this.hasConnection) {
+                if (this.isOffline) {
+                    this.setOnline();
+                } else {
+                    this.setOffline();
+                }
+            } else {
+                this.popupState({
+                    active: true,
+                    component: 'popup-without-connection',
+                    title: 'default.popupWithoutConnection'
+                })
+            }
         }
+    },
+    beforeDestroy() {
+        window.removeEventListener('online', this.updateOnlineStatus);
+        window.removeEventListener('offline', this.updateOnlineStatus);
     }
 };
 </script>
