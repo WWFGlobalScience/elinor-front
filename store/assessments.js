@@ -11,7 +11,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
+    assessment: {last_edit:  this.$moment(), attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
     report: [],
     edit: {
         data: true,
@@ -814,6 +814,19 @@ export const actions = {
     async setOnline(state) {
         state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
 
+        await this.$axios({
+            method: 'patch',
+            url: `/v2/assessments/${id}/`,
+            data: {
+                checkout: null
+            }
+        }).then(response => {
+            state.commit('setProgress', calculateProgress(response?.data));
+        }).finally( () => {
+            state.commit('setAssessmentField', {field: 'checkout', value: null})
+            state.commit('setLastEdit');
+        });
+
         state.state.assessment.surveyAnswers.forEach(answer => {
             state.dispatch(answer.id ? 'updateSurveyAnswer' : 'storeSurveyAnswer', {
                 ...answer.id && {id: answer.id},
@@ -823,8 +836,5 @@ export const actions = {
                 explanation: answer.explanation
             })
         })
-
-        state.commit('setAssessmentField', {field: 'checkout', value: null})
-        await state.dispatch('editAssessmentField', {field: 'checkout', value: null, id: state.state.assessment.id});
     },
 }
