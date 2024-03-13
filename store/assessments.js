@@ -461,7 +461,7 @@ export const actions = {
         if (isOffline) {
             const answer = {
                 question: state.rootState.surveyquestions.list.find(({id}) => id === questionId),
-                assessment: state.state.list.find(assessment => assessment.id === assessmentId),
+                assessment: state.state.assessment,
                 choice,
                 explanation
             };
