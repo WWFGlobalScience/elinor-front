@@ -1,5 +1,6 @@
 import qs from 'qs'
 import {calculateProgress, initProgress, required_fields} from "~/config/assessment-progress";
+import moment from 'moment'
 
 export const state = () => ({
     list: [],
@@ -11,7 +12,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
+    assessment: {last_edit: moment(), attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
     report: [],
     edit: {
         data: true,
