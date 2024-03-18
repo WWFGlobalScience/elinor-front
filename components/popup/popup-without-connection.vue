@@ -1,7 +1,7 @@
 <template>
     <div class="popup__content">
         <p class="c-text--base mb-6">
-            {{ $t('pages.assessments.edit.tabs.survey.withoutConnectionPopup') }}
+            {{ $t('pages.assessments.edit.tabs.survey.withoutConnectionPopupDescription') }}
         </p>
     </div>
 </template>

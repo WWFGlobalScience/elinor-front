@@ -453,6 +453,7 @@ export const actions = {
         } else {
             attributes.splice(position, 1);
         }
+
         await state.dispatch('editAssessmentField', {field: 'attributes', value: attributes, id: assessmentId});
     },
 
@@ -815,7 +816,7 @@ export const actions = {
     async setOnline(state) {
         state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
 
-        const attributes = [];
+        const attributes = [...state.state.assessment.attributes];
         state.state.assessment.surveyAnswers.forEach(answer => {
             if(attributes.indexOf(answer.question.attribute) === -1) {
                 attributes.push(answer.question.attribute);
