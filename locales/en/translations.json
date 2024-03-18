@@ -467,7 +467,11 @@
                             "guidance": "Guidance",
                             "rationale": "What is this question asking?"
                         },
-                        "inactiveAttribute": "To activate this question, you must activate the attribute"
+                        "inactiveAttribute": "To activate this question, you must activate the attribute",
+                        "offlinePopupTitle": "Offline Survey",
+                        "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+                        "withoutConnectionPopupTitle": "Without Internet Connection",
+                        "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
                     },
                     "collaborators": {
                         "tabButton": "Collaborators",
