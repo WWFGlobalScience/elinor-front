@@ -35,7 +35,7 @@
                         <img src="~/assets/img/ico-save-white.svg" />
                     </button>
                     <p v-if="assessment.last_edit !== null && assessment.last_edit !== undefined" >
-                        {{ $t("default.save.autosave") + " " + assessment.last_edit.fromNow() }}
+                        {{ $t("default.save.autosave") + " " + lastEdit.fromNow() }}
                     </p>
                 </template>
             </div>
@@ -44,13 +44,15 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import {mapState} from "vuex";
+import moment from "moment";
 
 export default {
     name: "assessment-edit-header",
     computed: {
         ...mapState({
-            assessment: state => state.assessments.assessment
+            assessment: state => state.assessments.assessment,
+            lastEdit: state => moment(state.assessments.assessment.last_edit)
         })
     }
 };
