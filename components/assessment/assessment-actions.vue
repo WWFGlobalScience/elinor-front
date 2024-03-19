@@ -226,7 +226,7 @@ export default {
             } else {
                 this.popupState({
                     active: true,
-                    component: 'popup-without-connection',
+                    component: 'popup-assessment-without-connection',
                     title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
                 })
             }

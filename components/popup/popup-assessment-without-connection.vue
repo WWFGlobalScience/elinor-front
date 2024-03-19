@@ -10,7 +10,7 @@
 import {mapActions, mapState} from "vuex";
 
 export default {
-    name: 'popup-without-connection',
+    name: 'popup-assessment-without-connection',
     computed: {
         ...mapState({
             popup: state => state.popup.popup,
@@ -20,6 +20,9 @@ export default {
         ...mapActions({
             popupState: 'popup/popupState',
         })
+    },
+    mounted() {
+        this.popupState({ active: false })
     }
 }
 </script>

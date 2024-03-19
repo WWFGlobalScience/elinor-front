@@ -1,7 +1,7 @@
 <template>
     <div class="popup__content">
         <p class="c-text--base mb-6">
-            {{ $t('pages.assessments.edit.tabs.survey.offlinePopupDescription', { username }) }}
+            {{ $t('pages.assessments.edit.tabs.survey.offlinePopupDescription', {username}) }}
         </p>
     </div>
 </template>
@@ -24,6 +24,9 @@ export default {
         ...mapActions({
             popupState: 'popup/popupState',
         })
+    },
+    mounted() {
+        this.popupState({ active: false })
     }
 }
 </script>
