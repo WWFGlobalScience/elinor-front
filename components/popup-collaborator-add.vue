@@ -145,6 +145,7 @@
                         </div>
                     </div>
                 </div>
+                <p v-if="hasError('detail')" class="msg msg--error">{{ getError('detail') }}</p>
                 <div class="elinor__data-separator"></div>
                 <div class="g-grid--4-1-sm items-center">
                     <div class="g-colspan--2">
@@ -195,6 +196,9 @@ export default {
             role: null,
         };
     },
+    mounted() {
+        this.$store.commit('collaborators/clearError');
+    },
     methods: {
         ...mapActions({
             findUsers: "users/findUsers",
@@ -210,7 +214,7 @@ export default {
         },
         getError(error) {
             let message = this.error && this.error[error];
-            if(message && message.length >= 0) {
+            if(typeof message !== 'string' && message && message.length >= 0) {
                 message = message[0];
             }
             return message;

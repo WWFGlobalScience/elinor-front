@@ -158,7 +158,8 @@
         "assessments": {
             "meta": {
                 "title": "Assessments",
-                "slug": "/assessments"
+                "slug": "/assessments",
+                "offlineTitle": "Offline Survey"
             },
             "list": {
                 "title": "Assessments",
@@ -737,7 +738,8 @@
                     "invalid_questions": "invalid question keys in cells: {question_error_cells}",
                     "invalid_choices": "invalid choices in cells: {choice_error_cells}",
                     "invalid_answers": "invalid answers",
-                    "answer_save": "error saving answers to database"
+                    "answer_save": "error saving answers to database",
+                    "detail": "You are not allowed to perform this action"
                 }
             },
             "roles": {
