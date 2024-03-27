@@ -1,4 +1,4 @@
-const options = <%= JSON.stringify(options.swOptions) %>
+const options = <%= JSON.stringify({...options.swOptions, preCaching: 'VALUE' }) %>
 
 importScripts(...[options.workboxURL, ...options.importScripts])
 
