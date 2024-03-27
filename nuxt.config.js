@@ -1,3 +1,4 @@
+import { overrideSW } from './plugins/sw-generate';
 import fetch from "node-fetch";
 import * as fs from 'fs';
 
@@ -58,11 +59,13 @@ export default async () => {
             {
                 src: "~/plugins/choices.js",
                 mode: "client"
-            }
+            },
+            { src: '~/plugins/vuex-persist', ssr: false }
         ],
         buildModules: [
             "@nuxtjs/tailwindcss",
             "@nuxtjs/composition-api/module",
+            "@nuxtjs/pwa",
             [
                 "@nuxtjs/moment",
                 {
@@ -81,7 +84,7 @@ export default async () => {
                     defaultLocale: "en",
                     fallbackLocale: "en",
                     lazy: true,
-                    langDir,
+                    langDir: "locales/",
                     seo: true,
                     detectBrowserLanguage: {
                         alwaysRedirect: true
@@ -159,6 +162,7 @@ export default async () => {
         },
         vue: {
             config: {
+                devtools: true,
                 configureWebpack: {
                     externals: {
                         canvg: "canvg",
@@ -166,7 +170,29 @@ export default async () => {
                         dompurify: "dompurify"
                     }
                 }
+            },
+            hooks: {
+                generate: {
+                    done(a) {
+                        overrideSW(a);
+                    }
+                }
+            },
+            pwa: {
+                icon: {},
+                manifest: {
+                    name: 'Elinor'
+                },
+                workbox: {
+                    swTemplate: './sw.template.js',
+                    // offline: true,
+                    enabled: true,
+                    // dev: process.env.NODE_ENV === 'development',
+                    // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
+                    // cacheAssets: true,
+                    // offlineStrategy: 'NetworkFirst'
+                }
             }
         }
     }
-}
+};

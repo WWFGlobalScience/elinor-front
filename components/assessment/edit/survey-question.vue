@@ -80,7 +80,7 @@
                                 <div class="form__row form__row--mt-16">
                                     <div class="input input--pr">
                                         <div class="label">{{ $t( `pages.assessments.edit.tabs.survey.questions.explanation`) }}</div>
-                                        <textarea name="explanation" @change="saveExplanation($event.target.value)">{{ answer && answer.explanation }}</textarea>
+                                        <textarea name="explanation" ref="textareaExplanation" @change="saveExplanation($event.target.value)">{{ answer && answer.explanation }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                                         <span>{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}</span>
                                         <img src="~/assets/img/ico-button-arrow-turqy.svg">
                                     </nuxt-link>
-                                    <nuxt-link v-if="isLastQuestionInSurvey" :to="`/assessments/edit/${id}/collaborators`"
+                                    <nuxt-link v-if="isLastQuestionInSurvey && !isOffline" :to="`/assessments/edit/${id}/collaborators`"
                                         @click.native="updateState()"
                                         class="btn--border-turqy btn--opacity--child">
                                         <span>{{ $t('pages.assessments.edit.tabs.nextStep') }}</span>
@@ -141,7 +141,7 @@
                             </ul>
                         </div>
                     </section>
-                </div> 
+                </div>
             </div>
 
         </div>
@@ -170,7 +170,9 @@ export default {
         ...mapState({
             assessment: state => state.assessments.assessment,
             attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list
+            questions: state => state.surveyquestions.list,
+            isOffline: state => state.layout.offline,
+            offlineSurveyAnswers: state => state.assessments.offlineSurveyAnswers,
         }),
         question() {
             const filtered = this.questions.filter(question => question.id === parseInt(this.qid));
@@ -181,8 +183,7 @@ export default {
             return filtered[0];
         },
         answer() {
-            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
-            return answer[0] || null;
+            return this.assessment.surveyAnswers.find(surveyAnswer => surveyAnswer.question.id === this.question.id);
         },
         previousSurveyQuestion() {
             return previousSurveyQuestion(this.questionId, this.assessment, this.attributes, this.questions);
@@ -199,38 +200,38 @@ export default {
             storeSurveyAnswer: 'assessments/storeSurveyAnswer',
             updateSurveyAnswer: 'assessments/updateSurveyAnswer'
         }),
+        save(choice) {
+            const data = {
+                ...this.answer && {id: this.answer.id},
+                assessmentId: this.assessment.id,
+                questionId: this.question.id,
+                choice,
+                explanation: this.$refs.textareaExplanation.value
+            };
 
-        save(choice, explanation) {
-            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
-            if(answer.length === 0) {
-                const data = {assessmentId: this.assessment.id, questionId: this.question.id, choice};
-                if(explanation) {
-                    data.explanation = explanation;
-                }
+            if (!this.answer) {
                 this.storeSurveyAnswer(data);
             } else {
-                this.updateSurveyAnswer( {id: answer[0].id, assessmentId: this.assessment.id, questionId: this.question.id, choice, explanation});
-            }    
+                this.updateSurveyAnswer(data);
+            }
         },
         saveChoice(choice) {
             this.save(choice);
         },
-        saveExplanation(explanation) {
-            if(this.answer !== null) {
-                this.save(this.answer.choice, explanation);
+        saveExplanation() {
+            if(this.answer) {
+                this.save(this.answer.choice);
             }
         },
         isAnsweredWith(choice) {
             return this.answer && this.answer.choice === choice;
         },
-        isExplanationDisabled() {
-            const answer = this.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.question.id === this.question.id);
-            return answer.length === 0;
-        },
         totalSurveyQuestions,
         surveyQuestionNumber,
         updateState() {
-            this.$store.dispatch( 'assessments/fetchAssessment', this.id )
+            if (!this.isOffline) {
+                this.$store.dispatch( 'assessments/fetchAssessment', this.id)
+            }
         }
 
     }

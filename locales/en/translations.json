@@ -158,7 +158,8 @@
         "assessments": {
             "meta": {
                 "title": "Assessments",
-                "slug": "/assessments"
+                "slug": "/assessments",
+                "offlineTitle": "Offline Survey"
             },
             "list": {
                 "title": "Assessments",
@@ -467,7 +468,11 @@
                             "guidance": "Guidance",
                             "rationale": "What is this question asking?"
                         },
-                        "inactiveAttribute": "To activate this question, you must activate the attribute"
+                        "inactiveAttribute": "To activate this question, you must activate the attribute",
+                        "offlinePopupTitle": "Offline Survey",
+                        "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+                        "withoutConnectionPopupTitle": "Without Internet Connection",
+                        "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
                     },
                     "collaborators": {
                         "tabButton": "Collaborators",
@@ -733,7 +738,8 @@
                     "invalid_questions": "invalid question keys in cells: {question_error_cells}",
                     "invalid_choices": "invalid choices in cells: {choice_error_cells}",
                     "invalid_answers": "invalid answers",
-                    "answer_save": "error saving answers to database"
+                    "answer_save": "error saving answers to database",
+                    "detail": "You are not allowed to perform this action"
                 }
             },
             "roles": {

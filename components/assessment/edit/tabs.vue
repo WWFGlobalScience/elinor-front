@@ -1,7 +1,7 @@
 <template>
     <section class="section section--tab section--mt-10">
         <div class="container">
-            <ul class="elinor__tabs">
+            <ul v-if="!isOffline" class="elinor__tabs">
                 <li>
                     <nuxt-link :to="`/assessments/edit/${id}/assessment-data/`"
                                :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.data.complete } ]">
@@ -49,12 +49,24 @@
                     </nuxt-link>
                 </li>
             </ul>
+            <ul v-else class="elinor__tabs">
+                <li>
+                    <nuxt-link :to="`/assessments/edit/${id}/the-survey/`"
+                               :class="[ 'btn--tab btn--ok', { 'btn--error': !progress.survey.complete } ]">
+                        <span class="bullet bullet--status">
+                            <img v-if="progress.survey.complete" src="~/assets/img/ico-ok.svg">
+                            <img v-else src="~/assets/img/ico-error.svg">
+                        </span>
+                        <span class="txt">{{ $t('pages.assessments.edit.tabs.survey.tabButton') }}</span>
+                    </nuxt-link>
+                </li>
+            </ul>
         </div>
     </section>
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import {mapState} from "vuex";
 
 export default {
     name: 'assessment-edit-tab',
@@ -84,7 +96,8 @@ export default {
     computed: {
         ...mapState({
             assessment: state => state.assessments.assessment,
-            progress: state => state.assessments.progress
+            progress: state => state.assessments.progress,
+            isOffline: state => state.layout.offline
         })
     }
 }

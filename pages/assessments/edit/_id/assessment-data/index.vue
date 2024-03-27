@@ -50,7 +50,7 @@
                                     :allow-empty="false" open-direction="bottom" :hide-selected="true"
                                     @input="onOrganizationSelected"
                                     @search-change="fetchOrganizations">
-                                    <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4"> 
+                                    <span slot="noResult" slot-scope="props" class="text-xxs text-grayy-lighter">{{ $t('default.noresults') }} ({{ props.search }}) <hr class="my-4">
                                         <button @click="$event.preventDefault();$event.stopPropagation(); createOrganization(props.search)" role="button" class="btn btn--sm btn--border-turqy mt-2">
                                         {{ $t('default.create') }}
                                         </button>
@@ -473,6 +473,7 @@ export default {
         }
     },
     mounted() {
+        this.$store.dispatch('assessments/fetchAssessment', this.id);
         this.$store.dispatch('organizations/fetchOrganizations', '');
         /*if(this.assessment && this.assessment.management_plan_file) {
             console.log('mounted')

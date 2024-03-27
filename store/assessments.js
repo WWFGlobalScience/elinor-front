@@ -1,5 +1,6 @@
 import qs from 'qs'
-import {required_fields, initProgress, calculateProgress} from "~/config/assessment-progress";
+import {calculateProgress, initProgress, required_fields} from "~/config/assessment-progress";
+import moment from 'moment'
 
 export const state = () => ({
     list: [],
@@ -11,7 +12,7 @@ export const state = () => ({
         next: null,
         prev: null
     },
-    assessment: {last_edit: null, surveyAnswers: [], collaborators: []},
+    assessment: {last_edit: moment(), attributes: [], surveyAnswers: [], collaborators: [], checkout: null},
     report: [],
     edit: {
         data: true,
@@ -103,7 +104,7 @@ export const mutations = {
         state.listType = value;
     },
     setSurveyAnswers(state, answers) {
-        state.assessment.surveyAnswers = answers;
+        state.assessment.surveyAnswers = answers || [];
     },
     setReportData(state, data) {
         state.report = data;
@@ -117,18 +118,20 @@ export const mutations = {
         state.progress = calculateProgress(state.assessment);
     },
     updateSurveyAnswer(state, answer) {
-        const filtered = state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== answer.id);
-        const surveyAnswers = [answer, ...filtered];
-        state.assessment = {...state.assessment, surveyAnswers};
+        state.assessment.surveyAnswers = state.assessment.surveyAnswers.map(surveyAnswer => {
+            if (answer.id && surveyAnswer.id === answer.id || surveyAnswer.question.id === answer.questionId) {
+                return {...surveyAnswer, ...answer}
+            }
+
+            return surveyAnswer
+        });
         state.progress = calculateProgress(state.assessment);
     },
     removeSurveyAnswer(state, id) {
-        const surveyAnswers = [...state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== id)]
-        state.assessment.surveyAnswers = surveyAnswers;
+        state.assessment.surveyAnswers = [...state.assessment.surveyAnswers.filter(surveyAnswer => surveyAnswer.id !== id)];
         state.progress = calculateProgress(state.assessment);
     },
     setManagementArea(state, managementArea) {
-        console.log(managementArea);
         state.assessment = {...state.assessment, management_area_countries: managementArea};
     },
     setContactErrors(state, errors) {
@@ -147,7 +150,7 @@ export const mutations = {
         state.aggregateReport.filters[field] = value
     },
     removeFilterAggregateReport(state, {field, index}) {
-        if(Array.isArray(state.aggregateReport.filters[field])) {
+        if (Array.isArray(state.aggregateReport.filters[field])) {
             state.aggregateReport.filters[field].splice(index, 1);
         } else {
             state.aggregateReport.filters[field] = null
@@ -167,7 +170,7 @@ export const mutations = {
     toggleAssessmentAggregateReport(state, {assessmentId}) {
         let found = false;
         state.aggregateReport.selectedAssessments = state.aggregateReport.selectedAssessments.filter(id => {
-            if(id === assessmentId) {
+            if (id === assessmentId) {
                 found = true;
             }
             return id !== assessmentId
@@ -228,6 +231,9 @@ export const actions = {
             const assessment = assessmentResponse.data;
             if (assessment.management_area) {
                 state.dispatch('managementareas/fetchManagementArea', assessment.management_area, {root: true})
+            }
+            if (!assessment.surveyAnswers) {
+                assessment.surveyAnswers = []
             }
             state.commit('setAssessment', assessment);
             state.commit('setProgress', calculateProgress(assessment));
@@ -317,16 +323,18 @@ export const actions = {
     },
 
     async editAssessmentField(state, {field, value, id}) {
-        const response = await this.$axios({
+        this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
             data: {
                 [field]: value && value.id || value
             }
+        }).then(response => {
+            state.commit('setProgress', calculateProgress(response?.data));
+        }).finally(async () => {
+            await state.commit('setAssessmentField', {field, value})
+            state.commit('setLastEdit');
         });
-        await state.commit('setAssessmentField', {field, value})
-        state.commit('setLastEdit');
-        state.commit('setProgress', calculateProgress(response.data));
     },
 
     async updateAssessmentProgress(state) {
@@ -445,10 +453,24 @@ export const actions = {
         } else {
             attributes.splice(position, 1);
         }
+
         await state.dispatch('editAssessmentField', {field: 'attributes', value: attributes, id: assessmentId});
     },
 
     async storeSurveyAnswer(state, {assessmentId, questionId, choice, explanation}) {
+        const isOffline = state.rootState.layout.offline;
+
+        if (isOffline) {
+            const answer = {
+                question: state.rootState.surveyquestions.list.find(({id}) => id === questionId),
+                assessment: state.state.assessment,
+                choice,
+                explanation
+            };
+
+            return state.commit('addSurveyAnswer', {answer, percent_complete: answer.assessment.percent_complete});
+        }
+
         const response = await this.$axios({
             method: 'post',
             url: `/v2/surveyanswerlikerts/`,
@@ -461,7 +483,6 @@ export const actions = {
         });
 
         const assessmentResponse = await this.$axios.get(`v2/assessments/${assessmentId}/`);
-
         state.commit('addSurveyAnswer', {
             answer: response.data,
             percent_complete: assessmentResponse.data.percent_complete
@@ -469,6 +490,17 @@ export const actions = {
     },
 
     async updateSurveyAnswer(state, {id, assessmentId, questionId, choice, explanation}) {
+        const isOffline = state.rootState.layout.offline;
+
+        if (isOffline) {
+            return state.commit('updateSurveyAnswer', {
+                ...id && {id},
+                questionId,
+                choice,
+                explanation
+            })
+        }
+
         const response = await this.$axios({
             method: 'patch',
             url: `/v2/surveyanswerlikerts/${id}/`,
@@ -484,7 +516,7 @@ export const actions = {
     },
 
     async removeSurveyAnswer(state, id) {
-        this.dispatch('loader/loaderState', {active: true, text: 'Deleting servey answer...'})
+        this.dispatch('loader/loaderState', {active: true, text: 'Deleting survey answer...'})
 
         this.$axios({
             method: 'delete',
@@ -631,7 +663,7 @@ export const actions = {
         });
 
         let formData = new FormData()
-        if(dryRun) {
+        if (dryRun) {
             formData.append('dryrun', '1')
         }
 
@@ -658,33 +690,33 @@ export const actions = {
 
         let queryParams = [];
 
-        if(filters.year) {
+        if (filters.year) {
             queryParams.push(`year=${filters.year}`);
         }
 
-        if(filters.type) {
+        if (filters.type) {
             queryParams.push(`collection_method=${filters.type.id}`);
         }
         const queryParamsString = `&${queryParams.join('&')}`;
         let results = [];
-        for(const managementArea of filters.managementAreas) {
+        for (const managementArea of filters.managementAreas) {
             const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
-        for(const country of filters.countries) {
+        for (const country of filters.countries) {
             const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
-        if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
+        if (filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
             const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
         const processed = [];
         const withoutDuplicates = results.filter(result => {
-            if(processed.indexOf(result.id) === -1) {
+            if (processed.indexOf(result.id) === -1) {
                 processed.push(result.id)
                 return true;
             }
@@ -696,7 +728,7 @@ export const actions = {
     async removeFilterAggregateReport(store, {field, index}) {
         store.commit('removeFilterAggregateReport', {field, index});
         const filters = {...store.state.aggregateReport.filters};
-        if(Array.isArray(filters[field])) {
+        if (Array.isArray(filters[field])) {
             filters[field].splice(index, 1)
         } else {
             filters[field] = null;
@@ -704,34 +736,34 @@ export const actions = {
 
         let queryParams = [];
 
-        if(filters.year) {
+        if (filters.year) {
             queryParams.push(`year=${filters.year}`);
         }
 
-        if(filters.type) {
+        if (filters.type) {
             queryParams.push(`collection_method=${filters.type.id}`);
         }
         const queryParamsString = `&${queryParams.join('&')}`;
         let results = [];
-        for(const managementArea of filters.managementAreas) {
+        for (const managementArea of filters.managementAreas) {
             const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
-        for(const country of filters.countries) {
+        for (const country of filters.countries) {
             const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
 
-        if(filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
+        if (filters.managementAreas.length === 0 && filters.countries.length === 0 && (filters.year || filters.type)) {
             const response = await this.$axios.get(`v2/reports/assessments/?limit=99999&${queryParamsString}`);
             results = results.concat(response.data.results);
         }
 
         const processed = [];
         const withoutDuplicates = results.filter(result => {
-            if(processed.indexOf(result.id) === -1) {
+            if (processed.indexOf(result.id) === -1) {
                 processed.push(result.id)
                 return true;
             }
@@ -765,5 +797,68 @@ export const actions = {
     },
     toggleAssessmentAggregateReport(state, {assessmentId, selected}) {
         state.commit('toggleAssessmentAggregateReport', {assessmentId, selected})
-    }
+    },
+    async setOffline(state) {
+        state.dispatch('layout/setOffline', {isOffline: true}, {root: true})
+        state.commit('setAssessmentField', {field: 'checkout', value: this.$auth.user.id})
+        await state.dispatch('editAssessmentField', {
+            field: 'checkout',
+            value: this.$auth.user.id,
+            id: state.state.assessment.id
+        });
+    },
+    async setOnline(state) {
+        state.dispatch('layout/setOffline', {isOffline: false}, {root: true})
+        this.dispatch('loader/loaderState', {active: true, text: 'Turning online...'})
+
+        const attributes = [...state.state.assessment.attributes];
+        const surveyAnswers = [...state.state.assessment.surveyAnswers];
+
+        for (let answer of surveyAnswers) {
+            if (!attributes.includes(answer.question.attribute)) {
+                await this.$axios({
+                    method: 'delete',
+                    url: `v2/surveyanswerlikerts/${answer.id}/`
+                })
+                    .then((response) => {
+                        state.commit('removeSurveyAnswer', answer.id)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            }
+        }
+
+        state.state.assessment.surveyAnswers.forEach(answer => {
+            if (attributes.indexOf(answer.question.attribute) === -1) {
+                attributes.push(answer.question.attribute);
+            }
+        })
+
+        await this.$axios({
+            method: 'patch',
+            url: `/v2/assessments/${state.state.assessment.id}/`,
+            data: {
+                checkout: null,
+                attributes
+            }
+        }).then(response => {
+            state.commit('setProgress', calculateProgress(response?.data));
+        }).finally(() => {
+            state.commit('setAssessmentField', {field: 'checkout', value: null})
+            state.commit('setLastEdit');
+        });
+
+        state.state.assessment.surveyAnswers.forEach(answer => {
+            state.dispatch(answer.id ? 'updateSurveyAnswer' : 'storeSurveyAnswer', {
+                ...answer.id && {id: answer.id},
+                assessmentId: answer.assessment.id,
+                questionId: answer.question.id,
+                choice: answer.choice,
+                explanation: answer.explanation
+            })
+        })
+
+        this.dispatch('loader/loaderState', {active: false})
+    },
 }

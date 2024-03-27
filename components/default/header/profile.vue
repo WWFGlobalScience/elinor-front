@@ -2,13 +2,14 @@
     <ul>
         <default-language-selector />
         <template v-if="$auth.loggedIn">
-            <div class="elinor__dropdown">
+            <div class="elinor__dropdown" :class="isOffline ? 'pointer-events-none': ''">
                 <div class="elinor__dropdown-toggle">
                     <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
                         <span>{{ user.username.charAt(0).toUpperCase() }}</span>
                     </div>
                 </div>
                 <ul
+                    v-if="!isOffline"
                     class="elinor__dropdown-menu"
                     v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
                 >
@@ -16,7 +17,7 @@
                     <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">{{ $t('pages.home.header.signOut') }}<img src="~assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')"></a></li>
                 </ul>
             </div>
-    
+
             <li
                 class="btn--opacity--child header--main__toggle-btn"
                 @click="toggleSidebar"
@@ -40,20 +41,17 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import {mapActions, mapState} from "vuex";
 
 export default {
     name: "default-header-profile",
     computed: {
-        isSidebarOpen() {
-            return this.$store.state.layout.sidebar;
-        },
-        isDropdownOpen() {
-            return this.$store.state.dropdown.dropdown;
-        },
-        user() {
-            return this.$store.state.auth.user;
-        },
+        ...mapState({
+            isSidebarOpen: state => state.layout.sidebar,
+            isDropdownOpen: state => state.dropdown.dropdown,
+            user: state => state.auth.user,
+            isOffline: state => state.layout.offline,
+        })
     },
     methods: {
         ...mapActions({

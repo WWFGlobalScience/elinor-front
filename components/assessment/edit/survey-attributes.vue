@@ -65,6 +65,18 @@ import {mapActions, mapState} from "vuex";
 
 export default {
     name: 'assessment-edit-survey-attributes',
+    mounted() {
+        const assessmentOffline = this.assessment?.checkout
+        if (!!assessmentOffline && this.$auth.loggedIn && assessmentOffline !== this.$auth.user?.id) {
+            this.popupState({
+                active: true,
+                component: 'popup-assessment-offline',
+                type: 'xs',
+                onClose: () => this.$router.back(),
+                title: 'pages.assessments.edit.tabs.survey.offlinePopupTitle',
+            })
+        }
+    },
     computed: {
         ...mapState({
             attributes: state => state.attributes.list,
