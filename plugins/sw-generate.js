@@ -26,6 +26,7 @@ export function overrideSW(generator) {
 
     // write swFileContents to sw.js
     var swPath = path.join(generator.distPath, 'sw.js');
+    console.log('write preCaching files')
     fs.writeFileSync(swPath, swFileContents);
 }
 
