@@ -171,27 +171,27 @@ export default async () => {
                     }
                 }
             },
-            hooks: {
-                generate: {
-                    done(a) {
-                        overrideSW(a);
-                    }
+        },
+        hooks: {
+            generate: {
+                done(a) {
+                    overrideSW(a);
                 }
+            }
+        },
+        pwa: {
+            icon: {},
+            manifest: {
+                name: 'Elinor'
             },
-            pwa: {
-                icon: {},
-                manifest: {
-                    name: 'Elinor'
-                },
-                workbox: {
-                    swTemplate: './sw.template.js',
-                    // offline: true,
-                    enabled: true,
-                    // dev: process.env.NODE_ENV === 'development',
-                    // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
-                    // cacheAssets: true,
-                    // offlineStrategy: 'NetworkFirst'
-                }
+            workbox: {
+                //offline: true,
+                enabled: true,
+                swTemplate: './sw.template.js',
+                // dev: process.env.NODE_ENV === 'development',
+                // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
+                // cacheAssets: true,
+                //offlineStrategy: 'NetworkFirst'
             }
         }
     }
