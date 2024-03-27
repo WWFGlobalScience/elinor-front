@@ -222,32 +222,36 @@ export const actions = {
             text: 'Getting assessment data...'
         })
 
-        try {
-            const assessmentResponse = await this.$axios({
-                method: 'get',
-                url: `v2/assessments/${id}/`,
-            });
+        const isOffline = state.rootState.layout.offline;
 
-            const assessment = assessmentResponse.data;
-            if (assessment.management_area) {
-                state.dispatch('managementareas/fetchManagementArea', assessment.management_area, {root: true})
-            }
-            if (!assessment.surveyAnswers) {
-                assessment.surveyAnswers = []
-            }
-            state.commit('setAssessment', assessment);
-            state.commit('setProgress', calculateProgress(assessment));
+        if (!isOffline) {
+            try {
+                const assessmentResponse = await this.$axios({
+                    method: 'get',
+                    url: `v2/assessments/${id}/`,
+                });
 
-            const surveyAnswersResponse = await this.$axios({
-                method: 'get',
-                url: `v2/surveyanswerlikerts/?assessment=${id}`,
-            });
-            state.commit('setSurveyAnswers', surveyAnswersResponse.data.results);
-        } finally {
-            this.dispatch('loader/loaderState', {
-                active: false,
-                text: ''
-            })
+                const assessment = assessmentResponse.data;
+                if (assessment.management_area) {
+                    state.dispatch('managementareas/fetchManagementArea', assessment.management_area, {root: true})
+                }
+                if (!assessment.surveyAnswers) {
+                    assessment.surveyAnswers = []
+                }
+                state.commit('setAssessment', assessment);
+                state.commit('setProgress', calculateProgress(assessment));
+
+                const surveyAnswersResponse = await this.$axios({
+                    method: 'get',
+                    url: `v2/surveyanswerlikerts/?assessment=${id}`,
+                });
+                state.commit('setSurveyAnswers', surveyAnswersResponse.data.results);
+            } finally {
+                this.dispatch('loader/loaderState', {
+                    active: false,
+                    text: ''
+                })
+            }
         }
     },
 
