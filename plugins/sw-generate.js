@@ -20,8 +20,8 @@ export function overrideSW(generator) {
     let swFileContents = fs.readFileSync(swPath, 'utf8');
     const entriesString = JSON.stringify(manifestEntries, null, 2);
     swFileContents = swFileContents.replace(
-        /(\.precacheAndRoute\()\s*\[\s*\]\s*(\)|,)/g,
-        `$1${entriesString}$2`
+        /"VALUE"/g,
+        `${entriesString}`
     );
 
     // write swFileContents to sw.js
