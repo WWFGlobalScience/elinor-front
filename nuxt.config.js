@@ -191,7 +191,7 @@ export default async () => {
                 // dev: process.env.NODE_ENV === 'development',
                 // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
                 // cacheAssets: true,
-                //offlineStrategy: 'NetworkFirst'
+                offlineStrategy: 'CacheFirst'
             }
         }
     }
