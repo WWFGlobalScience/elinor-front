@@ -24,6 +24,10 @@ jobs:
                 run: yarn build
             -   name: Nuxt generate
                 run: yarn generate
+            -   name: List directory /dist
+                run: ls -la ./dist
+            -   name: Show service worker content
+                run: cat ./dist/sw.js
             -   name: Deploy static site to S3 bucket
                 run: aws s3 sync ./dist/ ${{ secrets.AWS_S3_DEV_BUCKET_NAME }} --delete
             -   name: Configure AWS Credentials for Cloudfront
