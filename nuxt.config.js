@@ -1,6 +1,6 @@
-import { overrideSW } from './plugins/sw-generate';
 import fetch from "node-fetch";
 import * as fs from 'fs';
+import webpack from 'webpack'
 
 export default async () => {
     const locales = [];
@@ -144,7 +144,25 @@ export default async () => {
                 });
             }
         },
-        build: {},
+        build: {
+            extend(config, ctx) {
+                if (ctx.isDev) {
+                    config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
+                }
+
+                if (ctx.isClient) {
+                    config.output.filename = 'app.js';
+                    config.output.chunkFilename = '[id].js';
+                    config.optimization.splitChunks.cacheGroups.default = false;
+                    config.optimization.runtimeChunk = false;
+                }
+            },
+            plugins: [
+                new webpack.optimize.LimitChunkCountPlugin({
+                    maxChunks: 1
+                })
+            ]
+        },
         "google-gtag": {
             id: "G-51J4H4V6HK",
             config: {
@@ -172,13 +190,6 @@ export default async () => {
                 }
             },
         },
-        hooks: {
-            generate: {
-                done(a) {
-                    overrideSW(a);
-                }
-            }
-        },
         pwa: {
             icon: {},
             manifest: {
@@ -187,7 +198,6 @@ export default async () => {
             workbox: {
                 //offline: true,
                 enabled: true,
-                swTemplate: './sw.template.js',
                 // dev: process.env.NODE_ENV === 'development',
                 // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
                 // cacheAssets: true,
