@@ -248,6 +248,38 @@
                 </NuxtLink>
             </div>
         </section>
+        <section class="section section--text section--img-text">
+            <div class="section--img-text__block is-flushed">          
+            <div class="container">
+                <div class="section--img-text__block-text">
+                    <h1 class="c-title text-turqy mt-2">
+                            How to use this tool
+                            </h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum molestias saepe illo officiis quam, laboriosam beatae, in quae libero delectus dolorem magni vitae optio dolores officia. Quibusdam tempora dolorum similique!</p>
+                    <div class="row">
+                        <div class="swiper-pagination">
+                            <button class="swiper-button-prev">right</button>
+                            <button class="swiper-button-next">left</button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="swiper-container">
+                <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                     <div class="swiper-slide">Slide 4</div>
+                      <div class="swiper-slide">Slide 5</div>
+                       <div class="swiper-slide">Slide 6</div>
+                        <div class="swiper-slide">Slide 7</div>
+                    </div>
+                    
+            </div>
+            </div>
+            </div>  
+        </section>
         <section
             id="create-account"
             class="section section--intro section--turqy-light"
@@ -321,13 +353,13 @@
             <div class="container">
                 <div class="section--img-text__block">
                     <div class="section--img-text__block-text">
-                        <h1 class="c-title">
+                        <h2 class="c-title">
                             {{
                                 $t(
                                     "pages.home.public.content.explanation.title"
                                 )
                             }}
-                        </h1>
+                        </h2>
                         <p>
                             {{
                                 $t(
@@ -538,7 +570,11 @@
     </article>
 </template>
 
+
+
 <script>
+import Swiper from 'swiper';
+
 import { mapActions, mapState } from "vuex";
 import locales from '../../locales';
 const numNews = 3;
@@ -551,9 +587,10 @@ export default {
             username: null,
             password: null,
             remember: false,
-            maxCharacters
+            maxCharacters,
         };
     },
+  
     computed: {
         ...mapState({
             alerts: state => state.authentication.alerts,
@@ -565,9 +602,25 @@ export default {
             return [...news].splice(0, numNews);
         },
     },
+   
     mounted() {
+        new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 4,
+            spaceBetween: 30,
+            autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+        },
+        }),
         this.$store.commit("authentication/clearError");
     },
+   
+    
     methods: {
         ...mapActions({
             signIn: "authentication/signIn"

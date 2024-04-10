@@ -1,0 +1,9 @@
+//swiper
+@use "../../../../node_modules/swiper/swiper.scss";
+
+.swiper-container{
+    @apply grid;
+    .swiper{
+        @apply max-w-full min-w-0;
+    }
+}
