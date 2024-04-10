@@ -199,6 +199,16 @@
         }
     }
 
+    &.section--intro-text{
+        .section--img-text__block-text{
+            @apply max-w-sm;
+            
+            @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+                @apply w-full;
+            }
+        }
+    }
+
     &.section--img-text {
         .section--img-text__block {
             @apply grid grid-cols-2 gap-4 lg:grid-cols-1;

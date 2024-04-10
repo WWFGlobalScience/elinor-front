@@ -248,37 +248,50 @@
                 </NuxtLink>
             </div>
         </section>
-        <section class="section section--text section--img-text">
-            <div class="section--img-text__block is-flushed">          
+        <section
+            class="section section--text section--intro-text section--img-text"
+        >
             <div class="container">
                 <div class="section--img-text__block-text">
                     <h1 class="c-title text-turqy mt-2">
-                            How to use this tool
-                            </h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum molestias saepe illo officiis quam, laboriosam beatae, in quae libero delectus dolorem magni vitae optio dolores officia. Quibusdam tempora dolorum similique!</p>
-                    <div class="row">
-                        <div class="swiper-pagination">
-                            <button class="swiper-button-prev">right</button>
-                            <button class="swiper-button-next">left</button>
-                        </div>
-                    </div>
-                </div> 
+                        How to use this tool
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum molestias saepe illo officiis quam, laboriosam
+                        beatae, in quae libero delectus dolorem magni vitae
+                        optio dolores officia. Quibusdam tempora dolorum
+                        similique!
+                    </p>
+                </div>
+
+                <div class="carousel-container">
+                    <carousel
+                        ref="carousel"
+                        :perPage="itemsPerView"
+                        :navigationEnabled="true"
+                        :paginationEnabled="true"
+                        :autoplay="autoplayInterval"
+                    >
+                        <slide v-for="(item, index) in items" :key="index">
+                            <div class="card-carousel">
+                                <iframe
+                                    :id="`iframe-${item.id}`"
+                                    :title="`Contenido del video ${item.title}`"
+                                    class="carousel-video"
+                                    :src="
+                                        `https://www.youtube.com/embed/${item.id}?rel=0`
+                                    "
+                                    disabled
+                                ></iframe>
+                                <h4 class="c-title--md text-turqy mt-2">
+                                    {{ item.title }}
+                                </h4>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
             </div>
-            <div class="swiper-container">
-                <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                     <div class="swiper-slide">Slide 4</div>
-                      <div class="swiper-slide">Slide 5</div>
-                       <div class="swiper-slide">Slide 6</div>
-                        <div class="swiper-slide">Slide 7</div>
-                    </div>
-                    
-            </div>
-            </div>
-            </div>  
         </section>
         <section
             id="create-account"
@@ -311,9 +324,12 @@
             <div class="container">
                 <div class="row">
                     <div class="text-medium uppercase">
-                        {{ $t("pages.home.public.latestNews.title") }}</div>
+                        {{ $t("pages.home.public.latestNews.title") }}
+                    </div>
                     <nuxt-link to="/news" role="button" class="link-arrow">
-                        <span>{{ $t("pages.home.public.latestNews.seeMoreNews") }}</span>
+                        <span>{{
+                            $t("pages.home.public.latestNews.seeMoreNews")
+                        }}</span>
                         <img
                             class="ico"
                             src="~/assets/img/ico-arrow-right.svg"
@@ -342,7 +358,9 @@
                                         : newsInstance.text
                                 }}
                             </p>
-                            <nuxt-link to="news" class="link-more mt-4">{{ $t("pages.home.public.latestNews.readMore") }}</nuxt-link>
+                            <nuxt-link to="news" class="link-more mt-4">{{
+                                $t("pages.home.public.latestNews.readMore")
+                            }}</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -517,10 +535,18 @@
                             }}
                         </p>
                         <div class="section--img-text__block-nested">
-                            <h5 class="c-epi">{{ $t("pages.home.public.content.methodology.score")}}</h5>
+                            <h5 class="c-epi">
+                                {{
+                                    $t(
+                                        "pages.home.public.content.methodology.score"
+                                    )
+                                }}
+                            </h5>
                             <p>
                                 {{
-                                    $t("pages.home.public.content.methodology.text2")
+                                    $t(
+                                        "pages.home.public.content.methodology.text2"
+                                    )
                                 }}
                             </p>
                             <div class="score-legend ui-rounded-border">
@@ -528,25 +554,41 @@
                                     <span
                                         class="w-7 h-7 rounded-full bg-poor"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.plan") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.plan"
+                                        )
+                                    }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-average"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.build") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.build"
+                                        )
+                                    }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-good"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.strengthen") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.strengthen"
+                                        )
+                                    }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-excellent"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.maintain") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.maintain"
+                                        )
+                                    }}</span>
                                 </div>
                             </div>
                         </div>
@@ -570,57 +612,72 @@
     </article>
 </template>
 
-
-
 <script>
-import Swiper from 'swiper';
+import { Carousel, Slide } from "vue-carousel";
 
 import { mapActions, mapState } from "vuex";
-import locales from '../../locales';
+import locales from "../../locales";
 const numNews = 3;
 const maxCharacters = 300;
 
 export default {
     name: "home-public",
+    components: {
+        Carousel,
+        Slide
+    },
     data() {
         return {
             username: null,
             password: null,
             remember: false,
             maxCharacters,
+
+            itemsPerView: 5,
+            autoplayInterval: 2000,
+            items: [
+                {
+                    id: "9bxrsgW82L4?si=S4wivtK0bjlTv8Ad",
+                    title: "Introduction to Elinor"
+                },
+                {
+                    id: "nA5LNNuqpKQ?si=ejcQ6O6AVB29Vvfn",
+                    title: "How to create a new assestment"
+                },
+                {
+                    id: "CX8LucMtgdg?si=-_1V9TyxymI7k7BN",
+                    title: "How to generate a report"
+                },
+                {
+                    id: "1AJ-g-2y8pQ?si=1qCiMp61EAyXnj5r",
+                    title: "How to change assestment privacy"
+                },
+                {
+                    id: "z1T6DnDNVIg?si=CzNBnpFe6litKiZU",
+                    title: "How to add a Collaborator"
+                }
+            ]
         };
     },
-  
+
     computed: {
         ...mapState({
             alerts: state => state.authentication.alerts,
             error: state => state.authentication.error
         }),
         latestNews() {
-            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const currentLanguage = this.$i18n.locales.find(
+                lang => lang.code === this.$i18n.locale
+            );
             const news = locales[currentLanguage.code].news;
             return [...news].splice(0, numNews);
-        },
+        }
     },
-   
+
     mounted() {
-        new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 4,
-            spaceBetween: 30,
-            autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-        },
-        }),
         this.$store.commit("authentication/clearError");
     },
-   
-    
+
     methods: {
         ...mapActions({
             signIn: "authentication/signIn"

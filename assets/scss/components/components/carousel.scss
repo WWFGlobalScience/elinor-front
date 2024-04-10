@@ -1,0 +1,17 @@
+//carousel
+
+.carousel-container{
+    @apply relative;
+
+    .carousel-video{
+        @apply w-full h-full;
+    }
+
+    .VueCarousel-slide{
+        @apply pl-4 pr-4;
+    }
+
+    .VueCarousel-navigation{
+        
+    }
+}
