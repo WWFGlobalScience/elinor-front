@@ -1,17 +1,27 @@
 //carousel
 
 .carousel-container{
-    @apply relative;
+    @apply relative pt-8;
 
     .carousel-video{
-        @apply w-full h-full;
-    }
-
-    .VueCarousel-slide{
-        @apply pl-4 pr-4;
+        @apply w-full h-[200px];
     }
 
     .VueCarousel-navigation{
-        
+        &-button{
+            @apply w-16 h-16 bg-turqy;
+        }
+        &--disabled{
+            @apply opacity-60;
+        }
     }
+
+     .VueCarousel-dot{
+        @apply bg-turqy-lighter #{!important};
+        
+        &--active{
+            @apply bg-turqy #{!important};
+        }
+    }
+    
 }

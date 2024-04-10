@@ -249,7 +249,7 @@
             </div>
         </section>
         <section
-            class="section section--text section--intro-text section--img-text"
+            class="section section--text section--intro-carousel section--img-text"
         >
             <div class="container">
                 <div class="section--img-text__block-text">
@@ -633,7 +633,7 @@ export default {
             remember: false,
             maxCharacters,
 
-            itemsPerView: 5,
+            itemsPerView: 4,
             autoplayInterval: 2000,
             items: [
                 {
