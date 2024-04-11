@@ -280,7 +280,10 @@
                     :paginationEnabled="true"
                 >
                     <slide v-for="(item, index) in items" :key="index">
-                        <div class="card-carousel">
+                        <nuxt-link
+                            :to="`/popup-show-video`"
+                            class="card-carousel"
+                        >
                             <img
                                 :id="`thumb-${item.id}`"
                                 :alt="`Contenido del video ${item.title}`"
@@ -292,7 +295,7 @@
                             <h4 class="c-title--md text-turqy mt-2">
                                 {{ item.title }}
                             </h4>
-                        </div>
+                        </nuxt-link>
                     </slide>
                 </carousel>
             </div>
