@@ -281,7 +281,7 @@
 }
 
 .card-carousel{
-    @apply flex flex-col gap-2 p-2 rounded-huge  ;
+    @apply flex flex-col bg-turqy-lighter gap-2 p-4 h-full rounded-huge  ;
 
     iframe{
         @apply overflow-hidden rounded-huge;

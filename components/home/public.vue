@@ -264,33 +264,37 @@
                         similique!
                     </p>
                 </div>
-
-                <div class="carousel-container">
-                    <carousel
-                        ref="carousel"
-                        :perPage="itemsPerView"
-                        :navigationEnabled="true"
-                        :paginationEnabled="true"
-                        :autoplay="autoplayInterval"
-                    >
-                        <slide v-for="(item, index) in items" :key="index">
-                            <div class="card-carousel">
-                                <iframe
-                                    :id="`iframe-${item.id}`"
-                                    :title="`Contenido del video ${item.title}`"
-                                    class="carousel-video"
-                                    :src="
-                                        `https://www.youtube.com/embed/${item.id}?rel=0`
-                                    "
-                                    disabled
-                                ></iframe>
-                                <h4 class="c-title--md text-turqy mt-2">
-                                    {{ item.title }}
-                                </h4>
-                            </div>
-                        </slide>
-                    </carousel>
-                </div>
+            </div>
+            <div class="carousel-container">
+                <carousel
+                    ref="carousel"
+                    :center-mode="true"
+                    :perPage="itemsPerView"
+                    :perPageCustom="[
+                        [375, 1],
+                        [768, 2],
+                        [1200, 3],
+                        [2000, 4]
+                    ]"
+                    :navigationEnabled="true"
+                    :paginationEnabled="true"
+                >
+                    <slide v-for="(item, index) in items" :key="index">
+                        <div class="card-carousel">
+                            <img
+                                :id="`thumb-${item.id}`"
+                                :alt="`Contenido del video ${item.title}`"
+                                class="carousel-thumb"
+                                :src="
+                                    `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`
+                                "
+                            />
+                            <h4 class="c-title--md text-turqy mt-2">
+                                {{ item.title }}
+                            </h4>
+                        </div>
+                    </slide>
+                </carousel>
             </div>
         </section>
         <section
@@ -634,26 +638,26 @@ export default {
             maxCharacters,
 
             itemsPerView: 4,
-            autoplayInterval: 2000,
+
             items: [
                 {
-                    id: "9bxrsgW82L4?si=S4wivtK0bjlTv8Ad",
+                    id: "9bxrsgW82L4",
                     title: "Introduction to Elinor"
                 },
                 {
-                    id: "nA5LNNuqpKQ?si=ejcQ6O6AVB29Vvfn",
+                    id: "nA5LNNuqpKQ",
                     title: "How to create a new assestment"
                 },
                 {
-                    id: "CX8LucMtgdg?si=-_1V9TyxymI7k7BN",
+                    id: "CX8LucMtgdg",
                     title: "How to generate a report"
                 },
                 {
-                    id: "1AJ-g-2y8pQ?si=1qCiMp61EAyXnj5r",
+                    id: "1AJ-g-2y8pQ",
                     title: "How to change assestment privacy"
                 },
                 {
-                    id: "z1T6DnDNVIg?si=CzNBnpFe6litKiZU",
+                    id: "z1T6DnDNVIg",
                     title: "How to add a Collaborator"
                 }
             ]
