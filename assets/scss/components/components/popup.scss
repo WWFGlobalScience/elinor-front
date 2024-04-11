@@ -1,11 +1,7 @@
 //popup
 .elinor__popup {
     @apply w-screen h-screen fixed top-0 left-0 z-40 flex items-center m-auto overflow-auto py-8 sm:p-0;
-    @media only screen
-    and (min-device-width: 320px)
-    and (max-device-width: 823px)
-    and (-webkit-min-device-pixel-ratio: 3)
-    and (orientation: landscape) {
+    @media only screen and (min-device-width: 320px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
         @apply p-0;
     }
     .popup__overlay {
@@ -22,56 +18,62 @@
         }
         .popup__content {
             @apply bg-white px-20 py-10 rounded-b-xl sm:px-4 sm:rounded-none;
-            .input.input--file{
-                .file{
+            .input.input--file {
+                .file {
                     @apply h-64 flex flex-col justify-center;
                 }
-                .file__buttons{
+                .file__buttons {
                     @apply sm:flex-col sm:items-start;
                 }
             }
             &.popup__content--form {
                 .btn-row {
                     @apply flex justify-between items-center mt-10;
-
+                }
+            }
+            &.popup--show-video {
+                .popup-video,
+                iframe {
+                    @apply w-full;
+                    aspect-ratio: 16/9;
                 }
             }
 
-            .popup__map-img{
+            .popup__map-img {
                 top: 6.563rem;
                 height: calc(100% - 6.563rem);
                 @apply fixed right-0 w-6/12 object-cover sm:relative sm:w-full sm:top-0 sm:h-auto;
-
             }
-            .popup__map{
+            .popup__map {
                 @apply relative flex justify-center items-center flex-col mt-16 -mx-20;
-                &>div{@apply w-full px-20 sm:px-4}
-                .header--map{
+                & > div {
+                    @apply w-full px-20 sm:px-4;
+                }
+                .header--map {
                     @apply flex justify-between items-center sm:flex-col sm:px-4 sm:w-screen sm:items-start;
-                    .form__row{@apply items-end sm:items-start sm:mb-4}
+                    .form__row {
+                        @apply items-end sm:items-start sm:mb-4;
+                    }
                 }
             }
             .popup__map.image {
                 @apply mt-0 #{!important};
             }
-            .popup__footer{
+            .popup__footer {
                 @apply flex justify-end pt-11;
-                &>*{
+                & > * {
                     @apply ml-4;
                 }
             }
         }
 
-        &.popup__box--min{
-           @apply w-3/12 2xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-full
+        &.popup__box--min {
+            @apply w-3/12 2xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-full;
         }
-        @media only screen
-            and (max-device-width: 823px)
-            and (-webkit-min-device-pixel-ratio: 2)
-            and (orientation: landscape) {
-            width: 100%!important;
+        @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+            width: 100% !important;
             @apply h-full;
-            .popup__content{
+            .popup__content {
                 @apply h-3/4 overflow-auto;
             }
         }
@@ -87,7 +89,10 @@
                     @apply text-[22px];
                 }
                 button img {
-                    filter: invert(94%) sepia(6%) saturate(101%) hue-rotate(217deg) brightness(200%) contrast(100%);
+                    -webkit-filter: invert(94%) sepia(6%) saturate(101%)
+                        hue-rotate(217deg) brightness(200%) contrast(100%);
+                    filter: invert(94%) sepia(6%) saturate(101%)
+                        hue-rotate(217deg) brightness(200%) contrast(100%);
                 }
             }
             .popup__content {
@@ -105,7 +110,7 @@
                     @apply text-lg font-bold text-yellowy-lighter mb-4;
                 }
 
-                .btn-row{
+                .btn-row {
                     @apply flex justify-between items-center mt-8;
                 }
             }
@@ -113,13 +118,12 @@
     }
 }
 
-
 //num
 // .step-num {
 //     @apply flex items-center justify-center flex-shrink-0 text-[24px] w-[48px] h-[48px] text-turqy border-turqy border border-solid border-radius--50;
 // }
 
-// circle 
+// circle
 .circle-rang {
     @apply flex items-center justify-center text-[20px] text-turqy w-[62px] h-[62px] bg-white border border-solid border-turqy border-radius--50;
 }
@@ -142,7 +146,7 @@
     ul {
         @apply pl-4;
         li {
-            @apply list-disc ml-2 ;
+            @apply list-disc ml-2;
         }
     }
 
@@ -162,7 +166,7 @@
 
 //onboarding list
 .elinor__steps-list {
-    @apply grid grid-cols-2; 
+    @apply grid grid-cols-2;
     grid-row-gap: 30px;
     grid-column-gap: 20px;
     counter-reset: step-counter;
@@ -178,7 +182,7 @@
     }
 }
 
-//onboarding intro 
+//onboarding intro
 .elinor__popup-intro {
     @apply flex items-end justify-between mr-[-32px] ml-[-32px] mb-10 sm:block;
     .intro-content {
@@ -201,6 +205,7 @@
 //cta
 .elinor__btn-group {
     @apply flex items-center justify-center sm:flex-col;
+    -moz-column-gap: 24px;
     column-gap: 24px;
     row-gap: 18px;
 }

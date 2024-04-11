@@ -1,9 +1,9 @@
 <template>
     <div class="popup__content popup--show-video">
         <iframe
-            :id="`video-${item.id}`"
-            :title="`show video ${item.title}`"
-            :src="`https://www.youtube.com/embed/${item.id}?rel=0`"
+            id="`video-${item.id}`"
+            title="`show video ${item.title}`"
+            src="`https://www.youtube.com/embed/9bxrsgW82L4?si=S4wivtK0bjlTv8Ad?rel=0`"
             frameborder="0"
             class="popup-video"
         ></iframe>
@@ -11,8 +11,19 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
     name: "popup-show-video",
-    data() {}
+    methods: {
+        cancel() {
+            this.$store.dispatch("popup/popupState", { active: false });
+        }
+    },
+    computed: {
+        ...mapState({
+            popup: state => state.popup.popup
+        })
+    }
 };
 </script>

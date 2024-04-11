@@ -280,8 +280,14 @@
                     :paginationEnabled="true"
                 >
                     <slide v-for="(item, index) in items" :key="index">
-                        <nuxt-link
-                            :to="`/popup-show-video`"
+                        <button
+                            @click="
+                                popupState({
+                                    active: true,
+                                    component: 'popup-show-video',
+                                    title: item.title
+                                })
+                            "
                             class="card-carousel"
                         >
                             <img
@@ -295,7 +301,7 @@
                             <h4 class="c-title--md text-turqy mt-2">
                                 {{ item.title }}
                             </h4>
-                        </nuxt-link>
+                        </button>
                     </slide>
                 </carousel>
             </div>
@@ -687,6 +693,7 @@ export default {
 
     methods: {
         ...mapActions({
+            popupState: "popup/popupState",
             signIn: "authentication/signIn"
         }),
         submit(event) {
