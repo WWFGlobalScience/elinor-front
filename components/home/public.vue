@@ -271,7 +271,7 @@
                     :center-mode="true"
                     :perPage="itemsPerView"
                     :perPageCustom="[
-                        [375, 1],
+                        [0, 1],
                         [768, 2],
                         [1200, 3],
                         [2000, 4]

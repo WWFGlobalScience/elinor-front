@@ -1,42 +1,33 @@
 //carousel
 
 .carousel-container {
-    @apply relative max-w-full p-8;
+    @apply relative max-w-full p-8 md:px-4;
 
     @media (max-width: 768px) {
-        @apply px-4;
         max-width: 99vw;
     }
 
     .carousel-thumb {
-        @apply w-full object-cover;
-        aspect-ratio: 4/3;
+        @apply w-full object-cover rounded-huge;
+        aspect-ratio: 6/3;
     }
 
     .VueCarousel {
         @apply max-w-full;
         &-inner {
-            @apply gap-4;
+            @apply gap-4 md:gap-0;
             max-width: calc(100vw - 188px);
 
             @media (max-width: 768px) {
                 max-width: 100vw;
-                @apply gap-0;
             }
         }
         &-wrapper {
-            @apply p-6 pr-16;
-            @media (max-width: 768px) {
-                @apply px-0;
-            }
+            @apply p-6 pr-16 md:px-0;
         }
         &-navigation {
-            @apply relative w-full h-full px-40 top-0;
+            @apply relative w-full h-full px-40 top-0 2xl:px-20;
             order: -1;
-
-            @media (max-width: 1366px) {
-                @apply px-20;
-            }
 
             &-button {
                 @apply static w-16 h-16 bg-turqy text-white rounded-full #{!important};

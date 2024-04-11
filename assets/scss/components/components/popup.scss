@@ -32,6 +32,7 @@
                 }
             }
             &.popup--show-video {
+                @apply p-0;
                 .popup-video,
                 iframe {
                     @apply w-full;
