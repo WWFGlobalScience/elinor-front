@@ -278,6 +278,7 @@
                     ]"
                     :navigationEnabled="true"
                     :paginationEnabled="true"
+                    @dragging="handleDragging"
                 >
                     <slide v-for="(item, index) in items" :key="index">
                         <button
@@ -646,8 +647,8 @@ export default {
             remember: false,
             maxCharacters,
 
+            isDragging: false,
             itemsPerView: 4,
-
             items: [
                 {
                     id: "9bxrsgW82L4",
@@ -699,6 +700,10 @@ export default {
         submit(event) {
             event.preventDefault();
             this.signIn({ username: this.username, password: this.password });
+        },
+        handleDragging(isDragging) {
+            this.isDragging = isDragging;
+            console.log("status:", this.isDragging);
         }
     }
 };
