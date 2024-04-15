@@ -286,7 +286,8 @@
                                 popupState({
                                     active: true,
                                     component: 'popup-show-video',
-                                    title: item.title
+                                    title: item.title,
+                                    videoId: item.id
                                 })
                             "
                             class="card-carousel"

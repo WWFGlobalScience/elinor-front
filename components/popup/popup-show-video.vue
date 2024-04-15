@@ -3,7 +3,7 @@
         <div>
             <iframe
                 class="popup-video"
-                src="https://www.youtube.com/embed/9bxrsgW82L4?si=4my5rd8Mgmxtuv9k?rel=0"
+                :src="'https://www.youtube.com/embed/' + videoId"
                 title="Video title"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -26,7 +26,8 @@ export default {
     },
     computed: {
         ...mapState({
-            popup: state => state.popup.popup
+            popup: state => state.popup.popup,
+            videoId: state => state.popup.popup.videoId
         })
     }
 };
