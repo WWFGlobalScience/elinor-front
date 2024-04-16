@@ -248,6 +248,34 @@
                 </NuxtLink>
             </div>
         </section>
+
+        <section
+            id="create-account"
+            class="section section--intro section--turqy-light"
+        >
+            <div class="container">
+                <img
+                    src="~/assets/img/elinor-illustration.svg"
+                    alt="ellinor illustration"
+                />
+                <p class="section--intro__info">
+                    {{ $t("pages.home.public.content.introduction.text") }}
+                </p>
+                <NuxtLink
+                    v-if="!$auth.loggedIn"
+                    to="/create-account"
+                    class="btn btn--opacity--child"
+                >
+                    <span class="btn--opacity__target">{{
+                        $t(
+                            "pages.home.public.content.introduction.createAccountLink"
+                        )
+                    }}</span>
+                    <img src="~/assets/img/ico-button-arrow.svg" />
+                </NuxtLink>
+            </div>
+        </section>
+
         <section
             class="section section--text section--intro-carousel section--img-text"
         >
@@ -306,32 +334,6 @@
                         </button>
                     </slide>
                 </carousel>
-            </div>
-        </section>
-        <section
-            id="create-account"
-            class="section section--intro section--turqy-light"
-        >
-            <div class="container">
-                <img
-                    src="~/assets/img/elinor-illustration.svg"
-                    alt="ellinor illustration"
-                />
-                <p class="section--intro__info">
-                    {{ $t("pages.home.public.content.introduction.text") }}
-                </p>
-                <NuxtLink
-                    v-if="!$auth.loggedIn"
-                    to="/create-account"
-                    class="btn btn--opacity--child"
-                >
-                    <span class="btn--opacity__target">{{
-                        $t(
-                            "pages.home.public.content.introduction.createAccountLink"
-                        )
-                    }}</span>
-                    <img src="~/assets/img/ico-button-arrow.svg" />
-                </NuxtLink>
             </div>
         </section>
 
