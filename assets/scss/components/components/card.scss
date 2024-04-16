@@ -246,12 +246,7 @@
     }
     .dot-value {
         @apply absolute top-3 left-[-18px] w-9 h-9 flex justify-center items-center rounded-full text-white font-montserratSemiBoldPdf text-[18px];
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         display: flex;
-        -webkit-flex-flow: row wrap;
     }
     ul {
         @apply mt-2;
@@ -283,4 +278,8 @@
             }
         }
     }
+}
+
+.card-carousel {
+    @apply flex flex-col bg-turqy-lighter gap-2 p-4 h-full rounded-huge;
 }

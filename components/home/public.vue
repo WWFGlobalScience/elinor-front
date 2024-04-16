@@ -248,6 +248,7 @@
                 </NuxtLink>
             </div>
         </section>
+
         <section
             id="create-account"
             class="section section--intro section--turqy-light"
@@ -275,13 +276,77 @@
             </div>
         </section>
 
+        <section
+            class="section section--text section--intro-carousel section--img-text"
+        >
+            <div class="container">
+                <div class="section--img-text__block-text">
+                    <h1 class="c-title text-turqy mt-2">
+                        How to use this tool
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Illum molestias saepe illo officiis quam, laboriosam
+                        beatae, in quae libero delectus dolorem magni vitae
+                        optio dolores officia. Quibusdam tempora dolorum
+                        similique!
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <carousel
+                    ref="carousel"
+                    :center-mode="true"
+                    :perPage="itemsPerView"
+                    :perPageCustom="[
+                        [0, 1],
+                        [768, 2],
+                        [1200, 3],
+                        [2000, 4]
+                    ]"
+                    :navigationEnabled="true"
+                    :paginationEnabled="true"
+                    @dragging="handleDragging"
+                >
+                    <slide v-for="(item, index) in items" :key="index">
+                        <button
+                            @click="
+                                popupState({
+                                    active: true,
+                                    component: 'popup-show-video',
+                                    title: item.title,
+                                    videoId: item.id
+                                })
+                            "
+                            class="card-carousel"
+                        >
+                            <img
+                                :id="`thumb-${item.id}`"
+                                :alt="`Contenido del video ${item.title}`"
+                                class="carousel-thumb"
+                                :src="
+                                    `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`
+                                "
+                            />
+                            <h4 class="c-title--md text-turqy mt-2">
+                                {{ item.title }}
+                            </h4>
+                        </button>
+                    </slide>
+                </carousel>
+            </div>
+        </section>
+
         <section class="section section--latest-news">
             <div class="container">
                 <div class="row">
                     <div class="text-medium uppercase">
-                        {{ $t("pages.home.public.latestNews.title") }}</div>
+                        {{ $t("pages.home.public.latestNews.title") }}
+                    </div>
                     <nuxt-link to="/news" role="button" class="link-arrow">
-                        <span>{{ $t("pages.home.public.latestNews.seeMoreNews") }}</span>
+                        <span>{{
+                            $t("pages.home.public.latestNews.seeMoreNews")
+                        }}</span>
                         <img
                             class="ico"
                             src="~/assets/img/ico-arrow-right.svg"
@@ -310,7 +375,9 @@
                                         : newsInstance.text
                                 }}
                             </p>
-                            <nuxt-link to="news" class="link-more mt-4">{{ $t("pages.home.public.latestNews.readMore") }}</nuxt-link>
+                            <nuxt-link to="news" class="link-more mt-4">{{
+                                $t("pages.home.public.latestNews.readMore")
+                            }}</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -321,13 +388,13 @@
             <div class="container">
                 <div class="section--img-text__block">
                     <div class="section--img-text__block-text">
-                        <h1 class="c-title">
+                        <h2 class="c-title">
                             {{
                                 $t(
                                     "pages.home.public.content.explanation.title"
                                 )
                             }}
-                        </h1>
+                        </h2>
                         <p>
                             {{
                                 $t(
@@ -485,10 +552,18 @@
                             }}
                         </p>
                         <div class="section--img-text__block-nested">
-                            <h5 class="c-epi">{{ $t("pages.home.public.content.methodology.score")}}</h5>
+                            <h5 class="c-epi">
+                                {{
+                                    $t(
+                                        "pages.home.public.content.methodology.score"
+                                    )
+                                }}
+                            </h5>
                             <p>
                                 {{
-                                    $t("pages.home.public.content.methodology.text2")
+                                    $t(
+                                        "pages.home.public.content.methodology.text2"
+                                    )
                                 }}
                             </p>
                             <div class="score-legend ui-rounded-border">
@@ -496,25 +571,41 @@
                                     <span
                                         class="w-7 h-7 rounded-full bg-poor"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.plan") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.plan"
+                                        )
+                                    }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-average"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.build") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.build"
+                                        )
+                                    }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-good"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.strengthen") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.strengthen"
+                                        )
+                                    }}</span>
                                 </div>
                                 <div class="item-legend">
                                     <span
                                         class="w-7 h-7 rounded-full bg-excellent"
                                     ></span>
-                                    <span class="text">{{ $t("pages.home.public.content.methodology.maintain") }}</span>
+                                    <span class="text">{{
+                                        $t(
+                                            "pages.home.public.content.methodology.maintain"
+                                        )
+                                    }}</span>
                                 </div>
                             </div>
                         </div>
@@ -539,42 +630,83 @@
 </template>
 
 <script>
+import { Carousel, Slide } from "vue-carousel";
+
 import { mapActions, mapState } from "vuex";
-import locales from '../../locales';
+import locales from "../../locales";
 const numNews = 3;
 const maxCharacters = 300;
 
 export default {
     name: "home-public",
+    components: {
+        Carousel,
+        Slide
+    },
     data() {
         return {
             username: null,
             password: null,
             remember: false,
-            maxCharacters
+            maxCharacters,
+
+            isDragging: false,
+            itemsPerView: 4,
+            items: [
+                {
+                    id: "9bxrsgW82L4",
+                    title: "Introduction to Elinor"
+                },
+                {
+                    id: "nA5LNNuqpKQ",
+                    title: "How to create a new assestment"
+                },
+                {
+                    id: "CX8LucMtgdg",
+                    title: "How to generate a report"
+                },
+                {
+                    id: "1AJ-g-2y8pQ",
+                    title: "How to change assestment privacy"
+                },
+                {
+                    id: "z1T6DnDNVIg",
+                    title: "How to add a Collaborator"
+                }
+            ]
         };
     },
+
     computed: {
         ...mapState({
             alerts: state => state.authentication.alerts,
             error: state => state.authentication.error
         }),
         latestNews() {
-            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const currentLanguage = this.$i18n.locales.find(
+                lang => lang.code === this.$i18n.locale
+            );
             const news = locales[currentLanguage.code].news;
             return [...news].splice(0, numNews);
-        },
+        }
     },
+
     mounted() {
         this.$store.commit("authentication/clearError");
     },
+
     methods: {
         ...mapActions({
+            popupState: "popup/popupState",
             signIn: "authentication/signIn"
         }),
         submit(event) {
             event.preventDefault();
             this.signIn({ username: this.username, password: this.password });
+        },
+        handleDragging(isDragging) {
+            this.isDragging = isDragging;
+            console.log("status:", this.isDragging);
         }
     }
 };
