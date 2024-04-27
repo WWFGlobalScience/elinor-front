@@ -1,129 +1,129 @@
 export default [
     {
         type: 'default',
-        title : 'What is the main purpose of the tool?',
+        title : 'Qual é o principal propósito da ferramenta?',
         text: `
             <p>
-                The main purpose of Elinor is to track attributes critical to the success of area-based conservation
-                over time,and share this information with decision makers and conservation supporters working at local,
-                national or international scales.
+                O principal propósito da Elinor é acompanhar atributos críticos para o sucesso da conservação baseada em áreas
+                ao longo do tempo, e compartilhar essa informação com tomadores de decisão e apoiadores da conservação que trabalham em escalas
+                locais, nacionais ou internacionais.
             </p>
             <p>
-                The tool was specifically designed knowing many conservation practitioners (1) are familiar with and
-                use an adopted version of the METT in their work and (2) face budget and time constraints for conservation
-                monitoring and evaluation, and may need flexible  approaches for collecting standardized data.
+                A ferramenta foi especificamente projetada sabendo que muitos profissionais de conservação (1) estão familiarizados com e
+                usam uma versão adotada do METT em seu trabalho e (2) enfrentam restrições de orçamento e tempo para monitoramento e avaliação da conservação,
+                e podem precisar de abordagens flexíveis para coletar dados padronizados.
             </p>
             <p>
-                Because of this, this low-cost and simple assessment has been developed collaboratively with members
-                of the conservation community, building off of the scoring system of the METT and questions from
-                existing protocols (see reference list), and covers a range of management and governance issue
-                considered important to success.
+                Por isso, essa avaliação de baixo custo e simples foi desenvolvida colaborativamente com membros
+                da comunidade de conservação, baseando-se no sistema de pontuação do METT e em perguntas de
+                protocolos existentes (veja a lista de referências), e cobre uma gama de questões de gestão e governança
+                consideradas importantes para o sucesso.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'What kinds of decisions will this tool help inform?',
+        title : 'Que tipos de decisões esta ferramenta ajudará a informar?',
         text: `
             <p>
-                For project and site managers, information from the assessment can help:
+                Para gerentes de projetos e de sítios, as informações da avaliação podem ajudar:
             </p>
             <ul>
                 <li>
-                    Communicate with key stakeholders what issues of equitable management and governance are
-                    important to pay attention to
+                    Comunicar com as principais partes interessadas quais questões de gestão equitativa e governança são
+                    importantes de se atentar
                 </li>
                 <li>
-                    Identify what actions might be most suitable for an area under protection or management to help
-                    improve its management and governance status
+                    Identificar quais ações podem ser mais adequadas para uma área sob proteção ou gestão para ajudar
+                    a melhorar seu status de gestão e governança
                </li>
                <li>
-                    Identify where a more in-depth assessment of management, governance, equity, or climate is needed
+                    Identificar onde uma avaliação mais aprofundada de gestão, governança, equidade ou clima é necessária
                </li>
             </ul>
-            <p>For regional and international decision-makers, the assessment data can help:</p>
+            <p>Para tomadores de decisão regionais e internacionais, os dados da avaliação podem ajudar:</p>
             <ul>
-                <li>Provide a broad overview of perceived status and trends in management and governance</li>
-                <li>Prompt conversations on equitable management and governance at national and international
+                <li>Prover uma visão geral ampla do status percebido e das tendências em gestão e governança</li>
+                <li>Iniciar conversas sobre gestão e governança equitativas em escalas nacionais e internacionais para inspirar mudanças em políticas e práticas</li>
                  scales to inspire change in policy and practice</li>
-                <li>Identify areas requiring more in-depth research</li>
+                <li>Identificar áreas que requerem mais pesquisa aprofundada</li>
             </ul>
         `
     },
     {
         type: 'default',
-        title : 'Who should complete an assessment?',
+        title : 'Quem deve completar uma avaliação?',
         text: `
-            <p>The Elinor assessment was initially designed to meet the needs of conservationists working for
-                non-governmental organizations (NGOs) but can be used by any individual working to support a
-                managed area. The assessment can be completed in one of two ways:
+            <p>A avaliação Elinor foi inicialmente projetada para atender às necessidades de conservacionistas trabalhando para
+                organizações não governamentais (ONGs) mas pode ser usada por qualquer indivíduo trabalhando para apoiar uma
+                área gerenciada. A avaliação pode ser completada de duas maneiras:
             </p>
             <ol>
                 <li>
-                    As a <strong>field-based focus group.</strong> This is the way that many governance assessments
-                    are traditionally completed; leveraging diverse perceptions from key stakeholders involved in the
-                    management and governance of a particular area. On the ElinorData.org website, you will find a full
-                    field protocol that can be used to guide ethical data collection with stakeholders. This guidance
-                    offers insights on how to ethically lead a group, obtain the right permissions for using the data,
-                    and to probe for diverse perspectives; especially of those who may have been traditionally marginalized.
-                    This is the preferred pathway, as it allows diverse voices to contribute to the assessment,
-                    providing a more holistic perspective on the status of management and governance in an area.
-                    See the <a href='/documentation'>Elinor assessment tool</a> and protocol for guidance on how to lead
-                    a focus group.
+                    Como um <strong>grupo focal baseado em campo.</strong> Esta é a maneira pela qual muitas avaliações de governança
+                    são tradicionalmente completadas; alavancando percepções diversas das principais partes interessadas envolvidas na
+                    gestão e governança de uma área específica. No site ElinorData.org, você encontrará um protocolo completo de campo
+                    que pode ser usado para guiar a coleta de dados ética com as partes interessadas. Esta orientação
+                    oferece insights sobre como liderar eticamente um grupo, obter as permissões corretas para usar os dados,
+                    e sondar perspectivas diversas; especialmente daqueles que podem ter sido tradicionalmente marginalizados.
+                    Este é o caminho preferido, pois permite que vozes diversas contribuam para a avaliação,
+                    proporcionando uma perspectiva mais holística sobre o status da gestão e governança em uma área.
+                    Veja a <a href='/documentation'>ferramenta de avaliação Elinor</a> e o protocolo para orientações sobre como liderar
+                    um grupo focal.
                 </li>
                 <li>
-                    <strong>As a desk based assessment.</strong> This pathway is for those who have limited time or
-                        resources for carrying out a participatory focus group. This option allows for some data to be
+                    Como uma avaliação <strong>baseada em mesa.</strong> Este caminho é para aqueles que têm tempo ou
+                        recursos limitados para realizar um grupo focal participativo. Esta opção permite a geração de alguns dados sobre a área gerenciada, que podem fornecer uma avaliação muitas vezes adequada e útil sobre o status atual e as tendências na área, e podem ajudar os usuários a identificar quaisquer lacunas críticas de conhecimento que exigiriam mais pesquisa e investimento.
                         generated on the managed area, which can provide an often adequate and helpful assessment on
                         the current status and trends in the area, and can help users identify any critical knowledge
                         gaps that would require further research and investment.
                 </li>
             </ol>
             <p>
-                When inputting data into the ElinorData system, users can indicate which pathway they took to
-                generate the data in the assessment so any future users of the data can consider who’s perspectives
-                were represented in the data.
+                Ao inserir dados no sistema ElinorData, os usuários podem indicar qual caminho seguiram para
+                gerar os dados na avaliação para que quaisquer futuros usuários dos dados possam considerar quais perspectivas
+                foram representadas nos dados.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'Who has the rights and access to the data entered in this tool?',
+        title : 'Quem tem os direitos e acesso aos dados inseridos nesta ferramenta?',
         text: `
             <p>
-                Data ethics, rights, and privacy is a central component of the Elinor tool and data system.
-                The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and
-                ethics with focus group participants, for those who gather data on Elinor via a focus group
-                discussion. The Elinor Terms of Services and Collaboration Principles outline in detail how data is
-                stored and used on the platform.
+                Ética de dados, direitos e privacidade são componentes centrais da ferramenta Elinor e do sistema de dados.
+                A ferramenta de avaliação Elinor e o documento do protocolo oferecem orientações sobre como discutir privacidade de dados e
+                ética com os participantes do grupo focal, para aqueles que coletam dados no Elinor por meio de uma
+                discussão em grupo focal. Os Termos de Serviços e Princípios de Colaboração da Elinor delineiam em detalhes como os dados são
+                armazenados e utilizados na plataforma.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'Will I know how my data is being used?',
+        title : 'Saberei como meus dados estão sendo usados?',
         text: `
             <p>
-                For data made publicly available, users will eventually be able to ‘opt in’ to notifications that
+                Para dados tornados publicamente disponíveis, os usuários eventualmente poderão optar por receber notificações que
                 tell users where and when their assessment data is being downloaded to help users understand what
-                their assessment data is being used for.
+                seus dados de avaliação estão sendo usados.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?',
+        title : 'Já uso o METT (ou uma versão modificada do METT) em meus projetos - como a Elinor se relaciona com o METT?',
         text: `
             <p>
-                Elinor builds directly off the years of experience project teams have using the METT assessment and
-                other tools designed to measure environmental governance. The Elinor assessment was designed to
-                mirror the METT as closely as possible, and pulls questions directly from the METT and uses the same
-                scale. Refer to this crosswalk between the METT, SAGE and Elinor to help users understand the
-                similarities and differences between the different tools.
+                Elinor constrói diretamente a partir dos anos de experiência das equipes de projeto usando a avaliação METT e
+                outras ferramentas projetadas para medir a governança ambiental. A avaliação Elinor foi projetada para
+                espelhar o METT o mais próximo possível, e extrai perguntas diretamente do METT e usa a mesma
+                escala. Consulte este comparativo entre o METT, SAGE e Elinor para ajudar os usuários a entender as
+                semelhanças e diferenças entre as diferentes ferramentas.
             </p>
             <p>
-                If you use the METT currently, if you obtain informed consent from participants in your METT
-                assessment, you can enter the data gathered from the METT into the Elinor database. Pay careful
+                Se você atualmente usa o METT, se você obter consentimento informado dos participantes em sua avaliação METT,
+                você pode inserir os dados coletados do METT no banco de dados Elinor. Preste atenção cuidadosa às configurações de privacidade de dados e garanta que você tem os direitos para inserir os dados no sistema ElinorData.
                 attention to the data privacy settings and ensure you have the rights to enter the data in the
                 ElinorData system.
             </p>
@@ -131,150 +131,150 @@ export default [
     },
     {
         type: 'default',
-        title : 'What are the specific things this tool will help me track?',
+        title : 'Quais são as coisas específicas que esta ferramenta me ajudará a acompanhar?',
         text: `
             <p>
-                 This tool focuses on compiling basic information about areas under management or protection, and
-                 assessing the status of <strong>nine attributes important for area-based conservation and
-                 management:</strong>
+                 Esta ferramenta foca em compilar informações básicas sobre áreas sob gestão ou proteção, e
+                 avaliar o status de <strong>nove atributos importantes para a conservação e
+                 gestão baseada em área:</strong>
             </p>
             <ol>
                 <li>Resource boundaries</li>
                 <li>Monitoring and enforcement</li>
                 <li>Capacity for adaptive management</li>
                 <li>Operational capacity</li>
-                <li>Inclusive and equitable management</li>
-                <li> Clearly defined rights and decision making</li>
-                <li>Clear and congruent regulations</li>
+                <li>Fronteiras dos recursos</li>
+                <li>Monitoramento e aplicação da lei</li>
+                <li>Capacidade para gestão adaptativa</li>
                 <li>Transparency and accountability</li>
-                <li>Perceived outcomes</li>
+				<li>Resultados percebidos</li>
             </ol>
             <p>
-                The data system will also allow tool users to append relevant documents like management plans and
-                geospatial files to facilitate knowledge management and sharing across spatial scales and access
-                decision-friendly visualizations of site-level data and aggregate data.
+                O sistema de dados também permitirá que os usuários da ferramenta anexem documentos relevantes como planos de gestão e
+                arquivos geoespaciais para facilitar a gestão e compartilhamento de conhecimento em escalas espaciais e acesso
+                a visualizações amigáveis de dados de nível de sítio e dados agregados.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'How will the data be analysed and presented?',
+        title : 'Como os dados serão analisados e apresentados?',
         text: `
             <p>
-                The Elinor database and web platform will provide simple visuals at a site, regional, and
-                international level that show trends over time, aggregated by the nine attributes listed above.
-                More robust analysis can be carried out on the data collected using the social science theories and
-                frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool
-                resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and
-                resilience thinking. Depending on the data privacy settings chosen by users, data from across
-                regions will be available for public use.
+                O banco de dados Elinor e a plataforma web fornecerão visualizações simples no nível do sítio, regional e
+                internacional que mostram tendências ao longo do tempo, agregadas pelos nove atributos listados acima.
+                Análises mais robustas podem ser realizadas sobre os dados coletados usando as teorias e
+                frameworks de ciências sociais que fundamentam as perguntas nesta ferramenta - nomeadamente a teoria de Elinor Ostrom sobre a
+                governança de recursos comuns, equidade na governança de recursos (por exemplo, Bennett e Satterfield 2018), e
+                pensamento de resiliência. Dependendo das configurações de privacidade de dados escolhidas pelos usuários, dados de
+                diferentes regiões estarão disponíveis para uso público.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?',
+        title : 'Já colet
         text: `
             <p>
-                No! This tool was designed to complement in-depth, field-based data collection. If you currently
-                collect data using field-based surveys or focus groups, you can use the data you already collect to
-                inform the answers to the questions asked in Elinor - just make sure you have the rights and
-                permissions to do so. Conversely, information gathered using this tool can help you understand what
-                topics require more in-depth field-based surveys.
+                Não! Esta ferramenta foi projetada para complementar a coleta de dados em campo, detalhada. Se você atualmente
+                coleta dados usando pesquisas de campo ou grupos focais, você pode usar os dados que já coleta para
+                informar as respostas às perguntas feitas na Elinor - apenas certifique-se de que você tem os direitos e
+                permissões para fazê-lo. Inversamente, informações coletadas usando esta ferramenta podem ajudá-lo a entender quais
+                tópicos requerem pesquisas de campo mais detalhadas.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'What are the main advantages to using this tool?',
+        title : 'Quais são as principais vantagens de usar esta ferramenta?',
         text: `
             <p>
-                The Elinor tool and data system was designed to streamline the data entry, storage, and
-                visualization process. By doing so, users gain three key advantages:
+                A ferramenta Elinor e o sistema de dados foram projetados para simplificar o processo de entrada, armazenamento e
+                visualização de dados. Ao fazer isso, os usuários ganham três vantagens principais:
             </p>
             <ol>
                 <li>
-                    <strong>The data collection, entry and visualization process becomes streamlined.</strong>
-                    For users working across multiple sites, all data can be stored and organized in the same way,
-                    and outputted into forms that are useful for communicating results to key audiences.
+                    <strong>O processo de coleta, entrada e visualização de dados torna-se simplificado.</strong>
+                    Para usuários que trabalham em vários sítios, todos os dados podem ser armazenados e organizados da mesma maneira,
+                    e exportados em formatos que são úteis para comunicar resultados a públicos chave.
                 </li
                 <li>
-                    <strong>Users are connected to a global community of conservationists striving to improve
-                    management and governance.</strong> Management and governance has long been an important topic
+                    <strong>Usuários são conectados a uma comunidade global de conservacionistas que lutam para melhorar
+                    a gestão e governança.</strong> Gestão e governança têm sido temas importantes em conservação, mas coletar e compartilhar dados sobre este assunto tem sido difícil. Uma das
                     in conservation, but gathering and sharing data on this subject has been difficult. One of the
-                    main barriers to data sharing is the time and energy that is often required to formalize and
-                    clean data for others to use: Elinor automates this, and allows users to selectively share data
-                    with individual users or the general public with a click of a button!
+                    principais barreiras para o compartilhamento de dados é o tempo e energia que muitas vezes são necessários para formalizar e
+                    limpar dados para outros usarem: Elinor automatiza isso e permite que os usuários compartilhem dados
+                    de forma seletiva com usuários individuais ou com o público geral com um clique de um botão!
                 </li>
             </ol>
         `
     },
     {
         type: 'default',
-        title : 'Where is my data stored?',
+        title : 'Onde meus dados são armazenados?',
         text: `
             <p>
-                ElinorData.org uses Amazon Web Services to store the data.
+                ElinorData.org usa Amazon Web Services para armazenar os dados.
             </p>
         `
     },
     {
         type: 'default',
-        title : 'What are some things I should keep in mind when I’m making my decision about using this tool?',
+        title : 'Quais são algumas coisas que devo ter em mente ao decidir sobre o uso desta ferramenta?',
         text: `
-            <p>No one tool does every job. It’s important to remember that:</p>
+            <p>Nenhuma ferramenta faz todo trabalho. É importante lembrar que:</p>
             <ol class='list-inside list-disc'>
                 <li>
-                    <strong>This tool does not gather in-depth data.</strong> This tool does not replace the need
-                    for working with communities on an in-depth assessment of the issues identified by the tool.
+                    <strong>Esta ferramenta não coleta dados aprofundados.</strong> Esta ferramenta não substitui a necessidade
+                    de trabalhar com comunidades em uma avaliação aprofundada das questões identificadas pela ferramenta.
                 </li
                 <li>
-                    <strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed
-                    to track indicators commonly recognized as being important for management and governance of
-                    coastal managed and conserved areas. It does not measure specific changes in laws and
-                    regulations, which may have great impacts on conservation activities in any given place.
+                    <strong>Esta ferramenta é agnóstica às leis e regulamentos locais.</strong> Esta ferramenta foi desenvolvida
+                    para acompanhar indicadores comumente reconhecidos como importantes para a gestão e governança de
+                    áreas costeiras gerenciadas e conservadas. Ela não mede mudanças específicas em leis e
+                    regulamentos, que podem ter grandes impactos nas atividades de conservação em qualquer lugar dado.
                 </li>
             </ol>
         `
     },
     {
         type: 'default',
-        title : 'OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?',
+        title : 'OK, estou usando a ferramenta. Como decido o que 'conta' como uma área gerenciada ou conservada?',
         text: `
             <p>
-                This depends on your context. In this tool, we refer to the boundary of the area to be assessed as
-                the management area (MA). A management area refers to a site/location to which management actions
-                are directed. A management area (MA) can be one protected area, or one conserved area (see glossary
-                for definitions), or a broader area that encompasses several protected areas/conserved areas.
+                Isso depende do seu contexto. Nesta ferramenta, referimo-nos ao limite da área a ser avaliada como
+                a área de gestão (AG). Uma área de gestão refere-se a um local/sítio ao qual as ações de gestão
+                são direcionadas. Uma área de gestão (AG) pode ser uma área protegida única, ou uma área conservada (veja o glossário
+                para definições), ou uma área mais ampla que engloba várias áreas protegidas/áreas conservadas.
             </p>
-            <p>Therefore, the user of this tool may decide to conduct this assessment on:</p>
+            <p>Portanto, o usuário desta ferramenta pode decidir conduzir esta avaliação em:</p>
             <ol class='list-inside list-disc'>
                 <li>
-                    An individual protected area or conserved area. For example, this could be an assessment of an
-                    area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a
-                    single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and
-                    protected areas and consider these as one management area, answering the questions with all of
-                    these areas in mind. For example, a Biosphere Reserve with multiple protected areas or
-                    conserved areas.
+                    Uma área protegida individual ou área conservada. Por exemplo, isso poderia ser uma avaliação de uma área
+                    gerida por uma Unidade de Gestão de Praia (UGP). Alternativamente, poderia ser uma avaliação de uma
+                    Área Protegida única.</li><li>Uma paisagem/mar mais amplo com várias áreas conservadas e
+                    áreas protegidas e considerar essas como uma área de gestão única, respondendo às perguntas com todas
+                    essas áreas em mente. Por exemplo, uma Reserva da Biosfera com várias áreas protegidas ou
+                    áreas conservadas.
                 </li>
             </ol>
         `
     },
     {
         type: 'default',
-        title : 'I work for a national NGO - how do I decide which sites to use the Elinor assessment in?',
+        title : 'Trabalho para uma ONG nacional - como decido em quais sítios usar a avaliação Elinor?',
         text: `
             <p>
-                Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.
+                Consulte a Parte 1 da ferramenta de avaliação Elinor e o protocolo para orientações sobre como conduzir a amostragem.
             </p>`
 
     },
 {
         type: 'default',
-        title : 'How are the scores shown in the site reports calculated?',
+        title : 'Como são calculadas as pontuações mostradas nos relatórios do sítio?',
         text: `
             <p>
-                Elinor includes 35 indicators across 10 core attributes of governance and management. Scores are calculated for each indicator, each attribute, and each managed area in total. Each indicator is assigned a score between 0 and 3 (with 0 being the least desirable and 4 being most desirable) on a scale that is customized for each indicator. For example, the scale for awareness of boundaries, records whether boundaries are known by most (3), some (2), a few (1) or none (0) of the relevant groups, while clearly defined boundaries, meanwhile, record whether boundaries are well demarcated (3), demarcated with some deficiencies (2), demarcated with major deficiencies (1), or not demarcated at all (0). Attribute scores, meanwhile, are calculated using a points percentage (i.e., total number of points received/total number of points possible) of indicators associated with each attribute, which is adjusted to a score out of 10 for easy interpretation. Finally, the total score for the managed area is calculated as a percentage of all attribute points received out of all attributes possible. Indicator, attribute and MA scores are assigned an action-oriented assessment category (Plan, Build, Strengthen, Maintain) to enable action-oriented interpretation. <strong>Note that the scores given by Elinor should not alone be used to determine the strengths or needs of the area's governance and management.</strong> It may be that a lower score on some attribute or indicator is sufficient for one site, but not another. The scores should be interpreted alongside the qualitative explanations entered into Elinor in order for decision-makers to choose the appropriate next steps.  
+                Elinor inclui 35 indicadores em 10 atributos centrais de governança e gestão. As pontuações são calculadas para cada indicador, cada atributo e cada área gerenciada no total. Cada indicador recebe uma pontuação entre 0 e 3 (sendo 0 o menos desejável e 4 o mais desejável) numa escala personalizada para cada indicador. Por exemplo, a escala para consciência das fronteiras, registra se as fronteiras são conhecidas pela maioria (3), algumas (2), poucas (1) ou nenhuma (0) dos grupos relevantes, enquanto fronteiras claramente definidas, registra se as fronteiras estão bem demarcadas (3), demarcadas com algumas deficiências (2), demarcadas com grandes deficiências (1), ou não demarcadas (0). As pontuações dos atributos, entretanto, são calculadas usando uma porcentagem de pontos (ou seja, número total de pontos recebidos/número total de pontos possíveis) dos indicadores associados a cada atributo, que é ajustada para uma pontuação de 10 para fácil interpretação. Finalmente, a pontuação total para a área gerenciada é calculada como uma porcentagem de todos os pontos de atributo recebidos de todos os atributos possíveis. As pontuações dos indicadores, atributos e AG são atribuídas a uma categoria de avaliação orientada à ação (Planejar, Construir, Fortalecer, Manter) para possibilitar uma interpretação orientada à ação. <strong>Note que as pontuações dadas pela Elinor não devem ser usadas sozinhas para determinar os pontos fortes ou as necessidades da governança e gestão da área.</strong> Pode ser que uma pontuação mais baixa em algum atributo ou indicador seja suficiente para um sítio, mas não para outro. As pontuações devem ser interpretadas juntamente com as explicações qualitativas inseridas em Elinor para que os tomadores de decisão escolham os próximos passos apropriados.  
             </p>
 	`
     }/*,
