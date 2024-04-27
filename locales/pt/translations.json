@@ -244,17 +244,17 @@
                             "managementPlanFile": "Download"
                         },
                         "labels": {
-                            "managementAreaName": "Nome da Área de Gestão",
+                            "managementAreaName": "Nome da Área de Manejo",
                             "protectedArea": "Nome do PA/CA maior, esta área focal está contida em",
                             "dateEstablished": "Data de estabelecimento formal (se aplicável)",
-                            "reportedSize": "Tamanho do AG (ha)",
-                            "containedBy": "Nome da Área de Gestão relacionada",
-                            "governanceType": "Tipo de governança AG (caixa de seleção)",
+                            "reportedSize": "Tamanho da AM (ha)",
+                            "containedBy": "Nome da Área de Manejo relacionada",
+                            "governanceType": "Tipo de governança AM (caixa de seleção)",
                             "managementAuthority": "Nome da autoridade de gestão",
-                            "recognitionLevel": "Os direitos da autoridade AG são formalmente reconhecidos em… (caixa de seleção)",
-                            "supportSources": "A autoridade de gestão da AG recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
-                            "countries": "País/países onde AG está localizada",
-                            "regions": "Estado(s)/província(s) onde AG está localizado",
+                            "recognitionLevel": "Os direitos da autoridade AM são formalmente reconhecidos em… (caixa de seleção)",
+                            "supportSources": "A autoridade de gestão da AM recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+                            "countries": "País/países onde AM está localizada",
+                            "regions": "Estado(s)/província(s) onde AM está localizado",
                             "zones": {
                                 "title": "ZONAS",
                                 "zoneName": "Nome da zona",
@@ -263,7 +263,7 @@
                             }
                         },
                         "map": {
-                            "title": "Mapa ou Arquivo Espacial do AG",
+                            "title": "Mapa ou Arquivo Espacial da AM",
                             "subtitle": "Informação geoespacial"
                         },
                         "people": {
@@ -374,18 +374,18 @@
                             "title": "Zonas",
                             "name": "Nome da nova área gerenciada",
                             "protectedArea": "ID Associada na Base de Dados Mundial sobre Áreas Protegidas",
-                            "containedBy": "Selecione quaisquer outras Áreas Gerenciadas relacionadas a esta AG. Se não houver, pule.",
+                            "containedBy": "Selecione quaisquer outras Áreas Gerenciadas relacionadas a esta AM. Se não houver, pule.",
                             "dateEstablished": "Data de estabelecimento formal (se aplicável)",
-                            "reportedSize": "Tamanho do AG (ha)",
+                            "reportedSize": "Tamanho da AM (ha)",
                             "managementAuthority": "Nome da autoridade de gestão",
-                            "governanceType": "Tipo de governança AG",
-                            "objectives": "Objetivos do AG",
-                            "recognitionLevel": "Os direitos da autoridade AG são formalmente reconhecidos no…",
+                            "governanceType": "Tipo de governança AM",
+                            "objectives": "Objetivos da AM",
+                            "recognitionLevel": "Os direitos da autoridade AM são formalmente reconhecidos no…",
                             "stakeholderGroups": "Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
-                            "supportSources": "A autoridade de gestão da AG recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
-                            "countries": "País/países onde AG está localizada",
-                            "regions": "Estado(s)/província(s) onde AG está localizado",
-                            "zones": "Este AG tem zonas?",
+                            "supportSources": "A autoridade de gestão da AM recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+                            "countries": "País/países onde AM está localizada",
+                            "regions": "Estado(s)/província(s) onde AM está localizado",
+                            "zones": "Este AM tem zonas?",
                             "zoneName": "Nome da zona",
                             "zoneLevel": "Selecione o nível de acesso que melhor descreve esta zona",
                             "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
@@ -440,34 +440,34 @@
                         }
                     },
                     "survey": {
-                        "tabButton": "The survey",
-                        "title": "The survey",
+                        "tabButton": "A avaliação",
+                        "title": "A avaliação",
                         "navigator": {
-                            "completed": "Completed",
-                            "outOf": "Out of"
+                            "completed": "Concluído",
+                            "outOf": "de"
                         },
-                        "uncheckAttributeTitle": "Unselect attribute",
-                        "uncheckAttributeText": "You are unselecting an attribute that contains questions that have been answered. If you unselect it, all the answers to its questions will be deleted. Are you sure you want to proceed and unselect this attribute?",
+                        "uncheckAttributeTitle": "Desmarcar atributo",
+                        "uncheckAttributeText": "Você está desmarcando um atributo que contém perguntas respondidas. Se você o desmarcar, todas as respostas para suas perguntas serão deletadas. Tem certeza de que deseja prosseguir e desmarcar este atributo?",
                         "questions": {
-                            "question": "Question",
-                            "back": "Back to Survey Home",
-                            "answer": "Answer",
-                            "score": "Score",
-                            "unknown": "unknown",
-                            "dontKnow": "Don't know",
-                            "explanation": "Explanation",
-                            "notCompleted": "Not completed",
-                            "answerQuestionButton": "Answer question",
-                            "editQuestionButton": "Edit response",
-                            "selectAnswer": "Select answer",
-                            "help": "Need help? See below",
-                            "prev": "Prev",
-                            "next": "Next",
-                            "information": "Information requirements",
-                            "guidance": "Guidance",
-                            "rationale": "What is this question asking?"
+                            "question": "Pergunta",
+                            "back": "Voltar para Início da Avaliação",
+                            "answer": "Resposta",
+                            "score": "Pontuação",
+                            "unknown": "desconhecido",
+                            "dontKnow": "Não sei",
+                            "explanation": "Explicação",
+                            "notCompleted": "Não completado",
+                            "answerQuestionButton": "Responder pergunta",
+                            "editQuestionButton": "Editar resposta",
+                            "selectAnswer": "Selecionar resposta",
+                            "help": "Precisa de ajuda? Veja abaixo",
+                            "prev": "Anterior",
+                            "next": "Próximo",
+                            "information": "Requisitos de informação",
+                            "guidance": "Orientação",
+                            "rationale": "O que esta pergunta está perguntando?"
                         },
-                        "inactiveAttribute": "To activate this question, you must activate the attribute"
+                        "inactiveAttribute": "Para ativar esta pergunta, você deve ativar o atributo"
                     },
                     "collaborators": {
                         "tabButton": "Contribuidores",
@@ -477,7 +477,7 @@
                         "table": {
                             "name": "Nome",
                             "admin": "Administrador",
-                            "contributor": "Contribuinte",
+                            "contributor": "Contribuidor",
                             "observer": "Observador"
                         },
                         "popups": {
@@ -499,24 +499,24 @@
                                         "name": "Administrador",
                                         "permission1": "Edite os dados da avaliação",
                                         "permission2": "Editar dados da pesquisa",
-                                        "permission3": "Editar localização do AG",
+                                        "permission3": "Editar localização da AM",
                                         "permission4": "Adicionar/editar administradores, colaboradores e observadores",
                                         "permission5": "Excluir a avaliação",
                                         "permission6": "Publicar e cancelar publicação da avaliação"
                                     },
                                     "contributor": {
-                                        "name": "Contribuinte",
+                                        "name": "Contribuidor",
                                         "permission1": "Edite os dados da avaliação",
-                                        "permission2": "Edite os dados de localização do AG",
+                                        "permission2": "Edite os dados de localização da AM",
                                         "permission3": "Visualizar os dados da avaliação",
                                         "permission4": "Visualizar os dados da pesquisa",
-                                        "permission5": "Veja a localização do AG"
+                                        "permission5": "Veja a localização da AM"
                                     },
                                     "observer": {
                                         "name": "Observador",
                                         "permission1": "Visualizar os dados da avaliação",
                                         "permission2": "Visualizar os dados da pesquisa",
-                                        "permission3": "Veja a localização do AG"
+                                        "permission3": "Veja a localização da AM"
                                     }
                                 },
                                 "error": "Erro de validação"
@@ -577,20 +577,20 @@
                         }
                     }
                 },
-                "attributes": "Attributes",
-                "seeQuestions": "See Questions",
-                "optionalAttributesTitle": "Optional attributes",
-                "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
-                "mandatoryAttribute": "Mandatory",
-                "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
+                "attributes": "Atributos",
+                "seeQuestions": "Ver Perguntas",
+                "optionalAttributesTitle": "Atributos Opcionais",
+                "optionalAttributesDescription": "Selecione os atributos que correspondem à sua Avaliação",
+                "mandatoryAttribute": "Obrigatório",
+                "inactiveAttribute": "Atributo Inativo",
+                "activeAttribute": "Atributo Ativo"
             },
             "statuses": {
                 "10": "Publicados",
                 "90": "Abrir"
             },
             "personResponsibleRoles": {
-                "10": "Pessoal sem fins lucrativos",
+                "10": "Pessoal de ONGs",
                 "20": "Gerente de área gerenciada",
                 "30": "Pessoal da área gerenciada",
                 "40": "Pessoal do governo",
@@ -607,7 +607,7 @@
                 "step-1": {
                     "title": "Escolha seu caminho para coleta de dados",
                     "text": "Elinor pode ser completada de duas maneiras:",
-                    "li-1": "Através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidas e afetadas pela AG.",
+                    "li-1": "Através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidas e afetadas pela AM.",
                     "li-2": "Como uma avaliação documental liderada, por exemplo, por um conservacionista ou um gestor do sítio."
                 },
                 "step-2": {
@@ -615,8 +615,8 @@
                     "text": "Preencha as informações relacionadas à AVALIAÇÃO, como número de pessoas consultadas ou instituições vinculadas"
                 },
                 "step-3": {
-                    "title": "Área de Gestão",
-                    "text": "Identifique a Área de Gestão, pertença a alguma UC e carregue a forma ou desenhe no mapa a sua localização."
+                    "title": "Área de Manejo",
+                    "text": "Identifique a Área de Manejo, pertença a alguma UC e carregue a forma ou desenhe no mapa a sua localização."
                 },
                 "step-4": {
                     "title": "A pesquisa",
@@ -647,17 +647,17 @@
                     "emailPlaceholder": "Your Email"
                 },
                 "flag": {
-                    "title": "Título da bandeira",
+                    "title": "Título do aviso",
                     "subtitle": "Preencha este formulário para sinalizar a avaliação",
                     "text": "Enviaremos uma mensagem ao administrador desta avaliação",
                     "labelTextarea": "Mensagem",
                     "okMessage": "Obrigado pelo contato!",
-                    "placeholder": "Flag type",
+                    "placeholder": "Tipo de aviso",
                     "types": {
-                        "inappropriate": "Inappropriate",
-                        "personal": "Personal",
-                        "inaccurate": "Inaccurate",
-                        "other": "Other"
+                        "inappropriate": "Inadequado",
+                        "personal": "Pessoal",
+                        "inaccurate": "Impreciso",
+                        "other": "Outro"
                     }
                 },
                 "delete": {
@@ -689,59 +689,59 @@
                     "button": "Generate"
                 }
             },
-            "outOf100": "out of 100",
-            "published": "Published",
-            "finalized": "Finalized",
+            "outOf100": "de 100",
+            "published": "Publicado",
+            "finalized": "Finalizado",
             "readyToPublish": "Pronto para publicar",
-            "preparingToPublish": "Preparing to publish",
+            "preparingToPublish": "Preparando para publicar",
             "downloadSurveyFile": {
-                "title": "Download Survey",
-                "helpTitle": "You can fill in the survey offline and upload it when ready. If you select to download the survey:",
-                "help1": "You will obtain a .xlsx file with the questions and answers to the survey.",
-                "help2": "You can edit it offline in Excel, Numbers or any xlsx processing program. Please don't change the structure of the xlsx in any way or form.",
-                "help3": "Save the file as a .xlsx file",
-                "help4": "When the survey is finished, click on the upload button to upload the xlsx and the online survey will automatically update the survey information.",
-                "downloadButton": "Start downloading"
+                "title": "Baixar Avaliação",
+                "helpTitle": "Você pode preencher a avaliação offline e fazer o upload quando estiver pronto. Se você optar por baixar a avaliação:",
+                "help1": "Você obterá um arquivo .xlsx com as perguntas e respostas da avaliação.",
+                "help2": "Você pode editá-lo offline no Excel, Numbers ou qualquer programa de processamento de xlsx. Por favor, não altere a estrutura do xlsx de forma alguma.",
+                "help3": "Salve o arquivo como um arquivo .xlsx",
+                "help4": "Quando a avaliação estiver concluída, clique no botão de upload para fazer o upload do xlsx e a avaliação online atualizará automaticamente as informações da avaliação.",
+                "downloadButton": "Iniciar download"
             },
             "uploadSurveyFile": {
-                "title": "Upload survey file",
-                "triggerButton": "Select a file",
-                "filePlaceholder": "Drag and drop de .xlsx file",
-                "validatingFileFormat": "Validating file format...",
-                "fileCorrectlyFormated": "The file is correctly formatted",
-                "fileCorrectlyFormatedText": "The data structure is correct and the xlsx is ready to be imported",
-                "uploadWarning": "Remember that if you accept, all the information of the survey online will be overwritten by the information on the xlsx",
-                "surveyFileErrorTitle": "Sorry something went wrong",
-                "surveyFileErrorDescription": "We are not able to import the xlsx you tried to upload. Please make sure that the format is correct. The structure of the xlsx need to be exactly the same one that was downloaded.",
-                "tryAgainText": "If you want you can",
-                "tryAgainButton": "try again",
-                "formatNotSupported": "try again",
-                "help": "Please, upload the xlsx file for the survey in the exact same format that it was downloaded. No change can be done to the structure. If the upload fails. please review the format and make sure it is the same as the downloaded file.",
-                "helpTitle": "What files to Upload?",
+                "title": "Fazer upload do arquivo de avaliação",
+                "triggerButton": "Selecionar um arquivo",
+                "filePlaceholder": "Arraste e solte o arquivo .xlsx",
+                "validatingFileFormat": "Validando formato de arquivo...",
+                "fileCorrectlyFormated": "O arquivo está formatado corretamente",
+                "fileCorrectlyFormatedText": "A estrutura de dados está correta e o xlsx está pronto para ser importado",
+                "uploadWarning": "Lembre-se de que, se você aceitar, todas as informações da avaliação online serão substituídas pelas informações do xlsx",
+                "surveyFileErrorTitle": "Desculpe, algo deu errado",
+                "surveyFileErrorDescription": "Não conseguimos importar o xlsx que você tentou fazer upload. Por favor, certifique-se de que o formato está correto. A estrutura do xlsx deve ser exatamente a mesma que foi baixada.",
+                "tryAgainText": "Se você quiser, pode",
+                "tryAgainButton": "tentar novamente",
+                "formatNotSupported": "tentar novamente",
+                "help": "Por favor, faça o upload do arquivo xlsx para a avaliação no mesmo formato em que foi baixado. Nenhuma alteração pode ser feita na estrutura. Se o upload falhar, revise o formato e certifique-se de que é o mesmo que o arquivo baixado.",
+                "helpTitle": "Quais arquivos carregar?",
                 "errors": {
-                    "missing_file": "missing file",
-                    "unsupported_file_type": "file type not supported; supported types: {supported_mime_types}",
-                    "file_too_large": "uploaded file larger than {maximum_filesize}",
-                    "unsupported_zip": "zip file contains more than one file, or is empty. Number of files in zip: {num_files}",
-                    "invalid_zip": "invalid zip",
-                    "missing_sheet": "missing sheet with name '{sheetname}'",
-                    "invalid_header": "no header found for sheet {sheetname}",
-                    "invalid_header_cells": "invalid headers in cells: {header_error_cells}",
-                    "invalid_file_load": "invalid xlsx file",
-                    "assessment_id_mismatch": "assessment id {user_assessmment_id} in {cell} does not match requested assessment {assessment_id}",
-                    "invalid_sheet": "invalid sheet",
-                    "invalid_questions": "invalid question keys in cells: {question_error_cells}",
-                    "invalid_choices": "invalid choices in cells: {choice_error_cells}",
-                    "invalid_answers": "invalid answers",
-                    "answer_save": "error saving answers to database"
+                    "missing_file": "arquivo faltando",
+                    "unsupported_file_type": "tipo de arquivo não suportado; tipos suportados: {supported_mime_types}",
+                    "file_too_large": "arquivo carregado maior que {maximum_filesize}",
+                    "unsupported_zip": "arquivo zip contém mais de um arquivo ou está vazio. Número de arquivos no zip: {num_files}",
+                    "invalid_zip": "zip inválido",
+                    "missing_sheet": "falta folha com o nome '{sheetname}",
+                    "invalid_header": "nenhum cabeçalho encontrado para a folha {sheetname}",
+                    "invalid_header_cells": "cabeçalhos inválidos nas células: {header_error_cells}",
+                    "invalid_file_load": "arquivo xlsx inválido",
+                    "assessment_id_mismatch": "id de avaliação {user_assessmment_id} na {cell} não corresponde à avaliação solicitada {assessment_id}",
+                    "invalid_sheet": "arquivo inválido",
+                    "invalid_questions": "chaves de perguntas inválidas nas células: {question_error_cells}",
+                    "invalid_choices": "escolhas inválidas nas células: {choice_error_cells}",
+                    "invalid_answers": "respostas inválidas",
+                    "answer_save": "erro ao salvar respostas no banco de dados"
                 }
             },
             "roles": {
-                "admin": "Admin",
-                "contributor": "Contributor",
-                "observer": "Observer"
+                "admin": "Administrador",
+                "contributor": "Contribuidor",
+                "observer": "Observador"
             },
-            "managedArea": "Managed Area"
+            "managedArea": "Área de Manejo"
         },
         "documentation": {
             "home": {
@@ -791,13 +791,13 @@
         },
         "methodologyPage": {
             "title": "Metodologia",
-            "paragraph1": "A avaliação da Elinor pode ser concluída de duas maneiras diferentes: através de um grupo focal facilitado com diferentes detentores de direitos e detentores de direitos e outros atores envolvidas e afetadas pelo AG, ou como uma avaliação documental liderada por um profissional de conservação. Ao inserir dados, os usuários podem indicar qual caminho seguiram para gerar os dados na avaliação e que tipos de detentores de direitos e outros atores estiveram envolvidas na avaliação.",
+            "paragraph1": "A avaliação da Elinor pode ser concluída de duas maneiras diferentes: através de um grupo focal facilitado com diferentes detentores de direitos e detentores de direitos e outros atores envolvidas e afetadas pela AM, ou como uma avaliação documental liderada por um profissional de conservação. Ao inserir dados, os usuários podem indicar qual caminho seguiram para gerar os dados na avaliação e que tipos de detentores de direitos e outros atores estiveram envolvidas na avaliação.",
             "subtitle1": "Elinor como uma discussão de grupo focal baseada em campo",
             "paragraph2": "A maioria das avaliações de governação são tradicionalmente concluídas através de discussões participativas em grupos focais; alavancar percepções diversas das principais detentores de direitos e outros atores envolvidas na gestão e governança de uma área específica. Para aqueles com tempo e capacidade para reunir diversas perspectivas sobre gestão e governança, recomendamos baixar a ferramenta e o protocolo de avaliação Elinor para orientar seus esforços.",
             "paragraph3": "Esta orientação oferece insights sobre como liderar eticamente um grupo, obter as permissões corretas para usar os dados , e sondar diversas perspectivas; especialmente daqueles que podem ter sido tradicionalmente marginalizados. Este é o caminho preferido, pois permite que diversas vozes contribuam para a avaliação, proporcionando uma perspectiva mais holística sobre a situação da gestão e governação numa área.",
             "cta1": "Baixar protocolo",
             "subtitle2": "Elinor como uma avaliação documental conduzida por profissionais.",
-            "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos. lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com o AG discutirem e responderem cada pergunta, com base em sua experiência e conhecimento do AG. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
+            "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos. lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com a AM discutirem e responderem cada pergunta, com base em sua experiência e conhecimento da AM. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
             "subtitle3": "A pontuação",
             "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             "scoreTable": {
@@ -876,7 +876,7 @@
                 "question1": "Sempre represente as informações com precisão",
                 "answer1": "Os resultados da avaliação são fornecidos com metadados de apoio adicionais, que descrevem sua fonte, como foram compilados, sua qualidade e quaisquer limitações. Certifique-se de que isso se reflita na forma como você usa e apresenta os dados.",
                 "question2": "Sempre reconheça os proprietários dos dados em qualquer apresentação, publicação ou relatório e cite o sistema de dados da Elinor como fonte de informação.",
-                "answer2-1": "Recomendamos usar a seguinte declaração ao usar dados da plataforma Elinor “Expressamos nossa gratidão aos indivíduos e instituições que apoiaram a geração de dados para a Avaliação Elinor em [INSERIR AG OU REGIÃO AQUI], incluindo quaisquer participantes e facilitadores de grupos focais”",
+                "answer2-1": "Recomendamos usar a seguinte declaração ao usar dados da plataforma Elinor “Expressamos nossa gratidão aos indivíduos e instituições que apoiaram a geração de dados para a Avaliação Elinor em [INSERIR AM OU REGIÃO AQUI], incluindo quaisquer participantes e facilitadores de grupos focais”",
                 "answer2-2": {
                     "paragraph1": "Use a seguinte citação para se referir ao sistema de dados Elinor:",
                     "paragraph2": "Elinor: Uma ferramenta e sistema de dados para avaliar a gestão e governança equitativas para a conservação baseada em áreas. (ANO) Disponível em: elinordata.org [Data de acesso]"
@@ -910,63 +910,63 @@
             "elinorAttributes": {
                 "attribute1": {
                     "name": "1. Fronteiras dos recursos",
-                    "description": "Este atributo mede a qualidade dos limites do AG. As questões questionam se os limites da AG são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.",
-                    "useIf": "Você deseja entender se os limites do AG estão bem estabelecidos.",
-                    "reportText": "Mede até que ponto os limites da AG são claramente marcados e compreendidos pelos principais detentores de direitos e outros intervenientes"
+                    "description": "Este atributo mede a qualidade dos limites da AM. As questões questionam se os limites da AM são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.",
+                    "useIf": "Você deseja entender se os limites da AM estão bem estabelecidos.",
+                    "reportText": "Mede até que ponto os limites da AM são claramente marcados e compreendidos pelos principais detentores de direitos e outros intervenientes"
                 },
                 "attribute2": {
                     "name": "2. Aplicação da lei",
-                    "description": "Este atributo mede quão bem a AG é capaz de fazer cumprir os regulamentos. Analisa especificamente as sanções por violação das regras da AG e a sua natureza e extensão.",
+                    "description": "Este atributo mede quão bem a AM é capaz de fazer cumprir os regulamentos. Analisa especificamente as sanções por violação das regras da AM e a sua natureza e extensão.",
                     "useIf": "Você gostaria de ter uma compreensão preliminar sobre a violação de regras na AM e se existe informação que possa facilitar as atividades de M&A ou contribuir para a gestão adaptativa.",
-                    "reportText": "Mede quão bem a AG é capaz de fazer cumprir os regulamentos"
+                    "reportText": "Mede quão bem a AM é capaz de fazer cumprir os regulamentos"
                 },
                 "attribute3": {
                     "name": "3. Capacidade de gestão adaptativa",
-                    "description": "Este atributo mede se os decisores responsáveis ​​pela gestão do AG incorporam diferentes formas de conhecimento na sua tomada de decisão. Também pergunta se as condições sociais, ecológicas ou de alterações climáticas são monitorizadas.",
-                    "useIf": "Você gostaria de saber que tipo de informação informa as decisões de gestão na AG.",
+                    "description": "Este atributo mede se os decisores responsáveis ​​pela gestão da AM incorporam diferentes formas de conhecimento na sua tomada de decisão. Também pergunta se as condições sociais, ecológicas ou de alterações climáticas são monitorizadas.",
+                    "useIf": "Você gostaria de saber que tipo de informação informa as decisões de gestão na AM.",
                     "reportText": "Mede se os gestores de CG incorporam diferentes formas de conhecimento na sua tomada de decisão"
                 },
                 "attribute4": {
                     "name": "4. Capacidade operacional",
-                    "description": "Este atributo mede se os responsáveis ​​pela gestão da AG possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
-                    "useIf": "Pretende avaliar a capacidade do sistema de gestão da AG.",
-                    "reportText": "Mede se os responsáveis pela gestão da AG têm recursos para fazê-lo"
+                    "description": "Este atributo mede se os responsáveis ​​pela gestão da AM possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+                    "useIf": "Pretende avaliar a capacidade do sistema de gestão da AM.",
+                    "reportText": "Mede se os responsáveis pela gestão da AM têm recursos para fazê-lo"
                 },
                 "attribute5": {
                     "name": "5. Gestão inclusiva e equitativa",
-                    "description": "Este atributo mede se os responsáveis ​​pela gestão da AG possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
-                    "useIf": "Pretende avaliar a capacidade do sistema de gestão da AG.",
-                    "reportText": "Mede a inclusão e a equidade na gestão das AG, especialmente no que diz respeito aos grupos vulneráveis"
+                    "description": "Este atributo mede se os responsáveis ​​pela gestão da AM possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+                    "useIf": "Pretende avaliar a capacidade do sistema de gestão da AM.",
+                    "reportText": "Mede a inclusão e a equidade na gestão das AM, especialmente no que diz respeito aos grupos vulneráveis"
                 },
                 "attribute6": {
                     "name": "6. Direitos e tomada de decisões claramente definidos",
-                    "description": "Este atributo mede a inclusão e a equidade na gestão das AG, duas componentes importantes da boa governação. As questões sobre inclusão e equidade questionam se as autoridades da AG permitem que os titulares de direitos e outros intervenientes contribuam para as decisões de gestão, se existe uma estratégia para partilhar os benefícios de forma equitativa entre eles, e se a resiliência da comunidade às alterações climáticas é tida em conta na gestão.",
-                    "useIf": "Você deseja compreender se a AG inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
+                    "description": "Este atributo mede a inclusão e a equidade na gestão das AM, duas componentes importantes da boa governação. As questões sobre inclusão e equidade questionam se as autoridades da AM permitem que os titulares de direitos e outros intervenientes contribuam para as decisões de gestão, se existe uma estratégia para partilhar os benefícios de forma equitativa entre eles, e se a resiliência da comunidade às alterações climáticas é tida em conta na gestão.",
+                    "useIf": "Você deseja compreender se a AM inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
                     "reportText": "Mede até que ponto os direitos da comunidade na gestão dos recursos naturais são claramente compreendidos pelos principais detentores de direitos e outros intervenientes"
                 },
                 "attribute7": {
                     "name": "7. Regulamentos claros e coerentes",
-                    "description": "Este atributo mede a qualidade dos regulamentos do AG. Especificamente i) até que ponto são claros e ii) até que ponto se alinham com o contributo dos titulares de direitos e de outros intervenientes na governação do AG, noutros níveis de autoridade de gestão e no contexto social e ambiental em que operam.",
+                    "description": "Este atributo mede a qualidade dos regulamentos da AM. Especificamente i) até que ponto são claros e ii) até que ponto se alinham com o contributo dos titulares de direitos e de outros intervenientes na governação da AM, noutros níveis de autoridade de gestão e no contexto social e ambiental em que operam.",
                     "useIf": "Você deseja entender se os regulamentos são claramente definidos e justos.",
-                    "reportText": "Mede até que ponto os regulamentos de AG são claros e alinhados com os objetivos de governação dos titulares de direitos e de outros intervenientes"
+                    "reportText": "Mede até que ponto os regulamentos de AM são claros e alinhados com os objetivos de governação dos titulares de direitos e de outros intervenientes"
                 },
                 "attribute8": {
                     "name": "8. Transparência e prestação de contas",
-                    "description": "Este atributo mede a transparência, a responsabilização e a resolução de conflitos, aspectos importantes para a boa governação. É importante que as pessoas directamente afectadas pelas decisões de gestão sejam informadas das mesmas antes da sua implementação, que os decisores sejam responsabilizados e que haja oportunidades para a resolução de conflitos. A transparência é medida perguntando se a comunicação de informações da autoridade da AG aos titulares de direitos e outros intervenientes é oportuna, e a responsabilização é medida perguntando se a autoridade da AG enfrenta consequências se não cumprir as suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à forma como eficaz é.",
-                    "useIf": "Se quiser avaliar a qualidade da governação do AG.",
+                    "description": "Este atributo mede a transparência, a responsabilização e a resolução de conflitos, aspectos importantes para a boa governação. É importante que as pessoas directamente afectadas pelas decisões de gestão sejam informadas das mesmas antes da sua implementação, que os decisores sejam responsabilizados e que haja oportunidades para a resolução de conflitos. A transparência é medida perguntando se a comunicação de informações da autoridade da AM aos titulares de direitos e outros intervenientes é oportuna, e a responsabilização é medida perguntando se a autoridade da AM enfrenta consequências se não cumprir as suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à forma como eficaz é.",
+                    "useIf": "Se quiser avaliar a qualidade da governação da AM.",
                     "reportText": "Mede até que ponto as pessoas diretamente afetadas pelas decisões de gestão são informadas delas com antecedência, podem responsabilizar os tomadores de decisão e têm oportunidades de resolução de conflitos."
                 },
                 "attribute9": {
                     "name": "9. Resultados ecológicos percebidos",
-                    "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação da Elinor têm sobre os resultados ecológicos da AG.",
-                    "useIf": "Pretende saber se os envolvidos na AG consideram que os seus objectivos ecológicos estão a ser alcançados.",
-                    "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais do AG."
+                    "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação da Elinor têm sobre os resultados ecológicos da AM.",
+                    "useIf": "Pretende saber se os envolvidos na AM consideram que os seus objectivos ecológicos estão a ser alcançados.",
+                    "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da AM."
                 },
                 "attribute10": {
                     "name": "10. Resultados sociais percebidos",
-                    "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da AG.",
-                    "useIf": "Pretende saber se os envolvidos na AG consideram que os seus objectivos sociais estão a ser alcançados.",
-                    "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais do AG."
+                    "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da AM.",
+                    "useIf": "Pretende saber se os envolvidos na AM consideram que os seus objectivos sociais estão a ser alcançados.",
+                    "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da AM."
                 }
             }
         },
