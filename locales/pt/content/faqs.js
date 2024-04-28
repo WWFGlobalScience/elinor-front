@@ -239,7 +239,7 @@ export default [
     },
     {
         type: 'default',
-        title : 'OK, estou usando a ferramenta. Como decido o que 'conta' como uma área gerenciada ou conservada?',
+        title : 'OK, estou usando a ferramenta. Como decido o que \'conta\' como uma área gerenciada ou conservada?',
         text: `
             <p>
                 Isso depende do seu contexto. Nesta ferramenta, referimo-nos ao limite da área a ser avaliada como
