@@ -26,11 +26,11 @@
                             <li v-for="question in questions.filter(q => q.attribute == attribute.id)">
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
-                                    <span>
+                                    <span
+                                        :set="currentAnswer = group.answers.find(a => a.question == question.key)"
+                                    >
                                         {{
-                                            group.answers.find(a => a.question == question.key).choice !== null ?
-                                            group.answers.find(a => a.question == question.key).choice :
-                                            '-'
+                                            currentAnswer && currentAnswer.choice !== null ? currentAnswer.choice : '-'
                                         }}
                                     </span>
                                 </template>
@@ -58,11 +58,11 @@
                             <li v-for="question in questions.filter(q => q.attribute == attribute.id)">
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
-                                    <span>
+                                    <span
+                                        :set="currentAnswer = group.answers.find(a => a.question == question.key)"
+                                    >
                                         {{
-                                            group.answers.find(a => a.question == question.key).choice !== null ?
-                                            group.answers.find(a => a.question == question.key).choice :
-                                            '-'
+                                            currentAnswer && currentAnswer.choice !== null ? currentAnswer.choice : '-'
                                         }}
                                     </span>
                                 </template>
@@ -90,11 +90,11 @@
                             <li v-for="question in questions.filter(q => q.attribute == attribute.id)">
                                 <p>{{ $t('pages.assessments.edit.tabs.survey.questions.items.'+question.key+'.reportText') }}</p>
                                 <template v-if="group">
-                                    <span>
+                                    <span
+                                        :set="currentAnswer = group.answers.find(a => a.question == question.key)"
+                                    >
                                         {{
-                                            group.answers.find(a => a.question == question.key).choice !== null ?
-                                            group.answers.find(a => a.question == question.key).choice :
-                                            '-'
+                                            currentAnswer && currentAnswer.choice !== null ? currentAnswer.choice : '-'
                                         }}
                                     </span>
                                 </template>
@@ -209,9 +209,8 @@ export default {
             if(this.assessment.attributes){
                 return this.assessment.attributes.indexOf(attribute.id) !== -1;
             }
-            else{
-                return false
-            }
+
+            return false
         },
     }
 };
