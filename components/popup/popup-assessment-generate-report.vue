@@ -201,7 +201,9 @@ export default {
             }
         },
         pdf() {
+            const popup = this;
             var doc = new jsPDF("l", "px", [1440, 1024]);
+
             doc.html(document.querySelector("#key-governances"), {
                 callback: function (doc) {
                     doc.setFont("Montserrat-Medium", "normal");
@@ -218,12 +220,14 @@ export default {
                         x: 0,
                         y: 1024,
                     });
+
+                    popup.close()
                 },
                 x: 0,
                 y: 0,
             });
+
             this.saveFields()
-            this.close()
         }
     }
 };
