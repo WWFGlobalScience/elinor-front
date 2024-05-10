@@ -216,12 +216,11 @@ export default {
                         callback: function(doc) {
                             doc.internal.write(0, "Tw");
                             doc.save("report-score-assessment.pdf");
+                            popup.close()
                         },
                         x: 0,
                         y: 1024,
                     });
-
-                    popup.close()
                 },
                 x: 0,
                 y: 0,
