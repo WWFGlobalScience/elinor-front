@@ -1,73 +1,73 @@
 export default `
 <div class="container">
-    <h1 class="c-title--main">About the assessment</h1>
+    <h1 class="c-title--main">Sobre a avaliação</h1>
     <div class="info-block">
-        <p>The Elinor assessment collects background information on the managed area, and information on nine attributes important for area-based conservation and management through 35 questions.</p>
+        <p>A avaliação Elinor coleta informações de fundo sobre a área de manejo (AM) e informações sobre nove atributos importantes para a conservação e gestão baseada em área através de 35 perguntas.</p>
     </div>
     <div class="info-block">
-        <h2 class="c-title--md">Background Information</h2>
+        <h2 class="c-title--md">Informações de Fundo</h2>
         <div class="g-grid--2-1-lg">
             <div class="g-colspan--1-full-lg">
                 <table class="table-background">
                     <tr>
                         <th>#</th>
-                        <th>Information</th>
+                        <th>Informação</th>
                     </tr>
                     <tr>
                         <td>1.</td>
-                        <td>Name of facilitator responsible for submitting the assessment</td>
+                        <td>Nome do facilitador responsável pela submissão da avaliação</td>
                     </tr>
                     <tr>
                         <td>2.</td>
-                        <td>Name of institution associated with this MA</td>
+                        <td>Nome da instituição associada a esta AM</td>
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>Role of facilitator responsible for submitting the assessment</td>
+                        <td>Função do facilitador responsável pela submissão da avaliação</td>
                     </tr>
                     <tr>
                         <td>4.</td>
-                        <td>Contact details of facilitator submitting the assessment</td>
+                        <td>Detalhes de contato do facilitador que submete a avaliação</td>
                     </tr>
                     <tr>
                         <td>5.</td>
-                        <td>Date of assessment (day/month/year)</td>
+                        <td>Data da avaliação (dia/mês/ano)</td>
                     </tr>
                     <tr>
                         <td>6.</td>
-                        <td>How was the information this assessment gathered?</td>
+                        <td>Como as informações desta avaliação foram coletadas?</td>
                     </tr>
                     <tr>
                         <td>7.</td>
-                        <td>Number of people engaged from key stakeholder groups</td>
+                        <td>Número de pessoas envolvidas dos principais grupos de partes interessadas</td>
                     </tr>
                     <tr>
                         <td>8.</td>
-                        <td>Gender representation of stakeholders consulted</td>
+                        <td>Representação de gênero das partes interessadas consultadas</td>
                     </tr>
                     <tr>
                         <td>9.</td>
-                        <td>Rationale for assessment (e.g. annual monitoring, project baseline)</td>
+                        <td>Justificativa para avaliação (por exemplo, monitoramento anual, linha de base do projeto)</td>
                     </tr>
                     <tr>
                         <td>10.</td>
-                        <td>Name of MA</td>
+                        <td>Nome da AM</td>
                     </tr>
                     <tr>
                         <td>11.</td>
-                        <td>Country/Countries where MA is located</td>
+                        <td>País/Países onde a AM está localizada</td>
                     </tr>
                     <tr>
                         <td>12.</td>
-                        <td>State(s)/Province(s) where MA is located</td>
+                        <td>Estado(s)/Província(s) onde a AM está localizada</td>
                     </tr>
                     <tr>
                         <td>13.</td>
-                        <td>Date of formal establishment (if applicable)</td>
+                        <td>Data de estabelecimento formal (se aplicável)</td>
                     </tr>
                     <tr>
                         <td>14.</td>
-                        <td>Are the rights of the MA authority formally recognized at the…</td>
+                        <td>Os direitos da autoridade da AM são formalmente reconhecidos em...</td>
                     </tr>
                 </table>
             </div>
@@ -75,125 +75,125 @@ export default `
                 <table class="table-background">
                     <tr>
                         <th>#</th>
-                        <th>Information</th>
+                        <th>Informação</th>
                     </tr>
                     <tr>
                         <td>15.</td>
-                        <td>Size of MA (ha)</td>
+                        <td>Tamanho da AM (ha)</td>
                     </tr>
                     <tr>
                         <td>16A.</td>
-                        <td>GPS coordinates of MA</td>
+                        <td>Coordenadas GPS da AM</td>
                     </tr>
                     <tr>
                         <td>16B.</td>
-                        <td>Map or spatial file of MA</td>
+                        <td>Mapa ou arquivo espacial da AM</td>
                     </tr>
                     <tr>
                         <td>17.</td>
-                        <td>MA governance type</td>
+                        <td>Tipo de governança da AM</td>
                     </tr>
                     <tr>
                         <td>18.</td>
-                        <td>MA objectives</td>
+                        <td>Objetivos da AM</td>
                     </tr>
                     <tr>
                         <td>19.</td>
-                        <td>Name of management authority</td>
+                        <td>Nome da autoridade de gestão</td>
                     </tr>
                     <tr>
                         <td>20.</td>
-                        <td>Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?</td>
+                        <td>A autoridade de gestão da AM recebe suporte técnico, financeiro ou de outros tipos de algum dos seguintes grupos ou organizações?</td>
                     </tr>
                     <tr>
                         <td>21A.</td>
-                        <td>Focal area within MA</td>
+                        <td>Área focal dentro da AM</td>
                     </tr>
                     <tr>
                         <td>21B.</td>
-                        <td>Name of larger PA/CA this focal area is contained within</td>
+                        <td>Nome da Área Protegida/Conservada maior na qual esta área focal está contida</td>
                     </tr>
                     <tr>
                         <td>22.</td>
-                        <td>Associated ID in World Database on Protected Areas</td>
+                        <td>ID associado no Banco de Dados Mundial sobre Áreas Protegidas</td>
                     </tr>
                     <tr>
                         <td>23.</td>
-                        <td>Consent from MA authority</td>
+                        <td>Consentimento da autoridade da AM</td>
                     </tr>
                 </table>
             </div>
         </div>
     </div>
     <div class="info-block">
-        <h2 class="c-title--md">A summary of the attributes measured with Elinor</h2>
+        <h2 class="c-title--md">Um resumo dos atributos medidos com Elinor</h2>
         <table class="table-background">
             <tr>
-                <th>Attribute name</th>
-                <th>Attribute definition </th>
-                <th>Use this attribute if…</th>
+                <th>Nome do Atributo</th>
+                <th>Definição do Atributo</th>
+                <th>Use este atributo se...</th>
             </tr>
             <tr>
-                <td>1. Resource boundaries</td>
-                <td><p>This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant rights-holders and other actors.</p></td>
-                <td><p>You wish to understand whether the boundaries of the MA are well established.</p></td>
+                <td>1. Fronteiras dos recursos</td>
+                <td><p>Este atributo mede a qualidade das fronteiras da AM. As perguntas verificam se as fronteiras da AM são i) facilmente identificáveis e ii) conhecidas por todos os detentores de direitos relevantes e outros atores.</p></td>
+                <td><p>Você deseja entender se as fronteiras da AM estão bem estabelecidas.</p></td>
             </tr>
             <tr>
-                <td>2. Enforcement</td>
+                <td>2. Aplicação da lei</td>
                 <td>
-                    <p>This attribute measures how well the MA is able to enforce regulations.</p>
-                    <p>It looks specifically at penalties for breaking MA rules and their nature and extent.</p>
+                    <p>Este atributo mede como a AM consegue fazer cumprir as regulamentações.</p>
+                    <p>Especifica-se as penalidades por violar as regras da AM e sua natureza e extensão.</p>
                 </td>
-                <td><p>You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.</p></td>
+                <td><p>Você gostaria de um entendimento preliminar sobre a violação das regras na AM e se existe informação que possa facilitar atividades de monitoramento e avaliação ou contribuir para a gestão adaptativa.</p></td>
             </tr>
             <tr>
-                <td>3. Capacity for adaptive management</td>
-                <td><p>This attribute measures whether decision-makers responsible for managing the MA incorporate different forms of knowledge into their decision-making. It also asks whether social, ecological or climate change conditions are monitored.</p></td>
-                <td><p>You would like to know what sort of information informs management decisions in the MA.</p></td>
+                <td>3. Capacidade para gestão adaptativa</td>
+                <td><p>Este atributo mede se os tomadores de decisão responsáveis pela gestão da AM incorporam diferentes formas de conhecimento em suas decisões. Também pergunta se as condições sociais, ecológicas ou de mudanças climáticas são monitoradas.</p></td>
+                <td><p>Você gostaria de saber que tipo de informação informa as decisões de gestão na AM.</p></td>
             </tr>
             <tr>
-                <td>4. Operational capacity</td>
-                <td><p>This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.</p></td>
-                <td><p>You wish to assess the capacity of the MA’s management system.</p></td>
+                <td>4. Capacidade operacional</td>
+                <td><p>Este atributo mede se aqueles responsáveis pela gestão da AM possuem os recursos para fazê-lo. Especificamente, analisa os recursos humanos, capacidade de execução, orçamento e necessidades de equipamento.</p></td>
+                <td><p>Você deseja avaliar a capacidade do sistema de gestão da AM.</p></td>
             </tr>
             <tr>
-                <td>5. Inclusive and equitable management</td>
+                <td>5. Gestão inclusiva e equitativa</td>
                 <td>
-                    <p>This attribute measures inclusivity and equity in MA management, two important components of good governance.</p>
-                    <p>Questions on inclusion and equity ask whether the MA authorities allow for rights-holders and other actors to contribute to management decisions, if there is a strategy for sharing the benefits equitably among them, and whether community resilience to climate change is factored into management.</p>
+                    <p>Este atributo mede a inclusividade e equidade na gestão da AM, dois componentes importantes da boa governança.</p>
+                    <p>As perguntas sobre inclusão e equidade questionam se as autoridades da AM permitem que os detentores de direitos e outros atores contribuam para as decisões de gestão, se existe uma estratégia para compartilhar os benefícios de maneira equitativa entre eles, e se a resiliência da comunidade às mudanças climáticas é considerada na gestão.</p>
                 </td>
-                <td><p>You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.</p></td>
+                <td><p>Você deseja entender se a AM inclui grupos vulneráveis nas decisões e resultados da gestão.</p></td>
             </tr>
             <tr>
-                <td>6. Clearly defined rights and decision making</td>
+                <td>6. Direitos claramente definidos e tomada de decisão</td>
                 <td>
-                    <p>This attribute measures community rights in natural resource management.</p>
-                    <p>Rights are extremely important as they lay the foundation (providing incentives or disincentives) for local community stakeholders to meaningfully engage in managing natural resources and in conservation.</p>
+                    <p>Este atributo mede os direitos da comunidade na gestão de recursos naturais.</p>
+                    <p>Os direitos são extremamente importantes pois eles estabelecem a base (fornecendo incentivos ou desincentivos) para os stakeholders da comunidade local se engajarem significativamente na gestão de recursos naturais e na conservação.</p>
                 </td>
-                <td><p>You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.</p></td>
+                <td><p>Você deseja avaliar o controle das comunidades locais sobre, ou acesso aos, recursos naturais na AM em que trabalha.</p></td>
             </tr>
             <tr>
-                <td>7. Clear and congruent regulations</td>
-                <td><p>This attribute measures the quality of MA regulations.  Specifically i) how clear they are and ii) how well they align with rights-holders and other actors’ input into MA governance, other levels of management authority, and the social and environmental context in which they operate.</p></td>
-                <td><p>You wish to understand whether the regulations are clearly stated and fair.</p></td>
+                <td>7. Regulamentos claros e congruentes</td>
+                <td><p>Este atributo mede a qualidade das regulamentações da AM. Especificamente i) quão claras elas são e ii) quão bem elas se alinham com a entrada dos detentores de direitos e outros atores na governança da AM, outros níveis de autoridade de gestão, e o contexto social e ambiental em que operam.</p></td>
+                <td><p>Você deseja entender se os regulamentos são claramente declarados e justos.</p></td>
             </tr>
             <tr>
-                <td>8. Transparency and accountability</td>
+                <td>8. Transparência e responsabilidade</td>
                 <td>
-                    <p>This attribute measures transparency, accountability, and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision-makers are held to account and there are opportunities for conflict resolution.</p>
-                    <p>Transparency is measured by asking whether the MA authority’s communication of information to rights-holders and other actors is timely, and accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.</p>
+                    <p>Este atributo mede a transparência, responsabilidade e resolução de conflitos, todos importantes para uma boa governança. É importante que as pessoas diretamente impactadas pelas decisões de gestão sejam informadas delas antes de serem implementadas, que os tomadores de decisão sejam responsabilizados e que existam oportunidades para resolução de conflitos.</p>
+                    <p>A transparência é medida perguntando se a comunicação da autoridade da AM com os detentores de direitos e outros atores é oportuna, e a responsabilidade é medida perguntando se a autoridade da AM enfrenta consequências se não cumprir suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à sua eficácia.</p>
                 </td>
-                <td><p>If you want to assess the quality of MA governance.</p></td>
+                <td><p>Se você quiser avaliar a qualidade da governança da AM.</p></td>
             </tr>
             <tr>
-                <td>9. Perceived ecological outcomes</td>
-                <td><p>This attribute measures the general perceptions that those completing the Elinor assessment have on the ecological outcomes of the MA.</p></td>
-                <td><p>You wish to know whether those involved in the MA think its ecological objectives are being achieved.</p></td>
+                <td>9. Resultados ecológicos percebidos</td>
+                <td><p>Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos da AM.</p></td>
+                <td><p>Você deseja saber se os envolvidos na AM consideram que seus objetivos ecológicos estão sendo alcançados.</p></td>
             </tr>
-\t\t\t<tr>
-                <td>10. Perceived social outcomes</td>
-                <td><p>This attribute measures the general perceptions that those completing the Elinor assessment have on the social outcomes of the MA.</p></td>
-                <td><p>You wish to know whether those involved in the MA think its social objectives are being achieved.</p></td>
+            <tr>
+                <td>10. Resultados sociais percebidos</td>
+                <td><p>Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da AM.</p></td>
+                <td><p>Você deseja saber se os envolvidos na AM consideram que seus objetivos sociais estão sendo alcançados.</p></td>
             </tr>
         </table>
     </div>
@@ -201,92 +201,92 @@ export default `
     <div class="info-block">
         <table class="table-background">
             <tr>
-                <th>ATTRIBUTES</th>
-                <th>QUESTIONS</th>
+                <th>ATRIBUTOS</th>
+                <th>QUESTÕES</th>
             </tr>
             <tr>
-                <td><p>1. Resource boundaries</p></td>
+                <td><p>1. Fronteiras dos recursos</p></td>
                 <td>
-                    <p>(Q1) Is the boundary known by all rights-holders and other actors?</p>
-                    <p>(Q2) Is the boundary clearly defined?</p>
+                    <p>(Q1) A fronteira é conhecida por todos os detentores de direitos e outros atores?</p>
+                    <p>(Q2) A fronteira está claramente definida?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>2. Enforcement</p></td>
+                <td><p>2. Aplicação da lei</p></td>
                 <td>
-                    <p>(Q3) How often are the penalties for breaking resource use rules administered?</p>
-                    <p>(Q4) To what extent do penalties for breaking rules for the use of resources depend upon the nature, severity, or frequency of the infraction?</p>
+                    <p>(Q3) Com que frequência são aplicadas as penalidades por violação das regras de uso dos recursos?</p>
+                    <p>(Q4) Em que medida as penalidades por violação das regras para o uso dos recursos dependem da natureza, gravidade ou frequência da infração?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>3. Capacity for adaptive management</p></td>
+                <td><p>3. Capacidade para gestão adaptativa</p></td>
                 <td>
-\t\t\t\t<p>(Q5) Are systems in place to monitor and document ecological conditions in the MA?</p>
-                    <p>(Q6) Are systems in place to monitor and document the social conditions of communities in and/or adjacent to the MA?</p>
-                    <p>(Q7) Are systems in place to monitor and document the impacts of climate change?</p>
-                    <p>(Q8) Do those responsible for managing the MA integrate different types of knowledge (scientific, experiential, local, and traditional) into management decisions?</p>
-                    <p>(Q9) Are the results of monitoring, research and evaluation routinely incorporated into decisions and/or policies related to MA management?</p>
-                    <p>(Q10) Is the MA consciously managed to adapt to climate change?</p>
+                    <p>(Q5) Existem sistemas para monitorar e documentar as condições ecológicas na AM?</p>
+                    <p>(Q6) Existem sistemas para monitorar e documentar as condições sociais das comunidades na e/ou adjacente à AM?</p>
+                    <p>(Q7) Existem sistemas para monitorar e documentar os impactos das mudanças climáticas?</p>
+                    <p>(Q8) Aqueles responsáveis pela gestão da AM integram diferentes tipos de conhecimento (científico, experencial, local e tradicional) nas decisões de gestão?</p>
+                    <p>(Q9) Os resultados do monitoramento, pesquisa e avaliação são rotineiramente incorporados em decisões e/ou políticas relacionadas à gestão da AM?</p>
+                    <p>(Q10) A AM é gerenciada conscientemente para se adaptar às mudanças climáticas?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>4. Operational capacity</p></td>
+                <td><p>4. Capacidade operacional</p></td>
                 <td>
-                    <p>(Q11) Do those responsible for managing the MA (e.g., staff, community associations, management groups) have the capacity to enforce the rules and regulations?</p>
-                    <p>(Q12) Are there enough people employed or engaged to manage the MA?</p>
-                    <p>(Q13) Do those responsible for managing the MA have sufficient capacity (e.g., information and adequate skills) to fulfill management objectives?</p>
-                    <p>(Q14) Is the current budget or funds used to support MA activities sufficient?</p>
-                    <p>(Q15) Is the budget or funding secure?</p>
-                    <p>(Q16) Is the equipment sufficient for management needs?</p>
+                    <p>(Q11) Aqueles responsáveis pela gestão da AM (por exemplo, equipe, associações comunitárias, grupos de gestão) têm capacidade para fazer cumprir as regras e regulamentos?</p>
+                    <p>(Q12) Há pessoas suficientes empregadas ou envolvidas na gestão da AM?</p>
+                    <p>(Q13) Aqueles responsáveis pela gestão da AM têm capacidade suficiente (por exemplo, informações e habilidades adequadas) para cumprir os objetivos de gestão?</p>
+                    <p>(Q14) O orçamento ou fundos atuais usados para apoiar as atividades da AM são suficientes?</p>
+                    <p>(Q15) O orçamento ou financiamento é seguro?</p>
+                    <p>(Q16) O equipamento é suficiente para as necessidades de gestão?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>5. Inclusive and equitable management</p></td>
+                <td><p>5. Gestão inclusiva e equitativa</p></td>
                 <td>
-                    <p>(Q17) To what extent are rights-holders and other actors affected by the rules of the MA able to play a role in making changes to the rules?</p>
-                    <p>(Q18) Do women or other vulnerable groups living in the local community have clearly defined rights to natural resources within the MA?</p>
-                    <p>(Q19) Is there an effective strategy or approach for ensuring benefits from the MA are shared equitably among rights-holders and other actors?</p>
-                    <p>(Q20) Do networks exist that develop social relations and support mutual learning among rights-holders and other actors?</p>
-                    <p>(Q21) Is the information on climate change being used to inform strategies to build community resilience to climate change?</p>
+                    <p>(Q17) Até que ponto os detentores de direitos e outros atores afetados pelas regras da AM podem participar na alteração das regras?</p>
+                    <p>(Q18) As mulheres ou outros grupos vulneráveis da comunidade local têm direitos claramente definidos aos recursos naturais dentro da AM?</p>
+                    <p>(Q19) Existe uma estratégia eficaz ou abordagem para garantir que os benefícios da AM sejam compartilhados de forma equitativa entre os detentores de direitos e outros atores?</p>
+                    <p>(Q20) Existem redes que desenvolvem relações sociais e apoiam a aprendizagem mútua entre detentores de direitos e outros atores?</p>
+                    <p>(Q21) As informações sobre mudanças climáticas estão sendo usadas para informar estratégias para construir resiliência comunitária às mudanças climáticas?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>6. Clearly defined rights and decision making</p></td>
+                <td><p>6. Direitos claramente definidos e tomada de decisão</p></td>
                 <td>
-                    <p>(Q22) Are there formal or informal rules that clearly define who has what rights to harvest resources within the MA?</p>
-                    <p>(Q23) Are there formal or informal mechanisms that clearly define who has what rights to develop rules for the use of resources within the MA?</p>
-                    <p>(Q24) Are there formal or informal rules that clearly define the rights of local stakeholders to exclude other groups from harvesting resources within the MA?</p>
-                    <p>(Q25) Is there legislation in place to enable resource management by rights-holders and other actors?</p>
-                    <p>(Q26) Are those with rights to access natural resources able to exercise their rights?</p>
+                    <p>(Q22) Existem regras formais ou informais que definem claramente quem tem quais direitos para colher recursos dentro da AM?</p>
+                    <p>(Q23) Existem mecanismos formais ou informais que definem claramente quem tem quais direitos para desenvolver regras para o uso de recursos dentro da AM?</p>
+                    <p>(Q24) Existem regras formais ou informais que definem claramente os direitos dos stakeholders locais para excluir outros grupos de colher recursos dentro da AM?</p>
+                    <p>(Q25) Existe legislação em vigor para permitir a gestão de recursos por detentores de direitos e outros atores?</p>
+                    <p>(Q26) Aqueles com direitos de acesso aos recursos naturais conseguem exercer seus direitos?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>7. Clear and congruent regulations</p></td>
+                <td><p>7. Regulamentos claros e congruentes</p></td>
                 <td>
-                    <p>(Q27) Is the amount that a person is allowed to benefit from resources within the MA related to their contributions to the governance of the MA (in terms of time and/or resources contributed)?</p>
-                    <p>(Q28) Do different levels of management exist within the MA that function as a coordinated unit?</p>
-                    <p>(Q29) Are appropriate regulations in place to control natural resource-based activities in the MA?</p>
-                    <p>(Q30) Is there a management plan for the MA and is it being implemented?</p>
+                    <p>(Q27) A quantidade que uma pessoa pode se beneficiar dos recursos dentro da AM está relacionada às suas contribuições para a governança da AM (em termos de tempo e/ou recursos contribuídos)?</p>
+                    <p>(Q28) Existem diferentes níveis de gestão dentro da AM que funcionam como uma unidade coordenada?</p>
+                    <p>(Q29) Existem regulamentações apropriadas em vigor para controlar atividades baseadas em recursos naturais na AM?</p>
+                    <p>(Q30) Existe um plano de gestão para a AM e ele está sendo implementado?</p>
                 </td>
             </tr>
             <tr>
-                <td><p>8. Transparency and accountability</p></td>
+                <td><p>8. Transparência e responsabilidade</p></td>
                 <td>
-                    <p>(Q31) Are those responsible for the governance of the MA held to account if they do not perform their role?</p>
-                    <p>(Q32) Do rights-holders and other actors receive information from MA authorities in a timely manner?</p>
-                    <p>(Q33) Do rights-holders and other actors have access to effective conflict resolution mechanisms?</p>
+                    <p>(Q31) Aqueles responsáveis pela governança da AM são responsabilizados se não desempenharem seu papel?</p>
+                    <p>(Q32) Os detentores de direitos e outros atores recebem informações das autoridades da AM de forma oportuna?</p>
+                    <p>(Q33) Os detentores de direitos e outros atores têm acesso a mecanismos eficazes de resolução de conflitos?</p>
                 </td>
             </tr>
             <tr>
-                <td>9. Perceived ecological outcomes</td>
+                <td>9. Resultados ecológicos percebidos</td>
                 <td>
-                    <p>(Q34) To what extent do you feel the ecological outcomes are being achieved?</p>
-                    </td>
+                    <p>(Q34) Até que ponto você acredita que os resultados ecológicos estão sendo alcançados?</p>
+                </td>
             </tr>
             <tr>
-\t\t\t                <td>9. Perceived social outcomes</td>
+                <td>9. Resultados sociais percebidos</td>
                 <td>
-                    <p>(Q35) To what extent do you feel the social outcomes are being achieved?</p>
+                    <p>(Q35) Até que ponto você acredita que os resultados sociais estão sendo alcançados?</p>
                 </td>
             </tr>
         </table>

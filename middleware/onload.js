@@ -3,4 +3,5 @@ export default function ({store, app, $axios}) {
     $axios.setHeader('Accept-Language', locale && locale.code || 'en-US');
     store.dispatch('attributes/fetchAttributes')
     store.dispatch('surveyquestions/fetchSurveyQuestions')
+    store.dispatch('countries/load')
 }

@@ -74,7 +74,7 @@
                 <div class="radios__wrap">
                     <div class="radio__wrap">
                         <div class="radio">
-                            <input type="checkbox" name="answer" id="dontShowAgain" value="1" :checked="false" @change="showAgain($event.target.value)">
+                            <input type="checkbox" name="answer" id="dontShowAgain" value="1" :checked="false" @change="dontShowAgain($event.target.value)">
                             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDEyIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQuMTcyMzIgNi44OTk5MUwxMC45NjYxIDBMMTIgMS4wNTAwNEw0LjE3MjMyIDlMMCA0Ljc2MjUxTDEuMDMzODkgMy43MTI0N0w0LjE3MjMyIDYuODk5OTFaIiBmaWxsPSIjMzU5RTk4Ii8+DQo8L3N2Zz4NCg==">
                         </div>
                         <label for="dontShowAgain" class="label">{{ $t('pages.assessments.popup.label') }}</label>
@@ -105,12 +105,9 @@ export default {
         close() {
             this.popupState( { active: false });
         },
-        showAgain(value) {
-            if(value === '1') {
-                localStorage.setItem('onboarding', '0');
-            } else {
-                localStorage.removeItem('onboarding');
-            }
+        dontShowAgain() {
+            localStorage.setItem('onboarding', '0');
+            this.close();
         }
     }
 }
