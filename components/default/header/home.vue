@@ -8,16 +8,6 @@
           </a>
         </li>
         <li>
-          <a role="button" class="btn--opacity--child" v-scroll-to="'#faqs'">
-            <span class="btn--opacity__target">{{ $t('pages.home.header.faqsLink') }}</span>
-          </a>
-        </li>
-        <li>
-          <a role="button" class="btn--opacity--child" v-scroll-to="'#methodology'">
-            <span class="btn--opacity__target">{{ $t('pages.home.header.methodologyLink') }}</span>
-          </a>
-        </li>
-        <li>
           <nuxt-link to="contact" role="button" class="btn--opacity--child">
             <span class="btn--opacity__target">{{ $t('pages.home.header.contactLink') }}</span>
           </nuxt-link>

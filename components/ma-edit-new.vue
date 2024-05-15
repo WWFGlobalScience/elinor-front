@@ -862,13 +862,16 @@ export default {
             authorities: state => state.managementareas.authorities,
             stakeholderGroups: state => state.stakeholdergroups.list,
             supportSources: state => state.supportsources.list,
-            countries: state => state.countries.list,
             regions: state => state.regions.list,
             protectedAreas: state => state.protectedareas.list,
             zones: state => state.managementareas.zones,
             editWdpaId: state => state.managementareas.editWdpaId,
             editWdpaIdError: state => state.managementareas.editWdpaIdError
-        })
+        }),
+        countries() {
+            const state = this.$store.state;
+            return state.countries.list[this.$i18n.locale]
+        }
     },
     methods: {
         save(field, value) {

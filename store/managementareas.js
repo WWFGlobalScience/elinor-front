@@ -30,21 +30,21 @@ const mapToForeignKeys = (form) => {
     return data;
 }
 
-const mapToForm = (state, data) => {
+const mapToForm = (state, data, locale) => {
     return {
         ...data,
         countries: data.countries && data.countries.map(country => {
             return {
                 code: country,
-                name: state.rootState.countries.list.filter(c => c.code === country)[0].name
+                name: state.rootState.countries.list[locale].filter(c => c.code === country)[0].name
             }
         }),
         recognition_level: data.recognition_level || []
     };
 }
 
-const mapCollectionToForm = (state, collection) => {
-    return collection.map((item) => mapToForm(state, item));
+const mapCollectionToForm = (state, collection, locale) => {
+    return collection.map((item) => mapToForm(state, item, locale));
 }
 
 export const mutations = {
@@ -111,12 +111,14 @@ export const mutations = {
 export const actions = {
     async fetchManagementAreas(state, search) {
         const response = await this.$axios.$get(`v2/managementareas/?search=${search}`)
-        const managementAreas = mapCollectionToForm(state, response.results);
+        const locale = this.$i18n.locale;
+        const managementAreas = mapCollectionToForm(state, response.results, locale);
         state.commit('setList', managementAreas)
     },
     async fetchManagementArea(state, id) {
         const response = await this.$axios.$get(`v2/managementareas/${id}/`)
-        const managementArea = mapToForm(state, response)
+        const locale = this.$i18n.locale;
+        const managementArea = mapToForm(state, response, locale)
         state.commit('setInstance', managementArea)
         state.commit('assessments/setManagementArea', response, {root:true})
         await state.dispatch('fetchZones', id);
@@ -145,7 +147,7 @@ export const actions = {
             value = value.map(country => {
                 return {
                     code: country,
-                    name: state.rootState.countries.list.filter(c => c.code === country)[0].name
+                    name: state.rootState.countries.list[this.$i18n.locale].filter(c => c.code === country)[0].name
                 }
             })
         }

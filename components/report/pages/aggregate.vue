@@ -87,7 +87,7 @@ export default {
     computed: {
         ...mapState({
             attributes: state => state.attributes.list,
-            countries: state => state.countries.list
+            countries: state => state.countries.list[this.$i18n.locale]
         }),
         score(){
             var sum = this.assessments.reduce( function(a, b){

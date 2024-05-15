@@ -337,52 +337,6 @@
             </div>
         </section>
 
-        <section class="section section--latest-news">
-            <div class="container">
-                <div class="row">
-                    <div class="text-medium uppercase">
-                        {{ $t("pages.home.public.latestNews.title") }}
-                    </div>
-                    <nuxt-link to="/news" role="button" class="link-arrow">
-                        <span>{{
-                            $t("pages.home.public.latestNews.seeMoreNews")
-                        }}</span>
-                        <img
-                            class="ico"
-                            src="~/assets/img/ico-arrow-right.svg"
-                        />
-                    </nuxt-link>
-                </div>
-                <div class="row row--cards mt-9">
-                    <div
-                        v-for="newsInstance in latestNews"
-                        class="latest-news__card ui-rounded-border"
-                    >
-                        <div class="header">
-                            <p class="date">{{ newsInstance.date }}</p>
-                            <h3 class="title c-title--md text-turqy mt-2">
-                                {{ newsInstance.title }}
-                            </h3>
-                        </div>
-                        <div class="body">
-                            <p class="text c-text--base">
-                                {{
-                                    newsInstance.text.length > maxCharacters
-                                        ? newsInstance.text.substring(
-                                              0,
-                                              maxCharacters
-                                          ) + "..."
-                                        : newsInstance.text
-                                }}
-                            </p>
-                            <nuxt-link to="news" class="link-more mt-4">{{
-                                $t("pages.home.public.latestNews.readMore")
-                            }}</nuxt-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="about" class="section section--text section--img-text">
             <div class="container">
@@ -509,121 +463,8 @@
             </div>
         </section>
 
-        <section id="faqs" class="section section--text section--img-text">
-            <div class="section--img-text__block is-flushed items-center">
-                <div class="container">
-                    <div class="section--img-text__block-text">
-                        <h4 class="c-title--block">
-                            {{ $t("pages.home.public.content.faqs.title") }}
-                        </h4>
-                        <p>{{ $t("pages.home.public.content.faqs.text") }}</p>
+        <section id="faqs" class="section section--text section--img-text" style="padding-top: 1rem; padding-bottom: 1rem">
 
-                        <NuxtLink to="/faq" class="btn btn--opacity--child">
-                            <span class="btn--opacity__target">{{
-                                $t("pages.home.public.content.faqs.button")
-                            }}</span>
-                            <img src="~/assets/img/ico-button-arrow.svg" />
-                        </NuxtLink>
-                    </div>
-                </div>
-                <div>
-                    <img class="w-full" src="~/assets/img/faq.jpg" />
-                </div>
-            </div>
-            <div
-                id="methodology"
-                class="section--img-text__block is-flushed items-center"
-            >
-                <div>
-                    <img class="w-full" src="~/assets/img/methodology.jpg" />
-                </div>
-                <div class="container">
-                    <div class="section--img-text__block-text">
-                        <h4 class="c-title--block">
-                            {{
-                                $t(
-                                    "pages.home.public.content.methodology.title"
-                                )
-                            }}
-                        </h4>
-                        <p>
-                            {{
-                                $t("pages.home.public.content.methodology.text")
-                            }}
-                        </p>
-                        <div class="section--img-text__block-nested">
-                            <h5 class="c-epi">
-                                {{
-                                    $t(
-                                        "pages.home.public.content.methodology.score"
-                                    )
-                                }}
-                            </h5>
-                            <p>
-                                {{
-                                    $t(
-                                        "pages.home.public.content.methodology.text2"
-                                    )
-                                }}
-                            </p>
-                            <div class="score-legend ui-rounded-border">
-                                <div class="item-legend">
-                                    <span
-                                        class="w-7 h-7 rounded-full bg-poor"
-                                    ></span>
-                                    <span class="text">{{
-                                        $t(
-                                            "pages.home.public.content.methodology.plan"
-                                        )
-                                    }}</span>
-                                </div>
-                                <div class="item-legend">
-                                    <span
-                                        class="w-7 h-7 rounded-full bg-average"
-                                    ></span>
-                                    <span class="text">{{
-                                        $t(
-                                            "pages.home.public.content.methodology.build"
-                                        )
-                                    }}</span>
-                                </div>
-                                <div class="item-legend">
-                                    <span
-                                        class="w-7 h-7 rounded-full bg-good"
-                                    ></span>
-                                    <span class="text">{{
-                                        $t(
-                                            "pages.home.public.content.methodology.strengthen"
-                                        )
-                                    }}</span>
-                                </div>
-                                <div class="item-legend">
-                                    <span
-                                        class="w-7 h-7 rounded-full bg-excellent"
-                                    ></span>
-                                    <span class="text">{{
-                                        $t(
-                                            "pages.home.public.content.methodology.maintain"
-                                        )
-                                    }}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <NuxtLink
-                            to="/methodology"
-                            class="btn btn--opacity--child"
-                        >
-                            <span class="btn--opacity__target">{{
-                                $t(
-                                    "pages.home.public.content.methodology.button"
-                                )
-                            }}</span>
-                            <img src="~/assets/img/ico-button-arrow.svg" />
-                        </NuxtLink>
-                    </div>
-                </div>
-            </div>
         </section>
         <default-footer></default-footer>
     </article>
@@ -659,7 +500,7 @@ export default {
                 },
                 {
                     id: "nA5LNNuqpKQ",
-                    title: "How to create a new assestment"
+                    title: "How to create a new assessment"
                 },
                 {
                     id: "CX8LucMtgdg",
@@ -681,14 +522,7 @@ export default {
         ...mapState({
             alerts: state => state.authentication.alerts,
             error: state => state.authentication.error
-        }),
-        latestNews() {
-            const currentLanguage = this.$i18n.locales.find(
-                lang => lang.code === this.$i18n.locale
-            );
-            const news = locales[currentLanguage.code].news;
-            return [...news].splice(0, numNews);
-        }
+        })
     },
 
     mounted() {
