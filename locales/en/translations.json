@@ -796,6 +796,18 @@
             }
         },
         "methodologyPage": {
+            "home": {
+                "meta": {
+                    "title": "Methodology",
+                    "slug": "/methodology",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "title": "Methodology",
             "paragraph1": "The Elinor assessment can be completed in two different ways: Through a facilitated focus group with different stakeholders involved in and affected by the MA, or as a desk-based assessment led by a conservation practitioner. When inputting data, users can indicate which pathway they took to generate the data in the assessment and what types of stakeholders were engaged in the assessment.",
             "subtitle1": "Elinor as a field-based focus group discussion",

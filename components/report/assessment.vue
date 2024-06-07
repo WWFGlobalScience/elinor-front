@@ -1,7 +1,8 @@
 <template>
     <div v-if="loaded">
         <report-pages-key-governances :keys="keys" :form="form"></report-pages-key-governances>
-        <report-pages-total-scores></report-pages-total-scores>
+        <report-pages-total-scores-page1></report-pages-total-scores-page1>
+        <report-pages-total-scores-page2></report-pages-total-scores-page2>
     </div>
 </template>
 <script>
@@ -42,14 +43,24 @@ export default {
                     doc.setFont("Montserrat-Bold", "normal");
                     doc.internal.write(0, "Tw");
 
-                    doc.addPage([1440, 1024],"l");
-                    doc.html(document.querySelector("#total-scores"), {
-                        callback: function(doc) {
-                            doc.setFont("Montserrat-Medium", "normal");
-                            doc.setFont("Montserrat-SemiBold", "normal");
-                            doc.setFont("Montserrat-Bold", "normal");
-                            doc.internal.write(0, "Tw");
-                            doc.save("report-score-assessment.pdf");
+                    doc.html(document.querySelector("#total-scores-page-1"), {
+                        callback: function(doc2) {
+                            doc2.setFont("Montserrat-Medium", "normal");
+                            doc2.setFont("Montserrat-SemiBold", "normal");
+                            doc2.setFont("Montserrat-Bold", "normal");
+                            doc2.internal.write(0, "Tw");
+
+                            doc2.html(document.querySelector("#total-scores-page-2"), {
+                                callback: function(doc3) {
+                                    doc3.setFont("Montserrat-Medium", "normal");
+                                    doc3.setFont("Montserrat-SemiBold", "normal");
+                                    doc3.setFont("Montserrat-Bold", "normal");
+                                    doc3.internal.write(0, "Tw");
+                                    doc3.save("report-score-assessment.pdf");
+                                },
+                                x: 0,
+                                y: 1024,
+                            });
                         },
                         x: 0,
                         y: 1024,

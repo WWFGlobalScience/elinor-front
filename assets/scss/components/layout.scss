@@ -195,15 +195,16 @@ main {
         @apply col-start-2 col-end-4 row-span-full p-10 pt-4 flex flex-col relative;
     }
     .container-report {
-        @apply grid grid-cols-3 gap-6 h-full pt-8 static;
+        @apply grid grid-cols-2 gap-6 h-full pt-8 static;
         .col-report {
-            @apply h-full flex flex-col gap-5 justify-between;
-            &:last-child {
-                @apply justify-start;
-                div {
-                    &:last-child {
-                        @apply mt-auto;
-                    }
+            @apply h-full flex flex-col gap-10 justify-start;
+        }
+    }
+    .container-report {
+        .col-report.legend:last-child {
+            div {
+                &:last-child {
+                    @apply mt-auto;
                 }
             }
         }
