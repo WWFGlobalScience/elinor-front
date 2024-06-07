@@ -3,9 +3,11 @@
         <div class="w-[230px]">
             <div class="input input--multiselect">
                 <div class="multiselect__wrap multiselect__wrap--map">
-                    <multiselect 
+                    <multiselect
                         :value="country"
-                        :options="['', ...this.countries]"
+                        :options="countries"
+                        track-by="code"
+                        label="name"
                         :searchable="false"
                         :close-on-select="true"
                         :show-labels="false"
@@ -47,12 +49,22 @@ import {mapState, mapActions} from "vuex";
 
 export default {
     name: "map-form",
-    props: ['countries', 'attributes'],
+    props: ['mapCountries', 'attributes'],
     computed: {
         ...mapState({
             attribute: state => state.map.filters.attribute,
             country: state => state.map.filters.country
-        })
+        }),
+        countries() {
+            const state = this.$store.state;
+            const englishCountries = state.countries.list['en'];
+            const localeCountries = state.countries.list[this.$i18n.locale];
+            const englishCountriesCodes = englishCountries
+                .filter(country => this.mapCountries.indexOf(country.name) !== -1)
+                .map(country => country.code);
+
+            return localeCountries.filter(country => englishCountriesCodes.indexOf(country.code) !== -1);
+        }
     },
     methods: {
         ...mapActions({

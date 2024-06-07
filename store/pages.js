@@ -71,6 +71,29 @@ export const state = () => ({
             }
         },
         {
+            path: "/methodology",
+            config: {
+                display: {
+                    sidebar: true,
+                    auth: null,
+                    header: "page"
+                }
+            },
+            title: "pages.methodologyPage.home.meta.title",
+            slug: "pages.methodologyPage.home.meta.slug",
+            icons: {
+                gray: require("~/assets/img/nav-icons/ico-methodology-gray.svg"),
+                white: require("~/assets/img/nav-icons/ico-methodology-white.svg"),
+                turqy: require("~/assets/img/nav-icons/ico-methodology-turqy.svg")
+            },
+            seo: {
+                title: "pages.methodologyPage.home.meta.seo.title",
+                description: "pages.methodologyPage.home.meta.seo.description",
+                keywords: "pages.methodologyPage.home.meta.seo.keywords",
+                og_image: "pages.methodologyPage.home.meta.seo.og_image"
+            }
+        },
+        {
             path: "/collaboration",
             config: {
                 display: {

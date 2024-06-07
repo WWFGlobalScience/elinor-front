@@ -20,25 +20,25 @@
             <map-popup :assessment="popup.assessment" :click="showDetail" />
         </MglPopup>
     </MglMarker>
-    
+
     <MglGeojsonLayer
         :sourceId="pointsSource.data.id"
         :source="pointsSource"
         layerId="clusterLayer"
         :layer="geoJsonLayer" />
-    
+
     <MglGeojsonLayer
         :sourceId="pointsSource.data.id"
         :source="pointsSource"
         layerId="scoreLayer"
         :layer="scoreLayer" />
-    
+
     <MglGeojsonLayer
         :sourceId="pointsSource.data.id"
         :source="pointsSource"
         layerId="markersLayer"
         :layer="markersLayer" />
-    
+
     <MglGeojsonLayer
         :sourceId="polygonsSource.data.id"
         :source="polygonsSource"
@@ -49,18 +49,18 @@
         :source="polygonsSource"
         layerId="polygonLineLayer"
         :layer="polygonLineLayer" />
-    
+
     <MglGeojsonLayer
         :sourceId="countrySource.data.id"
         :source="countrySource"
         layerId="countryLayer"
         :layer="countryLayer" />
-    
+
     <map-title />
     <map-legend />
-    <map-form :countries="countries" :attributes="attributes" />
+    <map-form :map-countries="countries" :attributes="attributes" />
 
-    
+
     <map-box-list v-if="country && activeCountryList" :close="closeCountryList" :detail="setDetail" :list="filteredData" />
     <map-box-assessment v-if="popup.assessment && activeDetail" :close="closeDetail" :assessment="popup.assessment" />
 
@@ -144,11 +144,11 @@ export default {
                     ['get', 'point_count'],
                     13,
                     3, 16,
-                    8, 18 
+                    8, 18
                     ]
                 }
             },
-            
+
             scoreLayer: {
                 type: 'symbol',
                 maxzoom: 9,
@@ -191,7 +191,7 @@ export default {
                 },
                 filter: ['==', '$type', 'Point']
             },
-            
+
             polygonLayer: {
                 type: 'fill',
                 minzoom: 9,
@@ -225,7 +225,7 @@ export default {
                     'line-width': 3
                 }
             },
-            
+
             countryLayer: {
                 type: 'line',
                 source: 'countrySource',
@@ -248,8 +248,8 @@ export default {
         }),
         filteredData(){
             if(this.data){
-                var filtered = this.formatData().filter((f) => 
-                    (this.country ? f.properties.management_area.countries && f.properties.management_area.countries.includes(this.country) : true) 
+                var filtered = this.formatData().filter((f) =>
+                    (this.country ? f.properties.management_area.countries && f.properties.management_area.countries.includes(this.country) : true)
                     // && (this.attribute ? f.properties.attributes.find(e => e.attribute == this.attribute) : true)
                 )
 
@@ -257,7 +257,7 @@ export default {
                     filtered.map(x => {
                         let coincident = x.properties.attributes.find(e => e.attribute == this.attribute)
                         if(coincident){
-                            x.properties.filterScore = coincident.score * 10    
+                            x.properties.filterScore = coincident.score * 10
                         }else{
                             x.properties.filterScore = -1
                         }
@@ -273,7 +273,7 @@ export default {
                         "strengthen": [60,89],
                         "mantain": [90, 100]
                     }
-                    filtered = filtered.filter(x => 
+                    filtered = filtered.filter(x =>
                         Number(x.properties.score) >= ranges[this.range][0] && Number(x.properties.score) < ranges[this.range][1]
                     )
                 }
@@ -375,7 +375,7 @@ export default {
                     clusterId,
                     (err, zoom) => {
                         if (err) return;
-    
+
                         map.easeTo({
                             center: features[0].geometry.coordinates,
                             zoom: zoom
@@ -430,7 +430,7 @@ export default {
 
             this.activeDetail = true
             this.$refs.mapMarker.togglePopup()
-            
+
             if(this.popup.assessment.geometry.type == 'MultiPolygon'){
                 var bbox = turf.bbox(this.popup.assessment.geometry)
                 this.map.fitBounds(bbox, { padding: 40});
@@ -451,9 +451,8 @@ export default {
         getCountryGeoJson(country){
             if(country){
                 this.activeCountryList = true
-                var code = this.management_area_countries.find(c => c.name === country).code;
                 this.activeDetail = false
-                fetch(`/geojson/${code}.json`)
+                fetch(`/geojson/${country.code}.json`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error("HTTP error " + response.status);
@@ -463,7 +462,7 @@ export default {
                     .then(json => {
                         this.countrySource.data.geometry = json.geometry
                         var bbox = turf.bbox(json.geometry)
-                
+
                         this.map.fitBounds(bbox, {
                             padding: {top: 10, bottom:25, left: 15, right: 5}
                         });
@@ -471,7 +470,7 @@ export default {
             } else {
                 this.countrySource.data.geometry.coordinates = []
                 this.map.flyTo({ center: this.coordinates, zoom: 1 });
-            }            
+            }
         },
     },
     created() {

@@ -212,11 +212,18 @@ export default {
                     doc.internal.write(0, "Tw");
 
                     doc.addPage([1440, 1024],"l");
-                    doc.html(document.querySelector("#total-scores"), {
+                    doc.html(document.querySelector("#total-scores-page-1"), {
                         callback: function(doc) {
-                            doc.internal.write(0, "Tw");
-                            doc.save("report-score-assessment.pdf");
-                            popup.close()
+                            doc.addPage([1440, 1024],"l");
+                            doc.html(document.querySelector("#total-scores-page-2"), {
+                                callback: function(doc) {
+                                    doc.internal.write(0, "Tw");
+                                    doc.save("report-score-assessment.pdf");
+                                    popup.close()
+                                },
+                                x: 0,
+                                y: 2048,
+                            });
                         },
                         x: 0,
                         y: 1024,

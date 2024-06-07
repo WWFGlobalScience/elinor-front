@@ -73,7 +73,7 @@
 
 <script>
 export default {
-    name: "map-box-list",
+    name: "map-box-assessment",
     props: ["assessment", "close"],
     data() {
         return {

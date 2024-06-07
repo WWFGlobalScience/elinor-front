@@ -790,6 +790,18 @@
             }
         },
         "methodologyPage": {
+            "home": {
+                "meta": {
+                    "title": "Metodología",
+                    "slug": "/methodology",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "title": "Metodología",
             "paragraph1": "La evaluación de Elinor se puede completar de dos maneras diferentes: a través de un grupo focal facilitado con diferentes los titulares de derechos y otros actores involucradas y afectadas por la AG, o como una evaluación documental dirigida por un profesional de la conservación. Al ingresar datos, los usuarios pueden indicar qué camino tomaron para generar los datos en la evaluación y qué tipos de titulares de derechos y otros actores participaron en la evaluación.",
             "subtitle1": "Elinor como grupo de discusión sobre el terreno",
