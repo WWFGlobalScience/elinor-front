@@ -30,16 +30,16 @@
             {{ $t('pages.assessments.view.tabs.info.gender.title') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_gender_female }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+            <span>{{ assessment.count_gender_female }}</span> {{ $t('pages.assessments.view.tabs.info.gender.female') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_gender_male }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+            <span>{{ assessment.count_gender_male }}</span> {{ $t('pages.assessments.view.tabs.info.gender.male') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_gender_nonbinary }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+            <span>{{ assessment.count_gender_nonbinary }}</span> {{ $t('pages.assessments.view.tabs.info.gender.nonbinary') }}
         </li>
         <li class="elinor__people-data">
-            <span>{{ assessment.count_gender_prefer_not_say }}</span> {{ $t('pages.assessments.view.tabs.info.people.indigenous') }}
+            <span>{{ assessment.count_gender_prefer_not_say }}</span> {{ $t('pages.assessments.view.tabs.info.gender.prefer_not_to_say') }}
         </li>
         <li class="elinor__people-data">
             <span>{{ totalGender }}</span> {{ $t('pages.assessments.view.tabs.info.gender.total') }}
