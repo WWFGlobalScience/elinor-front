@@ -279,6 +279,10 @@
                         },
                         "gender": {
                             "title": "8. Gender representation of stakeholders consulted",
+                            "female": "Female",
+                            "male": "Male",
+                            "nonbinary": "Non binary",
+                            "prefer_not_to_say": "Prefer not to say",
                             "total": "total by gender"
                         }
                     },

@@ -278,6 +278,10 @@
                         },
                         "gender": {
                             "title": "8. Representación de género de los titulares de derechos y otros actores consultados",
+                            "female": "Mujer",
+                            "male": "Hombre",
+                            "nonbinary": "No binario",
+                            "prefer_not_to_say": "Prefiero no decirlo",
                             "total": "Totales por género"
                         }
                     },
