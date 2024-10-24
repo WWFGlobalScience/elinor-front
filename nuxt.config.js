@@ -24,6 +24,7 @@ export default async () => {
     });
 
     return {
+        ignore: ['**/*._*'],
         ssr: false,
         loading: false,
         components: true,

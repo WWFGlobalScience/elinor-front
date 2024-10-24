@@ -217,6 +217,7 @@ export const actions = {
     },
 
     async fetchAssessment(state, id) {
+        console.log('Fetching assessment')
         this.dispatch('loader/loaderState', {
             active: true,
             text: 'Getting assessment data...'
@@ -246,7 +247,10 @@ export const actions = {
                     url: `v2/surveyanswerlikerts/?assessment=${id}`,
                 });
                 state.commit('setSurveyAnswers', surveyAnswersResponse.data.results);
-            } finally {
+            } catch (e) {
+                this.$router.push('/assessments/')
+            }
+            finally {
                 this.dispatch('loader/loaderState', {
                     active: false,
                     text: ''
