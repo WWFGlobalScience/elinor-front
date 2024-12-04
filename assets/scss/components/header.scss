@@ -80,7 +80,7 @@
         }
 
         &:after {
-            content: "";
+            content: '';
             @apply w-full h-px absolute top-1/2 left-0 bg-grayy-border;
         }
     }

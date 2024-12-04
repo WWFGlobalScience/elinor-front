@@ -2,7 +2,7 @@
     <a
         @click="pdf"
         role="button"
-        class="btn btn--border-turqy btn--sm absolute top-0 right-0 mr-8 mt-8 z-10  "
+        class="btn btn--border-turqy btn--sm absolute top-0 right-0 mr-8 mt-8 z-10"
         title="Report"
         ><svg>
             <path
@@ -14,10 +14,11 @@
                 d="M12.484 11.953a.797.797 0 1 0 0-1.593.797.797 0 0 0 0 1.593Z"
             />
         </svg>
-        <span>{{ $t('pages.report.btnDownload') }}</span></a>
+        <span>{{ $t('pages.report.btnDownload') }}</span></a
+    >
 </template>
 <script>
 export default {
-    name: "report-btn-download"
+    name: 'report-btn-download',
 };
 </script>

@@ -17,9 +17,28 @@
                                         @vdropzone-file-added="onMapImageAdded"
                                     >
                                         <div class="file__drag">
-                                            <img src="~/assets/img/ico-file-drag-turqy.svg"/>
-                                            <span v-if="!managementArea.map_image">{{ $t("default.upload-mapimage.placeholder") }}</span>
-                                            <span v-if="managementArea.map_image"><img :src="managementArea.map_image" style="width: 100%; height: auto" /></span>
+                                            <img
+                                                src="~/assets/img/ico-file-drag-turqy.svg"
+                                            />
+                                            <span
+                                                v-if="!managementArea.map_image"
+                                                >{{
+                                                    $t(
+                                                        'default.upload-mapimage.placeholder',
+                                                    )
+                                                }}</span
+                                            >
+                                            <span
+                                                v-if="managementArea.map_image"
+                                                ><img
+                                                    :src="
+                                                        managementArea.map_image
+                                                    "
+                                                    style="
+                                                        width: 100%;
+                                                        height: auto;
+                                                    "
+                                            /></span>
                                         </div>
                                     </dropzone>
                                 </div>
@@ -29,10 +48,14 @@
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                     >
-                      <span class="btn--opacity__target">{{
-                              $t("default.upload-mapimage.buttons.select")
-                          }}</span>
-                                        <img src="~/assets/img/ico-file-turqy.svg"/>
+                                        <span class="btn--opacity__target">{{
+                                            $t(
+                                                'default.upload-mapimage.buttons.select',
+                                            )
+                                        }}</span>
+                                        <img
+                                            src="~/assets/img/ico-file-turqy.svg"
+                                        />
                                     </button>
                                     <button
                                         v-if="managementArea.map_image"
@@ -40,12 +63,25 @@
                                         type="button"
                                         class="btn--border-turqy btn--opacity--child"
                                     >
-                      <span class="btn--opacity__target">{{
-                              $t("default.upload-mapimage.buttons.clear")
-                          }}</span>
-                                        <img src="~/assets/img/ico-clear-turqy.svg"/>
+                                        <span class="btn--opacity__target">{{
+                                            $t(
+                                                'default.upload-mapimage.buttons.clear',
+                                            )
+                                        }}</span>
+                                        <img
+                                            src="~/assets/img/ico-clear-turqy.svg"
+                                        />
                                     </button>
-                                    <p v-if="dropzoneAccepted === false" class="msg msg--error">{{ $t('pages.assessments.edit.tabs.managementArea.popups.imageFile.formatNotSupported') }}</p>
+                                    <p
+                                        v-if="dropzoneAccepted === false"
+                                        class="msg msg--error"
+                                    >
+                                        {{
+                                            $t(
+                                                'pages.assessments.edit.tabs.managementArea.popups.imageFile.formatNotSupported',
+                                            )
+                                        }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +90,11 @@
                 <div class="right">
                     <div
                         class="description"
-                        v-html="$t('pages.assessments.edit.tabs.managementArea.popups.imageFile.help')"
+                        v-html="
+                            $t(
+                                'pages.assessments.edit.tabs.managementArea.popups.imageFile.help',
+                            )
+                        "
                     ></div>
                 </div>
             </div>
@@ -65,15 +105,37 @@
                         <div class="form__group">
                             <div class="form__row">
                                 <div class="input input--1-2">
-                                    <label class="label">{{ $t('pages.assessments.edit.tabs.managementArea.popups.imageFile.gpsCoordinatesTitle') }}</label>
-                                    <input :value="coordinates" :disabled="true" type="text" name="name" placeholder="lat,lng"/>
+                                    <label class="label">{{
+                                        $t(
+                                            'pages.assessments.edit.tabs.managementArea.popups.imageFile.gpsCoordinatesTitle',
+                                        )
+                                    }}</label>
+                                    <input
+                                        :value="coordinates"
+                                        :disabled="true"
+                                        type="text"
+                                        name="name"
+                                        placeholder="lat,lng"
+                                    />
                                 </div>
-                                <p v-html="$t('pages.assessments.edit.tabs.managementArea.popups.imageFile.gpsCoordinatesExample')" />
+                                <p
+                                    v-html="
+                                        $t(
+                                            'pages.assessments.edit.tabs.managementArea.popups.imageFile.gpsCoordinatesExample',
+                                        )
+                                    "
+                                />
                             </div>
                         </div>
                     </div>
                     <div class="right">
-                        <p>{{ $t('pages.assessments.edit.tabs.managementArea.popups.imageFile.dragMapIcon') }}</p>
+                        <p>
+                            {{
+                                $t(
+                                    'pages.assessments.edit.tabs.managementArea.popups.imageFile.dragMapIcon',
+                                )
+                            }}
+                        </p>
                     </div>
                 </div>
                 <div id="map" class="elinor__map" style="padding: 0"></div>
@@ -84,16 +146,20 @@
                     type="button"
                     class="btn--border-turqy btn--opacity--child"
                 >
-                    <span class="btn--opacity__target">{{ $t('default.cancel') }}</span>
-                    <img src="~/assets/img/ico-close-turqy.svg"/>
+                    <span class="btn--opacity__target">{{
+                        $t('default.cancel')
+                    }}</span>
+                    <img src="~/assets/img/ico-close-turqy.svg" />
                 </button>
                 <button
                     @click="accept"
                     type="button"
                     class="btn btn--opacity--child"
                 >
-                    <span class="btn--opacity__target">{{ $t('default.accept') }}</span>
-                    <img src="~/assets/img/ico-ok-white.svg"/>
+                    <span class="btn--opacity__target">{{
+                        $t('default.accept')
+                    }}</span>
+                    <img src="~/assets/img/ico-ok-white.svg" />
                 </button>
             </div>
         </form>
@@ -101,14 +167,15 @@
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
-import Dropzone from "nuxt-dropzone";
-import mapboxgl from 'mapbox-gl'
+import { mapActions, mapState } from 'vuex';
+import Dropzone from 'nuxt-dropzone';
+import mapboxgl from 'mapbox-gl';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ'
+mapboxgl.accessToken =
+    'pk.eyJ1IjoiYWRyaWFhbG9zIiwiYSI6ImNrNXoybGpqdTBweGszbG5qNmEwNzJ1dzAifQ.6mtLHsiBciOXdPVRMY3fuQ';
 
 export default {
-    name: "popup-map-spatialfile",
+    name: 'popup-map-spatialfile',
     components: {
         Dropzone,
     },
@@ -121,10 +188,10 @@ export default {
             lngLat: null,
             dropzoneAccepted: null,
             dropzone: {
-                url: "none",
+                url: 'none',
                 previewTemplate: this.template(),
                 uploadMultiple: false,
-                acceptedFiles: "image/jpeg,image/png,image/gif",
+                acceptedFiles: 'image/jpeg,image/png,image/gif',
                 autoQueue: false,
             },
         };
@@ -134,13 +201,17 @@ export default {
             managementArea: (state) => state.managementareas.instance,
         }),
         coordinates() {
-            return this.lngLat && (this.lngLat.lat.toFixed(6) + ',' + this.lngLat.lng.toFixed(6))
-        }
+            return (
+                this.lngLat &&
+                this.lngLat.lat.toFixed(6) + ',' + this.lngLat.lng.toFixed(6)
+            );
+        },
     },
     methods: {
         ...mapActions({
-            editManagementAreaField: "managementareas/editManagementAreaField",
-            editManagementAreaFileField: "managementareas/editManagementAreaFileField",
+            editManagementAreaField: 'managementareas/editManagementAreaField',
+            editManagementAreaFileField:
+                'managementareas/editManagementAreaFileField',
         }),
         mapImageTrigger() {
             this.$refs.mapImage.$el.click();
@@ -153,14 +224,14 @@ export default {
         },
         onMapImageAdded(file) {
             this.$nextTick(() => {
-                if(file.status !== "error") {
+                if (file.status !== 'error') {
                     this.dropzoneAccepted = false;
                     this.editManagementAreaFileField({
-                         field: "map_image",
-                         file,
-                         id: this.managementArea.id,
-                         onUploadProgress: this.onMapImageProgress
-                     });
+                        field: 'map_image',
+                        file,
+                        id: this.managementArea.id,
+                        onUploadProgress: this.onMapImageProgress,
+                    });
                     this.fileAdded = true;
                     this.preview = URL.createObjectURL(file);
 
@@ -170,71 +241,73 @@ export default {
                 } else {
                     this.dropzoneAccepted = false;
                 }
-            })
+            });
         },
         onMapImageProgress(progressEvent) {
-            this.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            this.progress = Math.round(
+                (progressEvent.loaded * 100) / progressEvent.total,
+            );
         },
         template() {
-            return "<div></div>";
+            return '<div></div>';
         },
         mapCreate() {
-            this.map != null ? this.map.remove() : null
+            this.map != null ? this.map.remove() : null;
             this.map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
-                zoom: 5
-            })
-            this.mapAddControls()
-            this.mapDisableScroll()
-            this.mapMarker()
+                zoom: 5,
+            });
+            this.mapAddControls();
+            this.mapDisableScroll();
+            this.mapMarker();
         },
         mapAddControls() {
-            this.map.addControl( new mapboxgl.NavigationControl() )
-            this.map.addControl( new mapboxgl.FullscreenControl({
-                    container: document.documentElement
-                })
-            )
+            this.map.addControl(new mapboxgl.NavigationControl());
+            this.map.addControl(
+                new mapboxgl.FullscreenControl({
+                    container: document.documentElement,
+                }),
+            );
         },
         mapDisableScroll() {
             this.map.scrollZoom.disable();
         },
         mapMarker() {
             const marker = new mapboxgl.Marker({
-                draggable: true
-            }).setLngLat([0, 0]).addTo(this.map);
+                draggable: true,
+            })
+                .setLngLat([0, 0])
+                .addTo(this.map);
 
             const onDragEnd = () => {
                 const lngLat = marker.getLngLat();
                 this.lngLat = lngLat;
                 this.map.flyTo({
-                    center: [
-                        lngLat.lng,
-                        lngLat.lat
-                    ],
-                    essential: false
+                    center: [lngLat.lng, lngLat.lat],
+                    essential: false,
                 });
-            }
+            };
 
             marker.on('dragend', onDragEnd);
         },
         accept() {
             const point = {
-                type: "Point",
-                coordinates: [this.lngLat.lng, this.lngLat.lat]
-            }
+                type: 'Point',
+                coordinates: [this.lngLat.lng, this.lngLat.lat],
+            };
 
             this.editManagementAreaField({
-                field: "point",
+                field: 'point',
                 value: point,
-                id: this.managementArea.id
+                id: this.managementArea.id,
             });
 
-            this.$store.dispatch('popup/popupState', {active: false});
+            this.$store.dispatch('popup/popupState', { active: false });
         },
         cancel() {
-            this.$store.dispatch('popup/popupState', {active: false});
-        }
+            this.$store.dispatch('popup/popupState', { active: false });
+        },
     },
 };
 </script>

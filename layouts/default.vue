@@ -16,18 +16,21 @@
 
 <script>
 export default {
-    name: "layout-default",
+    name: 'layout-default',
     computed: {
         loader() {
             return this.$store.state.loader.loader;
         },
         popup() {
             return this.$store.state.popup.popup;
-        }
+        },
     },
     mounted() {
-        const isOffline = this.$auth.loggedIn && this.$store.state.assessments.assessment?.checkout === this.$auth.user.id;
-        this.$store.dispatch( 'layout/setOffline', { isOffline } )
-    }
+        const isOffline =
+            this.$auth.loggedIn &&
+            this.$store.state.assessments.assessment?.checkout ===
+                this.$auth.user.id;
+        this.$store.dispatch('layout/setOffline', { isOffline });
+    },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
-    <article class="page page--flushed ">
+    <article class="page page--flushed">
         <section class="section section--main">
-            <img src="~/assets/img/methodology-section.jpg" alt=""/>
+            <img src="~/assets/img/methodology-section.jpg" alt="" />
         </section>
         <section class="section" v-html="content" />
     </article>
@@ -11,14 +11,16 @@
 import locales from '../../locales';
 
 export default {
-    name: "background",
+    name: 'background',
     auth: false,
     computed: {
         content() {
-            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const currentLanguage = this.$i18n.locales.find(
+                (lang) => lang.code === this.$i18n.locale,
+            );
             console.log(locales);
             return locales[currentLanguage.code].background;
         },
-    }
+    },
 };
 </script>

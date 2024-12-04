@@ -73,7 +73,7 @@
                 @apply bg-white z-10 pr-10;
             }
             &:after {
-                content: "";
+                content: '';
                 @apply center-v left-0 w-full h-px bg-grayy-border;
             }
         }
@@ -186,7 +186,7 @@
             .switch__slider {
                 @apply absolute cursor-pointer inset-0 bg-grayy-lighter rounded-full transition-all duration-500 ease-in-out;
                 &::before {
-                    content: "";
+                    content: '';
                     @apply absolute  w-5 h-5 left-1 bottom-1 bg-white rounded-full transition-all duration-500 ease-in-out;
                 }
             }
@@ -343,7 +343,7 @@
         .multiselect__form {
             @apply relative ml-8 pl-14 pt-4 border-l border-grayy-border;
             &:before {
-                content: "";
+                content: '';
                 @apply absolute top-14 left-0 block w-12 h-px bg-grayy-border;
             }
         }

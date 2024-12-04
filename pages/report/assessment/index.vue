@@ -153,31 +153,31 @@
     </div>
 </template>
 <script>
-import { jsPDF } from "jspdf";
-import "../../../assets/fonts/montserrat/Montserrat-Medium-normal.js";
-import "../../../assets/fonts/montserrat/Montserrat-SemiBold-bold.js";
-import "../../../assets/fonts/montserrat/Montserrat-Bold-bold.js";
+import { jsPDF } from 'jspdf';
+import '../../../assets/fonts/montserrat/Montserrat-Medium-normal.js';
+import '../../../assets/fonts/montserrat/Montserrat-SemiBold-bold.js';
+import '../../../assets/fonts/montserrat/Montserrat-Bold-bold.js';
 export default {
-    name: "score assessment",
-    layout: "report",
+    name: 'score assessment',
+    layout: 'report',
     auth: false,
     methods: {
         pdf() {
-            var doc = new jsPDF("l", "px", [1440, 1024]);
-            var pdfjs = document.querySelector("#temp-target");
+            var doc = new jsPDF('l', 'px', [1440, 1024]);
+            var pdfjs = document.querySelector('#temp-target');
             // Convert HTML to PDF in JavaScript
             doc.html(pdfjs, {
-                callback: function(doc) {
-                    doc.setFont("Montserrat-Medium", "normal");
-                    doc.setFont("Montserrat-SemiBold", "normal");
-                    doc.setFont("Montserrat-Bold", "normal");
-                    doc.internal.write(0, "Tw");
-                    doc.save("report-score-assessment.pdf");
+                callback: function (doc) {
+                    doc.setFont('Montserrat-Medium', 'normal');
+                    doc.setFont('Montserrat-SemiBold', 'normal');
+                    doc.setFont('Montserrat-Bold', 'normal');
+                    doc.internal.write(0, 'Tw');
+                    doc.save('report-score-assessment.pdf');
                 },
                 x: 0,
-                y: 0
+                y: 0,
             });
-        }
-    }
+        },
+    },
 };
 </script>

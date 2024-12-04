@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: "buttons-btn-cta",
-    props: ["name"]
+    name: 'buttons-btn-cta',
+    props: ['name'],
 };
 </script>
