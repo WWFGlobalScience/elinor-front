@@ -50,6 +50,7 @@
     "nuxt-i18n": "^6.27.0",
     "nuxt-vue-multiselect": "^1.0.4",
     "postcss": "^8.2.8",
+    "prettier": "3.4.2",
     "qs": "^6.10.1",
     "sass-loader": "10",
     "vue-scrollto": "^2.20.0",
