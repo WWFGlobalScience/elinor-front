@@ -679,7 +679,9 @@
                         "label": "Muktadha",
                         "explanation": "Tumia nafasi hii kuelezea kwa ufupi wamiliki wakuu wa haki na wahusika wengine katika eneo hili, changamoto kuu za utawala na usimamizi, na mambo mengine yoyote ambayo unafikiri yanaunda matokeo ya kijamii na kiikolojia ya eneo hilo."
                     },
-                    "button": "Toa ripoti"
+                    "button": "Toa ripoti",
+                    "buttonGenerating": "Inazalisha...",
+                    "error": "Kulikuwa na hitilafu katika kuzalisha ripoti."
                 },
                 "delete": {
                     "title": "Futa kichwa",

@@ -58,6 +58,7 @@ export default async () => {
             '~/plugins/formDataStringify.js',
             '~/plugins/vue-date-picker.js',
             '~/plugins/scoreColors.js',
+            '~/plugins/vue-toasted.js',
             {
                 src: '~/plugins/choices.js',
                 mode: 'client',
