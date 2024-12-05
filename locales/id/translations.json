@@ -690,7 +690,9 @@
                         "label": "Context",
                         "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
                     },
-                    "button": "Generate"
+                    "button": "Generate",
+                    "buttonGenerating": "Menghasilkan...",
+                    "error": "Terjadi kesalahan saat membuat laporan."
                 }
             },
             "outOf100": "out of 100",

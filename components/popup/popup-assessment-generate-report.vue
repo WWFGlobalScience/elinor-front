@@ -137,14 +137,16 @@
                     :disabled="
                         form.strengths.length == 0 ||
                         form.needs.length == 0 ||
-                        form.context.length == 0
+                        form.context.length == 0 ||
+                        isReportGenerating
                     "
                     class="btn--border-turqy btn--opacity--child"
                     :class="{
                         'opacity-50 pointer-events-none cursor-not-allowed':
                             form.strengths.length == 0 ||
                             form.needs.length == 0 ||
-                            form.context.length == 0,
+                            form.context.length == 0 ||
+                            isReportGenerating,
                     }"
                 >
                     <svg>
@@ -155,7 +157,13 @@
                         />
                     </svg>
                     <span class="btn--opacity__target">{{
-                        $t('pages.assessments.actions.generateReport.button')
+                        isReportGenerating
+                            ? $t(
+                                  'pages.assessments.actions.generateReport.buttonGenerating',
+                              )
+                            : $t(
+                                  'pages.assessments.actions.generateReport.button',
+                              )
                     }}</span>
                 </button>
                 <div style="clear: both"></div>
@@ -185,6 +193,7 @@ export default {
                 needs: '',
                 context: '',
             },
+            isReportGenerating: false,
         };
     },
     computed: {
@@ -199,7 +208,6 @@ export default {
 
         this.$nextTick(() => {
             this.getAttributeScores();
-            this.initFields();
         });
     },
     methods: {
@@ -243,71 +251,114 @@ export default {
                 return b.score - a.score;
             });
         },
-        initFields() {
-            this.form.strengths = this.assessment.strengths_explanation;
-            this.form.needs = this.assessment.needs_explanation;
-            this.form.context = this.assessment.context;
-        },
-        async saveFields() {
-            if (this.form.strengths !== this.assessment.strengths_explanation) {
-                await this.editAssessmentField({
+        saveFieldsForReportGeneration() {
+            // form fields need to be saved in global state so they can be accessed by the report template
+            const saveFieldsToGlobalStatePromises = [
+                this.editAssessmentField({
                     field: 'strengths_explanation',
                     value: this.form.strengths,
                     id: this.assessment.id,
-                });
-            }
-            if (this.form.needs !== this.assessment.needs_explanation) {
-                await this.editAssessmentField({
+                }),
+                this.editAssessmentField({
                     field: 'needs_explanation',
                     value: this.form.needs,
                     id: this.assessment.id,
-                });
-            }
-            if (this.form.strengths !== this.assessment.context) {
-                await this.editAssessmentField({
+                }),
+                this.editAssessmentField({
                     field: 'context',
                     value: this.form.context,
                     id: this.assessment.id,
-                });
-            }
+                }),
+            ];
+
+            return Promise.all(saveFieldsToGlobalStatePromises);
+        },
+        clearFieldsAfterReportGeneration() {
+            this.form.strengths = '';
+            this.form.needs = '';
+            this.form.context = '';
+
+            const saveFieldsToGlobalStatePromises = [
+                this.editAssessmentField({
+                    field: 'strengths_explanation',
+                    value: '',
+                    id: this.assessment.id,
+                }),
+                this.editAssessmentField({
+                    field: 'needs_explanation',
+                    value: '',
+                    id: this.assessment.id,
+                }),
+                this.editAssessmentField({
+                    field: 'context',
+                    value: '',
+                    id: this.assessment.id,
+                }),
+            ];
+
+            return Promise.all(saveFieldsToGlobalStatePromises);
         },
         pdf() {
-            const popup = this;
-            var doc = new jsPDF('l', 'px', [1440, 1024]);
+            this.isReportGenerating = true;
+            this.saveFieldsForReportGeneration()
+                .then(() => {
+                    const popup = this;
+                    const doc = new jsPDF('l', 'px', [1440, 1024]);
 
-            doc.html(document.querySelector('#key-governances'), {
-                callback: function (doc) {
-                    doc.setFont('Montserrat-Medium', 'normal');
-                    doc.setFont('Montserrat-SemiBold', 'normal');
-                    doc.setFont('Montserrat-Bold', 'normal');
-                    doc.internal.write(0, 'Tw');
-
-                    doc.addPage([1440, 1024], 'l');
-                    doc.html(document.querySelector('#total-scores-page-1'), {
+                    doc.html(document.querySelector('#key-governances'), {
                         callback: function (doc) {
+                            doc.setFont('Montserrat-Medium', 'normal');
+                            doc.setFont('Montserrat-SemiBold', 'normal');
+                            doc.setFont('Montserrat-Bold', 'normal');
+                            doc.internal.write(0, 'Tw');
+
                             doc.addPage([1440, 1024], 'l');
                             doc.html(
-                                document.querySelector('#total-scores-page-2'),
+                                document.querySelector('#total-scores-page-1'),
                                 {
                                     callback: function (doc) {
-                                        doc.internal.write(0, 'Tw');
-                                        doc.save('report-score-assessment.pdf');
-                                        popup.close();
+                                        doc.addPage([1440, 1024], 'l');
+                                        doc.html(
+                                            document.querySelector(
+                                                '#total-scores-page-2',
+                                            ),
+                                            {
+                                                callback: function (doc) {
+                                                    doc.internal.write(0, 'Tw');
+                                                    doc.save(
+                                                        'report-score-assessment.pdf',
+                                                    );
+
+                                                    popup.clearFieldsAfterReportGeneration();
+                                                    // clearing fields after report generation is proper to keep the code robust but a redundant move
+                                                    // as the report will overwirte any uncleared fields upon generating a new report. For this reason
+                                                    // we dont currently need to show the user a message if field clearing fails. We also dont need to wait
+                                                    // for the fields to be cleared before closing the popup.
+                                                    popup.isReportGenerating = false;
+                                                    popup.close();
+                                                },
+                                                x: 0,
+                                                y: 2048,
+                                            },
+                                        );
                                     },
                                     x: 0,
-                                    y: 2048,
+                                    y: 1024,
                                 },
                             );
                         },
                         x: 0,
-                        y: 1024,
+                        y: 0,
                     });
-                },
-                x: 0,
-                y: 0,
-            });
-
-            this.saveFields();
+                })
+                .catch(() => {
+                    this.isReportGenerating = false;
+                    this.$toasted.error(
+                        this.$t(
+                            'pages.assessments.actions.generateReport.error',
+                        ),
+                    );
+                });
         },
     },
 };
