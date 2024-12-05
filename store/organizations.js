@@ -1,17 +1,17 @@
-import qs from "qs";
+import qs from 'qs';
 
 export const state = () => ({
-    list: []
-})
+    list: [],
+});
 
 export const mutations = {
     setList(state, payload) {
-        state.list = payload
+        state.list = payload;
     },
     addToList(state, payload) {
         state.list.unshift(payload);
-    }
-}
+    },
+};
 
 export const actions = {
     async fetchOrganizations(state, search) {
@@ -21,7 +21,7 @@ export const actions = {
                 url: 'v2/organizations/?search=' + search,
             });
 
-            state.commit('setList', response.data.results)
+            state.commit('setList', response.data.results);
         } catch (e) {
             console.error(e);
         }
@@ -30,10 +30,10 @@ export const actions = {
         const response = await this.$axios({
             method: 'post',
             url: 'v2/organizations/',
-            data: { name }
-        })
+            data: { name },
+        });
         const organization = response.data;
         state.commit('addToList', organization);
         return organization;
     },
-}
+};

@@ -15,14 +15,14 @@
 
 <script>
 export default {
-    name: "layout-map",
+    name: 'layout-map',
     computed: {
         loader() {
             return this.$store.state.loader.loader;
         },
         popup() {
             return this.$store.state.popup.popup;
-        }
-    }
+        },
+    },
 };
 </script>

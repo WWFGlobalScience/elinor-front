@@ -20,7 +20,7 @@
                 <div class="elinor__card--sign-in__info">
                     <div>
                         <p class="text-xl mb-1.5">
-                            {{ $t("pages.home.public.signInTitle") }}
+                            {{ $t('pages.home.public.signInTitle') }}
                         </p>
                     </div>
                     <div>
@@ -28,19 +28,19 @@
                             class="mb-0 text-grayy-lighter"
                             v-if="
                                 !alerts.emailVerificationRequired &&
-                                    !alerts.emailVerificationSent
+                                !alerts.emailVerificationSent
                             "
                         >
                             {{
                                 $t(
-                                    "pages.home.public.signInTitleAndCreateAccountSeparator"
+                                    'pages.home.public.signInTitleAndCreateAccountSeparator',
                                 )
                             }}
                             <NuxtLink
                                 to="/create-account"
                                 class="text-turqy text-sm"
                                 >{{
-                                    $t("pages.home.public.createAccountLink")
+                                    $t('pages.home.public.createAccountLink')
                                 }}</NuxtLink
                             >
                         </p>
@@ -48,12 +48,12 @@
                             class="mb-0 text-grayy-lighter"
                             v-if="
                                 alerts.emailVerificationRequired ||
-                                    alerts.emailVerificationSent
+                                alerts.emailVerificationSent
                             "
                         >
                             {{
                                 $t(
-                                    "pages.home.public.signInTitleAndCreateAccountSeparator"
+                                    'pages.home.public.signInTitleAndCreateAccountSeparator',
                                 )
                             }}
                             <NuxtLink
@@ -61,7 +61,7 @@
                                 class="text-turqy text-sm"
                                 >{{
                                     $t(
-                                        "pages.home.public.resendVerificationLink"
+                                        'pages.home.public.resendVerificationLink',
                                     )
                                 }}</NuxtLink
                             >
@@ -70,7 +70,7 @@
                 </div>
 
                 <p class="text-base">
-                    {{ $t("pages.home.public.signInSubtitle") }}
+                    {{ $t('pages.home.public.signInSubtitle') }}
                 </p>
 
                 <div
@@ -89,12 +89,12 @@
                 >
                     <strong class="font-bold">{{
                         $t(
-                            "pages.home.public.alerts.emailVerificationRequired.title"
+                            'pages.home.public.alerts.emailVerificationRequired.title',
                         )
                     }}</strong>
                     <span class="block sm:inline">{{
                         $t(
-                            "pages.home.public.alerts.emailVerificationRequired.subtitle"
+                            'pages.home.public.alerts.emailVerificationRequired.subtitle',
                         )
                     }}</span>
                 </div>
@@ -106,12 +106,12 @@
                 >
                     <strong class="font-bold">{{
                         $t(
-                            "pages.home.public.alerts.emailVerificationSent.title"
+                            'pages.home.public.alerts.emailVerificationSent.title',
                         )
                     }}</strong>
                     <span class="block sm:inline">{{
                         $t(
-                            "pages.home.public.alerts.emailVerificationSent.subtitle"
+                            'pages.home.public.alerts.emailVerificationSent.subtitle',
                         )
                     }}</span>
                 </div>
@@ -123,12 +123,12 @@
                 >
                     <strong class="font-bold">{{
                         $t(
-                            "pages.home.public.alerts.passwordChangedSuccessfully.title"
+                            'pages.home.public.alerts.passwordChangedSuccessfully.title',
                         )
                     }}</strong>
                     <span class="block sm:inline">{{
                         $t(
-                            "pages.home.public.alerts.passwordChangedSuccessfully.subtitle"
+                            'pages.home.public.alerts.passwordChangedSuccessfully.subtitle',
                         )
                     }}</span>
                 </div>
@@ -140,12 +140,12 @@
                 >
                     <strong class="font-bold">{{
                         $t(
-                            "pages.home.public.alerts.emailVerifiedSuccessfully.title"
+                            'pages.home.public.alerts.emailVerifiedSuccessfully.title',
                         )
                     }}</strong>
                     <span class="block sm:inline">{{
                         $t(
-                            "pages.home.public.alerts.emailVerifiedSuccessfully.subtitle"
+                            'pages.home.public.alerts.emailVerifiedSuccessfully.subtitle',
                         )
                     }}</span>
                 </div>
@@ -157,12 +157,12 @@
                 >
                     <strong class="font-bold">{{
                         $t(
-                            "pages.home.public.alerts.accountDeletedSuccessfully.title"
+                            'pages.home.public.alerts.accountDeletedSuccessfully.title',
                         )
                     }}</strong>
                     <span class="block sm:inline">{{
                         $t(
-                            "pages.home.public.alerts.accountDeletedSuccessfully.subtitle"
+                            'pages.home.public.alerts.accountDeletedSuccessfully.subtitle',
                         )
                     }}</span>
                 </div>
@@ -223,7 +223,7 @@
                                     <label for="answer-1" class="label">
                                         <span>{{
                                             $t(
-                                                "pages.home.public.rememberMeCheckbox"
+                                                'pages.home.public.rememberMeCheckbox',
                                             )
                                         }}</span>
                                     </label>
@@ -236,7 +236,7 @@
                                 class="btn--border-turqy btn--opacity--child"
                             >
                                 <span class="btn--opacity__target">{{
-                                    $t("pages.home.public.signInButton")
+                                    $t('pages.home.public.signInButton')
                                 }}</span>
                                 <img src="~/assets/img/ico-signin-turqy.svg" />
                             </button>
@@ -244,7 +244,7 @@
                     </div>
                 </form>
                 <NuxtLink to="/forgot-password" class="text-turqy mt-3 text-sm">
-                    {{ $t("pages.home.public.forgotPasswordLink") }}
+                    {{ $t('pages.home.public.forgotPasswordLink') }}
                 </NuxtLink>
             </div>
         </section>
@@ -259,7 +259,7 @@
                     alt="ellinor illustration"
                 />
                 <p class="section--intro__info">
-                    {{ $t("pages.home.public.content.introduction.text") }}
+                    {{ $t('pages.home.public.content.introduction.text') }}
                 </p>
                 <NuxtLink
                     v-if="!$auth.loggedIn"
@@ -268,7 +268,7 @@
                 >
                     <span class="btn--opacity__target">{{
                         $t(
-                            "pages.home.public.content.introduction.createAccountLink"
+                            'pages.home.public.content.introduction.createAccountLink',
                         )
                     }}</span>
                     <img src="~/assets/img/ico-button-arrow.svg" />
@@ -302,7 +302,7 @@
                         [0, 1],
                         [768, 2],
                         [1200, 3],
-                        [2000, 4]
+                        [2000, 4],
                     ]"
                     :navigationEnabled="true"
                     :paginationEnabled="true"
@@ -315,7 +315,7 @@
                                     active: true,
                                     component: 'popup-show-video',
                                     title: item.title,
-                                    videoId: item.id
+                                    videoId: item.id,
                                 })
                             "
                             class="card-carousel"
@@ -324,9 +324,7 @@
                                 :id="`thumb-${item.id}`"
                                 :alt="`Contenido del video ${item.title}`"
                                 class="carousel-thumb"
-                                :src="
-                                    `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`
-                                "
+                                :src="`https://img.youtube.com/vi/${item.id}/hqdefault.jpg`"
                             />
                             <h4 class="c-title--md text-turqy mt-2">
                                 {{ item.title }}
@@ -337,7 +335,6 @@
             </div>
         </section>
 
-
         <section id="about" class="section section--text section--img-text">
             <div class="container">
                 <div class="section--img-text__block">
@@ -345,21 +342,21 @@
                         <h2 class="c-title">
                             {{
                                 $t(
-                                    "pages.home.public.content.explanation.title"
+                                    'pages.home.public.content.explanation.title',
                                 )
                             }}
                         </h2>
                         <p>
                             {{
                                 $t(
-                                    "pages.home.public.content.explanation.paragraph1"
+                                    'pages.home.public.content.explanation.paragraph1',
                                 )
                             }}
                         </p>
                         <p>
                             {{
                                 $t(
-                                    "pages.home.public.content.explanation.paragraph2"
+                                    'pages.home.public.content.explanation.paragraph2',
                                 )
                             }}
                         </p>
@@ -381,14 +378,14 @@
                         <h4 class="c-title--block">
                             {{
                                 $t(
-                                    "pages.home.public.content.explanation.trackingChange.title"
+                                    'pages.home.public.content.explanation.trackingChange.title',
                                 )
                             }}
                         </h4>
                         <p
                             v-html="
                                 $t(
-                                    'pages.home.public.content.explanation.trackingChange.text'
+                                    'pages.home.public.content.explanation.trackingChange.text',
                                 )
                             "
                         ></p>
@@ -396,7 +393,7 @@
                             class="list-disc list-inside"
                             v-html="
                                 $t(
-                                    'pages.home.public.content.explanation.trackingChange.list'
+                                    'pages.home.public.content.explanation.trackingChange.list',
                                 )
                             "
                         ></ul>
@@ -416,13 +413,13 @@
                         <blockquote class="elinor__sentence mx-auto">
                             "{{
                                 $t(
-                                    "pages.home.public.content.elinor.quote.text"
+                                    'pages.home.public.content.elinor.quote.text',
                                 )
                             }}"
                             <span class="elinor__sentence__name">
                                 {{
                                     $t(
-                                        "pages.home.public.content.elinor.quote.author"
+                                        'pages.home.public.content.elinor.quote.author',
                                     )
                                 }}
                             </span>
@@ -430,31 +427,31 @@
                     </div>
                     <div class="lg:order-1">
                         <h3 class="c-epi">
-                            {{ $t("pages.home.public.content.elinor.title") }}
+                            {{ $t('pages.home.public.content.elinor.title') }}
                         </h3>
                         <h4 class="c-title">
                             {{
-                                $t("pages.home.public.content.elinor.subtitle")
+                                $t('pages.home.public.content.elinor.subtitle')
                             }}
                         </h4>
                         <p>
                             {{
                                 $t(
-                                    "pages.home.public.content.elinor.paragraph1"
+                                    'pages.home.public.content.elinor.paragraph1',
                                 )
                             }}
                         </p>
                         <p>
                             {{
                                 $t(
-                                    "pages.home.public.content.elinor.paragraph2"
+                                    'pages.home.public.content.elinor.paragraph2',
                                 )
                             }}
                         </p>
                         <p>
                             {{
                                 $t(
-                                    "pages.home.public.content.elinor.paragraph3"
+                                    'pages.home.public.content.elinor.paragraph3',
                                 )
                             }}
                         </p>
@@ -463,26 +460,28 @@
             </div>
         </section>
 
-        <section id="faqs" class="section section--text section--img-text" style="padding-top: 1rem; padding-bottom: 1rem">
-
-        </section>
+        <section
+            id="faqs"
+            class="section section--text section--img-text"
+            style="padding-top: 1rem; padding-bottom: 1rem"
+        ></section>
         <default-footer></default-footer>
     </article>
 </template>
 
 <script>
-import { Carousel, Slide } from "vue-carousel";
+import { Carousel, Slide } from 'vue-carousel';
 
-import { mapActions, mapState } from "vuex";
-import locales from "../../locales";
+import { mapActions, mapState } from 'vuex';
+import locales from '../../locales';
 const numNews = 3;
 const maxCharacters = 300;
 
 export default {
-    name: "home-public",
+    name: 'home-public',
     components: {
         Carousel,
-        Slide
+        Slide,
     },
     data() {
         return {
@@ -495,44 +494,44 @@ export default {
             itemsPerView: 4,
             items: [
                 {
-                    id: "9bxrsgW82L4",
-                    title: "Introduction to Elinor"
+                    id: '9bxrsgW82L4',
+                    title: 'Introduction to Elinor',
                 },
                 {
-                    id: "nA5LNNuqpKQ",
-                    title: "How to create a new assessment"
+                    id: 'nA5LNNuqpKQ',
+                    title: 'How to create a new assessment',
                 },
                 {
-                    id: "CX8LucMtgdg",
-                    title: "How to generate a report"
+                    id: 'CX8LucMtgdg',
+                    title: 'How to generate a report',
                 },
                 {
-                    id: "1AJ-g-2y8pQ",
-                    title: "How to change assestment privacy"
+                    id: '1AJ-g-2y8pQ',
+                    title: 'How to change assestment privacy',
                 },
                 {
-                    id: "z1T6DnDNVIg",
-                    title: "How to add a Collaborator"
-                }
-            ]
+                    id: 'z1T6DnDNVIg',
+                    title: 'How to add a Collaborator',
+                },
+            ],
         };
     },
 
     computed: {
         ...mapState({
-            alerts: state => state.authentication.alerts,
-            error: state => state.authentication.error
-        })
+            alerts: (state) => state.authentication.alerts,
+            error: (state) => state.authentication.error,
+        }),
     },
 
     mounted() {
-        this.$store.commit("authentication/clearError");
+        this.$store.commit('authentication/clearError');
     },
 
     methods: {
         ...mapActions({
-            popupState: "popup/popupState",
-            signIn: "authentication/signIn"
+            popupState: 'popup/popupState',
+            signIn: 'authentication/signIn',
         }),
         submit(event) {
             event.preventDefault();
@@ -540,8 +539,8 @@ export default {
         },
         handleDragging(isDragging) {
             this.isDragging = isDragging;
-            console.log("status:", this.isDragging);
-        }
-    }
+            console.log('status:', this.isDragging);
+        },
+    },
 };
 </script>

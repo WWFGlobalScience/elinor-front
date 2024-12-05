@@ -2,9 +2,15 @@
     <ul>
         <default-language-selector />
         <template v-if="$auth.loggedIn">
-            <div class="elinor__dropdown" :class="isOffline ? 'pointer-events-none': ''">
+            <div
+                class="elinor__dropdown"
+                :class="isOffline ? 'pointer-events-none' : ''"
+            >
                 <div class="elinor__dropdown-toggle">
-                    <div class="elinor__avatar bg-turqy" @click="toggleDropdown">
+                    <div
+                        class="elinor__avatar bg-turqy"
+                        @click="toggleDropdown"
+                    >
                         <span>{{ user.username.charAt(0).toUpperCase() }}</span>
                     </div>
                 </div>
@@ -13,8 +19,22 @@
                     class="elinor__dropdown-menu"
                     v-bind:class="[!isDropdownOpen ? 'isOpen' : null]"
                 >
-                    <li class="elinor__dropdown-menu__item"><NuxtLink to="/profile">{{ $t('pages.home.header.profile') }}<img src="~assets/img/ico-users-access-turqy.svg" :alt="$t('pages.home.header.signOut')"></NuxtLink></li>
-                    <li class="elinor__dropdown-menu__item"><a @click="logout" role="button">{{ $t('pages.home.header.signOut') }}<img src="~assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')"></a></li>
+                    <li class="elinor__dropdown-menu__item">
+                        <NuxtLink to="/profile"
+                            >{{ $t('pages.home.header.profile')
+                            }}<img
+                                src="~assets/img/ico-users-access-turqy.svg"
+                                :alt="$t('pages.home.header.signOut')"
+                        /></NuxtLink>
+                    </li>
+                    <li class="elinor__dropdown-menu__item">
+                        <a @click="logout" role="button"
+                            >{{ $t('pages.home.header.signOut')
+                            }}<img
+                                src="~assets/img/ico-signout-turqy.svg"
+                                :alt="$t('pages.home.header.signOut')"
+                        /></a>
+                    </li>
                 </ul>
             </div>
 
@@ -36,29 +56,28 @@
                 />
             </li>
         </template>
-
     </ul>
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import { mapActions, mapState } from 'vuex';
 
 export default {
-    name: "default-header-profile",
+    name: 'default-header-profile',
     computed: {
         ...mapState({
-            isSidebarOpen: state => state.layout.sidebar,
-            isDropdownOpen: state => state.dropdown.dropdown,
-            user: state => state.auth.user,
-            isOffline: state => state.layout.offline,
-        })
+            isSidebarOpen: (state) => state.layout.sidebar,
+            isDropdownOpen: (state) => state.dropdown.dropdown,
+            user: (state) => state.auth.user,
+            isOffline: (state) => state.layout.offline,
+        }),
     },
     methods: {
         ...mapActions({
-            toggleSidebar: "layout/toggleSidebar",
-            toggleDropdown: "dropdown/toggleDropdown",
-            logout: "authentication/logout",
+            toggleSidebar: 'layout/toggleSidebar',
+            toggleDropdown: 'dropdown/toggleDropdown',
+            logout: 'authentication/logout',
         }),
-    }
+    },
 };
 </script>

@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    name: "buttons-btn-view",
-    props: ["loadMore", "name"]
+    name: 'buttons-btn-view',
+    props: ['loadMore', 'name'],
 };
 </script>

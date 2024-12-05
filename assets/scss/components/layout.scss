@@ -132,7 +132,7 @@ main {
         .description {
             @apply pl-10 relative sm:pl-0 sm:pt-10;
             &::after {
-                content: "";
+                content: '';
                 @apply absolute inset-y-0 left-0 h-64 border-r border-grayy-border sm:w-full sm:border-t sm:border-r-0;
             }
         }
@@ -174,7 +174,11 @@ main {
         }
     }
 }
-.report-wrap{ height: 1px; width: 1px; overflow:hidden;}
+.report-wrap {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
 .page-report {
     @apply w-[1440px] h-[1023px] m-auto grid overflow-hidden tracking-normal;
     grid-template-columns: 172px 72px auto;

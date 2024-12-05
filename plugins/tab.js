@@ -1,23 +1,25 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
 export const Tab = {
     data() {
         return {
             tabs: {
                 active: null,
-                tabs: null
-            }
-        }
+                tabs: null,
+            },
+        };
     },
     methods: {
         tabFirstActive() {
-            const firstTab = document.querySelectorAll( '.elinor__tabs li button' )[0]
-            this.tabs.active = firstTab
-        }
+            const firstTab = document.querySelectorAll(
+                '.elinor__tabs li button',
+            )[0];
+            this.tabs.active = firstTab;
+        },
     },
     mounted() {
-        this.tabFirstActive()
-    }
-}
+        this.tabFirstActive();
+    },
+};
 
-Vue.mixin( Tab )
+Vue.mixin(Tab);

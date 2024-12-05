@@ -1,8 +1,12 @@
 <template>
     <section class="section section--assessment-edit-managed-area">
-        <ma-edit-selector v-if="assessment && assessment.management_area === null"></ma-edit-selector>
+        <ma-edit-selector
+            v-if="assessment && assessment.management_area === null"
+        ></ma-edit-selector>
         <transition name="fade">
-            <ma-edit-new v-if="assessment && assessment.management_area !== null"></ma-edit-new>
+            <ma-edit-new
+                v-if="assessment && assessment.management_area !== null"
+            ></ma-edit-new>
         </transition>
     </section>
 </template>
@@ -20,9 +24,8 @@ export default {
     },
     computed: {
         assessment() {
-            return this.$store.state.assessments.assessment
-        }
-    }
-}
-
+            return this.$store.state.assessments.assessment;
+        },
+    },
+};
 </script>

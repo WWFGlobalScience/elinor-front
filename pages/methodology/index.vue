@@ -6,19 +6,19 @@
         <section class="section">
             <div class="container">
                 <h1 class="c-title--main">
-                    {{ $t("pages.methodologyPage.title") }}
+                    {{ $t('pages.methodologyPage.title') }}
                 </h1>
                 <div class="g-grid--4-1-lg">
                     <div class="g-colspan--3-full-lg">
                         <div class="info-block">
-                            <p>{{ $t("pages.methodologyPage.paragraph1") }}</p>
+                            <p>{{ $t('pages.methodologyPage.paragraph1') }}</p>
                         </div>
                         <div class="info-block d-flex">
                             <h2 class="c-title--md">
-                                {{ $t("pages.methodologyPage.subtitle1") }}
+                                {{ $t('pages.methodologyPage.subtitle1') }}
                             </h2>
-                            <p>{{ $t("pages.methodologyPage.paragraph2") }}</p>
-                            <p>{{ $t("pages.methodologyPage.paragraph3") }}</p>
+                            <p>{{ $t('pages.methodologyPage.paragraph2') }}</p>
+                            <p>{{ $t('pages.methodologyPage.paragraph3') }}</p>
                             <div class="flex">
                                 <a
                                     target="_blank"
@@ -26,7 +26,7 @@
                                     class="btn btn--opacity--child"
                                 >
                                     <span class="btn--opacity__target">{{
-                                        $t("pages.methodologyPage.cta1")
+                                        $t('pages.methodologyPage.cta1')
                                     }}</span>
                                     <img
                                         src="~/assets/img/ico-download-white.svg"
@@ -37,15 +37,15 @@
                         </div>
                         <div class="info-block">
                             <h2 class="c-title--md">
-                                {{ $t("pages.methodologyPage.subtitle2") }}
+                                {{ $t('pages.methodologyPage.subtitle2') }}
                             </h2>
-                            <p>{{ $t("pages.methodologyPage.paragraph4") }}</p>
+                            <p>{{ $t('pages.methodologyPage.paragraph4') }}</p>
                         </div>
                         <div class="info-block">
                             <h2 class="c-title--md">
-                                {{ $t("pages.methodologyPage.subtitle3") }}
+                                {{ $t('pages.methodologyPage.subtitle3') }}
                             </h2>
-                            <p>{{ $t("pages.methodologyPage.paragraph5") }}</p>
+                            <p>{{ $t('pages.methodologyPage.paragraph5') }}</p>
                         </div>
                         <score-table />
                     </div>
@@ -56,10 +56,10 @@
 </template>
 
 <script>
-import scoreTable from "~/components/methodology/score-table.vue";
+import scoreTable from '~/components/methodology/score-table.vue';
 export default {
     components: { scoreTable },
-    name: "methodology",
-    auth: false
+    name: 'methodology',
+    auth: false,
 };
 </script>

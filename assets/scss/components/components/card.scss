@@ -107,7 +107,7 @@
     .elinor-card--question__info {
         @apply flex-1;
 
-        [class*="c-title--"] {
+        [class*='c-title--'] {
             @apply mb-8;
         }
 
@@ -128,7 +128,7 @@
     .elinor-card__icons__item {
         @apply relative flex items-center justify-between flex-col;
         &::after {
-            content: "+";
+            content: '+';
             @apply text-turqy absolute m-auto text-2xl -right-8 flex items-center h-full sm:right-0 sm:left-0 sm:justify-center sm:-bottom-12 sm:items-end;
         }
         &:last-child {
@@ -146,7 +146,7 @@
             @apply bg-turqy-lighter px-2 z-30 inline-block;
         }
         &::after {
-            content: "";
+            content: '';
             @apply absolute inset-0 m-auto h-px bg-turqy-middle w-full;
         }
     }

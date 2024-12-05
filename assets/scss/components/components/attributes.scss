@@ -58,7 +58,6 @@
     }
 }
 
-
 //attribute
 .elinor__survey-attribute-wrapper {
     @apply border-b border-grayy-border py-10;
@@ -84,17 +83,16 @@
     grid-gap: 1.875rem 2.625rem;
 }
 
-
 .elinor__survey-attribute-item {
     @apply flex border-radius--20 border border-grayy-border pt-5 pb-4 px-3 transition hover:bg-grayy-badge;
 
     .title {
-         @apply block mb-1 text-[16px] font-bold;
+        @apply block mb-1 text-[16px] font-bold;
     }
 
     .subtitle {
         @apply block mb-1 text-[14px] leading-6 mt-3;
-   }
+    }
 
     &.item--mandatory {
         @apply items-center;
@@ -142,5 +140,4 @@
             @apply ml-[42px] mt-3;
         }
     }
-
 }

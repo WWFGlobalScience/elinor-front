@@ -5,9 +5,21 @@
         >
             <tr>
                 <th></th>
-                <th>{{ $t('pages.report.scoreTable.indicator') }}<br />{{ $t('pages.report.scoreTable.value') }}</th>
-                <th>{{ $t('pages.report.scoreTable.attribute') }}<br />{{ $t('pages.report.scoreTable.value') }}</th>
-                <th>{{ $t('pages.report.scoreTable.aggregate') }}<br />{{ $t('pages.report.scoreTable.value') }}</th>
+                <th>
+                    {{ $t('pages.report.scoreTable.indicator') }}<br />{{
+                        $t('pages.report.scoreTable.value')
+                    }}
+                </th>
+                <th>
+                    {{ $t('pages.report.scoreTable.attribute') }}<br />{{
+                        $t('pages.report.scoreTable.value')
+                    }}
+                </th>
+                <th>
+                    {{ $t('pages.report.scoreTable.aggregate') }}<br />{{
+                        $t('pages.report.scoreTable.value')
+                    }}
+                </th>
             </tr>
             <tr>
                 <td>
@@ -25,7 +37,9 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description">{{ $t('pages.report.scoreTable.plan.description') }}</span>
+                        <span class="description">{{
+                            $t('pages.report.scoreTable.plan.description')
+                        }}</span>
                     </div>
                 </td>
             </tr>
@@ -45,7 +59,9 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description">{{ $t('pages.report.scoreTable.build.description') }}</span>
+                        <span class="description">{{
+                            $t('pages.report.scoreTable.build.description')
+                        }}</span>
                     </div>
                 </td>
             </tr>
@@ -65,7 +81,9 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description">{{ $t('pages.report.scoreTable.strengthen.description') }}</span>
+                        <span class="description">{{
+                            $t('pages.report.scoreTable.strengthen.description')
+                        }}</span>
                     </div>
                 </td>
             </tr>
@@ -85,7 +103,9 @@
             <tr>
                 <td colspan="4" class="hr">
                     <div class="flex justify-center items-center">
-                        <span class="description border-transparent">{{ $t('pages.report.scoreTable.maintain.description') }}</span>
+                        <span class="description border-transparent">{{
+                            $t('pages.report.scoreTable.maintain.description')
+                        }}</span>
                     </div>
                 </td>
             </tr>
@@ -94,6 +114,6 @@
 </template>
 <script>
 export default {
-    name: "report-table-score"
+    name: 'report-table-score',
 };
 </script>

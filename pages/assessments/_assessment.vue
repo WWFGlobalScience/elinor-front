@@ -9,8 +9,7 @@
 </template>
 
 <script>
-
-import {mapState} from 'vuex'
+import { mapState } from 'vuex';
 
 export default {
     name: 'assessment',
@@ -19,20 +18,18 @@ export default {
         return {
             id: this.$route.params.assessment,
             loaded: false,
-            loaderText: this.$t( 'loading.assessment' )
-        }
+            loaderText: this.$t('loading.assessment'),
+        };
     },
     fetchOnServer: false,
     computed: {
         ...mapState({
-            assessment: state => state.assessments.assessment,
-        })
+            assessment: (state) => state.assessments.assessment,
+        }),
     },
     mounted() {
-        this.$store.dispatch( 'assessments/fetchAssessment', this.id )
+        this.$store.dispatch('assessments/fetchAssessment', this.id);
         this.loaded = true;
-    }
-
-}
-
+    },
+};
 </script>

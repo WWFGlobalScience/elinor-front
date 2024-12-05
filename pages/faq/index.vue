@@ -1,16 +1,23 @@
 <template>
     <article class="page page--flushed">
         <section class="section section--main">
-            <img src="~/assets/img/faq-section.jpg"/>
+            <img src="~/assets/img/faq-section.jpg" />
         </section>
         <section class="section section--text">
             <div class="container">
-                <h1 class="c-title--main">{{ $t('pages.faqs.header.title') }}</h1>
+                <h1 class="c-title--main">
+                    {{ $t('pages.faqs.header.title') }}
+                </h1>
                 <template v-for="(faq, index) in faqs">
-                    <div v-if="faq.type === 'default'" class="g-grid--5 flex items-center">
+                    <div
+                        v-if="faq.type === 'default'"
+                        class="g-grid--5 flex items-center"
+                    >
                         <div class="g-colspan--4-full-md">
                             <div class="elinor-card--question">
-                                <span class="elinor-card--question__number">{{ index + 1}}</span>
+                                <span class="elinor-card--question__number">{{
+                                    index + 1
+                                }}</span>
                                 <div class="elinor-card--question__info">
                                     <h4 class="c-title--md">
                                         {{ faq.title }}
@@ -21,10 +28,15 @@
                         </div>
                         <div class="g-colspan--1-full-md"></div>
                     </div>
-                    <div v-if="faq.type === 'box'" class="g-grid--5 flex items-center">
+                    <div
+                        v-if="faq.type === 'box'"
+                        class="g-grid--5 flex items-center"
+                    >
                         <div class="g-colspan--3-full-md">
                             <div class="elinor-card--question">
-                                <span class="elinor-card--question__number">{{ index + 1 }}</span>
+                                <span class="elinor-card--question__number">{{
+                                    index + 1
+                                }}</span>
                                 <div class="elinor-card--question__info">
                                     <h4 class="c-title--md">{{ faq.title }}</h4>
                                     <div v-html="faq.text"></div>
@@ -49,13 +61,15 @@
 import locales from '../../locales';
 
 export default {
-    name: "faq",
+    name: 'faq',
     auth: false,
     computed: {
         faqs() {
-            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const currentLanguage = this.$i18n.locales.find(
+                (lang) => lang.code === this.$i18n.locale,
+            );
             return locales[currentLanguage.code].faqs;
         },
-    }
+    },
 };
 </script>

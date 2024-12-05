@@ -9,6 +9,6 @@
 
 <script>
 export default {
-    name: 'map-header'
-}
+    name: 'map-header',
+};
 </script>

@@ -2,20 +2,33 @@
     <section class="section section--mt-medium section--ma-results">
         <div class="container">
             <div class="search__results g-grid--4-1-sm">
-                <div :class="filters && filters.management_area_countries ? 'col-span-1' : 'col-span-2'">
-                    <span>{{ $t("pages.assessments.list.total") }}</span> -
+                <div
+                    :class="
+                        filters && filters.management_area_countries
+                            ? 'col-span-1'
+                            : 'col-span-2'
+                    "
+                >
+                    <span>{{ $t('pages.assessments.list.total') }}</span> -
                     <span>{{ assessments.length }}</span>
-                    <span v-if="assessments.length > 1 || assessments.length == 0">
-                        {{ $t("pages.assessments.list.totalPlural") }}
+                    <span
+                        v-if="assessments.length > 1 || assessments.length == 0"
+                    >
+                        {{ $t('pages.assessments.list.totalPlural') }}
                     </span>
                     <span v-if="assessments.length == 1">
-                        {{ $t("pages.assessments.list.totalSingular") }}
+                        {{ $t('pages.assessments.list.totalSingular') }}
                     </span>
                 </div>
-                <div class="form form--mt-0 ml-auto w-full" v-if="$auth.loggedIn" >
+                <div
+                    class="form form--mt-0 ml-auto w-full"
+                    v-if="$auth.loggedIn"
+                >
                     <div class="form__group">
                         <div class="form__row">
-                            <div class="input input--radios input--radios-question" >
+                            <div
+                                class="input input--radios input--radios-question"
+                            >
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                         <div class="radio">
@@ -24,18 +37,28 @@
                                                 name="assessmentType"
                                                 value="own"
                                                 id="own"
-                                                @change=" filterAssessmentsBy( $event.target.value ) "
+                                                @change="
+                                                    filterAssessmentsBy(
+                                                        $event.target.value,
+                                                    )
+                                                "
                                                 :checked="listType === 'own'"
                                             />
-                                            <img src="~/assets/img/ico-ok.svg" />
+                                            <img
+                                                src="~/assets/img/ico-ok.svg"
+                                            />
                                         </div>
                                     </div>
                                 </div>
                                 <label for="own" class="label">
-                                    <span>{{ $t("pages.assessments.list.type.own") }}</span>
+                                    <span>{{
+                                        $t('pages.assessments.list.type.own')
+                                    }}</span>
                                 </label>
                             </div>
-                            <div class="input input--radios input--radios-question">
+                            <div
+                                class="input input--radios input--radios-question"
+                            >
                                 <div class="radios__wrap">
                                     <div class="radio__wrap">
                                         <div class="radio">
@@ -46,17 +69,21 @@
                                                 id="all"
                                                 @change="
                                                     filterAssessmentsBy(
-                                                        $event.target.value
+                                                        $event.target.value,
                                                     )
                                                 "
                                                 :checked="listType === 'all'"
                                             />
-                                            <img src="~/assets/img/ico-ok.svg" />
+                                            <img
+                                                src="~/assets/img/ico-ok.svg"
+                                            />
                                         </div>
                                     </div>
                                 </div>
                                 <label for="all" class="label">
-                                    <span>{{ $t("pages.assessments.list.type.all") }}</span>
+                                    <span>{{
+                                        $t('pages.assessments.list.type.all')
+                                    }}</span>
                                 </label>
                             </div>
                         </div>
@@ -65,68 +92,117 @@
                 <button
                     type="button"
                     class="btn btn--border-turqy btn--sm ml-auto"
-                    @click="download()">
-                    <img src="~/assets/img/ico-download.svg" alt="Download Data" />
-                    <span class="btn--opacity__target">{{ $t("pages.assessments.list.downloadButton") }}</span>
+                    @click="download()"
+                >
+                    <img
+                        src="~/assets/img/ico-download.svg"
+                        alt="Download Data"
+                    />
+                    <span class="btn--opacity__target">{{
+                        $t('pages.assessments.list.downloadButton')
+                    }}</span>
                 </button>
             </div>
             <ul class="ma__results">
-                <li v-for="(assessment, index) in assessments" class="elinor__badge ui-rounded-border">
+                <li
+                    v-for="(assessment, index) in assessments"
+                    class="elinor__badge ui-rounded-border"
+                >
                     <header class="header">
-                        <div v-if="assessment.status == 10" class="flex gap-2 flex-col items-center">
-                            <div class="flex justify-center items-center w-[56px] h-[56px] rounded-full"
-                                :class="'bg-' + getAssessmentColor(assessment.score)">
-                                <span class="text-white text-[24px] font-semibold">{{ assessment.score }}</span>
+                        <div
+                            v-if="assessment.status == 10"
+                            class="flex gap-2 flex-col items-center"
+                        >
+                            <div
+                                class="flex justify-center items-center w-[56px] h-[56px] rounded-full"
+                                :class="
+                                    'bg-' + getAssessmentColor(assessment.score)
+                                "
+                            >
+                                <span
+                                    class="text-white text-[24px] font-semibold"
+                                    >{{ assessment.score }}</span
+                                >
                             </div>
-                            <span class="uppercase text-grayy-lighter font-bold text-[8px]">{{ $t("pages.assessments.outOf100") }}</span>
+                            <span
+                                class="uppercase text-grayy-lighter font-bold text-[8px]"
+                                >{{ $t('pages.assessments.outOf100') }}</span
+                            >
                         </div>
                         <div class="left">
-                            <span class="title">{{ assessment.person_responsible.username }}</span>
+                            <span class="title">{{
+                                assessment.person_responsible.username
+                            }}</span>
                             <NuxtLink
                                 class="subtitle"
                                 :to="
                                     isOpenAssessment(assessment)
                                         ? `/assessments/edit/${assessment.id}/assessment-data/`
                                         : `/assessments/${assessment.id}/info/`
-                                ">{{ assessment.name }}</NuxtLink>
-                            <div class="search-criteria" v-if="assessment.management_area_countries" >
-                                <span class="area">{{ $t("pages.assessments.managedArea") }}</span>
-                                <span class="criteria">{{ assessment.management_area_countries.name }}</span>
+                                "
+                                >{{ assessment.name }}</NuxtLink
+                            >
+                            <div
+                                class="search-criteria"
+                                v-if="assessment.management_area_countries"
+                            >
+                                <span class="area">{{
+                                    $t('pages.assessments.managedArea')
+                                }}</span>
+                                <span class="criteria">{{
+                                    assessment.management_area_countries.name
+                                }}</span>
                             </div>
                         </div>
                         <div class="right">
-                            <div v-if="assessment.data_policy === 90 && assessment.status === 10"
-                                class="assessment-status status--ready">
+                            <div
+                                v-if="
+                                    assessment.data_policy === 90 &&
+                                    assessment.status === 10
+                                "
+                                class="assessment-status status--ready"
+                            >
                                 <span class="status-circle">
-                                    <img src="~assets/img/ico-megaphone.svg"/>
+                                    <img src="~assets/img/ico-megaphone.svg" />
                                 </span>
-                                <span class="text">{{ $t("pages.assessments.published") }}</span>
+                                <span class="text">{{
+                                    $t('pages.assessments.published')
+                                }}</span>
                             </div>
-                            <div v-if="assessment.data_policy === 10 && assessment.status === 10"
-                                class="assessment-status status--ready">
+                            <div
+                                v-if="
+                                    assessment.data_policy === 10 &&
+                                    assessment.status === 10
+                                "
+                                class="assessment-status status--ready"
+                            >
                                 <span class="status-circle">
-                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K" />
+                                    <img
+                                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjMiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljc5MzI2IDEyLjY4OThMMjAuNDgzMSAwTDIyLjQxNDIgMS45MzExNkw3Ljc5MzI2IDE2LjU1MjFMMCA4Ljc1ODg1TDEuOTMxMTYgNi44Mjc2OEw3Ljc5MzI2IDEyLjY4OThaIiBmaWxsPSIjNDNBMEJEIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy43OTMyNiAxMi42ODk4TDIwLjQ4MzEgMEwyMi40MTQyIDEuOTMxMTZMNy43OTMyNiAxNi41NTIxTDAgOC43NTg4NUwxLjkzMTE2IDYuODI3NjhMNy43OTMyNiAxMi42ODk4WiIgZmlsbD0iIzQzQTBCRCIvPgo8L3N2Zz4K"
+                                    />
                                 </span>
-                                <span class="text">{{ $t("pages.assessments.finalized") }}</span>
+                                <span class="text">{{
+                                    $t('pages.assessments.finalized')
+                                }}</span>
                             </div>
                             <div
                                 v-if="
                                     assessment.status === 90 &&
-                                        getCompletionPercentage(assessment) ===
-                                            100
+                                    getCompletionPercentage(assessment) === 100
                                 "
                                 class="assessment-status status--ready"
                             >
                                 <span class="status-circle"
                                     ><span>100%</span></span
                                 >
-                                <span class="text">{{ $t("pages.assessments.readyToPublish") }}</span>
+                                <span class="text">{{
+                                    $t('pages.assessments.readyToPublish')
+                                }}</span>
                             </div>
                             <div
                                 v-if="
                                     assessment.status === 90 &&
-                                        getCompletionPercentage(assessment) <
-                                            100
+                                    getCompletionPercentage(assessment) < 100
                                 "
                                 class="assessment-status status--pending"
                             >
@@ -137,7 +213,9 @@
                                         }}%</span
                                     ></span
                                 >
-                                <span class="text">{{ $t("pages.assessments.preparingToPublish") }}</span>
+                                <span class="text">{{
+                                    $t('pages.assessments.preparingToPublish')
+                                }}</span>
                             </div>
                         </div>
                     </header>
@@ -155,34 +233,46 @@
                             class="role"
                         >
                             <span class="label">{{
-                                $t("pages.assessments.list.myRole")
+                                $t('pages.assessments.list.myRole')
                             }}</span>
                             <span class="data">{{
                                 $t(
-                                    "pages.assessments.roles." +
-                                        getMyRoleName($auth, assessment)
+                                    'pages.assessments.roles.' +
+                                        getMyRoleName($auth, assessment),
                                 )
                             }}</span>
                         </li>
                         <li class="ha">
                             <span class="label">{{
-                                $t("pages.assessments.list.year")
+                                $t('pages.assessments.list.year')
                             }}</span>
                             <span class="data">{{ assessment.year }}</span>
                         </li>
-                        <li class="countries"
-                            v-if="assessment.management_area_countries && assessment.management_area_countries.countries">
+                        <li
+                            class="countries"
+                            v-if="
+                                assessment.management_area_countries &&
+                                assessment.management_area_countries.countries
+                            "
+                        >
                             <span class="label">
-                                {{ $t("pages.assessments.list.countries") }}
+                                {{ $t('pages.assessments.list.countries') }}
                             </span>
-                            <span class="data" v-html=" assessment.management_area_countries.countries.join( ', ' )"></span>
+                            <span
+                                class="data"
+                                v-html="
+                                    assessment.management_area_countries.countries.join(
+                                        ', ',
+                                    )
+                                "
+                            ></span>
                         </li>
                         <li
                             class="view"
                             v-if="
                                 !$auth.loggedIn ||
-                                    assessment.status === 10 ||
-                                    isAssessmentObserver($auth, assessment)
+                                assessment.status === 10 ||
+                                isAssessmentObserver($auth, assessment)
                             "
                         >
                             <nuxt-link
@@ -190,7 +280,7 @@
                                 class="btn--border-turqy btn--opacity--child"
                             >
                                 <span class="btn--opacity__target">{{
-                                    $t("pages.assessments.list.viewButton")
+                                    $t('pages.assessments.list.viewButton')
                                 }}</span>
                                 <img
                                     src="~/assets/img/ico-button-arrow-turqy.svg"
@@ -201,18 +291,16 @@
                             class="view"
                             v-if="
                                 $auth.loggedIn &&
-                                    assessment.status !== 10 &&
-                                    !isAssessmentObserver($auth, assessment)
+                                assessment.status !== 10 &&
+                                !isAssessmentObserver($auth, assessment)
                             "
                         >
                             <nuxt-link
-                                :to="
-                                    `/assessments/edit/${assessment.id}/assessment-data/`
-                                "
+                                :to="`/assessments/edit/${assessment.id}/assessment-data/`"
                                 class="btn--border-turqy btn--opacity--child"
                             >
                                 <span class="btn--opacity__target">{{
-                                    $t("pages.assessments.list.editButton")
+                                    $t('pages.assessments.list.editButton')
                                 }}</span>
                                 <img
                                     src="~/assets/img/ico-button-arrow-turqy.svg"
@@ -227,23 +315,23 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from "vuex";
+import { mapActions, mapGetters, mapState } from 'vuex';
 import {
     isAssessmentObserver,
     getMyRoleName,
-    isAssessmentCollaborator
-} from "~/config/assessment-roles";
-import { calculateProgress } from "~/config/assessment-progress";
+    isAssessmentCollaborator,
+} from '~/config/assessment-roles';
+import { calculateProgress } from '~/config/assessment-progress';
 
 export default {
-    name: "assessments-results",
+    name: 'assessments-results',
     computed: {
         ...mapState({
-            assessments: state => state.assessments.list,
-            filters: state => state.assessments.filters,
-            users: state => state.users.users,
-            listType: state => state.assessments.listType
-        })
+            assessments: (state) => state.assessments.list,
+            filters: (state) => state.assessments.filters,
+            users: (state) => state.users.users,
+            listType: (state) => state.assessments.listType,
+        }),
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
@@ -257,23 +345,23 @@ export default {
             );
         },
         ...mapActions({
-            filterAssessmentsBy: "assessments/filterAssessmentsBy",
-            popupState: "popup/popupState",
-            download: "assessments/downloadAssessments"
+            filterAssessmentsBy: 'assessments/filterAssessmentsBy',
+            popupState: 'popup/popupState',
+            download: 'assessments/downloadAssessments',
         }),
         getCompletionPercentage(assessment) {
             return parseFloat(
-                calculateProgress(assessment).overall_percentage.toFixed(0)
+                calculateProgress(assessment).overall_percentage.toFixed(0),
             );
-        }
+        },
     },
     filters: {
-        capitalizeFirstLetter: value => {
+        capitalizeFirstLetter: (value) => {
             if (!value) {
-                return "";
+                return '';
             }
             return value.charAt(0).toUpperCase();
-        }
-    }
+        },
+    },
 };
 </script>

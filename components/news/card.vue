@@ -10,15 +10,18 @@
             <div class="text-group">
                 <p class="text" v-html="text"></p>
             </div>
-            <a v-if="instance.text.length > maxCharacters" @click="toggleExpanded"  role="button" class="btn-collapse">
-                <span v-if="!expanded">{{ $t( 'buttons.seeMore' ) }}</span>
-                <span v-if="expanded">{{ $t( 'buttons.seeLess' ) }}</span>
-                <img src="~/assets/img/ico-arrow-down.svg" alt="" class="ico">
+            <a
+                v-if="instance.text.length > maxCharacters"
+                @click="toggleExpanded"
+                role="button"
+                class="btn-collapse"
+            >
+                <span v-if="!expanded">{{ $t('buttons.seeMore') }}</span>
+                <span v-if="expanded">{{ $t('buttons.seeLess') }}</span>
+                <img src="~/assets/img/ico-arrow-down.svg" alt="" class="ico" />
             </a>
         </div>
-
     </div>
-
 </template>
 <script>
 const maxCharacters = 300;
@@ -29,20 +32,23 @@ export default {
     data() {
         return {
             expanded: false,
-            text: this.instance.text.length > maxCharacters ? this.instance.text.substring(0,maxCharacters) + '...' : this.instance.text,
-            maxCharacters
-        }
+            text:
+                this.instance.text.length > maxCharacters
+                    ? this.instance.text.substring(0, maxCharacters) + '...'
+                    : this.instance.text,
+            maxCharacters,
+        };
     },
     methods: {
         toggleExpanded() {
             this.expanded = !this.expanded;
-            if(this.expanded) {
+            if (this.expanded) {
                 this.text = this.instance.text;
             } else {
-                this.text = this.instance.text.substring(0,maxCharacters)  + '...'
+                this.text =
+                    this.instance.text.substring(0, maxCharacters) + '...';
             }
-        }
-    }
-}
+        },
+    },
+};
 </script>
-

@@ -13,7 +13,7 @@
             <ul v-if="$route.path === '/'">
                 <li class="btn--opacity--child">
                     <NuxtLink :to="`/faq/`" class="btn--opacity__target">
-                        {{ $t("footer.faqs") }}
+                        {{ $t('footer.faqs') }}
                     </NuxtLink>
                 </li>
                 <li class="btn--opacity--child">
@@ -21,7 +21,7 @@
                         :to="`/methodology/`"
                         class="btn--opacity__target"
                     >
-                        {{ $t("footer.methodology") }}
+                        {{ $t('footer.methodology') }}
                     </NuxtLink>
                 </li>
                 <li v-if="!$auth.loggedIn" class="btn--opacity--child">
@@ -29,18 +29,18 @@
                         :to="`/create-account/`"
                         class="btn--opacity__target"
                     >
-                        {{ $t("footer.createAccount") }}
+                        {{ $t('footer.createAccount') }}
                     </NuxtLink>
                 </li>
             </ul>
         </nav>
         <div class="footer--main__bottom">
-            {{ $t("footer.copyright") }}
+            {{ $t('footer.copyright') }}
             {{ currentYear }}
-            {{ $t("footer.copyrightAfterYear") }}****
+            {{ $t('footer.copyrightAfterYear') }}****
             <NuxtLink to="/terms-of-use" class="btn--opacity--child">
                 <span class="btn--opacity__target">
-                    {{ $t("footer.termsOfUse") }}</span
+                    {{ $t('footer.termsOfUse') }}</span
                 > </NuxtLink
             ><!--
              |
@@ -52,14 +52,14 @@
 </template>
 <script>
 export default {
-    name: "default-footer",
+    name: 'default-footer',
     computed: {
         isSidebarOpen() {
             return this.$store.state.layout.sidebar;
         },
         currentYear() {
             return new Date().getFullYear();
-        }
-    }
+        },
+    },
 };
 </script>

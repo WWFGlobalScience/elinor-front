@@ -21,3 +21,5 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+This project uses Prettier for autoformatting and Husky 3 (an older version to match current the current Node version). Prettier will run pre-commit. It is optional, but recommended that an IDE extension such as [this one](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) is used to run Prettier when files are saved.

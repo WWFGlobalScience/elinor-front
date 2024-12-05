@@ -1,15 +1,15 @@
 export const state = () => ({
-    dropdown: true
-})
+    dropdown: true,
+});
 
 export const mutations = {
-    toggleDropdown( state ) {
-        state.dropdown = !state.dropdown
-    }
-}
+    toggleDropdown(state) {
+        state.dropdown = !state.dropdown;
+    },
+};
 
 export const actions = {
-    toggleDropdown( state ) {
-        state.commit( 'toggleDropdown' )
-    }
-}
+    toggleDropdown(state) {
+        state.commit('toggleDropdown');
+    },
+};

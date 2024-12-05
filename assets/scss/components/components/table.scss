@@ -5,7 +5,7 @@
     thead {
         @apply relative;
         &::after {
-            content: "";
+            content: '';
             @apply absolute h-14 w-screen bg-turqy-lighter right-0 top-0 mx-auto;
             left: -10vw;
             @media (max-width: 768px) {
@@ -66,7 +66,7 @@
         p:before,
         p:after {
             color: transparent;
-            content: "";
+            content: '';
             flex: 1;
             border-bottom: groove 1px;
             border-color: transparent;
