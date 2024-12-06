@@ -524,7 +524,7 @@ export default {
         }),
     },
 
-    mounted() {
+    activated() {
         this.$store.commit('authentication/clearError');
     },
 
