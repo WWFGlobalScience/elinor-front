@@ -116,6 +116,9 @@ export default {
             filters: (state) => state.assessments.filters,
         }),
     },
+    deactivated() {
+        this.searchText = null;
+    },
     methods: {
         ...mapActions({
             popupState: 'popup/popupState',
