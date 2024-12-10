@@ -58,12 +58,12 @@ export default async () => {
             '~/plugins/formDataStringify.js',
             '~/plugins/vue-date-picker.js',
             '~/plugins/scoreColors.js',
-            '~/plugins/vue-toasted.js',
             {
                 src: '~/plugins/choices.js',
                 mode: 'client',
             },
             { src: '~/plugins/vuex-persist', ssr: false },
+            '~/plugins/axios.js',
         ],
         buildModules: [
             '@nuxtjs/tailwindcss',
@@ -99,6 +99,7 @@ export default async () => {
             'nuxt-vue-multiselect',
             '@nuxtjs/google-gtag',
             '@nuxtjs/recaptcha',
+            '@nuxtjs/toast',
         ],
         auth: {
             strategies: {
@@ -208,6 +209,11 @@ export default async () => {
                 // cacheAssets: true,
                 offlineStrategy: 'CacheFirst',
             },
+        },
+        toast: {
+            theme: 'bubble',
+            position: 'bottom-right',
+            duration: 7000,
         },
     };
 };

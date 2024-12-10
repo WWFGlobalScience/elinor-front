@@ -17,6 +17,7 @@
         "@nuxtjs/google-gtag": "^1.0.4",
         "@nuxtjs/moment": "^1.6.1",
         "@nuxtjs/recaptcha": "^1.1.1",
+        "@nuxtjs/toast": "^3.3.1",
         "@turf/turf": "^6.4.0",
         "core-js": "^3.9.1",
         "countries-api": "^2.0.2",
@@ -32,7 +33,6 @@
         "vue-mapbox": "^0.4.1",
         "vue-multiselect": "^2.1.6",
         "vue-select": "^3.11.2",
-        "vue-toasted": "^1.1.28",
         "vue2-leaflet": "^2.7.1",
         "vuejs-datepicker": "^1.6.2",
         "vuex-persist": "^3.1.3"
