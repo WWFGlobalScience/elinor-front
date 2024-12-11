@@ -353,7 +353,7 @@ export default {
                 })
                 .catch(() => {
                     this.isReportGenerating = false;
-                    this.$toasted.error(
+                    this.$toast.error(
                         this.$t(
                             'pages.assessments.actions.generateReport.error',
                         ),

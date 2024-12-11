@@ -432,6 +432,7 @@ export const actions = {
             active: true,
             text: 'Publishing assessment...',
         });
+        this.dispatch('popup/popupState', { active: false });
         const versionResponse = await this.$axios.get('v2/assessmentversion');
         const published_version = versionResponse.data;
         this.$axios({
@@ -439,17 +440,25 @@ export const actions = {
             url: `/v2/assessments/${id}/`,
             data: { data_policy: 90, published_version },
         })
-            .then((response) => {
+            .then(() => {
                 state.commit('setAssessmentField', {
                     field: 'data_policy',
                     value: 90,
                 });
                 state.commit('setLastEdit');
-                this.dispatch('popup/popupState', { active: false });
                 this.$router.push('/assessments');
+                this.$toast.success(
+                    this.$i18n.t(
+                        'statusMessaging.assessments.unpublishingAssessmentSuccess',
+                    ),
+                );
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                this.$toast.error(
+                    this.$i18n.t(
+                        'statusMessaging.assessments.publishingAssessmentError',
+                    ),
+                );
             })
             .finally(() => {
                 this.dispatch('loader/loaderState', {
@@ -464,23 +473,31 @@ export const actions = {
             active: true,
             text: 'Unpublishing assessment...',
         });
-
+        this.dispatch('popup/popupState', { active: false });
         this.$axios({
             method: 'patch',
             url: `/v2/assessments/${id}/`,
             data: { data_policy: 10 },
         })
-            .then((response) => {
+            .then(() => {
                 state.commit('setAssessmentField', {
                     field: 'data_policy',
                     value: 10,
                 });
                 state.commit('setLastEdit');
-                this.dispatch('popup/popupState', { active: false });
                 this.$router.push('/assessments');
+                this.$toast.success(
+                    this.$i18n.t(
+                        'statusMessaging.assessments.unpublishingAssessmentSuccess',
+                    ),
+                );
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                this.$toast.error(
+                    this.$i18n.t(
+                        'statusMessaging.assessments.unpublishingAssessmentError',
+                    ),
+                );
             })
             .finally(() => {
                 this.dispatch('loader/loaderState', {
