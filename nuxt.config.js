@@ -6,7 +6,7 @@ export default async () => {
     const locales = [];
     const langDir = 'locales/';
     const response = await fetch(
-        'https://api.elinordata.org/v2/activelanguages/',
+        'https://dev-api.elinordata.org/v2/activelanguages/',
     );
     const apiLocales = await response.json();
 

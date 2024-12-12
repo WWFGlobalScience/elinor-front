@@ -587,7 +587,8 @@
                 "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
                 "mandatoryAttribute": "Mandatory",
                 "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
+                "activeAttribute": "Active attribute",
+                "offlineSurveyWarning": "Harap pastikan bahwa pengeditan offline dilakukan di browser yang sama. Jika Anda berpindah browser sebelum mengubah survei menjadi online lagi, Anda mungkin kehilangan hasil edit offline Anda."
             },
             "statuses": {
                 "90": "Open",

@@ -58,6 +58,12 @@
                 </template>
             </div>
         </div>
+        <p
+            v-if="wasSurveyOfflineModeInitiatedByCurrentUser"
+            class="container text-red-400 text-sm pt-1"
+        >
+            {{ $t('pages.assessments.edit.offlineSurveyWarning') }}
+        </p>
     </header>
 </template>
 
@@ -72,6 +78,9 @@ export default {
             assessment: (state) => state.assessments.assessment,
             lastEdit: (state) => moment(state.assessments.assessment.last_edit),
         }),
+        wasSurveyOfflineModeInitiatedByCurrentUser() {
+            return this.assessment.checkout === this.$auth.user.id;
+        },
     },
 };
 </script>

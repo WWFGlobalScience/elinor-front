@@ -258,7 +258,6 @@ export const actions = {
     },
 
     async fetchAssessment(state, id) {
-        console.log('Fetching assessment');
         this.dispatch('loader/loaderState', {
             active: true,
             text: 'Getting assessment data...',

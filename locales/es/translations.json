@@ -587,7 +587,8 @@
                 "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
                 "mandatoryAttribute": "Mandatory",
                 "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
+                "activeAttribute": "Active attribute",
+                "offlineSurveyWarning": "Asegúrese de que las ediciones sin conexión se realicen en el mismo navegador. Si cambia de navegador antes de volver a poner la encuesta en línea, es posible que pierda sus ediciones fuera de línea."
             },
             "statuses": {
                 "90": "Abierto",

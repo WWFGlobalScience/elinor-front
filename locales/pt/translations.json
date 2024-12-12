@@ -587,7 +587,8 @@
                 "optionalAttributesDescription": "Selecione os atributos que correspondem à sua Avaliação",
                 "mandatoryAttribute": "Obrigatório",
                 "inactiveAttribute": "Atributo Inativo",
-                "activeAttribute": "Atributo Ativo"
+                "activeAttribute": "Atributo Ativo",
+                "offlineSurveyWarning": "Certifique-se de que as edições off-line ocorram no mesmo navegador. Se você trocar de navegador antes de colocar a pesquisa on-line novamente, poderá perder suas edições off-line."
             },
             "statuses": {
                 "10": "Publicados",
