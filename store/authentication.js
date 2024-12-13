@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE_KEY } from '~/config/localStorageKey';
+
 export const state = () => ({
     error: null,
     alerts: {
@@ -218,6 +220,7 @@ export const actions = {
             });
     },
     async logout(state) {
+        localStorage.removeItem(LOCAL_STORAGE_KEY); // this provides us with the ability to suggest that users logout and back in if they are experiencing bugs caused by state persistance
         await this.$auth.logout();
         await this.dispatch('assessments/reset');
         state.commit('resetAlerts');
