@@ -586,7 +586,8 @@
                 "optionalAttributesDescription": "Chagua sifa zinasohusiana na tathmini yako",
                 "mandatoryAttribute": "Lazima",
                 "inactiveAttribute": "Sifa isiyotumiks",
-                "activeAttribute": "Sifa inayotumika"
+                "activeAttribute": "Sifa inayotumika",
+                "offlineSurveyWarning": "Tafadhali hakikisha kuwa mabadiliko ya nje ya mtandao yanafanyika katika kivinjari sawa. Ukibadilisha vivinjari kabla ya kugeuza utafiti mtandaoni tena, unaweza kupoteza mabadiliko yako ya nje ya mtandao."
             },
             "statuses": {
                 "90": "Fungua",

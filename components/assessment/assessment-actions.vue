@@ -11,7 +11,10 @@
         >
         <template v-if="$auth.loggedIn">
             <a
-                v-if="isAssessmentCollaborator($auth, assessment) && !isOffline"
+                v-if="
+                    isAssessmentCollaborator($auth, assessment) &&
+                    !isSurveyOffline
+                "
                 @click="
                     popupState({
                         active: true,
@@ -34,7 +37,7 @@
             </a>
             <a
                 v-if="
-                    !isOffline &&
+                    !isSurveyOffline &&
                     isAssessmentCollaborator($auth, assessment) &&
                     !isAssessmentObserver($auth, assessment)
                 "
@@ -50,7 +53,7 @@
             >
             <a
                 v-if="
-                    !isOffline &&
+                    !isSurveyOffline &&
                     isAssessmentCollaborator($auth, assessment) &&
                     !isAssessmentObserver($auth, assessment)
                 "
@@ -75,10 +78,10 @@
                         stroke-linejoin="round"
                     />
                 </svg>
-                <span> Turn {{ isOffline ? 'online' : 'offline' }} </span>
+                <span> Turn {{ isSurveyOffline ? 'online' : 'offline' }} </span>
             </a>
             <a
-                v-if="!isCreator() && !isOffline"
+                v-if="!isCreator() && !isSurveyOffline"
                 @click="contact"
                 role="button"
                 class="btn btn--border-turqy btn--sm"
@@ -87,7 +90,7 @@
                 <span>{{ $t('default.contactAdministrator') }}</span></a
             >
             <a
-                v-if="!isCreator() && !isOffline"
+                v-if="!isCreator() && !isSurveyOffline"
                 @click="flag"
                 role="button"
                 class="btn btn--rounded"
@@ -98,7 +101,9 @@
                 </span></a
             >
             <a
-                v-if="isCreator() && assessment.status !== 10 && !isOffline"
+                v-if="
+                    isCreator() && assessment.status !== 10 && !isSurveyOffline
+                "
                 @click="destroy"
                 role="button"
                 class="btn btn--rounded"
@@ -109,7 +114,9 @@
                 }}</span></a
             >
             <a
-                v-if="isCreator() && assessment.status === 10 && !isOffline"
+                v-if="
+                    isCreator() && assessment.status === 10 && !isSurveyOffline
+                "
                 @click="infoToDestroy"
                 role="button"
                 class="btn btn--rounded"
@@ -146,7 +153,7 @@ export default {
     computed: {
         ...mapState({
             assessment: (state) => state.assessments.assessment,
-            isOffline: (state) => state.layout.offline,
+            isSurveyOffline: (state) => !!state.assessments.assessment.checkout,
         }),
     },
     watch: {
@@ -226,7 +233,7 @@ export default {
         },
         onClickOfflineButton() {
             if (this.hasConnection) {
-                if (this.isOffline) {
+                if (this.isSurveyOffline) {
                     this.setOnline();
                 } else {
                     this.setOffline();

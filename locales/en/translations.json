@@ -607,7 +607,8 @@
                 "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
                 "mandatoryAttribute": "Mandatory",
                 "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
+                "activeAttribute": "Active attribute",
+                "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
             },
             "statuses": {
                 "90": "Open",
