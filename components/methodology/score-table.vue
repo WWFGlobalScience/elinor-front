@@ -7,22 +7,39 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th>{{ $t('pages.methodologyPage.scoreTable.indicator') }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}</th>
-                <th>{{ $t('pages.methodologyPage.scoreTable.attribute') }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}</th>
-                <th>{{ $t('pages.methodologyPage.scoreTable.aggregate') }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}</th>
+                <th>
+                    {{ $t('pages.methodologyPage.scoreTable.indicator')
+                    }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}
+                </th>
+                <th>
+                    {{ $t('pages.methodologyPage.scoreTable.attribute')
+                    }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}
+                </th>
+                <th>
+                    {{ $t('pages.methodologyPage.scoreTable.aggregate')
+                    }}<br />{{ $t('pages.methodologyPage.scoreTable.value') }}
+                </th>
             </tr>
             <tr>
                 <td>
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-poor"></span>
                         <p class="text">
-                            {{ $t('pages.methodologyPage.scoreTable.plan.title') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.plan.title',
+                                )
+                            }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
-                        <span class="description">{{ $t('pages.methodologyPage.scoreTable.plan.description') }}</span>
+                        <span class="description">{{
+                            $t(
+                                'pages.methodologyPage.scoreTable.plan.description',
+                            )
+                        }}</span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
                 </td>
@@ -35,14 +52,22 @@
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-average"></span>
                         <p class="text">
-                            {{ $t('pages.methodologyPage.scoreTable.build.title') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.build.title',
+                                )
+                            }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
                         <span class="description">
-                            {{ $t('pages.methodologyPage.scoreTable.build.description') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.build.description',
+                                )
+                            }}
                         </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
@@ -56,14 +81,22 @@
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-good"></span>
                         <p class="text">
-                            {{ $t('pages.methodologyPage.scoreTable.strengthen.title') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.strengthen.title',
+                                )
+                            }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
                         <span class="description">
-                            {{ $t('pages.methodologyPage.scoreTable.strengthen.description') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.strengthen.description',
+                                )
+                            }}
                         </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
@@ -77,14 +110,22 @@
                     <div class="item-legend">
                         <span class="w-7 h-7 rounded-full bg-excellent"></span>
                         <p class="text">
-                            {{ $t('pages.methodologyPage.scoreTable.maintain.title') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.maintain.title',
+                                )
+                            }}
                         </p>
                     </div>
                 </td>
                 <td>
                     <div class="flex justify-center items-center">
                         <span class="description">
-                            {{ $t('pages.methodologyPage.scoreTable.maintain.description') }}
+                            {{
+                                $t(
+                                    'pages.methodologyPage.scoreTable.maintain.description',
+                                )
+                            }}
                         </span>
                         <img src="~/assets/img/arrow-right.svg" alt="" />
                     </div>
@@ -99,6 +140,6 @@
 
 <script>
 export default {
-    name: "score-table"
+    name: 'score-table',
 };
 </script>

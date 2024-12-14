@@ -587,7 +587,8 @@
                 "optionalAttributesDescription": "Selecione os atributos que correspondem à sua Avaliação",
                 "mandatoryAttribute": "Obrigatório",
                 "inactiveAttribute": "Atributo Inativo",
-                "activeAttribute": "Atributo Ativo"
+                "activeAttribute": "Atributo Ativo",
+                "offlineSurveyWarning": "Certifique-se de que as edições off-line ocorram no mesmo navegador. Se você trocar de navegador antes de colocar a pesquisa on-line novamente, poderá perder suas edições off-line."
             },
             "statuses": {
                 "10": "Publicados",
@@ -681,7 +682,7 @@
                         "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
                     },
                     "needs": {
-                        "title": "Key governance strengths",
+                        "title": "Key governance needs",
                         "label": "Explain Main Needs",
                         "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
                     },
@@ -690,7 +691,9 @@
                         "label": "Context",
                         "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
                     },
-                    "button": "Generate"
+                    "button": "Generate",
+                    "buttonGenerating": "Gerando...",
+                    "error": "Ocorreu um erro ao gerar o relatório."
                 }
             },
             "outOf100": "de 100",

@@ -8,32 +8,30 @@
 </template>
 
 <script>
-
-import { mapActions } from "vuex"
+import { mapActions } from 'vuex';
 
 export default {
     name: 'ma-info',
     layout: 'ma',
     data() {
         return {
-            mode: 'ma'
-        }  
+            mode: 'ma',
+        };
     },
     computed: {
         assessments() {
-            return this.$store.state.assessments.list
+            return this.$store.state.assessments.list;
         },
         ma() {
-            return this.$store.state.ma.ma
-        }
+            return this.$store.state.ma.ma;
+        },
     },
     filters: {
-        formatDate: function( value ) {
+        formatDate: function (value) {
             if (value) {
-                return moment(value *1000 ).format('MM/DD/YYYY')
+                return moment(value * 1000).format('MM/DD/YYYY');
             }
-        }
-    }
-}
-
+        },
+    },
+};
 </script>

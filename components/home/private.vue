@@ -1,12 +1,17 @@
 <template>
-  <article class="page page--welcome">
-    <header class="header--page">
-      <div class="container">
-        <h1 class="mb-10">{{ $t( 'pages.welcome.content.header.title' ) }}</h1>
-        <p v-html="$t( 'pages.welcome.content.header.subtitle' )" class="max-w-sm"></p>
-      </div>
-    </header>
-    <!--<section class="section welcome__asessments">
+    <article class="page page--welcome">
+        <header class="header--page">
+            <div class="container">
+                <h1 class="mb-10">
+                    {{ $t('pages.welcome.content.header.title') }}
+                </h1>
+                <p
+                    v-html="$t('pages.welcome.content.header.subtitle')"
+                    class="max-w-sm"
+                ></p>
+            </div>
+        </header>
+        <!--<section class="section welcome__asessments">
       <div class="container">
         <header>
           <h2 class="mb-5">{{ $t( 'pages.welcome.content.assessments.header.title' ) }}</h2>
@@ -43,59 +48,110 @@
         </ul>
       </div>
     </section>-->
-    <section class="section section--welcome__ctas">
-      <div class="container">
-        <header>
-          <h2 class="mb-5">{{ $t( 'pages.welcome.content.ctas.header.title' ) }}</h2>
-        </header>
-        <ul class="flex">
-          <li class="ui-rounded-turqy-lighter">
-            <header>
-              <h4>{{ $t( 'pages.welcome.content.ctas.items.create.title' ) }}</h4>
-              <p v-html="$t( 'pages.welcome.content.ctas.items.create.description' )"></p>
-            </header>
-            <footer>
-              <nuxt-link to="" class="btn btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t( 'pages.welcome.content.ctas.items.create.button' ) }}</span>
-                <img src="~/assets/img/ico-button-arrow.svg">
-              </nuxt-link>
-            </footer>
-          </li>
-          <li class="ui-rounded-turqy-lighter">
-            <header>
-              <h4>{{ $t( 'pages.welcome.content.ctas.items.invite.title' ) }}</h4>
-              <p v-html="$t( 'pages.welcome.content.ctas.items.invite.description' )"></p>
-            </header>
-            <footer>
-              <nuxt-link to="" class="btn btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t( 'pages.welcome.content.ctas.items.invite.button' ) }}</span>
-                <img src="~/assets/img/ico-button-arrow.svg">
-              </nuxt-link>
-            </footer>
-          </li>
-          <li class="ui-rounded-turqy-lighter">
-            <header>
-              <h4>{{ $t( 'pages.welcome.content.ctas.items.help.title' ) }}</h4>
-              <p v-html="$t( 'pages.welcome.content.ctas.items.help.description' )"></p>
-            </header>
-            <footer>
-              <nuxt-link to="/help-and-guides" class="btn btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t( 'pages.welcome.content.ctas.items.help.button' ) }}</span>
-                <img src="~/assets/img/ico-button-arrow.svg">
-              </nuxt-link>
-            </footer>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </article>
+        <section class="section section--welcome__ctas">
+            <div class="container">
+                <header>
+                    <h2 class="mb-5">
+                        {{ $t('pages.welcome.content.ctas.header.title') }}
+                    </h2>
+                </header>
+                <ul class="flex">
+                    <li class="ui-rounded-turqy-lighter">
+                        <header>
+                            <h4>
+                                {{
+                                    $t(
+                                        'pages.welcome.content.ctas.items.create.title',
+                                    )
+                                }}
+                            </h4>
+                            <p
+                                v-html="
+                                    $t(
+                                        'pages.welcome.content.ctas.items.create.description',
+                                    )
+                                "
+                            ></p>
+                        </header>
+                        <footer>
+                            <nuxt-link to="" class="btn btn--opacity--child">
+                                <span class="btn--opacity__target">{{
+                                    $t(
+                                        'pages.welcome.content.ctas.items.create.button',
+                                    )
+                                }}</span>
+                                <img src="~/assets/img/ico-button-arrow.svg" />
+                            </nuxt-link>
+                        </footer>
+                    </li>
+                    <li class="ui-rounded-turqy-lighter">
+                        <header>
+                            <h4>
+                                {{
+                                    $t(
+                                        'pages.welcome.content.ctas.items.invite.title',
+                                    )
+                                }}
+                            </h4>
+                            <p
+                                v-html="
+                                    $t(
+                                        'pages.welcome.content.ctas.items.invite.description',
+                                    )
+                                "
+                            ></p>
+                        </header>
+                        <footer>
+                            <nuxt-link to="" class="btn btn--opacity--child">
+                                <span class="btn--opacity__target">{{
+                                    $t(
+                                        'pages.welcome.content.ctas.items.invite.button',
+                                    )
+                                }}</span>
+                                <img src="~/assets/img/ico-button-arrow.svg" />
+                            </nuxt-link>
+                        </footer>
+                    </li>
+                    <li class="ui-rounded-turqy-lighter">
+                        <header>
+                            <h4>
+                                {{
+                                    $t(
+                                        'pages.welcome.content.ctas.items.help.title',
+                                    )
+                                }}
+                            </h4>
+                            <p
+                                v-html="
+                                    $t(
+                                        'pages.welcome.content.ctas.items.help.description',
+                                    )
+                                "
+                            ></p>
+                        </header>
+                        <footer>
+                            <nuxt-link
+                                to="/help-and-guides"
+                                class="btn btn--opacity--child"
+                            >
+                                <span class="btn--opacity__target">{{
+                                    $t(
+                                        'pages.welcome.content.ctas.items.help.button',
+                                    )
+                                }}</span>
+                                <img src="~/assets/img/ico-button-arrow.svg" />
+                            </nuxt-link>
+                        </footer>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </article>
 </template>
 
 <script>
-
 export default {
-  name: 'home-private',
-  methods: {}
-}
-
+    name: 'home-private',
+    methods: {},
+};
 </script>

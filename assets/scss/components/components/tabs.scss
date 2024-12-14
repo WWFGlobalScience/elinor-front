@@ -1,14 +1,14 @@
 //tabs
 .elinor__tabs {
     @apply flex border-b border-grayy-border sm:flex-wrap;
-    li{
-        @apply sm:flex-auto sm:w-full
+    li {
+        @apply sm:flex-auto sm:w-full;
     }
 
-    .btn--tab{
+    .btn--tab {
         @apply lg:flex-col lg:justify-center lg:p-3;
 
-        .bullet{
+        .bullet {
             @apply lg:mb-2;
         }
     }

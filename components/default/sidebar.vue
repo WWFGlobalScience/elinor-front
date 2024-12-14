@@ -6,7 +6,12 @@
     >
         <div class="sidebar__wrap">
             <div class="brand">
-                <NuxtLink :class="isOffline ? 'pointer-events-none': ''" :event="isOffline ? '': 'click'" to="/" class="flex items-center">
+                <NuxtLink
+                    :class="isOffline ? 'pointer-events-none' : ''"
+                    :event="isOffline ? '' : 'click'"
+                    to="/"
+                    class="flex items-center"
+                >
                     <img
                         src="~/assets/img/elinor-icon-white.svg"
                         class="brand__icon"
@@ -26,8 +31,7 @@
                             v-slot="{ href, route, navigate }"
                             v-if="
                                 page.config.display.auth === null ||
-                                    page.config.display.auth ===
-                                        isUserAuthenticated
+                                page.config.display.auth === isUserAuthenticated
                             "
                             :to="`/${$t(page.slug)}`"
                         >
@@ -36,7 +40,8 @@
                                 class="btn--opacity--child nav__main__link"
                                 :class="{
                                     'nuxt-link-active': isLinkActive(page),
-                                    'pointer-events-none opacity-50': isOffline && !page.offlineTitle
+                                    'pointer-events-none opacity-50':
+                                        isOffline && !page.offlineTitle,
                                 }"
                             >
                                 <img
@@ -88,7 +93,7 @@
                                 class="center-v w-4 btn--opacity__target"
                             />
                             <span class="btn--opacity__target">{{
-                                $t("sidebar.minimize")
+                                $t('sidebar.minimize')
                             }}</span>
                         </div>
                     </li>
@@ -99,9 +104,9 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 export default {
-    name: "default-sidebar",
+    name: 'default-sidebar',
     computed: {
         pages() {
             return this.$store.state.pages.list;
@@ -114,35 +119,38 @@ export default {
         },
         isUserAuthenticated() {
             return this.$auth.loggedIn;
-        }
+        },
     },
     methods: {
         ...mapActions({
-            toggleSidebar: "layout/toggleSidebar"
+            toggleSidebar: 'layout/toggleSidebar',
         }),
         goTo(page) {
             const route = this.$t(page.slug);
-            this.$router.push(route === "" ? "/" : route);
+            this.$router.push(route === '' ? '/' : route);
         },
         home() {
-            this.$router.push("/");
+            this.$router.push('/');
         },
         isLinkActive(page) {
             const slug = this.$t(page.slug);
-            if (this.$route.fullPath === "/") {
-                return slug === "";
+            if (this.$route.fullPath === '/') {
+                return slug === '';
             }
 
-            if (slug === "") {
+            if (slug === '') {
                 return false;
             }
 
             return this.$route.fullPath.indexOf(slug) !== -1;
         },
         getPageTitle(page) {
-            const title = this.isOffline && page.offlineTitle ? page.offlineTitle: page.title;
+            const title =
+                this.isOffline && page.offlineTitle
+                    ? page.offlineTitle
+                    : page.title;
             return this.$t(title);
-        }
-    }
+        },
+    },
 };
 </script>

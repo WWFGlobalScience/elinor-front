@@ -47,20 +47,22 @@
     @apply w-screen h-screen z-30 fixed inset-0 py-2 overflow-hidden;
 
     -webkit-backdrop-filter: blur(0.5rem);
-            backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.5rem);
 
     .loader__group {
         @apply flex flex-col absolute inset-0 items-center justify-center z-50;
         svg {
             @apply w-12 mx-auto mb-2;
         }
-        .loader__txt{
+        .loader__txt {
             @apply text-grayy-lighter text-[14px] mt-3;
         }
     }
     .loader__bg {
         @apply w-full h-full absolute inset-0 bg-white bg-opacity-70;
-        @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        @supports not (
+            (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+        ) {
             @apply bg-opacity-90;
         }
     }
@@ -87,16 +89,18 @@
 }
 
 //info block
-.info-block{
+.info-block {
     @apply pt-12 pb-6;
-    [class*='c-title--']{
+    [class*='c-title--'] {
         @apply mb-8;
     }
-    p{@apply mb-6}
+    p {
+        @apply mb-6;
+    }
 }
 
 //rounded number
-.rounded-number{
+.rounded-number {
     @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-small mr-2;
     &--xl {
         @apply w-14 h-14 text-[26px];
@@ -104,45 +108,45 @@
 }
 
 //message detail
-.message-detail{
+.message-detail {
     @apply border-l border-grayy-border pl-6 sm:border-t sm:border-l-0 sm:pl-0 sm:pt-6;
-    .message-detail__title{
+    .message-detail__title {
         @apply text-base;
     }
-    .message-detail__text{
+    .message-detail__text {
         @apply text-sm;
     }
 }
 
 //divider
-.divider{
+.divider {
     @apply flex justify-between items-center w-2/3 lg:w-full my-12;
-    span{
+    span {
         @apply pl-8 pr-2;
     }
-    &:after{
-        content:'';
+    &:after {
+        content: '';
         @apply block w-full h-px pl-2 bg-turqy-middle;
     }
 }
 
 //btn option
-.options__wrap{
+.options__wrap {
     @apply flex justify-start items-center w-2/3 lg:w-full flex-row sm:flex-col;
 
-    .option__btn{
+    .option__btn {
         @apply w-1/2 md:w-full pr-10 sm:pr-0;
     }
 
-    .option__info{
+    .option__info {
         @apply w-1/2 md:w-full sm:mt-5;
     }
 }
 
 //msg
-.msg{
+.msg {
     @apply text-xs my-4 px-2;
-    &.msg--error{
+    &.msg--error {
         @apply text-redy;
     }
 }

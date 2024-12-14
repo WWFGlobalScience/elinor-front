@@ -10,11 +10,11 @@
 </template>
 <script>
 export default {
-    name: "report-aside",
+    name: 'report-aside',
     props: {
         logo: {
-            default: true
-        }
+            default: true,
+        },
     },
 };
 </script>

@@ -18,12 +18,14 @@
     }
 }
 
-.map-filters{
-    .multiselect__single, .multiselect__option > span{
+.map-filters {
+    .multiselect__single,
+    .multiselect__option > span {
         @apply truncate max-w-full;
-        display:block;
+        display: block;
     }
-    .multiselect__content, .multiselect__option{
+    .multiselect__content,
+    .multiselect__option {
         @apply max-w-full;
     }
 }

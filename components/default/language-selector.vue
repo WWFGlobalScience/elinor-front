@@ -1,11 +1,14 @@
 <template>
     <div class="elinor__dropdown lang-dropdown">
-        <div class="elinor__dropdown-toggle" :class="isOffline ? 'pointer-events-none': ''">
+        <div
+            class="elinor__dropdown-toggle"
+            :class="isOffline ? 'pointer-events-none' : ''"
+        >
             <div class="elinor__dropdown-toggle">
                 <div class="current" @click="toggleLangDropdown">
                     <span>{{ currentLanguage.name }}</span>
                     <div class="multiselect__caret" v-if="!isOffline">
-                        <img src="~/assets/img/ico-select-turqy.svg" alt="">
+                        <img src="~/assets/img/ico-select-turqy.svg" alt="" />
                     </div>
                 </div>
             </div>
@@ -15,11 +18,13 @@
             class="lang-dropdown-menu"
             v-bind:class="[!isLangDropdownOpen ? 'isOpen' : null]"
         >
-            <li class="lang-dropdown-menu__item"
+            <li
+                class="lang-dropdown-menu__item"
                 v-for="lang in availableLanguages"
                 :key="lang.code"
                 :value="lang.code"
-                @click="onLanguageChange(lang)">
+                @click="onLanguageChange(lang)"
+            >
                 {{ lang.name }}
             </li>
         </ul>
@@ -27,25 +32,29 @@
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import { mapActions, mapState } from 'vuex';
 
 export default {
-    name: "default-language-selector",
+    name: 'default-language-selector',
     computed: {
         availableLanguages() {
-            return this.$i18n.locales.filter(lang => lang.code !== this.$i18n.locale);
+            return this.$i18n.locales.filter(
+                (lang) => lang.code !== this.$i18n.locale,
+            );
         },
         currentLanguage() {
-            return this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            return this.$i18n.locales.find(
+                (lang) => lang.code === this.$i18n.locale,
+            );
         },
         ...mapState({
-            isLangDropdownOpen: state => state.langdropdown.langdropdown,
-            isOffline: state => state.layout.offline
-        })
+            isLangDropdownOpen: (state) => state.langdropdown.langdropdown,
+            isOffline: (state) => state.layout.offline,
+        }),
     },
     methods: {
         ...mapActions({
-            toggleLangDropdown: "langdropdown/toggleLangDropdown",
+            toggleLangDropdown: 'langdropdown/toggleLangDropdown',
         }),
         onLanguageChange(language) {
             this.$i18n.setLocale(language.code);
@@ -53,7 +62,7 @@ export default {
             this.$store.dispatch('attributes/fetchAttributes');
             this.$store.dispatch('surveyquestions/fetchSurveyQuestions');
             this.toggleLangDropdown();
-        }
-    }
+        },
+    },
 };
 </script>

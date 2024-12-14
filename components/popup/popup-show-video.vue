@@ -15,20 +15,20 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
 export default {
-    name: "popup-show-video",
+    name: 'popup-show-video',
     methods: {
         cancel() {
-            this.$store.dispatch("popup/popupState", { active: false });
-        }
+            this.$store.dispatch('popup/popupState', { active: false });
+        },
     },
     computed: {
         ...mapState({
-            popup: state => state.popup.popup,
-            videoId: state => state.popup.popup.videoId
-        })
-    }
+            popup: (state) => state.popup.popup,
+            videoId: (state) => state.popup.popup.videoId,
+        }),
+    },
 };
 </script>

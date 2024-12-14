@@ -1,7 +1,7 @@
 export default [
     {
         type: 'default',
-        title : 'Qual é o principal propósito da ferramenta?',
+        title: 'Qual é o principal propósito da ferramenta?',
         text: `
             <p>
                 O principal propósito da Elinor é acompanhar atributos críticos para o sucesso da conservação baseada em áreas
@@ -19,11 +19,11 @@ export default [
                 protocolos existentes (veja a lista de referências), e cobre uma gama de questões de gestão e governança
                 consideradas importantes para o sucesso.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Que tipos de decisões esta ferramenta ajudará a informar?',
+        title: 'Que tipos de decisões esta ferramenta ajudará a informar?',
         text: `
             <p>
                 Para gerentes de projetos e de sítios, as informações da avaliação podem ajudar:
@@ -48,11 +48,11 @@ export default [
                  scales to inspire change in policy and practice</li>
                 <li>Identificar áreas que requerem mais pesquisa aprofundada</li>
             </ul>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Quem deve completar uma avaliação?',
+        title: 'Quem deve completar uma avaliação?',
         text: `
             <p>A avaliação Elinor foi inicialmente projetada para atender às necessidades de conservacionistas trabalhando para
                 organizações não governamentais (ONGs) mas pode ser usada por qualquer indivíduo trabalhando para apoiar uma
@@ -84,11 +84,11 @@ export default [
                 gerar os dados na avaliação para que quaisquer futuros usuários dos dados possam considerar quais perspectivas
                 foram representadas nos dados.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Quem tem os direitos e acesso aos dados inseridos nesta ferramenta?',
+        title: 'Quem tem os direitos e acesso aos dados inseridos nesta ferramenta?',
         text: `
             <p>
                 Ética de dados, direitos e privacidade são componentes centrais da ferramenta Elinor e do sistema de dados.
@@ -97,22 +97,22 @@ export default [
                 discussão em grupo focal. Os Termos de Serviços e Princípios de Colaboração da Elinor delineiam em detalhes como os dados são
                 armazenados e utilizados na plataforma.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Saberei como meus dados estão sendo usados?',
+        title: 'Saberei como meus dados estão sendo usados?',
         text: `
             <p>
                 Para dados tornados publicamente disponíveis, os usuários eventualmente poderão optar por receber notificações que
                 tell users where and when their assessment data is being downloaded to help users understand what
                 seus dados de avaliação estão sendo usados.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Já uso o METT (ou uma versão modificada do METT) em meus projetos - como a Elinor se relaciona com o METT?',
+        title: 'Já uso o METT (ou uma versão modificada do METT) em meus projetos - como a Elinor se relaciona com o METT?',
         text: `
             <p>
                 Elinor constrói diretamente a partir dos anos de experiência das equipes de projeto usando a avaliação METT e
@@ -127,11 +127,11 @@ export default [
                 attention to the data privacy settings and ensure you have the rights to enter the data in the
                 ElinorData system.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Quais são as coisas específicas que esta ferramenta me ajudará a acompanhar?',
+        title: 'Quais são as coisas específicas que esta ferramenta me ajudará a acompanhar?',
         text: `
             <p>
                  Esta ferramenta foca em compilar informações básicas sobre áreas sob gestão ou proteção, e
@@ -154,11 +154,11 @@ export default [
                 arquivos geoespaciais para facilitar a gestão e compartilhamento de conhecimento em escalas espaciais e acesso
                 a visualizações amigáveis de dados de nível de sítio e dados agregados.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Como os dados serão analisados e apresentados?',
+        title: 'Como os dados serão analisados e apresentados?',
         text: `
             <p>
                 O banco de dados Elinor e a plataforma web fornecerão visualizações simples no nível do sítio, regional e
@@ -169,11 +169,11 @@ export default [
                 pensamento de resiliência. Dependendo das configurações de privacidade de dados escolhidas pelos usuários, dados de
                 diferentes regiões estarão disponíveis para uso público.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Já colet',
+        title: 'Já colet',
         text: `
             <p>
                 Não! Esta ferramenta foi projetada para complementar a coleta de dados em campo, detalhada. Se você atualmente
@@ -182,11 +182,11 @@ export default [
                 permissões para fazê-lo. Inversamente, informações coletadas usando esta ferramenta podem ajudá-lo a entender quais
                 tópicos requerem pesquisas de campo mais detalhadas.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Quais são as principais vantagens de usar esta ferramenta?',
+        title: 'Quais são as principais vantagens de usar esta ferramenta?',
         text: `
             <p>
                 A ferramenta Elinor e o sistema de dados foram projetados para simplificar o processo de entrada, armazenamento e
@@ -207,20 +207,20 @@ export default [
                     de forma seletiva com usuários individuais ou com o público geral com um clique de um botão!
                 </li>
             </ol>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Onde meus dados são armazenados?',
+        title: 'Onde meus dados são armazenados?',
         text: `
             <p>
                 ElinorData.org usa Amazon Web Services para armazenar os dados.
             </p>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Quais são algumas coisas que devo ter em mente ao decidir sobre o uso desta ferramenta?',
+        title: 'Quais são algumas coisas que devo ter em mente ao decidir sobre o uso desta ferramenta?',
         text: `
             <p>Nenhuma ferramenta faz todo trabalho. É importante lembrar que:</p>
             <ol class='list-inside list-disc'>
@@ -235,11 +235,11 @@ export default [
                     regulamentos, que podem ter grandes impactos nas atividades de conservação em qualquer lugar dado.
                 </li>
             </ol>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'OK, estou usando a ferramenta. Como decido o que \'conta\' como uma área gerenciada ou conservada?',
+        title: "OK, estou usando a ferramenta. Como decido o que 'conta' como uma área gerenciada ou conservada?",
         text: `
             <p>
                 Isso depende do seu contexto. Nesta ferramenta, referimo-nos ao limite da área a ser avaliada como
@@ -258,30 +258,29 @@ export default [
                     áreas conservadas.
                 </li>
             </ol>
-        `
+        `,
     },
     {
         type: 'default',
-        title : 'Trabalho para uma ONG nacional - como decido em quais sítios usar a avaliação Elinor?',
+        title: 'Trabalho para uma ONG nacional - como decido em quais sítios usar a avaliação Elinor?',
         text: `
             <p>
                 Consulte a Parte 1 da ferramenta de avaliação Elinor e o protocolo para orientações sobre como conduzir a amostragem.
-            </p>`
-
+            </p>`,
     },
-{
+    {
         type: 'default',
-        title : 'Como são calculadas as pontuações mostradas nos relatórios do sítio?',
+        title: 'Como são calculadas as pontuações mostradas nos relatórios do sítio?',
         text: `
             <p>
                 Elinor inclui 35 indicadores em 10 atributos centrais de governança e gestão. As pontuações são calculadas para cada indicador, cada atributo e cada área gerenciada no total. Cada indicador recebe uma pontuação entre 0 e 3 (sendo 0 o menos desejável e 4 o mais desejável) numa escala personalizada para cada indicador. Por exemplo, a escala para consciência das fronteiras, registra se as fronteiras são conhecidas pela maioria (3), algumas (2), poucas (1) ou nenhuma (0) dos grupos relevantes, enquanto fronteiras claramente definidas, registra se as fronteiras estão bem demarcadas (3), demarcadas com algumas deficiências (2), demarcadas com grandes deficiências (1), ou não demarcadas (0). As pontuações dos atributos, entretanto, são calculadas usando uma porcentagem de pontos (ou seja, número total de pontos recebidos/número total de pontos possíveis) dos indicadores associados a cada atributo, que é ajustada para uma pontuação de 10 para fácil interpretação. Finalmente, a pontuação total para a área gerenciada é calculada como uma porcentagem de todos os pontos de atributo recebidos de todos os atributos possíveis. As pontuações dos indicadores, atributos e AG são atribuídas a uma categoria de avaliação orientada à ação (Planejar, Construir, Fortalecer, Manter) para possibilitar uma interpretação orientada à ação. <strong>Note que as pontuações dadas pela Elinor não devem ser usadas sozinhas para determinar os pontos fortes ou as necessidades da governança e gestão da área.</strong> Pode ser que uma pontuação mais baixa em algum atributo ou indicador seja suficiente para um sítio, mas não para outro. As pontuações devem ser interpretadas juntamente com as explicações qualitativas inseridas em Elinor para que os tomadores de decisão escolham os próximos passos apropriados.
             </p>
-	`
-    }/*,
+	`,
+    } /*,
     {
         type: 'box',
         title: 'Type box title',
         text: `<p>Type box text<p>`,
         text_box: 'Text box'
-    }*/
+    }*/,
 ];

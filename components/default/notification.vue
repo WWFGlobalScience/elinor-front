@@ -2,12 +2,16 @@
     <transition name="fade">
         <div class="elinor__notifications">
             <div class="container">
-                {{ $t( notifications.text ) }}
-                <button type="button" class="btn btn--opacity--child mt-4"
+                {{ $t(notifications.text) }}
+                <button
+                    type="button"
+                    class="btn btn--opacity--child mt-4"
                     @click="reloadPage"
                 >
-                    <span class="btn--opacity__target">{{ $t( notifications.button ) }}</span>
-                    <img src="~/assets/img/ico-button-arrow.svg">
+                    <span class="btn--opacity__target">{{
+                        $t(notifications.button)
+                    }}</span>
+                    <img src="~/assets/img/ico-button-arrow.svg" />
                 </button>
             </div>
         </div>
@@ -19,13 +23,13 @@ export default {
     name: 'default-notifications',
     computed: {
         notifications() {
-            return this.$store.state.notifications.notifications
-        }
+            return this.$store.state.notifications.notifications;
+        },
     },
     methods: {
         reloadPage() {
-            window.location.reload()
-        }
-    }
-}
+            window.location.reload();
+        },
+    },
+};
 </script>

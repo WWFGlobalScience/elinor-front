@@ -7,11 +7,13 @@
 import locales from '../../locales';
 
 export default {
-    name: "privacy-policy",
+    name: 'privacy-policy',
     auth: false,
     computed: {
         content() {
-            const currentLanguage = this.$i18n.locales.find(lang => lang.code === this.$i18n.locale);
+            const currentLanguage = this.$i18n.locales.find(
+                (lang) => lang.code === this.$i18n.locale,
+            );
             return locales[currentLanguage.code].privacyPolicy;
         },
     },

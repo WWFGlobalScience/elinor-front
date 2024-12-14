@@ -1,7 +1,9 @@
 <template>
     <div class="popup__content">
         <div class="description">
-            <div v-html="$t('pages.assessments.downloadSurveyFile.helpTitle')" />
+            <div
+                v-html="$t('pages.assessments.downloadSurveyFile.helpTitle')"
+            />
             <ul class="list-disc list-inside mt-10">
                 <li>{{ $t('pages.assessments.downloadSurveyFile.help1') }}</li>
                 <li>{{ $t('pages.assessments.downloadSurveyFile.help2') }}</li>
@@ -17,27 +19,29 @@
                 type="button"
                 class="btn--border-turqy btn--opacity--child"
             >
-                <span class="btn--opacity__target">{{ $t("pages.assessments.downloadSurveyFile.downloadButton") }}</span>
-                <img src="~/assets/img/ico-file-turqy.svg"/>
+                <span class="btn--opacity__target">{{
+                    $t('pages.assessments.downloadSurveyFile.downloadButton')
+                }}</span>
+                <img src="~/assets/img/ico-file-turqy.svg" />
             </button>
         </div>
     </div>
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import { mapActions, mapState } from 'vuex';
 
 export default {
-    name: "popup-assessment-download-survey-file",
+    name: 'popup-assessment-download-survey-file',
     computed: {
         ...mapState({
-            assessment: (state) => state.assessments.assessment
+            assessment: (state) => state.assessments.assessment,
         }),
     },
     methods: {
         ...mapActions({
-            downloadSurveyFile: "assessments/downloadSurveyFile",
-            popupState: "popup/popupState",
+            downloadSurveyFile: 'assessments/downloadSurveyFile',
+            popupState: 'popup/popupState',
         }),
 
         async onDownloadSurveyFile() {

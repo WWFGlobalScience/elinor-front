@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE_KEY } from '~/config/localStorageKey';
+
 export const state = () => ({
     error: null,
     alerts: {
@@ -9,11 +11,11 @@ export const state = () => ({
         emailVerifiedSuccessfully: false,
         profileUpdatedSuccessfully: false,
         accountDeletedSuccessfully: false,
-    }
-})
+    },
+});
 
 export const mutations = {
-    setAlert(state, {name, value}) {
+    setAlert(state, { name, value }) {
         state.alerts[name] = value;
     },
     setError(state, error) {
@@ -29,52 +31,67 @@ export const mutations = {
             emailVerificationRequired: false,
             passwordChangedSuccessfully: false,
             forgotPasswordEmailSent: false,
-            emailVerifiedSuccessfully: false
+            emailVerifiedSuccessfully: false,
         };
-    }
-}
+    },
+};
 
 export const actions = {
     async signIn(state, credentials) {
         this.dispatch('loader/loaderState', {
             active: true,
-            text: 'Login...'
-        })
+            text: 'Login...',
+        });
 
         try {
             await this.$auth.loginWith('local', {
                 data: {
                     username: credentials.username,
-                    password: credentials.password
+                    password: credentials.password,
                 },
-            })
+            });
             await this.dispatch('assessments/reset');
-            if(!this.$auth.user.affiliation) {
-                this.dispatch('popup/popupState', {active: true, component: 'popup-user-organization', title: 'Before you go'})
+            if (!this.$auth.user.affiliation) {
+                this.dispatch('popup/popupState', {
+                    active: true,
+                    component: 'popup-user-organization',
+                    title: 'Before you go',
+                });
             }
             this.$router.push('/assessments');
         } catch (error) {
             if (error.response.data.non_field_errors) {
-                if(error.response.data.non_field_errors[0].indexOf('email') !== -1 ||
-                    error.response.data.non_field_errors[0].indexOf('correo') !== -1) {
-                    state.commit('setAlert', {name: 'emailVerificationRequired', value: true});
+                if (
+                    error.response.data.non_field_errors[0].indexOf('email') !==
+                        -1 ||
+                    error.response.data.non_field_errors[0].indexOf(
+                        'correo',
+                    ) !== -1
+                ) {
+                    state.commit('setAlert', {
+                        name: 'emailVerificationRequired',
+                        value: true,
+                    });
                     state.commit('setError', null);
                 } else {
-                    state.commit('setError', error.response.data.non_field_errors[0]);
+                    state.commit(
+                        'setError',
+                        error.response.data.non_field_errors[0],
+                    );
                 }
             }
         }
 
         this.dispatch('loader/loaderState', {
             active: false,
-            text: ''
-        })
+            text: '',
+        });
     },
     async signUp(state, form) {
         this.dispatch('loader/loaderState', {
             active: true,
-            text: 'Registering...'
-        })
+            text: 'Registering...',
+        });
         await this.$axios
             .$post('rest-auth/registration/', {
                 username: form.username,
@@ -87,36 +104,47 @@ export const actions = {
                 accept_tor: form.accept_tor,
             })
             .then((response) => {
-                this.$router.push(`/status/email-verification-sent`)
+                this.$router.push(`/status/email-verification-sent`);
             })
             .catch((e) => {
-                const error = {...e.response.data};
-                if(error.non_field_errors) {
-                    if(error.non_field_errors[0] === "The two password fields didn't match.") {
-                        error.password2 = ["The two password fields didn't match."];
+                const error = { ...e.response.data };
+                if (error.non_field_errors) {
+                    if (
+                        error.non_field_errors[0] ===
+                        "The two password fields didn't match."
+                    ) {
+                        error.password2 = [
+                            "The two password fields didn't match.",
+                        ];
                     }
                 }
                 setTimeout(() => {
-                    this.$scrollTo('#' + Object.keys(error).filter((e) => e !== 'non_field_errors')[0], {offset: -100});
-                })
+                    this.$scrollTo(
+                        '#' +
+                            Object.keys(error).filter(
+                                (e) => e !== 'non_field_errors',
+                            )[0],
+                        { offset: -100 },
+                    );
+                });
                 state.commit('setError', error);
             })
             .finally(() => {
                 this.dispatch('loader/loaderState', {
                     active: false,
-                    text: ''
-                })
+                    text: '',
+                });
             });
     },
     async setUserOrganization(state, organizationId) {
         await this.$axios
             .$patch('rest-auth/user/', {
-                affiliation: organizationId
+                affiliation: organizationId,
             })
             .then((response) => {
                 this.dispatch('popup/popupState', {
-                    active: false
-                })
+                    active: false,
+                });
             })
             .catch((error) => {
                 state.commit('setError', error.response.data);
@@ -125,43 +153,57 @@ export const actions = {
     async resendEmail(state, email) {
         this.dispatch('loader/loaderState', {
             active: true,
-            text: 'Sending verification email...'
-        })
+            text: 'Sending verification email...',
+        });
 
         await this.$axios
-            .$post('rest-auth/registration/resend-verification-email/', {email})
+            .$post('rest-auth/registration/resend-verification-email/', {
+                email,
+            })
             .then((response) => {
-                this.$router.push(`/status/email-verification-sent`)
+                this.$router.push(`/status/email-verification-sent`);
             })
             .catch((error) => {
-                state.commit('setError', error.response.data.message || error.response.data.detail);
+                state.commit(
+                    'setError',
+                    error.response.data.message || error.response.data.detail,
+                );
             });
 
         this.dispatch('loader/loaderState', {
             active: false,
-            text: ''
-        })
+            text: '',
+        });
     },
     async forgotPassword(state, email) {
         await this.$axios
-            .$post('rest-auth/password/reset/', {email})
+            .$post('rest-auth/password/reset/', { email })
             .finally((response) => {
-                state.commit('setAlert', {name: 'forgotPasswordEmailSent', value: true});
+                state.commit('setAlert', {
+                    name: 'forgotPasswordEmailSent',
+                    value: true,
+                });
             });
     },
     async resetForgotPassword(state) {
-        state.commit('setAlert', {name: 'forgotPasswordEmailSent', value: false});
+        state.commit('setAlert', {
+            name: 'forgotPasswordEmailSent',
+            value: false,
+        });
     },
-    async resetPassword(state, {uid, token, password1, password2}) {
+    async resetPassword(state, { uid, token, password1, password2 }) {
         await this.$axios
-            .$post('rest-auth/password/reset/confirm/' + uid + '/' + token + '/', {
-                uid,
-                token,
-                new_password1: password1,
-                new_password2: password2,
-            })
+            .$post(
+                'rest-auth/password/reset/confirm/' + uid + '/' + token + '/',
+                {
+                    uid,
+                    token,
+                    new_password1: password1,
+                    new_password2: password2,
+                },
+            )
             .then((response) => {
-                this.$router.push(`/status/password-changed-successfully`)
+                this.$router.push(`/status/password-changed-successfully`);
             })
             .catch((error) => {
                 state.commit('setError', error.response.data);
@@ -169,18 +211,19 @@ export const actions = {
     },
     async confirmEmail(state, token) {
         await this.$axios
-            .$post('rest-auth/account-confirm-email/', {key: token})
+            .$post('rest-auth/account-confirm-email/', { key: token })
             .then((response) => {
-                this.$router.push(`/status/email-verified-successfully`)
+                this.$router.push(`/status/email-verified-successfully`);
             })
             .catch((error) => {
                 state.commit('setError', true);
             });
     },
     async logout(state) {
+        localStorage.removeItem(LOCAL_STORAGE_KEY); // this provides us with the ability to suggest that users logout and back in if they are experiencing bugs caused by state persistance
         await this.$auth.logout();
         await this.dispatch('assessments/reset');
-        state.commit('resetAlerts')
+        state.commit('resetAlerts');
         this.dispatch('dropdown/toggleDropdown');
         this.$router.push(`/`);
     },
@@ -189,17 +232,20 @@ export const actions = {
             email: data.email,
             username: data.username,
             first_name: data.first_name,
-            last_name: data.last_name
+            last_name: data.last_name,
         };
 
-        if(data.password !== null) {
+        if (data.password !== null) {
             formdata.password = data.password;
         }
 
         await this.$axios
             .$patch('rest-auth/user/', formdata)
             .then((response) => {
-                state.commit('setAlert', {name: 'profileUpdatedSuccessfully', value: true});
+                state.commit('setAlert', {
+                    name: 'profileUpdatedSuccessfully',
+                    value: true,
+                });
             })
             .catch((error) => {
                 state.commit('setError', true);
@@ -211,7 +257,7 @@ export const actions = {
             .then((response) => {
                 this.$auth.logout();
                 this.dispatch('popup/popupState', {
-                    active: false
+                    active: false,
                 });
                 this.$router.push(`/status/account-deleted-successfully`);
             })
@@ -219,4 +265,4 @@ export const actions = {
                 state.commit('setError', true);
             });
     },
-}
+};

@@ -3,23 +3,50 @@
         <div class="container">
             <div class="elinor__survey-progress">
                 <ul class="elinor__survey-dots">
-                    <li v-for="(attribute, index) in attributes" :key="index" :class="{'li-bg-2': isCurrentQuestionFromAttribute(attribute), 'li-bg-1': !isCurrentQuestionFromAttribute(attribute) && isAttributeSelected(attribute)}">
-                        <template v-for="(question, number) in getAttributeQuestions(attribute)">
+                    <li
+                        v-for="(attribute, index) in attributes"
+                        :key="index"
+                        :class="{
+                            'li-bg-2':
+                                isCurrentQuestionFromAttribute(attribute),
+                            'li-bg-1':
+                                !isCurrentQuestionFromAttribute(attribute) &&
+                                isAttributeSelected(attribute),
+                        }"
+                    >
+                        <template
+                            v-for="(question, number) in getAttributeQuestions(
+                                attribute,
+                            )"
+                        >
                             <template v-if="!mode || mode === 'list'">
-                                <a role="button"
-                                    :content='getQuestionTooltip(number, attribute, question)'
+                                <a
+                                    role="button"
+                                    :content="
+                                        getQuestionTooltip(
+                                            number,
+                                            attribute,
+                                            question,
+                                        )
+                                    "
                                     v-tippy="{
-                                            arrow : false,
-                                            arrowType : 'round',
-                                            animation : 'fade',
-                                            theme : 'light',
-                                            placement : 'bottom-start'}"
-                                        class="btn-opacity"
-                                        :class="!isAnswered(question) ? 'is--uncomplete' : 'bg-turqy'"
-                                        v-scroll-to="{
-                                            el: `.question-${question.id}`,
-                                            offset: -70
-                                        }">
+                                        arrow: false,
+                                        arrowType: 'round',
+                                        animation: 'fade',
+                                        theme: 'light',
+                                        placement: 'bottom-start',
+                                    }"
+                                    class="btn-opacity"
+                                    :class="
+                                        !isAnswered(question)
+                                            ? 'is--uncomplete'
+                                            : 'bg-turqy'
+                                    "
+                                    v-scroll-to="{
+                                        el: `.question-${question.id}`,
+                                        offset: -70,
+                                    }"
+                                >
                                 </a>
                             </template>
                             <template v-if="mode && mode === 'detail'">
@@ -27,7 +54,11 @@
                                     v-if="isAttributeSelected(attribute)"
                                     role="button"
                                     class="btn-opacity"
-                                    :class="!isAnswered(question) ? 'is--uncomplete' : 'bg-turqy'"
+                                    :class="
+                                        !isAnswered(question)
+                                            ? 'is--uncomplete'
+                                            : 'bg-turqy'
+                                    "
                                     :to="`/assessments/edit/${assessment.id}/the-survey/${question.id}`"
                                 >
                                 </nuxt-link>
@@ -40,20 +71,22 @@
                             </template>
                         </template>
                     </li>
-                    <li class="elinor__survey-complete elinor__survey-complete--no-border">
+                    <li
+                        class="elinor__survey-complete elinor__survey-complete--no-border"
+                    >
                         <div class="index">
                             {{ completedQuestions }}
                         </div>
                         <div class="text">
                             <span>{{
                                 $t(
-                                    "pages.assessments.edit.tabs.survey.navigator.completed"
+                                    'pages.assessments.edit.tabs.survey.navigator.completed',
                                 )
                             }}</span>
                             <span
                                 >{{
                                     $t(
-                                        "pages.assessments.edit.tabs.survey.navigator.outOf"
+                                        'pages.assessments.edit.tabs.survey.navigator.outOf',
                                     )
                                 }}
                                 {{ totalQuestions }}</span
@@ -67,30 +100,31 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
 export default {
-    name: "assessment-edit-survey-navigator",
-    props: ["mode"],
+    name: 'assessment-edit-survey-navigator',
+    props: ['mode'],
     computed: {
         ...mapState({
-            assessment: state => state.assessments.assessment,
-            attributes: state => state.attributes.list,
-            questions: state => state.surveyquestions.list,
-            isOffline: state => state.layout.offline,
+            assessment: (state) => state.assessments.assessment,
+            attributes: (state) => state.attributes.list,
+            questions: (state) => state.surveyquestions.list,
+            isOffline: (state) => state.layout.offline,
         }),
         completedQuestions() {
-            return (this.assessment.surveyAnswers || []).filter(surveyAnswer =>
-                this.isAttributeSelected({
-                    id: surveyAnswer.question.attribute
-                })
+            return (this.assessment.surveyAnswers || []).filter(
+                (surveyAnswer) =>
+                    this.isAttributeSelected({
+                        id: surveyAnswer.question.attribute,
+                    }),
             ).length;
         },
         activeQuestions() {
             return this.questions.filter(
-                question =>
-                this.assessment.attributes.indexOf(question.attribute) !==
-                    -1
+                (question) =>
+                    this.assessment.attributes.indexOf(question.attribute) !==
+                    -1,
             );
         },
         totalQuestions() {
@@ -102,26 +136,28 @@ export default {
             return (
                 this.isAttributeSelected({ id: question.attribute }) &&
                 !!(this.assessment.surveyAnswers || []).find(
-                    surveyAnswer => surveyAnswer.question.id === question.id
+                    (surveyAnswer) => surveyAnswer.question.id === question.id,
                 )
             );
         },
         getAttributeQuestions(attribute) {
             return this.questions.filter(
-                question => question.attribute === attribute.id
+                (question) => question.attribute === attribute.id,
             );
         },
         isAttributeSelected(attribute) {
-            return (this.assessment.attributes || []).indexOf(attribute.id) !== -1;
+            return (
+                (this.assessment.attributes || []).indexOf(attribute.id) !== -1
+            );
         },
         isCurrentQuestionFromAttribute(attribute) {
             const questionId = this.$route.params.qid;
             if (questionId) {
                 return (
                     this.questions.filter(
-                        question =>
+                        (question) =>
                             question.id === parseInt(questionId) &&
-                            question.attribute === attribute.id
+                            question.attribute === attribute.id,
                     ).length !== 0
                 );
             }
@@ -130,7 +166,7 @@ export default {
             return `${attribute.name}<strong>Q${number + 1} - ${
                 question.text
             }</strong>`;
-        }
-    }
+        },
+    },
 };
 </script>

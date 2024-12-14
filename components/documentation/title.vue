@@ -14,18 +14,18 @@
                             placeholder="Select option"
                             tabindex="0"
                             class="multiselect__input"
-                            style="width: 0px; position: absolute; padding: 0px;"
+                            style="width: 0px; position: absolute; padding: 0px"
                         />
                         <span class="multiselect__single">Order by</span>
                     </div>
                     <div
                         tabindex="-1"
                         class="multiselect__content-wrapper"
-                        style="max-height: 300px; display: none;"
+                        style="max-height: 300px; display: none"
                     >
                         <ul
                             class="multiselect__content"
-                            style="display: inline-block;"
+                            style="display: inline-block"
                         >
                             <li class="multiselect__element">
                                 <span

@@ -1,4 +1,19 @@
 {
+    "statusMessaging": {
+        "assessments": {
+            "publishingAssessmentError": "Error publishing assessment.",
+            "publishingAssessmentSuccess": "Assessment published successfully.",
+            "unpublishingAssessmentError": "Error unpublishing assessment.",
+            "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
+        },
+        "authentication": {
+            "logoutError": "You are currently logged out."
+        },
+        "organizations": {
+            "organizationCreatedSuccess": "Institution created successfully.",
+            "organizationCreatedError": "Error creating institution."
+        }
+    },
     "pages": {
         "home": {
             "meta": {
@@ -592,7 +607,8 @@
                 "optionalAttributesDescription": "Select the attributes that correspond with your Assessment",
                 "mandatoryAttribute": "Mandatory",
                 "inactiveAttribute": "Inactive attribute",
-                "activeAttribute": "Active attribute"
+                "activeAttribute": "Active attribute",
+                "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
             },
             "statuses": {
                 "90": "Open",
@@ -686,7 +702,7 @@
                         "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
                     },
                     "needs": {
-                        "title": "Key governance strengths",
+                        "title": "Key governance needs",
                         "label": "Explain Main Needs",
                         "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
                     },
@@ -695,7 +711,9 @@
                         "label": "Context",
                         "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
                     },
-                    "button": "Generate"
+                    "button": "Generate",
+                    "buttonGenerating": "Generating...",
+                    "error": "There was an error generating the report."
                 }
             },
             "outOf100": "out of 100",

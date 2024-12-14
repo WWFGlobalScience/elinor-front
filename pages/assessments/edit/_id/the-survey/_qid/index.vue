@@ -1,13 +1,24 @@
 <template>
-    <section v-if="!loader.active || isOffline" class="section section--assesment-edit-survey-question section--mt-0">
-        <assessment-edit-survey-navigator mode="detail" :assessment="assessment" :id="id"></assessment-edit-survey-navigator>
-        <assessment-edit-survey-question :assessment="assessment" :question="question" :qid="qid" :id="id"></assessment-edit-survey-question>
+    <section
+        v-if="!loader.active || isOffline"
+        class="section section--assesment-edit-survey-question section--mt-0"
+    >
+        <assessment-edit-survey-navigator
+            mode="detail"
+            :assessment="assessment"
+            :id="id"
+        ></assessment-edit-survey-navigator>
+        <assessment-edit-survey-question
+            :assessment="assessment"
+            :question="question"
+            :qid="qid"
+            :id="id"
+        ></assessment-edit-survey-question>
     </section>
 </template>
 
-
 <script>
-import {mapActions, mapState} from 'vuex'
+import { mapActions, mapState } from 'vuex';
 
 export default {
     name: 'assessment-survey-question',
@@ -16,20 +27,21 @@ export default {
         return {
             id: this.$route.params.id,
             qid: this.$route.params.qid,
-        }
+        };
     },
     computed: {
         ...mapState({
-            assessment: state => state.assessments.assessment,
-            questions: state => state.surveyquestions.list,
-            loader: state => state.loader.loader,
-            isOffline: state => state.layout.offline,
+            assessment: (state) => state.assessments.assessment,
+            questions: (state) => state.surveyquestions.list,
+            loader: (state) => state.loader.loader,
+            isOffline: (state) => state.layout.offline,
         }),
         question() {
-            const filtered = this.questions.filter(question => question.id === parseInt(this.qid));
+            const filtered = this.questions.filter(
+                (question) => question.id === parseInt(this.qid),
+            );
             return filtered[0];
-        }
-    }
-}
-
+        },
+    },
+};
 </script>

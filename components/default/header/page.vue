@@ -1,11 +1,9 @@
 <template>
-  <default-header-profile />
+    <default-header-profile />
 </template>
 
 <script>
-
 export default {
-  name: "default-header-page"
+    name: 'default-header-page',
 };
-
 </script>

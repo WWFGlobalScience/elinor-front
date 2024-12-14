@@ -145,7 +145,7 @@ button {
     @apply text-turqy flex;
 
     &::after {
-        content: "...";
+        content: '...';
         @apply pl-1;
     }
 }

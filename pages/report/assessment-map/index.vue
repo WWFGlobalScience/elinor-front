@@ -21,9 +21,7 @@
                     <li class="text-medium">
                         Clearly defined rights and decision making
                     </li>
-                    <li class="text-medium">
-                        Transparency and accountability
-                    </li>
+                    <li class="text-medium">Transparency and accountability</li>
                 </ul>
                 <p class="font-montserratMediumPdf mt-4 text-grayy-lighter">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -55,7 +53,7 @@
                 <h4 class="title uppercase font-montserratSemiBoldPdf">
                     Context
                 </h4>
-                <p class="font-montserratMediumPdf  text-grayy-lighter">
+                <p class="font-montserratMediumPdf text-grayy-lighter">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Modi recusandae reprehenderit nobis officia sint quisquam,
                     veritatis, deserunt odit vero fugit ea repellat explicabo
@@ -66,31 +64,31 @@
     </div>
 </template>
 <script>
-import { jsPDF } from "jspdf";
-import "../../../assets/fonts/montserrat/Montserrat-Medium-normal.js";
-import "../../../assets/fonts/montserrat/Montserrat-SemiBold-bold.js";
-import "../../../assets/fonts/montserrat/Montserrat-Bold-bold.js";
+import { jsPDF } from 'jspdf';
+import '../../../assets/fonts/montserrat/Montserrat-Medium-normal.js';
+import '../../../assets/fonts/montserrat/Montserrat-SemiBold-bold.js';
+import '../../../assets/fonts/montserrat/Montserrat-Bold-bold.js';
 export default {
-    name: "score assessment map",
-    layout: "report-assessment",
+    name: 'score assessment map',
+    layout: 'report-assessment',
     auth: false,
     methods: {
         pdf() {
-            var doc = new jsPDF("l", "px", [1440, 1024]);
-            var pdfjs = document.querySelector("#temp-target");
+            var doc = new jsPDF('l', 'px', [1440, 1024]);
+            var pdfjs = document.querySelector('#temp-target');
             // Convert HTML to PDF in JavaScript
             doc.html(pdfjs, {
-                callback: function(doc) {
-                    doc.setFont("Montserrat-Medium", "normal");
-                    doc.setFont("Montserrat-SemiBold", "normal");
-                    doc.setFont("Montserrat-Bold", "normal");
-                    doc.internal.write(0, "Tw");
-                    doc.save("assessment-report.pdf");
+                callback: function (doc) {
+                    doc.setFont('Montserrat-Medium', 'normal');
+                    doc.setFont('Montserrat-SemiBold', 'normal');
+                    doc.setFont('Montserrat-Bold', 'normal');
+                    doc.internal.write(0, 'Tw');
+                    doc.save('assessment-report.pdf');
                 },
                 x: 0,
-                y: 0
+                y: 0,
             });
-        }
-    }
+        },
+    },
 };
 </script>

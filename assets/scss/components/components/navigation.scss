@@ -33,7 +33,7 @@
         }
     }
     &:after {
-        content: "";
+        content: '';
         @apply center-v w-full h-px bg-grayy-border;
     }
 
@@ -46,7 +46,7 @@
 .elinor__navigator-category {
     @apply relative flex items-center justify-end;
     &::after {
-        content: "";
+        content: '';
         @apply h-px absolute inset-0 bg-grayy-border w-full m-auto;
     }
     .elinor__navigator-category__link {
@@ -82,12 +82,12 @@
                 @apply mr-6 relative;
 
                 &::after {
-                    content: "";
+                    content: '';
                     @apply absolute top-0 -right-3 w-px h-full bg-grayy-border;
                 }
             }
             &:before {
-                content: "";
+                content: '';
                 width: calc(100% - 20px);
                 @apply center-v h-px bg-grayy-border;
             }

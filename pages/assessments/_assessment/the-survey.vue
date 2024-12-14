@@ -9,5 +9,5 @@
 export default {
     name: 'assessment-survey',
     auth: false,
-}
+};
 </script>

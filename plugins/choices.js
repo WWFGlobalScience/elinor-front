@@ -1,1 +1,1 @@
-import Choices from 'choices.js'
+import Choices from 'choices.js';

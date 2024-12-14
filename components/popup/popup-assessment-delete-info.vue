@@ -7,30 +7,35 @@
             {{ $t('pages.assessments.actions.delete-info.text') }}
         </p>
         <div class="btn-row">
-            <button @click="close" class="btn--border-turqy btn--opacity--child">
-                <span class="btn--opacity__target"> {{ $t('default.close') }}</span>
+            <button
+                @click="close"
+                class="btn--border-turqy btn--opacity--child"
+            >
+                <span class="btn--opacity__target">
+                    {{ $t('default.close') }}</span
+                >
             </button>
         </div>
     </div>
 </template>
 
 <script>
-import {mapActions, mapState} from "vuex";
+import { mapActions, mapState } from 'vuex';
 
 export default {
     name: 'popup-assessment-delete-info',
     computed: {
         ...mapState({
-            popup: state => state.popup.popup
-        })
+            popup: (state) => state.popup.popup,
+        }),
     },
     methods: {
         ...mapActions({
             popupState: 'popup/popupState',
         }),
         close() {
-            this.popupState({active: false});
-        }
-    }
-}
+            this.popupState({ active: false });
+        },
+    },
+};
 </script>

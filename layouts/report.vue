@@ -10,6 +10,6 @@
 
 <script>
 export default {
-    name: "layout-report"
+    name: 'layout-report',
 };
 </script>

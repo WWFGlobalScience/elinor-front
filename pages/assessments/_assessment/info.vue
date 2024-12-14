@@ -8,15 +8,13 @@
 </template>
 
 <script>
-
 export default {
     name: 'info',
     auth: false,
     data() {
         return {
-            mapedit: false
-        }
-    }
-}
-
+            mapedit: false,
+        };
+    },
+};
 </script>

@@ -1,24 +1,26 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 import * as fs from 'fs';
-import webpack from 'webpack'
+import webpack from 'webpack';
 
 export default async () => {
     const locales = [];
-    const langDir = "locales/";
-    const response = await fetch("https://api.elinordata.org/v2/activelanguages/");
+    const langDir = 'locales/';
+    const response = await fetch(
+        'https://api.elinordata.org/v2/activelanguages/',
+    );
     const apiLocales = await response.json();
 
     apiLocales.results.forEach((locale) => {
-        if(locale.active) {
+        if (locale.active) {
             let file = `${locale.code}/translations.json`;
-            if(!fs.existsSync(langDir + file)) {
+            if (!fs.existsSync(langDir + file)) {
                 file = 'en/translations.json';
             }
 
             locales.push({
                 code: locale.code,
                 name: locale.name,
-                file
+                file,
             });
         }
     });
@@ -28,127 +30,130 @@ export default async () => {
         ssr: false,
         loading: false,
         components: true,
-        target: "static",
+        target: 'static',
         head: {
-            title: "Elinor",
+            title: 'Elinor',
             htmlAttrs: {
-                lang: "en"
+                lang: 'en',
             },
             meta: [
-                { charset: "utf-8" },
+                { charset: 'utf-8' },
                 {
-                    name: "viewport",
-                    content: "width=device-width, initial-scale=1"
+                    name: 'viewport',
+                    content: 'width=device-width, initial-scale=1',
                 },
-                { hid: "description", name: "description", content: "" }
+                { hid: 'description', name: 'description', content: '' },
             ],
-            link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
             script: [
                 {
-                    src:
-                        "//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js"
-                }
-            ]
+                    src: '//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js',
+                },
+            ],
         },
-        css: ["~/assets/scss/app.scss"],
+        css: ['~/assets/scss/app.scss'],
         plugins: [
-            "~/plugins/vue-tippy.js",
-            "~/plugins/vue-select.js",
-            "~/plugins/formDataStringify.js",
-            "~/plugins/vue-date-picker.js",
-            "~/plugins/scoreColors.js",
+            '~/plugins/vue-tippy.js',
+            '~/plugins/vue-select.js',
+            '~/plugins/formDataStringify.js',
+            '~/plugins/vue-date-picker.js',
+            '~/plugins/scoreColors.js',
             {
-                src: "~/plugins/choices.js",
-                mode: "client"
+                src: '~/plugins/choices.js',
+                mode: 'client',
             },
-            { src: '~/plugins/vuex-persist', ssr: false }
+            { src: '~/plugins/vuex-persist', ssr: false },
+            '~/plugins/axios.js',
         ],
         buildModules: [
-            "@nuxtjs/tailwindcss",
-            "@nuxtjs/composition-api/module",
-            "@nuxtjs/pwa",
+            '@nuxtjs/tailwindcss',
+            '@nuxtjs/composition-api/module',
+            '@nuxtjs/pwa',
             [
-                "@nuxtjs/moment",
+                '@nuxtjs/moment',
                 {
-                    defaultLocale: "en-gb",
-                    locales: ["en-gb", "es"]
-                }
-            ]
+                    defaultLocale: 'en-gb',
+                    locales: ['en-gb', 'es'],
+                },
+            ],
         ],
         modules: [
-            "@nuxtjs/auth-next",
-            "@nuxtjs/axios",
+            '@nuxtjs/auth-next',
+            '@nuxtjs/axios',
             [
-                "nuxt-i18n",
+                'nuxt-i18n',
                 {
-                    strategy: "no_prefix",
-                    defaultLocale: "en",
-                    fallbackLocale: "en",
+                    strategy: 'no_prefix',
+                    defaultLocale: 'en',
+                    fallbackLocale: 'en',
                     lazy: true,
-                    langDir: "locales/",
+                    langDir: 'locales/',
                     seo: true,
                     detectBrowserLanguage: {
-                        alwaysRedirect: true
+                        alwaysRedirect: true,
                     },
-                    locales
-                }
+                    locales,
+                },
             ],
-            "vue-scrollto/nuxt",
-            "nuxt-vue-multiselect",
-            "@nuxtjs/google-gtag",
-            "@nuxtjs/recaptcha"
+            'vue-scrollto/nuxt',
+            'nuxt-vue-multiselect',
+            '@nuxtjs/google-gtag',
+            '@nuxtjs/recaptcha',
+            '@nuxtjs/toast',
         ],
         auth: {
             strategies: {
                 local: {
                     token: {
-                        property: "key",
-                        type: "Token",
-                        maxAge: 31536000
+                        property: 'key',
+                        type: 'Token',
+                        maxAge: 31536000,
                     },
                     user: {
                         autoFetch: true,
-                        property: false
+                        property: false,
                     },
                     endpoints: {
                         login: {
-                            url: "rest-auth/login/",
-                            method: "post"
+                            url: 'rest-auth/login/',
+                            method: 'post',
                         },
                         logout: {
-                            url: "rest-auth/logout/",
-                            method: "post"
+                            url: 'rest-auth/logout/',
+                            method: 'post',
                         },
                         user: {
-                            url: "rest-auth/user/",
-                            method: "get"
-                        }
-                    }
-                }
+                            url: 'rest-auth/user/',
+                            method: 'get',
+                        },
+                    },
+                },
             },
             redirect: {
-                login: "/assessments",
-                logout: "/",
-                home: "/assessments"
-            }
+                login: '/assessments',
+                logout: '/',
+                home: '/assessments',
+            },
         },
         axios: {
-            baseUrl: "https://api.elinordata.org/"
+            baseUrl: 'https://api.elinordata.org/',
         },
         router: {
-            middleware: ["auth", "onload"],
+            middleware: ['auth', 'onload'],
             extendRoutes(routes, resolve) {
                 routes.push({
-                    name: "sign-in-verification",
-                    path: "/status/:status",
-                    component: resolve(__dirname, "pages/index.vue")
+                    name: 'sign-in-verification',
+                    path: '/status/:status',
+                    component: resolve(__dirname, 'pages/index.vue'),
                 });
-            }
+            },
         },
         build: {
             extend(config, ctx) {
                 if (ctx.isDev) {
-                    config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map';
+                    config.devtool = ctx.isClient
+                        ? 'source-map'
+                        : 'inline-source-map';
                 }
 
                 if (ctx.isClient) {
@@ -160,41 +165,41 @@ export default async () => {
             },
             plugins: [
                 new webpack.optimize.LimitChunkCountPlugin({
-                    maxChunks: 1
-                })
-            ]
+                    maxChunks: 1,
+                }),
+            ],
         },
-        "google-gtag": {
-            id: "G-51J4H4V6HK",
+        'google-gtag': {
+            id: 'G-51J4H4V6HK',
             config: {
                 anonymize_ip: false,
-                send_page_view: false
+                send_page_view: false,
             },
             debug: false,
-            disableAutoPageTrack: false
+            disableAutoPageTrack: false,
         },
         publicRuntimeConfig: {
             recaptcha: {
-                siteKey: "6LezqLQgAAAAAPYyaUpHoZfIIMCLyQhqs_4dSfUj",
-                version: 3
-            }
+                siteKey: '6LezqLQgAAAAAPYyaUpHoZfIIMCLyQhqs_4dSfUj',
+                version: 3,
+            },
         },
         vue: {
             config: {
                 devtools: true,
                 configureWebpack: {
                     externals: {
-                        canvg: "canvg",
-                        html2canvas: "html2canvas",
-                        dompurify: "dompurify"
-                    }
-                }
+                        canvg: 'canvg',
+                        html2canvas: 'html2canvas',
+                        dompurify: 'dompurify',
+                    },
+                },
             },
         },
         pwa: {
             icon: {},
             manifest: {
-                name: 'Elinor'
+                name: 'Elinor',
             },
             workbox: {
                 //offline: true,
@@ -202,8 +207,13 @@ export default async () => {
                 // dev: process.env.NODE_ENV === 'development',
                 // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
                 // cacheAssets: true,
-                offlineStrategy: 'CacheFirst'
-            }
-        }
-    }
+                offlineStrategy: 'CacheFirst',
+            },
+        },
+        toast: {
+            theme: 'bubble',
+            position: 'bottom-right',
+            duration: 7000,
+        },
+    };
 };

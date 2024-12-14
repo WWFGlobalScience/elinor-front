@@ -1,25 +1,43 @@
 <template>
     <div class="box-map font-montserrat">
-        <button @click="close" type="button" class="btn--opacity absolute right-4 top-4 z-50">
+        <button
+            @click="close"
+            type="button"
+            class="btn--opacity absolute right-4 top-4 z-50"
+        >
             <img src="~/assets/img/ico-close-popup.svg" />
         </button>
-        <div class="flex flex-row flex-wrap items-center justify-start gap-2 p-4 border-b-1 border-grayy font-montserrat">
-            <div class="flex justify-center items-center w-[52px] h-[52px] rounded-full" :class="'bg-' + getAssessmentColor(assessment.properties.score)">
-                <p class="text-white text-[24px] font-bold leading-4 ">
+        <div
+            class="flex flex-row flex-wrap items-center justify-start gap-2 p-4 border-b-1 border-grayy font-montserrat"
+        >
+            <div
+                class="flex justify-center items-center w-[52px] h-[52px] rounded-full"
+                :class="'bg-' + getAssessmentColor(assessment.properties.score)"
+            >
+                <p class="text-white text-[24px] font-bold leading-4">
                     {{ assessment.properties.score }}
                 </p>
             </div>
             <div class="flex flex-1 flex-col gap-0">
-                <p class="font-montserrat font-semibold text-turqy text-[14px] leading-4">
+                <p
+                    class="font-montserrat font-semibold text-turqy text-[14px] leading-4"
+                >
                     {{ assessment.properties.name }}
                 </p>
             </div>
         </div>
 
         <div class="wrap">
-            <div class="pt-2 pb-2 pr-4 pl-4 flex flex-col justify-start gap-2 bg-turqy-lighter border-t border-grayy-border">
-                <div v-if="assessment.properties.management_area" class="flex flex-col">
-                    <p class="text-xs font-semibold text-grayy-lighter leading-4">
+            <div
+                class="pt-2 pb-2 pr-4 pl-4 flex flex-col justify-start gap-2 bg-turqy-lighter border-t border-grayy-border"
+            >
+                <div
+                    v-if="assessment.properties.management_area"
+                    class="flex flex-col"
+                >
+                    <p
+                        class="text-xs font-semibold text-grayy-lighter leading-4"
+                    >
                         {{ $t('pages.map.boxAssessment.managedArea') }}
                     </p>
                     <p class="text-s font-semibold leading-6">
@@ -27,34 +45,62 @@
                     </p>
                 </div>
                 <div class="flex flex-row justify-start gap-8">
-                    <div v-if="assessment.properties.year" class="flex flex-col ">
-                        <p class="text-xs font-semibold text-grayy-lighter leading-4">
+                    <div
+                        v-if="assessment.properties.year"
+                        class="flex flex-col"
+                    >
+                        <p
+                            class="text-xs font-semibold text-grayy-lighter leading-4"
+                        >
                             Year
                         </p>
                         <p class="text-s font-semibold leading-6">
                             {{ assessment.properties.year }}
                         </p>
                     </div>
-                    <div v-if="assessment.properties.published_version" class="flex flex-col ">
-                        <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                            {{ $t("default.version") }}
+                    <div
+                        v-if="assessment.properties.published_version"
+                        class="flex flex-col"
+                    >
+                        <p
+                            class="text-xs font-semibold text-grayy-lighter leading-4"
+                        >
+                            {{ $t('default.version') }}
                         </p>
                         <p class="text-s font-semibold leading-6">
                             {{ assessment.properties.published_version }}
                         </p>
                     </div>
-                    <div v-if="assessment.properties.hectares || assessment.properties.reported_size" class="flex flex-col">
-                        <p class="text-xs font-semibold text-grayy-lighter leading-4">
-                            {{ $t("default.areaSize") }}
+                    <div
+                        v-if="
+                            assessment.properties.hectares ||
+                            assessment.properties.reported_size
+                        "
+                        class="flex flex-col"
+                    >
+                        <p
+                            class="text-xs font-semibold text-grayy-lighter leading-4"
+                        >
+                            {{ $t('default.areaSize') }}
                         </p>
                         <p class="text-s font-semibold leading-6">
-                            {{ assessment.properties.hectares || assessment.properties.reported_size }} h
+                            {{
+                                assessment.properties.hectares ||
+                                assessment.properties.reported_size
+                            }}
+                            h
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col chart-content pb-4 pr-4 pl-4 border-grayy-borde border-t border-b">
-                <map-score-chart v-if="loaded" :width="288" :height="288"></map-score-chart>
+            <div
+                class="flex flex-col chart-content pb-4 pr-4 pl-4 border-grayy-borde border-t border-b"
+            >
+                <map-score-chart
+                    v-if="loaded"
+                    :width="288"
+                    :height="288"
+                ></map-score-chart>
                 <p class="text-s font-semibold leading-4">
                     {{ $t('pages.map.boxAssessment.byAttributes') }}
                 </p>
@@ -63,8 +109,11 @@
         <div class="flex justify-center p-2">
             <nuxt-link
                 :to="`/assessments/${assessment.id}/info/`"
-                class="btn btn--opacity--child">
-                <span class="btn--opacity__target">{{ $t('pages.map.boxAssessment.goToAssessment') }}</span>
+                class="btn btn--opacity--child"
+            >
+                <span class="btn--opacity__target">{{
+                    $t('pages.map.boxAssessment.goToAssessment')
+                }}</span>
                 <img src="~/assets/img/ico-button-arrow.svg" />
             </nuxt-link>
         </div>
@@ -73,16 +122,19 @@
 
 <script>
 export default {
-    name: "map-box-assessment",
-    props: ["assessment", "close"],
+    name: 'map-box-assessment',
+    props: ['assessment', 'close'],
     data() {
         return {
             loaded: false,
-        }
+        };
     },
-    async mounted(){
-        await this.$store.dispatch( 'assessments/fetchAssessment', this.assessment.id )
-        this.loaded = true
-    }
+    async mounted() {
+        await this.$store.dispatch(
+            'assessments/fetchAssessment',
+            this.assessment.id,
+        );
+        this.loaded = true;
+    },
 };
 </script>
