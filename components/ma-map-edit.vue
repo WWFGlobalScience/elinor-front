@@ -138,7 +138,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="divider">
+                <!-- <div class="divider">
                     <span>{{
                         $t(
                             'pages.assessments.edit.tabs.managementArea.map.spatialFileAndMapImageSeparator',
@@ -168,7 +168,7 @@
                             />
                         </a>
                     </div>
-                </div>
+                </div> -->
                 <div class="w-2/3 sm:w-full">
                     <div class="form__group">
                         <div class="form__row form__row--mt-8">
