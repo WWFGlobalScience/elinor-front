@@ -850,7 +850,7 @@ export default {
         },
         assessment() {
             const countries =
-                this.assessment.management_area_countries.countries;
+                this.assessment.management_area_countries?.countries;
             if (countries && countries.length) {
                 this.geocoder.setCountries(countries.join(','));
             }
