@@ -368,7 +368,7 @@ export default {
             console.log(data);
             let type = 'MultiPolygon';
             const coordinates = data.features.map(
-                (feature) => feature.geometry.coordinates,
+                (feature) => feature.geometry.coordinates[0],
             );
             this.setPolygon({ type, coordinates });
             console.log(coordinates);
