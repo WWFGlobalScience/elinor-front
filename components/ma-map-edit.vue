@@ -138,7 +138,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="divider">
+                <!-- <div class="divider">
                     <span>{{
                         $t(
                             'pages.assessments.edit.tabs.managementArea.map.spatialFileAndMapImageSeparator',
@@ -168,7 +168,7 @@
                             />
                         </a>
                     </div>
-                </div>
+                </div> -->
                 <div class="w-2/3 sm:w-full">
                     <div class="form__group">
                         <div class="form__row form__row--mt-8">
@@ -368,7 +368,7 @@ export default {
             console.log(data);
             let type = 'MultiPolygon';
             const coordinates = data.features.map(
-                (feature) => feature.geometry.coordinates,
+                (feature) => feature.geometry.coordinates[0],
             );
             this.setPolygon({ type, coordinates });
             console.log(coordinates);
