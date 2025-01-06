@@ -136,7 +136,9 @@ export default async () => {
             },
         },
         axios: {
-            baseUrl: 'https://dev-api.elinordata.org/',
+            // baseUrl: 'http://localhost:8082/',
+            // baseUrl: 'https://dev-api.elinordata.org/',
+            baseUrl: 'https://api.elinordata.org/',
         },
         router: {
             middleware: ['auth', 'onload'],
