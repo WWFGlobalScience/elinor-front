@@ -235,12 +235,14 @@ export const actions = {
         }
         const notHasParams = Object.keys(params).length === 0;
 
-        if (notHasParams) {
-            this.dispatch('loader/loaderState', {
-                active: true,
-                text: 'Getting assessments...',
-            });
-        }
+        const loaderText = notHasParams
+            ? 'Getting assessments...'
+            : 'Filtering assessments...';
+
+        this.dispatch('loader/loaderState', {
+            active: true,
+            text: loaderText,
+        });
 
         this.$axios
             .get('v2/assessments/', { params })
@@ -248,12 +250,10 @@ export const actions = {
                 state.commit('setAssessments', response.data);
             })
             .finally(() => {
-                if (notHasParams) {
-                    this.dispatch('loader/loaderState', {
-                        active: false,
-                        text: '',
-                    });
-                }
+                this.dispatch('loader/loaderState', {
+                    active: false,
+                    text: '',
+                });
             });
     },
 
