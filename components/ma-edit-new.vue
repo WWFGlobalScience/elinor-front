@@ -725,6 +725,7 @@
                                         <textarea
                                             name="collection_method_text"
                                             placeholder=""
+                                            :value="zone.description"
                                             @change="
                                             onZoneFieldChanged(
                                                 'description',
