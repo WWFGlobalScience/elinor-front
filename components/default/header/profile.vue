@@ -5,6 +5,7 @@
             <div
                 class="elinor__dropdown"
                 :class="isOffline ? 'pointer-events-none' : ''"
+                v-click-outside="externalClick"
             >
                 <div class="elinor__dropdown-toggle">
                     <div
@@ -61,9 +62,13 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import vClickOutside from 'v-click-outside';
 
 export default {
     name: 'default-header-profile',
+    directives: {
+      clickOutside: vClickOutside.directive
+    },
     computed: {
         ...mapState({
             isSidebarOpen: (state) => state.layout.sidebar,
@@ -76,8 +81,12 @@ export default {
         ...mapActions({
             toggleSidebar: 'layout/toggleSidebar',
             toggleDropdown: 'dropdown/toggleDropdown',
+            closeDropdown: 'dropdown/closeDropdown',
             logout: 'authentication/logout',
         }),
+        externalClick () {
+            this.$store.dispatch('dropdown/closeDropdown');
+        }
     },
 };
 </script>
