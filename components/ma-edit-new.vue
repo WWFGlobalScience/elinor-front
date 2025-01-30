@@ -726,8 +726,7 @@
                                             name="collection_method_text"
                                             placeholder=""
                                             :value="zone.description"
-                                            @change="
-                                            onZoneFieldChanged(
+                                            @change="onZoneFieldChanged(
                                                 'description',
                                                 index,
                                                 $event.target.value,
