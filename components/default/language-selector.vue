@@ -1,5 +1,5 @@
 <template>
-    <div class="elinor__dropdown lang-dropdown">
+    <div class="elinor__dropdown lang-dropdown" v-click-outside="externalClick">
         <div
             class="elinor__dropdown-toggle"
             :class="isOffline ? 'pointer-events-none' : ''"
@@ -33,9 +33,12 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
-
+import vClickOutside from 'v-click-outside';
 export default {
     name: 'default-language-selector',
+    directives: {
+      clickOutside: vClickOutside.directive
+    },
     computed: {
         availableLanguages() {
             return this.$i18n.locales.filter(
@@ -55,6 +58,7 @@ export default {
     methods: {
         ...mapActions({
             toggleLangDropdown: 'langdropdown/toggleLangDropdown',
+            closeDropdown: 'langdropdown/closeDropdown',
         }),
         onLanguageChange(language) {
             this.$i18n.setLocale(language.code);
@@ -63,6 +67,9 @@ export default {
             this.$store.dispatch('surveyquestions/fetchSurveyQuestions');
             this.toggleLangDropdown();
         },
+        externalClick () {
+            this.$store.dispatch('langdropdown/closeDropdown');
+        }
     },
 };
 </script>
