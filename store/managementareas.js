@@ -290,6 +290,8 @@ export const actions = {
             });
         } else {
             if (zone && zone.name && zone.access_level && zone.description) {
+
+                // console.log('this is edit zone', zone);
                 const data = {
                     ...zone,
                     management_area: state.state.instance.id,
@@ -304,6 +306,9 @@ export const actions = {
                     index,
                     value: response.data.id,
                 });
+
+                // console.log('response', response);
+
             }
         }
         state.commit('setZoneField', { field, index, value });
