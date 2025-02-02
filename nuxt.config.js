@@ -139,7 +139,7 @@ export default async () => {
             // baseUrl: 'http://localhost:8082/',
             // baseUrl: 'https://dev-api.elinordata.org/',
             proxyHeaders: false,
-            credentials: false
+            credentials: false,
             baseUrl: 'https://api.elinordata.org/',
         },
         router: {
