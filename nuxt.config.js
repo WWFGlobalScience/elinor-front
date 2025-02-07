@@ -6,7 +6,7 @@ export default async () => {
     const locales = [];
     const langDir = 'locales/';
     const response = await fetch(
-        'https://dev-api.elinordata.org/v2/activelanguages/',
+        `${process.env.BASE_URL_API}/v2/activelanguages/`,
     );
     const apiLocales = await response.json();
 
@@ -136,11 +136,9 @@ export default async () => {
             },
         },
         axios: {
-            // baseUrl: 'http://localhost:8082/',
-            baseUrl: 'https://dev-api.elinordata.org/',
+            baseUrl: process.env.BASE_URL_API,
             proxyHeaders: false,
             credentials: false
-            // baseUrl: 'https://api.elinordata.org/',
         },
         router: {
             middleware: ['auth', 'onload'],
