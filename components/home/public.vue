@@ -285,11 +285,7 @@
                         How to use this tool
                     </h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Illum molestias saepe illo officiis quam, laboriosam
-                        beatae, in quae libero delectus dolorem magni vitae
-                        optio dolores officia. Quibusdam tempora dolorum
-                        similique!
+                        See below how to use Elinor
                     </p>
                 </div>
             </div>
