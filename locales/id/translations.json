@@ -666,12 +666,12 @@
                     }
                 },
                 "delete": {
-                    "title": "Delete title",
+                    "title": "Hapus Penilaian",
                     "subtitle": "Are you sure you want to delete your assessment",
                     "text": "Once you delete it, you will not be able to access your Assessments again, and your data will be permanently deleted."
                 },
                 "delete-info": {
-                    "title": "Delete assessment",
+                    "title": "Hapus Penilaian",
                     "subtitle": "Assessment is finalized and is not possible to delete it",
                     "text": "Contact elinor administrator to edit or delete your assessment"
                 },
