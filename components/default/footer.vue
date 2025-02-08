@@ -37,7 +37,7 @@
         <div class="footer--main__bottom">
             {{ $t('footer.copyright') }}
             {{ currentYear }}
-            {{ $t('footer.copyrightAfterYear') }}****
+            {{ $t('footer.copyrightAfterYear') }}**
             <NuxtLink to="/terms-of-use" class="btn--opacity--child">
                 <span class="btn--opacity__target">
                     {{ $t('footer.termsOfUse') }}</span
