@@ -7,6 +7,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-20.04
+        environment: dev
         steps:
             -   uses: actions/checkout@v2
             -   name: Configure AWS Credentials
@@ -22,8 +23,14 @@ jobs:
                 run: yarn install
             -   name: Nuxt build
                 run: yarn build
+                env:
+                    BASE_URL: ${{ vars.BASE_URL }}
+                    BASE_URL_API: ${{ vars.BASE_URL_API }}
             -   name: Nuxt generate
                 run: yarn generate
+                env:
+                    BASE_URL: ${{ vars.BASE_URL }}
+                    BASE_URL_API: ${{ vars.BASE_URL_API }}
             -   name: List directory /dist
                 run: ls -la ./dist
             -   name: Show service worker content
