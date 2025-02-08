@@ -94,3 +94,6 @@ sw.*
 
 # resources
 /_res
+
+#environment
+.env
