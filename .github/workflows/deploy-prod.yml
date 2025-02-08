@@ -7,6 +7,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-20.04
+        environment: prod
         steps:
             -   uses: actions/checkout@v2
             -   name: Configure AWS Credentials for S3
@@ -22,8 +23,14 @@ jobs:
                 run: yarn install
             -   name: Nuxt build
                 run: yarn build
+                env:
+                    BASE_URL: ${{ vars.BASE_URL }}
+                    BASE_URL_API: ${{ vars.BASE_URL_API }}
             -   name: Nuxt generate
                 run: yarn generate
+                env:
+                    BASE_URL: ${{ vars.BASE_URL }}
+                    BASE_URL_API: ${{ vars.BASE_URL_API }}
             -   name: Deploy static site to S3 bucket
                 run: aws s3 sync ./dist/ ${{ secrets.AWS_S3_PROD_BUCKET_NAME }} --delete
             -   name: Configure AWS Credentials for Cloudfront
