@@ -285,7 +285,7 @@
                         How to use this tool
                     </h1>
                     <p>
-                        See below how to use Elinor
+                        See below how Elinor works and how to use it
                     </p>
                 </div>
             </div>
