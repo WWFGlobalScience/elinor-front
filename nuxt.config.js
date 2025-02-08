@@ -136,17 +136,9 @@ export default async () => {
             },
         },
         axios: {
-<<<<<<< HEAD
             baseUrl: process.env.BASE_URL_API,
             proxyHeaders: false,
             credentials: false
-=======
-            // baseUrl: 'http://localhost:8082/',
-            // baseUrl: 'https://dev-api.elinordata.org/',
-            proxyHeaders: false,
-            credentials: false,
-            baseUrl: 'https://api.elinordata.org/',
->>>>>>> main
         },
         router: {
             middleware: ['auth', 'onload'],
