@@ -42,6 +42,24 @@
     @apply text-grayy-lighter;
 }
 
+.elinor__pagination {
+    @apply w-full flex gap-2;
+    .disabled {
+        @apply hidden;
+    }
+    li {
+        a {
+            @apply text-[14px];
+        }
+    }
+    .active {
+        a {
+            @apply font-bold text-turqy-border;
+        }
+    }
+
+}
+
 //loader
 .elinor__loader {
     @apply w-screen h-screen z-30 fixed inset-0 py-2 overflow-hidden;
