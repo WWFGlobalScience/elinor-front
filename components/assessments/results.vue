@@ -105,7 +105,7 @@
             </div>
             <ul class="ma__results">
                 <li
-                    v-for="(assessment, index) in assessments"
+                    v-for="(assessment, index) in paginatedItems"
                     class="elinor__badge ui-rounded-border"
                 >
                     <header class="header">
@@ -310,6 +310,7 @@
                     </ul>
                 </li>
             </ul>
+            <Paginate v-if="pageCount() > 1" :click-handler="onPageChanged" :total-rows="totalRows" :per-page="perPage" :page-count="pageCount()" v-model="currentPage" class="elinor__pagination" />
         </div>
     </section>
 </template>
@@ -322,16 +323,43 @@ import {
     isAssessmentCollaborator,
 } from '~/config/assessment-roles';
 import { calculateProgress } from '~/config/assessment-progress';
-
+import Paginate from 'vuejs-paginate';
 export default {
     name: 'assessments-results',
+    components: {
+        Paginate
+    },
     computed: {
         ...mapState({
             assessments: (state) => state.assessments.list,
             filters: (state) => state.assessments.filters,
             users: (state) => state.users.users,
             listType: (state) => state.assessments.listType,
+            pagination: (state) => state.assessments.pagination,
         }),
+    },
+    data() {
+            return {
+                items: [],
+                paginatedItems: [],
+                currentPage: 1,
+                perPage: 3,
+                totalRows: 0,
+                id: 0
+            }
+    },
+    watch: {
+        '$store.state.assessments.list' : {
+            handler() {
+                this.getItems();
+            }
+        }        
+    },
+    mounted(){
+        this.paginate(this.perPage, 1);
+    },
+    created() {
+        this.getItems();
     },
     methods: {
         isAssessmentCollaborator: isAssessmentCollaborator,
@@ -354,6 +382,34 @@ export default {
                 calculateProgress(assessment).overall_percentage.toFixed(0),
             );
         },
+        onPageChanged(page){
+            this.paginate(this.perPage, page);
+            console.log(page);
+        },
+        onChangeCurrent(current) {
+            this.currentPage = current;
+        },
+        getItems() {
+            this.page = 1;
+
+            let respond = this.$store.state.assessments.list;
+            console.log(respond);
+            if (respond){
+                this.items = respond
+                this.totalRows = this.items.length;
+                this.pageCount();
+                this.paginate(this.perPage, 1);
+            }
+        },
+        paginate (page_size, page_number) {
+            let itemsToParse = this.items;
+            this.paginatedItems = itemsToParse.slice((page_number -1) * page_size, page_number * page_size);
+        },
+        pageCount() {
+            let l = this.totalRows,
+                s = this.perPage;
+            return Math.ceil(l / s);
+        }
     },
     filters: {
         capitalizeFirstLetter: (value) => {
