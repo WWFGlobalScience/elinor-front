@@ -343,7 +343,7 @@ export default {
                 items: [],
                 paginatedItems: [],
                 currentPage: 1,
-                perPage: 3,
+                perPage: 30,
                 totalRows: 0,
                 id: 0
             }
@@ -353,7 +353,7 @@ export default {
             handler() {
                 this.getItems();
             }
-        }        
+        }
     },
     mounted(){
         this.paginate(this.perPage, 1);
