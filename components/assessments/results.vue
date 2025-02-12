@@ -9,7 +9,7 @@
                             : 'col-span-2'
                     "
                 >
-                    <span>{{ $t('pages.assessments.list.total') }}</span> -
+                    <span>{{ $t('pages.assessments.list.total') }}</span>  {{ paginatedItems.length }} of
                     <span>{{ assessments.length }}</span>
                     <span
                         v-if="assessments.length > 1 || assessments.length == 0"
