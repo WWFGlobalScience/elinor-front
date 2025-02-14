@@ -9,7 +9,7 @@
                             : 'col-span-2'
                     "
                 >
-                    <span>{{ $t('pages.assessments.list.total') }}</span>  {{ paginatedItems.length }} of
+                    <span>{{ $t('pages.assessments.list.total') }}</span> {{ ((currentPage - 1) * perPage) + 1 }} - {{ currentPage * perPage > assessments.length ?  assessments.length : currentPage * perPage }} of
                     <span>{{ assessments.length }}</span>
                     <span
                         v-if="assessments.length > 1 || assessments.length == 0"
@@ -343,7 +343,7 @@ export default {
                 items: [],
                 paginatedItems: [],
                 currentPage: 1,
-                perPage: 3,
+                perPage: 10,
                 totalRows: 0,
                 id: 0
             }
