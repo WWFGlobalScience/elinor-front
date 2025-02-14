@@ -18,7 +18,7 @@ export const required_fields = {
         'name',
         'countries',
         'regions',
-        'date_established',
+        //'date_established',
         'recognition_level',
         'governance_type',
         'objectives',

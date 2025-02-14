@@ -147,7 +147,7 @@
                                     $t(
                                         'pages.assessments.edit.tabs.managementArea.labels.dateEstablished',
                                     )
-                                }}*</label
+                                }}</label
                             >
                             <div class="date__wrap">
                                 <date-picker
