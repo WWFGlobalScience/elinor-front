@@ -1,5 +1,6 @@
 <template>
     <article class="page page--flushed">
+        <popover></popover>
         <section
             :class="{ 'section--sign-in--logged-in': $auth.loggedIn }"
             class="section section--sign-in"
@@ -467,7 +468,7 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
-
+import Popover from '../popover.vue';
 import { mapActions, mapState } from 'vuex';
 import locales from '../../locales';
 const numNews = 3;
