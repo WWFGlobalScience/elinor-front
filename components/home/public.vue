@@ -536,7 +536,7 @@ export default {
         },
         handleDragging(isDragging) {
             this.isDragging = isDragging;
-            console.log('status:', this.isDragging);
+            // console.log('status:', this.isDragging);
         },
     },
 };

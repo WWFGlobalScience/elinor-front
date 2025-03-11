@@ -221,6 +221,20 @@ export const actions = {
     },
     async logout(state) {
         localStorage.removeItem(LOCAL_STORAGE_KEY); // this provides us with the ability to suggest that users logout and back in if they are experiencing bugs caused by state persistance
+        
+        // Clear workbox cache if available
+        if ('serviceWorker' in navigator && 'caches' in window) {
+            try {
+                const cacheNames = await caches.keys();
+                await Promise.all(
+                    cacheNames.map(cacheName => caches.delete(cacheName))
+                );
+                console.log('Workbox caches cleared on logout');
+            } catch (error) {
+                console.error('Error clearing caches:', error);
+            }
+        }
+        
         await this.$auth.logout();
         await this.dispatch('assessments/reset');
         state.commit('resetAlerts');

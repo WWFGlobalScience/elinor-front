@@ -119,7 +119,7 @@ export default {
         }),
         onSelectYearChange(value) {
             this.selectYear.value = value;
-            console.log(document.querySelector('input[name="year"]').value);
+        //    console.log(document.querySelector('input[name="year"]').value);
         },
         submit() {
             event.preventDefault();
