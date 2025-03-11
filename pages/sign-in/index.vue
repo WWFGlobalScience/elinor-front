@@ -14,7 +14,7 @@
 
                 <div class="elinor__card--sign-in__info">
                     <div>
-                        <p class="text-xl mb-1.5">SIGN IN</p>
+                        <p class="text-xl mb-1.5">SIGN IN adsadsad</p>
                     </div>
                     <div>
                         <p

@@ -353,6 +353,17 @@
                 </li>
             </ul>
         </section>
+        <section class="border-b pb-12 mb-10" v-if="assessments.length === 0">
+            <h3
+                class="mb-2"
+                v-html="
+                    $t('pages.assessments.list.aggregateReport.assessments')
+                "
+            />
+            <div class="mt-5 border p-5 text-center">
+                <p>There are no assessments to show, set search parameters above to show assessments</p>
+            </div>
+        </section>
         <section class="border-b pb-12 mb-10">
             <div class="elinor-card--question pt-0">
                 <span class="elinor-card--question__number text-black">2</span>
