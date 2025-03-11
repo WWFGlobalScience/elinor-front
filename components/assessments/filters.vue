@@ -107,7 +107,6 @@ export default {
     },
     computed: {
         filtersApplied() {
-            console.log(this.filters);
             return Object.keys(this.filters).filter(
                 (filterName) => this.filters[filterName] !== null,
             ).length;
