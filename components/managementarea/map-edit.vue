@@ -172,7 +172,7 @@ export default {
         },
         mapDrawModify() {
             let data = this.draw.getAll();
-            console.log(data);
+            // console.log(data);
             this.mapGetPointCoordinates(data);
             this.updateApiFromMap(data);
         },
@@ -201,11 +201,11 @@ export default {
             })
                 .then((response) => {
                     this.loader.active = false;
-                    console.log(response);
+                    // console.log(response);
                 })
                 .catch((error) => {
                     this.error = true;
-                    console.log(error);
+                    // console.log(error);
                 });
         },
     },

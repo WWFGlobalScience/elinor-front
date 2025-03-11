@@ -384,7 +384,7 @@ export default {
         },
         onPageChanged(page){
             this.paginate(this.perPage, page);
-            console.log(page);
+            // console.log(page);
         },
         onChangeCurrent(current) {
             this.currentPage = current;
@@ -393,7 +393,7 @@ export default {
             this.page = 1;
 
             let respond = this.$store.state.assessments.list;
-            console.log(respond);
+            // console.log(respond);
             if (respond){
                 this.items = respond
                 this.totalRows = this.items.length;
