@@ -354,6 +354,8 @@ export default {
             const coordinates = data.features.map(
                 (feature) => feature.geometry.coordinates,
             );
+            console.log('coordinates', coordinates);
+
             this.setPolygon({ type, coordinates });
 
             const area = turf.area(data);
@@ -365,11 +367,12 @@ export default {
         },
         onDrawUpdate(event) {
             const data = this.polygonDrawer.getAll();
-            console.log(data);
+            // console.log(data);
             let type = 'MultiPolygon';
             const coordinates = data.features.map(
                 (feature) => feature.geometry.coordinates[0],
             );
+            console.log('coordinates', coordinates);
             this.setPolygon({ type, coordinates });
             console.log(coordinates);
             const area = turf.area(data);
