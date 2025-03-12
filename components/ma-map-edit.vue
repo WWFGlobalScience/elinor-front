@@ -374,7 +374,6 @@ export default {
             const data = this.polygonDrawer.getAll();
             let type = 'MultiPolygon';
             let coordinates = [];
-            console.log('data', data);
             if (data.features.length > 1) {
                 coordinates = [data.features[0].geometry.coordinates[0]];
                 coordinates[0].push(data.features[1].geometry.coordinates[0]);
