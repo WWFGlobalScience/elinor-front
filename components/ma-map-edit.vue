@@ -349,14 +349,19 @@ export default {
         },
         onDrawCreate(event) {
             const data = this.polygonDrawer.getAll();
-            console.log(data);
-            let type = 'MultiPolygon';
-            const coordinates = data.features.map(
-                (feature) => feature.geometry.coordinates,
-            );
-            console.log('coordinates', coordinates);
+            const type = 'MultiPolygon';
+            let coordinates = [];
+            if (data.features.length > 1) {
+                coordinates = [data.features[0].geometry.coordinates[0]];
+                coordinates[0].push(data.features[1].geometry.coordinates[0]);
 
-            this.setPolygon({ type, coordinates });
+                this.setPolygon({ type, coordinates: coordinates });
+            } else {
+                coordinates = data.features.map(
+                    (feature) => feature.geometry.coordinates
+                );
+                this.setPolygon({ type, coordinates });
+            }
 
             const area = turf.area(data);
             this.area = Math.round(area * 100) / 100;
@@ -367,14 +372,20 @@ export default {
         },
         onDrawUpdate(event) {
             const data = this.polygonDrawer.getAll();
-            // console.log(data);
             let type = 'MultiPolygon';
-            const coordinates = data.features.map(
-                (feature) => feature.geometry.coordinates[0],
-            );
-            console.log('coordinates', coordinates);
-            this.setPolygon({ type, coordinates });
-            console.log(coordinates);
+            let coordinates = [];
+            console.log('data', data);
+            if (data.features.length > 1) {
+                coordinates = [data.features[0].geometry.coordinates[0]];
+                coordinates[0].push(data.features[1].geometry.coordinates[0]);
+
+                this.setPolygon({ type, coordinates: coordinates });
+            } else {
+                coordinates = data.features.map(
+                    (feature) => feature.geometry.coordinates
+                );
+                this.setPolygon({ type, coordinates: coordinates[0] });
+            }
             const area = turf.area(data);
             this.area = Math.round(area * 100) / 100;
         },
