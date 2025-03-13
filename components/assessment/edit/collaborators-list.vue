@@ -269,7 +269,7 @@ export default {
             );
         },
         permissionToCollaboratorRoleEdit(collaborator, role) {
-            console.log(collaborator);
+           // console.log(collaborator);
             let permission = false;
             const userRole = getMyRole(this.$auth, this.assessment);
             switch (role) {
