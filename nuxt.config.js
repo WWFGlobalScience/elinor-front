@@ -64,7 +64,7 @@ export default async () => {
             },
             { src: '~/plugins/vuex-persist', ssr: false },
             '~/plugins/axios.js',
-            { src: "~/plugins/sw-update.js", mode: "client" }
+            // { src: "~/plugins/sw-update.js", mode: "client" }
         ],
         buildModules: [
             '@nuxtjs/tailwindcss',
