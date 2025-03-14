@@ -1,0 +1,49 @@
+{
+  "polygon": {
+    "type": "MultiPolygon",
+    "coordinates": [
+        [
+          [
+            [
+              37.79296875000048,
+              53.80065082633055
+            ],
+            [
+              8.261718750000227,
+              6.751896464844307
+            ],
+            [
+              130.95703125,
+              -5.528510525692369
+            ],
+            [
+              37.79296875000048,
+              53.80065082633055
+            ]
+          ]
+        ]
+    ]
+  },
+  "properties": {
+    "name": "Sample Region",
+    "id": 1,
+    "population": 5000000
+  },
+  "additionalPolygon": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [10.0, 10.0],
+        [20.0, 10.0],
+        [20.0, 20.0],
+        [10.0, 20.0],
+        [10.0, 10.0]
+      ]
+    ]
+  },
+  "metadata": {
+    "createdAt": "2023-07-15",
+    "source": "Example Data",
+    "description": "This is a sample GeoJSON file with multiple geometries"
+  }
+} 

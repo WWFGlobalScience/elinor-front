@@ -64,7 +64,7 @@ export default async () => {
             },
             { src: '~/plugins/vuex-persist', ssr: false },
             '~/plugins/axios.js',
-            { src: "~/plugins/sw-update.js", mode: "client" }
+            // { src: "~/plugins/sw-update.js", mode: "client" }
         ],
         buildModules: [
             '@nuxtjs/tailwindcss',
@@ -207,6 +207,7 @@ export default async () => {
             workbox: {
                 //offline: true,
                 enabled: true,
+                cleanupOutdatedCaches: true,
                 // dev: process.env.NODE_ENV === 'development',
                 // cachingExtensions: '@/plugins/workbox-sync.js', // Opcional, si necesitas manejar sincronización offline
                 // cacheAssets: true,
