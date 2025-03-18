@@ -1136,6 +1136,28 @@
                     "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
                 }
             }
+        },
+        "background": {
+            "attribute": "Attribute",
+            "questions": "Questions",
+            "attribute_title": {
+                "heading": "A summary of the attributes measured with Elinor",
+                "name": "Attribute name",
+                "description": "Attribute description",
+                "useIf": "Use this attribute if…"
+            },
+            "attribute_use": {
+                "1": "You wish to understand whether the boundaries of the MA are well established.",
+                "2": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.",
+                "3": "You would like to know what sort of information informs management decisions in the MA.",
+                "4": "You wish to assess the capacity of the MA’s management system.",
+                "5": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.",
+                "6": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.",
+                "7": "You wish to understand whether the regulations are clearly stated and fair.",
+                "8": "If you want to assess the quality of MA governance.",
+                "9": "You wish to know whether those involved in the MA think its objectives are being achieved.",
+                "10": "You wish to know whether those involved in the MA think its social objectives are being achieved."
+            }
         }
     },
     "sidebar": {

@@ -1109,6 +1109,28 @@
                     "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
                 }
             }
+        },
+        "background": {
+            "attribute": "Atributo",
+            "questions": "Questões",
+            "attribute_title": {
+                "heading": "Resumo dos atributos medidos com Elinor",
+                "name": "Nome do atributo",
+                "description": "Descrição do atributo",
+                "useIf": "Use este atributo se…"
+            },
+            "attribute_use": {
+                "1": "Você deseja entender se os limites da AM estão bem estabelecidos.",
+                "2": "Você deseja entender se há violações ou incumprimentos das regras da AM e se há informações que possam facilitar a supervisão e a gestão, ou que sejam incluídas na gestão adaptativa.",
+                "3": "Você deseja saber que tipo de informações informam as decisões de gestão na AM.",
+                "4": "Você deseja avaliar a capacidade de gestão da AM para se adaptar a mudanças.",
+                "5": "Você deseja entender se a AM inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
+                "6": "Você deseja avaliar o controle ou o acesso da comunidade local aos recursos naturais da AM que você gerencia.",
+                "7": "Você deseja entender se as regras da AM são claras e justas.",
+                "8": "Você deseja avaliar a qualidade da governação da AM.",
+                "9": "Você deseja saber se as pessoas envolvidas na AM pensam que os seus objectivos ecológicos estão a ser alcançados.",
+                "10": "Você deseja saber se as pessoas envolvidas na AM pensam que os seus objectivos sociais estão a ser alcançados."
+            }
         }
     },
     "sidebar": {

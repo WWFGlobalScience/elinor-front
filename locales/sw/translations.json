@@ -754,6 +754,18 @@
             }
         },
         "methodologyPage": {
+            "home": {
+                "meta": {
+                    "title": "Mbinu",
+                    "slug": "/methodology",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "title": "Mbinu",
             "paragraph1": "Tathmini ya Elinor inaweza kukamilishwa kwa njia mbili tofauti: Kupitia kikundi cha kuzingatia kilichowezeshwa na wenye hakimiliki tofauti na wahusika wengine wanaohusika na kuathiriwa na MA, au kama tathmini inayotegemea dawati inayoongozwa na mtaalamu wa uhifadhi. Wakati wa kuingiza data, watumiaji wanaweza kuonyesha ni njia gani walichukua ili kutoa data katika tathmini na ni aina gani za wenye hakimiliki na wahusika wengine walihusika katika tathmini.",
             "subtitle1": "Elinor kama mjadala wa kikundi lengwa wa uga",
@@ -1024,6 +1036,28 @@
             "totalScores": {
                 "value": "",
                 "indicator": "kiashiria"
+            }
+        },
+        "background": {
+            "attribute": "Sifa",
+            "questions": "Maswali",
+            "attribute_title": {
+                "heading": "Kumbukumbu kwa Sifa zilizotolewa na Elinor",
+                "name": "Jina la Sifa",
+                "description": "Kumbukumbu kwa Sifa",
+                "useIf": "Kwa Sifa" 
+            },
+            "attribute_use": {
+                "1": "Unataka kuelewa iwapo mipaka ya MA imeanzishwa vizuri.",
+                "2": "Ungependa uelewa wa awali kuhusu uvunjaji wa sheria katika MA na iwapo kuna taarifa zinazoweza kuwezesha shughuli za M&E au kuchangia usimamizi wa kukabiliana.",
+                "3": "Ungependa kujua ni aina gani ya taarifa zinazoelekeza maamuzi ya usimamizi katika MA.",
+                "4": "Unataka kutathmini uwezo wa mfumo wa usimamizi wa MA.",
+                "5": "Unataka kuelewa iwapo MA inajumuisha makundi yaliyo hatarini katika maamuzi na matokeo ya usimamizi.",
+                "6": "Unataka kutathmini udhibiti wa jamii za mitaa, au upatikanaji wa, rasilimali za asili katika MA unayofanyia kazi.",
+                "7": "Unataka kuelewa iwapo kanuni zimeelezwa wazi na ni za haki.",
+                "8": "Ikiwa unataka kutathmini ubora wa utawala wa MA.",
+                "9": "Unataka kujua iwapo wale wanaohusika katika MA wanafikiri malengo yake yanafikiwa.",
+                "10": "Unataka kujua iwapo wale wanaohusika katika MA wanafikiri malengo yake ya kijamii yanafikiwa."
             }
         }
     },

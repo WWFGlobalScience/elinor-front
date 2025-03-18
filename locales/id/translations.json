@@ -74,10 +74,10 @@
                     },
                     "elinor": {
                         "title": "In Honor",
-                        "subtitle": "Elinor “Lin” Ostrom",
-                        "paragraph1": "Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom’s theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.",
+                        "subtitle": "Elinor \"Lin\" Ostrom",
+                        "paragraph1": "Elinor Ostrom was the first woman to win the Nobel Prize in economics in 2009, but her legacy extends far beyond that singular honor. Ostrom and her colleagues countered the dominant narrative around the tragedy of the commons (which argued that individuals pursue their own interest even when it goes against the collective good—made famous by an ecologist who was a known racist and eugenicist). Ostrom's theory on governing the commons proved that our planet could be protected through community, collaboration, and cooperation.",
                         "paragraph2": "Research on the governance of common pool resource management pushed boundaries of science and challenged the usual divisions between disciplines. Working in true partnership with others who understood the world in different ways, Ostrom and her colleagues paved the way for a new research community and body of knowledge that embraces diversity and the intertwined nature of human and natural systems.",
-                        "paragraph3": "Ostrom’s legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.",
+                        "paragraph3": "Ostrom's legacy shapes how we work today in conservation, and by honoring her in our work, we hope that her insights can help us all better support both the communities and governance systems that protect our natural resources now and into the future.",
                         "quote": {
                             "text": "Little by little, bit by bit, family by family, so much good can be done on so many levels.",
                             "author": "ELINOR OSTROM"
@@ -355,7 +355,7 @@
                         "selector": {
                             "title": "Select managed area",
                             "existing": "Select a Managed Area",
-                            "existingGuide": "You can select an already created Managed Area, or if you don’t find it you can create a new one from here",
+                            "existingGuide": "You can select an already created Managed Area, or if you don't find it you can create a new one from here",
                             "orNew": "OR CREATE A NEW ONE",
                             "newButton": "Create New Managed Area"
                         },
@@ -497,7 +497,7 @@
                                 "selectCollaboratorLabel": "Collaborator",
                                 "roleAndPermissions": "Select role & permissions",
                                 "submit": "Add collaborator",
-                                "help": "Didn’t you find your Collaborator? Ask them to create an Elinor account first",
+                                "help": "Didn't you find your Collaborator? Ask them to create an Elinor account first",
                                 "roles": {
                                     "admin": {
                                         "name": "Admin",
@@ -638,7 +638,7 @@
                 "question": "What can I do from here?",
                 "answer-1": "Go to assessments",
                 "answer-2": "Create an assessment",
-                "label": "Don’t show this initial modal screen again"
+                "label": "Don't show this initial modal screen again"
             },
             "actions": {
                 "contact": {
@@ -797,6 +797,18 @@
             }
         },
         "methodologyPage": {
+            "home": {
+                "meta": {
+                    "title": "Methodology",
+                    "slug": "/methodology",
+                    "seo": {
+                        "title": "",
+                        "description": "",
+                        "keywords": "",
+                        "og_image": ""
+                    }
+                }
+            },
             "title": "Methodology",
             "paragraph1": "The Elinor assessment can be completed in two different ways: Through a facilitated focus group with different stakeholders involved in and affected by the MA, or as a desk-based assessment led by a conservation practitioner. When inputting data, users can indicate which pathway they took to generate the data in the assessment and what types of stakeholders were engaged in the assessment.",
             "subtitle1": "Elinor as a field-based focus group discussion",
@@ -883,7 +895,7 @@
                 "question1": "Always represent information accurately",
                 "answer1": "Assessment results are provided with additional supporting metadata, which describes its source, how it was compiled, its quality and any limitations, please make sure this is reflected in how you use and present the data.",
                 "question2": "Always acknowledge the data owners in any presentation, publication or report, and cite the Elinor data system as the source of information.",
-                "answer2-1": "We recommend using the following statement when using data from the Elinor platform “We express our gratitude to the individuals and institutions who supported generating data for the Elinor Assessment in [INSERT MA OR REGION HERE], including any focus group participants and facilitators”",
+                "answer2-1": "We recommend using the following statement when using data from the Elinor platform \"We express our gratitude to the individuals and institutions who supported generating data for the Elinor Assessment in [INSERT MA OR REGION HERE], including any focus group participants and facilitators\"",
                 "answer2-2": {
                     "paragraph1": "Please use the following citation to refer to the Elinor data system:",
                     "paragraph2": " Elinor: A tool and data system for assessing equitable management and governance for area-based conservation. (YEAR) Available at: elinordata.org [Access Date]"
@@ -936,7 +948,7 @@
                 "attribute4": {
                     "name": "4. Operational capacity",
                     "description": "This attribute measures whether those responsible for managing the MA have the resources to do so. It specifically looks at staff resources, enforcement capacity, budget and equipment needs.",
-                    "useIf": "You wish to assess the capacity of the MA’s management system.",
+                    "useIf": "You wish to assess the capacity of the MA's management system.",
                     "reportText": "Measures whether those responsible for managing the MA have the resources to do so"
                 },
                 "attribute5": {
@@ -955,11 +967,11 @@
                     "name": "7. Clear and congruent regulations",
                     "description": "This attribute measures the quality of MA regulations.    Specifically i) how clear they are and ii) how well they align with; stakeholder input into MA governance, other levels of management authority and the social and environmental context in which they operate.",
                     "useIf": "You wish to understand whether the regulations are clearly stated and fair.",
-                    "reportText": "Measures the extent that MA regulations are clear and align with rights-holders and other actors’ governance goals"
+                    "reportText": "Measures the extent that MA regulations are clear and align with rights-holders and other actors' governance goals"
                 },
                 "attribute8": {
                     "name": "8. Transparency and accountability",
-                    "description": "This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.Transparency is measured by asking whether the MA authority’s communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.",
+                    "description": "This attribute measures transparency, accountability and conflict resolution all of which are important to good governance. It is important that people directly impacted by management decisions are informed of them in advance of being implemented, decision makers are held to account and there are opportunities for conflict resolution.Transparency is measured by asking whether the MA authority's communication of information to local stakeholders is timely, accountability is measured by asking whether the MA authority faces consequences if it does not fulfill its responsibilities and the conflict resolution mechanism is assessed for how effective it is.",
                     "useIf": "If you want to assess the quality of MA governance.",
                     "reportText": "Measures the extent that people directly impacted by management decisions are informed of them in advance, can hold decision-makers to account, and have opportunities for conflict resolution"
                 },
@@ -1102,6 +1114,28 @@
                     "title": "Maintain",
                     "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
                 }
+            }
+        },
+        "background": {
+            "attribute": "Atribut",
+            "questions": "Pertanyaan",
+            "attribute_title": {
+                "heading": "Ringkasan atribut yang diukur dengan Elinor",
+                "name": "Nama atribut",
+                "description": "Deskripsi atribut",
+                "useIf": "Gunakan atribut ini jika…"
+            },
+            "attribute_use": {
+                "1": "Anda ingin memahami apakah batas MA dengan jelas diidentifikasi.",
+                "2": "Anda ingin memahami apakah ada penyalahgunaan atau pelanggaran terhadap aturan MA dan apakah ada informasi yang dapat memfasilitasi pengawasan dan pengelolaan yang sesuai.",
+                "3": "Anda ingin mengetahui informasi apa yang mempengaruhi keputusan manajemen MA.",
+                "4": "Anda ingin mengevaluasi kapasitas manajemen MA untuk menyesuaikan diri dengan perubahan.",
+                "5": "Anda ingin memahami apakah MA memasukkan kelompok-kelompok yang rentan dalam keputusan manajemen dan hasilnya.",
+                "6": "Anda ingin mengevaluasi kontrol atau akses masyarakat setempat terhadap sumber daya alam di MA yang Anda kelola.",
+                "7": "Anda ingin memahami apakah aturan MA jelas dan adil.",
+                "8": "Jika Anda ingin mengevaluasi kualitas pengelolaan MA.",
+                "9": "Anda ingin mengetahui apakah individu yang terlibat dalam MA berpikir bahwa tujuan MA sedang dicapai.",
+                "10": "Anda ingin mengetahui apakah mereka yang terlibat dalam MA berpikir bahwa tujuan sosial MA sedang dicapai."
             }
         }
     },
