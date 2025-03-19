@@ -1121,6 +1121,28 @@
                     "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
                 }
             }
+        },
+        "background": {
+            "attribute": "Atributo",
+            "questions": "Preguntas",
+            "attribute_title": {
+                "heading": "Resumen de los atributos medidos con Elinor",
+                "name": "Nombre del atributo",
+                "description": "Descripción del atributo",
+                "useIf": "Utilice este atributo si…"
+            },
+            "attribute_use": {
+                "1": "Quiere entender si las fronteras de la AG están bien establecidas.",
+                "2": "Quiere entender si hay violaciones o incumplimientos de las normas de la AG y si hay información que pueda facilitar las actividades de supervisión y evaluación, o que se incluya en la gestión adaptativa.",
+                "3": "Quiere saber qué tipo de información recibe la toma de decisiones para gestionar la AG.",
+                "4": "Quiere evaluar la capacidad de la gestión de la AG para adaptarse a los cambios.",
+                "5": "Quiere saber si la AG incluye grupos vulnerables en las decisiones y resultados de gestión.",
+                "6": "Quiere evaluar el control o el acceso de la comunidad local a los recursos naturales de la AG que gestiona.",
+                "7": "Quiere entender si las reglas de la AG son claras y justas.",
+                "8": "Quiere evaluar la calidad de la gobernanza de la AG.",
+                "9": "Quiere saber si las personas involucradas en la AG piensan que los objetivos de la AG se están logrando.",
+                "10": "Quiere saber si las personas involucradas en la AG piensan que los objetivos sociales de la AG se están logrando."
+            }
         }
     },
     "sidebar": {
