@@ -1,4 +1,19 @@
 {
+    "statusMessaging": {
+        "assessments": {
+            "publishingAssessmentError": "Error publishing assessment.",
+            "publishingAssessmentSuccess": "Assessment published successfully.",
+            "unpublishingAssessmentError": "Error unpublishing assessment.",
+            "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
+        },
+        "authentication": {
+            "logoutError": "You are currently logged out."
+        },
+        "organizations": {
+            "organizationCreatedSuccess": "Institution created successfully.",
+            "organizationCreatedError": "Error creating institution."
+        }
+    },
     "pages": {
         "home": {
             "meta": {
@@ -158,7 +173,8 @@
         "assessments": {
             "meta": {
                 "title": "Avaliações",
-                "slug": "/assessments"
+                "slug": "/assessments",
+                "offlineTitle": "Avaliação Offline"
             },
             "list": {
                 "title": "Avaliações",
@@ -471,7 +487,11 @@
                             "guidance": "Orientação",
                             "rationale": "O que esta pergunta está perguntando?"
                         },
-                        "inactiveAttribute": "Para ativar esta pergunta, você deve ativar o atributo"
+                        "inactiveAttribute": "Para ativar esta pergunta, você deve ativar o atributo",
+                        "offlinePopupTitle": "Avaliação Offline",
+                        "offlinePopupDescription": "Esta avaliação está sendo editada por {username} em modo offline",
+                        "withoutConnectionPopupTitle": "Sem conexão com a internet",
+                        "withoutConnectionPopupDescription": "Você poderá voltar online quando a conexão com a internet for restabelecida"
                     },
                     "collaborators": {
                         "tabButton": "Contribuidores",
@@ -740,7 +760,8 @@
                     "invalid_questions": "chaves de perguntas inválidas nas células: {question_error_cells}",
                     "invalid_choices": "escolhas inválidas nas células: {choice_error_cells}",
                     "invalid_answers": "respostas inválidas",
-                    "answer_save": "erro ao salvar respostas no banco de dados"
+                    "answer_save": "erro ao salvar respostas no banco de dados",
+                    "detail": "Você não tem permissão para realizar esta ação"
                 }
             },
             "roles": {
