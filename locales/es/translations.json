@@ -1073,7 +1073,8 @@
                 "mantain": "Mantain"
             },
             "popup": {
-                "managedArea": "Managed Area"
+                "managedArea": "Managed Area",
+                "view": "Ver Menaged Area"
             },
             "title": "MAP",
             "boxList": {

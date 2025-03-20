@@ -1050,7 +1050,8 @@
                 "mantain": "Dumisha"
             },
             "popup": {
-                "managedArea": "Eneo Linalosimamiwa"
+                "managedArea": "Eneo Linalosimamiwa",
+                "view": "Tafuta Eneo Linalosimamiwa"
             },
             "title": "RAMANI",
             "boxList": {
