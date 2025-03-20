@@ -1001,6 +1001,12 @@
                     "description": "This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.",
                     "useIf": "You wish to know whether those involved in the MA think its objectives are being achieved.",
                     "reportText": "Measures the general perceptions that those completing the Elinor assessment have on the ecological and social outcomes of the MA"
+                },
+                "attribute10": {
+                    "name": "10. Perceived social outcomes",
+                    "description": "This attribute measures the general perceptions that individuals completing the Elinor assessment have on the social outcomes of the MA.",
+                    "useIf": "You wish to know whether individuals involved in the MA believe that its social objectives are being achieved.",
+                    "reportText": "Measures the general perceptions that those completing the Elinor assessment have on the social outcomes of the MA."
                 }
             }
         },
@@ -1067,7 +1073,8 @@
                 "mantain": "Mantain"
             },
             "popup": {
-                "managedArea": "Managed Area"
+                "managedArea": "Managed Area",
+                "view": "View Menaged Area"
             },
             "title": "MAP",
             "boxList": {
