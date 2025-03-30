@@ -1,4 +1,19 @@
 {
+    "statusMessaging": {
+        "assessments": {
+            "publishingAssessmentError": "Error publishing assessment.",
+            "publishingAssessmentSuccess": "Assessment published successfully.",
+            "unpublishingAssessmentError": "Error unpublishing assessment.",
+            "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
+        },
+        "authentication": {
+            "logoutError": "You are currently logged out."
+        },
+        "organizations": {
+            "organizationCreatedSuccess": "Institution created successfully.",
+            "organizationCreatedError": "Error creating institution."
+        }
+    },
     "pages": {
         "home": {
             "meta": {
@@ -157,6 +172,7 @@
         },
         "assessments": {
             "meta": {
+                "offlineTitle": "Offline Survey",
                 "title": "Evaluaciones",
                 "slug": "/assessments"
             },
@@ -471,7 +487,11 @@
                             "guidance": "Guía",
                             "rationale": "¿Qué está preguntando esta pregunta?"
                         },
-                        "inactiveAttribute": "To activate this question, you must activate the attribute"
+                        "inactiveAttribute": "To activate this question, you must activate the attribute",
+                        "offlinePopupTitle": "Offline Survey",
+                        "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+                        "withoutConnectionPopupTitle": "Without Internet Connection",
+                        "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
                     },
                     "collaborators": {
                         "tabButton": "Colaboradores",
@@ -740,7 +760,8 @@
                     "invalid_questions": "invalid question keys in cells: {question_error_cells}",
                     "invalid_choices": "invalid choices in cells: {choice_error_cells}",
                     "invalid_answers": "invalid answers",
-                    "answer_save": "error saving answers to database"
+                    "answer_save": "error saving answers to database",
+                    "detail": "You are not allowed to perform this action"
                 }
             },
             "roles": {
@@ -1052,7 +1073,8 @@
                 "mantain": "Mantain"
             },
             "popup": {
-                "managedArea": "Managed Area"
+                "managedArea": "Managed Area",
+                "view": "Ver Menaged Area"
             },
             "title": "MAP",
             "boxList": {

@@ -1,4 +1,19 @@
 {
+    "statusMessaging": {
+        "assessments": {
+            "publishingAssessmentError": "Error publishing assessment.",
+            "publishingAssessmentSuccess": "Assessment published successfully.",
+            "unpublishingAssessmentError": "Error unpublishing assessment.",
+            "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
+        },
+        "authentication": {
+            "logoutError": "You are currently logged out."
+        },
+        "organizations": {
+            "organizationCreatedSuccess": "Institution created successfully.",
+            "organizationCreatedError": "Error creating institution."
+        }
+    },
     "pages": {
         "home": {
             "meta": {
@@ -158,7 +173,8 @@
         "assessments": {
             "meta": {
                 "title": "Assessments",
-                "slug": "/assessments"
+                "slug": "/assessments",
+                "offlineTitle": "Offline Survey"
             },
             "list": {
                 "title": "Assessments",
@@ -333,7 +349,7 @@
                             }
                         },
                         "people": {
-                            "title": "Number of people engaged    from key stakeholder groups",
+                            "title": "Number of people engaged from key stakeholder groups",
                             "community": "Local community",
                             "ngo": "NGO",
                             "academic": "Academic",
@@ -471,7 +487,11 @@
                             "guidance": "Guidance",
                             "rationale": "What is this question asking?"
                         },
-                        "inactiveAttribute": "To activate this question, you must activate the attribute"
+                        "inactiveAttribute": "To activate this question, you must activate the attribute",
+                        "offlinePopupTitle": "Offline Survey",
+                        "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+                        "withoutConnectionPopupTitle": "Without Internet Connection",
+                        "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
                     },
                     "collaborators": {
                         "tabButton": "Collaborators",
@@ -740,7 +760,8 @@
                     "invalid_questions": "invalid question keys in cells: {question_error_cells}",
                     "invalid_choices": "invalid choices in cells: {choice_error_cells}",
                     "invalid_answers": "invalid answers",
-                    "answer_save": "error saving answers to database"
+                    "answer_save": "error saving answers to database",
+                    "detail": "You are not allowed to perform this action"
                 }
             },
             "roles": {
@@ -980,6 +1001,12 @@
                     "description": "This attribute measures the general perceptions those completing the Elinor assessment have on the social and ecological outcomes of the MA.",
                     "useIf": "You wish to know whether those involved in the MA think its objectives are being achieved.",
                     "reportText": "Measures the general perceptions that those completing the Elinor assessment have on the ecological and social outcomes of the MA"
+                },
+                "attribute10": {
+                    "name": "10. Perceived social outcomes",
+                    "description": "This attribute measures the general perceptions that individuals completing the Elinor assessment have on the social outcomes of the MA.",
+                    "useIf": "You wish to know whether individuals involved in the MA believe that its social objectives are being achieved.",
+                    "reportText": "Measures the general perceptions that those completing the Elinor assessment have on the social outcomes of the MA."
                 }
             }
         },
@@ -1046,7 +1073,8 @@
                 "mantain": "Mantain"
             },
             "popup": {
-                "managedArea": "Managed Area"
+                "managedArea": "Managed Area",
+                "view": "View Menaged Area"
             },
             "title": "MAP",
             "boxList": {

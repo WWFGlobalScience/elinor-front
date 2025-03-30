@@ -1,4 +1,19 @@
 {
+    "statusMessaging": {
+        "assessments": {
+            "publishingAssessmentError": "Error publishing assessment.",
+            "publishingAssessmentSuccess": "Assessment published successfully.",
+            "unpublishingAssessmentError": "Error unpublishing assessment.",
+            "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
+        },
+        "authentication": {
+            "logoutError": "You are currently logged out."
+        },
+        "organizations": {
+            "organizationCreatedSuccess": "Institution created successfully.",
+            "organizationCreatedError": "Error creating institution."
+        }
+    },
     "pages": {
         "home": {
             "meta": {
@@ -158,7 +173,8 @@
         "assessments": {
             "meta": {
                 "title": "Tathmini",
-                "slug": "/assessments"
+                "slug": "/assessments",
+                "offlineTitle": "Tathmini Offline"
             },
             "list": {
                 "title": "Tathmini",
@@ -470,7 +486,12 @@
                             "information": "Mahitaji ya habari",
                             "guidance": "Mwongozo",
                             "rationale": "Swali hili linauliza nini?"
-                        }
+                        },
+                        "inactiveAttribute": "To activate this question, you must activate the attribute",
+                        "offlinePopupTitle": "Offline Survey",
+                        "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+                        "withoutConnectionPopupTitle": "Without Internet Connection",
+                        "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
                     },
                     "collaborators": {
                         "tabButton": "Washiriki",
@@ -700,6 +721,49 @@
             "finalized": "Imekamilika",
             "readyToPublish": "Tayari kuchapishwa",
             "preparingToPublish": "Inatayarishwa kuchapishwa",
+            "downloadSurveyFile": {
+                "title": "Download Survey",
+                "helpTitle": "You can fill in the survey offline and upload it when ready. If you select to download the survey:",
+                "help1": "You will obtain a .xlsx file with the questions and answers to the survey.",
+                "help2": "You can edit it offline in Excel, Numbers or any xlsx processing program. Please don't change the structure of the xlsx in any way or form.",
+                "help3": "Save the file as a .xlsx file",
+                "help4": "When the survey is finished, click on the upload button to upload the xlsx and the online survey will automatically update the survey information.",
+                "downloadButton": "Start downloading"
+            },
+            "uploadSurveyFile": {
+                "title": "Upload survey file",
+                "triggerButton": "Select a file",
+                "filePlaceholder": "Drag and drop de .xlsx file",
+                "validatingFileFormat": "Validating file format...",
+                "fileCorrectlyFormated": "The file is correctly formatted",
+                "fileCorrectlyFormatedText": "The data structure is correct and the xlsx is ready to be imported",
+                "uploadWarning": "Remember that if you accept, all the information of the survey online will be overwritten by the information on the xlsx",
+                "surveyFileErrorTitle": "Sorry something went wrong",
+                "surveyFileErrorDescription": "We are not able to import the xlsx you tried to upload. Please make sure that the format is correct. The structure of the xlsx need to be exactly the same one that was downloaded.",
+                "tryAgainText": "If you want you can",
+                "tryAgainButton": "try again",
+                "formatNotSupported": "try again",
+                "help": "Please, upload the xlsx file for the survey in the exact same format that it was downloaded. No change can be done to the structure. If the upload fails. please review the format and make sure it is the same as the downloaded file.",
+                "helpTitle": "What files to Upload?",
+                "errors": {
+                    "missing_file": "missing file",
+                    "unsupported_file_type": "file type not supported; supported types: {supported_mime_types}",
+                    "file_too_large": "uploaded file larger than {maximum_filesize}",
+                    "unsupported_zip": "zip file contains more than one file, or is empty. Number of files in zip: {num_files}",
+                    "invalid_zip": "invalid zip",
+                    "missing_sheet": "missing sheet with name '{sheetname}'",
+                    "invalid_header": "no header found for sheet {sheetname}",
+                    "invalid_header_cells": "invalid headers in cells: {header_error_cells}",
+                    "invalid_file_load": "invalid xlsx file",
+                    "assessment_id_mismatch": "assessment id {user_assessmment_id} in {cell} does not match requested assessment {assessment_id}",
+                    "invalid_sheet": "invalid sheet",
+                    "invalid_questions": "invalid question keys in cells: {question_error_cells}",
+                    "invalid_choices": "invalid choices in cells: {choice_error_cells}",
+                    "invalid_answers": "invalid answers",
+                    "answer_save": "error saving answers to database",
+                    "detail": "You are not allowed to perform this action"
+                }
+            },
             "roles": {
                 "admin": "Msimamizi",
                 "collaborator": "Mshiriki",
@@ -986,7 +1050,8 @@
                 "mantain": "Dumisha"
             },
             "popup": {
-                "managedArea": "Eneo Linalosimamiwa"
+                "managedArea": "Eneo Linalosimamiwa",
+                "view": "Tafuta Eneo Linalosimamiwa"
             },
             "title": "RAMANI",
             "boxList": {
