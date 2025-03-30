@@ -1,1105 +1,1244 @@
 {
-    "pages": {
-        "home": {
-            "meta": {
-                "title": "Nyumbani",
-                "slug": "",
-                "seo": {
-                    "title": "",
-                    "description": "",
-                    "keywords": "",
-                    "og_image": ""
-                }
-            },
-            "header": {
-                "aboutLink": "Kuhusu",
-                "faqsLink": "Maswali yanayoulizwa mara kwa mara",
-                "methodologyLink": "Mbinu",
-                "contactLink": "Wasiliana",
-                "createAccountLink": "Tengeneza akaunti",
-                "signOut": "Toka",
-                "profile": "Wasifu"
-            },
-            "public": {
-                "signInTitle": "WEKA SAHIHI",
-                "signInSubtitle": "Tumia jina lako la mtumiaji au barua pepe na nenosiri ili kufikia Elinor",
-                "signInTitleAndCreateAccountSeparator": " au ",
-                "createAccountLink": "tengeneza akaunti",
-                "resendVerificationLink": "Tuma tena",
-                "usernameInput": "Jina la mtumiaji au Barua pepe",
-                "passwordInput": "Nenosiri",
-                "rememberMeCheckbox": "Nikumbuke",
-                "forgotPasswordLink": "Umesahau nywila?",
-                "signInButton": "Weka sahihi",
-                "alerts": {
-                    "emailVerificationSent": {
-                        "title": "Uthibitishaji wa barua pepe umetumwa!",
-                        "subtitle": "Utapokea ujumbe wa kuthibitisha barua pepe yako"
-                    },
-                    "emailVerificationRequired": {
-                        "title": "Uthibitishaji wa barua pepe unahitajika!",
-                        "subtitle": "Je, hujapokea barua pepe ya uthibitishaji? Ikiwa sio itume tena"
-                    },
-                    "passwordChangedSuccessfully": {
-                        "title": "Nenosiri limebadilishwa!",
-                        "subtitle": "Sasa unaweza kufikia ukitumia nenosiri jipya."
-                    },
-                    "emailVerifiedSuccessfully": {
-                        "title": "Barua pepe imethibitishwa!",
-                        "subtitle": "Sasa unaweza kufikia kwa kutumia kitambulisho chako."
-                    },
-                    "profileUpdatedSuccessfully": {
-                        "title": "Wasifu umesasishwa!",
-                        "subtitle": "Sasa data ya wasifu wako imesasishwa."
-                    },
-                    "accountDeletedSuccessfully": {
-                        "title": "Akaunti imefutwa!",
-                        "subtitle": "Ili kurejesha akaunti yako, wasiliana na wasimamizi wa Elinor"
-                    }
-                },
-                "content": {
-                    "introduction": {
-                        "text": "Elinor ni zana huria na huria ya ufuatiliaji ambayo huwasaidia watumiaji kukusanya, kuhifadhi, kushiriki na kutumia data kuhusu usimamizi na usimamizi wa mazingira ili kusaidia uhifadhi bora zaidi wa eneo.",
-                        "createAccountLink": "Tengeneza akaunti"
-                    },
-                    "explanation": {
-                        "title": "KWANINI NIITUMIE?",
-                        "paragraph1": "Elinor inaweza kutumika kama tathmini ya msingi ya uwanja na mwezeshaji aliyefunzwa au kama zana ya msingi ya dawati ambayo hutumia maarifa ya ndani na ya watendaji.",
-                        "paragraph2": "Maswali ndani ya Elinor ni ya kiwango cha juu, yanahusu mada mbalimbali na yanaweza kuwasaidia wenye hakimiliki na wahusika wengine kuelewa vyema masuala yanayohusiana na utawala na usimamizi wenye usawa wa maeneo yaliyo chini ya ulinzi au usimamizi.",
-                        "trackingChange": {
-                            "title": "KUFUATILIA MABADILIKO",
-                            "text": "Elinor imeundwa ili kusaidia kufuatilia mabadiliko kwa wakati, kwa hivyo inaweza kutumika katika hatua yoyote ya mzunguko wa mradi:",
-                            "list": "<li>Onyesha kufaa kwa tovuti kwa aina tofauti za afua</li><li>Angazia maeneo ambayo yanahitaji uingiliaji uliozingatia zaidi ili kuimarisha juhudi za utekelezaji.</li><li>Waalike wenye haki na wahusika wengine kutafakari kwa ushirikiano kuhusu masuala mbalimbali muhimu kwa uhifadhi wa eneo.</li>"
-                        }
-                    },
-                    "elinor": {
-                        "title": "Kwa Heshima",
-                        "subtitle": "Elinor “Lin” Ostrom",
-                        "paragraph1": "Elinor Ostrom alikuwa mwanamke wa kwanza kushinda Tuzo ya Nobel katika uchumi mwaka wa 2009, lakini urithi wake unaenea zaidi ya heshima hiyo ya pekee. Ostrom na wenzake walipinga masimulizi makuu kuhusu mkasa wa jumuiya (yaliyodai kwamba watu binafsi hufuata maslahi yao wenyewe hata yanapoenda kinyume na manufaa ya pamoja-yaliyofanywa kuwa maarufu na mwanaikolojia ambaye alikuwa mbaguzi wa rangi na eugenicist anayejulikana). Nadharia ya Ostrom kuhusu kutawala mambo ya kawaida ilithibitisha kwamba sayari yetu inaweza kulindwa kupitia jumuiya, ushirikiano na ushirikiano.",
-                        "paragraph2": "Utafiti kuhusu usimamizi wa usimamizi wa rasilimali nyingi ulisukuma mipaka ya sayansi na kupinga migawanyiko ya kawaida kati ya taaluma. Akifanya kazi kwa ushirikiano wa kweli na wengine ambao walielewa ulimwengu kwa njia tofauti, Ostrom na wenzake walifungua njia kwa jumuiya mpya ya utafiti na kundi la maarifa ambalo linajumuisha utofauti na asili iliyounganishwa ya mifumo ya binadamu na asili.",
-                        "paragraph3": "Urithi wa Ostrom huchangia jinsi tunavyofanya kazi leo katika uhifadhi, na kwa kumheshimu katika kazi yetu, tunatumai kuwa maarifa yake yanaweza kutusaidia sote kuunga mkono vyema jumuiya na mifumo ya utawala ambayo inalinda maliasili zetu sasa na katika siku zijazo.",
-                        "quote": {
-                            "text": "Kidogo kidogo, kidogo, familia kwa familia, mengi mazuri yanaweza kufanywa kwa viwango vingi.",
-                            "author": "ELINOR OSTROM"
-                        }
-                    },
-                    "faqs": {
-                        "title": "Maswali yanayoulizwa mara kwa mara",
-                        "text": "Je, unaanza tu na Elinor au ungependa kujifunza zaidi kuhusu kesi za utumiaji na programu za kawaida? Tembelea sehemu ya Maswali Yanayoulizwa Mara kwa Mara ili kuona maswali haya ya kawaida yakijibiwa.",
-                        "button": "Nenda kwa Maswali Yanayoulizwa Mara kwa Mara"
-                    },
-                    "methodology": {
-                        "title": "MBINU",
-                        "text": "Pata maelezo zaidi kuhusu jinsi unavyoweza kutumia tathmini ya Elinor na kupakua itifaki ya uga na zana ya kutathmini.",
-                        "text2": "Elinor inajumuisha maswali 35 katika sifa 10 za utawala na usimamizi. Kila swali lina alama 0-3 na alama hizo huchangia kwa usawa alama zao za sifa. Kwa upande mwingine, alama za sifa huchangia kwa usawa alama ya jumla. Kulingana na alama iliyotolewa, Elinor anapendekeza hatua tofauti za vitendo, ikiwa ni pamoja na Panga, Jenga, Imarisha na Dumisha. Ni muhimu kutambua kwamba ingawa alama hizi hutoa maarifa muhimu, zinapaswa kutumiwa pamoja na data ya ubora iliyoingizwa katika Elinor wakati wa kuamua ni hatua gani za usimamizi zinazobadilika za kuchukua.",
-                        "button": "Nenda kwa Mbinu",
-                        "score": "Alama",
-                        "plan": "Panga",
-                        "build": "Jenga",
-                        "strengthen": "Imarisha",
-                        "maintain": "Dumisha"
-                    }
-                },
-                "latestNews": {
-                    "title": "HABARI MPYA",
-                    "readMore": "Soma zaidi",
-                    "seeMoreNews": "Angalia habari zingine"
-                }
-            },
-            "private": {}
-        },
-        "auth": {
-            "registration": {
-                "title": "FUNGUA AKAUNTI",
-                "subtitle": "Jaza fomu iliyo hapa chini ili kuanza kutumia Elinor",
-                "inputs": {
-                    "email": "Barua pepe",
-                    "password1": "Nenosiri",
-                    "password2": "Uthibitishaji wa nenosiri",
-                    "firstname": "Jina la kwanza",
-                    "lastname": "Jina la familia",
-                    "username": "Jina la mtumiaji"
-                },
-                "termsOfServiceCheckbox": "Nakubaliana na sheria na masharti*",
-                "validationErrorTitle": "Hitilafu ya uthibitishaji!",
-                "createAccountButton": "Fungua akaunti"
-            },
-            "forgotPassword": {
-                "title": "UMESAHAU NYWILA",
-                "subtitle": "Weka barua pepe yako ili kupokea kiungo cha kuweka upya nenosiri",
-                "emailInput": "Barua pepe",
-                "sendEmailButton": "Kutuma barua pepe",
-                "tryAgainButton": "Jaribu tena",
-                "alerts": {
-                    "forgotPasswordEmailSent": {
-                        "title": "Umesahau barua pepe ya siri iliyotumwa!",
-                        "subtitle": "Angalia barua pepe yako kwa kiungo cha kuweka upya nenosiri"
-                    }
-                }
-            },
-            "resendVerificationEmail": {
-                "title": "TUMA TENA BARUA YA UTHIBITISHO",
-                "subtitle": "Weka barua pepe yako ili kupokea uthibitishaji mpya wa barua pepe",
-                "emailInput": "Barua pepe",
-                "sendEmailButton": "Kutuma barua pepe",
-                "tryAgainButton": "Jaribu tena"
-            },
-            "resetPassword": {
-                "title": "WEKA UPYA NENOSIRI",
-                "subtitle": "Weka nenosiri jipya hapa chini",
-                "error": {
-                    "title": "Hitilafu!"
-                },
-                "password1Input": "Nenosiri",
-                "password2Input": "Uthibitishaji wa nenosiri",
-                "changePasswordButton": "Weka upya nenosiri"
-            }
-        },
-        "assessments": {
-            "meta": {
-                "title": "Tathmini",
-                "slug": "/assessments"
-            },
-            "list": {
-                "title": "Tathmini",
-                "total": "Kuonesha",
-                "totalPlural": "tathmini",
-                "totalSingular": "tathmini",
-                "myRole": "Wajibu Wangu",
-                "viewButton": "Tazama",
-                "editButton": "Hariri",
-                "createButton": "Tengeneza Tathmini",
-                "downloadButton": "Pakua Zote",
-                "year": "Mwaka",
-                "countries": "Nchi",
-                "create": {
-                    "popup": {
-                        "title": "Tengeneza Tathmini",
-                        "labels": {
-                            "name": "Jina la tathmini",
-                            "year": "Chagua Mwaka"
-                        },
-                        "placeholders": {
-                            "name": "Jina la tathmini"
-                        },
-                        "nameCriteria": "Weka jina fupi na rahisi kukumbuka kama vile Tathmini ya Kila Mwaka ya Tsavo 2021",
-                        "submit": "Tengeneza Tathmini"
-                    }
-                },
-                "filters": {
-                    "search": "Tafuta kwa jina la tathmini au jina la eneo linalodhibitiwa",
-                    "button": "Vichujio",
-                    "popup": {
-                        "title": "Chuja tathmini",
-                        "labels": {
-                            "countries": "na Nchi",
-                            "year": "kwa Mwaka",
-                            "status": "kwa Uchapishaji"
-                        },
-                        "placeholders": {
-                            "countries": "Nchi",
-                            "year": "",
-                            "status": ""
-                        },
-                        "reset": "Weka upya",
-                        "apply": "Weka vichujio"
-                    }
-                },
-                "type": {
-                    "own": "Mwanachama",
-                    "all": "Wote"
-                },
-                "aggregateReport": {
-                    "button": "Ripoti ya jumla",
-                    "title": "Unda Ripoti ya Jumla",
-                    "subtitle": "Chagua Tathmini za Kujumuisha",
-                    "byManagementAreas": "kwa MA",
-                    "byCountries": "kwa Nchi",
-                    "byYear": "kwa Mwaka",
-                    "byType": "kwa Aina ya tathmini",
-                    "year": "Mwaka",
-                    "giveName": "Ipe jina",
-                    "giveNamePlaceholder": "Jina hapa",
-                    "assessments": "Tathmini zilizochaguliwa",
-                    "create": "Unda Ripoti ya Jumla",
-                    "covering": "Tathmini zinazohusisha",
-                    "coveringHA": "ha",
-                    "filtersSelected": "Vichujo viliyochaguliwa",
-                    "managementAreaNoOptions": "Andika jina ya MA",
-                    "managementAreaNoResults": "Hakuna MA zinazolingana zilizopatikana",
-                    "selectedAssessmentsError": "Lazima uchague angalau tathmini moja",
-                    "nameRequiredError": "Jina la ripoti linahitajika",
-                    "nameLengthError": "Jina la ripoti ni refu zaidi"
-                }
-            },
-            "view": {
-                "title": "Tazama tathmini",
-                "year": "Mwaka",
-                "tabs": {
-                    "info": {
-                        "tabButton": "Habari",
-                        "title": "Tazama Tathmini",
-                        "managementPlanFileTitle": "Hati ya mpango wa usimamizi",
-                        "buttons": {
-                            "managementPlanFile": "Pakua"
-                        },
-                        "labels": {
-                            "managementAreaName": "Jina la eneo la usimamizi",
-                            "protectedArea": "Jina la PA/CA kubwa eneo hili la kuzingatia liko ndani",
-                            "dateEstablished": "Tarehe ya kuanzishwa rasmi (ikiwa inafaa)",
-                            "reportedSize": "Ukubwa wa MA (ha)",
-                            "containedBy": "Jina la Eneo la Usimamizi linalohusiana",
-                            "governanceType": "Aina ya Utawala wa MA (kisanduku cha tiki)",
-                            "managementAuthority": "Jina la mamlaka ya usimamizi",
-                            "recognitionLevel": "Je, haki za mamlaka ya MA zinatambuliwa rasmi katika… \n\n(tick box)",
-                            "supportSources": "Je, mamlaka ya usimamizi wa MA inapokea usaidizi wa kiufundi, kifedha au aina nyingine kutoka kwa mojawapo ya vikundi au mashirika yafuatayo?",
-                            "countries": "Nchi/Nchi ambako MA iko",
-                            "regions": "Jimbo/Mkoa ambapo MA inapatikana",
-                            "zones": {
-                                "title": "MAENEO",
-                                "zoneName": "Jina la eneo",
-                                "zoneLevel": "Je, eneo hili linazuia shughuli au matumizi yoyote?",
-                                "zoneDescription": "Maelezo na Sifa"
-                            }
-                        },
-                        "map": {
-                            "title": "Ramani au Faili ya anga ya MA",
-                            "subtitle": "Habari za kijiografia"
-                        },
-                        "people": {
-                            "title": "7. Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
-                            "community": "Jumuiya ya mtaa",
-                            "ngo": "NGO",
-                            "academic": "Kitaaluma",
-                            "government": "Serikali",
-                            "indigenous": "Watu wa asili",
-                            "private": "Sekta binafsi",
-                            "total": "jumla ya ushauri"
-                        },
-                        "gender": {
-                            "title": "8. Uwakilishi wa jinsia wa wenye haki na wahusika wengine ulishauriwa",
-                            "female": "Female",
-                            "male": "Male",
-                            "nonbinary": "Non binary",
-                            "prefer_not_to_say": "Prefer not to say",
-                            "total": "jumla kwa jinsia"
-                        }
-                    },
-                    "survey": {
-                        "tabButton": "Utafiti huo",
-                        "title": "Utafiti huo",
-                        "attributes": {
-                            "mandatory": "Lazima",
-                            "active": "Sifa inayotumika",
-                            "inactive": "Sifa isiyotumiks"
-                        }
-                    },
-                    "collaborators": {
-                        "tabButton": "Washiriki",
-                        "title": "Washiriki",
-                        "description": "Washiriki ni watu wanaofanya kazi nawe kwenye tathmini hii au wanaohitaji kufikia data.",
-                        "table": {
-                            "name": "Jina",
-                            "admin": "Msimamizi",
-                            "contributor": "Mchangiaji",
-                            "observer": "Mtazamaji"
-                        }
-                    }
-                }
-            },
-            "edit": {
-                "title": "Hariri tathmini",
-                "year": "Mwaka",
-                "saveButton": "Hifadhi",
-                "tabs": {
-                    "nextStep": "Hatua ifuatayo",
-                    "data": {
-                        "tabButton": "Data ya tathmini",
-                        "title": "Hariri Data ya Tathmini",
-                        "labels": {
-                            "year": "Chagua mwaka",
-                            "name": "Jina la tathmini",
-                            "organization": "Jina la taasisi inayohusishwa na tathmini hii",
-                            "personResponsibleRole": "Wajibu wa mtu anayehusika na kukamilisha Tathmini hii",
-                            "collectionMethods": "Je, taarifa katika tathmini hii ilikusanywa vipi?",
-                            "collectionMethodsText": "Sababu za tathmini (k.m. ufuatiliaji wa kila mwaka, msingi wa mradi)",
-                            "consentGiven": "Je, kuna mtu katika mamlaka ya utawala ametoa kibali chake kwa tathmini hii kufanyika?",
-                            "consentGivenWritten": "Je, mamlaka ya utawala imetoa kibali cha maandishi?",
-                            "managementPlan": {
-                                "title": "Pakia Faili ya Mpango wa Usimamizi",
-                                "maxSize": "Ukubwa wa juu: 100M",
-                                "maxUploadTime": "muda wa juu zaidi wa kupakia: dakika 5 (kwa hivyo usijaribu upakiaji mkubwa kwenye muunganisho wa polepole)",
-                                "anyFile": "inaweza kuwa faili yoyote"
-                            }
-                        },
-                        "people": {
-                            "title": "Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
-                            "community": "Jumuiya ya mtaa",
-                            "ngo": "NGO",
-                            "academic": "Kitaaluma",
-                            "government": "Serikali",
-                            "indigenous": "Watu wa asili",
-                            "private": "Sekta binafsi"
-                        },
-                        "gender": {
-                            "title": "Uwakilishi wa jinsia wa wenye haki na wahusika wengine ulishauriwa",
-                            "female": "Mwanamke",
-                            "male": "Mwanaume",
-                            "nonBinary": "Isiyo ya binary",
-                            "preferNotToSay": "Pendelea kutosema"
-                        }
-                    },
-                    "managementArea": {
-                        "tabButton": "Eneo linalosimamiwa",
-                        "title": "Badilisha Eneo Linalosimamiwa",
-                        "selector": {
-                            "title": "Chagua eneo linalodhibitiwa",
-                            "existing": "Chagua Eneo Linalosimamiwa",
-                            "existingGuide": "Unaweza kuchagua Eneo Linalosimamiwa ambalo tayari limeundwa, au usipolipata unaweza kuunda jipya kutoka hapa",
-                            "orNew": "AU UUNDE MPYA",
-                            "newButton": "Unda Eneo Jipya Linalosimamiwa"
-                        },
-                        "zones": {
-                            "accessLevels": {
-                                "OPEN_ACCESS": "Fungua ufikiaji (wazi kwa uchimbaji na kuingia)",
-                                "PARTIALLY_RESTRICTED": "Ufikiaji wenye vikwazo kamili (marufuku ya uchimbaji jumla)",
-                                "FULLY_RESTRICTED": "Imezuiwa kwa Kiasi (k.m., kufungwa mara kwa mara, vikwazo kwa aina ya matumizi, vizuizi vya aina ya shughuli, vizuizi vya spishi, vizuizi vya gia, n.k.)"
-                            }
-                        },
-                        "recognitionLevels": {
-                            "local": "Ngazi ya mtaa",
-                            "local_guide": "Inatambulika na jamii",
-                            "national": "Kiwango cha kitaifa",
-                            "national_guide": "Inatambuliwa na serikali ya kitaifa",
-                            "international": "Kiwango cha kimataifa",
-                            "international_guide": "Je, kuna hatua nyingine halali za uhifadhi wa eneo [OECM] ambazo huchangia malengo ya kimataifa"
-                        },
-                        "labels": {
-                            "title": "Kanda",
-                            "name": "Jina la eneo jipya linalodhibitiwa",
-                            "protectedArea": "Kitambulisho Kinachohusishwa katika Hifadhidata ya Dunia ya Maeneo Yanayolindwa",
-                            "containedBy": "Chagua Maeneo mengine yoyote yanayosimamiwa yanayohusiana na MA hii. Ikiwa hakuna, ruka.",
-                            "dateEstablished": "Tarehe ya kuanzishwa rasmi (ikiwa inafaa)",
-                            "reportedSize": "Ukubwa wa MA (ha)",
-                            "managementAuthority": "Jina la mamlaka ya usimamizi",
-                            "governanceType": "Aina ya Utawala wa MA",
-                            "objectives": "Malengo ya MA",
-                            "recognitionLevel": "Je, haki za mamlaka ya MA zinatambuliwa rasmi katika…",
-                            "stakeholderGroups": "Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
-                            "supportSources": "Je, mamlaka ya usimamizi wa MA inapokea usaidizi wa kiufundi, kifedha au aina nyingine kutoka kwa mojawapo ya vikundi au mashirika yafuatayo?",
-                            "countries": "Nchi/Nchi ambako MA iko",
-                            "regions": "Jimbo/Mkoa ambapo MA inapatikana",
-                            "zones": "Je hii MA ina kanda?",
-                            "zoneName": "Jina la eneo",
-                            "zoneLevel": "Chagua kiwango cha ufikiaji kinachoelezea vyema eneo hili",
-                            "protectedAreaWdpaIdHelp": "Kitambulisho cha WDPA kinaweza kupatikana kwenye tovuti ya sayari iliyolindwa.",
-                            "protectedAreaWdpaIdHelpLink": "Bofya hapa kutafuta",
-                            "geospatialSources": "Tafadhali orodhesha chanzo cha maelezo ya kijiografia",
-                            "yes": "Ndiyo",
-                            "no": "Hapana"
-                        },
-                        "buttons": {
-                            "addZone": "Ongeza Eneo jipya"
-                        },
-                        "map": {
-                            "polygonParagraph1": "Onyesha mipaka ya eneo linalosimamiwa",
-                            "polygonParagraph2": "Tumia zana zilizo juu ya ramani ili kuunda Poligoni ya Eneo Linalosimamiwa",
-                            "drawPolygonStartText": "Bofya juu ya Ramani ili kuunda poligoni",
-                            "drawPolygonCloseText": "Ili Kufunga poligoni bofya juu ya Pointi iliyoundwa",
-                            "newPolygon": "Unda poligoni mpya",
-                            "deletePolygon": "Futa poligoni iliyochaguliwa",
-                            "help": "Bofya juu ya ramani ili kuchora poligoni",
-                            "area": "Eneo",
-                            "indicateBoundaries": "Onyesha mipaka ya eneo linalosimamiwa",
-                            "spatialFile": "Pakia faili ya eneo la anga",
-                            "preferredMethod": "NJIA INAYOPENDELEWA",
-                            "preferredMethodText": "Pakia faili ya anga katika umbizo la Shapefile",
-                            "spatialFileAndMapImageSeparator": "AU",
-                            "imageFile": "Pakia picha ya ramani"
-                        },
-                        "popups": {
-                            "spatialFile": {
-                                "title": "Pakia Faili ya Eneo la Ramani",
-                                "validatingFileFormat": "Inathibitisha umbizo la faili...",
-                                "fileCorrectlyFormated": "Faili imeundwa kwa usahihi",
-                                "fileCorrectlyFormatedText": "Faili yako imethibitishwa kwa ufanisi na iko tayari kupakiwa",
-                                "importFileError": "Samahani kuna kitu kibaya",
-                                "formatNotSupported": "Umbizo hili halitumiki",
-                                "tryAgain": "jaribu tena",
-                                "help": "<h4>Ni faili gani ya kupakia?</h4>Pakia faili ya umbo iliyofungwa ya mipaka ya eneo linalodhibitiwa. Zip inapaswa kuwa na faili za sehemu ya faili ya umbo na inapaswa kuwa faili moja tu ya umbo la mpaka. Ikiwa huna aina sahihi ya faili, tafadhali badilisha kwanza kabla ya kupakia.",
-                                "condition1": "zip iliyo na faili zote muhimu za umbo (au zip iliyo na folda iliyo na faili hizo)",
-                                "condition2": "<= 10MB",
-                                "condition3": "umbo faili pekee -- ikijumuisha faili zote za kando zinazohitajika (.shp, .shx, .dbf, .prj)",
-                                "condition4": "poligoni au poligoni nyingi",
-                                "condition5": "hakuna jiometri batili, tupu, au vinginevyo batili"
-                            },
-                            "imageFile": {
-                                "title": "Pakia Faili ya Picha ya Ramani",
-                                "formatNotSupported": "Umbizo hili halitumiki",
-                                "gpsCoordinatesTitle": "Onyesha viwianishi vya GPS",
-                                "gpsCoordinatesExample": "Latitudo , Longitude<br>(e.g 40.741895,-73.989308)",
-                                "dragMapIcon": "Unaweza Buruta ikoni kwenye ramani ili kuchagua viwianishi",
-                                "help": "<h4>Ni faili gani ya kupakia?</h4>Ikiwa huna faili ya umbo lakini unayo ramani ya picha ya eneo linalodhibitiwa unaweza kuipakia hapa na itachakatwa mwenyewe. "
-                            }
-                        }
-                    },
-                    "survey": {
-                        "tabButton": "Utafiti huo",
-                        "title": "Utafiti huo",
-                        "navigator": {
-                            "completed": "Imekamilika",
-                            "outOf": "Nje ya"
-                        },
-                        "uncheckAttributeTitle": "Acha kuchagua sifa",
-                        "uncheckAttributeText": "Unaacha kuchagua sifa ambayo ina maswali ambayo yamejibiwa. Ukiondoa kuichagua, majibu yote ya maswali yake yatafutwa. Je, una uhakika unataka kuendelea na kuacha kuchagua sifa hii?",
-                        "questions": {
-                            "question": "Swali",
-                            "back": "Rudi kwenye Nyumba ya Utafiti",
-                            "answer": "Jibu",
-                            "score": "Alama",
-                            "unknown": "haijulikani",
-                            "dontKnow": "Sijui",
-                            "explanation": "Maelezo",
-                            "notCompleted": "Haijakamilika",
-                            "answerQuestionButton": "Jibu swali",
-                            "editQuestionButton": "Badilisha jibu",
-                            "selectAnswer": "Chagua jibu",
-                            "help": "Je, unahitaji usaidizi? Tazama hapa chini",
-                            "prev": "Iliyotangulia",
-                            "next": "Inayofuata",
-                            "information": "Mahitaji ya habari",
-                            "guidance": "Mwongozo",
-                            "rationale": "Swali hili linauliza nini?"
-                        }
-                    },
-                    "collaborators": {
-                        "tabButton": "Washiriki",
-                        "title": "Washiriki",
-                        "description": "Washiriki ni watu wanaohusika katika kukamilisha tathmini hii au wanahitaji ufikiaji ambao haupatikani kwa watumiaji wengine.",
-                        "addCollaboratorButton": "Ongeza mshirika",
-                        "table": {
-                            "name": "Jina",
-                            "admin": "Msimamizi",
-                            "contributor": "Mchangiaji",
-                            "observer": "Mtazamaji"
-                        },
-                        "popups": {
-                            "delete": {
-                                "title": "Inafuta Mshiriki",
-                                "confirmationTitle": "Una uhakika?",
-                                "confirmationDescription": "Kwa kubofya ndiyo utaondoa mshirika kumfanya ashindwe kufikia tathmini."
-                            },
-                            "add": {
-                                "title": "Ongeza Mshiriki",
-                                "description": "Andika herufi chache za kwanza za jina la mtumiaji la mshirika kisha uchague mshirika hapa chini na ubainishe kiwango cha ufikiaji ambacho ungependa awe nacho. Ni lazima washirika wafungue akaunti kabla ya kuziongeza.",
-                                "selectCollaboratorTitle": "Chagua mshirika",
-                                "selectCollaboratorLabel": "Mshiriki",
-                                "roleAndPermissions": "Chagua jukumu na ruhusa",
-                                "submit": "Ongeza mshirika",
-                                "help": "Je, hukumpata Mshiriki wako? Waambie wafungue akaunti ya Elinor kwanza",
-                                "roles": {
-                                    "admin": {
-                                        "name": "Msimamizi",
-                                        "permission1": "Hariri data ya Tathmini",
-                                        "permission2": "Badilisha data ya Utafiti",
-                                        "permission3": "Hariri eneo la MA",
-                                        "permission4": "Ongeza/Hariri Msimamizi, Wachangiaji na Waangalizi",
-                                        "permission5": "Futa Tathmini",
-                                        "permission6": "Chapisha na Batilisha Uchapishaji Tathmini"
-                                    },
-                                    "contributor": {
-                                        "name": "Mchangiaji",
-                                        "permission1": "Hariri data ya Utafiti",
-                                        "permission2": "Hariri data ya eneo la MA",
-                                        "permission3": "Tazama data ya Tathmini",
-                                        "permission4": "Tazama data ya Utafiti",
-                                        "permission5": "Tazama eneo la MA"
-                                    },
-                                    "observer": {
-                                        "name": "Mtazamaji",
-                                        "permission1": "Tazama data ya Tathmini",
-                                        "permission2": "Tazama data ya Utafiti",
-                                        "permission3": "Tazama eneo la MA"
-                                    }
-                                },
-                                "error": "Hitilafu ya uthibitishaji"
-                            }
-                        }
-                    },
-                    "publish-settings": {
-                        "tabButton": {
-                            "edit": "Badilisha mipangilio ya uchapishaji",
-                            "ready": "Tayari kuchapishwa",
-                            "Preparing": "Inatayarishwa kuchapishwa"
-                        },
-                        "title": "Maliza na Uchapishe",
-                        "finalize": {
-                            "title": "Maliza",
-                            "whatHappenTitle": "Nini kinatokea unapomaliza",
-                            "whatHappenList1": "<li>Unatia alama Tathmini yako kama Imekamilika</li><li>Hutaweza kuhariri Data ya Utafiti</li><li>Hutaweza kuhariri Data ya Tathmini</li><li>Tathmini yako itaendelea kuonekana na wewe na Washiriki wako pekee</li><li>Itaonekana kama data iliyojumlishwa katika maarifa na ramani</li>",
-                            "whatHappenList2": "<li>Bado unaweza kuhariri au kubadilisha Eneo Linalosimamiwa</li><li>Bado unaweza kuongeza washirika</li><li>Bado unaweza kubatilisha uchapishaji wa Tathmini</li>",
-                            "button": "Maliza",
-                            "warning": "Onyo!!",
-                            "warningText": "Baada ya kukamilika huwezi kuhariri Utafiti au Data ya Tathmini, kwa hivyo kamilisha tu utakapomaliza Tathmini yako.",
-                            "popup": {
-                                "title": "Maliza Tathmini",
-                                "confirmationTitle": "Je, una uhakika unataka kukamilisha tathmini yako?",
-                                "confirmationDescription": "Baada ya kukamilika, huwezi kuhariri Utafiti au Data ya Tathmini, kwa hivyo kamilisha tu utakapomaliza Tathmini yako."
-                            }
-                        },
-                        "publish": {
-                            "title": "Kuchapisha",
-                            "whatHappenTitle": "Nini kinatokea unapochapisha",
-                            "whatHappenList1": "<li>Unatoa Tathmini yako kwa watumiaji wa umma</li><li>Itaonekana kama data iliyojumlishwa katika maarifa na ramani</li>",
-                            "whatHappenList2": "<li>Bado unaweza kuhariri au kubadilisha Eneo Linalosimamiwa</li><li>Bado unaweza kuongeza washirika</li><li>Bado unaweza kubatilisha uchapishaji wa Tathmini</li>",
-                            "button": "Chapisha Tathmini",
-                            "popup": {
-                                "title": "Chapisha Tathmini",
-                                "confirmationTitle": "Je, una uhakika unataka kuchapisha tathmini yako?",
-                                "confirmationDescription": "Baada ya kuchapishwa huwezi kuhariri Utafiti au Data ya Tathmini, kwa hivyo uchapishe tu unapomaliza Tathmini yako."
-                            },
-                            "alert": {
-                                "popup": {
-                                    "title": "Chapisha Tathmini",
-                                    "confirmationTitle": "Inabidi ukamilishe tathmini yako ili uweze kuchapisha",
-                                    "confirmationDescription": "Rudi nyuma ukamilishe kwanza"
-                                }
-                            }
-                        },
-                        "unpublish": {
-                            "title": "Batilisha uchapishaji",
-                            "whatHappenTitle": "Nini kinatokea unapobatilisha uchapishaji",
-                            "whatHappenList1": "<li>Tathmini haitaonekana kwa wasio washirika</li>",
-                            "whatHappenList2": "<li>Bado unaweza kuchapisha Tathmini</li>",
-                            "button": "Batilisha uchapishaji wa Tathmini",
-                            "popup": {
-                                "title": "Batilisha uchapishaji wa Tathmini",
-                                "confirmationTitle": "Je, una uhakika unataka kubatilisha uchapishaji wa tathmini yako?",
-                                "confirmationDescription": "Thibitisha"
-                            }
-                        }
-                    }
-                },
-                "attributes": "Sifa",
-                "seeQuestions": "Angalia maswali",
-                "optionalAttributesTitle": "Sifa za hiari",
-                "optionalAttributesDescription": "Chagua sifa zinasohusiana na tathmini yako",
-                "mandatoryAttribute": "Lazima",
-                "inactiveAttribute": "Sifa isiyotumiks",
-                "activeAttribute": "Sifa inayotumika",
-                "offlineSurveyWarning": "Tafadhali hakikisha kuwa mabadiliko ya nje ya mtandao yanafanyika katika kivinjari sawa. Ukibadilisha vivinjari kabla ya kugeuza utafiti mtandaoni tena, unaweza kupoteza mabadiliko yako ya nje ya mtandao."
-            },
-            "statuses": {
-                "90": "Fungua",
-                "10": "Imechapishwa"
-            },
-            "personResponsibleRoles": {
-                "10": "Wafanyakazi wasio wa faida",
-                "20": "Meneja wa eneo linalosimamiwa",
-                "30": "Wafanyikazi wa eneo linalosimamiwa",
-                "40": "Wafanyakazi wa serikali",
-                "50": "Wanachama wa jumuiya za mitaa au kamati za kiasili",
-                "60": "Viongozi wa jumuiya au wawakilishi"
-            },
-            "collectionMethods": {
-                "10": "Tathmini ya msingi wa dawati",
-                "30": "Majadiliano ya vikundi lengwa yaliyowezeshwa"
-            },
-            "popup": {
-                "title": "Jinsi ya kuunda Tathmini",
-                "text": "Tumia mchakato ulio hapa chini kuunda tathmini. Utahitaji kutoa maelezo yanayohusiana na tathmini, kuunda au kuchagua eneo linalosimamiwa na kisha ukamilishe maswali halisi ya uchunguzi. Utendaji wa washirika hukuwezesha kuongeza watu kwenye tathmini yako.",
-                "step-1": {
-                    "title": "Chagua njia yako ya kukusanya data",
-                    "text": "Elinor inaweza kukamilika kwa moja ya njia mbili:",
-                    "li-1": "Kupitia kikundi cha kuzingatia kilichowezeshwa chenye wenye haki tofauti na wahusika wengine wanaohusika na kuathiriwa na MA",
-                    "li-2": "Kama tathmini inayotegemea dawati inayoongozwa na kwa mfano, mtaalamu wa uhifadhi au msimamizi wa tovuti."
-                },
-                "step-2": {
-                    "title": "Data ya Tathmini",
-                    "text": "Kamilisha maelezo yanayohusiana na TATHMINI, kama vile idadi ya watu walioshauriwa au taasisi zinazohusiana"
-                },
-                "step-3": {
-                    "title": "Eneo la Usimamizi",
-                    "text": "Tambua Eneo la Usimamizi, ambalo ni mali ya PA fulani na upakie umbo au chora kwenye ramani eneo lake."
-                },
-                "step-4": {
-                    "title": "Utafiti huo",
-                    "text": "Jibu maswali kutoka kwa Utafiti. Unaweza kuchagua sifa hizo ambazo zinafaa kwa Tathmini yako"
-                },
-                "step-5": {
-                    "title": "Washiriki",
-                    "text": "Alika washiriki kukusaidia kukamilisha Tathmini, au ushiriki tu kama mwangalizi"
-                },
-                "step-6": {
-                    "title": "Kuchapisha",
-                    "text": "Mara baada ya Tathmini kukamilika unaweza kuichapisha, na kuifanya ipatikane kutoka kwa eneo la umma la wavuti"
-                },
-                "question": "Ninaweza kufanya nini kutoka hapa?",
-                "answer-1": "Nenda kwa tathmini",
-                "answer-2": "Tengeneza tathmini",
-                "label": "Usionyeshe skrini hii ya awali tena"
-            },
-            "actions": {
-                "contact": {
-                    "title": "Wasiliana na Msimamizi",
-                    "subtitle": "Jaza fomu hii ili kuwasiliana na msimamizi",
-                    "text": "Tutatuma ujumbe kwa msimamizi wa tathmini hii",
-                    "labelTextarea": "Ujumbe",
-                    "okMessage": "Asante kwa mawasiliano!",
-                    "namePlaceholder": "Andika jina lako",
-                    "subjectPlaceholder": "Andika mada",
-                    "emailPlaceholder": "andika barua pepe"
-                },
-                "flag": {
-                    "title": "Kichwa cha bendera",
-                    "subtitle": "Jaza fomu hii ili kuripoti tathmini",
-                    "text": "Tutatuma ujumbe kwa msimamizi wa tathmini hii",
-                    "labelTextarea": "Ujumbe",
-                    "okMessage": "Asante kwa mawasiliano!",
-                    "placeholder": "Aina ya bendera",
-                    "types": {
-                        "inappropriate": "Haifai",
-                        "personal": "Kibinafsi",
-                        "inaccurate": "Siyo sahihi",
-                        "other": "Nyingine"
-                    }
-                },
-                "generateReport": {
-                    "strengths": {
-                        "title": "Nguvu kuu za utawala",
-                        "label": "Eleza nguvu za utawala",
-                        "explanation": "Sifa tatu zilizotajwa hapo juu zilipata alama ya juu zaidi. Tumia nafasi hii kutafakari kwa nini unafikiri hizo ndizo nguvu kuu za eneo hili.\n"
-                    },
-                    "needs": {
-                        "title": "Mahitaji muhimu ya utawala",
-                        "label": "Eleza mahitaji muhimu",
-                        "explanation": "Sifa tatu zilizotajwa hapo juu zilipata alama ya chini zaidi. Tumia nafasi hii kutafakari kwa nini unafikiri hizo sifa tatu zinafaa kuangaliwa zaidi"
-                    },
-                    "context": {
-                        "title": "Muktadha",
-                        "label": "Muktadha",
-                        "explanation": "Tumia nafasi hii kuelezea kwa ufupi wamiliki wakuu wa haki na wahusika wengine katika eneo hili, changamoto kuu za utawala na usimamizi, na mambo mengine yoyote ambayo unafikiri yanaunda matokeo ya kijamii na kiikolojia ya eneo hilo."
-                    },
-                    "button": "Toa ripoti",
-                    "buttonGenerating": "Inazalisha...",
-                    "error": "Kulikuwa na hitilafu katika kuzalisha ripoti."
-                },
-                "delete": {
-                    "title": "Futa tathmini",
-                    "subtitle": "Je, una uhakika unataka kufuta tathmini yako",
-                    "text": "Ukishaifuta, hutaweza kufikia Maoni yako tena, na data yako itafutwa kabisa."
-                },
-                "delete-info": {
-                    "title": "Futa tathmini",
-                    "subtitle": "Tathmini imekamilika na haiwezekani kuifuta",
-                    "text": "Wasiliana na msimamizi wa elinor ili kuhariri au kufuta tathmini yako"
-                }
-            },
-            "outOf100": "juu ya 100",
-            "published": "Imechapishwa",
-            "finalized": "Imekamilika",
-            "readyToPublish": "Tayari kuchapishwa",
-            "preparingToPublish": "Inatayarishwa kuchapishwa",
-            "roles": {
-                "admin": "Msimamizi",
-                "collaborator": "Mshiriki",
-                "observer": "Mtazamaji"
-            },
-            "managedArea": "Eneo la Usimamizi"
-        },
-        "documentation": {
-            "home": {
-                "meta": {
-                    "title": "Nyaraka",
-                    "slug": "/documentation"
-                }
-            },
-            "header": {
-                "title": "Nyaraka"
-            },
-            "intro": {
-                "text": "Chini ni hati ambazo ni muhimu kwa ufahamu kamili na matumizi ya chombo cha Elinor. Kila hati ina maelezo mafupi. Tafadhali pakua inavyohitajika."
-            },
-            "body": {
-                "cards": {
-                    "button": "Hati zaidi"
-                }
-            }
-        },
-        "news": {
-            "home": {
-                "meta": {
-                    "title": "Habari",
-                    "slug": "/news"
-                }
-            },
-            "header": {
-                "title": "Habari"
-            },
-            "body": {
-                "cards": {
-                    "button": "Habari zaidi"
-                }
-            }
-        },
-        "faqs": {
-            "home": {
-                "meta": {
-                    "title": "Maswali yanayoulizwa mara kwa mara",
-                    "slug": "/faq"
-                }
-            },
-            "header": {
-                "title": "Maswali yanayoulizwa mara kwa mara"
-            }
-        },
-        "methodologyPage": {
-            "title": "Mbinu",
-            "paragraph1": "Tathmini ya Elinor inaweza kukamilishwa kwa njia mbili tofauti: Kupitia kikundi cha kuzingatia kilichowezeshwa na wenye hakimiliki tofauti na wahusika wengine wanaohusika na kuathiriwa na MA, au kama tathmini inayotegemea dawati inayoongozwa na mtaalamu wa uhifadhi. Wakati wa kuingiza data, watumiaji wanaweza kuonyesha ni njia gani walichukua ili kutoa data katika tathmini na ni aina gani za wenye hakimiliki na wahusika wengine walihusika katika tathmini.",
-            "subtitle1": "Elinor kama mjadala wa kikundi lengwa wa uga",
-            "paragraph2": "Tathmini nyingi za utawala hukamilishwa kimila kupitia mijadala shirikishi ya vikundi; kuongeza mitazamo tofauti kutoka kwa wenye hakimiliki wakuu na watendaji wengine wanaohusika katika usimamizi na utawala wa eneo fulani. Kwa wale walio na muda na uwezo wa kukusanya mitazamo mbalimbali kuhusu usimamizi na utawala, tunapendekeza upakue zana ya tathmini ya Elinor na itifaki ili kuongoza juhudi zako.",
-            "paragraph3": "Mwongozo huu unatoa maarifa kuhusu jinsi ya kuongoza kikundi kimaadili, kupata ruhusa zinazofaa za kutumia data, na kuchunguza mitazamo tofauti; hasa ya wale ambao wanaweza kuwa wametengwa kimila. Hii ndiyo njia inayopendekezwa, kwani inaruhusu sauti tofauti kuchangia katika tathmini, ikitoa mtazamo kamili zaidi juu ya hali ya usimamizi na utawala katika eneo.",
-            "cta1": "Pakua Itifaki",
-            "subtitle2": "Elinor kama tathmini inayoongozwa na daktari, inayotegemea dawati.",
-            "paragraph4": "Njia hii ni kwa wale ambao wana muda mdogo, rasilimali, au uwezo wa kutekeleza kikundi shirikishi cha lengo. Ingawa tathmini inayotegemea dawati inatoa chaguo chache, inaruhusu baadhi ya data kuzalishwa kwenye eneo linalodhibitiwa, ambayo inaweza kutoa tathmini ya kutosha na yenye manufaa mara nyingi kuhusu hali ya sasa na mitindo katika eneo hilo, na inaweza kuwasaidia watumiaji kutambua jambo lolote muhimu. mapungufu ya maarifa ambayo yangehitaji utafiti zaidi na uwekezaji. Iwapo utachagua kuchukua njia hii, tenga muda kwa ajili yako na wenzako wanaofahamu MA ili kujadili na kujibu kila swali, kulingana na uzoefu wako na ujuzi wa MA. Ikiwezekana, tunapendekeza kuwashirikisha wenye hakimiliki tofauti na watendaji wengine kwa njia yoyote unayoweza ili kupata maarifa kuhusu maswali tofauti.",
-            "subtitle3": "Alama",
-            "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        "termsOfUse": {
-            "title": "Masharti ya Huduma"
-        },
-        "contact": {
-            "home": {
-                "meta": {
-                    "title": "Wasiliana",
-                    "slug": "/contact"
-                }
-            },
-            "header": {
-                "title": "Wasiliana"
-            },
-            "form": {
-                "legend": {
-                    "strong": "Tumia fomu iliyo hapa chini kuwasiliana nasi",
-                    "default": "Tutajibu haraka iwezekanavyo"
-                },
-                "name": "Jina lako",
-                "subject": "Mada",
-                "mail": "Barua pepe yako",
-                "message": "Ujumbe",
-                "submit": "Tuma ujumbe",
-                "confirmation": "Thank you for contacting elinor",
-                "namePlaceholder": "Andika jina lako",
-                "subjectPlaceholder": "Andika mada",
-                "mailPlaceholder": "Andika barua pepe yako",
-                "messagePlaceholder": "Andika ujumbe"
-            }
-        },
-        "collaboration": {
-            "home": {
-                "meta": {
-                    "title": "Ushirikiano",
-                    "slug": "/collaboration"
-                }
-            },
-            "title": "Kanuni za Ushirikiano na Miongozo ya Manukuu",
-            "intro": {
-                "title": "Kanuni za kuongoza ushiriki wa data kwa uwazi na shirikishi",
-                "paragraph1": "Zana ya Elinor na mfumo wa data huwasaidia watumiaji kufuatilia usimamizi na hali ya utawala baada ya muda. Pia hutoa fursa ya kushiriki data kuhusu usimamizi na utawala kati ya watumiaji, ambayo inaweza kwa muda mrefu kukuza uwazi zaidi katika usimamizi na utawala na kuboresha juhudi za uhifadhi wa eneo.",
-                "paragraph2": "Ili kufikia maono haya, watumiaji wote wanapaswa kuzingatia kanuni zilizoainishwa hapa chini ambazo zitaongoza kushiriki na kutumia data kwa ushirikiano, haki na uwazi. Kufanya hivyo kutahakikisha watumiaji wote wanahamasishwa kuchangia data kwa uwazi ili kuboresha uhifadhi wa eneo.",
-                "paragraph3": "Wamiliki wa data wanaotumia zana ya kutathmini ya Elinor na mfumo wa data wamechangia wakati na rasilimali katika kukusanya data, na mara nyingi, huchagua kuweka tathmini zao kwa umma. Kwa hivyo watumiaji wote wanapaswa kutenda kwa uwazi, kwa heshima, kwa uwazi na kwa uaminifu katika kujihusisha kwenye jukwaa ili kuongoza ushirikiano mzuri na jumuishi. Kanuni zilizo hapa chini zimeundwa ili kuwezesha ushirikiano wa haki na uwazi kati ya wamiliki wa data na watumiaji wa data, na kutoa mwongozo kuhusu jinsi watumiaji wanapaswa kushirikiana na data ya faragha na ya umma, na pia mtu mwingine.",
-                "paragraph4": "Tafadhali wasiliana nasi ikiwa una mapendekezo kuhusu jinsi tunavyoweza kuboresha kanuni zetu za ushirikiano",
-                "blockquote": "Watumiaji wote wanapaswa kutenda kwa uwazi, kwa heshima, uwazi, na kwa uaminifu katika kujihusisha kwenye jukwaa ili kuongoza ushirikiano mzuri na jumuishi."
-            },
-            "guidelines1": {
-                "title": "Kanuni elekezi za kushiriki na kutumia data na Elinor",
-                "subtitle": "Kwa matumizi ya data ya umma na ya kibinafsi",
-                "question1": "Daima wakilisha habari kwa usahihi",
-                "answer1": "Matokeo ya tathmini yana metadata ya ziada inayosaidia, ambayo inaeleza chanzo chake, jinsi ilivyokusanywa, ubora wake na vikwazo vyovyote, tafadhali hakikisha kuwa hii inaonekana katika jinsi unavyotumia na kuwasilisha data.",
-                "question2": "Watambue wamiliki wa data kila wakati katika wasilisho, uchapishaji au ripoti yoyote, na utaje mfumo wa data wa Elinor kama chanzo cha taarifa.",
-                "answer2-1": "Tunapendekeza kutumia kauli ifuatayo tunapotumia data kutoka kwa jukwaa la Elinor “Tunatoa shukrani zetu kwa watu binafsi na taasisi zilizosaidia kutoa data kwa ajili ya Tathmini ya Elinor katika [INGIZA MA AU MKOA HAPA], ikijumuisha washiriki na wawezeshaji wowote wa kikundi lengwa”",
-                "answer2-2": {
-                    "paragraph1": "Tafadhali tumia nukuu ifuatayo kurejelea mfumo wa data wa Elinor:",
-                    "paragraph2": "Elinor: Chombo na mfumo wa data wa kutathmini usimamizi na utawala sawa kwa uhifadhi wa eneo. (YEAR) Inapatikana kwa: elinordata.org [Tarehe ya Kufikia]"
-                }
-            },
-            "guidelines2": {
-                "subtitle": "Kanuni za kuongoza ombi na matumizi ya data ya kibinafsi katika Elinor",
-                "text": "Sio data yote kwenye jukwaa la Elinor inafanywa kwa umma, hata hivyo watumiaji wa data wanaweza kuwasiliana na wamiliki wa data na kuomba data ishirikiwe. Wamiliki wa data hawana wajibu wa kushiriki data, lakini iwapo watachagua kufanya hivyo, watumiaji wa data wanapaswa kuzingatia kanuni zifuatazo:",
-                "question1": "Daima tumia maelezo yaliyotolewa na watumiaji kuhusiana na ombi asili pekee.",
-                "answer1": "Ikiwa ombi lako la kwanza lilikuwa ni kutumia maelezo katika wasilisho na baadaye ukaamua kuwa yanaweza kuwa muhimu katika karatasi au pendekezo la ufadhili, tafadhali tuma ombi jipya kwa mtumiaji.",
-                "question2": "Kamwe usishiriki maelezo na wahusika wengine bila ruhusa ya moja kwa moja ya mtumiaji.",
-                "answer2": "Ikiwa ungependa kushiriki maelezo na mtu mwingine ambaye unaweza kuwa unashirikiana naye, tafadhali mjulishe mmiliki wa data kwanza.",
-                "question3": "Fuata miongozo ya uthibitishaji kama inavyopendekezwa na mwenye data.",
-                "answer3": {
-                    "paragraph1": "Wamiliki wa data wana haki ya kuomba jinsi wanavyotaka data itolewe kwa ajili ya kuchapishwa. Tunapendekeza kutumia umbizo la dondoo lililoorodheshwa hapa chini. Pia tunapendekeza inapowezekana, waandishi wa ripoti na machapisho wazingatie kualika wakusanyaji wa data kwa waandishi-wenza wa machapisho, kutokana na michango yao katika kukusanya data.",
-                    "paragraph2": "MAJINA YA MMILIKI WA DATA ( MWAKA WA TATHMINI). ENEO LA TATHMINI. TAASISI. Seti ya data ya matukio ilifikiwa kupitia Elinordata.org mnamo DATE. "
-                }
-            }
-        },
-        "about": {
-            "meta": {
-                "title": "Usuli",
-                "slug": "/background",
-                "seo": {
-                    "title": "",
-                    "description": "",
-                    "keywords": "",
-                    "og_image": ""
-                }
-            },
-            "elinorAttributes": {
-                "attribute1": {
-                    "name": "1. Mipaka ya rasilimali",
-                    "description": "Sifa hii inapima ubora wa mipaka ya maeneo ya usimamizi (MA). Maswali yanayoulizwa hapa ni kama maeneo ya usimamizi ni: i) Rahisi kutambulikana na ii) yanajulikana na wenye haki na watendaji wengine wote husika.",
-                    "useIf": "Kama ungetaka kuelewa iwapo mipaka ya maeneo ya usimamizi iko imara.",
-                    "reportText": "Hupima kiwango ambacho mipaka ya MA inawekwa alama wazi na kueleweka na wenye haki muhimu na wahusika wengine."
-                },
-                "attribute2": {
-                    "name": "2. Ufuatilizi na Uimarishaji",
-                    "description": "Sifa hii inapima jinsi maeneo ya usimamizi (MA) yanaweza kutekeleza sheria kwa njia mwafaka na kama kuna. Inazingatia hasa adhabu zinazotolewa kutokana na kuvunja sheria za maeneo ya usimamizi (MA), uasilia na viwango vyao.",
-                    "useIf": "Kama ungetaka kuwa na uelewa wa awali kuhusu uvunjaji wa sheria katika maeneo ya usimamizi na kama kuna habari zilizoko za kuwezesha shughuli za ufuatilizi na uimarishaji (M&E) au kuimarisha usimamizi wa kukabiliana.",
-                    "reportText": "Hupima jinsi MA inavyoweza kutekeleza kanuni"
-                },
-                "attribute3": {
-                    "name": "3. Uwezo wa Usimamizi wa Ukabilianaji",
-                    "description": "Sifa hii inapima kama waamuzi wenye jukumu la maeneo ya usimamizi wanajumuisha aina mbalimbali za ujuzi katika kufanya maamuzi. Pia inauliza kama hali ya kijamii, kiikolojia au mabadiliko ya hali ya hewa yanafuatiliwa.",
-                    "useIf": "Kama ungetaka kujua ni ujumbe gani unaotoa mwelekeo kwa wasimamizi katika kufanya maamuzi katika maeneo ya usimamizi.",
-                    "reportText": "Hupima ikiwa wasimamizi wa MA wanajumuisha aina tofauti za maarifa katika kufanya maamuzi yao"
-                },
-                "attribute4": {
-                    "name": "4. Uwezo wa utekelezaji",
-                    "description": "Sifa hii inapima kama wale wenye jukumu kuongoza maeneo ya usimamizi (MA) wana rasilimali ya kufanya hivyo. Inaangazia hasa rasilimali ya wafanyikazi, uwezo wa uimarishaji na zana zinazohitajika.",
-                    "useIf": "Kama ungetaka kuthathmini uwezo wa maeneo ya usimamizi (MA) wa kusimamia mfumo.",
-                    "reportText": "Hupima ikiwa wale wanaohusika na kusimamia MA wana rasilimali za kufanya hivyo"
-                },
-                "attribute5": {
-                    "name": "5. Usimamizi jumuifu na Usawa",
-                    "description": "Sifa hii inapima ujumuishaji na usawa katika usimamizi wa maeneo ya usimamizi (MA), ambapo ni vipengele viwili muhimu vya uongozi bora. Maswali ya ujumuishaji na usawa huuliza iwapo mamlaka ya Maeneo ya usimamizi (MA) inaruhusu wenye haki na watendaji wengine wenyeji kuchangia katika maamuzi ya usimamizi, kama kuna mkakati wa kugawanya faida sawasawa miongoni mwa yao na iwapo uthabiti wa jumuiya wa kukabiliana na mabadiliko ya hali ya hewa unashughulikiwa katika usimamizi.",
-                    "useIf": "Kama ungetaka kuelewa kama maeneo ya usimamizi (MA) yanayashirikisha makundi ya watu wasiojiweza/wenye mahitaji maalum katika maamuzi ya usimamizi na matokeo.",
-                    "reportText": "Hupima ujumuishi na usawa katika usimamizi wa MA, hasa kuhusu vikundi vilivyo hatarini"
-                },
-                "attribute6": {
-                    "name": "6. Uwazi wa Haki na Maamuzi",
-                    "description": "Sifa hii inapima haki za jumuiya katika usimamizi wa maliasili. Haki ni muhimu sana kwani zinaweka msingi kwa wenye haki na watendaji wengine ili kushiriki kikamilifu katika kusimamia maliasili na katika uhifadhi wake.",
-                    "useIf": "Kama ungetaka kutathmini udhibiti wa jumuiya wa maliasili au uwezo wa kufikia maliasili katika maeneo ya usimamizi unalolishughulikia.",
-                    "reportText": "Hupima kiwango ambacho haki za jamii katika usimamizi wa maliasili zinaeleweka wazi na wenye haki muhimu na wahusika wengine"
-                },
-                "attribute7": {
-                    "name": "7. Kanuni sanjari na zilizo wazi",
-                    "description": "Sifa hii inapima ubora wa kanuni za maeneo ya usimamizi. Hasa: i) uwazi wake, na ii) uzuri wa jinsi zilivyopangwa ili kuingiliana na; mchango kwa wadau katika uongozi wa maeneo ya usimamizi, viwango vingine ya mamlaka ya usimamizi na muktadha wa kijamii na kimazingira ambamo shughuli hiyo inafanyika.",
-                    "useIf": "Kama ungetaka kuelewa iwapo kanuni zimeelezwa waziwazi na ni za haki.",
-                    "reportText": "Hupima kiwango ambacho kanuni za MA ziko wazi na zinawiana na wenye haki na malengo ya utawala ya watendaji wengine."
-                },
-                "attribute8": {
-                    "name": "8. Uwazi na Uwajibikaji",
-                    "description": "Sifa hii inapima uwazi, uwajibikaji na usuluhishaji wa mizozo ambapo haya yote ni muhimu katika uongozi bora. Ni muhimu kwamba watu ambao wanaathirika na maamuzi ya usimamizi wajue maamuzi hayo mapema kabla hayajatekelezwa ili wawe wana ujuzi na waweze kuwajibika na kuwe na nafasi ya kusuluhisha mizozo. Uwazi unapimwa kwa kuuliza iwapo mawasiliano ya mamlaka ya maeneo ya usimamizi (MA) kwa wenye haki na watendaji wengine yanafanywa kwa wakati unaofaa. Uwajibikaji unapimwa kwa kuuliza maswali ya kama mamlaka ya maeneo ya usimamizi (MA) inakabiliana na matokeo hasi iwapo haijawajibika katika majukumu yake na usuluhishaji wa mizozo unatathminiwa kwa kuzingatia ufanisi wake.",
-                    "useIf": "Kama ungetaka kutathmini ubora wa uongozi wa maeneo ya usimamizi.",
-                    "reportText": "Hupima kiwango ambacho watu walioathiriwa moja kwa moja na maamuzi ya wasimamizi wanafahamishwa kuyahusu mapema, wanaweza kuwawajibisha watoa maamuzi, na kupata fursa za kutatua migogoro."
-                },
-                "attribute9": {
-                    "name": "9. Matokeo ya kiikolojia yanayotambuliwa",
-                    "description": "Sifa hii inapima mitazamo ya kijumla ya matokeo ya maeneo ya usimamizi (MA) ya kimazingira yanayopokelewa na wale wanaojaza tathmini ya Elinor.",
-                    "useIf": "Kama ungetaka kujua iwapo wale wanaohusika na maeneo ya usimamizi (MA) ya kimazingira wanadhani malengo yao yanatimizwa.",
-                    "reportText": "Hupima mitazamo ya jumla ambayo wale wanaokamilisha tathmini ya Elinor wanayo juu ya matokeo ya ikolojia ya MA."
-                },
-                "attribute10": {
-                    "name": "10. Kutambuliwa matokeo ya kijamii",
-                    "description": "Sifa hii inapima mitazamo ya kijumla ya matokeo ya maeneo ya usimamizi (MA) ya kijamii yanayopokelewa na wale wanaojaza tathmini ya Elinor.",
-                    "useIf": "Kama ungetaka kujua iwapo wale wanaohusika na maeneo ya usimamizi (MA) ya kijamii wanadhani malengo yao yanatimizwa.",
-                    "reportText": "Hupima mitazamo ya jumla ambayo wale wanaokamilisha tathmini ya Elinor wanayo juu ya matokeo na kijamii ya MA."
-                }
-            }
-        },
-        "profile": {
-            "header": {
-                "title": "Akaunti yako",
-                "subtitle": "Tumia ukurasa huu kusasisha akaunti yako"
-            },
-            "form": {
-                "legend": "Data yako",
-                "email": "Barua pepe",
-                "password": "Nenosiri",
-                "username": "Jina la mtumiaji",
-                "first_name": "Jina la kwanza",
-                "last_name": "Jina la familia",
-                "submit": "Hifadhi mabadiliko"
-            },
-            "delete": {
-                "title": "Futa Akaunti",
-                "subtitle": "Nini kitatokea unapofuta akaunti yako",
-                "list": {
-                    "1": "Tutawasiliana na washirika wako wote",
-                    "2": "Ikiwa tathmini zozote ulizokamilisha zinahusiana na shirika, tutaarifu shirika",
-                    "3": "Utapoteza ufikiaji wa tathmini zote ambazo umeweka kwenye mfumo",
-                    "4": "Akaunti yako itaondolewa kwenye mfumo ikijumuisha taarifa zako zote za kukutambulisha"
-                },
-                "confirm": {
-                    "title": "Futa Akaunti yako",
-                    "message": {
-                        "strong": "Onyo!!",
-                        "text": "Kitendo hiki hakiwezi kutenduliwa"
-                    }
-                }
-            },
-            "popup": {
-                "title": "Futa Akaunti",
-                "header": {
-                    "title": "Je, una uhakika unataka kufuta akaunti yako"
-                },
-                "body": {
-                    "text": "Ukishaifuta, hutaweza kufikia Maoni yako tena, na data yako itafutwa kabisa."
-                }
-            }
-        },
-        "map": {
-            "home": {
-                "meta": {
-                    "title": "Ramani",
-                    "slug": "/map"
-                }
-            },
-            "filters": {
-                "form": {
-                    "placeholders": {
-                        "countries": "Nchi",
-                        "attributes": "Kwa Sifa"
-                    }
-                }
-            },
-            "legend": {
-                "plan": "Panga",
-                "build": "Jenga",
-                "strengthen": "Imarisha",
-                "mantain": "Dumisha"
-            },
-            "popup": {
-                "managedArea": "Eneo Linalosimamiwa"
-            },
-            "title": "RAMANI",
-            "boxList": {
-                "covering": "ukubwa wa",
-                "ha": "hekta"
-            },
-            "boxAssessment": {
-                "managedArea": "Jina la Eneo Linalosimamiwa",
-                "byAttributes": "Kwa Sifa",
-                "goToAssessment": "Nenda kwa Tathmini Kamili"
-            }
-        },
-        "report": {
-            "aside": {
-                "year": "Mwaka ulioanzishwa",
-                "maGovernanceType": "Aina ya utawala wa MA",
-                "totalHa": "Jumla ya hekta",
-                "assessmentType": "Aina ya tathmini",
-                "maVersionDate": "Current assessment date"
-            },
-            "country": {
-                "download": "Pakua ripoti"
-            },
-            "btnDownload": "Pakua ripoti",
-            "scoreTable": {
-                "value": "",
-                "indicator": "",
-                "attribute": "Sifa",
-                "aggregate": "Jumla",
-                "plan": {
-                    "title": "Panga",
-                    "description": "Shirikiana na wenye haki na wahusika wengine kuunda mipango ya kushughulikia mapungufu makubwa ya utawala"
-                },
-                "build": {
-                    "title": "Jenga",
-                    "description": "Shirikiana na wenye haki na wahusika wengine ili kujenga juu ya maendeleo ya awali ili kushughulikia pengo kubwa la utawala"
-                },
-                "strengthen": {
-                    "title": "Imarisha",
-                    "description": "Shirikiana na wenye haki na wahusika wengine ili kuimarisha utawala kwa kushughulikia mapungufu madogo"
-                },
-                "maintain": {
-                    "title": "Dumisha",
-                    "description": "Shirikiana na wenye haki na wahusika wengine ili kudumisha utawala thabiti na kufuatilia vitisho vinavyoweza kutokea"
-                }
-            },
-            "totalScores": {
-                "value": "",
-                "indicator": "kiashiria"
-            }
-        }
+  "statusMessaging": {
+    "assessments": {
+      "publishingAssessmentError": "Error publishing assessment.",
+      "publishingAssessmentSuccess": "Assessment published successfully.",
+      "unpublishingAssessmentError": "Error unpublishing assessment.",
+      "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
     },
-    "sidebar": {
-        "minimize": "Punguza"
+    "authentication": {
+      "logoutError": "You are currently logged out."
     },
-    "popup": {
-        "organization": {
-            "title": "Shirika au taasisi yako ni ipi?",
-            "placeholder": "Ushirikiano",
-            "tooltip": "Maudhui ya vidokezo vya uhusiano"
-        }
-    },
-    "default": {
-        "noresults": "Hakuna matokeo",
-        "yes": "Ndiyo",
-        "no": "Hapana",
-        "accept": "Kubali",
-        "cancel": "Ghairi",
-        "delete": "Futa",
-        "create": "Unda",
-        "downloadData": "Pakua Data",
-        "published": "Imechapishwa",
-        "finalized": "Imekamilika",
-        "submit": "Wasilisha",
-        "close": "Funga",
-        "filters": {
-            "popup": {
-                "title": ""
-            }
-        },
-        "upload-file": {
-            "placeholder": "Buruta na udondoshe faili ya PDF hapa",
-            "buttons": {
-                "select": "Chagua faili",
-                "clear": "Wazi"
-            }
-        },
-        "upload-import-file": {
-            "placeholder": "Buruta na udondoshe faili ya zip hapa",
-            "buttons": {
-                "select": "Chagua faili",
-                "clear": "Wazi"
-            }
-        },
-        "upload-mapimage": {
-            "placeholder": "Buruta na udondoshe faili ya picha hapa",
-            "buttons": {
-                "select": "Chagua faili",
-                "clear": "Wazi"
-            }
-        },
-        "save": {
-            "autosave": "Data imehifadhiwa"
-        },
-        "flag": "Flag",
-        "uploadSurveyFile": "Pakia utafiti",
-        "downloadSurveyFile": "Pakua utafiti",
-        "contactAdministrator": "Wasiliana na Msimamizi",
-        "generateReport": "Toa Ripoti",
-        "version": "Toleo",
-        "description": "Maelezo",
-        "areaSize": "Ukubwa wa Eneo",
-        "required": "Inahitajika"
-    },
-    "footer": {
-        "faqs": "Maswali yanayoulizwa mara kwa mara",
-        "methodology": "Mbinu",
-        "createAccount": "Tengeneza akaunti",
-        "copyright": "© Hakimiliki",
-        "copyrightAfterYear": "Elinor. Haki zote zimehifadhiwa.",
-        "termsOfUse": "Masharti ya matumizi",
-        "privacyPolicy": "Sera ya Faragha"
-    },
-    "buttons": {
-        "seeMore": "Ona zaidi",
-        "seeLess": "Tazama kidogo"
+    "organizations": {
+      "organizationCreatedSuccess": "Institution created successfully.",
+      "organizationCreatedError": "Error creating institution."
     }
+  },
+  "pages": {
+    "home": {
+      "meta": {
+        "title": "Nyumbani",
+        "slug": "",
+        "seo": {
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
+        }
+      },
+      "header": {
+        "aboutLink": "Kuhusu",
+        "faqsLink": "Maswali yanayoulizwa mara kwa mara",
+        "methodologyLink": "Mbinu",
+        "contactLink": "Wasiliana",
+        "createAccountLink": "Tengeneza akaunti",
+        "signOut": "Toka",
+        "profile": "Wasifu"
+      },
+      "public": {
+        "signInTitle": "WEKA SAHIHI",
+        "signInSubtitle": "Tumia jina lako la mtumiaji au barua pepe na nenosiri ili kufikia Elinor",
+        "signInTitleAndCreateAccountSeparator": " au ",
+        "createAccountLink": "tengeneza akaunti",
+        "resendVerificationLink": "Tuma tena",
+        "usernameInput": "Jina la mtumiaji au Barua pepe",
+        "passwordInput": "Nenosiri",
+        "rememberMeCheckbox": "Nikumbuke",
+        "forgotPasswordLink": "Umesahau nywila?",
+        "signInButton": "Weka sahihi",
+        "alerts": {
+          "emailVerificationSent": {
+            "title": "Uthibitishaji wa barua pepe umetumwa!",
+            "subtitle": "Utapokea ujumbe wa kuthibitisha barua pepe yako"
+          },
+          "emailVerificationRequired": {
+            "title": "Uthibitishaji wa barua pepe unahitajika!",
+            "subtitle": "Je, hujapokea barua pepe ya uthibitishaji? Ikiwa sio itume tena"
+          },
+          "passwordChangedSuccessfully": {
+            "title": "Nenosiri limebadilishwa!",
+            "subtitle": "Sasa unaweza kufikia ukitumia nenosiri jipya."
+          },
+          "emailVerifiedSuccessfully": {
+            "title": "Barua pepe imethibitishwa!",
+            "subtitle": "Sasa unaweza kufikia kwa kutumia kitambulisho chako."
+          },
+          "profileUpdatedSuccessfully": {
+            "title": "Wasifu umesasishwa!",
+            "subtitle": "Sasa data ya wasifu wako imesasishwa."
+          },
+          "accountDeletedSuccessfully": {
+            "title": "Akaunti imefutwa!",
+            "subtitle": "Ili kurejesha akaunti yako, wasiliana na wasimamizi wa Elinor"
+          }
+        },
+        "content": {
+          "introduction": {
+            "text": "Elinor ni zana huria na huria ya ufuatiliaji ambayo huwasaidia watumiaji kukusanya, kuhifadhi, kushiriki na kutumia data kuhusu usimamizi na usimamizi wa mazingira ili kusaidia uhifadhi bora zaidi wa eneo.",
+            "createAccountLink": "Tengeneza akaunti"
+          },
+          "explanation": {
+            "title": "KWANINI NIITUMIE?",
+            "paragraph1": "Elinor inaweza kutumika kama tathmini ya msingi ya uwanja na mwezeshaji aliyefunzwa au kama zana ya msingi ya dawati ambayo hutumia maarifa ya ndani na ya watendaji.",
+            "paragraph2": "Maswali ndani ya Elinor ni ya kiwango cha juu, yanahusu mada mbalimbali na yanaweza kuwasaidia wenye hakimiliki na wahusika wengine kuelewa vyema masuala yanayohusiana na utawala na usimamizi wenye usawa wa maeneo yaliyo chini ya ulinzi au usimamizi.",
+            "trackingChange": {
+              "title": "KUFUATILIA MABADILIKO",
+              "text": "Elinor imeundwa ili kusaidia kufuatilia mabadiliko kwa wakati, kwa hivyo inaweza kutumika katika hatua yoyote ya mzunguko wa mradi:",
+              "list": "<li>Onyesha kufaa kwa tovuti kwa aina tofauti za afua</li><li>Angazia maeneo ambayo yanahitaji uingiliaji uliozingatia zaidi ili kuimarisha juhudi za utekelezaji.</li><li>Waalike wenye haki na wahusika wengine kutafakari kwa ushirikiano kuhusu masuala mbalimbali muhimu kwa uhifadhi wa eneo.</li>"
+            }
+          },
+          "elinor": {
+            "title": "Kwa Heshima",
+            "subtitle": "Elinor “Lin” Ostrom",
+            "paragraph1": "Elinor Ostrom alikuwa mwanamke wa kwanza kushinda Tuzo ya Nobel katika uchumi mwaka wa 2009, lakini urithi wake unaenea zaidi ya heshima hiyo ya pekee. Ostrom na wenzake walipinga masimulizi makuu kuhusu mkasa wa jumuiya (yaliyodai kwamba watu binafsi hufuata maslahi yao wenyewe hata yanapoenda kinyume na manufaa ya pamoja-yaliyofanywa kuwa maarufu na mwanaikolojia ambaye alikuwa mbaguzi wa rangi na eugenicist anayejulikana). Nadharia ya Ostrom kuhusu kutawala mambo ya kawaida ilithibitisha kwamba sayari yetu inaweza kulindwa kupitia jumuiya, ushirikiano na ushirikiano.",
+            "paragraph2": "Utafiti kuhusu usimamizi wa usimamizi wa rasilimali nyingi ulisukuma mipaka ya sayansi na kupinga migawanyiko ya kawaida kati ya taaluma. Akifanya kazi kwa ushirikiano wa kweli na wengine ambao walielewa ulimwengu kwa njia tofauti, Ostrom na wenzake walifungua njia kwa jumuiya mpya ya utafiti na kundi la maarifa ambalo linajumuisha utofauti na asili iliyounganishwa ya mifumo ya binadamu na asili.",
+            "paragraph3": "Urithi wa Ostrom huchangia jinsi tunavyofanya kazi leo katika uhifadhi, na kwa kumheshimu katika kazi yetu, tunatumai kuwa maarifa yake yanaweza kutusaidia sote kuunga mkono vyema jumuiya na mifumo ya utawala ambayo inalinda maliasili zetu sasa na katika siku zijazo.",
+            "quote": {
+              "text": "Kidogo kidogo, kidogo, familia kwa familia, mengi mazuri yanaweza kufanywa kwa viwango vingi.",
+              "author": "ELINOR OSTROM"
+            }
+          },
+          "faqs": {
+            "title": "Maswali yanayoulizwa mara kwa mara",
+            "text": "Je, unaanza tu na Elinor au ungependa kujifunza zaidi kuhusu kesi za utumiaji na programu za kawaida? Tembelea sehemu ya Maswali Yanayoulizwa Mara kwa Mara ili kuona maswali haya ya kawaida yakijibiwa.",
+            "button": "Nenda kwa Maswali Yanayoulizwa Mara kwa Mara"
+          },
+          "methodology": {
+            "title": "MBINU",
+            "text": "Pata maelezo zaidi kuhusu jinsi unavyoweza kutumia tathmini ya Elinor na kupakua itifaki ya uga na zana ya kutathmini.",
+            "text2": "Elinor inajumuisha maswali 35 katika sifa 10 za utawala na usimamizi. Kila swali lina alama 0-3 na alama hizo huchangia kwa usawa alama zao za sifa. Kwa upande mwingine, alama za sifa huchangia kwa usawa alama ya jumla. Kulingana na alama iliyotolewa, Elinor anapendekeza hatua tofauti za vitendo, ikiwa ni pamoja na Panga, Jenga, Imarisha na Dumisha. Ni muhimu kutambua kwamba ingawa alama hizi hutoa maarifa muhimu, zinapaswa kutumiwa pamoja na data ya ubora iliyoingizwa katika Elinor wakati wa kuamua ni hatua gani za usimamizi zinazobadilika za kuchukua.",
+            "button": "Nenda kwa Mbinu",
+            "score": "Alama",
+            "plan": "Panga",
+            "build": "Jenga",
+            "strengthen": "Imarisha",
+            "maintain": "Dumisha"
+          }
+        },
+        "latestNews": {
+          "title": "HABARI MPYA",
+          "readMore": "Soma zaidi",
+          "seeMoreNews": "Angalia habari zingine"
+        }
+      }
+    },
+    "auth": {
+      "registration": {
+        "title": "FUNGUA AKAUNTI",
+        "subtitle": "Jaza fomu iliyo hapa chini ili kuanza kutumia Elinor",
+        "inputs": {
+          "email": "Barua pepe",
+          "password1": "Nenosiri",
+          "password2": "Uthibitishaji wa nenosiri",
+          "firstname": "Jina la kwanza",
+          "lastname": "Jina la familia",
+          "username": "Jina la mtumiaji"
+        },
+        "termsOfServiceCheckbox": "Nakubaliana na sheria na masharti*",
+        "validationErrorTitle": "Hitilafu ya uthibitishaji!",
+        "createAccountButton": "Fungua akaunti"
+      },
+      "forgotPassword": {
+        "title": "UMESAHAU NYWILA",
+        "subtitle": "Weka barua pepe yako ili kupokea kiungo cha kuweka upya nenosiri",
+        "emailInput": "Barua pepe",
+        "sendEmailButton": "Kutuma barua pepe",
+        "tryAgainButton": "Jaribu tena",
+        "alerts": {
+          "forgotPasswordEmailSent": {
+            "title": "Umesahau barua pepe ya siri iliyotumwa!",
+            "subtitle": "Angalia barua pepe yako kwa kiungo cha kuweka upya nenosiri"
+          }
+        }
+      },
+      "resendVerificationEmail": {
+        "title": "TUMA TENA BARUA YA UTHIBITISHO",
+        "subtitle": "Weka barua pepe yako ili kupokea uthibitishaji mpya wa barua pepe",
+        "emailInput": "Barua pepe",
+        "sendEmailButton": "Kutuma barua pepe",
+        "tryAgainButton": "Jaribu tena"
+      },
+      "resetPassword": {
+        "title": "WEKA UPYA NENOSIRI",
+        "subtitle": "Weka nenosiri jipya hapa chini",
+        "error": {
+          "title": "Hitilafu!"
+        },
+        "password1Input": "Nenosiri",
+        "password2Input": "Uthibitishaji wa nenosiri",
+        "changePasswordButton": "Weka upya nenosiri"
+      }
+    },
+    "assessments": {
+      "meta": {
+        "title": "Tathmini",
+        "slug": "/assessments",
+        "offlineTitle": "Tathmini Offline"
+      },
+      "list": {
+        "title": "Tathmini",
+        "total": "Kuonesha",
+        "totalPlural": "tathmini",
+        "totalSingular": "tathmini",
+        "myRole": "Wajibu Wangu",
+        "viewButton": "Tazama",
+        "editButton": "Hariri",
+        "createButton": "Tengeneza Tathmini",
+        "downloadButton": "Pakua Zote",
+        "year": "Mwaka",
+        "countries": "Nchi",
+        "create": {
+          "popup": {
+            "title": "Tengeneza Tathmini",
+            "labels": {
+              "name": "Jina la tathmini",
+              "year": "Chagua Mwaka"
+            },
+            "placeholders": {
+              "name": "Jina la tathmini"
+            },
+            "nameCriteria": "Weka jina fupi na rahisi kukumbuka kama vile Tathmini ya Kila Mwaka ya Tsavo 2021",
+            "submit": "Tengeneza Tathmini"
+          }
+        },
+        "filters": {
+          "search": "Tafuta kwa jina la tathmini au jina la eneo linalodhibitiwa",
+          "button": "Vichujio",
+          "popup": {
+            "title": "Chuja tathmini",
+            "labels": {
+              "countries": "na Nchi",
+              "year": "kwa Mwaka",
+              "status": "kwa Uchapishaji"
+            },
+            "placeholders": {
+              "countries": "Nchi",
+              "year": "",
+              "status": ""
+            },
+            "reset": "Weka upya",
+            "apply": "Weka vichujio"
+          }
+        },
+        "type": {
+          "own": "Mwanachama",
+          "all": "Wote"
+        },
+        "aggregateReport": {
+          "button": "Ripoti ya jumla",
+          "title": "Unda Ripoti ya Jumla",
+          "subtitle": "Chagua Tathmini za Kujumuisha",
+          "byManagementAreas": "kwa MA",
+          "byCountries": "kwa Nchi",
+          "byYear": "kwa Mwaka",
+          "byType": "kwa Aina ya tathmini",
+          "year": "Mwaka",
+          "giveName": "Ipe jina",
+          "giveNamePlaceholder": "Jina hapa",
+          "assessments": "Tathmini zilizochaguliwa",
+          "create": "Unda Ripoti ya Jumla",
+          "covering": "Tathmini zinazohusisha",
+          "coveringHA": "ha",
+          "filtersSelected": "Vichujo viliyochaguliwa",
+          "managementAreaNoOptions": "Andika jina ya MA",
+          "managementAreaNoResults": "Hakuna MA zinazolingana zilizopatikana",
+          "selectedAssessmentsError": "Lazima uchague angalau tathmini moja",
+          "nameRequiredError": "Jina la ripoti linahitajika",
+          "nameLengthError": "Jina la ripoti ni refu zaidi"
+        }
+      },
+      "view": {
+        "title": "Tazama tathmini",
+        "year": "Mwaka",
+        "tabs": {
+          "info": {
+            "tabButton": "Habari",
+            "title": "Tazama Tathmini",
+            "managementPlanFileTitle": "Hati ya mpango wa usimamizi",
+            "buttons": {
+              "managementPlanFile": "Pakua"
+            },
+            "labels": {
+              "managementAreaName": "Jina la eneo la usimamizi",
+              "protectedArea": "Jina la PA/CA kubwa eneo hili la kuzingatia liko ndani",
+              "dateEstablished": "Tarehe ya kuanzishwa rasmi (ikiwa inafaa)",
+              "reportedSize": "Ukubwa wa MA (ha)",
+              "containedBy": "Jina la Eneo la Usimamizi linalohusiana",
+              "governanceType": "Aina ya Utawala wa MA (kisanduku cha tiki)",
+              "managementAuthority": "Jina la mamlaka ya usimamizi",
+              "recognitionLevel": "Je, haki za mamlaka ya MA zinatambuliwa rasmi katika… \n\n(tick box)",
+              "supportSources": "Je, mamlaka ya usimamizi wa MA inapokea usaidizi wa kiufundi, kifedha au aina nyingine kutoka kwa mojawapo ya vikundi au mashirika yafuatayo?",
+              "countries": "Nchi/Nchi ambako MA iko",
+              "regions": "Jimbo/Mkoa ambapo MA inapatikana",
+              "zones": {
+                "title": "MAENEO",
+                "zoneName": "Jina la eneo",
+                "zoneLevel": "Je, eneo hili linazuia shughuli au matumizi yoyote?",
+                "zoneDescription": "Maelezo na Sifa"
+              }
+            },
+            "map": {
+              "title": "Ramani au Faili ya anga ya MA",
+              "subtitle": "Habari za kijiografia"
+            },
+            "people": {
+              "title": "7. Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
+              "community": "Jumuiya ya mtaa",
+              "ngo": "NGO",
+              "academic": "Kitaaluma",
+              "government": "Serikali",
+              "indigenous": "Watu wa asili",
+              "private": "Sekta binafsi",
+              "total": "jumla ya ushauri"
+            },
+            "gender": {
+              "title": "8. Uwakilishi wa jinsia wa wenye haki na wahusika wengine ulishauriwa",
+              "female": "Female",
+              "male": "Male",
+              "nonbinary": "Non binary",
+              "prefer_not_to_say": "Prefer not to say",
+              "total": "jumla kwa jinsia"
+            }
+          },
+          "survey": {
+            "tabButton": "Utafiti huo",
+            "title": "Utafiti huo",
+            "attributes": {
+              "mandatory": "Lazima",
+              "active": "Sifa inayotumika",
+              "inactive": "Sifa isiyotumiks"
+            }
+          },
+          "collaborators": {
+            "tabButton": "Washiriki",
+            "title": "Washiriki",
+            "description": "Washiriki ni watu wanaofanya kazi nawe kwenye tathmini hii au wanaohitaji kufikia data.",
+            "table": {
+              "name": "Jina",
+              "admin": "Msimamizi",
+              "contributor": "Mchangiaji",
+              "observer": "Mtazamaji"
+            }
+          }
+        }
+      },
+      "edit": {
+        "title": "Hariri tathmini",
+        "year": "Mwaka",
+        "saveButton": "Hifadhi",
+        "tabs": {
+          "nextStep": "Hatua ifuatayo",
+          "data": {
+            "tabButton": "Data ya tathmini",
+            "title": "Hariri Data ya Tathmini",
+            "labels": {
+              "year": "Chagua mwaka",
+              "name": "Jina la tathmini",
+              "organization": "Jina la taasisi inayohusishwa na tathmini hii",
+              "personResponsibleRole": "Wajibu wa mtu anayehusika na kukamilisha Tathmini hii",
+              "collectionMethods": "Je, taarifa katika tathmini hii ilikusanywa vipi?",
+              "collectionMethodsText": "Sababu za tathmini (k.m. ufuatiliaji wa kila mwaka, msingi wa mradi)",
+              "consentGiven": "Je, kuna mtu katika mamlaka ya utawala ametoa kibali chake kwa tathmini hii kufanyika?",
+              "consentGivenWritten": "Je, mamlaka ya utawala imetoa kibali cha maandishi?",
+              "managementPlan": {
+                "title": "Pakia Faili ya Mpango wa Usimamizi",
+                "maxSize": "Ukubwa wa juu: 100M",
+                "maxUploadTime": "muda wa juu zaidi wa kupakia: dakika 5 (kwa hivyo usijaribu upakiaji mkubwa kwenye muunganisho wa polepole)",
+                "anyFile": "inaweza kuwa faili yoyote"
+              }
+            },
+            "people": {
+              "title": "Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
+              "community": "Jumuiya ya mtaa",
+              "ngo": "NGO",
+              "academic": "Kitaaluma",
+              "government": "Serikali",
+              "indigenous": "Watu wa asili",
+              "private": "Sekta binafsi"
+            },
+            "gender": {
+              "title": "Uwakilishi wa jinsia wa wenye haki na wahusika wengine ulishauriwa",
+              "female": "Mwanamke",
+              "male": "Mwanaume",
+              "nonBinary": "Isiyo ya binary",
+              "preferNotToSay": "Pendelea kutosema"
+            }
+          },
+          "managementArea": {
+            "tabButton": "Eneo linalosimamiwa",
+            "title": "Badilisha Eneo Linalosimamiwa",
+            "selector": {
+              "title": "Chagua eneo linalodhibitiwa",
+              "existing": "Chagua Eneo Linalosimamiwa",
+              "existingGuide": "Unaweza kuchagua Eneo Linalosimamiwa ambalo tayari limeundwa, au usipolipata unaweza kuunda jipya kutoka hapa",
+              "orNew": "AU UUNDE MPYA",
+              "newButton": "Unda Eneo Jipya Linalosimamiwa"
+            },
+            "zones": {
+              "accessLevels": {
+                "OPEN_ACCESS": "Fungua ufikiaji (wazi kwa uchimbaji na kuingia)",
+                "PARTIALLY_RESTRICTED": "Ufikiaji wenye vikwazo kamili (marufuku ya uchimbaji jumla)",
+                "FULLY_RESTRICTED": "Imezuiwa kwa Kiasi (k.m., kufungwa mara kwa mara, vikwazo kwa aina ya matumizi, vizuizi vya aina ya shughuli, vizuizi vya spishi, vizuizi vya gia, n.k.)"
+              }
+            },
+            "recognitionLevels": {
+              "local": "Ngazi ya mtaa",
+              "local_guide": "Inatambulika na jamii",
+              "national": "Kiwango cha kitaifa",
+              "national_guide": "Inatambuliwa na serikali ya kitaifa",
+              "international": "Kiwango cha kimataifa",
+              "international_guide": "Je, kuna hatua nyingine halali za uhifadhi wa eneo [OECM] ambazo huchangia malengo ya kimataifa"
+            },
+            "labels": {
+              "title": "Kanda",
+              "name": "Jina la eneo jipya linalodhibitiwa",
+              "protectedArea": "Kitambulisho Kinachohusishwa katika Hifadhidata ya Dunia ya Maeneo Yanayolindwa",
+              "containedBy": "Chagua Maeneo mengine yoyote yanayosimamiwa yanayohusiana na MA hii. Ikiwa hakuna, ruka.",
+              "dateEstablished": "Tarehe ya kuanzishwa rasmi (ikiwa inafaa)",
+              "reportedSize": "Ukubwa wa MA (ha)",
+              "managementAuthority": "Jina la mamlaka ya usimamizi",
+              "governanceType": "Aina ya Utawala wa MA",
+              "objectives": "Malengo ya MA",
+              "recognitionLevel": "Je, haki za mamlaka ya MA zinatambuliwa rasmi katika…",
+              "stakeholderGroups": "Idadi ya watu wanaohusika kutoka kwa wenye haki muhimu na vikundi vingine vya wahusika",
+              "supportSources": "Je, mamlaka ya usimamizi wa MA inapokea usaidizi wa kiufundi, kifedha au aina nyingine kutoka kwa mojawapo ya vikundi au mashirika yafuatayo?",
+              "countries": "Nchi/Nchi ambako MA iko",
+              "regions": "Jimbo/Mkoa ambapo MA inapatikana",
+              "zones": "Je hii MA ina kanda?",
+              "zoneName": "Jina la eneo",
+              "zoneLevel": "Chagua kiwango cha ufikiaji kinachoelezea vyema eneo hili",
+              "protectedAreaWdpaIdHelp": "Kitambulisho cha WDPA kinaweza kupatikana kwenye tovuti ya sayari iliyolindwa.",
+              "protectedAreaWdpaIdHelpLink": "Bofya hapa kutafuta",
+              "geospatialSources": "Tafadhali orodhesha chanzo cha maelezo ya kijiografia",
+              "yes": "Ndiyo",
+              "no": "Hapana"
+            },
+            "buttons": {
+              "addZone": "Ongeza Eneo jipya"
+            },
+            "map": {
+              "polygonParagraph1": "Onyesha mipaka ya eneo linalosimamiwa",
+              "polygonParagraph2": "Tumia zana zilizo juu ya ramani ili kuunda Poligoni ya Eneo Linalosimamiwa",
+              "drawPolygonStartText": "Bofya juu ya Ramani ili kuunda poligoni",
+              "drawPolygonCloseText": "Ili Kufunga poligoni bofya juu ya Pointi iliyoundwa",
+              "newPolygon": "Unda poligoni mpya",
+              "deletePolygon": "Futa poligoni iliyochaguliwa",
+              "help": "Bofya juu ya ramani ili kuchora poligoni",
+              "area": "Eneo",
+              "indicateBoundaries": "Onyesha mipaka ya eneo linalosimamiwa",
+              "spatialFile": "Pakia faili ya eneo la anga",
+              "preferredMethod": "NJIA INAYOPENDELEWA",
+              "preferredMethodText": "Pakia faili ya anga katika umbizo la Shapefile",
+              "spatialFileAndMapImageSeparator": "AU",
+              "imageFile": "Pakia picha ya ramani"
+            },
+            "popups": {
+              "spatialFile": {
+                "title": "Pakia Faili ya Eneo la Ramani",
+                "validatingFileFormat": "Inathibitisha umbizo la faili...",
+                "fileCorrectlyFormated": "Faili imeundwa kwa usahihi",
+                "fileCorrectlyFormatedText": "Faili yako imethibitishwa kwa ufanisi na iko tayari kupakiwa",
+                "importFileError": "Samahani kuna kitu kibaya",
+                "formatNotSupported": "Umbizo hili halitumiki",
+                "tryAgain": "jaribu tena",
+                "help": "<h4>Ni faili gani ya kupakia?</h4>Pakia faili ya umbo iliyofungwa ya mipaka ya eneo linalodhibitiwa. Zip inapaswa kuwa na faili za sehemu ya faili ya umbo na inapaswa kuwa faili moja tu ya umbo la mpaka. Ikiwa huna aina sahihi ya faili, tafadhali badilisha kwanza kabla ya kupakia.",
+                "condition1": "zip iliyo na faili zote muhimu za umbo (au zip iliyo na folda iliyo na faili hizo)",
+                "condition2": "<= 10MB",
+                "condition3": "umbo faili pekee -- ikijumuisha faili zote za kando zinazohitajika (.shp, .shx, .dbf, .prj)",
+                "condition4": "poligoni au poligoni nyingi",
+                "condition5": "hakuna jiometri batili, tupu, au vinginevyo batili"
+              },
+              "imageFile": {
+                "title": "Pakia Faili ya Picha ya Ramani",
+                "formatNotSupported": "Umbizo hili halitumiki",
+                "gpsCoordinatesTitle": "Onyesha viwianishi vya GPS",
+                "gpsCoordinatesExample": "Latitudo , Longitude<br>(e.g 40.741895,-73.989308)",
+                "dragMapIcon": "Unaweza Buruta ikoni kwenye ramani ili kuchagua viwianishi",
+                "help": "<h4>Ni faili gani ya kupakia?</h4>Ikiwa huna faili ya umbo lakini unayo ramani ya picha ya eneo linalodhibitiwa unaweza kuipakia hapa na itachakatwa mwenyewe. "
+              }
+            }
+          },
+          "survey": {
+            "tabButton": "Utafiti huo",
+            "title": "Utafiti huo",
+            "navigator": {
+              "completed": "Imekamilika",
+              "outOf": "Nje ya"
+            },
+            "uncheckAttributeTitle": "Acha kuchagua sifa",
+            "uncheckAttributeText": "Unaacha kuchagua sifa ambayo ina maswali ambayo yamejibiwa. Ukiondoa kuichagua, majibu yote ya maswali yake yatafutwa. Je, una uhakika unataka kuendelea na kuacha kuchagua sifa hii?",
+            "questions": {
+              "question": "Swali",
+              "back": "Rudi kwenye Nyumba ya Utafiti",
+              "answer": "Jibu",
+              "score": "Alama",
+              "unknown": "haijulikani",
+              "dontKnow": "Sijui",
+              "explanation": "Maelezo",
+              "notCompleted": "Haijakamilika",
+              "answerQuestionButton": "Jibu swali",
+              "editQuestionButton": "Badilisha jibu",
+              "selectAnswer": "Chagua jibu",
+              "help": "Je, unahitaji usaidizi? Tazama hapa chini",
+              "prev": "Iliyotangulia",
+              "next": "Inayofuata",
+              "information": "Mahitaji ya habari",
+              "guidance": "Mwongozo",
+              "rationale": "Swali hili linauliza nini?"
+            },
+            "inactiveAttribute": "To activate this question, you must activate the attribute",
+            "offlinePopupTitle": "Offline Survey",
+            "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+            "withoutConnectionPopupTitle": "Without Internet Connection",
+            "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
+          },
+          "collaborators": {
+            "tabButton": "Washiriki",
+            "title": "Washiriki",
+            "description": "Washiriki ni watu wanaohusika katika kukamilisha tathmini hii au wanahitaji ufikiaji ambao haupatikani kwa watumiaji wengine.",
+            "addCollaboratorButton": "Ongeza mshirika",
+            "table": {
+              "name": "Jina",
+              "admin": "Msimamizi",
+              "contributor": "Mchangiaji",
+              "observer": "Mtazamaji"
+            },
+            "popups": {
+              "delete": {
+                "title": "Inafuta Mshiriki",
+                "confirmationTitle": "Una uhakika?",
+                "confirmationDescription": "Kwa kubofya ndiyo utaondoa mshirika kumfanya ashindwe kufikia tathmini."
+              },
+              "add": {
+                "title": "Ongeza Mshiriki",
+                "description": "Andika herufi chache za kwanza za jina la mtumiaji la mshirika kisha uchague mshirika hapa chini na ubainishe kiwango cha ufikiaji ambacho ungependa awe nacho. Ni lazima washirika wafungue akaunti kabla ya kuziongeza.",
+                "selectCollaboratorTitle": "Chagua mshirika",
+                "selectCollaboratorLabel": "Mshiriki",
+                "roleAndPermissions": "Chagua jukumu na ruhusa",
+                "submit": "Ongeza mshirika",
+                "help": "Je, hukumpata Mshiriki wako? Waambie wafungue akaunti ya Elinor kwanza",
+                "roles": {
+                  "admin": {
+                    "name": "Msimamizi",
+                    "permission1": "Hariri data ya Tathmini",
+                    "permission2": "Badilisha data ya Utafiti",
+                    "permission3": "Hariri eneo la MA",
+                    "permission4": "Ongeza/Hariri Msimamizi, Wachangiaji na Waangalizi",
+                    "permission5": "Futa Tathmini",
+                    "permission6": "Chapisha na Batilisha Uchapishaji Tathmini"
+                  },
+                  "contributor": {
+                    "name": "Mchangiaji",
+                    "permission1": "Hariri data ya Utafiti",
+                    "permission2": "Hariri data ya eneo la MA",
+                    "permission3": "Tazama data ya Tathmini",
+                    "permission4": "Tazama data ya Utafiti",
+                    "permission5": "Tazama eneo la MA"
+                  },
+                  "observer": {
+                    "name": "Mtazamaji",
+                    "permission1": "Tazama data ya Tathmini",
+                    "permission2": "Tazama data ya Utafiti",
+                    "permission3": "Tazama eneo la MA"
+                  }
+                },
+                "error": "Hitilafu ya uthibitishaji"
+              }
+            }
+          },
+          "publish-settings": {
+            "tabButton": {
+              "ready": "Tayari kuchapishwa",
+              "preparing": "Inatayarishwa kuchapishwa",
+              "edit": "Badilisha mipangilio ya uchapishaji"
+            },
+            "title": "Maliza na Uchapishe",
+            "finalize": {
+              "title": "Maliza",
+              "whatHappenTitle": "Nini kinatokea unapomaliza",
+              "whatHappenList1": "<li>Unatia alama Tathmini yako kama Imekamilika</li><li>Hutaweza kuhariri Data ya Utafiti</li><li>Hutaweza kuhariri Data ya Tathmini</li><li>Tathmini yako itaendelea kuonekana na wewe na Washiriki wako pekee</li><li>Itaonekana kama data iliyojumlishwa katika maarifa na ramani</li>",
+              "whatHappenList2": "<li>Bado unaweza kuhariri au kubadilisha Eneo Linalosimamiwa</li><li>Bado unaweza kuongeza washirika</li><li>Bado unaweza kubatilisha uchapishaji wa Tathmini</li>",
+              "button": "Maliza",
+              "warning": "Onyo!!",
+              "warningText": "Baada ya kukamilika huwezi kuhariri Utafiti au Data ya Tathmini, kwa hivyo kamilisha tu utakapomaliza Tathmini yako.",
+              "popup": {
+                "title": "Maliza Tathmini",
+                "confirmationTitle": "Je, una uhakika unataka kukamilisha tathmini yako?",
+                "confirmationDescription": "Baada ya kukamilika, huwezi kuhariri Utafiti au Data ya Tathmini, kwa hivyo kamilisha tu utakapomaliza Tathmini yako."
+              }
+            },
+            "publish": {
+              "title": "Kuchapisha",
+              "whatHappenTitle": "Nini kinatokea unapochapisha",
+              "whatHappenList1": "<li>Unatoa Tathmini yako kwa watumiaji wa umma</li><li>Itaonekana kama data iliyojumlishwa katika maarifa na ramani</li>",
+              "whatHappenList2": "<li>Bado unaweza kuhariri au kubadilisha Eneo Linalosimamiwa</li><li>Bado unaweza kuongeza washirika</li><li>Bado unaweza kubatilisha uchapishaji wa Tathmini</li>",
+              "button": "Chapisha Tathmini",
+              "popup": {
+                "title": "Chapisha Tathmini",
+                "confirmationTitle": "Je, una uhakika unataka kuchapisha tathmini yako?",
+                "confirmationDescription": "Baada ya kuchapishwa huwezi kuhariri Utafiti au Data ya Tathmini, kwa hivyo uchapishe tu unapomaliza Tathmini yako."
+              },
+              "alert": {
+                "popup": {
+                  "title": "Chapisha Tathmini",
+                  "confirmationTitle": "Inabidi ukamilishe tathmini yako ili uweze kuchapisha",
+                  "confirmationDescription": "Rudi nyuma ukamilishe kwanza"
+                }
+              }
+            },
+            "unpublish": {
+              "title": "Batilisha uchapishaji",
+              "whatHappenTitle": "Nini kinatokea unapobatilisha uchapishaji",
+              "whatHappenList1": "<li>Tathmini haitaonekana kwa wasio washirika</li>",
+              "whatHappenList2": "<li>Bado unaweza kuchapisha Tathmini</li>",
+              "button": "Batilisha uchapishaji wa Tathmini",
+              "popup": {
+                "title": "Batilisha uchapishaji wa Tathmini",
+                "confirmationTitle": "Je, una uhakika unataka kubatilisha uchapishaji wa tathmini yako?",
+                "confirmationDescription": "Thibitisha"
+              }
+            }
+          }
+        },
+        "attributes": "Sifa",
+        "seeQuestions": "Angalia maswali",
+        "optionalAttributesTitle": "Sifa za hiari",
+        "optionalAttributesDescription": "Chagua sifa zinasohusiana na tathmini yako",
+        "mandatoryAttribute": "Lazima",
+        "inactiveAttribute": "Sifa isiyotumiks",
+        "activeAttribute": "Sifa inayotumika",
+        "offlineSurveyWarning": "Tafadhali hakikisha kuwa mabadiliko ya nje ya mtandao yanafanyika katika kivinjari sawa. Ukibadilisha vivinjari kabla ya kugeuza utafiti mtandaoni tena, unaweza kupoteza mabadiliko yako ya nje ya mtandao."
+      },
+      "statuses": {
+        "90": "Fungua",
+        "10": "Imechapishwa"
+      },
+      "personResponsibleRoles": {
+        "10": "Wafanyakazi wasio wa faida",
+        "20": "Meneja wa eneo linalosimamiwa",
+        "30": "Wafanyikazi wa eneo linalosimamiwa",
+        "40": "Wafanyakazi wa serikali",
+        "50": "Wanachama wa jumuiya za mitaa au kamati za kiasili",
+        "60": "Viongozi wa jumuiya au wawakilishi"
+      },
+      "collectionMethods": {
+        "10": "Tathmini ya msingi wa dawati",
+        "30": "Majadiliano ya vikundi lengwa yaliyowezeshwa"
+      },
+      "popup": {
+        "title": "Jinsi ya kuunda Tathmini",
+        "text": "Tumia mchakato ulio hapa chini kuunda tathmini. Utahitaji kutoa maelezo yanayohusiana na tathmini, kuunda au kuchagua eneo linalosimamiwa na kisha ukamilishe maswali halisi ya uchunguzi. Utendaji wa washirika hukuwezesha kuongeza watu kwenye tathmini yako.",
+        "step-1": {
+          "title": "Chagua njia yako ya kukusanya data",
+          "text": "Elinor inaweza kukamilika kwa moja ya njia mbili:",
+          "li-1": "Kupitia kikundi cha kuzingatia kilichowezeshwa chenye wenye haki tofauti na wahusika wengine wanaohusika na kuathiriwa na MA",
+          "li-2": "Kama tathmini inayotegemea dawati inayoongozwa na kwa mfano, mtaalamu wa uhifadhi au msimamizi wa tovuti."
+        },
+        "step-2": {
+          "title": "Data ya Tathmini",
+          "text": "Kamilisha maelezo yanayohusiana na TATHMINI, kama vile idadi ya watu walioshauriwa au taasisi zinazohusiana"
+        },
+        "step-3": {
+          "title": "Eneo la Usimamizi",
+          "text": "Tambua Eneo la Usimamizi, ambalo ni mali ya PA fulani na upakie umbo au chora kwenye ramani eneo lake."
+        },
+        "step-4": {
+          "title": "Utafiti huo",
+          "text": "Jibu maswali kutoka kwa Utafiti. Unaweza kuchagua sifa hizo ambazo zinafaa kwa Tathmini yako"
+        },
+        "step-5": {
+          "title": "Washiriki",
+          "text": "Alika washiriki kukusaidia kukamilisha Tathmini, au ushiriki tu kama mwangalizi"
+        },
+        "step-6": {
+          "title": "Kuchapisha",
+          "text": "Mara baada ya Tathmini kukamilika unaweza kuichapisha, na kuifanya ipatikane kutoka kwa eneo la umma la wavuti"
+        },
+        "question": "Ninaweza kufanya nini kutoka hapa?",
+        "answer-1": "Nenda kwa tathmini",
+        "answer-2": "Tengeneza tathmini",
+        "label": "Usionyeshe skrini hii ya awali tena"
+      },
+      "actions": {
+        "contact": {
+          "title": "Wasiliana na Msimamizi",
+          "subtitle": "Jaza fomu hii ili kuwasiliana na msimamizi",
+          "text": "Tutatuma ujumbe kwa msimamizi wa tathmini hii",
+          "labelTextarea": "Ujumbe",
+          "okMessage": "Asante kwa mawasiliano!",
+          "namePlaceholder": "Andika jina lako",
+          "subjectPlaceholder": "Andika mada",
+          "emailPlaceholder": "andika barua pepe"
+        },
+        "flag": {
+          "title": "Kichwa cha bendera",
+          "subtitle": "Jaza fomu hii ili kuripoti tathmini",
+          "text": "Tutatuma ujumbe kwa msimamizi wa tathmini hii",
+          "labelTextarea": "Ujumbe",
+          "okMessage": "Asante kwa mawasiliano!",
+          "placeholder": "Aina ya bendera",
+          "types": {
+            "inappropriate": "Haifai",
+            "personal": "Kibinafsi",
+            "inaccurate": "Siyo sahihi",
+            "other": "Nyingine"
+          }
+        },
+        "delete": {
+          "title": "Futa tathmini",
+          "subtitle": "Je, una uhakika unataka kufuta tathmini yako",
+          "text": "Ukishaifuta, hutaweza kufikia Maoni yako tena, na data yako itafutwa kabisa."
+        },
+        "delete-info": {
+          "title": "Futa tathmini",
+          "subtitle": "Tathmini imekamilika na haiwezekani kuifuta",
+          "text": "Wasiliana na msimamizi wa elinor ili kuhariri au kufuta tathmini yako"
+        },
+        "generateReport": {
+          "strengths": {
+            "title": "Nguvu kuu za utawala",
+            "label": "Eleza nguvu za utawala",
+            "explanation": "Sifa tatu zilizotajwa hapo juu zilipata alama ya juu zaidi. Tumia nafasi hii kutafakari kwa nini unafikiri hizo ndizo nguvu kuu za eneo hili.\n"
+          },
+          "needs": {
+            "title": "Mahitaji muhimu ya utawala",
+            "label": "Eleza mahitaji muhimu",
+            "explanation": "Sifa tatu zilizotajwa hapo juu zilipata alama ya chini zaidi. Tumia nafasi hii kutafakari kwa nini unafikiri hizo sifa tatu zinafaa kuangaliwa zaidi"
+          },
+          "context": {
+            "title": "Muktadha",
+            "label": "Muktadha",
+            "explanation": "Tumia nafasi hii kuelezea kwa ufupi wamiliki wakuu wa haki na wahusika wengine katika eneo hili, changamoto kuu za utawala na usimamizi, na mambo mengine yoyote ambayo unafikiri yanaunda matokeo ya kijamii na kiikolojia ya eneo hilo."
+          },
+          "button": "Toa ripoti",
+          "buttonGenerating": "Inazalisha...",
+          "error": "Kulikuwa na hitilafu katika kuzalisha ripoti."
+        }
+      },
+      "outOf100": "juu ya 100",
+      "published": "Imechapishwa",
+      "finalized": "Imekamilika",
+      "readyToPublish": "Tayari kuchapishwa",
+      "preparingToPublish": "Inatayarishwa kuchapishwa",
+      "downloadSurveyFile": {
+        "title": "Download Survey",
+        "helpTitle": "You can fill in the survey offline and upload it when ready. If you select to download the survey:",
+        "help1": "You will obtain a .xlsx file with the questions and answers to the survey.",
+        "help2": "You can edit it offline in Excel, Numbers or any xlsx processing program. Please don't change the structure of the xlsx in any way or form.",
+        "help3": "Save the file as a .xlsx file",
+        "help4": "When the survey is finished, click on the upload button to upload the xlsx and the online survey will automatically update the survey information.",
+        "downloadButton": "Start downloading"
+      },
+      "uploadSurveyFile": {
+        "title": "Upload survey file",
+        "triggerButton": "Select a file",
+        "filePlaceholder": "Drag and drop de .xlsx file",
+        "validatingFileFormat": "Validating file format...",
+        "fileCorrectlyFormated": "The file is correctly formatted",
+        "fileCorrectlyFormatedText": "The data structure is correct and the xlsx is ready to be imported",
+        "uploadWarning": "Remember that if you accept, all the information of the survey online will be overwritten by the information on the xlsx",
+        "surveyFileErrorTitle": "Sorry something went wrong",
+        "surveyFileErrorDescription": "We are not able to import the xlsx you tried to upload. Please make sure that the format is correct. The structure of the xlsx need to be exactly the same one that was downloaded.",
+        "tryAgainText": "If you want you can",
+        "tryAgainButton": "try again",
+        "formatNotSupported": "try again",
+        "help": "Please, upload the xlsx file for the survey in the exact same format that it was downloaded. No change can be done to the structure. If the upload fails. please review the format and make sure it is the same as the downloaded file.",
+        "helpTitle": "What files to Upload?",
+        "errors": {
+          "missing_file": "missing file",
+          "unsupported_file_type": "file type not supported; supported types: {supported_mime_types}",
+          "file_too_large": "uploaded file larger than {maximum_filesize}",
+          "unsupported_zip": "zip file contains more than one file, or is empty. Number of files in zip: {num_files}",
+          "invalid_zip": "invalid zip",
+          "missing_sheet": "missing sheet with name '{sheetname}'",
+          "invalid_header": "no header found for sheet {sheetname}",
+          "invalid_header_cells": "invalid headers in cells: {header_error_cells}",
+          "invalid_file_load": "invalid xlsx file",
+          "assessment_id_mismatch": "assessment id {user_assessmment_id} in {cell} does not match requested assessment {assessment_id}",
+          "invalid_sheet": "invalid sheet",
+          "invalid_questions": "invalid question keys in cells: {question_error_cells}",
+          "invalid_choices": "invalid choices in cells: {choice_error_cells}",
+          "invalid_answers": "invalid answers",
+          "answer_save": "error saving answers to database",
+          "detail": "You are not allowed to perform this action"
+        }
+      },
+      "roles": {
+        "admin": "Msimamizi",
+        "contributor": "Contributor",
+        "observer": "Mtazamaji"
+      },
+      "managedArea": "Eneo la Usimamizi"
+    },
+    "documentation": {
+      "home": {
+        "meta": {
+          "title": "Nyaraka",
+          "slug": "/documentation"
+        }
+      },
+      "header": {
+        "title": "Nyaraka"
+      },
+      "intro": {
+        "text": "Chini ni hati ambazo ni muhimu kwa ufahamu kamili na matumizi ya chombo cha Elinor. Kila hati ina maelezo mafupi. Tafadhali pakua inavyohitajika."
+      },
+      "body": {
+        "cards": {
+          "button": "Hati zaidi"
+        }
+      }
+    },
+    "news": {
+      "home": {
+        "meta": {
+          "title": "Habari",
+          "slug": "/news"
+        }
+      },
+      "header": {
+        "title": "Habari"
+      },
+      "body": {
+        "cards": {
+          "button": "Habari zaidi"
+        }
+      }
+    },
+    "faqs": {
+      "home": {
+        "meta": {
+          "title": "Maswali yanayoulizwa mara kwa mara",
+          "slug": "/faq"
+        }
+      },
+      "header": {
+        "title": "Maswali yanayoulizwa mara kwa mara"
+      }
+    },
+    "methodologyPage": {
+      "home": {
+        "meta": {
+          "title": "Mbinu",
+          "slug": "/methodology",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "og_image": ""
+          }
+        }
+      },
+      "title": "Mbinu",
+      "paragraph1": "Tathmini ya Elinor inaweza kukamilishwa kwa njia mbili tofauti: Kupitia kikundi cha kuzingatia kilichowezeshwa na wenye hakimiliki tofauti na wahusika wengine wanaohusika na kuathiriwa na MA, au kama tathmini inayotegemea dawati inayoongozwa na mtaalamu wa uhifadhi. Wakati wa kuingiza data, watumiaji wanaweza kuonyesha ni njia gani walichukua ili kutoa data katika tathmini na ni aina gani za wenye hakimiliki na wahusika wengine walihusika katika tathmini.",
+      "subtitle1": "Elinor kama mjadala wa kikundi lengwa wa uga",
+      "paragraph2": "Tathmini nyingi za utawala hukamilishwa kimila kupitia mijadala shirikishi ya vikundi; kuongeza mitazamo tofauti kutoka kwa wenye hakimiliki wakuu na watendaji wengine wanaohusika katika usimamizi na utawala wa eneo fulani. Kwa wale walio na muda na uwezo wa kukusanya mitazamo mbalimbali kuhusu usimamizi na utawala, tunapendekeza upakue zana ya tathmini ya Elinor na itifaki ili kuongoza juhudi zako.",
+      "paragraph3": "Mwongozo huu unatoa maarifa kuhusu jinsi ya kuongoza kikundi kimaadili, kupata ruhusa zinazofaa za kutumia data, na kuchunguza mitazamo tofauti; hasa ya wale ambao wanaweza kuwa wametengwa kimila. Hii ndiyo njia inayopendekezwa, kwani inaruhusu sauti tofauti kuchangia katika tathmini, ikitoa mtazamo kamili zaidi juu ya hali ya usimamizi na utawala katika eneo.",
+      "cta1": "Pakua Itifaki",
+      "subtitle2": "Elinor kama tathmini inayoongozwa na daktari, inayotegemea dawati.",
+      "paragraph4": "Njia hii ni kwa wale ambao wana muda mdogo, rasilimali, au uwezo wa kutekeleza kikundi shirikishi cha lengo. Ingawa tathmini inayotegemea dawati inatoa chaguo chache, inaruhusu baadhi ya data kuzalishwa kwenye eneo linalodhibitiwa, ambayo inaweza kutoa tathmini ya kutosha na yenye manufaa mara nyingi kuhusu hali ya sasa na mitindo katika eneo hilo, na inaweza kuwasaidia watumiaji kutambua jambo lolote muhimu. mapungufu ya maarifa ambayo yangehitaji utafiti zaidi na uwekezaji. Iwapo utachagua kuchukua njia hii, tenga muda kwa ajili yako na wenzako wanaofahamu MA ili kujadili na kujibu kila swali, kulingana na uzoefu wako na ujuzi wa MA. Ikiwezekana, tunapendekeza kuwashirikisha wenye hakimiliki tofauti na watendaji wengine kwa njia yoyote unayoweza ili kupata maarifa kuhusu maswali tofauti.",
+      "subtitle3": "Alama",
+      "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "scoreTable": {
+        "value": "value",
+        "values": "Values",
+        "indicator": "Indicator",
+        "attribute": "Attribute",
+        "aggregate": "Aggregate",
+        "plan": {
+          "title": "Plan",
+          "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+        },
+        "build": {
+          "title": "Build",
+          "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+        },
+        "strengthen": {
+          "title": "Strengthen",
+          "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+        },
+        "maintain": {
+          "title": "Maintain",
+          "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+        }
+      }
+    },
+    "termsOfUse": {
+      "title": "Masharti ya Huduma"
+    },
+    "contact": {
+      "home": {
+        "meta": {
+          "title": "Wasiliana",
+          "slug": "/contact"
+        }
+      },
+      "header": {
+        "title": "Wasiliana"
+      },
+      "form": {
+        "legend": {
+          "strong": "Tumia fomu iliyo hapa chini kuwasiliana nasi",
+          "default": "Tutajibu haraka iwezekanavyo"
+        },
+        "name": "Jina lako",
+        "subject": "Mada",
+        "mail": "Barua pepe yako",
+        "message": "Ujumbe",
+        "submit": "Tuma ujumbe",
+        "confirmation": "Thank you for contacting elinor",
+        "namePlaceholder": "Andika jina lako",
+        "subjectPlaceholder": "Andika mada",
+        "mailPlaceholder": "Andika barua pepe yako",
+        "messagePlaceholder": "Andika ujumbe"
+      }
+    },
+    "collaboration": {
+      "home": {
+        "meta": {
+          "title": "Ushirikiano",
+          "slug": "/collaboration"
+        }
+      },
+      "title": "Kanuni za Ushirikiano na Miongozo ya Manukuu",
+      "intro": {
+        "title": "Kanuni za kuongoza ushiriki wa data kwa uwazi na shirikishi",
+        "paragraph1": "Zana ya Elinor na mfumo wa data huwasaidia watumiaji kufuatilia usimamizi na hali ya utawala baada ya muda. Pia hutoa fursa ya kushiriki data kuhusu usimamizi na utawala kati ya watumiaji, ambayo inaweza kwa muda mrefu kukuza uwazi zaidi katika usimamizi na utawala na kuboresha juhudi za uhifadhi wa eneo.",
+        "paragraph2": "Ili kufikia maono haya, watumiaji wote wanapaswa kuzingatia kanuni zilizoainishwa hapa chini ambazo zitaongoza kushiriki na kutumia data kwa ushirikiano, haki na uwazi. Kufanya hivyo kutahakikisha watumiaji wote wanahamasishwa kuchangia data kwa uwazi ili kuboresha uhifadhi wa eneo.",
+        "paragraph3": "Wamiliki wa data wanaotumia zana ya kutathmini ya Elinor na mfumo wa data wamechangia wakati na rasilimali katika kukusanya data, na mara nyingi, huchagua kuweka tathmini zao kwa umma. Kwa hivyo watumiaji wote wanapaswa kutenda kwa uwazi, kwa heshima, kwa uwazi na kwa uaminifu katika kujihusisha kwenye jukwaa ili kuongoza ushirikiano mzuri na jumuishi. Kanuni zilizo hapa chini zimeundwa ili kuwezesha ushirikiano wa haki na uwazi kati ya wamiliki wa data na watumiaji wa data, na kutoa mwongozo kuhusu jinsi watumiaji wanapaswa kushirikiana na data ya faragha na ya umma, na pia mtu mwingine.",
+        "paragraph4": "Tafadhali wasiliana nasi ikiwa una mapendekezo kuhusu jinsi tunavyoweza kuboresha kanuni zetu za ushirikiano",
+        "blockquote": "Watumiaji wote wanapaswa kutenda kwa uwazi, kwa heshima, uwazi, na kwa uaminifu katika kujihusisha kwenye jukwaa ili kuongoza ushirikiano mzuri na jumuishi."
+      },
+      "guidelines1": {
+        "title": "Kanuni elekezi za kushiriki na kutumia data na Elinor",
+        "subtitle": "Kwa matumizi ya data ya umma na ya kibinafsi",
+        "question1": "Daima wakilisha habari kwa usahihi",
+        "answer1": "Matokeo ya tathmini yana metadata ya ziada inayosaidia, ambayo inaeleza chanzo chake, jinsi ilivyokusanywa, ubora wake na vikwazo vyovyote, tafadhali hakikisha kuwa hii inaonekana katika jinsi unavyotumia na kuwasilisha data.",
+        "question2": "Watambue wamiliki wa data kila wakati katika wasilisho, uchapishaji au ripoti yoyote, na utaje mfumo wa data wa Elinor kama chanzo cha taarifa.",
+        "answer2-1": "Tunapendekeza kutumia kauli ifuatayo tunapotumia data kutoka kwa jukwaa la Elinor “Tunatoa shukrani zetu kwa watu binafsi na taasisi zilizosaidia kutoa data kwa ajili ya Tathmini ya Elinor katika [INGIZA MA AU MKOA HAPA], ikijumuisha washiriki na wawezeshaji wowote wa kikundi lengwa”",
+        "answer2-2": {
+          "paragraph1": "Tafadhali tumia nukuu ifuatayo kurejelea mfumo wa data wa Elinor:",
+          "paragraph2": "Elinor: Chombo na mfumo wa data wa kutathmini usimamizi na utawala sawa kwa uhifadhi wa eneo. (YEAR) Inapatikana kwa: elinordata.org [Tarehe ya Kufikia]"
+        }
+      },
+      "guidelines2": {
+        "subtitle": "Kanuni za kuongoza ombi na matumizi ya data ya kibinafsi katika Elinor",
+        "text": "Sio data yote kwenye jukwaa la Elinor inafanywa kwa umma, hata hivyo watumiaji wa data wanaweza kuwasiliana na wamiliki wa data na kuomba data ishirikiwe. Wamiliki wa data hawana wajibu wa kushiriki data, lakini iwapo watachagua kufanya hivyo, watumiaji wa data wanapaswa kuzingatia kanuni zifuatazo:",
+        "question1": "Daima tumia maelezo yaliyotolewa na watumiaji kuhusiana na ombi asili pekee.",
+        "answer1": "Ikiwa ombi lako la kwanza lilikuwa ni kutumia maelezo katika wasilisho na baadaye ukaamua kuwa yanaweza kuwa muhimu katika karatasi au pendekezo la ufadhili, tafadhali tuma ombi jipya kwa mtumiaji.",
+        "question2": "Kamwe usishiriki maelezo na wahusika wengine bila ruhusa ya moja kwa moja ya mtumiaji.",
+        "answer2": "Ikiwa ungependa kushiriki maelezo na mtu mwingine ambaye unaweza kuwa unashirikiana naye, tafadhali mjulishe mmiliki wa data kwanza.",
+        "question3": "Fuata miongozo ya uthibitishaji kama inavyopendekezwa na mwenye data.",
+        "answer3": {
+          "paragraph1": "Wamiliki wa data wana haki ya kuomba jinsi wanavyotaka data itolewe kwa ajili ya kuchapishwa. Tunapendekeza kutumia umbizo la dondoo lililoorodheshwa hapa chini. Pia tunapendekeza inapowezekana, waandishi wa ripoti na machapisho wazingatie kualika wakusanyaji wa data kwa waandishi-wenza wa machapisho, kutokana na michango yao katika kukusanya data.",
+          "paragraph2": "MAJINA YA MMILIKI WA DATA ( MWAKA WA TATHMINI). ENEO LA TATHMINI. TAASISI. Seti ya data ya matukio ilifikiwa kupitia Elinordata.org mnamo DATE. "
+        }
+      }
+    },
+    "about": {
+      "meta": {
+        "title": "Usuli",
+        "slug": "/background",
+        "seo": {
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
+        }
+      },
+      "elinorAttributes": {
+        "attribute1": {
+          "name": "1. Mipaka ya rasilimali",
+          "description": "Sifa hii inapima ubora wa mipaka ya maeneo ya usimamizi (MA). Maswali yanayoulizwa hapa ni kama maeneo ya usimamizi ni: i) Rahisi kutambulikana na ii) yanajulikana na wenye haki na watendaji wengine wote husika.",
+          "useIf": "Kama ungetaka kuelewa iwapo mipaka ya maeneo ya usimamizi iko imara.",
+          "reportText": "Hupima kiwango ambacho mipaka ya MA inawekwa alama wazi na kueleweka na wenye haki muhimu na wahusika wengine."
+        },
+        "attribute2": {
+          "name": "2. Ufuatilizi na Uimarishaji",
+          "description": "Sifa hii inapima jinsi maeneo ya usimamizi (MA) yanaweza kutekeleza sheria kwa njia mwafaka na kama kuna. Inazingatia hasa adhabu zinazotolewa kutokana na kuvunja sheria za maeneo ya usimamizi (MA), uasilia na viwango vyao.",
+          "useIf": "Kama ungetaka kuwa na uelewa wa awali kuhusu uvunjaji wa sheria katika maeneo ya usimamizi na kama kuna habari zilizoko za kuwezesha shughuli za ufuatilizi na uimarishaji (M&E) au kuimarisha usimamizi wa kukabiliana.",
+          "reportText": "Hupima jinsi MA inavyoweza kutekeleza kanuni"
+        },
+        "attribute3": {
+          "name": "3. Uwezo wa Usimamizi wa Ukabilianaji",
+          "description": "Sifa hii inapima kama waamuzi wenye jukumu la maeneo ya usimamizi wanajumuisha aina mbalimbali za ujuzi katika kufanya maamuzi. Pia inauliza kama hali ya kijamii, kiikolojia au mabadiliko ya hali ya hewa yanafuatiliwa.",
+          "useIf": "Kama ungetaka kujua ni ujumbe gani unaotoa mwelekeo kwa wasimamizi katika kufanya maamuzi katika maeneo ya usimamizi.",
+          "reportText": "Hupima ikiwa wasimamizi wa MA wanajumuisha aina tofauti za maarifa katika kufanya maamuzi yao"
+        },
+        "attribute4": {
+          "name": "4. Uwezo wa utekelezaji",
+          "description": "Sifa hii inapima kama wale wenye jukumu kuongoza maeneo ya usimamizi (MA) wana rasilimali ya kufanya hivyo. Inaangazia hasa rasilimali ya wafanyikazi, uwezo wa uimarishaji na zana zinazohitajika.",
+          "useIf": "Kama ungetaka kuthathmini uwezo wa maeneo ya usimamizi (MA) wa kusimamia mfumo.",
+          "reportText": "Hupima ikiwa wale wanaohusika na kusimamia MA wana rasilimali za kufanya hivyo"
+        },
+        "attribute5": {
+          "name": "5. Usimamizi jumuifu na Usawa",
+          "description": "Sifa hii inapima ujumuishaji na usawa katika usimamizi wa maeneo ya usimamizi (MA), ambapo ni vipengele viwili muhimu vya uongozi bora. Maswali ya ujumuishaji na usawa huuliza iwapo mamlaka ya Maeneo ya usimamizi (MA) inaruhusu wenye haki na watendaji wengine wenyeji kuchangia katika maamuzi ya usimamizi, kama kuna mkakati wa kugawanya faida sawasawa miongoni mwa yao na iwapo uthabiti wa jumuiya wa kukabiliana na mabadiliko ya hali ya hewa unashughulikiwa katika usimamizi.",
+          "useIf": "Kama ungetaka kuelewa kama maeneo ya usimamizi (MA) yanayashirikisha makundi ya watu wasiojiweza/wenye mahitaji maalum katika maamuzi ya usimamizi na matokeo.",
+          "reportText": "Hupima ujumuishi na usawa katika usimamizi wa MA, hasa kuhusu vikundi vilivyo hatarini"
+        },
+        "attribute6": {
+          "name": "6. Uwazi wa Haki na Maamuzi",
+          "description": "Sifa hii inapima haki za jumuiya katika usimamizi wa maliasili. Haki ni muhimu sana kwani zinaweka msingi kwa wenye haki na watendaji wengine ili kushiriki kikamilifu katika kusimamia maliasili na katika uhifadhi wake.",
+          "useIf": "Kama ungetaka kutathmini udhibiti wa jumuiya wa maliasili au uwezo wa kufikia maliasili katika maeneo ya usimamizi unalolishughulikia.",
+          "reportText": "Hupima kiwango ambacho haki za jamii katika usimamizi wa maliasili zinaeleweka wazi na wenye haki muhimu na wahusika wengine"
+        },
+        "attribute7": {
+          "name": "7. Kanuni sanjari na zilizo wazi",
+          "description": "Sifa hii inapima ubora wa kanuni za maeneo ya usimamizi. Hasa: i) uwazi wake, na ii) uzuri wa jinsi zilivyopangwa ili kuingiliana na; mchango kwa wadau katika uongozi wa maeneo ya usimamizi, viwango vingine ya mamlaka ya usimamizi na muktadha wa kijamii na kimazingira ambamo shughuli hiyo inafanyika.",
+          "useIf": "Kama ungetaka kuelewa iwapo kanuni zimeelezwa waziwazi na ni za haki.",
+          "reportText": "Hupima kiwango ambacho kanuni za MA ziko wazi na zinawiana na wenye haki na malengo ya utawala ya watendaji wengine."
+        },
+        "attribute8": {
+          "name": "8. Uwazi na Uwajibikaji",
+          "description": "Sifa hii inapima uwazi, uwajibikaji na usuluhishaji wa mizozo ambapo haya yote ni muhimu katika uongozi bora. Ni muhimu kwamba watu ambao wanaathirika na maamuzi ya usimamizi wajue maamuzi hayo mapema kabla hayajatekelezwa ili wawe wana ujuzi na waweze kuwajibika na kuwe na nafasi ya kusuluhisha mizozo. Uwazi unapimwa kwa kuuliza iwapo mawasiliano ya mamlaka ya maeneo ya usimamizi (MA) kwa wenye haki na watendaji wengine yanafanywa kwa wakati unaofaa. Uwajibikaji unapimwa kwa kuuliza maswali ya kama mamlaka ya maeneo ya usimamizi (MA) inakabiliana na matokeo hasi iwapo haijawajibika katika majukumu yake na usuluhishaji wa mizozo unatathminiwa kwa kuzingatia ufanisi wake.",
+          "useIf": "Kama ungetaka kutathmini ubora wa uongozi wa maeneo ya usimamizi.",
+          "reportText": "Hupima kiwango ambacho watu walioathiriwa moja kwa moja na maamuzi ya wasimamizi wanafahamishwa kuyahusu mapema, wanaweza kuwawajibisha watoa maamuzi, na kupata fursa za kutatua migogoro."
+        },
+        "attribute9": {
+          "name": "9. Matokeo ya kiikolojia yanayotambuliwa",
+          "description": "Sifa hii inapima mitazamo ya kijumla ya matokeo ya maeneo ya usimamizi (MA) ya kimazingira yanayopokelewa na wale wanaojaza tathmini ya Elinor.",
+          "useIf": "Kama ungetaka kujua iwapo wale wanaohusika na maeneo ya usimamizi (MA) ya kimazingira wanadhani malengo yao yanatimizwa.",
+          "reportText": "Hupima mitazamo ya jumla ambayo wale wanaokamilisha tathmini ya Elinor wanayo juu ya matokeo ya ikolojia ya MA."
+        },
+        "attribute10": {
+          "name": "10. Kutambuliwa matokeo ya kijamii",
+          "description": "Sifa hii inapima mitazamo ya kijumla ya matokeo ya maeneo ya usimamizi (MA) ya kijamii yanayopokelewa na wale wanaojaza tathmini ya Elinor.",
+          "useIf": "Kama ungetaka kujua iwapo wale wanaohusika na maeneo ya usimamizi (MA) ya kijamii wanadhani malengo yao yanatimizwa.",
+          "reportText": "Hupima mitazamo ya jumla ambayo wale wanaokamilisha tathmini ya Elinor wanayo juu ya matokeo na kijamii ya MA."
+        }
+      }
+    },
+    "profile": {
+      "header": {
+        "title": "Akaunti yako",
+        "subtitle": "Tumia ukurasa huu kusasisha akaunti yako"
+      },
+      "form": {
+        "legend": "Data yako",
+        "email": "Barua pepe",
+        "password": "Nenosiri",
+        "username": "Jina la mtumiaji",
+        "first_name": "Jina la kwanza",
+        "last_name": "Jina la familia",
+        "submit": "Hifadhi mabadiliko"
+      },
+      "delete": {
+        "title": "Futa Akaunti",
+        "subtitle": "Nini kitatokea unapofuta akaunti yako",
+        "list": {
+          "1": "Tutawasiliana na washirika wako wote",
+          "2": "Ikiwa tathmini zozote ulizokamilisha zinahusiana na shirika, tutaarifu shirika",
+          "3": "Utapoteza ufikiaji wa tathmini zote ambazo umeweka kwenye mfumo",
+          "4": "Akaunti yako itaondolewa kwenye mfumo ikijumuisha taarifa zako zote za kukutambulisha"
+        },
+        "confirm": {
+          "title": "Futa Akaunti yako",
+          "message": {
+            "strong": "Onyo!!",
+            "text": "Kitendo hiki hakiwezi kutenduliwa"
+          }
+        }
+      },
+      "popup": {
+        "title": "Futa Akaunti",
+        "header": {
+          "title": "Je, una uhakika unataka kufuta akaunti yako"
+        },
+        "body": {
+          "text": "Ukishaifuta, hutaweza kufikia Maoni yako tena, na data yako itafutwa kabisa."
+        }
+      }
+    },
+    "map": {
+      "home": {
+        "meta": {
+          "title": "Ramani",
+          "slug": "/map"
+        }
+      },
+      "filters": {
+        "form": {
+          "placeholders": {
+            "countries": "Nchi",
+            "attributes": "Kwa Sifa"
+          }
+        }
+      },
+      "legend": {
+        "plan": "Panga",
+        "build": "Jenga",
+        "strengthen": "Imarisha",
+        "mantain": "Dumisha"
+      },
+      "popup": {
+        "managedArea": "Eneo Linalosimamiwa",
+        "view": "Tafuta Eneo Linalosimamiwa"
+      },
+      "title": "RAMANI",
+      "boxList": {
+        "covering": "ukubwa wa",
+        "ha": "hekta"
+      },
+      "boxAssessment": {
+        "managedArea": "Jina la Eneo Linalosimamiwa",
+        "byAttributes": "Kwa Sifa",
+        "goToAssessment": "Nenda kwa Tathmini Kamili"
+      }
+    },
+    "report": {
+      "aside": {
+        "year": "Mwaka ulioanzishwa",
+        "maGovernanceType": "Aina ya utawala wa MA",
+        "totalHa": "Jumla ya hekta",
+        "assessmentType": "Aina ya tathmini",
+        "maVersionDate": "Current assessment date"
+      },
+      "country": {
+        "download": "Pakua ripoti"
+      },
+      "btnDownload": "Pakua ripoti",
+      "scoreTable": {
+        "value": "value",
+        "indicator": "Indicator",
+        "attribute": "Sifa",
+        "aggregate": "Jumla",
+        "plan": {
+          "title": "Panga",
+          "description": "Shirikiana na wenye haki na wahusika wengine kuunda mipango ya kushughulikia mapungufu makubwa ya utawala"
+        },
+        "build": {
+          "title": "Jenga",
+          "description": "Shirikiana na wenye haki na wahusika wengine ili kujenga juu ya maendeleo ya awali ili kushughulikia pengo kubwa la utawala"
+        },
+        "strengthen": {
+          "title": "Imarisha",
+          "description": "Shirikiana na wenye haki na wahusika wengine ili kuimarisha utawala kwa kushughulikia mapungufu madogo"
+        },
+        "maintain": {
+          "title": "Dumisha",
+          "description": "Shirikiana na wenye haki na wahusika wengine ili kudumisha utawala thabiti na kufuatilia vitisho vinavyoweza kutokea"
+        }
+      },
+      "totalScores": {
+        "value": "value",
+        "indicator": "kiashiria",
+        "attribute": "Attribute",
+        "aggregate": "Aggregate",
+        "plan": {
+          "title": "Plan",
+          "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+        },
+        "build": {
+          "title": "Build",
+          "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+        },
+        "strengthen": {
+          "title": "Strengthen",
+          "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+        },
+        "maintain": {
+          "title": "Maintain",
+          "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+        }
+      }
+    },
+    "background": {
+      "attribute": "Sifa",
+      "questions": "Maswali",
+      "attribute_title": {
+        "heading": "Kumbukumbu kwa Sifa zilizotolewa na Elinor",
+        "name": "Jina la Sifa",
+        "description": "Kumbukumbu kwa Sifa",
+        "useIf": "Kwa Sifa"
+      },
+      "attribute_use": {
+        "1": "Unataka kuelewa iwapo mipaka ya MA imeanzishwa vizuri.",
+        "2": "Ungependa uelewa wa awali kuhusu uvunjaji wa sheria katika MA na iwapo kuna taarifa zinazoweza kuwezesha shughuli za M&E au kuchangia usimamizi wa kukabiliana.",
+        "3": "Ungependa kujua ni aina gani ya taarifa zinazoelekeza maamuzi ya usimamizi katika MA.",
+        "4": "Unataka kutathmini uwezo wa mfumo wa usimamizi wa MA.",
+        "5": "Unataka kuelewa iwapo MA inajumuisha makundi yaliyo hatarini katika maamuzi na matokeo ya usimamizi.",
+        "6": "Unataka kutathmini udhibiti wa jamii za mitaa, au upatikanaji wa, rasilimali za asili katika MA unayofanyia kazi.",
+        "7": "Unataka kuelewa iwapo kanuni zimeelezwa wazi na ni za haki.",
+        "8": "Ikiwa unataka kutathmini ubora wa utawala wa MA.",
+        "9": "Unataka kujua iwapo wale wanaohusika katika MA wanafikiri malengo yake yanafikiwa.",
+        "10": "Unataka kujua iwapo wale wanaohusika katika MA wanafikiri malengo yake ya kijamii yanafikiwa."
+      }
+    }
+  },
+  "sidebar": {
+    "minimize": "Punguza"
+  },
+  "popup": {
+    "organization": {
+      "title": "Shirika au taasisi yako ni ipi?",
+      "placeholder": "Ushirikiano",
+      "tooltip": "Maudhui ya vidokezo vya uhusiano"
+    }
+  },
+  "default": {
+    "noresults": "Hakuna matokeo",
+    "yes": "Ndiyo",
+    "no": "Hapana",
+    "accept": "Kubali",
+    "cancel": "Ghairi",
+    "delete": "Futa",
+    "create": "Unda",
+    "downloadData": "Pakua Data",
+    "published": "Imechapishwa",
+    "finalized": "Imekamilika",
+    "submit": "Wasilisha",
+    "close": "Funga",
+    "filters": {
+      "popup": {
+        "title": ""
+      }
+    },
+    "upload-file": {
+      "placeholder": "Buruta na udondoshe faili ya PDF hapa",
+      "buttons": {
+        "select": "Chagua faili",
+        "clear": "Wazi"
+      }
+    },
+    "upload-import-file": {
+      "placeholder": "Buruta na udondoshe faili ya zip hapa",
+      "buttons": {
+        "select": "Chagua faili",
+        "clear": "Wazi"
+      }
+    },
+    "upload-mapimage": {
+      "placeholder": "Buruta na udondoshe faili ya picha hapa",
+      "buttons": {
+        "select": "Chagua faili",
+        "clear": "Wazi"
+      }
+    },
+    "save": {
+      "autosave": "Data imehifadhiwa"
+    },
+    "flag": "Flag",
+    "uploadSurveyFile": "Pakia utafiti",
+    "downloadSurveyFile": "Pakua utafiti",
+    "contactAdministrator": "Wasiliana na Msimamizi",
+    "generateReport": "Toa Ripoti",
+    "version": "Toleo",
+    "description": "Maelezo",
+    "areaSize": "Ukubwa wa Eneo",
+    "required": "Inahitajika"
+  },
+  "footer": {
+    "faqs": "Maswali yanayoulizwa mara kwa mara",
+    "methodology": "Mbinu",
+    "createAccount": "Tengeneza akaunti",
+    "copyright": "© Hakimiliki",
+    "copyrightAfterYear": "Elinor. Haki zote zimehifadhiwa.",
+    "termsOfUse": "Masharti ya matumizi",
+    "privacyPolicy": "Sera ya Faragha"
+  },
+  "buttons": {
+    "seeMore": "Ona zaidi",
+    "seeLess": "Tazama kidogo"
+  }
 }
