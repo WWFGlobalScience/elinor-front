@@ -1226,8 +1226,7 @@
     "version": "Version",
     "description": "Description",
     "areaSize": "Area Size",
-    "required": "Required",
-    "tester": "Test default"
+    "required": "Required"
   },
   "footer": {
     "faqs": "FAQs",
