@@ -1,17 +1,17 @@
 {
   "statusMessaging": {
     "assessments": {
-      "publishingAssessmentError": "#N/A",
-      "publishingAssessmentSuccess": "#N/A",
-      "unpublishingAssessmentError": "#N/A",
-      "unpublishingAssessmentSuccess": "#N/A"
+      "publishingAssessmentError": "Error publishing assessment.",
+      "publishingAssessmentSuccess": "Assessment published successfully.",
+      "unpublishingAssessmentError": "Error unpublishing assessment.",
+      "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
     },
     "authentication": {
-      "logoutError": "#N/A"
+      "logoutError": "You are currently logged out."
     },
     "organizations": {
-      "organizationCreatedSuccess": "#N/A",
-      "organizationCreatedError": "#N/A"
+      "organizationCreatedSuccess": "Institution created successfully.",
+      "organizationCreatedError": "Error creating institution."
     }
   },
   "pages": {
@@ -173,7 +173,7 @@
       "meta": {
         "title": "Avaliações",
         "slug": "/assessments",
-        "offlineTitle": "#N/A"
+        "offlineTitle": "Offline Survey"
       },
       "list": {
         "title": "Avaliações",
@@ -289,14 +289,14 @@
               "government": "Governo",
               "indigenous": "Povo indígena",
               "private": "Setor privado",
-              "total": "#N/A"
+              "total": "total consulted"
             },
             "gender": {
               "title": "8. Representação de género dos titulares de direitos e outros atores consultadas",
-              "female": "#N/A",
-              "male": "#N/A",
-              "nonbinary": "#N/A",
-              "prefer_not_to_say": "#N/A",
+              "female": "Female",
+              "male": "Male",
+              "nonbinary": "Non binary",
+              "prefer_not_to_say": "Prefer not to say",
               "total": "total por gênero"
             }
           },
@@ -487,10 +487,10 @@
               "rationale": "O que esta pergunta está perguntando?"
             },
             "inactiveAttribute": "Para ativar esta pergunta, você deve ativar o atributo",
-            "offlinePopupTitle": "#N/A",
-            "offlinePopupDescription": "#N/A",
-            "withoutConnectionPopupTitle": "#N/A",
-            "withoutConnectionPopupDescription": "#N/A"
+            "offlinePopupTitle": "Offline Survey",
+            "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+            "withoutConnectionPopupTitle": "Without Internet Connection",
+            "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
           },
           "collaborators": {
             "tabButton": "Contribuidores",
@@ -607,7 +607,7 @@
         "mandatoryAttribute": "Obrigatório",
         "inactiveAttribute": "Atributo Inativo",
         "activeAttribute": "Atributo Ativo",
-        "offlineSurveyWarning": "#N/A"
+        "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
       },
       "statuses": {
         "90": "Abrir",
@@ -711,8 +711,8 @@
             "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
           },
           "button": "Generate",
-          "buttonGenerating": "#N/A",
-          "error": "#N/A"
+          "buttonGenerating": "Generating...",
+          "error": "There was an error generating the report."
         }
       },
       "outOf100": "de 100",
@@ -760,7 +760,7 @@
           "invalid_choices": "escolhas inválidas nas células: {choice_error_cells}",
           "invalid_answers": "respostas inválidas",
           "answer_save": "erro ao salvar respostas no banco de dados",
-          "detail": "#N/A"
+          "detail": "You are not allowed to perform this action"
         }
       },
       "roles": {
@@ -819,13 +819,13 @@
     "methodologyPage": {
       "home": {
         "meta": {
-          "title": "#N/A",
-          "slug": "#N/A",
+          "title": "Methodology",
+          "slug": "/methodology",
           "seo": {
-            "title": "#N/A",
-            "description": "#N/A",
-            "keywords": "#N/A",
-            "og_image": "#N/A"
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "og_image": ""
           }
         }
       },
@@ -1069,11 +1069,11 @@
         "plan": "Planejar",
         "build": "Construir",
         "strengthen": "Fortalecer",
-        "mantain": "#N/A"
+        "mantain": "Mantain"
       },
       "popup": {
         "managedArea": "Área de Manejo",
-        "view": "#N/A"
+        "view": "View Menaged Area"
       },
       "title": "MAPA",
       "boxList": {
@@ -1144,25 +1144,25 @@
       }
     },
     "background": {
-      "attribute": "#N/A",
-      "questions": "#N/A",
+      "attribute": "Attribute",
+      "questions": "Questions",
       "attribute_title": {
-        "heading": "#N/A",
-        "name": "#N/A",
-        "description": "#N/A",
-        "useIf": "#N/A"
+        "heading": "A summary of the attributes measured with Elinor",
+        "name": "Attribute name",
+        "description": "Attribute description",
+        "useIf": "Use this attribute if…"
       },
       "attribute_use": {
-        "1": "#N/A",
-        "2": "#N/A",
-        "3": "#N/A",
-        "4": "#N/A",
-        "5": "#N/A",
-        "6": "#N/A",
-        "7": "#N/A",
-        "8": "#N/A",
-        "9": "#N/A",
-        "10": "#N/A"
+        "1": "You wish to understand whether the boundaries of the MA are well established.",
+        "2": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.",
+        "3": "You would like to know what sort of information informs management decisions in the MA.",
+        "4": "You wish to assess the capacity of the MA’s management system.",
+        "5": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.",
+        "6": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.",
+        "7": "You wish to understand whether the regulations are clearly stated and fair.",
+        "8": "If you want to assess the quality of MA governance.",
+        "9": "You wish to know whether those involved in the MA think its objectives are being achieved.",
+        "10": "You wish to know whether those involved in the MA think its social objectives are being achieved."
       }
     }
   },

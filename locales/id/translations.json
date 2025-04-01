@@ -1,1244 +1,1244 @@
 {
   "statusMessaging": {
     "assessments": {
-      "publishingAssessmentError": "#N/A",
-      "publishingAssessmentSuccess": "#N/A",
-      "unpublishingAssessmentError": "#N/A",
-      "unpublishingAssessmentSuccess": "#N/A"
+      "publishingAssessmentError": "Error publishing assessment.",
+      "publishingAssessmentSuccess": "Assessment published successfully.",
+      "unpublishingAssessmentError": "Error unpublishing assessment.",
+      "unpublishingAssessmentSuccess": "Assessment unpublished successfully."
     },
     "authentication": {
-      "logoutError": "#N/A"
+      "logoutError": "You are currently logged out."
     },
     "organizations": {
-      "organizationCreatedSuccess": "#N/A",
-      "organizationCreatedError": "#N/A"
+      "organizationCreatedSuccess": "Institution created successfully.",
+      "organizationCreatedError": "Error creating institution."
     }
   },
   "pages": {
     "home": {
       "meta": {
-        "title": "Beranda",
-        "slug": "0",
+        "title": "Lar",
+        "slug": "",
         "seo": {
-          "title": "0",
-          "description": "0",
-          "keywords": "0",
-          "og_image": "0"
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
         }
       },
       "header": {
-        "aboutLink": "Tentang",
-        "faqsLink": "FAQ",
-        "methodologyLink": "Metodologi",
-        "contactLink": "Kontak",
-        "createAccountLink": "Buat Akun",
-        "signOut": "Keluar",
-        "profile": "Profil"
+        "aboutLink": "Sobre",
+        "faqsLink": "Perguntas frequentes",
+        "methodologyLink": "Metodologia",
+        "contactLink": "Contato",
+        "createAccountLink": "Criar uma conta",
+        "signOut": "Sair",
+        "profile": "Perfil"
       },
       "public": {
-        "signInTitle": "MASUK",
-        "signInSubtitle": "Gunakan nama pengguna atau email dan kata sandi Anda untuk mengakses Elinor",
-        "signInTitleAndCreateAccountSeparator": " atau ",
-        "createAccountLink": "buat akun",
-        "resendVerificationLink": "Kirim Ulang",
-        "usernameInput": "Nama Pengguna atau Email",
-        "passwordInput": "Kata Sandi",
-        "rememberMeCheckbox": "Ingat saya",
-        "forgotPasswordLink": "Lupa kata sandi?",
-        "signInButton": "Masuk",
+        "signInTitle": "ENTRAR",
+        "signInSubtitle": "Use seu nome de usuário ou e-mail e senha para acessar Elinor",
+        "signInTitleAndCreateAccountSeparator": " ou ",
+        "createAccountLink": "criar conta",
+        "resendVerificationLink": "Reenviar",
+        "usernameInput": "Nome de usuário ou e-mail",
+        "passwordInput": "Senha",
+        "rememberMeCheckbox": "Lembre de mim",
+        "forgotPasswordLink": "Esqueceu sua senha?",
+        "signInButton": "Entrar",
         "alerts": {
           "emailVerificationSent": {
-            "title": "Verifikasi email telah dikirim!",
-            "subtitle": "Anda akan menerima pesan untuk memverifikasi email Anda"
+            "title": "Verificação de e-mail enviada!",
+            "subtitle": "Você receberá uma mensagem para verificar seu e-mail"
           },
           "emailVerificationRequired": {
-            "title": "Verifikasi email diperlukan!",
-            "subtitle": "Tidak menerima email verifikasi? Jika tidak, kirim ulang"
+            "title": "Verificação de e-mail necessária!",
+            "subtitle": "Você não recebeu o e-mail de verificação? Se não reenviar"
           },
           "passwordChangedSuccessfully": {
-            "title": "Kata sandi berhasil diubah!",
-            "subtitle": "Sekarang Anda dapat masuk dengan kata sandi baru"
+            "title": "Senha alterada com sucesso!",
+            "subtitle": "Agora você pode acessar com a nova senha."
           },
           "emailVerifiedSuccessfully": {
-            "title": "Email berhasil diverifikasi!",
-            "subtitle": "Sekarang Anda dapat masuk dengan kredensial Anda"
+            "title": "E-mail verificado com sucesso!",
+            "subtitle": "Agora você pode acessar com suas credenciais."
           },
           "profileUpdatedSuccessfully": {
-            "title": "Profil berhasil diperbarui!",
-            "subtitle": "Sekarang data profil Anda sudah terbaru"
+            "title": "Perfil atualizado com sucesso!",
+            "subtitle": "Agora os dados do seu perfil estão atualizados."
           },
           "accountDeletedSuccessfully": {
-            "title": "Akun berhasil dihapus!",
-            "subtitle": "Untuk mengembalikan akun Anda, hubungi administrator elinor"
+            "title": "Conta excluída com sucesso!",
+            "subtitle": "Para restaurar sua conta, entre em contato com os administradores da Elinor"
           }
         },
         "content": {
           "introduction": {
-            "text": "Elinor adalah alat pemantauan sumber terbuka dan gratis yang membantu pengguna mengumpulkan, menyimpan, berbagi, dan menggunakan data tentang tata kelola dan pengelolaan lingkungan untuk mendukung konservasi berbasis wilayah yang lebih efektif.",
-            "createAccountLink": "Buat Akun"
+            "text": "Elinor é uma ferramenta de monitoramento gratuita e de código aberto que ajuda os usuários a coletar, armazenar, compartilhar e usar dados sobre governança e gestão ambiental para apoiar uma conservação baseada em áreas mais eficaz.",
+            "createAccountLink": "Criar uma conta"
           },
           "explanation": {
-            "title": "MENGAPA SAYA HARUS MENGGUNAKANNYA?",
-            "paragraph1": "Elinor dapat diterapkan baik sebagai penilaian lapangan dengan fasilitator terlatih atau sebagai alat berbasis meja yang memanfaatkan pengetahuan lokal dan praktisi.",
-            "paragraph2": "Pertanyaan dalam Elinor bersifat tingkat tinggi, mencakup berbagai topik dan dapat membantu pemangku kepentingan memahami lebih baik masalah yang terkait dengan tata kelola dan pengelolaan wilayah yang dilindungi atau dikelola.",
+            "title": "POR QUE DEVO USAR?",
+            "paragraph1": "O Elinor pode ser aplicado como uma avaliação baseada em campo com um facilitador treinado ou como uma ferramenta documental que aproveita o conhecimento local e profissional.",
+            "paragraph2": "As questões da Elinor são de alto nível, abrangendo uma ampla gama de tópicos e podem ajudar as detentores de direitos e outros atores a compreender melhor as questões relacionadas à governança e gestão equitativas de áreas sob proteção ou gestão.",
             "trackingChange": {
-              "title": "MELACAK PERUBAHAN",
-              "text": "Elinor dirancang terutama untuk membantu melacak perubahan dari waktu ke waktu, sehingga dapat digunakan pada setiap tahap dalam siklus proyek untuk:",
-              "list": "<li>Menunjukkan kesesuaian situs untuk berbagai jenis intervensi</li><li>Menyoroti area yang memerlukan intervensi yang lebih fokus untuk meningkatkan upaya implementasi.</li><li>Mengundang pemangku kepentingan untuk merenung secara kolaboratif tentang berbagai masalah penting untuk konservasi berbasis wilayah</li>"
+              "title": "MUDANÇA DE RASTREAMENTO",
+              "text": "Elinor foi projetado principalmente para ajudar a monitorar mudanças ao longo do tempo, portanto pode ser usado em qualquer estágio do ciclo do projeto para:",
+              "list": "<li>Indicar a adequação de um local para diferentes tipos de intervenções</li><li>Destacar áreas que requerem intervenções mais focadas para melhorar os esforços de implementação.</li><li>Convidar as detentores de direitos e outros atores a refletirem de forma colaborativa sobre uma ampla gama de questões importantes para a conservação baseada em área</li>"
             }
           },
           "elinor": {
-            "title": "Untuk Menghormati",
-            "subtitle": "Elinor ‚ÄúLin‚Äù Ostrom",
-            "paragraph1": "Elinor Ostrom adalah wanita pertama yang memenangkan Hadiah Nobel dalam ekonomi pada tahun 2009, tetapi warisannya melampaui kehormatan tunggal itu. Ostrom dan rekan-rekannya menentang narasi dominan tentang tragedi kepemilikan bersama (yang berargumen bahwa individu mengejar kepentingan mereka sendiri bahkan ketika bertentangan dengan kebaikan bersama‚Äîdibuat terkenal oleh seorang ahli ekologi yang merupakan rasialis dan eugenis yang dikenal). Teori Ostrom tentang tata kelola kepemilikan bersama membuktikan bahwa planet kita dapat dilindungi melalui komunitas, kolaborasi, dan kerjasama.",
-            "paragraph2": "Penelitian tentang tata kelola pengelolaan sumber daya bersama mendorong batas-batas ilmu pengetahuan dan menantang pembagian biasa antar disiplin ilmu. Bekerja dalam kemitraan sejati dengan orang lain yang memahami dunia secara berbeda, Ostrom dan koleganya membuka jalan bagi komunitas penelitian baru dan tubuh pengetahuan yang merangkul keragaman dan sifat saling terkait dari sistem manusia dan alam.",
-            "paragraph3": "Warisan Ostrom membentuk cara kita bekerja hari ini dalam konservasi, dan dengan menghormatinya dalam pekerjaan kita, kami berharap wawasannya dapat membantu kita semua lebih baik mendukung baik komunitas maupun sistem tata kelola yang melindungi sumber daya alam kita sekarang dan di masa depan.",
+            "title": "EM HONRA",
+            "subtitle": "Elinor “Lin” Ostrom",
+            "paragraph1": "Elinor Ostrom foi a primeira mulher a ganhar o Prémio Nobel de Economia em 2009, mas o seu legado vai muito além dessa honra singular. Ostrom e os seus colegas contrariaram a narrativa dominante em torno da tragédia dos comuns (que argumentava que os indivíduos perseguem os seus próprios interesses mesmo quando estes vão contra o bem colectivo – que ficou famoso por um ecologista que era um conhecido racista e eugenista). A teoria de Ostrom sobre governar os bens comuns provou que o nosso planeta poderia ser protegido através da comunidade, colaboração e cooperação.",
+            "paragraph2": "A investigação sobre a governação da gestão de recursos comuns ultrapassou os limites da ciência e desafiou as divisões habituais entre disciplinas. Trabalhando em verdadeira parceria com outras pessoas que entendiam o mundo de maneiras diferentes, Ostrom e seus colegas abriram caminho para uma nova comunidade de pesquisa e corpo de conhecimento que abrange a diversidade e a natureza interligada dos sistemas humanos e naturais.",
+            "paragraph3": "O legado de Ostrom molda a forma como trabalhamos hoje na conservação e, ao homenageá-la no nosso trabalho, esperamos que as suas ideias possam ajudar-nos a todos a apoiar melhor as comunidades e os sistemas de governação que protegem os nossos recursos naturais agora e no futuro.",
             "quote": {
-              "text": "Sedikit demi sedikit, bit demi bit, keluarga demi keluarga, begitu banyak kebaikan yang bisa dilakukan di banyak tingkatan.",
+              "text": "“Pouco a pouco, pouco a pouco, família por família, tanto bem pode ser feito em tantos níveis.”",
               "author": "ELINOR OSTROM"
             }
           },
           "faqs": {
-            "title": "FAQ",
-            "text": "Baru mulai dengan Elinor atau ingin belajar lebih banyak tentang kasus penggunaan dan aplikasi umum? Kunjungi bagian FAQ untuk melihat pertanyaan umum ini dijawab.",
-            "button": "Pergi ke FAQ"
+            "title": "Perguntas frequentes",
+            "text": "Está apenas começando com Elinor ou gostaria de saber mais sobre casos de uso e aplicativos comuns? Visite a seção FAQ para ver essas perguntas comuns respondidas.",
+            "button": "Vá para perguntas frequentes"
           },
           "methodology": {
-            "title": "METODOLOGI",
-            "text": "Pelajari lebih lanjut tentang bagaimana Anda dapat menggunakan penilaian Elinor dan mengunduh protokol lapangan dan alat penilaian.",
-            "text2": "Elinor mencakup 35 pertanyaan di 10 atribut tata kelola dan pengelolaan. Setiap pertanyaan dinilai 0-3 dan skor tersebut sama-sama berkontribusi pada skor atribut mereka. Sebagai gantinya, skor atribut sama-sama berkontribusi pada skor keseluruhan. Bergantung pada skor yang diberikan, Elinor menyarankan langkah-langkah aksi yang berbeda, termasuk Rencana, Bangun, Perkuat, dan Pertahankan. Penting untuk dicatat bahwa meskipun skor ini memberikan wawasan penting, mereka harus digunakan bersama dengan data kualitatif yang dimasukkan ke dalam Elinor saat memutuskan tindakan manajemen adaptif apa yang harus diambil.",
-            "button": "Pergi ke Metodologi",
-            "score": "Skor",
-            "plan": "Rencana",
-            "build": "Bangun",
-            "strengthen": "Perkuat",
-            "maintain": "Pertahankan"
+            "title": "METODOLOGIA",
+            "text": "Saiba mais sobre como você pode usar a avaliação Elinor e baixe o protocolo de campo e a ferramenta de avaliação.",
+            "text2": "Elinor inclui 35 perguntas sobre 10 atributos de governança e gestão. Cada pergunta recebe uma pontuação de 0 a 3 e essas pontuações contribuem igualmente para as respectivas pontuações de atributos. Por sua vez, as pontuações dos atributos contribuem igualmente para a pontuação geral. Dependendo da pontuação dada, Elinor sugere diferentes etapas de ação, incluindo Planejar, Construir, Fortalecer e Manter. É importante observar que, embora essas pontuações forneçam informações importantes, elas devem ser usadas em conjunto com os dados qualitativos inseridos na Elinor ao decidir quais ações de gestão adaptativa tomar.",
+            "button": "Ir para Metodologia",
+            "score": "Score",
+            "plan": "Plan",
+            "build": "Build",
+            "strengthen": "Strengthen",
+            "maintain": "Maintain"
           }
         },
         "latestNews": {
-          "title": "BERITA TERKINI",
-          "readMore": "Baca lebih lanjut",
-          "seeMoreNews": "Lihat lebih banyak berita"
+          "title": "ÚLTIMAS NOTÍCIAS",
+          "readMore": "Ler mais",
+          "seeMoreNews": "Ver mais notícias"
         }
       }
     },
     "auth": {
       "registration": {
-        "title": "BUAT AKUN",
-        "subtitle": "Lengkapi formulir di bawah ini untuk mulai menggunakan Elinor",
+        "title": "CRIE A SUA CONTA AQUI",
+        "subtitle": "Preencha o formulário abaixo para começar a usar Elinor",
         "inputs": {
-          "email": "Email",
-          "password1": "Kata Sandi",
-          "password2": "Konfirmasi Kata Sandi",
-          "firstname": "Nama Depan",
-          "lastname": "Nama Belakang",
-          "username": "Nama Pengguna"
+          "email": "E-mail",
+          "password1": "Senha",
+          "password2": "ConfirmaÇão Da Senha",
+          "firstname": "Primeiro nome",
+          "lastname": "Sobrenome",
+          "username": "Nome de usuário"
         },
-        "termsOfServiceCheckbox": "Saya setuju dengan ketentuan layanan*",
-        "validationErrorTitle": "Kesalahan validasi!",
-        "createAccountButton": "Buat akun"
+        "termsOfServiceCheckbox": "Concordo com os termos de serviço*",
+        "validationErrorTitle": "Erro de validação!",
+        "createAccountButton": "Crie a sua conta aqui"
       },
       "forgotPassword": {
-        "title": "LUPA KATA SANDI",
-        "subtitle": "Masukkan email Anda untuk menerima tautan reset kata sandi",
-        "emailInput": "Email",
-        "sendEmailButton": "Kirim Email",
-        "tryAgainButton": "Coba Lagi",
+        "title": "ESQUECEU SUA SENHA",
+        "subtitle": "Digite seu e-mail para receber um link de redefinição de senha",
+        "emailInput": "E-mail",
+        "sendEmailButton": "Enviar e-mail",
+        "tryAgainButton": "Tente novamente",
         "alerts": {
           "forgotPasswordEmailSent": {
-            "title": "Email lupa kata sandi telah dikirim!",
-            "subtitle": "Periksa email Anda untuk tautan reset kata sandi"
+            "title": "Esqueci a senha do e-mail enviado!",
+            "subtitle": "Verifique seu e-mail para obter o link de redefinição de senha"
           }
         }
       },
       "resendVerificationEmail": {
-        "title": "KIRIM ULANG EMAIL VERIFIKASI",
-        "subtitle": "Masukkan email Anda untuk menerima email verifikasi baru",
-        "emailInput": "Email",
-        "sendEmailButton": "Kirim Email",
-        "tryAgainButton": "Coba Lagi"
+        "title": "REENVIAR EMAIL DE VERIFICAÇÃO",
+        "subtitle": "Digite seu e-mail para receber uma nova verificação de e-mail",
+        "emailInput": "E-mail",
+        "sendEmailButton": "Enviar e-mail",
+        "tryAgainButton": "Tente novamente"
       },
       "resetPassword": {
-        "title": "RESET KATA SANDI",
-        "subtitle": "Masukkan kata sandi baru di bawah ini",
+        "title": "REDEFINIR SENHA",
+        "subtitle": "Digite uma nova senha abaixo",
         "error": {
-          "title": "Kesalahan!"
+          "title": "Erro!"
         },
-        "password1Input": "Kata Sandi",
-        "password2Input": "Konfirmasi Kata Sandi",
-        "changePasswordButton": "Reset kata sandi"
+        "password1Input": "Senha",
+        "password2Input": "ConfirmaÇão Da Senha",
+        "changePasswordButton": "Redefinir senha"
       }
     },
     "assessments": {
       "meta": {
-        "title": "Penilaian",
+        "title": "Avaliações",
         "slug": "/assessments",
-        "offlineTitle": "#N/A"
+        "offlineTitle": "Offline Survey"
       },
       "list": {
-        "title": "Penilaian",
-        "total": "Menampilkan",
-        "totalPlural": "penilaian",
-        "totalSingular": "penilaian",
-        "myRole": "Peran Saya",
-        "viewButton": "Lihat",
-        "editButton": "Edit",
-        "createButton": "Buat Penilaian",
-        "downloadButton": "Unduh Semua",
-        "year": "Tahun",
-        "countries": "Negara",
+        "title": "Avaliações",
+        "total": "Exibindo ",
+        "totalPlural": "avaliações",
+        "totalSingular": "avaliação",
+        "myRole": "Minha função",
+        "viewButton": "Visualizar",
+        "editButton": "Editar",
+        "createButton": "Criar avaliação",
+        "downloadButton": "Baixar tudo",
+        "year": "Ano",
+        "countries": "Países",
         "create": {
           "popup": {
-            "title": "Buat Penilaian",
+            "title": "Criar avaliação",
             "labels": {
-              "name": "Nama penilaian",
-              "year": "Pilih Tahun"
+              "name": "Nome da avaliação",
+              "year": "Selecione o ano"
             },
             "placeholders": {
-              "name": "Nama penilaian"
+              "name": "Nome da avaliação"
             },
-            "nameCriteria": "Masukkan nama yang singkat dan mudah diingat seperti Penilaian Tahunan Tsavo 2021",
-            "submit": "Buat Penilaian"
+            "nameCriteria": "Insira um nome curto e fácil de lembrar, como Avaliação Anual Tsavo 2021",
+            "submit": "Criar avaliação"
           }
         },
         "filters": {
-          "search": "Cari berdasarkan nama penilaian atau nama kawasan yang dikelola",
-          "button": "Filter",
+          "search": "Pesquise por nome de avaliação ou nome de área gerenciada",
+          "button": "Filtros",
           "popup": {
-            "title": "Filter penilaian",
+            "title": "Filtrar avaliações",
             "labels": {
-              "countries": "berdasarkan Negara",
-              "year": "berdasarkan Tahun",
-              "status": "berdasarkan Publikasi"
+              "countries": "por Países",
+              "year": "por ano",
+              "status": "por publicação"
             },
             "placeholders": {
-              "countries": "Negara",
-              "year": "0",
-              "status": "0"
+              "countries": "País",
+              "year": "",
+              "status": ""
             },
-            "reset": "Reset",
-            "apply": "Terapkan filter"
+            "reset": "Reiniciar",
+            "apply": "Aplicar filtros"
           }
         },
         "type": {
-          "own": "Anggota",
-          "all": "Semua"
+          "own": "Membro",
+          "all": "Todos"
         },
         "aggregateReport": {
-          "button": "Laporan agregat",
-          "title": "Buat Laporan Agregat",
-          "subtitle": "Pilih Penilaian untuk Diagregat",
-          "byManagementAreas": "berdasarkan KA",
-          "byCountries": "berdasarkan Negara",
-          "byYear": "berdasarkan Tahun",
-          "byType": "berdasarkan Jenis penilaian",
-          "year": "Tahun",
-          "giveName": "Berikan nama",
-          "giveNamePlaceholder": "Nama di sini",
-          "assessments": "Penilaian yang Dipilih",
-          "create": "Buat Laporan Agregat",
-          "covering": "Penilaian yang mencakup",
+          "button": "Relatório agregado",
+          "title": "Criar Relatório Agregado",
+          "subtitle": "Selecionar Avaliações para Agregar",
+          "byManagementAreas": "por Áreas de Manejo",
+          "byCountries": "por Países",
+          "byYear": "por Ano",
+          "byType": "por Tipo de avaliação",
+          "year": "Ano",
+          "giveName": "Dê um nome",
+          "giveNamePlaceholder": "Nome aqui",
+          "assessments": "Avaliações Selecionadas",
+          "create": "Criar Relatório Agregado",
+          "covering": "Avaliações abrangendo",
           "coveringHA": "ha",
-          "filtersSelected": "Filter yang dipilih",
-          "managementAreaNoOptions": "Ketik nama KA",
-          "managementAreaNoResults": "Tidak ada KA yang cocok ditemukan",
-          "selectedAssessmentsError": "Anda harus memilih setidaknya 1 penilaian",
-          "nameRequiredError": "Nama laporan diperlukan",
-          "nameLengthError": "Nama laporan terlalu panjang"
+          "filtersSelected": "Filtros selecionados",
+          "managementAreaNoOptions": "Digite o nome da Área de Manejo",
+          "managementAreaNoResults": "Nenhuma Área de Manejo correspondente encontrada",
+          "selectedAssessmentsError": "Você precisa selecionar pelo menos 1 avaliação",
+          "nameRequiredError": "O nome do relatório é necessário",
+          "nameLengthError": "O nome do relatório é muito longo"
         }
       },
       "view": {
-        "title": "Lihat penilaian",
-        "year": "Tahun",
+        "title": "Ver avaliação",
+        "year": "Ano",
         "tabs": {
           "info": {
-            "tabButton": "Info",
-            "title": "Lihat Penilaian",
-            "managementPlanFileTitle": "Dokumen rencana pengelolaan",
+            "tabButton": "Informações",
+            "title": "Ver avaliação",
+            "managementPlanFileTitle": "Documento do plano de manejo",
             "buttons": {
-              "managementPlanFile": "Unduh"
+              "managementPlanFile": "Download"
             },
             "labels": {
-              "managementAreaName": "Nama Kawasan yang Dikelola",
-              "protectedArea": "Nama PA/CA yang lebih besar di mana area fokus ini terkandung",
-              "dateEstablished": "Tanggal pendirian formal (jika berlaku)",
-              "reportedSize": "Ukuran KA (ha)",
-              "containedBy": "Nama Kawasan yang Dikelola terkait",
-              "governanceType": "Jenis tata kelola KA (kotak centang)",
-              "managementAuthority": "Nama otoritas pengelolaan",
-              "recognitionLevel": "Apakah hak otoritas KA secara formal diakui di‚Ä¶ \n\n(kotak centang)",
-              "supportSources": "Apakah otoritas pengelolaan KA menerima dukungan teknis, keuangan atau jenis lain dari kelompok atau organisasi berikut?",
-              "countries": "Negara/Negara tempat KA berada",
-              "regions": "Negara bagian/Provinsi tempat KA berada",
+              "managementAreaName": "Nome da Área de Manejo",
+              "protectedArea": "Nome do PA/CA maior, esta área focal está contida em",
+              "dateEstablished": "Data de estabelecimento formal (se aplicável)",
+              "reportedSize": "Tamanho da Área de Manejo (ha)",
+              "containedBy": "Nome da Área de Manejo relacionada",
+              "governanceType": "Tipo de governança Área de Manejo (caixa de seleção)",
+              "managementAuthority": "Nome da autoridade de gestão",
+              "recognitionLevel": "Os direitos da autoridade Área de Manejo são formalmente reconhecidos em… (caixa de seleção)",
+              "supportSources": "A autoridade de gestão da Área de Manejo recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+              "countries": "País/países onde Área de Manejo está localizada",
+              "regions": "Estado(s)/província(s) onde Área de Manejo está localizado",
               "zones": {
-                "title": "ZONA",
-                "zoneName": "Nama zona",
-                "zoneLevel": "Apakah zona ini membatasi kegiatan atau penggunaan?",
-                "zoneDescription": "Deskripsi dan Atribut"
+                "title": "ZONAS",
+                "zoneName": "Nome da zona",
+                "zoneLevel": "Esta zona restringe alguma atividade ou uso?",
+                "zoneDescription": "Descrição e atributos"
               }
             },
             "map": {
-              "title": "Peta atau File Spasial dari KA",
-              "subtitle": "Informasi geospasial"
+              "title": "Mapa ou Arquivo Espacial da Área de Manejo",
+              "subtitle": "Informação geoespacial"
             },
             "people": {
-              "title": "7. Jumlah orang yang terlibat dari kelompok pemangku kepentingan kunci",
-              "community": "Komunitas lokal",
-              "ngo": "NGO",
-              "academic": "Akademik",
-              "government": "Pemerintah",
-              "indigenous": "Masyarakat adat",
-              "private": "Sektor swasta",
-              "total": "total yang dikonsultasikan"
+              "title": "7. Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
+              "community": "Comunidade local",
+              "ngo": "ONG",
+              "academic": "Acadêmica",
+              "government": "Governo",
+              "indigenous": "Povo indígena",
+              "private": "Setor privado",
+              "total": "total consulted"
             },
             "gender": {
-              "title": "8. Representasi gender dari pemangku kepentingan yang dikonsultasikan",
-              "female": "#N/A",
-              "male": "#N/A",
-              "nonbinary": "#N/A",
-              "prefer_not_to_say": "#N/A",
-              "total": "total berdasarkan gender"
+              "title": "8. Representação de género dos titulares de direitos e outros atores consultadas",
+              "female": "Female",
+              "male": "Male",
+              "nonbinary": "Non binary",
+              "prefer_not_to_say": "Prefer not to say",
+              "total": "total por gênero"
             }
           },
           "survey": {
-            "tabButton": "Survei",
-            "title": "Survei",
+            "tabButton": "A pesquisa",
+            "title": "A pesquisa",
             "attributes": {
-              "mandatory": "Wajib",
-              "active": "Atribut aktif",
-              "inactive": "Atribut tidak aktif"
+              "mandatory": "Mandatory",
+              "active": "Active attribute",
+              "inactive": "Inactive attribute"
             }
           },
           "collaborators": {
-            "tabButton": "Kolaborator",
-            "title": "Kolaborator",
-            "description": "Kolaborator adalah orang-orang yang bekerja dengan Anda dalam penilaian ini atau perlu memiliki akses ke data.",
+            "tabButton": "Contribuidores",
+            "title": "Contribuidores",
+            "description": "Colaboradores são pessoas que trabalham com você nesta avaliação ou que precisam ter acesso aos dados.",
             "table": {
-              "name": "Nama",
-              "admin": "Admin",
-              "contributor": "Kontributor",
-              "observer": "Pengamat"
+              "name": "Nome",
+              "admin": "Administrador",
+              "contributor": "Contribuidores",
+              "observer": "Observador"
             }
           }
         }
       },
       "edit": {
-        "title": "Edit penilaian",
-        "year": "Tahun",
-        "saveButton": "Simpan",
+        "title": "Editar avaliação",
+        "year": "Ano",
+        "saveButton": "Salvar",
         "tabs": {
-          "nextStep": "Langkah selanjutnya",
+          "nextStep": "Próxima Etapa",
           "data": {
-            "tabButton": "Data penilaian",
-            "title": "Edit Data Penilaian",
+            "tabButton": "Dados de avaliação",
+            "title": "Editar dados de avaliação",
             "labels": {
-              "year": "Pilih Tahun",
-              "name": "Nama penilaian",
-              "organization": "Nama lembaga yang terkait dengan penilaian ini",
-              "personResponsibleRole": "Peran orang yang bertanggung jawab menyelesaikan Penilaian ini",
-              "collectionMethods": "Bagaimana informasi dalam penilaian ini dikumpulkan?",
-              "collectionMethodsText": "Rasional untuk penilaian (misalnya, pemantauan tahunan, baseline proyek)",
-              "consentGiven": "Apakah seseorang dalam otoritas tata kelola telah memberikan persetujuannya agar penilaian ini dapat dilakukan?",
-              "consentGivenWritten": "Apakah otoritas tata kelola telah memberikan persetujuan tertulis?",
+              "year": "Selecione o ano",
+              "name": "Nome da avaliação",
+              "organization": "Nome da instituição associada a esta avaliação",
+              "personResponsibleRole": "Papel da pessoa responsável por concluir esta avaliação",
+              "collectionMethods": "Como foi recolhida a informação nesta avaliação?",
+              "collectionMethodsText": "Justificativa para avaliação (por exemplo, monitoramento anual, linha de base do projeto)",
+              "consentGiven": "Alguém na autoridade de governação deu o seu consentimento para que esta avaliação fosse realizada?",
+              "consentGivenWritten": "A autoridade de governança forneceu consentimento por escrito?",
               "managementPlan": {
-                "title": "Unggah File Rencana Pengelolaan",
-                "maxSize": "ukuran maks: 100M",
-                "maxUploadTime": "waktu unggah maks: 5 menit (jadi jangan coba unggah besar di koneksi lambat)",
-                "anyFile": "bisa file apa saja"
+                "title": "Carregar um arquivo de plano de manejo",
+                "maxSize": "Tamanho máximo: 100M",
+                "maxUploadTime": "tempo máximo de upload: 5 minutos (portanto, não tente fazer uploads grandes em conexões lentas)",
+                "anyFile": "pode ser qualquer arquivo"
               }
             },
             "people": {
-              "title": "Jumlah orang yang terlibat dari kelompok pemangku kepentingan kunci",
-              "community": "Komunitas lokal",
-              "ngo": "NGO",
-              "academic": "Akademik",
-              "government": "Pemerintah",
-              "indigenous": "Masyarakat adat",
-              "private": "Sektor swasta"
+              "title": "Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
+              "community": "Comunidade local",
+              "ngo": "ONG",
+              "academic": "Acadêmica",
+              "government": "Governo",
+              "indigenous": "Pessoas indígenas",
+              "private": "Setor privado"
             },
             "gender": {
-              "title": "Representasi gender dari pemangku kepentingan yang dikonsultasikan",
-              "female": "Perempuan",
-              "male": "Laki-laki",
-              "nonBinary": "Non-biner",
-              "preferNotToSay": "Tidak ingin menyebutkan"
+              "title": "Representação de género dos titulares de direitos e outros atores consultadas",
+              "female": "Fêmea",
+              "male": "Macho",
+              "nonBinary": "Não binário",
+              "preferNotToSay": "Prefiro não dizer"
             }
           },
           "managementArea": {
-            "tabButton": "Kawasan yang Dikelola",
-            "title": "Edit Kawasan yang Dikelola",
+            "tabButton": "Área gerenciada",
+            "title": "Editar área gerenciada",
             "selector": {
-              "title": "Pilih kawasan yang dikelola",
-              "existing": "Pilih Kawasan yang Dikelola",
-              "existingGuide": "Anda dapat memilih Kawasan yang Dikelola yang sudah dibuat, atau jika Anda tidak menemukannya, Anda dapat membuat yang baru dari sini",
-              "orNew": "ATAU BUAT BARU",
-              "newButton": "Buat Kawasan yang Dikelola Baru"
+              "title": "Selecione a área gerenciada",
+              "existing": "Selecione uma área gerenciada",
+              "existingGuide": "Você pode selecionar uma área gerenciada já criada ou, se não encontrá-la, pode criar uma nova aqui",
+              "orNew": "OU CRIE UM NOVO",
+              "newButton": "Criar nova área gerenciada"
             },
             "zones": {
               "accessLevels": {
-                "OPEN_ACCESS": "Akses terbuka (terbuka untuk ekstraksi dan memasuki)",
-                "PARTIALLY_RESTRICTED": "Akses terbatas penuh (larangan ekstraksi total)",
-                "FULLY_RESTRICTED": "Terbatas Sebagian (misalnya, penutupan berkala, pembatasan berdasarkan jenis penggunaan, pembatasan berdasarkan jenis kegiatan, pembatasan spesies, pembatasan peralatan, dll.)"
+                "OPEN_ACCESS": "Acesso aberto (aberto para extração e entrada)",
+                "PARTIALLY_RESTRICTED": "Acesso totalmente restrito (proibição total de extração)",
+                "FULLY_RESTRICTED": "Parcialmente restrito (por exemplo, fechamentos periódicos, restrição por tipo de uso, restrição por tipo de atividade, restrições de espécies, restrições de equipamentos, etc.)"
               }
             },
             "recognitionLevels": {
-              "local": "Tingkat lokal",
-              "local_guide": "Diakui oleh komunitas",
-              "national": "Tingkat nasional",
-              "national_guide": "Diakui oleh pemerintah nasional",
-              "international": "Tingkat internasional",
-              "international_guide": "Apakah ada langkah konservasi berbasis wilayah lain yang efektif [OECM] yang berkontribusi pada target global"
+              "local": "Nível local",
+              "local_guide": "Reconhecido pela comunidade",
+              "national": "Nível naçional",
+              "national_guide": "Reconhecido pelo governo nacional",
+              "international": "Nível internacional",
+              "international_guide": "Existem outras medidas válidas e eficazes de conservação baseadas na área [OECM] que contribuam para as metas globais"
             },
             "labels": {
-              "title": "Zona",
-              "name": "Nama kawasan yang dikelola baru",
-              "protectedArea": "ID Terkait di Basis Data Dunia tentang Kawasan yang Dilindungi",
-              "containedBy": "Pilih Kawasan yang Dikelola lain yang terkait dengan KA ini. Jika tidak ada, lewati.",
-              "dateEstablished": "Tanggal pendirian formal (jika berlaku)",
-              "reportedSize": "Ukuran KA (ha)",
-              "managementAuthority": "Nama otoritas pengelolaan",
-              "governanceType": "Jenis tata kelola KA",
-              "objectives": "Tujuan KA",
-              "recognitionLevel": "Apakah hak otoritas KA secara formal diakui di‚Ä¶",
-              "stakeholderGroups": "Jumlah orang yang terlibat dari kelompok pemangku kepentingan kunci",
-              "supportSources": "Apakah otoritas pengelolaan KA menerima dukungan teknis, keuangan atau jenis lain dari kelompok atau organisasi berikut?",
-              "countries": "Negara/Negara tempat KA berada",
-              "regions": "Negara bagian/Provinsi tempat KA berada",
-              "zones": "Apakah KA ini memiliki zona?",
-              "zoneName": "Nama zona",
-              "zoneLevel": "Pilih tingkat akses yang paling sesuai dengan zona ini",
-              "protectedAreaWdpaIdHelp": "ID WDPA dapat ditemukan di situs web planet yang dilindungi.",
-              "protectedAreaWdpaIdHelpLink": "Klik di sini untuk mencari",
-              "geospatialSources": "Harap daftarkan sumber informasi geospasial",
-              "yes": "Ya",
-              "no": "Tidak"
+              "title": "Zonas",
+              "name": "Nome da nova área gerenciada",
+              "protectedArea": "ID Associada na Base de Dados Mundial sobre Áreas Protegidas",
+              "containedBy": "Selecione quaisquer outras Áreas Gerenciadas relacionadas a esta Área de Manejo. Se não houver, pule.",
+              "dateEstablished": "Data de estabelecimento formal (se aplicável)",
+              "reportedSize": "Tamanho da Área de Manejo (ha)",
+              "managementAuthority": "Nome da autoridade de gestão",
+              "governanceType": "Tipo de governança Área de Manejo",
+              "objectives": "Objetivos da Área de Manejo",
+              "recognitionLevel": "Os direitos da autoridade Área de Manejo são formalmente reconhecidos no…",
+              "stakeholderGroups": "Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
+              "supportSources": "A autoridade de gestão da Área de Manejo recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+              "countries": "País/países onde Área de Manejo está localizada",
+              "regions": "Estado(s)/província(s) onde Área de Manejo está localizado",
+              "zones": "Este Área de Manejo tem zonas?",
+              "zoneName": "Nome da zona",
+              "zoneLevel": "Selecione o nível de acesso que melhor descreve esta zona",
+              "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
+              "protectedAreaWdpaIdHelpLink": "Click here to search",
+              "geospatialSources": "Liste a fonte das informações geoespaciais",
+              "yes": "Sim",
+              "no": "Não"
             },
             "buttons": {
-              "addZone": "Tambahkan zona baru"
+              "addZone": "Adicionar uma nova zona"
             },
             "map": {
-              "polygonParagraph1": "Tunjukkan batas Kawasan yang Dikelola",
-              "polygonParagraph2": "Gunakan alat di atas peta untuk membuat Poligon Kawasan yang Dikelola",
-              "drawPolygonStartText": "Klik di atas Peta untuk membuat poligon",
-              "drawPolygonCloseText": "Untuk menutup poligon klik di atas Titik yang dibuat",
-              "newPolygon": "Buat poligon baru",
-              "deletePolygon": "Hapus poligon yang dipilih",
-              "help": "Klik di atas peta untuk menggambar poligon",
-              "area": "Area",
-              "indicateBoundaries": "Tunjukkan batas Kawasan yang Dikelola",
-              "spatialFile": "Unggah file area spasial",
-              "preferredMethod": "METODE YANG DISUKAI",
-              "preferredMethodText": "Unggah file spasial dalam format Shapefile",
-              "spatialFileAndMapImageSeparator": "ATAU",
-              "imageFile": "Unggah file gambar peta"
+              "polygonParagraph1": "Indique os limites da Área Gerenciada",
+              "polygonParagraph2": "Use as ferramentas sobre o mapa para criar um polígono da área gerenciada",
+              "drawPolygonStartText": "Clique sobre o mapa para criar um polígono",
+              "drawPolygonCloseText": "Para fechar um polígono clique sobre um ponto criado",
+              "newPolygon": "Crie um novo polígono",
+              "deletePolygon": "Excluir polígono selecionado",
+              "help": "Clique sobre o mapa para desenhar um polígono",
+              "area": "Área",
+              "indicateBoundaries": "Indique os limites da Área Gerenciada",
+              "spatialFile": "Carregar arquivo de área espacial",
+              "preferredMethod": "MÉTODO PREFERIDO",
+              "preferredMethodText": "Carregar um arquivo espacial no formato Shapefile",
+              "spatialFileAndMapImageSeparator": "OU",
+              "imageFile": "Carregar imagem do mapa"
             },
             "popups": {
               "spatialFile": {
-                "title": "Unggah File Area Peta",
-                "validatingFileFormat": "Memvalidasi format file...",
-                "fileCorrectlyFormated": "File diformat dengan benar",
-                "fileCorrectlyFormatedText": "File Anda telah berhasil diverifikasi dan siap untuk diunggah",
-                "importFileError": "Maaf, ada yang salah",
-                "formatNotSupported": "Format ini tidak didukung",
-                "tryAgain": "coba lagi",
-                "help": "<h4>File apa yang harus diunggah?</h4>Unggah file zip dari batas kawasan yang dikelola. Zip harus berisi file komponen dari shapefile dan hanya boleh satu shapefile dari batas. Jika Anda tidak memiliki jenis file yang benar, harap konversi terlebih dahulu sebelum Anda mengunggah.",
-                "condition1": "file zip yang berisi semua file shapefile yang diperlukan (atau zip dengan folder yang berisi file-file tersebut)",
+                "title": "Carregar arquivo de área do mapa",
+                "validatingFileFormat": "Validando formato de arquivo...",
+                "fileCorrectlyFormated": "O arquivo está formatado corretamente",
+                "fileCorrectlyFormatedText": "Seu arquivo foi verificado com sucesso e está pronto para upload",
+                "importFileError": "Desculpe, algo está errado",
+                "formatNotSupported": "Este formato não é suportado",
+                "tryAgain": "tente novamente",
+                "help": "<h4>Qual arquivo carregar?</h4>Carregue um shapefile compactado dos limites da área gerenciada. O zip deve conter os arquivos componentes do shapefile e deve ser apenas um shapefile do limite. Se você não tiver o tipo de arquivo correto, converta primeiro antes de fazer o upload.",
+                "condition1": "zip contendo todos os arquivos shapefile necessários (ou um zip com uma pasta contendo esses arquivos)",
                 "condition2": "<= 10MB",
-                "condition3": "shapefile saja -- termasuk semua file sampingan yang diperlukan (.shp, .shx, .dbf, .prj)",
-                "condition4": "poligon atau multipoligon",
-                "condition5": "tidak ada geometri nol, kosong, atau tidak valid lainnya"
+                "condition3": "somente shapefile - incluindo todos os arquivos secundários necessários (.shp, .shx, .dbf, .prj)",
+                "condition4": "polígono ou multipolígono",
+                "condition5": "sem geometrias nulas, vazias ou inválidas"
               },
               "imageFile": {
-                "title": "Unggah File Gambar Peta",
-                "formatNotSupported": "Format ini tidak didukung",
-                "gpsCoordinatesTitle": "Tunjukkan Koordinat GPS",
-                "gpsCoordinatesExample": "Lintang , Bujur<br>(misal 40.741895,-73.989308)",
-                "dragMapIcon": "Anda dapat Menyeret ikon di peta untuk memilih koordinat",
-                "help": "<h4>File apa yang harus diunggah?</h4>Jika Anda tidak memiliki shapefile tetapi memiliki gambar peta dari kawasan yang dikelola, Anda dapat mengunggahnya di sini dan akan diproses secara manual. "
+                "title": "Carregar arquivo de imagem do mapa",
+                "formatNotSupported": "Este formato não é suportado",
+                "gpsCoordinatesTitle": "Indicar coordenadas GPS",
+                "gpsCoordinatesExample": "Latitude, longitude<br>(por exemplo, 40.741895,-73.989308)",
+                "dragMapIcon": "Você pode arrastar o ícone no mapa para selecionar as coordenadas",
+                "help": "<h4>Qual arquivo carregar?</h4>Se você não possui um shapefile, mas possui um mapa de imagem da área gerenciada, poderá carregá-lo aqui e ele será processado manualmente."
               }
             }
           },
           "survey": {
-            "tabButton": "Survei",
-            "title": "Survei",
+            "tabButton": "A avaliação",
+            "title": "A avaliação",
             "navigator": {
-              "completed": "Selesai",
-              "outOf": "Dari"
+              "completed": "Concluído",
+              "outOf": "de"
             },
-            "uncheckAttributeTitle": "Batalkan pilihan atribut",
-            "uncheckAttributeText": "Anda membatalkan pilihan atribut yang berisi pertanyaan yang telah dijawab. Jika Anda membatalkan pilihan, semua jawaban atas pertanyaannya akan dihapus. Apakah Anda yakin ingin melanjutkan dan membatalkan pilihan atribut ini?",
+            "uncheckAttributeTitle": "Desmarcar atributo",
+            "uncheckAttributeText": "Você está desmarcando um atributo que contém perguntas respondidas. Se você o desmarcar, todas as respostas para suas perguntas serão deletadas. Tem certeza de que deseja prosseguir e desmarcar este atributo?",
             "questions": {
-              "question": "Pertanyaan",
-              "back": "Kembali ke Beranda Survei",
-              "answer": "Jawaban",
-              "score": "Skor",
-              "unknown": "tidak diketahui",
-              "dontKnow": "Tidak tahu",
-              "explanation": "Penjelasan",
-              "notCompleted": "Tidak selesai",
-              "answerQuestionButton": "Jawab pertanyaan",
-              "editQuestionButton": "Edit respons",
-              "selectAnswer": "Pilih jawaban",
-              "help": "Butuh bantuan? Lihat di bawah ini",
-              "prev": "Sebelumnya",
-              "next": "Berikutnya",
-              "information": "Persyaratan informasi",
-              "guidance": "Panduan",
-              "rationale": "Apa yang ditanyakan pertanyaan ini?"
+              "question": "Pergunta",
+              "back": "Voltar para Início da Avaliação",
+              "answer": "Resposta",
+              "score": "Pontuação",
+              "unknown": "desconhecido",
+              "dontKnow": "Não sei",
+              "explanation": "Explicação",
+              "notCompleted": "Não completado",
+              "answerQuestionButton": "Responder pergunta",
+              "editQuestionButton": "Editar resposta",
+              "selectAnswer": "Selecionar resposta",
+              "help": "Precisa de ajuda? Veja abaixo",
+              "prev": "Anterior",
+              "next": "Próximo",
+              "information": "Requisitos de informação",
+              "guidance": "Orientação",
+              "rationale": "O que esta pergunta está perguntando?"
             },
-            "inactiveAttribute": "Untuk mengaktifkan pertanyaan ini, Anda harus mengaktifkan atribut",
-            "offlinePopupTitle": "#N/A",
-            "offlinePopupDescription": "#N/A",
-            "withoutConnectionPopupTitle": "#N/A",
-            "withoutConnectionPopupDescription": "#N/A"
+            "inactiveAttribute": "Para ativar esta pergunta, você deve ativar o atributo",
+            "offlinePopupTitle": "Offline Survey",
+            "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+            "withoutConnectionPopupTitle": "Without Internet Connection",
+            "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
           },
           "collaborators": {
-            "tabButton": "Kolaborator",
-            "title": "Kolaborator",
-            "description": "Kolaborator adalah orang-orang yang terlibat dalam menyelesaikan penilaian ini atau membutuhkan akses yang tidak tersedia untuk pengguna lain",
-            "addCollaboratorButton": "Tambah kolaborator",
+            "tabButton": "Contribuidores",
+            "title": "Contribuidores",
+            "description": "Colaboradores são pessoas envolvidas na conclusão desta avaliação ou que precisam de acesso que não está disponível para outros usuários",
+            "addCollaboratorButton": "Adicionar colaborador",
             "table": {
-              "name": "Nama",
-              "admin": "Admin",
-              "contributor": "Kontributor",
-              "observer": "Pengamat"
+              "name": "Nome",
+              "admin": "Administrador",
+              "contributor": "Contribuidor",
+              "observer": "Observador"
             },
             "popups": {
               "delete": {
-                "title": "Menghapus Kolaborator",
-                "confirmationTitle": "Apakah Anda yakin?",
-                "confirmationDescription": "Dengan mengklik ya, Anda akan menghapus kolaborator sehingga mereka tidak dapat mengakses penilaian."
+                "title": "Excluindo Colaborador",
+                "confirmationTitle": "Tem certeza?",
+                "confirmationDescription": "Ao clicar em sim você removerá o colaborador impossibilitando-o de acessar a avaliação."
               },
               "add": {
-                "title": "Tambah Kolaborator",
-                "description": "Ketik beberapa karakter pertama dari nama pengguna kolaborator lalu pilih kolaborator di bawah ini dan tentukan tingkat akses yang ingin Anda berikan kepada mereka. Kolaborator harus membuat akun sebelum Anda dapat menambahkannya.",
-                "selectCollaboratorTitle": "Pilih kolaborator",
-                "selectCollaboratorLabel": "Kolaborator",
-                "roleAndPermissions": "Pilih peran & izin",
-                "submit": "Tambah kolaborator",
-                "help": "Tidak menemukan Kolaborator Anda? Mintalah mereka untuk membuat akun Elinor terlebih dahulu",
+                "title": "Adicionar colaborador",
+                "description": "Digite os primeiros caracteres do nome de usuário do colaborador, selecione o colaborador abaixo e especifique o nível de acesso que você gostaria que ele tivesse. Os colaboradores devem criar contas antes de você poder adicioná-los.",
+                "selectCollaboratorTitle": "Selecione o colaborador",
+                "selectCollaboratorLabel": "Colaborador",
+                "roleAndPermissions": "Selecione função e permissões",
+                "submit": "Adicionar colaborador",
+                "help": "Você não encontrou seu colaborador? Peça-lhes para criarem uma conta Elinor primeiro",
                 "roles": {
                   "admin": {
-                    "name": "Admin",
-                    "permission1": "Edit data Penilaian",
-                    "permission2": "Edit data Survei",
-                    "permission3": "Edit lokasi KA",
-                    "permission4": "Tambah/Edit Admin, Kontributor & Pengamat",
-                    "permission5": "Hapus Penilaian",
-                    "permission6": "Publikasikan & Batalkan publikasi Penilaian"
+                    "name": "Administrador",
+                    "permission1": "Edite os dados da avaliação",
+                    "permission2": "Editar dados da pesquisa",
+                    "permission3": "Editar localização da Área de Manejo",
+                    "permission4": "Adicionar/editar administradores, colaboradores e observadores",
+                    "permission5": "Excluir a avaliação",
+                    "permission6": "Publicar e cancelar publicação da avaliação"
                   },
                   "contributor": {
-                    "name": "Kontributor",
-                    "permission1": "Edit data Survei",
-                    "permission2": "Edit data lokasi KA",
-                    "permission3": "Lihat data Penilaian",
-                    "permission4": "Lihat data Survei",
-                    "permission5": "Lihat lokasi KA"
+                    "name": "Contribuidor",
+                    "permission1": "Edite os dados da avaliação",
+                    "permission2": "Edite os dados de localização da Área de Manejo",
+                    "permission3": "Visualizar os dados da avaliação",
+                    "permission4": "Visualizar os dados da pesquisa",
+                    "permission5": "Veja a localização da Área de Manejo"
                   },
                   "observer": {
-                    "name": "Pengamat",
-                    "permission1": "Lihat data Penilaian",
-                    "permission2": "Lihat data Survei",
-                    "permission3": "Lihat lokasi KA"
+                    "name": "Observador",
+                    "permission1": "Visualizar os dados da avaliação",
+                    "permission2": "Visualizar os dados da pesquisa",
+                    "permission3": "Veja a localização da Área de Manejo"
                   }
                 },
-                "error": "Kesalahan validasi"
+                "error": "Erro de validação"
               }
             }
           },
           "publish-settings": {
             "tabButton": {
-              "ready": "Siap untuk dipublikasikan",
-              "preparing": "Mempersiapkan untuk dipublikasikan",
-              "edit": "Edit pengaturan publikasi"
+              "ready": "Pronto para publicar",
+              "preparing": "Preparing to publish",
+              "edit": "Edit publish settings"
             },
-            "title": "Finalisasi & Publikasikan",
+            "title": "Finalizar e publicar",
             "finalize": {
-              "title": "Finalisasi",
-              "whatHappenTitle": "Apa yang terjadi ketika Anda finalisasi",
-              "whatHappenList1": "<li>Anda menandai Penilaian Anda sebagai Selesai</li><li>Anda tidak akan dapat mengedit Data Survei</li><li>Anda tidak akan dapat mengedit Data Penilaian</li><li>Penilaian Anda akan terus hanya terlihat oleh Anda dan Kolaborator Anda</li><li>Akan muncul sebagai data agregat dalam wawasan dan peta</li>",
-              "whatHappenList2": "<li>Anda masih dapat mengedit atau mengubah Kawasan yang Dikelola</li><li>Anda masih dapat menambahkan kolaborator</li><li>Anda masih dapat membatalkan publikasi Penilaian</li>",
-              "button": "Finalisasi",
-              "warning": "Peringatan!!",
-              "warningText": "Setelah finalisasi, Anda tidak dapat mengedit Data Survei atau Data Penilaian, jadi finalisasi hanya ketika Anda selesai dengan Penilaian Anda",
+              "title": "Finalizar",
+              "whatHappenTitle": "O que acontece quando você finaliza",
+              "whatHappenList1": "<li>Você marca sua avaliação como concluída</li><li>Você não poderá editar os dados da pesquisa</li><li>Você não poderá editar os dados da avaliação</li><li>Sua Avaliação continuará visível apenas para você e seus Colaboradores</li><li>Aparecerão como dados agregados em insights e mapas</li>",
+              "whatHappenList2": "<li>Você ainda pode editar ou alterar a área gerenciada</li><li>Você ainda pode adicionar colaboradores</li><li>Você ainda pode cancelar a publicação da avaliação</li>",
+              "button": "Finalizar",
+              "warning": "Aviso!!",
+              "warningText": "Depois de finalizado, você não poderá editar os dados da pesquisa ou da avaliação, portanto, finalize somente quando terminar sua avaliação",
               "popup": {
-                "title": "Finalisasi Penilaian",
-                "confirmationTitle": "Apakah Anda yakin ingin finalisasi penilaian Anda?",
-                "confirmationDescription": "Setelah finalisasi, Anda tidak dapat mengedit Data Survei atau Data Penilaian, jadi finalisasi hanya ketika Anda selesai dengan Penilaian Anda"
+                "title": "Finalizar Avaliação",
+                "confirmationTitle": "Tem certeza de que deseja finalizar sua avaliação?",
+                "confirmationDescription": "Depois de finalizado, você não poderá editar os dados da pesquisa ou da avaliação, portanto, finalize somente quando terminar sua avaliação"
               }
             },
             "publish": {
-              "title": "Publikasikan",
-              "whatHappenTitle": "Apa yang terjadi ketika Anda publikasikan",
-              "whatHappenList1": "<li>Anda membuat Penilaian Anda tersedia untuk pengguna umum</li><li>Akan muncul sebagai data agregat dalam wawasan dan peta</li>",
-              "whatHappenList2": "<li>Anda masih dapat mengedit atau mengubah Kawasan yang Dikelola</li><li>Anda masih dapat menambahkan kolaborator</li><li>Anda masih dapat membatalkan publikasi Penilaian</li>",
-              "button": "Publikasikan Penilaian",
+              "title": "Publicar",
+              "whatHappenTitle": "O que acontece quando você publica",
+              "whatHappenList1": "<li>Você disponibiliza sua avaliação para usuários públicos</li><li>Aparecerão como dados agregados em insights e mapas</li>",
+              "whatHappenList2": "<li>Você ainda pode editar ou alterar a área gerenciada</li><li>Você ainda pode adicionar colaboradores</li><li>Você ainda pode cancelar a publicação da avaliação</li>",
+              "button": "Publicar avaliação",
               "popup": {
-                "title": "Publikasikan Penilaian",
-                "confirmationTitle": "Apakah Anda yakin ingin publikasikan penilaian Anda?",
-                "confirmationDescription": "Setelah dipublikasikan, Anda tidak dapat mengedit Data Survei atau Data Penilaian, jadi publikasikan hanya ketika Anda selesai dengan Penilaian Anda"
+                "title": "Publicar avaliação",
+                "confirmationTitle": "Tem certeza de que deseja publicar sua avaliação?",
+                "confirmationDescription": "Depois de publicado, você não poderá editar os dados da pesquisa ou da avaliação; portanto, publique apenas quando terminar sua avaliação"
               },
               "alert": {
                 "popup": {
-                  "title": "Publikasikan Penilaian",
-                  "confirmationTitle": "Anda harus finalisasi penilaian Anda untuk dapat mempublikasikannya",
-                  "confirmationDescription": "Kembali dan finalisasi terlebih dahulu"
+                  "title": "Publicar avaliação",
+                  "confirmationTitle": "Você deve finalizar sua avaliação para poder publicar",
+                  "confirmationDescription": "Volte e finalize primeiro"
                 }
               }
             },
             "unpublish": {
-              "title": "Batalkan Publikasi",
-              "whatHappenTitle": "Apa yang terjadi ketika Anda batalkan publikasi",
-              "whatHappenList1": "<li>Penilaian tidak akan terlihat oleh non-kolaborator</li>",
-              "whatHappenList2": "<li>Anda masih dapat mempublikasikan Penilaian</li>",
-              "button": "Batalkan Publikasi Penilaian",
+              "title": "Cancelar publicação",
+              "whatHappenTitle": "O que acontece quando você cancela a publicação",
+              "whatHappenList1": "<li>A avaliação não ficará visível para não colaboradores</li>",
+              "whatHappenList2": "<li>Você ainda pode publicar a Avaliação</li>",
+              "button": "Cancelar publicação da avaliação",
               "popup": {
-                "title": "Batalkan Publikasi Penilaian",
-                "confirmationTitle": "Apakah Anda yakin ingin batalkan publikasi penilaian Anda?",
-                "confirmationDescription": "Konfirmasi"
+                "title": "Cancelar publicação da avaliação",
+                "confirmationTitle": "Tem certeza de que deseja cancelar a publicação da sua avaliação?",
+                "confirmationDescription": "confirme"
               }
             }
           }
         },
-        "attributes": "Atribut",
-        "seeQuestions": "Lihat Pertanyaan",
-        "optionalAttributesTitle": "Atribut Opsional",
-        "optionalAttributesDescription": "Pilih atribut yang sesuai dengan Penilaian Anda",
-        "mandatoryAttribute": "Wajib",
-        "inactiveAttribute": "Atribut tidak aktif",
-        "activeAttribute": "Atribut aktif",
-        "offlineSurveyWarning": "#N/A"
+        "attributes": "Atributos",
+        "seeQuestions": "Ver Perguntas",
+        "optionalAttributesTitle": "Atributos Opcionais",
+        "optionalAttributesDescription": "Selecione os atributos que correspondem à sua Avaliação",
+        "mandatoryAttribute": "Obrigatório",
+        "inactiveAttribute": "Atributo Inativo",
+        "activeAttribute": "Atributo Ativo",
+        "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
       },
       "statuses": {
-        "90": "Terbuka",
-        "10": "Dipublikasikan"
+        "90": "Abrir",
+        "10": "Publicados"
       },
       "personResponsibleRoles": {
-        "10": "Staf organisasi nirlaba",
-        "20": "Manajer kawasan yang dikelola",
-        "30": "Personel kawasan yang dikelola",
-        "40": "Personel pemerintah",
-        "50": "Anggota komunitas lokal atau komite adat",
-        "60": "Pemimpin atau perwakilan komunitas"
+        "10": "Pessoal de ONGs",
+        "20": "Gerente de área gerenciada",
+        "30": "Pessoal da área gerenciada",
+        "40": "Pessoal do governo",
+        "50": "Membros da comunidade local ou de comitês indígenas",
+        "60": "Líderes ou representantes comunitários"
       },
       "collectionMethods": {
-        "10": "Penilaian berbasis meja",
-        "30": "Diskusi kelompok terfokus yang difasilitasi"
+        "10": "Avaliação documental",
+        "30": "Discussão facilitada em grupo focal"
       },
       "popup": {
-        "title": "Bagaimana Membuat Penilaian",
-        "text": "Gunakan proses di bawah ini untuk membuat penilaian. Anda akan perlu memberikan informasi yang berkaitan dengan penilaian, membuat atau memilih kawasan yang dikelola dan kemudian menyelesaikan pertanyaan survei sebenarnya. Fungsionalitas kolaborator memungkinkan Anda untuk menambahkan orang ke penilaian Anda.",
+        "title": "Como criar uma avaliação",
+        "text": "Use o processo abaixo para criar uma avaliação. Você precisará fornecer informações relacionadas à avaliação, criar ou selecionar uma área gerenciada e, em seguida, responder às perguntas da pesquisa propriamente dita. A funcionalidade Colaboradores permite adicionar pessoas à sua avaliação.",
         "step-1": {
-          "title": "Pilih jalur Anda untuk pengumpulan data",
-          "text": "Elinor dapat diselesaikan dengan dua cara:",
-          "li-1": "Melalui diskusi kelompok terfokus yang difasilitasi dengan berbagai pemangku kepentingan yang terlibat dan terpengaruh oleh KA",
-          "li-2": "Sebagai penilaian berbasis meja yang dipimpin misalnya, oleh praktisi konservasi atau manajer situs."
+          "title": "Escolha seu caminho para coleta de dados",
+          "text": "Elinor pode ser completada de duas maneiras:",
+          "li-1": "Através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidas e afetadas pela Área de Manejo.",
+          "li-2": "Como uma avaliação documental liderada, por exemplo, por um conservacionista ou um gestor do sítio."
         },
         "step-2": {
-          "title": "Data Penilaian",
-          "text": "Lengkapi informasi yang berkaitan dengan PENILAIAN, seperti jumlah orang yang dikonsultasikan atau lembaga terkait"
+          "title": "Dados de avaliação",
+          "text": "Preencha as informações relacionadas à AVALIAÇÃO, como número de pessoas consultadas ou instituições vinculadas"
         },
         "step-3": {
-          "title": "Kawasan yang Dikelola",
-          "text": "Identifikasi Kawasan yang Dikelola, keanggotaannya pada PA tertentu dan unggah bentuk atau gambar lokasinya di peta."
+          "title": "Área de Manejo",
+          "text": "Identifique a Área de Manejo, pertença a alguma UC e carregue a forma ou desenhe no mapa a sua localização."
         },
         "step-4": {
-          "title": "Survei",
-          "text": "Jawab pertanyaan dari Survei. Anda dapat memilih atribut-atribut yang relevan dengan Penilaian Anda"
+          "title": "A pesquisa",
+          "text": "Responda às perguntas da Pesquisa. Você pode selecionar os atributos que são relevantes para sua avaliação"
         },
         "step-5": {
-          "title": "Kolaborator",
-          "text": "Undang kolaborator untuk membantu Anda menyelesaikan Penilaian, atau hanya berbagi sebagai pengamat"
+          "title": "Contribuidores",
+          "text": "Convide colaboradores para ajudá-lo a concluir a Avaliação ou compartilhe apenas como observador"
         },
         "step-6": {
-          "title": "Publikasikan",
-          "text": "Setelah Penilaian selesai, Anda dapat mempublikasikannya, membuatnya dapat diakses dari zona umum web"
+          "title": "Publicar",
+          "text": "Uma vez concluída a Avaliação, você poderá publicá-la, tornando-a acessível na zona pública da web"
         },
-        "question": "Apa yang bisa saya lakukan dari sini?",
-        "answer-1": "Pergi ke penilaian",
-        "answer-2": "Buat penilaian",
-        "label": "Jangan tampilkan layar modal awal ini lagi"
+        "question": "O que posso fazer a partir daqui?",
+        "answer-1": "Ir para avaliações",
+        "answer-2": "Crie uma avaliação",
+        "label": "Não mostre esta tela modal inicial novamente"
       },
       "actions": {
         "contact": {
-          "title": "Hubungi Administrator",
-          "subtitle": "Isi formulir ini untuk menghubungi administrator",
-          "text": "Kami akan mengirim pesan ke administrator penilaian ini",
-          "labelTextarea": "Pesan",
-          "okMessage": "Terima kasih atas kontaknya!",
-          "namePlaceholder": "Nama Anda",
-          "subjectPlaceholder": "Subjek",
-          "emailPlaceholder": "Email Anda"
+          "title": "Entrar em contato com o administrador",
+          "subtitle": "Preencha este formulário para entrar em contato com o administrador",
+          "text": "Enviaremos uma mensagem ao administrador desta avaliação",
+          "labelTextarea": "Mensagem",
+          "okMessage": "Obrigado pelo contato!",
+          "namePlaceholder": "Your name",
+          "subjectPlaceholder": "Subject",
+          "emailPlaceholder": "Your Email"
         },
         "flag": {
-          "title": "Tandai penilaian",
-          "subtitle": "Isi formulir ini untuk menandai penilaian",
-          "text": "Kami akan mengirim pesan ke administrator penilaian ini",
-          "labelTextarea": "Pesan",
-          "okMessage": "Terima kasih atas kontaknya!",
-          "placeholder": "Jenis penandaan",
+          "title": "Título do aviso",
+          "subtitle": "Preencha este formulário para sinalizar a avaliação",
+          "text": "Enviaremos uma mensagem ao administrador desta avaliação",
+          "labelTextarea": "Mensagem",
+          "okMessage": "Obrigado pelo contato!",
+          "placeholder": "Tipo de aviso",
           "types": {
-            "inappropriate": "Tidak pantas",
-            "personal": "Pribadi",
-            "inaccurate": "Tidak akurat",
-            "other": "Lainnya"
+            "inappropriate": "Inadequado",
+            "personal": "Pessoal",
+            "inaccurate": "Impreciso",
+            "other": "Outro"
           }
         },
         "delete": {
-          "title": "Hapus judul",
-          "subtitle": "Apakah Anda yakin ingin menghapus penilaian Anda",
-          "text": "Setelah Anda menghapusnya, Anda tidak akan dapat mengakses Penilaian Anda lagi, dan data Anda akan dihapus secara permanen."
+          "title": "Excluir título",
+          "subtitle": "Tem certeza de que deseja excluir sua avaliação",
+          "text": "Depois de excluí-lo, você não poderá acessar suas Avaliações novamente e seus dados serão excluídos permanentemente."
         },
         "delete-info": {
-          "title": "Hapus penilaian",
-          "subtitle": "Penilaian telah difinalisasi dan tidak mungkin untuk dihapus",
-          "text": "Hubungi administrator elinor untuk mengedit atau menghapus penilaian Anda"
+          "title": "Excluir avaliação",
+          "subtitle": "A avaliação está finalizada e não é possível excluí-la",
+          "text": "Entre em contato com o administrador da Elinor para editar ou excluir sua avaliação"
         },
         "generateReport": {
           "strengths": {
-            "title": "Kekuatan tata kelola utama",
-            "label": "Jelaskan Kekuatan Utama",
-            "explanation": "Tiga atribut yang tercantum di atas menerima skor tertinggi. Gunakan ruang ini untuk merenung mengapa Anda pikir itu adalah kekuatan kunci untuk area ini."
+            "title": "Key governance strengths",
+            "label": "Explain Main Strengths",
+            "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
           },
           "needs": {
-            "title": "Kekuatan tata kelola utama",
-            "label": "Jelaskan Kebutuhan Utama",
-            "explanation": "Tiga atribut yang tercantum di atas menerima skor terendah. Gunakan ruang ini untuk merenung mengapa Anda pikir itu mungkin tiga area untuk refleksi lebih lanjut."
+            "title": "Key governance strengths",
+            "label": "Explain Main Needs",
+            "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
           },
           "context": {
-            "title": "Konteks",
-            "label": "Konteks",
-            "explanation": "Gunakan ruang ini untuk secara singkat menjelaskan pemegang hak utama dan aktor lain di area ini, tantangan utama tata kelola dan pengelolaan, serta faktor lain yang menurut Anda membentuk hasil sosial dan ekologis area tersebut."
+            "title": "Context",
+            "label": "Context",
+            "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
           },
-          "button": "Hasilkan",
-          "buttonGenerating": "#N/A",
-          "error": "#N/A"
+          "button": "Generate",
+          "buttonGenerating": "Generating...",
+          "error": "There was an error generating the report."
         }
       },
-      "outOf100": "dari 100",
-      "published": "Dipublikasikan",
-      "finalized": "Difinalisasi",
-      "readyToPublish": "Siap untuk dipublikasikan",
-      "preparingToPublish": "Mempersiapkan untuk dipublikasikan",
+      "outOf100": "de 100",
+      "published": "Publicado",
+      "finalized": "Finalizado",
+      "readyToPublish": "Pronto para publicar",
+      "preparingToPublish": "Preparando para publicar",
       "downloadSurveyFile": {
-        "title": "Unduh Survei",
-        "helpTitle": "Anda dapat mengisi survei secara offline dan mengunggahnya saat siap. Jika Anda memilih untuk mengunduh survei:",
-        "help1": "Anda akan mendapatkan file .xlsx dengan pertanyaan dan jawaban untuk survei.",
-        "help2": "Anda dapat mengeditnya secara offline di Excel, Numbers atau program pemrosesan xlsx apa pun. Harap jangan mengubah struktur xlsx dengan cara apa pun atau bentuk.",
-        "help3": "Simpan file sebagai file .xlsx",
-        "help4": "Ketika survei selesai, klik tombol unggah untuk mengunggah xlsx dan survei online akan secara otomatis memperbarui informasi survei.",
-        "downloadButton": "Mulai mengunduh"
+        "title": "Baixar Avaliação",
+        "helpTitle": "Você pode preencher a avaliação offline e fazer o upload quando estiver pronto. Se você optar por baixar a avaliação:",
+        "help1": "Você obterá um arquivo .xlsx com as perguntas e respostas da avaliação.",
+        "help2": "Você pode editá-lo offline no Excel, Numbers ou qualquer programa de processamento de xlsx. Por favor, não altere a estrutura do xlsx de forma alguma.",
+        "help3": "Salve o arquivo como um arquivo .xlsx",
+        "help4": "Quando a avaliação estiver concluída, clique no botão de upload para fazer o upload do xlsx e a avaliação online atualizará automaticamente as informações da avaliação.",
+        "downloadButton": "Iniciar download"
       },
       "uploadSurveyFile": {
-        "title": "Unggah file survei",
-        "triggerButton": "Pilih file",
-        "filePlaceholder": "Seret dan lepaskan file .xlsx",
-        "validatingFileFormat": "Memvalidasi format file...",
-        "fileCorrectlyFormated": "Struktur data benar dan xlsx siap untuk diimpor",
-        "fileCorrectlyFormatedText": "#N/A",
-        "uploadWarning": "Ingat bahwa jika Anda menerima, semua informasi survei online akan ditimpa oleh informasi di xlsx",
-        "surveyFileErrorTitle": "Maaf, ada yang salah",
-        "surveyFileErrorDescription": "Kami tidak dapat mengimpor xlsx yang Anda coba unggah. Pastikan formatnya benar. Struktur xlsx harus sama dengan yang diunduh.",
-        "tryAgainText": "Jika Anda mau, Anda dapat",
-        "tryAgainButton": "coba lagi",
-        "formatNotSupported": "coba lagi",
-        "help": "Silakan, unggah file xlsx untuk survei dalam format yang sama persis dengan yang diunduh. Tidak ada perubahan yang dapat dilakukan pada struktur. Jika unggahan gagal, harap tinjau formatnya dan pastikan itu sama dengan file yang diunduh.",
-        "helpTitle": "File apa yang harus Diunggah?",
+        "title": "Fazer upload do arquivo de avaliação",
+        "triggerButton": "Selecionar um arquivo",
+        "filePlaceholder": "Arraste e solte o arquivo .xlsx",
+        "validatingFileFormat": "Validando formato de arquivo...",
+        "fileCorrectlyFormated": "O arquivo está formatado corretamente",
+        "fileCorrectlyFormatedText": "A estrutura de dados está correta e o xlsx está pronto para ser importado",
+        "uploadWarning": "Lembre-se de que, se você aceitar, todas as informações da avaliação online serão substituídas pelas informações do xlsx",
+        "surveyFileErrorTitle": "Desculpe, algo deu errado",
+        "surveyFileErrorDescription": "Não conseguimos importar o xlsx que você tentou fazer upload. Por favor, certifique-se de que o formato está correto. A estrutura do xlsx deve ser exatamente a mesma que foi baixada.",
+        "tryAgainText": "Se você quiser, pode",
+        "tryAgainButton": "tentar novamente",
+        "formatNotSupported": "tentar novamente",
+        "help": "Por favor, faça o upload do arquivo xlsx para a avaliação no mesmo formato em que foi baixado. Nenhuma alteração pode ser feita na estrutura. Se o upload falhar, revise o formato e certifique-se de que é o mesmo que o arquivo baixado.",
+        "helpTitle": "Quais arquivos carregar?",
         "errors": {
-          "missing_file": "file hilang",
-          "unsupported_file_type": "jenis file tidak didukung; jenis yang didukung: {supported_mime_types}",
-          "file_too_large": "file yang diunggah lebih besar dari {maximum_filesize}",
-          "unsupported_zip": "file zip berisi lebih dari satu file, atau kosong. Jumlah file dalam zip: {num_files}",
-          "invalid_zip": "zip tidak valid",
-          "missing_sheet": "lembar yang hilang dengan nama '{sheetname}'",
-          "invalid_header": "tidak ada header yang ditemukan untuk lembar {sheetname}",
-          "invalid_header_cells": "header tidak valid di sel: {header_error_cells}",
-          "invalid_file_load": "file xlsx tidak valid",
-          "assessment_id_mismatch": "id penilaian {user_assessmment_id} di {cell} tidak cocok dengan penilaian yang diminta {assessment_id}",
-          "invalid_sheet": "lembar tidak valid",
-          "invalid_questions": "kunci pertanyaan tidak valid di sel: {question_error_cells}",
-          "invalid_choices": "pilihan tidak valid di sel: {choice_error_cells}",
-          "invalid_answers": "jawaban tidak valid",
-          "answer_save": "kesalahan menyimpan jawaban ke basis data",
-          "detail": "#N/A"
+          "missing_file": "arquivo faltando",
+          "unsupported_file_type": "tipo de arquivo não suportado; tipos suportados: {supported_mime_types}",
+          "file_too_large": "arquivo carregado maior que {maximum_filesize}",
+          "unsupported_zip": "arquivo zip contém mais de um arquivo ou está vazio. Número de arquivos no zip: {num_files}",
+          "invalid_zip": "zip inválido",
+          "missing_sheet": "falta folha com o nome '{sheetname}",
+          "invalid_header": "nenhum cabeçalho encontrado para a folha {sheetname}",
+          "invalid_header_cells": "cabeçalhos inválidos nas células: {header_error_cells}",
+          "invalid_file_load": "arquivo xlsx inválido",
+          "assessment_id_mismatch": "id de avaliação {user_assessmment_id} na {cell} não corresponde à avaliação solicitada {assessment_id}",
+          "invalid_sheet": "arquivo inválido",
+          "invalid_questions": "chaves de perguntas inválidas nas células: {question_error_cells}",
+          "invalid_choices": "escolhas inválidas nas células: {choice_error_cells}",
+          "invalid_answers": "respostas inválidas",
+          "answer_save": "erro ao salvar respostas no banco de dados",
+          "detail": "You are not allowed to perform this action"
         }
       },
       "roles": {
-        "admin": "Admin",
-        "contributor": "Kontributor",
-        "observer": "Pengamat"
+        "admin": "Administrador",
+        "contributor": "Contribuidor",
+        "observer": "Observador"
       },
-      "managedArea": "Kawasan yang Dikelola"
+      "managedArea": "Área de Manejo"
     },
     "documentation": {
       "home": {
         "meta": {
-          "title": "Dokumentasi",
+          "title": "Documentação",
           "slug": "/documentation"
         }
       },
       "header": {
-        "title": "Dokumentasi"
+        "title": "Documentação"
       },
       "intro": {
-        "text": "Di bawah ini adalah dokumen yang penting untuk pemahaman dan penggunaan penuh alat Elinor. Setiap dokumen memiliki deskripsi singkat. Silakan unduh sesuai kebutuhan."
+        "text": "Abaixo estão documentos importantes para o pleno entendimento e utilização da ferramenta Elinor. Cada documento possui uma breve descrição. Faça o download conforme necessário."
       },
       "body": {
         "cards": {
-          "button": "Dokumen lainnya"
+          "button": "Mais documentos"
         }
       }
     },
     "news": {
       "home": {
         "meta": {
-          "title": "Berita",
+          "title": "Notícias",
           "slug": "/news"
         }
       },
       "header": {
-        "title": "Berita"
+        "title": "Notícias"
       },
       "body": {
         "cards": {
-          "button": "Berita lainnya"
+          "button": "Mais notícias"
         }
       }
     },
     "faqs": {
       "home": {
         "meta": {
-          "title": "FAQ",
+          "title": "Perguntas frequentes",
           "slug": "/faq"
         }
       },
       "header": {
-        "title": "FAQ"
+        "title": "Perguntas frequentes"
       }
     },
     "methodologyPage": {
       "home": {
         "meta": {
-          "title": "#N/A",
-          "slug": "#N/A",
+          "title": "Methodology",
+          "slug": "/methodology",
           "seo": {
-            "title": "#N/A",
-            "description": "#N/A",
-            "keywords": "#N/A",
-            "og_image": "#N/A"
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "og_image": ""
           }
         }
       },
-      "title": "Metodologi",
-      "paragraph1": "Penilaian Elinor dapat diselesaikan dengan dua cara yang berbeda: Melalui diskusi kelompok terfokus yang difasilitasi dengan berbagai pemangku kepentingan yang terlibat dan terpengaruh oleh KA, atau sebagai penilaian berbasis meja yang dipimpin oleh praktisi konservasi. Saat memasukkan data, pengguna dapat menunjukkan jalur mana yang mereka ambil untuk menghasilkan data dalam penilaian dan jenis pemangku kepentingan apa yang terlibat dalam penilaian.",
-      "subtitle1": "Elinor sebagai diskusi kelompok terfokus berbasis lapangan",
-      "paragraph2": "Sebagian besar penilaian tata kelola secara tradisional diselesaikan melalui diskusi kelompok terfokus yang partisipatif; memanfaatkan persepsi yang beragam dari pemangku kepentingan kunci yang terlibat dalam pengelolaan dan tata kelola area tertentu. Bagi mereka yang memiliki waktu dan kapasitas untuk mengumpulkan berbagai perspektif tentang pengelolaan dan tata kelola, kami merekomendasikan mengunduh alat penilaian Elinor dan protokol untuk memandu upaya Anda.",
-      "paragraph3": "Panduan ini menawarkan wawasan tentang bagaimana memimpin kelompok secara etis, memperoleh izin yang tepat untuk menggunakan data, dan untuk menggali perspektif yang beragam; terutama dari mereka yang mungkin telah dimarginalkan secara tradisional. Ini adalah jalur yang disukai, karena memungkinkan berbagai suara untuk berkontribusi pada penilaian, memberikan perspektif yang lebih holistik tentang status pengelolaan dan tata kelola di suatu area.",
-      "cta1": "Unduh Protokol",
-      "subtitle2": "Elinor sebagai penilaian berbasis meja yang dipimpin praktisi.",
-      "paragraph4": "Jalur ini untuk mereka yang memiliki waktu, sumber daya, atau kapasitas terbatas untuk melaksanakan diskusi kelompok terfokus yang partisipatif. Meskipun penilaian berbasis meja menawarkan opsi terbatas, itu memungkinkan beberapa data dihasilkan pada kawasan yang dikelola, yang dapat memberikan penilaian yang sering memadai dan membantu tentang status dan tren saat ini di area tersebut, dan dapat membantu pengguna mengidentifikasi kesenjangan pengetahuan kritis yang memerlukan penelitian dan investasi lebih lanjut. Jika Anda memilih untuk mengambil jalur ini, alokasikan waktu untuk Anda dan rekan Anda yang akrab dengan KA untuk mendiskusikan dan menjawab setiap pertanyaan, berdasarkan pengalaman dan pengetahuan Anda tentang KA. Jika memungkinkan, kami merekomendasikan untuk melibatkan pemangku kepentingan yang berbeda dengan cara apa pun yang Anda bisa untuk mendapatkan wawasan tentang berbagai pertanyaan.",
-      "subtitle3": "Skor",
+      "title": "Metodologia",
+      "paragraph1": "A avaliação da Elinor pode ser concluída de duas maneiras diferentes: através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidos e afetados pela Área de Manejo, ou como uma avaliação documental liderada por um profissional de conservação. Ao inserir dados, os usuários podem indicar qual caminho seguiram para gerar os dados na avaliação e que tipos de detentores de direitos e outros atores estiveram envolvidos na avaliação.",
+      "subtitle1": "Elinor como uma discussão de grupo focal baseada em campo",
+      "paragraph2": "A maioria das avaliações de governança são tradicionalmente concluídas através de discussões participativas em grupos focais, alavancando percepções diversas dos principais detentores de direitos e outros atores envolvidos na gestão e governança de uma área específica. Para aqueles com tempo e capacidade para reunir diversas perspectivas sobre gestão e governança, recomendamos baixar a ferramenta e o protocolo de avaliação Elinor para orientar seus esforços.",
+      "paragraph3": "Esta orientação oferece insights sobre como liderar eticamente um grupo, obter as permissões corretas para usar os dados e sondar diversas perspectivas; especialmente daqueles que podem ter sido tradicionalmente marginalizados. Este é o caminho preferido, pois permite que diversas vozes contribuam para a avaliação, proporcionando uma perspectiva mais holística sobre a situação da gestão e governança numa área.",
+      "cta1": "Baixar protocolo",
+      "subtitle2": "Elinor como uma avaliação documental conduzida por profissionais",
+      "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos ou lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com a Área de Manejo discutirem e responderem cada pergunta, com base em sua experiência e conhecimento da Área de Manejo. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
+      "subtitle3": "A pontuação",
       "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "scoreTable": {
-        "value": "nilai",
-        "values": "Nilai",
-        "indicator": "Indikator",
-        "attribute": "Atribut",
-        "aggregate": "Agregat",
+        "value": "valor",
+        "values": "Valores",
+        "indicator": "Indicador",
+        "attribute": "Atributo",
+        "aggregate": "Agregado",
         "plan": {
-          "title": "Rencana",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk mengembangkan rencana mengatasi kesenjangan tata kelola yang parah"
+          "title": "Planejar",
+          "description": "Colaborar com os detentores de direitos e outros atores para desenvolver planos para abordar lacunas graves de governança"
         },
         "build": {
-          "title": "Bangun",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk membangun kemajuan awal mengatasi kesenjangan tata kelola utama"
+          "title": "Construir",
+          "description": "Colaborar com os detentores de direitos e outros atores para construir sobre o progresso inicial para abordar lacunas significativas de governança"
         },
         "strengthen": {
-          "title": "Perkuat",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk memperkuat tata kelola dengan mengatasi kesenjangan kecil"
+          "title": "Fortalecer",
+          "description": "Colaborar com os detentores de direitos e outros atores para fortalecer a governança ao abordar lacunas menores"
         },
         "maintain": {
-          "title": "Pertahankan",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk mempertahankan tata kelola yang kuat dan memantau ancaman potensial"
+          "title": "Manter",
+          "description": "Colaborar com os detentores de direitos e outros atores para manter uma governança forte e monitorar ameaças potenciais"
         }
       }
     },
     "termsOfUse": {
-      "title": "Ketentuan Layanan"
+      "title": "Termos de serviço"
     },
     "contact": {
       "home": {
         "meta": {
-          "title": "Kontak",
+          "title": "Contato",
           "slug": "/contact"
         }
       },
       "header": {
-        "title": "Kontak"
+        "title": "Contato"
       },
       "form": {
         "legend": {
-          "strong": "Gunakan formulir di bawah ini untuk menghubungi kami",
-          "default": "Kami akan merespons secepat mungkin"
+          "strong": "Utilize o formulário abaixo para entrar em contato conosco",
+          "default": "Responderemos o mais breve possível"
         },
-        "name": "Nama Anda",
-        "subject": "Subjek",
-        "mail": "Email Anda",
-        "message": "Pesan",
-        "submit": "Kirim pesan",
-        "confirmation": "Terima kasih telah menghubungi elinor",
-        "namePlaceholder": "Nama",
-        "subjectPlaceholder": "Subjek",
-        "mailPlaceholder": "Mail",
-        "messagePlaceholder": "Pesan"
+        "name": "Seu nome",
+        "subject": "Assunto",
+        "mail": "Seu email",
+        "message": "Mensagem",
+        "submit": "Enviar mensagem",
+        "confirmation": "Obrigado por entrar em contato com a Elinor",
+        "namePlaceholder": "Nome",
+        "subjectPlaceholder": "Assunto",
+        "mailPlaceholder": "E-mail",
+        "messagePlaceholder": "Mensagem"
       }
     },
     "collaboration": {
       "home": {
         "meta": {
-          "title": "Kolaborasi",
+          "title": "Colaboração",
           "slug": "/collaboration"
         }
       },
-      "title": "Prinsip Kolaborasi dan Pedoman Sitasi",
+      "title": "Princípios de Colaboração e Diretrizes de Citação",
       "intro": {
-        "title": "Prinsip untuk memandu berbagi data yang transparan dan kolaboratif",
-        "paragraph1": "Alat dan sistem data Elinor membantu pengguna melacak status tata kelola dan pengelolaan dari waktu ke waktu. Ini juga memberikan kesempatan untuk berbagi data tentang tata kelola dan pengelolaan antarpengguna, yang dalam jangka panjang, dapat mendorong transparansi yang lebih besar dalam tata kelola dan pengelolaan dan meningkatkan upaya konservasi berbasis wilayah.",
-        "paragraph2": "Untuk mencapai visi ini, semua pengguna harus mematuhi prinsip-prinsip yang diuraikan di bawah ini yang akan memandu berbagi dan penggunaan data yang kolaboratif, adil, dan transparan. Dengan melakukan itu, akan memastikan semua pengguna termotivasi untuk berkontribusi data secara terbuka untuk meningkatkan konservasi berbasis wilayah.",
-        "paragraph3": "Pemilik data yang menggunakan alat penilaian Elinor dan sistem data telah berkontribusi waktu dan sumber daya dalam mengumpulkan data, dan dalam banyak kasus, memilih untuk membuat penilaian mereka publik. Jadi semua pengguna harus bertindak secara terbuka, hormat, transparan, dan jujur dalam terlibat di platform untuk memandu kolaborasi yang efektif dan inklusif. Prinsip-prinsip di bawah ini dirancang untuk memfasilitasi kolaborasi yang adil dan transparan antara pemilik data dan pengguna data, dan menawarkan panduan tentang bagaimana pengguna harus terlibat dengan data pribadi dan publik, serta satu sama lain.",
-        "paragraph4": "Silakan hubungi kami jika Anda memiliki saran tentang bagaimana kami dapat meningkatkan prinsip kolaboratif kami",
-        "blockquote": "Semua pengguna harus bertindak secara terbuka, hormat, transparan, dan jujur dalam terlibat di platform untuk memandu kolaborasi yang efektif dan inklusif"
+        "title": "Princípios para orientar o compartilhamento transparente e colaborativo de dados",
+        "paragraph1": "A ferramenta e o sistema de dados Elinor ajudam os usuários a acompanhar o status de gerenciamento e governança ao longo do tempo. Também proporciona a oportunidade de partilhar dados sobre gestão e governação entre utilizadores, o que pode, a longo prazo, promover mais transparência na gestão e governação e melhorar os esforços de conservação baseados em áreas.",
+        "paragraph2": "Para alcançar esta visão, todos os utilizadores devem aderir aos princípios descritos abaixo que orientarão a partilha e utilização colaborativa, justa e transparente de dados. Isso garantirá que todos os usuários estejam motivados a contribuir abertamente com dados para melhorar a conservação baseada na área.",
+        "paragraph3": "Os proprietários de dados que utilizam a ferramenta de avaliação e o sistema de dados da Elinor contribuíram com tempo e recursos para a recolha de dados e, em muitos casos, optaram por tornar públicas as suas avaliações. Assim, todos os utilizadores devem agir de forma aberta, respeitosa, transparente e honesta ao interagirem na plataforma para orientar uma colaboração eficaz e inclusiva. Os princípios abaixo foram concebidos para facilitar a colaboração justa e transparente entre proprietários de dados e utilizadores de dados, e oferecer orientação sobre como os utilizadores devem interagir com dados privados e públicos, bem como entre si.",
+        "paragraph4": "Entre em contato conosco se tiver sugestões sobre como podemos melhorar nossos princípios colaborativos",
+        "blockquote": "Todos os usuários devem agir de forma aberta, respeitosa, transparente e honesta ao se envolverem na plataforma para orientar uma colaboração eficaz e inclusiva"
       },
       "guidelines1": {
-        "title": "Prinsip panduan untuk berbagi dan menggunakan data dengan Elinor",
-        "subtitle": "Untuk penggunaan data publik dan pribadi",
-        "question1": "Selalu mewakili informasi dengan akurat",
-        "answer1": "Hasil penilaian disertai dengan metadata pendukung tambahan, yang menjelaskan sumbernya, bagaimana dikompilasi, kualitasnya dan batasan apa pun, pastikan ini tercermin dalam bagaimana Anda menggunakan dan menyajikan data.",
-        "question2": "Selalu mengakui pemilik data dalam setiap presentasi, publikasi atau laporan, dan sitasi sistem data Elinor sebagai sumber informasi.",
-        "answer2-1": "Kami merekomendasikan menggunakan pernyataan berikut ketika menggunakan data dari platform Elinor ‚ÄúKami mengucapkan terima kasih kepada individu dan lembaga yang mendukung menghasilkan data untuk Penilaian Elinor di [SISIPKAN KA ATAU WILAYAH DI SINI], termasuk peserta kelompok fokus dan fasilitator apa pun‚Äù",
+        "title": "Princípios orientadores para compartilhar e usar dados com Elinor",
+        "subtitle": "Para uso de dados públicos e privados",
+        "question1": "Sempre represente as informações com precisão",
+        "answer1": "Os resultados da avaliação são fornecidos com metadados de apoio adicionais, que descrevem sua fonte, como foram compilados, sua qualidade e quaisquer limitações. Certifique-se de que isso se reflita na forma como você usa e apresenta os dados.",
+        "question2": "Sempre reconheça os proprietários dos dados em qualquer apresentação, publicação ou relatório e cite o sistema de dados da Elinor como fonte de informação.",
+        "answer2-1": "Recomendamos usar a seguinte declaração ao usar dados da plataforma Elinor “Expressamos nossa gratidão aos indivíduos e instituições que apoiaram a geração de dados para a Avaliação Elinor em [INSERIR Área de Manejo OU REGIÃO AQUI], incluindo quaisquer participantes e facilitadores de grupos focais”",
         "answer2-2": {
-          "paragraph1": "Silakan gunakan sitasi berikut untuk merujuk ke sistem data Elinor:",
-          "paragraph2": " Elinor: Alat dan sistem data untuk menilai pengelolaan dan tata kelola yang adil untuk konservasi berbasis wilayah. (TAHUN) Tersedia di: elinordata.org [Tanggal Akses]"
+          "paragraph1": "Use a seguinte citação para se referir ao sistema de dados Elinor:",
+          "paragraph2": "Elinor: Uma ferramenta e sistema de dados para avaliar a gestão e governança equitativas para a conservação baseada em áreas. (ANO) Disponível em: elinordata.org [Data de acesso]"
         }
       },
       "guidelines2": {
-        "subtitle": "Prinsip untuk memandu permintaan dan penggunaan data pribadi di Elinor",
-        "text": "Tidak semua data di platform Elinor dibuat publik, namun pengguna data dapat menghubungi pemilik data dan meminta data tersebut dibagikan. Pemilik data tidak memiliki kewajiban untuk membagikan data, tetapi jika mereka memilih untuk melakukannya, pengguna data harus mematuhi prinsip-prinsip berikut:",
-        "question1": "Selalu gunakan informasi yang diberikan oleh pengguna hanya sehubungan dengan permintaan asli.",
-        "answer1": "Jika permintaan awal Anda adalah untuk menggunakan informasi dalam presentasi dan Anda kemudian memutuskan mungkin berguna dalam makalah atau proposal pendanaan, harap ajukan permintaan baru kepada pengguna.",
-        "question2": "Jangan pernah membagikan informasi dengan pihak ketiga tanpa izin tegas dari pengguna. ",
-        "answer2": "Jika Anda ingin membagikan informasi dengan pihak ketiga yang mungkin Anda kolaborasikan, harap informasikan pemilik data terlebih dahulu.",
-        "question3": "Ikuti pedoman pengakuan sebagaimana disarankan oleh pemilik data.",
+        "subtitle": "Princípios para orientar a solicitação e uso de dados privados na Elinor",
+        "text": "Nem todos os dados da plataforma Elinor são tornados públicos, mas os usuários dos dados podem entrar em contato com os proprietários dos dados e solicitar que os dados sejam compartilhados. Os proprietários dos dados não têm obrigação de partilhar dados, mas caso optem por fazê-lo, os utilizadores dos dados devem aderir aos seguintes princípios:",
+        "question1": "Sempre utilize as informações fornecidas pelos usuários exclusivamente em conexão com a solicitação original.",
+        "answer1": "Se o seu pedido inicial foi para utilizar a informação numa apresentação e posteriormente decidir que pode ser útil num artigo ou proposta de financiamento, faça um novo pedido ao utilizador.",
+        "question2": "Nunca compartilhe as informações com terceiros sem a permissão expressa do usuário.",
+        "answer2": "Se desejar compartilhar as informações com terceiros com quem você possa estar colaborando, informe primeiro o proprietário dos dados.",
+        "question3": "Siga as diretrizes de confirmação sugeridas pelo proprietário dos dados.",
         "answer3": {
-          "paragraph1": "Pemilik data memiliki hak untuk meminta bagaimana mereka ingin data dikreditkan untuk publikasi. Kami menyarankan menggunakan format sitasi yang tercantum di bawah ini. Kami juga menyarankan jika mungkin, penulis laporan dan publikasi mempertimbangkan untuk mengundang pengumpul data untuk menjadi co-author publikasi, mengingat kontribusi mereka dalam mengumpulkan data.",
-          "paragraph2": "NAMA PEMILIK DATA (TAHUN PENILAIAN). LOKASI PENILAIAN. LEMBAGA. Dataset kejadian diakses melalui Elinordata.org pada TANGGAL. "
+          "paragraph1": "Os titulares dos dados têm o direito de solicitar como desejam que os dados sejam creditados para publicação. Sugerimos usar o formato de citação listado abaixo. Sugerimos também que, quando possível, os autores de relatórios e publicações considerem convidar coletores de dados para publicações em coautoria, dadas as suas contribuições na coleta de dados.",
+          "paragraph2": "NOMES DOS PROPRIETÁRIOS DOS DADOS (ANO DE AVALIAÇÃO). LOCAL DE AVALIAÇÃO. INSTITUIÇÃO. Conjunto de dados de ocorrência acessado via Elinordata.org em DATE."
         }
       }
     },
     "about": {
       "meta": {
-        "title": "Latar Belakang",
+        "title": "Background",
         "slug": "/background",
         "seo": {
-          "title": "0",
-          "description": "0",
-          "keywords": "0",
-          "og_image": "0"
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
         }
       },
       "elinorAttributes": {
         "attribute1": {
-          "name": "1. Batas Sumber Daya",
-          "description": "Atribut ini mengukur kualitas batas KA. Pertanyaan-pertanyaan bertanya apakah batas KA itu i) mudah dikenali dan ii) diketahui oleh semua pemangku kepentingan yang relevan.",
-          "useIf": "Anda ingin memahami apakah batas KA telah ditetapkan dengan baik.",
-          "reportText": "Mengukur sejauh mana batas KA ditandai dengan jelas dan dipahami oleh pemegang hak utama dan aktor lain"
+          "name": "1. Fronteiras dos recursos",
+          "description": "Este atributo mede a qualidade dos limites da Área de Manejo. As questões questionam se os limites da Área de Manejo são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.",
+          "useIf": "Você deseja entender se os limites da Área de Manejo estão bem estabelecidos.",
+          "reportText": "Mede até que ponto os limites da Área de Manejo são claramente marcados e compreendidos pelos principais detentores de direitos e outros intervenientes"
         },
         "attribute2": {
-          "name": "2. Pemantauan dan penegakan",
-          "description": "Atribut ini mengukur seberapa baik KA dapat menegakkan peraturan dan apakah ada sistem untuk memantau informasi penting tentang kondisi sosial dan ekologis di KA. Ini secara khusus melihat hukuman atas pelanggaran aturan KA dan sifat serta cakupannya. Ini juga mengukur apakah kondisi sosial, ekologi atau perubahan iklim dipantau.",
-          "useIf": "Anda ingin pemahaman awal tentang pelanggaran aturan di KA dan apakah ada informasi yang dapat memfasilitasi kegiatan M&E atau memberi makan ke dalam manajemen adaptif.",
-          "reportText": "Mengukur seberapa baik KA dapat menegakkan peraturan"
+          "name": "2. Aplicação da lei",
+          "description": "Este atributo mede quão bem a Área de Manejo é capaz de fazer cumprir os regulamentos. Analisa especificamente as sanções por violação das regras da Área de Manejo e a sua natureza e extensão.",
+          "useIf": "Você gostaria de ter uma compreensão preliminar sobre a violação de regras na Área de Manejo e se existe informação que possa facilitar as atividades de M&A ou contribuir para a gestão adaptativa.",
+          "reportText": "Mede quão bem a Área de Manejo é capaz de fazer cumprir os regulamentos"
         },
         "attribute3": {
-          "name": "3. Kapasitas untuk manajemen adaptif",
-          "description": "Atribut ini mengukur apakah pengambil keputusan yang bertanggung jawab mengelola KA menggabungkan berbagai bentuk pengetahuan ke dalam pengambilan keputusan mereka.",
-          "useIf": "Anda ingin tahu jenis informasi apa yang memberi informasi keputusan manajemen di KA.",
-          "reportText": "Mengukur apakah manajer KA menggabungkan berbagai bentuk pengetahuan ke dalam pengambilan keputusan mereka"
+          "name": "3. Capacidade de gestão adaptativa",
+          "description": "Este atributo mede se os decisores responsáveis ​​pela gestão da Área de Manejo incorporam diferentes formas de conhecimento na sua tomada de decisão. Também pergunta se as condições sociais, ecológicas ou de alterações climáticas são monitorizadas.",
+          "useIf": "Você gostaria de saber que tipo de informação informa as decisões de gestão na Área de Manejo.",
+          "reportText": "Mede se os gestores de CG incorporam diferentes formas de conhecimento na sua tomada de decisão"
         },
         "attribute4": {
-          "name": "4. Kapasitas operasional",
-          "description": "Atribut ini mengukur apakah mereka yang bertanggung jawab mengelola KA memiliki sumber daya untuk melakukannya. Ini secara khusus melihat sumber daya staf, kapasitas penegakan, anggaran dan kebutuhan peralatan.",
-          "useIf": "Anda ingin menilai kapasitas sistem manajemen KA.",
-          "reportText": "Mengukur apakah mereka yang bertanggung jawab mengelola KA memiliki sumber daya untuk melakukannya"
+          "name": "4. Capacidade operacional",
+          "description": "Este atributo mede se os responsáveis ​​pela gestão da Área de Manejo possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+          "useIf": "Pretende avaliar a capacidade do sistema de gestão da Área de Manejo.",
+          "reportText": "Mede se os responsáveis pela gestão da Área de Manejo têm recursos para fazê-lo"
         },
         "attribute5": {
-          "name": "5. Manajemen inklusif dan adil",
-          "description": "Atribut ini mengukur inklusivitas dan keadilan dalam pengelolaan KA, dua komponen penting dari tata kelola yang baik. Pertanyaan tentang inklusi dan keadilan bertanya apakah otoritas KA mengizinkan pemangku kepentingan lokal untuk berkontribusi pada keputusan manajemen, jika ada strategi untuk berbagi manfaat secara adil di antara pemangku kepentingan dan apakah ketahanan komunitas terhadap perubahan iklim diperhitungkan dalam manajemen.",
-          "useIf": "Anda ingin memahami apakah KA memasukkan kelompok rentan dalam keputusan dan hasil manajemen.",
-          "reportText": "Mengukur inklusivitas dan keadilan dalam manajemen KA, khususnya mengenai kelompok rentan"
+          "name": "5. Gestão inclusiva e equitativa",
+          "description": "Este atributo mede se os responsáveis ​​pela gestão da Área de Manejo possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+          "useIf": "Pretende avaliar a capacidade do sistema de gestão da Área de Manejo.",
+          "reportText": "Mede a inclusão e a equidade na gestão das Área de Manejo, especialmente no que diz respeito aos grupos vulneráveis"
         },
         "attribute6": {
-          "name": "6. Hak dan pengambilan keputusan yang jelas didefinisikan",
-          "description": "Atribut ini mengukur hak masyarakat dalam pengelolaan sumber daya alam. Hak sangat penting karena mereka meletakkan dasar (memberikan insentif atau disincentif) bagi pemangku kepentingan komunitas lokal untuk terlibat secara bermakna dalam mengelola sumber daya alam dan dalam konservasi.",
-          "useIf": "Anda ingin menilai kontrol atau akses komunitas lokal terhadap sumber daya alam di KA yang Anda kerjakan.",
-          "reportText": "Mengukur sejauh mana hak masyarakat dalam pengelolaan sumber daya alam dipahami dengan jelas oleh pemegang hak utama dan aktor lain"
+          "name": "6. Direitos e tomada de decisões claramente definidos",
+          "description": "Este atributo mede a inclusão e a equidade na gestão das Áreas de Manejo, duas componentes importantes da boa governação. As questões sobre inclusão e equidade questionam se as autoridades da Área de Manejo permitem que os titulares de direitos e outros intervenientes contribuam para as decisões de gestão, se existe uma estratégia para partilhar os benefícios de forma equitativa entre eles, e se a resiliência da comunidade às alterações climáticas é tida em conta na gestão.",
+          "useIf": "Você deseja compreender se a Área de Manejo inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
+          "reportText": "Mede até que ponto os direitos da comunidade na gestão dos recursos naturais são claramente compreendidos pelos principais detentores de direitos e outros intervenientes"
         },
         "attribute7": {
-          "name": "7. Peraturan yang jelas dan kongruen",
-          "description": "Atribut ini mengukur kualitas peraturan KA. Secara khusus i) seberapa jelas mereka dan ii) seberapa baik mereka sejalan dengan; masukan pemangku kepentingan ke dalam tata kelola KA, tingkat otoritas manajemen lainnya dan konteks sosial dan lingkungan tempat mereka beroperasi.",
-          "useIf": "Anda ingin memahami apakah peraturannya jelas dan adil.",
-          "reportText": "Mengukur sejauh mana peraturan KA jelas dan sejalan dengan tujuan tata kelola pemegang hak dan aktor lain"
+          "name": "7. Regulamentos claros e coerentes",
+          "description": "Este atributo mede a qualidade dos regulamentos da Área de Manejo. Especificamente i) até que ponto são claros e ii) até que ponto se alinham com o contributo dos titulares de direitos e de outros intervenientes na governação da Área de Manejo, noutros níveis de autoridade de gestão e no contexto social e ambiental em que operam.",
+          "useIf": "Você deseja entender se os regulamentos são claramente definidos e justos.",
+          "reportText": "Mede até que ponto os regulamentos de Área de Manejo são claros e alinhados com os objetivos de governação dos titulares de direitos e de outros intervenientes"
         },
         "attribute8": {
-          "name": "8. Transparansi dan akuntabilitas",
-          "description": "Atribut ini mengukur transparansi, akuntabilitas, dan resolusi konflik yang semuanya penting untuk tata kelola yang baik. Penting bahwa orang-orang yang secara langsung terpengaruh oleh keputusan manajemen diberitahu tentang mereka sebelum diimplementasikan, pengambil keputusan dapat dimintai pertanggungjawaban dan ada peluang untuk resolusi konflik. Transparansi diukur dengan bertanya apakah komunikasi otoritas KA tentang informasi kepada pemangku kepentingan lokal tepat waktu, akuntabilitas diukur dengan bertanya apakah otoritas KA menghadapi konsekuensi jika tidak memenuhi tanggung jawabnya dan mekanisme resolusi konflik dinilai untuk seberapa efektifnya.",
-          "useIf": "Jika Anda ingin menilai kualitas tata kelola KA.",
-          "reportText": "Mengukur sejauh mana orang-orang yang secara langsung terpengaruh oleh keputusan manajemen diberitahu tentang mereka sebelumnya, dapat meminta pertanggungjawaban pengambil keputusan, dan memiliki peluang untuk resolusi konflik"
+          "name": "8. Transparência e prestação de contas",
+          "description": "Este atributo mede a transparência, a responsabilização e a resolução de conflitos, aspectos importantes para a boa governação. É importante que as pessoas directamente afectadas pelas decisões de gestão sejam informadas das mesmas antes da sua implementação, que os decisores sejam responsabilizados e que haja oportunidades para a resolução de conflitos. A transparência é medida perguntando se a comunicação de informações da autoridade da Área de Manejo aos titulares de direitos e outros intervenientes é oportuna, e a responsabilização é medida perguntando se a autoridade da Área de Manejo enfrenta consequências se não cumprir as suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à forma como eficaz é.",
+          "useIf": "Se quiser avaliar a qualidade da governação da Área de Manejo.",
+          "reportText": "Mede até que ponto as pessoas diretamente afetadas pelas decisões de gestão são informadas delas com antecedência, podem responsabilizar os tomadores de decisão e têm oportunidades de resolução de conflitos."
         },
         "attribute9": {
-          "name": "9. Persepsi hasil",
-          "description": "Atribut ini mengukur persepsi umum mereka yang menyelesaikan penilaian Elinor tentang hasil sosial dan ekologis KA.",
-          "useIf": "Anda ingin tahu apakah mereka yang terlibat dalam KA berpikir tujuannya tercapai.",
-          "reportText": "Mengukur persepsi umum mereka yang menyelesaikan penilaian Elinor tentang hasil ekologis dan sosial KA"
+          "name": "9. Resultados ecológicos percebidos",
+          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação da Elinor têm sobre os resultados ecológicos da Área de Manejo.",
+          "useIf": "Pretende saber se os envolvidos na Área de Manejo consideram que os seus objectivos ecológicos estão a ser alcançados.",
+          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da Área de Manejo."
         },
         "attribute10": {
-          "name": "#N/A",
-          "description": "#N/A",
-          "useIf": "#N/A",
-          "reportText": "#N/A"
+          "name": "10. Resultados sociais percebidos",
+          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da Área de Manejo.",
+          "useIf": "Pretende saber se os envolvidos na Área de Manejo consideram que os seus objectivos sociais estão a ser alcançados.",
+          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da Área de Manejo."
         }
       }
     },
     "profile": {
       "header": {
-        "title": "Akun Anda",
-        "subtitle": "Gunakan halaman ini untuk memperbarui akun Anda"
+        "title": "Sua conta",
+        "subtitle": "Use esta página para atualizar sua conta"
       },
       "form": {
-        "legend": "Data Anda",
+        "legend": "Seus dados",
         "email": "Email",
-        "password": "Kata Sandi",
-        "username": "Nama Pengguna",
-        "first_name": "Nama Depan",
-        "last_name": "Nama Belakang",
-        "submit": "Simpan perubahan"
+        "password": "Senha",
+        "username": "Nome de usuário",
+        "first_name": "Primeiro nome",
+        "last_name": "Sobrenome",
+        "submit": "Salvar alterações"
       },
       "delete": {
-        "title": "Hapus Akun",
-        "subtitle": "Apa yang terjadi ketika Anda hapus akun Anda",
+        "title": "Deletar conta",
+        "subtitle": "O que acontece quando você exclui sua conta",
         "list": {
-          "1": "Kami akan menghubungi semua kolaborator Anda",
-          "2": "Jika penilaian yang Anda selesaikan terkait dengan organisasi, kami akan memberitahu organisasi tersebut",
-          "3": "Anda akan kehilangan akses ke semua penilaian yang Anda masukkan ke dalam sistem",
-          "4": "Akun Anda akan dihapus dari sistem termasuk semua informasi identifikasi Anda"
+          "1": "Entraremos em contato com todos os seus colaboradores",
+          "2": "Se alguma avaliação que você concluiu estiver relacionada a uma organização, notificaremos a organização",
+          "3": "Você perderá o acesso a todas as avaliações inseridas no sistema",
+          "4": "Sua conta será removida do sistema, incluindo todas as suas informações de identificação"
         },
         "confirm": {
-          "title": "Hapus Akun Anda",
+          "title": "Deletar conta",
           "message": {
-            "strong": "Peringatan!!",
-            "text": "Tindakan ini tidak dapat dibatalkan"
+            "strong": "Aviso!!",
+            "text": "Essa ação não pode ser desfeita"
           }
         }
       },
       "popup": {
-        "title": "Hapus Akun",
+        "title": "Deletar conta",
         "header": {
-          "title": "Apakah Anda yakin ingin menghapus akun Anda"
+          "title": "Tem certeza de que deseja excluir sua conta"
         },
         "body": {
-          "text": "Setelah Anda menghapusnya, Anda tidak akan dapat mengakses Penilaian Anda lagi, dan data Anda akan dihapus secara permanen."
+          "text": "Depois de excluí-lo, você não poderá acessar suas avaliações novamente e seus dados serão excluídos permanentemente."
         }
       }
     },
     "map": {
       "home": {
         "meta": {
-          "title": "Peta",
+          "title": "Mapa",
           "slug": "/map"
         }
       },
       "filters": {
         "form": {
           "placeholders": {
-            "countries": "Negara",
-            "attributes": "Berdasarkan Atribut"
+            "countries": "País",
+            "attributes": "Por atributos"
           }
         }
       },
       "legend": {
-        "plan": "Rencana",
-        "build": "Bangun",
-        "strengthen": "Perkuat",
-        "mantain": "Pertahankan"
+        "plan": "Planejar",
+        "build": "Construir",
+        "strengthen": "Fortalecer",
+        "mantain": "Mantain"
       },
       "popup": {
-        "managedArea": "Kawasan yang Dikelola",
-        "view": "#N/A"
+        "managedArea": "Área de Manejo",
+        "view": "View Menaged Area"
       },
-      "title": "PETA",
+      "title": "MAPA",
       "boxList": {
-        "covering": "meliputi",
+        "covering": "cobertura",
         "ha": "ha"
       },
       "boxAssessment": {
-        "managedArea": "Nama Kawasan yang Dikelola",
-        "byAttributes": "Berdasarkan Atribut",
-        "goToAssessment": "Pergi ke Penilaian Penuh"
+        "managedArea": "Nome da Área de Manejo",
+        "byAttributes": "Por Atributos",
+        "goToAssessment": "Ir para Avaliação Completa"
       }
     },
     "report": {
       "aside": {
-        "year": "Tahun didirikan",
-        "maGovernanceType": "Jenis tata kelola KA",
-        "totalHa": "Total hektar",
-        "assessmentType": "Jenis penilaian",
-        "maVersionDate": "Tanggal penilaian saat ini"
+        "year": "Ano de estabelecimento",
+        "maGovernanceType": "Tipo de governança da Área de Manejo",
+        "totalHa": "Hectares totais",
+        "assessmentType": "Tipo de avaliação",
+        "maVersionDate": "Data da avaliação atual"
       },
       "country": {
-        "download": "Unduh Laporan"
+        "download": "Baixar Relatório"
       },
-      "btnDownload": "Unduh Laporan",
+      "btnDownload": "Baixar Relatório",
       "scoreTable": {
-        "value": "nilai",
-        "indicator": "Indikator",
-        "attribute": "Atribut",
-        "aggregate": "Agregat",
+        "value": "valor",
+        "indicator": "Indicador",
+        "attribute": "Atributo",
+        "aggregate": "Agregado",
         "plan": {
-          "title": "Rencana",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk mengembangkan rencana mengatasi kesenjangan tata kelola yang parah"
+          "title": "Planejar",
+          "description": "Colaborar com detentores de direitos e outros atores para desenvolver planos para abordar lacunas graves de governança"
         },
         "build": {
-          "title": "Bangun",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk membangun kemajuan awal mengatasi kesenjangan tata kelola utama"
+          "title": "Construir",
+          "description": "Colaborar com detentores de direitos e outros atores para construir sobre o progresso inicial para abordar lacunas significativas de governança"
         },
         "strengthen": {
-          "title": "Perkuat",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk memperkuat tata kelola dengan mengatasi kesenjangan kecil"
+          "title": "Fortalecer",
+          "description": "Colaborar com detentores de direitos e outros atores para fortalecer a governança abordando lacunas menores"
         },
         "maintain": {
-          "title": "Pertahankan",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk mempertahankan tata kelola yang kuat dan memantau ancaman potensial"
+          "title": "Manter",
+          "description": "Colaborar com detentores de direitos e outros atores para manter uma governança forte e monitorar ameaças potenciais"
         }
       },
       "totalScores": {
-        "value": "nilai",
-        "indicator": "Indikator",
-        "attribute": "Atribut",
-        "aggregate": "Agregat",
+        "value": "valor",
+        "indicator": "Indicador",
+        "attribute": "Atributo",
+        "aggregate": "Agregado",
         "plan": {
-          "title": "Rencana",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk mengembangkan rencana mengatasi kesenjangan tata kelola yang parah"
+          "title": "Planejar",
+          "description": "Colaborar com detentores de direitos e outros atores para desenvolver planos para abordar lacunas graves de governança"
         },
         "build": {
-          "title": "Bangun",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk membangun kemajuan awal mengatasi kesenjangan tata kelola utama"
+          "title": "Construir",
+          "description": "Colaborar com detentores de direitos e outros atores para construir sobre o progresso inicial para abordar lacunas significativas de governança"
         },
         "strengthen": {
-          "title": "Perkuat",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk memperkuat tata kelola dengan mengatasi kesenjangan kecil"
+          "title": "Fortalecer",
+          "description": "Colaborar com detentores de direitos e outros atores para fortalecer a governança abordando lacunas menores"
         },
         "maintain": {
-          "title": "Pertahankan",
-          "description": "Berkolaborasi dengan pemegang hak dan aktor lain untuk mempertahankan tata kelola yang kuat dan memantau ancaman potensial"
+          "title": "Manter",
+          "description": "Colaborar com detentores de direitos e outros atores para manter uma governança forte e monitorar ameaças potenciais"
         }
       }
     },
     "background": {
-      "attribute": "#N/A",
-      "questions": "#N/A",
+      "attribute": "Attribute",
+      "questions": "Questions",
       "attribute_title": {
-        "heading": "#N/A",
-        "name": "#N/A",
-        "description": "#N/A",
-        "useIf": "#N/A"
+        "heading": "A summary of the attributes measured with Elinor",
+        "name": "Attribute name",
+        "description": "Attribute description",
+        "useIf": "Use this attribute if…"
       },
       "attribute_use": {
-        "1": "#N/A",
-        "2": "#N/A",
-        "3": "#N/A",
-        "4": "#N/A",
-        "5": "#N/A",
-        "6": "#N/A",
-        "7": "#N/A",
-        "8": "#N/A",
-        "9": "#N/A",
-        "10": "#N/A"
+        "1": "You wish to understand whether the boundaries of the MA are well established.",
+        "2": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.",
+        "3": "You would like to know what sort of information informs management decisions in the MA.",
+        "4": "You wish to assess the capacity of the MA’s management system.",
+        "5": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.",
+        "6": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.",
+        "7": "You wish to understand whether the regulations are clearly stated and fair.",
+        "8": "If you want to assess the quality of MA governance.",
+        "9": "You wish to know whether those involved in the MA think its objectives are being achieved.",
+        "10": "You wish to know whether those involved in the MA think its social objectives are being achieved."
       }
     }
   },
   "sidebar": {
-    "minimize": "#N/A"
+    "minimize": "Minimizar"
   },
   "popup": {
     "organization": {
-      "title": "#N/A",
-      "placeholder": "#N/A",
-      "tooltip": "#N/A"
+      "title": "Qual é a sua organização ou instituição?",
+      "placeholder": "Afiliação",
+      "tooltip": "Conteúdo da dica de afiliação"
     }
   },
   "default": {
-    "noresults": "#N/A",
-    "yes": "#N/A",
-    "no": "#N/A",
-    "accept": "#N/A",
-    "cancel": "#N/A",
-    "delete": "#N/A",
-    "create": "#N/A",
-    "downloadData": "#N/A",
-    "published": "#N/A",
-    "finalized": "#N/A",
-    "submit": "#N/A",
-    "close": "#N/A",
+    "noresults": "Nenhum resultado",
+    "yes": "Sim",
+    "no": "Não",
+    "accept": "Aceitar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "create": "Criar",
+    "downloadData": "Baixar dados",
+    "published": "Publicados",
+    "finalized": "Finalizado",
+    "submit": "Enviar",
+    "close": "Fechar",
     "filters": {
       "popup": {
-        "title": "#N/A"
+        "title": ""
       }
     },
     "upload-file": {
-      "placeholder": "#N/A",
+      "placeholder": "Arraste e solte um arquivo PDF aqui",
       "buttons": {
-        "select": "#N/A",
-        "clear": "#N/A"
+        "select": "Selecione um arquivo",
+        "clear": "Excluir"
       }
     },
     "upload-import-file": {
-      "placeholder": "#N/A",
+      "placeholder": "Arraste e solte um arquivo zip aqui",
       "buttons": {
-        "select": "#N/A",
-        "clear": "#N/A"
+        "select": "Selecione um arquivo",
+        "clear": "Excluir"
       }
     },
     "upload-mapimage": {
-      "placeholder": "#N/A",
+      "placeholder": "Arraste e solte um arquivo de imagem aqui",
       "buttons": {
-        "select": "#N/A",
-        "clear": "#N/A"
+        "select": "Selecione um arquivo",
+        "clear": "Excluir"
       }
     },
     "save": {
-      "autosave": "#N/A"
+      "autosave": "Dados salvos"
     },
-    "flag": "#N/A",
-    "uploadSurveyFile": "#N/A",
-    "downloadSurveyFile": "#N/A",
-    "contactAdministrator": "#N/A",
-    "generateReport": "#N/A",
-    "version": "#N/A",
-    "description": "#N/A",
-    "areaSize": "#N/A",
-    "required": "#N/A"
+    "flag": "Sinalizar",
+    "uploadSurveyFile": "Enviar questionário",
+    "downloadSurveyFile": "Baixar questionário",
+    "contactAdministrator": "Contatar Administrador",
+    "generateReport": "Gerar Relatório",
+    "version": "Versão",
+    "description": "Descrição",
+    "areaSize": "Tamanho da Área",
+    "required": "Obrigatório"
   },
   "footer": {
-    "faqs": "#N/A",
-    "methodology": "#N/A",
-    "createAccount": "#N/A",
-    "copyright": "#N/A",
-    "copyrightAfterYear": "#N/A",
-    "termsOfUse": "#N/A",
-    "privacyPolicy": "#N/A"
+    "faqs": "Perguntas frequentes",
+    "methodology": "Metodologia",
+    "createAccount": "Criar uma conta",
+    "copyright": "© direito autoral",
+    "copyrightAfterYear": "Elinor. Todos os direitos reservados.",
+    "termsOfUse": "Termos de uso",
+    "privacyPolicy": "política de Privacidade"
   },
   "buttons": {
-    "seeMore": "#N/A",
-    "seeLess": "#N/A"
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos"
   }
 }
