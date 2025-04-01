@@ -116,9 +116,9 @@
           }
         },
         "latestNews": {
-          "title": "LATEST NEWS",
-          "readMore": "Read more",
-          "seeMoreNews": "See more news"
+          "title": "ÚLTIMAS NOTÍCIAS",
+          "readMore": "Ler mais",
+          "seeMoreNews": "Ver mais notícias"
         }
       }
     },
@@ -159,7 +159,7 @@
         "tryAgainButton": "Tente novamente"
       },
       "resetPassword": {
-        "title": "REINICIAR SENHA",
+        "title": "REDEFINIR SENHA",
         "subtitle": "Digite uma nova senha abaixo",
         "error": {
           "title": "Erro!"
@@ -173,7 +173,7 @@
       "meta": {
         "title": "Avaliações",
         "slug": "/assessments",
-        "offlineTitle": "Avaliação Offline"
+        "offlineTitle": "Offline Survey"
       },
       "list": {
         "title": "Avaliações",
@@ -225,26 +225,26 @@
           "all": "Todos"
         },
         "aggregateReport": {
-          "button": "Aggregate report",
-          "title": "Create Aggregate Report",
-          "subtitle": "Select Assessments to Aggregate",
-          "byManagementAreas": "by MA",
-          "byCountries": "by Countries",
-          "byYear": "by Year",
-          "byType": "by Type of assessment",
-          "year": "Year",
-          "giveName": "Give it a name",
-          "giveNamePlaceholder": "Name here",
-          "assessments": "Selected Assessments",
-          "create": "Create Aggregate Report",
-          "covering": "Assessments covering",
+          "button": "Relatório agregado",
+          "title": "Criar Relatório Agregado",
+          "subtitle": "Selecionar Avaliações para Agregar",
+          "byManagementAreas": "por Áreas de Manejo",
+          "byCountries": "por Países",
+          "byYear": "por Ano",
+          "byType": "por Tipo de avaliação",
+          "year": "Ano",
+          "giveName": "Dê um nome",
+          "giveNamePlaceholder": "Nome aqui",
+          "assessments": "Avaliações Selecionadas",
+          "create": "Criar Relatório Agregado",
+          "covering": "Avaliações abrangendo",
           "coveringHA": "ha",
-          "filtersSelected": "Filters selected",
-          "managementAreaNoOptions": "Type the name of MA",
-          "managementAreaNoResults": "No matching MAs found",
-          "selectedAssessmentsError": "You have to select at least 1 assessment",
-          "nameRequiredError": "The name of the report is required",
-          "nameLengthError": "The name of the report is too long"
+          "filtersSelected": "Filtros selecionados",
+          "managementAreaNoOptions": "Digite o nome da Área de Manejo",
+          "managementAreaNoResults": "Nenhuma Área de Manejo correspondente encontrada",
+          "selectedAssessmentsError": "Você precisa selecionar pelo menos 1 avaliação",
+          "nameRequiredError": "O nome do relatório é necessário",
+          "nameLengthError": "O nome do relatório é muito longo"
         }
       },
       "view": {
@@ -262,14 +262,14 @@
               "managementAreaName": "Nome da Área de Manejo",
               "protectedArea": "Nome do PA/CA maior, esta área focal está contida em",
               "dateEstablished": "Data de estabelecimento formal (se aplicável)",
-              "reportedSize": "Tamanho da AM (ha)",
+              "reportedSize": "Tamanho da Área de Manejo (ha)",
               "containedBy": "Nome da Área de Manejo relacionada",
-              "governanceType": "Tipo de governança AM (caixa de seleção)",
+              "governanceType": "Tipo de governança Área de Manejo (caixa de seleção)",
               "managementAuthority": "Nome da autoridade de gestão",
-              "recognitionLevel": "Os direitos da autoridade AM são formalmente reconhecidos em… (caixa de seleção)",
-              "supportSources": "A autoridade de gestão da AM recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
-              "countries": "País/países onde AM está localizada",
-              "regions": "Estado(s)/província(s) onde AM está localizado",
+              "recognitionLevel": "Os direitos da autoridade Área de Manejo são formalmente reconhecidos em… (caixa de seleção)",
+              "supportSources": "A autoridade de gestão da Área de Manejo recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+              "countries": "País/países onde Área de Manejo está localizada",
+              "regions": "Estado(s)/província(s) onde Área de Manejo está localizado",
               "zones": {
                 "title": "ZONAS",
                 "zoneName": "Nome da zona",
@@ -278,7 +278,7 @@
               }
             },
             "map": {
-              "title": "Mapa ou Arquivo Espacial da AM",
+              "title": "Mapa ou Arquivo Espacial da Área de Manejo",
               "subtitle": "Informação geoespacial"
             },
             "people": {
@@ -393,18 +393,18 @@
               "title": "Zonas",
               "name": "Nome da nova área gerenciada",
               "protectedArea": "ID Associada na Base de Dados Mundial sobre Áreas Protegidas",
-              "containedBy": "Selecione quaisquer outras Áreas Gerenciadas relacionadas a esta AM. Se não houver, pule.",
+              "containedBy": "Selecione quaisquer outras Áreas Gerenciadas relacionadas a esta Área de Manejo. Se não houver, pule.",
               "dateEstablished": "Data de estabelecimento formal (se aplicável)",
-              "reportedSize": "Tamanho da AM (ha)",
+              "reportedSize": "Tamanho da Área de Manejo (ha)",
               "managementAuthority": "Nome da autoridade de gestão",
-              "governanceType": "Tipo de governança AM",
-              "objectives": "Objetivos da AM",
-              "recognitionLevel": "Os direitos da autoridade AM são formalmente reconhecidos no…",
+              "governanceType": "Tipo de governança Área de Manejo",
+              "objectives": "Objetivos da Área de Manejo",
+              "recognitionLevel": "Os direitos da autoridade Área de Manejo são formalmente reconhecidos no…",
               "stakeholderGroups": "Número de pessoas envolvidas nos principais grupos de detentores de direitos e outros atores",
-              "supportSources": "A autoridade de gestão da AM recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
-              "countries": "País/países onde AM está localizada",
-              "regions": "Estado(s)/província(s) onde AM está localizado",
-              "zones": "Este AM tem zonas?",
+              "supportSources": "A autoridade de gestão da Área de Manejo recebe apoio técnico, financeiro ou de outro tipo de algum dos seguintes grupos ou organizações?",
+              "countries": "País/países onde Área de Manejo está localizada",
+              "regions": "Estado(s)/província(s) onde Área de Manejo está localizado",
+              "zones": "Este Área de Manejo tem zonas?",
               "zoneName": "Nome da zona",
               "zoneLevel": "Selecione o nível de acesso que melhor descreve esta zona",
               "protectedAreaWdpaIdHelp": "WDPA ID can be found on the protected planet website.",
@@ -487,10 +487,10 @@
               "rationale": "O que esta pergunta está perguntando?"
             },
             "inactiveAttribute": "Para ativar esta pergunta, você deve ativar o atributo",
-            "offlinePopupTitle": "Avaliação Offline",
-            "offlinePopupDescription": "Esta avaliação está sendo editada por {username} em modo offline",
-            "withoutConnectionPopupTitle": "Sem conexão com a internet",
-            "withoutConnectionPopupDescription": "Você poderá voltar online quando a conexão com a internet for restabelecida"
+            "offlinePopupTitle": "Offline Survey",
+            "offlinePopupDescription": "This survey is being edited by {username} in offline mode",
+            "withoutConnectionPopupTitle": "Without Internet Connection",
+            "withoutConnectionPopupDescription": "You will be able to turn online once internet connection is back"
           },
           "collaborators": {
             "tabButton": "Contribuidores",
@@ -522,7 +522,7 @@
                     "name": "Administrador",
                     "permission1": "Edite os dados da avaliação",
                     "permission2": "Editar dados da pesquisa",
-                    "permission3": "Editar localização da AM",
+                    "permission3": "Editar localização da Área de Manejo",
                     "permission4": "Adicionar/editar administradores, colaboradores e observadores",
                     "permission5": "Excluir a avaliação",
                     "permission6": "Publicar e cancelar publicação da avaliação"
@@ -530,16 +530,16 @@
                   "contributor": {
                     "name": "Contribuidor",
                     "permission1": "Edite os dados da avaliação",
-                    "permission2": "Edite os dados de localização da AM",
+                    "permission2": "Edite os dados de localização da Área de Manejo",
                     "permission3": "Visualizar os dados da avaliação",
                     "permission4": "Visualizar os dados da pesquisa",
-                    "permission5": "Veja a localização da AM"
+                    "permission5": "Veja a localização da Área de Manejo"
                   },
                   "observer": {
                     "name": "Observador",
                     "permission1": "Visualizar os dados da avaliação",
                     "permission2": "Visualizar os dados da pesquisa",
-                    "permission3": "Veja a localização da AM"
+                    "permission3": "Veja a localização da Área de Manejo"
                   }
                 },
                 "error": "Erro de validação"
@@ -607,7 +607,7 @@
         "mandatoryAttribute": "Obrigatório",
         "inactiveAttribute": "Atributo Inativo",
         "activeAttribute": "Atributo Ativo",
-        "offlineSurveyWarning": "Certifique-se de que as edições off-line ocorram no mesmo navegador. Se você trocar de navegador antes de colocar a pesquisa on-line novamente, poderá perder suas edições off-line."
+        "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
       },
       "statuses": {
         "90": "Abrir",
@@ -631,7 +631,7 @@
         "step-1": {
           "title": "Escolha seu caminho para coleta de dados",
           "text": "Elinor pode ser completada de duas maneiras:",
-          "li-1": "Através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidas e afetadas pela AM.",
+          "li-1": "Através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidas e afetadas pela Área de Manejo.",
           "li-2": "Como uma avaliação documental liderada, por exemplo, por um conservacionista ou um gestor do sítio."
         },
         "step-2": {
@@ -701,7 +701,7 @@
             "explanation": "The three attributes listed above received the highest scores. Use this space to reflect on why you think those are the key strengths for this area."
           },
           "needs": {
-            "title": "Key governance needs",
+            "title": "Key governance strengths",
             "label": "Explain Main Needs",
             "explanation": "The three attributes listed above received the lowest scores. Use this space to reflect on why you think those may be three areas for further reflection."
           },
@@ -711,8 +711,8 @@
             "explanation": "Use this space to briefly describe the main rights-holders and other actors in this area, the key governance and management challenges, and any other factors that you think shape the social and ecological outcomes of the area."
           },
           "button": "Generate",
-          "buttonGenerating": "Gerando...",
-          "error": "Ocorreu um erro ao gerar o relatório."
+          "buttonGenerating": "Generating...",
+          "error": "There was an error generating the report."
         }
       },
       "outOf100": "de 100",
@@ -760,7 +760,7 @@
           "invalid_choices": "escolhas inválidas nas células: {choice_error_cells}",
           "invalid_answers": "respostas inválidas",
           "answer_save": "erro ao salvar respostas no banco de dados",
-          "detail": "Você não tem permissão para realizar esta ação"
+          "detail": "You are not allowed to perform this action"
         }
       },
       "roles": {
@@ -830,36 +830,36 @@
         }
       },
       "title": "Metodologia",
-      "paragraph1": "A avaliação da Elinor pode ser concluída de duas maneiras diferentes: através de um grupo focal facilitado com diferentes detentores de direitos e detentores de direitos e outros atores envolvidas e afetadas pela AM, ou como uma avaliação documental liderada por um profissional de conservação. Ao inserir dados, os usuários podem indicar qual caminho seguiram para gerar os dados na avaliação e que tipos de detentores de direitos e outros atores estiveram envolvidas na avaliação.",
+      "paragraph1": "A avaliação da Elinor pode ser concluída de duas maneiras diferentes: através de um grupo focal facilitado com diferentes detentores de direitos e outros atores envolvidos e afetados pela Área de Manejo, ou como uma avaliação documental liderada por um profissional de conservação. Ao inserir dados, os usuários podem indicar qual caminho seguiram para gerar os dados na avaliação e que tipos de detentores de direitos e outros atores estiveram envolvidos na avaliação.",
       "subtitle1": "Elinor como uma discussão de grupo focal baseada em campo",
-      "paragraph2": "A maioria das avaliações de governação são tradicionalmente concluídas através de discussões participativas em grupos focais; alavancar percepções diversas das principais detentores de direitos e outros atores envolvidas na gestão e governança de uma área específica. Para aqueles com tempo e capacidade para reunir diversas perspectivas sobre gestão e governança, recomendamos baixar a ferramenta e o protocolo de avaliação Elinor para orientar seus esforços.",
-      "paragraph3": "Esta orientação oferece insights sobre como liderar eticamente um grupo, obter as permissões corretas para usar os dados , e sondar diversas perspectivas; especialmente daqueles que podem ter sido tradicionalmente marginalizados. Este é o caminho preferido, pois permite que diversas vozes contribuam para a avaliação, proporcionando uma perspectiva mais holística sobre a situação da gestão e governação numa área.",
+      "paragraph2": "A maioria das avaliações de governança são tradicionalmente concluídas através de discussões participativas em grupos focais, alavancando percepções diversas dos principais detentores de direitos e outros atores envolvidos na gestão e governança de uma área específica. Para aqueles com tempo e capacidade para reunir diversas perspectivas sobre gestão e governança, recomendamos baixar a ferramenta e o protocolo de avaliação Elinor para orientar seus esforços.",
+      "paragraph3": "Esta orientação oferece insights sobre como liderar eticamente um grupo, obter as permissões corretas para usar os dados e sondar diversas perspectivas; especialmente daqueles que podem ter sido tradicionalmente marginalizados. Este é o caminho preferido, pois permite que diversas vozes contribuam para a avaliação, proporcionando uma perspectiva mais holística sobre a situação da gestão e governança numa área.",
       "cta1": "Baixar protocolo",
-      "subtitle2": "Elinor como uma avaliação documental conduzida por profissionais.",
-      "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos. lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com a AM discutirem e responderem cada pergunta, com base em sua experiência e conhecimento da AM. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
+      "subtitle2": "Elinor como uma avaliação documental conduzida por profissionais",
+      "paragraph4": "Este caminho é para aqueles que têm tempo, recursos ou capacidades limitados para realizar um grupo focal participativo. Embora uma avaliação documental ofereça uma opção limitada, ela permite a geração de alguns dados sobre a área gerenciada, o que pode fornecer uma avaliação muitas vezes adequada e útil sobre a situação atual e as tendências na área, e pode ajudar os usuários a identificar quaisquer problemas críticos ou lacunas de conhecimento que exigiriam mais pesquisa e investimento. Caso opte por seguir esse caminho, reserve tempo para você e seus colegas familiarizados com a Área de Manejo discutirem e responderem cada pergunta, com base em sua experiência e conhecimento da Área de Manejo. Se possível, recomendamos envolver diferentes detentores de direitos e outros atores de todas as maneiras possíveis para obter insights sobre as diferentes questões.",
       "subtitle3": "A pontuação",
       "paragraph5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "scoreTable": {
-        "value": "value",
-        "values": "Values",
-        "indicator": "Indicator",
-        "attribute": "Attribute",
-        "aggregate": "Aggregate",
+        "value": "valor",
+        "values": "Valores",
+        "indicator": "Indicador",
+        "attribute": "Atributo",
+        "aggregate": "Agregado",
         "plan": {
-          "title": "Plan",
-          "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+          "title": "Planejar",
+          "description": "Colaborar com os detentores de direitos e outros atores para desenvolver planos para abordar lacunas graves de governança"
         },
         "build": {
-          "title": "Build",
-          "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+          "title": "Construir",
+          "description": "Colaborar com os detentores de direitos e outros atores para construir sobre o progresso inicial para abordar lacunas significativas de governança"
         },
         "strengthen": {
-          "title": "Strengthen",
-          "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+          "title": "Fortalecer",
+          "description": "Colaborar com os detentores de direitos e outros atores para fortalecer a governança ao abordar lacunas menores"
         },
         "maintain": {
-          "title": "Maintain",
-          "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+          "title": "Manter",
+          "description": "Colaborar com os detentores de direitos e outros atores para manter uma governança forte e monitorar ameaças potenciais"
         }
       }
     },
@@ -869,7 +869,7 @@
     "contact": {
       "home": {
         "meta": {
-          "title": "Contact",
+          "title": "Contato",
           "slug": "/contact"
         }
       },
@@ -886,11 +886,11 @@
         "mail": "Seu email",
         "message": "Mensagem",
         "submit": "Enviar mensagem",
-        "confirmation": "Thank you for contacting elinor",
-        "namePlaceholder": "Name",
-        "subjectPlaceholder": "Subject",
-        "mailPlaceholder": "Mail",
-        "messagePlaceholder": "Message"
+        "confirmation": "Obrigado por entrar em contato com a Elinor",
+        "namePlaceholder": "Nome",
+        "subjectPlaceholder": "Assunto",
+        "mailPlaceholder": "E-mail",
+        "messagePlaceholder": "Mensagem"
       }
     },
     "collaboration": {
@@ -915,7 +915,7 @@
         "question1": "Sempre represente as informações com precisão",
         "answer1": "Os resultados da avaliação são fornecidos com metadados de apoio adicionais, que descrevem sua fonte, como foram compilados, sua qualidade e quaisquer limitações. Certifique-se de que isso se reflita na forma como você usa e apresenta os dados.",
         "question2": "Sempre reconheça os proprietários dos dados em qualquer apresentação, publicação ou relatório e cite o sistema de dados da Elinor como fonte de informação.",
-        "answer2-1": "Recomendamos usar a seguinte declaração ao usar dados da plataforma Elinor “Expressamos nossa gratidão aos indivíduos e instituições que apoiaram a geração de dados para a Avaliação Elinor em [INSERIR AM OU REGIÃO AQUI], incluindo quaisquer participantes e facilitadores de grupos focais”",
+        "answer2-1": "Recomendamos usar a seguinte declaração ao usar dados da plataforma Elinor “Expressamos nossa gratidão aos indivíduos e instituições que apoiaram a geração de dados para a Avaliação Elinor em [INSERIR Área de Manejo OU REGIÃO AQUI], incluindo quaisquer participantes e facilitadores de grupos focais”",
         "answer2-2": {
           "paragraph1": "Use a seguinte citação para se referir ao sistema de dados Elinor:",
           "paragraph2": "Elinor: Uma ferramenta e sistema de dados para avaliar a gestão e governança equitativas para a conservação baseada em áreas. (ANO) Disponível em: elinordata.org [Data de acesso]"
@@ -949,63 +949,63 @@
       "elinorAttributes": {
         "attribute1": {
           "name": "1. Fronteiras dos recursos",
-          "description": "Este atributo mede a qualidade dos limites da AM. As questões questionam se os limites da AM são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.",
-          "useIf": "Você deseja entender se os limites da AM estão bem estabelecidos.",
-          "reportText": "Mede até que ponto os limites da AM são claramente marcados e compreendidos pelos principais detentores de direitos e outros intervenientes"
+          "description": "Este atributo mede a qualidade dos limites da Área de Manejo. As questões questionam se os limites da Área de Manejo são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.",
+          "useIf": "Você deseja entender se os limites da Área de Manejo estão bem estabelecidos.",
+          "reportText": "Mede até que ponto os limites da Área de Manejo são claramente marcados e compreendidos pelos principais detentores de direitos e outros intervenientes"
         },
         "attribute2": {
           "name": "2. Aplicação da lei",
-          "description": "Este atributo mede quão bem a AM é capaz de fazer cumprir os regulamentos. Analisa especificamente as sanções por violação das regras da AM e a sua natureza e extensão.",
-          "useIf": "Você gostaria de ter uma compreensão preliminar sobre a violação de regras na AM e se existe informação que possa facilitar as atividades de M&A ou contribuir para a gestão adaptativa.",
-          "reportText": "Mede quão bem a AM é capaz de fazer cumprir os regulamentos"
+          "description": "Este atributo mede quão bem a Área de Manejo é capaz de fazer cumprir os regulamentos. Analisa especificamente as sanções por violação das regras da Área de Manejo e a sua natureza e extensão.",
+          "useIf": "Você gostaria de ter uma compreensão preliminar sobre a violação de regras na Área de Manejo e se existe informação que possa facilitar as atividades de M&A ou contribuir para a gestão adaptativa.",
+          "reportText": "Mede quão bem a Área de Manejo é capaz de fazer cumprir os regulamentos"
         },
         "attribute3": {
           "name": "3. Capacidade de gestão adaptativa",
-          "description": "Este atributo mede se os decisores responsáveis ​​pela gestão da AM incorporam diferentes formas de conhecimento na sua tomada de decisão. Também pergunta se as condições sociais, ecológicas ou de alterações climáticas são monitorizadas.",
-          "useIf": "Você gostaria de saber que tipo de informação informa as decisões de gestão na AM.",
+          "description": "Este atributo mede se os decisores responsáveis ​​pela gestão da Área de Manejo incorporam diferentes formas de conhecimento na sua tomada de decisão. Também pergunta se as condições sociais, ecológicas ou de alterações climáticas são monitorizadas.",
+          "useIf": "Você gostaria de saber que tipo de informação informa as decisões de gestão na Área de Manejo.",
           "reportText": "Mede se os gestores de CG incorporam diferentes formas de conhecimento na sua tomada de decisão"
         },
         "attribute4": {
           "name": "4. Capacidade operacional",
-          "description": "Este atributo mede se os responsáveis ​​pela gestão da AM possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
-          "useIf": "Pretende avaliar a capacidade do sistema de gestão da AM.",
-          "reportText": "Mede se os responsáveis pela gestão da AM têm recursos para fazê-lo"
+          "description": "Este atributo mede se os responsáveis ​​pela gestão da Área de Manejo possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+          "useIf": "Pretende avaliar a capacidade do sistema de gestão da Área de Manejo.",
+          "reportText": "Mede se os responsáveis pela gestão da Área de Manejo têm recursos para fazê-lo"
         },
         "attribute5": {
           "name": "5. Gestão inclusiva e equitativa",
-          "description": "Este atributo mede se os responsáveis ​​pela gestão da AM possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
-          "useIf": "Pretende avaliar a capacidade do sistema de gestão da AM.",
-          "reportText": "Mede a inclusão e a equidade na gestão das AM, especialmente no que diz respeito aos grupos vulneráveis"
+          "description": "Este atributo mede se os responsáveis ​​pela gestão da Área de Manejo possuem recursos para fazê-lo. Analisa especificamente os recursos humanos, a capacidade de execução, as necessidades orçamentais e de equipamento.",
+          "useIf": "Pretende avaliar a capacidade do sistema de gestão da Área de Manejo.",
+          "reportText": "Mede a inclusão e a equidade na gestão das Área de Manejo, especialmente no que diz respeito aos grupos vulneráveis"
         },
         "attribute6": {
           "name": "6. Direitos e tomada de decisões claramente definidos",
-          "description": "Este atributo mede a inclusão e a equidade na gestão das AM, duas componentes importantes da boa governação. As questões sobre inclusão e equidade questionam se as autoridades da AM permitem que os titulares de direitos e outros intervenientes contribuam para as decisões de gestão, se existe uma estratégia para partilhar os benefícios de forma equitativa entre eles, e se a resiliência da comunidade às alterações climáticas é tida em conta na gestão.",
-          "useIf": "Você deseja compreender se a AM inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
+          "description": "Este atributo mede a inclusão e a equidade na gestão das Áreas de Manejo, duas componentes importantes da boa governação. As questões sobre inclusão e equidade questionam se as autoridades da Área de Manejo permitem que os titulares de direitos e outros intervenientes contribuam para as decisões de gestão, se existe uma estratégia para partilhar os benefícios de forma equitativa entre eles, e se a resiliência da comunidade às alterações climáticas é tida em conta na gestão.",
+          "useIf": "Você deseja compreender se a Área de Manejo inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
           "reportText": "Mede até que ponto os direitos da comunidade na gestão dos recursos naturais são claramente compreendidos pelos principais detentores de direitos e outros intervenientes"
         },
         "attribute7": {
           "name": "7. Regulamentos claros e coerentes",
-          "description": "Este atributo mede a qualidade dos regulamentos da AM. Especificamente i) até que ponto são claros e ii) até que ponto se alinham com o contributo dos titulares de direitos e de outros intervenientes na governação da AM, noutros níveis de autoridade de gestão e no contexto social e ambiental em que operam.",
+          "description": "Este atributo mede a qualidade dos regulamentos da Área de Manejo. Especificamente i) até que ponto são claros e ii) até que ponto se alinham com o contributo dos titulares de direitos e de outros intervenientes na governação da Área de Manejo, noutros níveis de autoridade de gestão e no contexto social e ambiental em que operam.",
           "useIf": "Você deseja entender se os regulamentos são claramente definidos e justos.",
-          "reportText": "Mede até que ponto os regulamentos de AM são claros e alinhados com os objetivos de governação dos titulares de direitos e de outros intervenientes"
+          "reportText": "Mede até que ponto os regulamentos de Área de Manejo são claros e alinhados com os objetivos de governação dos titulares de direitos e de outros intervenientes"
         },
         "attribute8": {
           "name": "8. Transparência e prestação de contas",
-          "description": "Este atributo mede a transparência, a responsabilização e a resolução de conflitos, aspectos importantes para a boa governação. É importante que as pessoas directamente afectadas pelas decisões de gestão sejam informadas das mesmas antes da sua implementação, que os decisores sejam responsabilizados e que haja oportunidades para a resolução de conflitos. A transparência é medida perguntando se a comunicação de informações da autoridade da AM aos titulares de direitos e outros intervenientes é oportuna, e a responsabilização é medida perguntando se a autoridade da AM enfrenta consequências se não cumprir as suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à forma como eficaz é.",
-          "useIf": "Se quiser avaliar a qualidade da governação da AM.",
+          "description": "Este atributo mede a transparência, a responsabilização e a resolução de conflitos, aspectos importantes para a boa governação. É importante que as pessoas directamente afectadas pelas decisões de gestão sejam informadas das mesmas antes da sua implementação, que os decisores sejam responsabilizados e que haja oportunidades para a resolução de conflitos. A transparência é medida perguntando se a comunicação de informações da autoridade da Área de Manejo aos titulares de direitos e outros intervenientes é oportuna, e a responsabilização é medida perguntando se a autoridade da Área de Manejo enfrenta consequências se não cumprir as suas responsabilidades e o mecanismo de resolução de conflitos é avaliado quanto à forma como eficaz é.",
+          "useIf": "Se quiser avaliar a qualidade da governação da Área de Manejo.",
           "reportText": "Mede até que ponto as pessoas diretamente afetadas pelas decisões de gestão são informadas delas com antecedência, podem responsabilizar os tomadores de decisão e têm oportunidades de resolução de conflitos."
         },
         "attribute9": {
           "name": "9. Resultados ecológicos percebidos",
-          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação da Elinor têm sobre os resultados ecológicos da AM.",
-          "useIf": "Pretende saber se os envolvidos na AM consideram que os seus objectivos ecológicos estão a ser alcançados.",
-          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da AM."
+          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação da Elinor têm sobre os resultados ecológicos da Área de Manejo.",
+          "useIf": "Pretende saber se os envolvidos na Área de Manejo consideram que os seus objectivos ecológicos estão a ser alcançados.",
+          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da Área de Manejo."
         },
         "attribute10": {
           "name": "10. Resultados sociais percebidos",
-          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da AM.",
-          "useIf": "Pretende saber se os envolvidos na AM consideram que os seus objectivos sociais estão a ser alcançados.",
-          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da AM."
+          "description": "Este atributo mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados sociais da Área de Manejo.",
+          "useIf": "Pretende saber se os envolvidos na Área de Manejo consideram que os seus objectivos sociais estão a ser alcançados.",
+          "reportText": "Mede as percepções gerais que aqueles que completam a avaliação Elinor têm sobre os resultados ecológicos e sociais da Área de Manejo."
         }
       }
     },
@@ -1066,103 +1066,103 @@
         }
       },
       "legend": {
-        "plan": "Plan",
-        "build": "Build",
-        "strengthen": "Strengthen",
+        "plan": "Planejar",
+        "build": "Construir",
+        "strengthen": "Fortalecer",
         "mantain": "Mantain"
       },
       "popup": {
-        "managedArea": "Managed Area",
+        "managedArea": "Área de Manejo",
         "view": "View Menaged Area"
       },
-      "title": "MAP",
+      "title": "MAPA",
       "boxList": {
-        "covering": "covering",
+        "covering": "cobertura",
         "ha": "ha"
       },
       "boxAssessment": {
-        "managedArea": "Name of Management Area",
-        "byAttributes": "By Attributes",
-        "goToAssessment": "Go to Full Assessment"
+        "managedArea": "Nome da Área de Manejo",
+        "byAttributes": "Por Atributos",
+        "goToAssessment": "Ir para Avaliação Completa"
       }
     },
     "report": {
       "aside": {
-        "year": "Year established",
-        "maGovernanceType": "MA governance type",
-        "totalHa": "Total hectareas",
-        "assessmentType": "Assessment type",
-        "maVersionDate": "Current assessment date"
+        "year": "Ano de estabelecimento",
+        "maGovernanceType": "Tipo de governança da Área de Manejo",
+        "totalHa": "Hectares totais",
+        "assessmentType": "Tipo de avaliação",
+        "maVersionDate": "Data da avaliação atual"
       },
       "country": {
-        "download": "Download Report"
+        "download": "Baixar Relatório"
       },
-      "btnDownload": "Download Report",
+      "btnDownload": "Baixar Relatório",
       "scoreTable": {
-        "value": "value",
-        "indicator": "Indicator",
-        "attribute": "Attribute",
-        "aggregate": "Aggregate",
+        "value": "valor",
+        "indicator": "Indicador",
+        "attribute": "Atributo",
+        "aggregate": "Agregado",
         "plan": {
-          "title": "Plan",
-          "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+          "title": "Planejar",
+          "description": "Colaborar com detentores de direitos e outros atores para desenvolver planos para abordar lacunas graves de governança"
         },
         "build": {
-          "title": "Build",
-          "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+          "title": "Construir",
+          "description": "Colaborar com detentores de direitos e outros atores para construir sobre o progresso inicial para abordar lacunas significativas de governança"
         },
         "strengthen": {
-          "title": "Strengthen",
-          "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+          "title": "Fortalecer",
+          "description": "Colaborar com detentores de direitos e outros atores para fortalecer a governança abordando lacunas menores"
         },
         "maintain": {
-          "title": "Maintain",
-          "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+          "title": "Manter",
+          "description": "Colaborar com detentores de direitos e outros atores para manter uma governança forte e monitorar ameaças potenciais"
         }
       },
       "totalScores": {
-        "value": "value",
-        "indicator": "Indicator",
-        "attribute": "Attribute",
-        "aggregate": "Aggregate",
+        "value": "valor",
+        "indicator": "Indicador",
+        "attribute": "Atributo",
+        "aggregate": "Agregado",
         "plan": {
-          "title": "Plan",
-          "description": "Collaborate with rights holders and other actors to develop plans for addressing severe governance gaps"
+          "title": "Planejar",
+          "description": "Colaborar com detentores de direitos e outros atores para desenvolver planos para abordar lacunas graves de governança"
         },
         "build": {
-          "title": "Build",
-          "description": "Collaborate with rights holders and other actors to build upon initial progress to address major governance gap"
+          "title": "Construir",
+          "description": "Colaborar com detentores de direitos e outros atores para construir sobre o progresso inicial para abordar lacunas significativas de governança"
         },
         "strengthen": {
-          "title": "Strengthen",
-          "description": "Collaborate with rights holders and other actors to strengthen governance by addressing minor gaps"
+          "title": "Fortalecer",
+          "description": "Colaborar com detentores de direitos e outros atores para fortalecer a governança abordando lacunas menores"
         },
         "maintain": {
-          "title": "Maintain",
-          "description": "Collaborate with rights holders and other actors to maintain strong governance and monitor potential threats"
+          "title": "Manter",
+          "description": "Colaborar com detentores de direitos e outros atores para manter uma governança forte e monitorar ameaças potenciais"
         }
       }
     },
     "background": {
-      "attribute": "Atributo",
-      "questions": "Questões",
+      "attribute": "Attribute",
+      "questions": "Questions",
       "attribute_title": {
-        "heading": "Resumo dos atributos medidos com Elinor",
-        "name": "Nome do atributo",
-        "description": "Descrição do atributo",
-        "useIf": "Use este atributo se…"
+        "heading": "A summary of the attributes measured with Elinor",
+        "name": "Attribute name",
+        "description": "Attribute description",
+        "useIf": "Use this attribute if…"
       },
       "attribute_use": {
-        "1": "Você deseja entender se os limites da AM estão bem estabelecidos.",
-        "2": "Você deseja entender se há violações ou incumprimentos das regras da AM e se há informações que possam facilitar a supervisão e a gestão, ou que sejam incluídas na gestão adaptativa.",
-        "3": "Você deseja saber que tipo de informações informam as decisões de gestão na AM.",
-        "4": "Você deseja avaliar a capacidade de gestão da AM para se adaptar a mudanças.",
-        "5": "Você deseja entender se a AM inclui grupos vulneráveis ​​nas decisões e resultados de gestão.",
-        "6": "Você deseja avaliar o controle ou o acesso da comunidade local aos recursos naturais da AM que você gerencia.",
-        "7": "Você deseja entender se as regras da AM são claras e justas.",
-        "8": "Você deseja avaliar a qualidade da governação da AM.",
-        "9": "Você deseja saber se as pessoas envolvidas na AM pensam que os seus objectivos ecológicos estão a ser alcançados.",
-        "10": "Você deseja saber se as pessoas envolvidas na AM pensam que os seus objectivos sociais estão a ser alcançados."
+        "1": "You wish to understand whether the boundaries of the MA are well established.",
+        "2": "You would like a preliminary understanding about rule breaking in the MA and whether information exists that may facilitate M&E activities or feed into adaptive management.",
+        "3": "You would like to know what sort of information informs management decisions in the MA.",
+        "4": "You wish to assess the capacity of the MA’s management system.",
+        "5": "You wish to understand whether the MA includes vulnerable groups in management decisions and outcomes.",
+        "6": "You wish to assess the local communities' control over, or access to, the natural resources in the MA you work.",
+        "7": "You wish to understand whether the regulations are clearly stated and fair.",
+        "8": "If you want to assess the quality of MA governance.",
+        "9": "You wish to know whether those involved in the MA think its objectives are being achieved.",
+        "10": "You wish to know whether those involved in the MA think its social objectives are being achieved."
       }
     }
   },
@@ -1218,15 +1218,15 @@
     "save": {
       "autosave": "Dados salvos"
     },
-    "flag": "Flag",
-    "uploadSurveyFile": "Upload survey",
-    "downloadSurveyFile": "Download survey",
-    "contactAdministrator": "Contact Administrator",
-    "generateReport": "Generate Report",
-    "version": "Version",
-    "description": "Description",
-    "areaSize": "Area Size",
-    "required": "Required"
+    "flag": "Sinalizar",
+    "uploadSurveyFile": "Enviar questionário",
+    "downloadSurveyFile": "Baixar questionário",
+    "contactAdministrator": "Contatar Administrador",
+    "generateReport": "Gerar Relatório",
+    "version": "Versão",
+    "description": "Descrição",
+    "areaSize": "Tamanho da Área",
+    "required": "Obrigatório"
   },
   "footer": {
     "faqs": "Perguntas frequentes",
