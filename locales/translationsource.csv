@@ -127,8 +127,8 @@ pages.assessments.list.filters.popup.labels.countries,by Countries,berdasarkan N
 pages.assessments.list.filters.popup.labels.year,by Year,berdasarkan Tahun,por Año,por ano,kwa Mwaka
 pages.assessments.list.filters.popup.labels.status,by Publication,berdasarkan Publikasi,por Publicación,por publicação,kwa Uchapishaji
 pages.assessments.list.filters.popup.placeholders.countries,Country,Negara,País,País,Nchi
-pages.assessments.list.filters.popup.placeholders.year,,0,,,
-pages.assessments.list.filters.popup.placeholders.status,,0,,,
+pages.assessments.list.filters.popup.placeholders.year,,,,,
+pages.assessments.list.filters.popup.placeholders.status,,,,,
 pages.assessments.list.filters.popup.reset,Reset,Reset,Reiniciar,Reiniciar,Weka upya
 pages.assessments.list.filters.popup.apply,Apply filters,Terapkan filter,Aplicar filtros,Aplicar filtros,Weka vichujio
 pages.assessments.list.type.own,Member,Anggota,Miembro,Membro,Mwanachama
@@ -615,10 +615,10 @@ pages.collaboration.guidelines2.answer3.paragraph1,"The data owners have the rig
 pages.collaboration.guidelines2.answer3.paragraph2,DATA OWNER NAMES (ASSESSMENT YEAR). ASSESSMENT LOCATION. INSTITUTION. Occurrence dataset accessed via Elinordata.org on DATE. ,NAMA PEMILIK DATA (TAHUN PENILAIAN). LOKASI PENILAIAN. LEMBAGA. Dataset kejadian diakses melalui Elinordata.org pada TANGGAL. ,NOMBRES DEL PROPIETARIO DE LOS DATOS (AÑO DE EVALUACIÓN). UBICACIÓN DE LA EVALUACIÓN. INSTITUCIÓN. Conjunto de datos de ocurrencia al que se accedió a través de Elinordata.org el FECHA.,NOMES DOS PROPRIETÁRIOS DOS DADOS (ANO DE AVALIAÇÃO). LOCAL DE AVALIAÇÃO. INSTITUIÇÃO. Conjunto de dados de ocorrência acessado via Elinordata.org em DATE.,MAJINA YA MMILIKI WA DATA ( MWAKA WA TATHMINI). ENEO LA TATHMINI. TAASISI. Seti ya data ya matukio ilifikiwa kupitia Elinordata.org mnamo DATE. 
 pages.about.meta.title,Background,Latar Belakang,Fondo,Background,Usuli
 pages.about.meta.slug,/background,/background,/background,/background,/background
-pages.about.meta.seo.title,,0,,,
-pages.about.meta.seo.description,,0,,,
-pages.about.meta.seo.keywords,,0,,,
-pages.about.meta.seo.og_image,,0,,,
+pages.about.meta.seo.title,,,,,
+pages.about.meta.seo.description,,,,,
+pages.about.meta.seo.keywords,,,,,
+pages.about.meta.seo.og_image,,,,,
 pages.about.elinorAttributes.attribute1.name,1. Resource boundaries,1. Batas Sumber Daya,1. Fronteras de los recursos,1. Fronteiras dos recursos,1. Mipaka ya rasilimali
 pages.about.elinorAttributes.attribute1.description,This attribute measures the quality of MA boundaries. The questions ask whether the boundaries of the MA are i) easily identifiable and ii) known by all relevant stakeholders.,Atribut ini mengukur kualitas batas KA. Pertanyaan-pertanyaan bertanya apakah batas KA itu i) mudah dikenali dan ii) diketahui oleh semua pemangku kepentingan yang relevan.,Este atributo mide la calidad de las fronteras de la AG. Las preguntas indagan sobre si las fronteras de la AG son i) fácilmente identificables y ii) conocidas por todas los titulares de derechos y otros actores.,Este atributo mede a qualidade dos limites da Área de Manejo. As questões questionam se os limites da Área de Manejo são i) facilmente identificáveis ​​e ii) conhecidos por todos os titulares de direitos relevantes e outros intervenientes.,Sifa hii inapima ubora wa mipaka ya maeneo ya usimamizi (MA). Maswali yanayoulizwa hapa ni kama maeneo ya usimamizi ni: i) Rahisi kutambulikana na ii) yanajulikana na wenye haki na watendaji wengine wote husika.
 pages.about.elinorAttributes.attribute1.useIf,You wish to understand whether the boundaries of the MA are well established.,Anda ingin memahami apakah batas KA telah ditetapkan dengan baik.,Su objetivo es saber si las fronteras de la AG están bien establecidas.,Você deseja entender se os limites da Área de Manejo estão bem estabelecidos.,Kama ungetaka kuelewa iwapo mipaka ya maeneo ya usimamizi iko imara.
