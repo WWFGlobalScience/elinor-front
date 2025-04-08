@@ -213,8 +213,8 @@
             },
             "placeholders": {
               "countries": "Negara",
-              "year": "0",
-              "status": "0"
+              "year": "",
+              "status": ""
             },
             "reset": "Reset",
             "apply": "Terapkan filter"
@@ -940,10 +940,10 @@
         "title": "Latar Belakang",
         "slug": "/background",
         "seo": {
-          "title": "0",
-          "description": "0",
-          "keywords": "0",
-          "og_image": "0"
+          "title": "",
+          "description": "",
+          "keywords": "",
+          "og_image": ""
         }
       },
       "elinorAttributes": {
