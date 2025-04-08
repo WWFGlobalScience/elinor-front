@@ -1,6 +1,5 @@
 <template>
     <article class="page page--assessments" v-if="loaded">
-        <popover></popover>
         <div class="page--assessments__top">
             <img
                 src="~/assets/img/assessment-bg.svg"
@@ -17,7 +16,6 @@
 
 <script>
 import { mapState } from 'vuex';
-import Popover from '../../components/popover.vue';
 export default {
     name: 'assessments',
     auth: false,
