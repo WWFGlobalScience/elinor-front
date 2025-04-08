@@ -819,7 +819,7 @@
     "methodologyPage": {
       "home": {
         "meta": {
-          "title": "Methodology",
+          "title": "Metodologi",
           "slug": "/methodology",
           "seo": {
             "title": "",
@@ -1230,7 +1230,7 @@
   },
   "footer": {
     "faqs": "FAQs",
-    "methodology": "Methodology",
+    "methodology": "Metologi",
     "createAccount": "Create Account",
     "copyright": "© Copyright",
     "copyrightAfterYear": "Elinor. All rights reserved.",
