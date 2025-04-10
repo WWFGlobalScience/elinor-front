@@ -4788,6 +4788,11 @@
   dependencies:
     "css-tree" "^1.1.2"
 
+"csv-parser@^3.2.0":
+  "integrity" "sha512-fgKbp+AJbn1h2dcAHKIdKNSSjfp43BZZykXsCjzALjKy80VXQNHPFJ6T9Afwdzoj24aMkq8GwDS7KGcDPpejrA=="
+  "resolved" "https://registry.npmjs.org/csv-parser/-/csv-parser-3.2.0.tgz"
+  "version" "3.2.0"
+
 "cuint@^0.2.2":
   "integrity" "sha1-QICG1AlVDCYxFVYZ6fp7ytw7mRs="
   "resolved" "https://registry.npmjs.org/cuint/-/cuint-0.2.2.tgz"

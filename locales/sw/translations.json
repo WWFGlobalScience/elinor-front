@@ -610,8 +610,8 @@
         "offlineSurveyWarning": "Tafadhali hakikisha kuwa mabadiliko ya nje ya mtandao yanafanyika katika kivinjari sawa. Ukibadilisha vivinjari kabla ya kugeuza utafiti mtandaoni tena, unaweza kupoteza mabadiliko yako ya nje ya mtandao."
       },
       "statuses": {
-        "90": "Fungua",
-        "10": "Imechapishwa"
+        "10": "Imechapishwa",
+        "90": "Fungua"
       },
       "personResponsibleRoles": {
         "10": "Wafanyakazi wasio wa faida",
