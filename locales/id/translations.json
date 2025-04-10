@@ -610,8 +610,8 @@
         "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
       },
       "statuses": {
-        "90": "Terbuka",
-        "10": "Dipublikasikan"
+        "10": "Dipublikasikan",
+        "90": "Terbuka"
       },
       "personResponsibleRoles": {
         "10": "Staf organisasi nirlaba",

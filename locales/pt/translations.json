@@ -610,8 +610,8 @@
         "offlineSurveyWarning": "Please ensure that offline edits happen in the same browser. If you switch browsers before turning the survey online again, you may lose your offline edits."
       },
       "statuses": {
-        "90": "Abrir",
-        "10": "Publicados"
+        "10": "Publicados",
+        "90": "Abrir"
       },
       "personResponsibleRoles": {
         "10": "Pessoal de ONGs",

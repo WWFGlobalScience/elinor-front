@@ -610,8 +610,8 @@
         "offlineSurveyWarning": "Asegúrese de que las ediciones sin conexión se realicen en el mismo navegador. Si cambia de navegador antes de volver a poner la encuesta en línea, es posible que pierda sus ediciones fuera de línea."
       },
       "statuses": {
-        "90": "Abierto",
-        "10": "Publicado"
+        "10": "Publicado",
+        "90": "Abierto"
       },
       "personResponsibleRoles": {
         "10": "Personal sin fines de lucro",
