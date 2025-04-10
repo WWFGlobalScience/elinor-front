@@ -97,3 +97,6 @@ sw.*
 
 #environment
 .env
+
+# Ignore translations.json inside locales folder
+/locales/**/translations.json
