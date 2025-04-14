@@ -3,8 +3,9 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
+        "generate:translations": "node scripts/generateTranslations.js",
         "dev": "nuxt --dev",
-        "build": "nuxt build",
+        "build": "npm run generate:translations && nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate"
     },
@@ -21,6 +22,7 @@
         "@turf/turf": "^6.4.0",
         "core-js": "^3.9.1",
         "countries-api": "^2.0.2",
+        "csv-parser": "^3.2.0",
         "d3": "^7.8.4",
         "jspdf": "^2.5.1",
         "mapbox-gl": "^2.15.0",

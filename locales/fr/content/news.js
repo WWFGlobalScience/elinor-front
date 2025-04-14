@@ -14,7 +14,13 @@ export default [
         date: '2-28-2024',
         title: 'A comparison of governance and management assessment tools',
         text: `
-             Ada banyak alat yang dirancang untuk menilai tata kelola dan manajemen untuk konservasi berbasis area. Ringkasan pengetahuan ini dirancang untuk membantu individu dalam mengidentifikasi dan memahami sinergi dan perbedaan antara tiga alat penilaian manajemen dan tata kelola konservasi: Elinor, Alat Pelacakan Efektivitas Manajemen 4 (METT 4), dan Penilaian Tata Kelola dan Ekuitas Tingkat Lokasi (SAGE). Bagian pertama dari dokumen ini membandingkan bagian informasi latar belakang/lokasi Elinor, METT 4, dan SAGE. Bagian kedua membandingkan pertanyaan penilaian dalam Elinor (35), METT 4 (38), dan SAGE (50). Akhirnya, dokumen diakhiri dengan panduan untuk membantu pengguna menentukan penilaian mana yang akan digunakan berdasarkan tujuan manajemen dan tata kelola mereka.        <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
+              There are many tools designed to assess governance and management for area-based conservation. This knowledge
+              brief is designed to assist individuals in identifying and understanding the synergies and differences between
+              three conservation management and governance assessment tools: Elinor, the Management Effectiveness Tracking
+              Tool 4 (METT 4), and Site-level Assessment of Governance and Equity (SAGE). The first part of this document
+              compares the background/site information sections of Elinor, METT 4, and SAGE. The second part compares the
+              assessment questions in Elinor (35), METT 4 (38), and SAGE (50). Finally, the document ends with a guide to
+              help users determine which assessment to use based on their management and governance objectives.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
           `,
     },
     {
