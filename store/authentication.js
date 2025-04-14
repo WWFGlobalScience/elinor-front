@@ -225,13 +225,21 @@ export const actions = {
         // Clear workbox cache if available
         if ('serviceWorker' in navigator && 'caches' in window) {
             try {
+                // Clear caches
                 const cacheNames = await caches.keys();
                 await Promise.all(
                     cacheNames.map(cacheName => caches.delete(cacheName))
                 );
                 console.log('Workbox caches cleared on logout');
+                
+                // Unregister all service workers
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                await Promise.all(
+                    registrations.map(registration => registration.unregister())
+                );
+                console.log('Service workers unregistered on logout');
             } catch (error) {
-                console.error('Error clearing caches:', error);
+                console.error('Error clearing caches or unregistering service workers:', error);
             }
         }
         
