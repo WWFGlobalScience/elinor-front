@@ -1,4 +1,4 @@
-export const locales = ['en', 'es', 'id', 'pt', 'sw'];
+export const locales = ['en', 'es', 'id', 'pt', 'sw', 'fr', 'mg'];
 
 let content = {};
 
