@@ -70,14 +70,27 @@
                 </div>
             </div>
         </header>
-        <div id="map-edit" class="elinor__map">
+        <div id="map-edit" class="elinor__map" style="position: relative;">
+            <!-- Polygon Counter Badge -->
+            <div
+                v-if="polygonCount > 0"
+                class="polygon-counter-badge"
+                :class="{ 'multi-part': polygonCount > 1 }"
+                style="position: absolute; top: 10px; right: 10px; background: white; padding: 8px 12px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); font-size: 14px; display: flex; align-items: center; gap: 6px; z-index: 1;"
+            >
+                <span style="font-size: 18px;">🏝️</span>
+                <span style="font-weight: 500;">Polygon Parts:</span>
+                <span
+                    style="font-weight: bold;"
+                    :style="{ color: polygonCount > 1 ? '#2196F3' : '#4CAF50' }"
+                >
+                    {{ polygonCount }}
+                </span>
+            </div>
+
             <div class="map__legend">
                 <div class="map__instructions">
-                    {{
-                        $t(
-                            'pages.assessments.edit.tabs.managementArea.map.help',
-                        )
-                    }}
+                    {{ currentInstruction }}
                 </div>
                 <div class="map__area" v-if="area != null">
                     {{
@@ -85,7 +98,14 @@
                             'pages.assessments.edit.tabs.managementArea.map.area',
                         )
                     }}: <br />
-                    {{ area }}
+                    {{ area }} km²
+                </div>
+                <div
+                    class="map__error"
+                    v-if="validationError"
+                    style="color: #e53e3e; background: #fff5f5; padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem; font-weight: bold;"
+                >
+                    ⚠️ {{ validationError }}
                 </div>
             </div>
         </div>
@@ -219,6 +239,7 @@ export default {
             polygonDrawer: null,
             marker: null,
             area: null,
+            validationError: null,
         };
     },
     computed: {
@@ -226,6 +247,35 @@ export default {
             managementArea: (state) => state.managementareas.instance,
             assessment: (state) => state.assessments.assessment,
         }),
+        polygonCount() {
+            return this.polygonDrawer
+                ? this.polygonDrawer.getAll().features.length
+                : 0;
+        },
+        currentInstruction() {
+            if (!this.polygonDrawer) {
+                return this.$t(
+                    'pages.assessments.edit.tabs.managementArea.map.help',
+                );
+            }
+
+            const features = this.polygonDrawer.getAll().features;
+            const mode = this.polygonDrawer.getMode();
+
+            if (features.length === 0 && mode !== 'draw_polygon') {
+                return 'Click the polygon tool (□) above to start drawing your first area';
+            } else if (mode === 'draw_polygon') {
+                return '✏️ Drawing: Click to add points. Click the first point again to close the polygon.';
+            } else if (features.length === 1) {
+                return '✓ First area complete! Click polygon tool (□) to add another separate area, or click Edit to modify this one.';
+            } else if (features.length > 1) {
+                return `🏝️ Multi-part polygon: ${features.length} separate areas drawn. Add more parts or edit existing ones.`;
+            }
+
+            return this.$t(
+                'pages.assessments.edit.tabs.managementArea.map.help',
+            );
+        },
     },
     mounted() {
         if (this.managementArea) {
@@ -347,44 +397,135 @@ export default {
                 this.map.fitBounds(bbox);
             }
         },
+        validateMultiPolygon(polygon) {
+            if (!polygon || polygon.type !== 'MultiPolygon') {
+                return { valid: false, error: 'Invalid polygon type' };
+            }
+
+            if (!Array.isArray(polygon.coordinates) || polygon.coordinates.length === 0) {
+                return { valid: false, error: 'Polygon has no coordinates' };
+            }
+
+            // Each polygon must have at least one ring with at least 4 points (closed)
+            for (let i = 0; i < polygon.coordinates.length; i++) {
+                const poly = polygon.coordinates[i];
+                if (!Array.isArray(poly) || poly.length === 0) {
+                    return { valid: false, error: `Polygon ${i + 1} is empty` };
+                }
+
+                // Check each ring
+                for (let j = 0; j < poly.length; j++) {
+                    const ring = poly[j];
+                    if (!Array.isArray(ring) || ring.length < 4) {
+                        return {
+                            valid: false,
+                            error: `Polygon ${i + 1}, ring ${j + 1} must have at least 4 points`
+                        };
+                    }
+
+                    // Check if ring is closed (first point equals last point)
+                    const first = ring[0];
+                    const last = ring[ring.length - 1];
+                    if (first[0] !== last[0] || first[1] !== last[1]) {
+                        return {
+                            valid: false,
+                            error: `Polygon ${i + 1}, ring ${j + 1} is not closed`
+                        };
+                    }
+
+                    // Validate coordinate values
+                    for (let k = 0; k < ring.length; k++) {
+                        const coord = ring[k];
+                        if (!Array.isArray(coord) || coord.length < 2) {
+                            return {
+                                valid: false,
+                                error: `Invalid coordinate at polygon ${i + 1}, ring ${j + 1}, point ${k + 1}`
+                            };
+                        }
+                        const [lon, lat] = coord;
+                        if (typeof lon !== 'number' || typeof lat !== 'number') {
+                            return {
+                                valid: false,
+                                error: `Coordinate values must be numbers at polygon ${i + 1}, ring ${j + 1}, point ${k + 1}`
+                            };
+                        }
+                        if (lon < -180 || lon > 180 || lat < -90 || lat > 90) {
+                            return {
+                                valid: false,
+                                error: `Coordinate out of bounds at polygon ${i + 1}, ring ${j + 1}, point ${k + 1}`
+                            };
+                        }
+                    }
+                }
+            }
+
+            return { valid: true };
+        },
         onDrawCreate(event) {
             const data = this.polygonDrawer.getAll();
-            const type = 'MultiPolygon';
-            let coordinates = [];
-            if (data.features.length > 1) {
-                coordinates = [data.features[0].geometry.coordinates[0]];
-                coordinates[0].push(data.features[1].geometry.coordinates[0]);
 
-                this.setPolygon({ type, coordinates: coordinates });
-            } else {
-                coordinates = data.features.map(
-                    (feature) => feature.geometry.coordinates
-                );
-                this.setPolygon({ type, coordinates });
+            // Convert all drawn Polygon features to a single MultiPolygon
+            const coordinates = data.features.map(
+                (feature) => feature.geometry.coordinates
+            );
+
+            const polygon = {
+                type: 'MultiPolygon',
+                coordinates: coordinates
+            };
+
+            // Validate before saving
+            const validation = this.validateMultiPolygon(polygon);
+            if (!validation.valid) {
+                this.validationError = validation.error;
+                // Show toast notification
+                this.$toast.error(validation.error, {
+                    duration: 6000,
+                });
+                // Remove the invalid polygon from the map
+                const featureIds = data.features.map((f) => f.id);
+                featureIds.forEach((id) => this.polygonDrawer.delete(id));
+                return;
             }
+
+            this.validationError = null;
+            this.setPolygon(polygon);
 
             const area = turf.area(data);
             this.area = Math.round(area * 100) / 100;
         },
         onDrawDelete(event) {
             this.area = null;
+            this.validationError = null;
             this.removePolygon();
         },
         onDrawUpdate(event) {
             const data = this.polygonDrawer.getAll();
-            let type = 'MultiPolygon';
-            let coordinates = [];
-            if (data.features.length > 1) {
-                coordinates = [data.features[0].geometry.coordinates[0]];
-                coordinates[0].push(data.features[1].geometry.coordinates[0]);
 
-                this.setPolygon({ type, coordinates: coordinates });
-            } else {
-                coordinates = data.features.map(
-                    (feature) => feature.geometry.coordinates
-                );
-                this.setPolygon({ type, coordinates: coordinates[0] });
+            // Convert all drawn Polygon features to a single MultiPolygon
+            const coordinates = data.features.map(
+                (feature) => feature.geometry.coordinates
+            );
+
+            const polygon = {
+                type: 'MultiPolygon',
+                coordinates: coordinates
+            };
+
+            // Validate before saving
+            const validation = this.validateMultiPolygon(polygon);
+            if (!validation.valid) {
+                this.validationError = validation.error;
+                // Show toast notification
+                this.$toast.error(validation.error, {
+                    duration: 6000,
+                });
+                return;
             }
+
+            this.validationError = null;
+            this.setPolygon(polygon);
+
             const area = turf.area(data);
             this.area = Math.round(area * 100) / 100;
         },
