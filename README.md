@@ -33,6 +33,7 @@ BASE_URL_API="http://0.0.0.0:8082"
 ```
 
 **Environment options:**
+
 - **Local development** (with elinor-api running locally): `http://0.0.0.0:8082`
 - **Remote dev API**: `https://dev-api.elinordata.org`
 
@@ -70,6 +71,7 @@ yarn generate:translations
 ### "Invalid URL" error when running `yarn dev`
 
 This means the `.env` file is missing. Create one using:
+
 ```bash
 cp .env.example .env
 ```
@@ -77,6 +79,7 @@ cp .env.example .env
 ### "ERR_OSSL_EVP_UNSUPPORTED" error
 
 This indicates you're using the wrong Node.js version. Ensure you're using Node 16:
+
 ```bash
 nvm use
 node --version  # Should show v16.x.x
@@ -85,6 +88,7 @@ node --version  # Should show v16.x.x
 ### "Module not found: ../../locales/en/translations.json"
 
 Translation files haven't been generated. Run:
+
 ```bash
 yarn generate:translations
 ```
@@ -92,6 +96,7 @@ yarn generate:translations
 ### Dev server uses wrong Node version
 
 Each terminal session needs to activate the correct Node version:
+
 ```bash
 source ~/.nvm/nvm.sh && nvm use && yarn dev
 ```
