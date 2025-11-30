@@ -284,14 +284,13 @@ pages.assessments.edit.tabs.managementArea.labels.yes,Yes,Ya,Yes,Sim,Ndiyo,Oui, 
 pages.assessments.edit.tabs.managementArea.labels.no,No,Tidak,No,Não,Hapana,Non, Tsia
 pages.assessments.edit.tabs.managementArea.buttons.addZone,Add a new Zone,Tambahkan zona baru,Agregar una nueva Zona,Adicionar uma nova zona,Ongeza Eneo jipya,Ajouter une nouvelle zone,Manampy faritra vaovao
 pages.assessments.edit.tabs.managementArea.map.polygonParagraph1,Indicate the boundaries of the Managed Area,Tunjukkan batas Kawasan yang Dikelola,Indicar los límites de la área de gestión,Indique os limites da Área Gerenciada,Onyesha mipaka ya eneo linalosimamiwa,Indiquez les limites de la zone sous gestion,Tondroy ny fetran'ny Faritra Tantana
-pages.assessments.edit.tabs.managementArea.map.polygonParagraph2,Use the tools over the map to create a Polygon of the Managed Area,Gunakan alat di atas peta untuk membuat Poligon Kawasan yang Dikelola,Use las herramientas sobre el mapa para crear un Polígono de la área de gestión,Use as ferramentas sobre o mapa para criar um polígono da área gerenciada,Tumia zana zilizo juu ya ramani ili kuunda Poligoni ya Eneo Linalosimamiwa,Utilisez les outils sur la carte pour créer un polygone de la zone sous gestion,"Ampiasao ny fitaovana eo ambonin'ny sarintany hamoronana Poligôna ho an'ny faritra tantanana
-"
 pages.assessments.edit.tabs.managementArea.map.drawPolygonStartText,Click over the Map to create a polygon,Klik di atas Peta untuk membuat poligon,Haga clic sobre el Mapa para crear un polígono,Clique sobre o mapa para criar um polígono,Bofya juu ya Ramani ili kuunda poligoni,Cliquez sur la carte pour créer un polygone,"Tsindrio eo ambonin'ny sarintany hamoronana poligôna
 "
 pages.assessments.edit.tabs.managementArea.map.drawPolygonCloseText,To Close a polygon click over a created Point,Untuk menutup poligon klik di atas Titik yang dibuat,"Para cerrar un polígono, haga clic sobre un punto creado",Para fechar um polígono clique sobre um ponto criado,Ili Kufunga poligoni bofya juu ya Pointi iliyoundwa,"Pour fermer un polygone, cliquez sur un point créé","Raha hanakatona poligôna, tsindrio eo amin'ny teboka noforonina
 "
 pages.assessments.edit.tabs.managementArea.map.newPolygon,Create a new polygon,Buat poligon baru,Crear un nuevo polígono,Crie um novo polígono,Unda poligoni mpya,Créer un nouveau polygone,Mamorona poligôna vaovao
-pages.assessments.edit.tabs.managementArea.map.deletePolygon,Delete selected polygon,Hapus poligon yang dipilih,Eliminar polígono seleccionado,Excluir polígono selecionado,Futa poligoni iliyochaguliwa,Supprimer le polygone sélectionné,Fafao ny poligôna voafantina
+pages.assessments.edit.tabs.managementArea.map.existingPolygon,"Existing polygon: click to move; double-click to edit vertices. For multi-part areas, upload a shapefile.",,,,,,
+pages.assessments.edit.tabs.managementArea.map.deletePolygon,Delete polygon,Hapus poligon yang dipilih,Eliminar polígono seleccionado,Excluir polígono selecionado,Futa poligoni iliyochaguliwa,Supprimer le polygone sélectionné,Fafao ny poligôna voafantina
 pages.assessments.edit.tabs.managementArea.map.help,Click over the map to draw a polygon,Klik di atas peta untuk menggambar poligon,Haga clic sobre el mapa para dibujar un polígono,Clique sobre o mapa para desenhar um polígono,Bofya juu ya ramani ili kuchora poligoni,Cliquez sur la carte pour dessiner un polygone,Tsindrio eo ambonin'ny sarintany hanavaona sary poligôna
 pages.assessments.edit.tabs.managementArea.map.area,Area,Area,Área,Área,Eneo,Zone, Faritra
 pages.assessments.edit.tabs.managementArea.map.indicateBoundaries,Indicate the boundaries of the Managed Area,Tunjukkan batas Kawasan yang Dikelola,Indicar los límites de la área de gestión,Indique os limites da Área Gerenciada,Onyesha mipaka ya eneo linalosimamiwa,Indiquez les limites de la zone sous gestion,Tondroy ny fetran'ny Faritra Tantana
@@ -807,3 +806,4 @@ footer.termsOfUse,Terms of Use,,Condiciones de uso,Termos de uso,Masharti ya mat
 footer.privacyPolicy,Privacy Policy,,Política de privacidad,política de Privacidade,Sera ya Faragha,Politique de confidentialité,Rafitra mifehy ny tsiambaratelo
 buttons.seeMore,See more,,Ver más,Ver mais,Ona zaidi,Voir plus,Hijery bebe kokoa
 buttons.seeLess,See less,,Ver menos,Ver menos,Tazama kidogo,Voir moins,Hijery kely kokoa
+

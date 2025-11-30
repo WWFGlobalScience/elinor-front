@@ -2,6 +2,7 @@
     "name": "Elinor",
     "version": "1.0.0",
     "private": true,
+    "packageManager": "yarn@1.22.22",
     "scripts": {
         "generate:translations": "node scripts/generateTranslations.js",
         "dev": "nuxt --dev",

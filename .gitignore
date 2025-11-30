@@ -100,3 +100,5 @@ sw.*
 
 # Ignore translations.json inside locales folder
 /locales/**/translations.json
+
+package-lock.json
