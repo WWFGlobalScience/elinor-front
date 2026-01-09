@@ -1,14 +1,14 @@
 //sentence
 .elinor__sentence {
-    @apply font-light text-turqy w-5/12 text-base text-center pt-12 pb-3 lg:w-8/12;
-    .elinor__sentence__name {
-        @apply font-bold text-xs uppercase block pt-3;
-    }
+  @apply font-light text-turqy w-full px-[60px] text-base text-center pt-[43px];
+  .elinor__sentence__name {
+    @apply font-bold text-sm uppercase block pt-4;
+  }
 }
 
 .elinor__blockquote {
-    @apply flex justify-center items-center text-center border-radius--20 bg-turqy-lighter px-9 py-14 text-turqy;
-    p {
-        @apply text-[30px] leading-10 xl:text-[20px] xl:leading-7;
-    }
+  @apply flex justify-center items-center text-center border-radius--20 bg-turqy-lighter px-9 py-14 text-turqy;
+  p {
+    @apply text-[30px] leading-10 xl:text-[20px] xl:leading-7;
+  }
 }

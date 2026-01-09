@@ -1,15 +1,22 @@
 <template>
-    <article class="page page--flushed">
-        <section class="section section--main">
-            <img src="~/assets/img/faq-section.jpg" />
-        </section>
-        <section class="section section--text">
-            <div class="container">
-                <h1 class="c-title--main">
-                    {{ $t('pages.faqs.header.title') }}
-                </h1>
-                <template v-for="(faq, index) in faqs">
-                    <div
+  <article class="page page--flushed page--faq">
+    <section class="section section--banner">
+      <img src="~/assets/img/faq-section.jpg" alt="" />
+      <div class="container">
+        <h1>
+          {{ $t('pages.faqs.header.title') }}
+        </h1>
+      </div>
+    </section>
+    <section class="section section--text section--faq">
+      <div class="container">
+        <template v-for="(faq, index) in faqs">
+          <accordion
+            :index="index + 1"
+            :title="faq.title"
+            :content="faq.text"
+          />
+          <!-- <div
                         v-if="faq.type === 'default'"
                         class="g-grid--5 flex items-center"
                     >
@@ -50,26 +57,29 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </template>
-            </div>
-        </section>
-    </article>
+                    </div> -->
+        </template>
+      </div>
+    </section>
+  </article>
 </template>
 
 <script>
 import locales from '../../locales';
-
+import Accordion from '~/components/accordion';
 export default {
-    name: 'faq',
-    auth: false,
-    computed: {
-        faqs() {
-            const currentLanguage = this.$i18n.locales.find(
-                (lang) => lang.code === this.$i18n.locale,
-            );
-            return locales[currentLanguage.code].faqs;
-        },
+  name: 'faq',
+  components: {
+    Accordion,
+  },
+  auth: false,
+  computed: {
+    faqs() {
+      const currentLanguage = this.$i18n.locales.find(
+        (lang) => lang.code === this.$i18n.locale,
+      );
+      return locales[currentLanguage.code].faqs;
     },
+  },
 };
 </script>

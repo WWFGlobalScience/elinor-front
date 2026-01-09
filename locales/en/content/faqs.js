@@ -1,8 +1,8 @@
 export default [
-    {
-        type: 'default',
-        title: 'What is the main purpose of the tool?',
-        text: `
+  {
+    type: 'default',
+    title: 'What is the main purpose of the tool?',
+    text: `
             <p>
                 The main purpose of Elinor is to track attributes critical to the success of area-based conservation
                 over time,and share this information with decision makers and conservation supporters working at local,
@@ -20,11 +20,11 @@ export default [
                 considered important to success.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What kinds of decisions will this tool help inform?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'What kinds of decisions will this tool help inform?',
+    text: `
             <p>
                 For project and site managers, information from the assessment can help:
             </p>
@@ -49,11 +49,11 @@ export default [
                 <li>Identify areas requiring more in-depth research</li>
             </ul>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Who should complete an assessment?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Who should complete an assessment?',
+    text: `
             <p>The Elinor assessment was initially designed to meet the needs of conservationists working for
                 non-governmental organizations (NGOs) but can be used by any individual working to support a
                 managed area. The assessment can be completed in one of two ways:
@@ -85,11 +85,11 @@ export default [
                 were represented in the data.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Who has the rights and access to the data entered in this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Who has the rights and access to the data entered in this tool?',
+    text: `
             <p>
                 Data ethics, rights, and privacy is a central component of the Elinor tool and data system.
                 The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and
@@ -98,22 +98,23 @@ export default [
                 stored and used on the platform.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Will I know how my data is being used?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Will I know how my data is being used?',
+    text: `
             <p>
                 For data made publicly available, users will eventually be able to ‘opt in’ to notifications that
                 tell users where and when their assessment data is being downloaded to help users understand what
                 their assessment data is being used for.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      'I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?',
+    text: `
             <p>
                 Elinor builds directly off the years of experience project teams have using the METT assessment and
                 other tools designed to measure environmental governance. The Elinor assessment was designed to
@@ -131,11 +132,11 @@ export default [
                 <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view a comparison of governance and management assessment tools</a>
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What are the specific things this tool will help me track?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'What are the specific things this tool will help me track?',
+    text: `
             <p>
                  This tool focuses on compiling basic information about areas under management or protection, and
                  assessing the status of <strong>nine attributes important for area-based conservation and
@@ -158,11 +159,11 @@ export default [
                 decision-friendly visualizations of site-level data and aggregate data.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'How will the data be analysed and presented?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'How will the data be analysed and presented?',
+    text: `
             <p>
                 The Elinor database and web platform will provide simple visuals at a site, regional, and
                 international level that show trends over time, aggregated by the nine attributes listed above.
@@ -173,11 +174,12 @@ export default [
                 regions will be available for public use.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      'I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?',
+    text: `
             <p>
                 No! This tool was designed to complement in-depth, field-based data collection. If you currently
                 collect data using field-based surveys or focus groups, you can use the data you already collect to
@@ -186,11 +188,11 @@ export default [
                 topics require more in-depth field-based surveys.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What are the main advantages to using this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'What are the main advantages to using this tool?',
+    text: `
             <p>
                 The Elinor tool and data system was designed to streamline the data entry, storage, and
                 visualization process. By doing so, users gain three key advantages:
@@ -200,7 +202,7 @@ export default [
                     <strong>The data collection, entry and visualization process becomes streamlined.</strong>
                     For users working across multiple sites, all data can be stored and organized in the same way,
                     and outputted into forms that are useful for communicating results to key audiences.
-                </li
+                </li>
                 <li>
                     <strong>Users are connected to a global community of conservationists striving to improve
                     management and governance.</strong> Management and governance has long been an important topic
@@ -211,26 +213,27 @@ export default [
                 </li>
             </ol>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Where is my data stored?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Where is my data stored?',
+    text: `
             <p>
                 ElinorData.org uses Amazon Web Services to store the data.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What are some things I should keep in mind when I’m making my decision about using this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      'What are some things I should keep in mind when I’m making my decision about using this tool?',
+    text: `
             <p>No one tool does every job. It’s important to remember that:</p>
-            <ol class='list-inside list-disc'>
+            <ol>
                 <li>
                     <strong>This tool does not gather in-depth data.</strong> This tool does not replace the need
                     for working with communities on an in-depth assessment of the issues identified by the tool.
-                </li
+                </li>
                 <li>
                     <strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed
                     to track indicators commonly recognized as being important for management and governance of
@@ -239,11 +242,12 @@ export default [
                 </li>
             </ol>
         `,
-    },
-    {
-        type: 'default',
-        title: 'OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      'OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?',
+    text: `
             <p>
                 This depends on your context. In this tool, we refer to the boundary of the area to be assessed as
                 the management area (MA). A management area refers to a site/location to which management actions
@@ -251,7 +255,7 @@ export default [
                 for definitions), or a broader area that encompasses several protected areas/conserved areas.
             </p>
             <p>Therefore, the user of this tool may decide to conduct this assessment on:</p>
-            <ol class='list-inside list-disc'>
+            <ol>
                 <li>
                     An individual protected area or conserved area. For example, this could be an assessment of an
                     area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a
@@ -262,24 +266,25 @@ export default [
                 </li>
             </ol>
         `,
-    },
-    {
-        type: 'default',
-        title: 'I work for a national NGO - how do I decide which sites to use the Elinor assessment in?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      'I work for a national NGO - how do I decide which sites to use the Elinor assessment in?',
+    text: `
             <p>
                 Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.
             </p>`,
-    },
-    {
-        type: 'default',
-        title: 'How are the scores shown in the site reports calculated?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'How are the scores shown in the site reports calculated?',
+    text: `
             <p>
                 Elinor includes 35 indicators across 10 core attributes of governance and management. Scores are calculated for each indicator, each attribute, and each managed area in total. Each indicator is assigned a score between 0 and 3 (with 0 being the least desirable and 4 being most desirable) on a scale that is customized for each indicator. For example, the scale for awareness of boundaries, records whether boundaries are known by most (3), some (2), a few (1) or none (0) of the relevant groups, while clearly defined boundaries, meanwhile, record whether boundaries are well demarcated (3), demarcated with some deficiencies (2), demarcated with major deficiencies (1), or not demarcated at all (0). Attribute scores, meanwhile, are calculated using a points percentage (i.e., total number of points received/total number of points possible) of indicators associated with each attribute, which is adjusted to a score out of 10 for easy interpretation. Finally, the total score for the managed area is calculated as a percentage of all attribute points received out of all attributes possible. Indicator, attribute and MA scores are assigned an action-oriented assessment category (Plan, Build, Strengthen, Maintain) to enable action-oriented interpretation. <strong>Note that the scores given by Elinor should not alone be used to determine the strengths or needs of the area's governance and management.</strong> It may be that a lower score on some attribute or indicator is sufficient for one site, but not another. The scores should be interpreted alongside the qualitative explanations entered into Elinor in order for decision-makers to choose the appropriate next steps.
             </p>
 	`,
-    } /*,
+  } /*,
     {
         type: 'box',
         title: 'Type box title',

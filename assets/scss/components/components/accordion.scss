@@ -1,0 +1,61 @@
+.accordion {
+  @apply max-w-[870px];
+  .accordion-item {
+    @apply border-b border-grayy-border py-6;
+
+    .accordion-item-button {
+      @apply flex justify-between cursor-pointer items-start;
+
+      > div {
+        @apply flex items-start;
+        span {
+          &:first-child {
+            @apply min-w-[60px] sm:min-w-[30px] font-bold sm:leading-[25px];
+          }
+        }
+
+        h5,
+        span {
+          @apply transition-colors duration-300 hover:text-turqy;
+        }
+      }
+
+      &.is-open {
+        > div {
+          span,
+          h5 {
+            @apply text-turqy;
+          }
+        }
+      }
+    }
+
+    .accordion-item-content {
+      @apply pl-[60px] sm:pl-[30px] pt-2;
+
+      p {
+        @apply mb-[9px] last:mb-0;
+
+        a {
+          @apply text-turqy underline hover:no-underline;
+        }
+      }
+
+      ul,
+      ol {
+        @apply ml-6;
+        @apply mb-[9px] last:mb-0;
+
+        li {
+          @apply mb-[9px] pl-2 last:mb-0 list-decimal;
+        }
+      }
+
+      ul {
+        li {
+          @apply list-disc;
+        }
+      }
+    }
+  }
+}

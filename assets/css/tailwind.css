@@ -4,9 +4,9 @@
 
 /* add following lines */
 @layer base {
-    img,
-    p,
-    h3 {
-        @apply inline-block;
-    }
+  img,
+  p,
+  h3 {
+    @apply inline-block;
+  }
 }

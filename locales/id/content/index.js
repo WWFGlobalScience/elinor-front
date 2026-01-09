@@ -5,9 +5,9 @@ import termsOfUse from './terms-of-use';
 import background from './background';
 
 export default {
-    faqs,
-    news,
-    privacyPolicy,
-    termsOfUse,
-    background,
+  faqs,
+  news,
+  privacyPolicy,
+  termsOfUse,
+  background,
 };

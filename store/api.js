@@ -13,51 +13,51 @@ const API_STAKEHOLDERGROUPS_URL = `${API_BASE_URL}stakeholdergroups/`;
 const API_SUPPORTSOURCES_URL = `${API_BASE_URL}supportsources/`;
 
 export const state = () => ({
-    fetched: false,
-    busy: false,
-    text: '',
+  fetched: false,
+  busy: false,
+  text: '',
 });
 
 export const mutations = {
-    apiRequestInit(state, payload) {
-        state.busy = true;
-        state.text = payload;
-    },
-    apiRequestEnd(state) {
-        state.busy = false;
-        state.text = state.text;
-    },
+  apiRequestInit(state, payload) {
+    state.busy = true;
+    state.text = payload;
+  },
+  apiRequestEnd(state) {
+    state.busy = false;
+    state.text = state.text;
+  },
 };
 
 export const actions = {
-    async apiGetAssessments() {
-        this.$axios({
-            method: 'get',
-            url: `${API_BASE_URL}assessments_pro/`,
-        })
-            .then((response) => {
-                this.dispatch('assessments/setAssessments', response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    },
-    async apiGetUsers() {
-        this.$axios({
-            method: 'get',
-            url: API_USERS_URL,
-        })
-            .then((response) => {
-                this.dispatch('users/setUsers', response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    },
-    apiRequestInit(state, text) {
-        state.commit('apiRequestInit', text);
-    },
-    apiRequestEnd(state) {
-        state.commit('apiRequestEnd');
-    },
+  async apiGetAssessments() {
+    this.$axios({
+      method: 'get',
+      url: `${API_BASE_URL}assessments_pro/`,
+    })
+      .then((response) => {
+        this.dispatch('assessments/setAssessments', response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  async apiGetUsers() {
+    this.$axios({
+      method: 'get',
+      url: API_USERS_URL,
+    })
+      .then((response) => {
+        this.dispatch('users/setUsers', response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  apiRequestInit(state, text) {
+    state.commit('apiRequestInit', text);
+  },
+  apiRequestEnd(state) {
+    state.commit('apiRequestEnd');
+  },
 };

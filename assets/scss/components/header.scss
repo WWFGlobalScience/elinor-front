@@ -1,132 +1,331 @@
 .header--main {
-    @apply bg-turqy-lighter h-[70px] sticky top-0 z-20;
+  @apply bg-turqy-lighter h-[70px] sticky top-0 z-20;
 
-    .header--main__wrapper {
-        @apply h-full;
+  // Ensure header is visible on mobile only
+  display: block !important;
 
-        ul {
-            @apply h-full flex items-center justify-end py-5 pr-16 md:px-6;
+  // Hide on tablet and above (equal or larger than tablet) - for non-home pages
+  @media (min-width: $tablet-breakpoint-min) {
+    display: none !important;
+  }
 
-            li {
-                @apply text-turqy text-sm pl-2 sm:text-xs;
+  // Mobile styles
+  @media (max-width: $tablet-breakpoint) {
+    z-index: 50;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-                &:nth-last-child(-n + 2) {
-                    &::after {
-                        @apply hidden md:inline-block;
-                    }
-                }
-
-                &:last-child {
-                    &::after {
-                        @apply hidden;
-                    }
-                }
-            }
-        }
-        .header--main__toggle-btn {
-            @apply hidden md:block w-7;
-        }
+  // Home page specific: hide on desktop and above (equal or larger than desktop)
+  &:has(.header--home-content) {
+    @media (min-width: $desktop-breakpoint-min) {
+      display: none !important;
     }
+
+    // Show on tablet for home page (between tablet and desktop)
+    @media (min-width: $tablet-breakpoint-min) and (max-width: $desktop-breakpoint) {
+      display: block !important;
+    }
+  }
+
+  .header--main__wrapper {
+    @apply h-full flex items-center;
+
+    // Hide on tablet and above (equal or larger than tablet) - for non-home pages
+    @media (min-width: $tablet-breakpoint-min) {
+      display: none !important;
+    }
+
+    // Header content wrapper
+    .header--home-content {
+      @apply flex-1;
+
+      // Hide on mobile, show on tablet and desktop
+      @media (max-width: $tablet-breakpoint) {
+        @apply hidden;
+      }
+
+      ul {
+        @apply h-full flex items-center justify-end py-5 pr-16 md:px-6;
+
+        li {
+          @apply text-turqy text-sm pl-2 sm:text-xs;
+
+          &:nth-last-child(-n + 2) {
+            &::after {
+              @apply hidden md:inline-block;
+            }
+          }
+
+          &:last-child {
+            &::after {
+              @apply hidden;
+            }
+          }
+        }
+      }
+
+      .header--main__toggle-btn {
+        @apply hidden md:block w-7;
+      }
+    }
+
+    // Default header content (for page header)
+    > ul {
+      @apply h-full flex items-center justify-end py-5 pr-16 md:px-6;
+
+      // Hide on mobile and below tablet breakpoint
+      @media (max-width: $tablet-breakpoint) {
+        @apply hidden;
+      }
+
+      li {
+        @apply text-turqy text-sm pl-2 sm:text-xs;
+
+        &:nth-last-child(-n + 2) {
+          &::after {
+            @apply hidden md:inline-block;
+          }
+        }
+
+        &:last-child {
+          &::after {
+            @apply hidden;
+          }
+        }
+      }
+    }
+
+    // Hide profile dropdown/avatar completely (all screen sizes)
+    // Target ul from default-header-profile component (rendered via component tag)
+    // The ul is a direct child of header--main__wrapper
+    > ul {
+      // Check if this ul contains the dropdown (profile component)
+      &:has(.elinor__dropdown) {
+        display: none !important;
+      }
+    }
+
+    // Also hide the dropdown itself as fallback
+    .elinor__dropdown {
+      display: none !important;
+    }
+
+    // Hide the li that contains the profile component in header--home-content
+    .header--home-content {
+      ul li:has(.elinor__dropdown),
+      ul li:has(.elinor__avatar) {
+        display: none !important;
+      }
+    }
+
+    // Hide the entire ul that contains profile dropdown (more specific)
+    ul:has(.elinor__dropdown),
+    ul:has(.elinor__avatar) {
+      @media (max-width: $tablet-breakpoint) {
+        display: none !important;
+      }
+    }
+
+    .header--main__toggle-btn {
+      @apply hidden md:block w-7;
+    }
+  }
 }
 
 .header--page {
-    h1 {
-        @apply flex items-center;
+  h1 {
+    @apply flex items-center;
 
-        img {
-            @apply mr-2;
-        }
+    img {
+      @apply mr-2;
     }
+  }
 
-    h2 {
-        &.ma__name,
-        &.assessment__name {
-            @apply mt-2 text-[36px];
-        }
+  h2 {
+    &.ma__name,
+    &.assessment__name {
+      @apply mt-2 text-[36px];
+    }
+  }
+
+  p {
+    &.assessment__year {
+      @apply text-[20px] text-grayy-lighter;
+    }
+  }
+
+  .header__save {
+    @apply flex flex-col justify-end;
+
+    button {
+      @apply self-end mb-1;
     }
 
     p {
-        &.assessment__year {
-            @apply text-[20px] text-grayy-lighter;
-        }
+      @apply text-right text-[12px] text-grayy-lighter;
+    }
+  }
+  .assessment__btns {
+    @apply flex items-center mt-5;
+    .btn {
+      @apply mr-2 whitespace-nowrap;
+      display: inline-flex;
+    }
+  }
+
+  .assessment__btns {
+    @apply flex items-center gap-2 m-0 sm:flex-col sm:items-start;
+    .separator {
+      @apply w-[1px] h-[16px] bg-[#DADADA];
     }
 
-    .header__save {
-        @apply flex flex-col justify-end;
+    a {
+      @apply flex items-center gap-1 p-2 cursor-pointer transition-all duration-300 rounded-[4px];
 
-        button {
-            @apply self-end mb-1;
-        }
+      span {
+        @apply text-[#43A0BD] text-[16px] font-medium leading-5 whitespace-nowrap;
+      }
 
-        p {
-            @apply text-right text-[12px] text-grayy-lighter;
-        }
+      &:hover {
+        @apply bg-[#1446511F];
+      }
     }
-    .assessment__btns {
-        @apply flex items-center mt-5;
-        .btn {
-            @apply mr-2 whitespace-nowrap;
-            display: inline-flex;
-        }
+
+    .delete-btn {
+      span {
+        @apply text-[#D63C3C];
+      }
     }
+  }
+}
+
+.header--page__assessment {
+  @apply pt-[56px] pb-[32px] sm:pt-[32px] sm:pb-[16px];
+
+  // Add left and right padding only below tablet breakpoint
+  @media (max-width: $tablet-breakpoint) {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px; // Reduce bottom padding to 16px on mobile only
+
+    .container {
+      @apply px-0 #{!important};
+    }
+  }
+
+  .back-btn {
+    @apply flex items-center gap-2 mb-5;
+
+    span {
+      @apply text-[#9C9C9C] font-montserrat text-[14px] font-semibold leading-6;
+    }
+  }
+
+  // Mobile responsive: single column layout below tablet breakpoint only
+  .header-assessment-content {
+    @media (max-width: $mobile-breakpoint) {
+      h2 {
+        @apply text-[30px] leading-[40px] m-0;
+      }
+      p.assessment__year {
+        @apply text-[14px] leading-[24px];
+      }
+      @apply flex-col gap-2 items-start; // Remove gap on mobile only
+
+      // // Ensure text content takes full width on mobile
+      // .text {
+      //   @apply w-full;
+      // }
+
+      // // Ensure header__save aligns properly on mobile
+      // .header__save {
+      //   @apply w-full ml-0 mt-4;
+      //   align-items: flex-start;
+      // }
+    }
+  }
+
+  p.assessment__year {
+    @apply text-[#9C9C9C] font-montserrat text-[16px] font-medium leading-[30px];
+  }
+
+  h2.assessment__name {
+    @apply mt-1;
+  }
+
+  .assessment__btns {
+    @apply mt-2;
+  }
 }
 
 .header--ma-data {
-    @apply mb-8;
+  @apply mb-8;
 
-    &.header--ma-data--stripped {
-        h3 {
-            @apply z-10 bg-white inline-block pr-5;
-        }
-
-        &:after {
-            content: '';
-            @apply w-full h-px absolute top-1/2 left-0 bg-grayy-border;
-        }
+  &.header--ma-data--stripped {
+    h3 {
+      @apply z-10 bg-white inline-block pr-5;
     }
+
+    &:after {
+      content: '';
+      @apply w-full h-px absolute top-1/2 left-0 bg-grayy-border;
+    }
+  }
 }
 
 .header--map {
-    @apply bg-turqy-lighter py-3;
+  @apply bg-[#F9F9F9] pt-[16px] pb-[14px] h-[52px];
 
-    p {
-        &:first-child {
-            @apply text-[12px];
-        }
+  .container {
+    @apply max-w-[950px] pr-0 pb-0 ml-0 mr-auto pl-4 md:pl-[83px];
+    height: fit-content;
+    // Remove 300px bottom padding that's applied to assessment section containers via mixin
+    // Use !important to override mixin at tablet and above
+    @media (min-width: 769px) {
+      padding-bottom: 0 !important;
     }
+  }
+
+  p {
+    @apply font-semibold;
+    // &:first-child {
+    //     @apply text-[12px];
+    // }
+  }
 }
 
 .header--map--flexy {
-    @apply bg-turqy-lighter py-8;
+  @apply bg-turqy-lighter py-8;
 
-    p,
-    span {
-        @apply text-grayy-lighter text-[12px];
+  p,
+  span {
+    @apply text-grayy-lighter text-[12px];
+  }
+
+  .left {
+    p {
+      &:first-child {
+        @apply text-grayy mb-6;
+      }
     }
+  }
 
-    .left {
-        p {
-            &:first-child {
-                @apply text-grayy mb-6;
-            }
-        }
+  ul {
+    li {
+      @apply flex items-center mb-3;
+
+      .pic__wrap {
+        @apply w-[30px];
+      }
     }
+  }
 
-    ul {
-        li {
-            @apply flex items-center mb-3;
-
-            .pic__wrap {
-                @apply w-[30px];
-            }
-        }
-    }
-
-    .container--lg {
-        @apply flex justify-between space-x-10;
-    }
+  .container--lg {
+    @apply flex justify-between space-x-10;
+  }
 }
 
 .header--back {
-    @apply flex items-center justify-between space-x-2 mb-6;
+  @apply flex items-center justify-between space-x-2 mb-6;
 }
