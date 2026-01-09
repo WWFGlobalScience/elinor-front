@@ -5,7 +5,7 @@
   "scripts": {
     "generate:translations": "node scripts/generateTranslations.js",
     "dev": "nuxt --dev",
-    "build": "nuxt build",
+    "build": "npm run generate:translations && nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
