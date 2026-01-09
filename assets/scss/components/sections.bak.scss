@@ -1,0 +1,1606 @@
+.section {
+  @apply mt-20;
+
+  /*
+        MODIFIERS
+    */
+  &.section--mt-0 {
+    @apply mt-0;
+  }
+
+  &.full-size {
+    @apply w-full h-screen mt-0;
+    background-color: $primary-background-color;
+
+    .container {
+      @apply flex flex-col items-center justify-center h-full;
+
+      .button-container {
+        @apply flex flex-col gap-4;
+        .btn--border-white {
+          @apply flex items-center gap-2 bg-[#43A0BD] hover:bg-[#3A90AB] rounded-full justify-center py-4 px-6 transition-all duration-300;
+          .btn--opacity__target {
+            @apply text-white opacity-100;
+          }
+        }
+        .create-account-link {
+          @apply flex items-center gap-2 text-[#43A0BD] border border-[#43A0BD] hover:bg-[#3A90AB] hover:text-white hover:border-[#3A90AB] rounded-full justify-center py-2 px-6 transition-all duration-300 font-medium;
+        }
+      }
+    }
+  }
+
+  &.section--mt-10 {
+    @apply mt-10;
+  }
+
+  &.section--button {
+    .container {
+      @apply flex justify-end sm:justify-start sm:mt-6;
+    }
+  }
+
+  &.section--mt-medium {
+    @apply mt-10;
+  }
+
+  &.section--filters {
+    @apply sm:mt-6;
+    ul {
+      @apply flex items-center justify-between py-5 space-x-5 border-b border-t border-grayy-border sm:flex-wrap;
+      & > :not([hidden]) ~ :not([hidden]) {
+        @apply sm:mx-0 sm:flex-auto;
+      }
+      li {
+        &:first-child {
+          @apply flex-1 sm:flex-auto sm:mb-6;
+        }
+      }
+
+      .form {
+        @apply mt-0;
+      }
+    }
+  }
+  &.section--intro-full {
+    @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
+  }
+
+  &.section--tags {
+    @apply py-10 border-b border-t border-grayy-border sm:flex-wrap;
+    &.section--tags-filter {
+      @apply mt-0 py-4 border-t-0;
+      ul {
+        @apply flex-wrap;
+
+        li {
+          @apply mt-2;
+          .tag__item {
+            @apply text-xs;
+          }
+        }
+      }
+    }
+    ul {
+      @apply flex items-center justify-start;
+
+      li {
+        @apply flex items-center justify-between bg-turqy-lighter border-radius--20 px-4 py-3 mr-3;
+        &:last-child {
+          @apply mr-0;
+        }
+
+        .tag__item {
+          @apply text-[14px] mr-2;
+        }
+        .tag__close {
+          @apply transition hover:opacity-60 w-3;
+        }
+      }
+    }
+  }
+
+  &.section--tab {
+    li {
+      @apply flex;
+
+      .btn--tab {
+        @apply border-l-0 sm:w-full sm:border-l;
+
+        &.nuxt-link-active {
+          @apply border-l  sm:border-b sm:border-l-4;
+        }
+      }
+
+      &:first-child {
+        .btn--tab {
+          @apply border-l;
+          &.nuxt-link-active {
+            @apply sm:border-b sm:border-l-4;
+          }
+        }
+      }
+
+      &.elinor__tab--end {
+        @apply flex-1 justify-end;
+
+        .btn--tab {
+          @apply border-l border-solid sm:w-full sm:border-b sm:border-l-4;
+        }
+      }
+    }
+  }
+  &.section--turqy-light {
+    @apply bg-turqy-lighter;
+  }
+
+  &.section--honor {
+    @apply py-10 #{!important};
+
+    .container {
+      @apply grid grid-cols-2 gap-14 items-center;
+
+      @media (max-width: $desktop-breakpoint) {
+        @apply grid-cols-1 px-4;
+      }
+
+      > div:first-child {
+        @apply flex flex-col gap-[43px] pb-[38px];
+        width: 100%;
+
+        .elinor__sentence {
+          @apply mx-auto max-w-[452px] p-0;
+
+          .elinor__sentence__name {
+            @apply text-[14px] font-bold leading-[24px] pt-4;
+          }
+        }
+
+        @media (max-width: $desktop-breakpoint) {
+          @apply px-4;
+        }
+      }
+
+      > div:last-child {
+        @apply w-full;
+
+        @media (max-width: $desktop-breakpoint) {
+          @apply px-4;
+        }
+      }
+    }
+
+    // Additional override for when section has both section--text and section--honor classes
+    @media (max-width: $desktop-breakpoint) {
+      &.section--text .container {
+        @include mobile-container-padding($desktop-breakpoint);
+      }
+    }
+  }
+  &.section--text {
+    p,
+    li {
+      @apply mb-[9px] last:mb-0 leading-relaxed;
+    }
+    @apply mt-0 py-[64px];
+
+    // Add 8px left and right padding on mobile/tablet (but not for first section--sign-in)
+    // For home page sections, use desktop breakpoint
+    &:not(.section--sign-in) {
+      .container {
+        @media (max-width: $desktop-breakpoint) {
+          @apply px-2;
+        }
+      }
+    }
+  }
+  /*
+        PAGE: Welcome
+    */
+  &.section--welcome__ctas {
+    ul {
+      @apply flex space-x-5 md:flex-col;
+
+      & > :not([hidden]) ~ :not([hidden]) {
+        @apply md:mx-0;
+      }
+
+      li {
+        @apply flex flex-col md:my-3 md:mx-0;
+
+        h4 {
+          @apply text-[18px] font-bold mb-5;
+        }
+
+        footer {
+          @apply mt-16 flex items-end flex-1;
+        }
+      }
+    }
+  }
+
+  /*
+        PAGE: Managed areas
+    */
+  &.section--ma-results {
+    // Remove container padding on mobile for full-width layout
+    @media (max-width: $tablet-breakpoint) {
+      .container {
+        @apply px-0;
+      }
+    }
+
+    // Search results header mobile styles
+    .search__results {
+      @media (max-width: $tablet-breakpoint) {
+        @apply flex-col items-start gap-4 px-4;
+      }
+    }
+
+    // Pagination mobile styles
+    .elinor__pagination {
+      @media (max-width: $tablet-breakpoint) {
+        @apply px-4;
+      }
+    }
+
+    .ma__results {
+      @apply mt-[32px] grid grid-cols-2 gap-6 pb-10;
+
+      // Mobile: single column, no gap, full width
+      @media (max-width: $tablet-breakpoint) {
+        @apply grid-cols-1 gap-4 mt-6 pb-6;
+        // Remove padding on mobile to allow cards to be full width
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .assessment-card {
+        @apply bg-[#F9F9F9] rounded-[16px] p-6 min-h-[313px] flex flex-col justify-between transition-all duration-300;
+
+        // Hide desktop card on mobile
+        @media (max-width: $tablet-breakpoint) {
+          display: none;
+        }
+
+        &.assessment-card--desktop {
+          // Show only on desktop/tablet
+          @media (max-width: $tablet-breakpoint) {
+            display: none;
+          }
+        }
+
+        .top-content {
+          @apply flex flex-col gap-6;
+
+          .scores-area {
+            @apply flex items-start justify-between;
+
+            .badge-area {
+              @apply flex items-center flex-col gap-2;
+
+              .badge {
+                @apply bg-[#DADADA] text-white  w-[56px] h-[56px] rounded-full flex items-center justify-center text-[22px] font-semibold  px-4 py-2;
+
+                &.bg-poor {
+                  @apply bg-poor;
+                }
+                &.bg-average {
+                  @apply bg-average;
+                }
+                &.bg-good {
+                  @apply bg-good;
+                }
+                &.bg-excellent {
+                  @apply bg-excellent;
+                }
+              }
+
+              .badge-label {
+                @apply text-[#8F999C] text-[10px] leading-3 font-medium;
+              }
+            }
+
+            .assessment-status {
+              @apply flex items-center gap-4;
+
+              .edit {
+                @apply flex items-center gap-1;
+
+                img {
+                  @apply w-[24px] h-[24px];
+                }
+
+                span {
+                  @apply text-[#43A0BD] text-base font-medium;
+                }
+              }
+
+              .text {
+                @apply text-[#8F999C] text-[10px] px-2 py-1 leading-3 font-medium uppercase flex items-center gap-2;
+                @apply text-[color:var(--Dark-blue,#144651)] text-center font-montserrat text-[12px] font-bold leading-[15px] tracking-[0.48px];
+                border-radius: 4px;
+                background: rgba(20, 70, 81, 0.12);
+              }
+
+              &.status--published {
+                .text {
+                  @apply text-[#1A981D] bg-[#32EC3630];
+                }
+              }
+
+              &.status--pending {
+                @apply text-[#8F999C];
+              }
+            }
+          }
+
+          h4 {
+            @apply text-[22px] font-semibold leading-[30px] text-[color:var(--Dark,#2E2E2E)] transition-all duration-300;
+          }
+        }
+
+        .bottom-content {
+          @apply flex flex-col;
+
+          .name,
+          .management-area,
+          .year {
+            @apply text-[14px] font-medium leading-[20px] text-[color:var(--Dark,#2E2E2E)] transition-all duration-300;
+          }
+
+          .management-area {
+            @apply text-[#9C9C9C];
+          }
+        }
+
+        // &:hover {
+        //   background-color: $primary-background-color;
+
+        //   .top-content {
+        //     h4 {
+        //       @apply text-[#3A90AB];
+        //     }
+        //   }
+
+        //   .bottom-content {
+        //     .name,
+        //     .management-area,
+        //     .year {
+        //       @apply text-[#3A90AB];
+        //     }
+        //   }
+        // }
+      }
+
+      .assessment-card--mobile {
+        // Show only on mobile
+        display: none;
+        @media (max-width: $tablet-breakpoint) {
+          display: grid;
+        }
+      }
+    }
+  }
+
+  /*
+        PAGE: Managed area
+    */
+  &.section--ma-data {
+  }
+
+  /*
+        PAGE: SIGN IN
+    */
+  &.section--sign-in {
+    @apply relative flex items-center mt-0 h-screen;
+    z-index: 1; // Ensure section is above background but below other content
+
+    // &--logged-in {
+    // height: calc(40vh - 70px);
+    // height: 50vh;
+    // }
+    @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      height: auto;
+      @apply items-start py-6;
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+      @apply h-auto pb-8;
+      z-index: 2;
+    }
+
+    .home-container {
+      @apply w-full h-full px-[75px] gap-[40px] flex items-center justify-between relative;
+      z-index: 1;
+
+      @media (max-width: $tablet-breakpoint) {
+        @apply px-4 flex-col items-start justify-start pt-10 gap-4 h-auto;
+        // padding-top: 5rem;
+      }
+
+      .signin-content {
+        @apply w-1/2 flex flex-col gap-4;
+
+        @media (max-width: $tablet-breakpoint) {
+          @apply w-full;
+        }
+
+        a {
+          width: fit-content;
+        }
+        .elinor__card--sign-in__logo {
+          @apply h-[100px] w-[100px];
+        }
+        h1 {
+          @apply text-white;
+
+          @media (max-width: $tablet-breakpoint) {
+            @apply text-[22px] leading-[29px] w-full;
+          }
+        }
+
+        p {
+          @apply text-white;
+        }
+      }
+
+      .elinor__card.elinor__card--sign-in {
+        @apply min-w-[453px] max-w-[453px] m-0 rounded-[16px] px-8 py-10 md:px-4 md:py-6 flex flex-col gap-8 md:gap-4 relative;
+        z-index: 2;
+
+        @media (max-width: $tablet-breakpoint) {
+          @apply w-full min-w-full max-w-full;
+          z-index: 3;
+        }
+
+        .button-container {
+          @apply flex flex-col gap-4 pt-8 md:pt-4;
+          .btn--border-white {
+            @apply flex items-center gap-2 bg-[#43A0BD] hover:bg-[#3A90AB] rounded-full justify-center py-4 px-6 transition-all duration-300;
+            .btn--opacity__target {
+              @apply text-white opacity-100;
+            }
+          }
+          .create-account-link {
+            @apply flex items-center gap-2 text-[#43A0BD] border border-[#43A0BD] hover:bg-[#3A90AB] hover:text-white hover:border-[#3A90AB] rounded-full justify-center py-[8px] px-6 transition-all duration-300 font-medium;
+          }
+        }
+      }
+    }
+  }
+
+  .section__full-background {
+    @apply absolute bottom-0 left-0 w-full h-full overflow-hidden z-0 after:absolute after:top-0 after:left-0 after:w-full after:h-full;
+    &::after {
+      background: linear-gradient(
+        0deg,
+        rgba(34, 35, 52, 0.44) 0%,
+        rgba(34, 35, 52, 0.44) 100%
+      );
+    }
+    img {
+      @apply h-full w-full object-cover;
+    }
+  }
+
+  .section__bottom {
+    @apply w-full mt-8 flex justify-end border-t border-grayy-border pt-8 mt-12 sm:mt-8 sm:justify-start;
+  }
+
+  &.section--intro {
+    @apply mt-0 pt-14 pb-24;
+
+    .container {
+      @apply flex flex-col items-center justify-center;
+    }
+
+    .section--intro__info {
+      @apply text-xl text-grayy text-center leading-9 pt-9 pb-14 w-8/12 lg:w-full sm:text-lg;
+    }
+  }
+
+  &--banner {
+    @apply w-full relative mt-0 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:z-10;
+    &:before {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+    }
+    aspect-ratio: 3/1;
+    img {
+      @apply w-full h-full object-cover absolute top-0 left-0 z-0;
+    }
+
+    .container {
+      @apply flex items-center h-full relative z-10;
+
+      h1 {
+        @apply text-white;
+      }
+    }
+  }
+  &--score-table {
+    @apply pt-8 pb-16;
+  }
+  &--approach {
+    .approach-grid {
+      @apply grid grid-cols-2 lg:grid-cols-1 gap-4;
+
+      .approach-grid__item {
+        @apply flex flex-col rounded-[16px] h-full overflow-hidden bg-[#F9F9F9];
+        &__image {
+          @apply w-full h-[342px];
+
+          img {
+            @apply w-full h-full object-cover;
+          }
+        }
+        &__content {
+          @apply p-6 pb-8;
+          h4 {
+            @apply mb-3;
+          }
+          p {
+            @apply mb-[9px] last:mb-0;
+          }
+        }
+      }
+    }
+  }
+
+  &--background {
+    @apply pt-8 pb-16;
+
+    // Container styling for tables below tablet breakpoint
+    .container {
+      @media (max-width: $tablet-breakpoint) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 16px;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
+    .background-grid {
+      @apply grid grid-cols-2 lg:grid-cols-1 gap-4  mb-[56px];
+
+      .background-grid__item {
+        @apply w-full rounded-[16px] overflow-hidden border border-grayy-border;
+        height: fit-content;
+
+        // Wrap tables in scrollable container for v-html content
+        .table-background {
+          @apply w-full;
+          tr {
+            @apply border-b border-grayy-border;
+          }
+          th {
+            @apply border-none px-4;
+          }
+          td {
+            @apply border-none py-6 px-4 text-base leading-[30px];
+          }
+
+          // First column should not have min-width and should be narrow (for v-html tables)
+          th:first-child,
+          td:first-child {
+            min-width: auto !important; // Explicitly no min-width for first column
+            width: auto !important; // Let it size to content, override inline width
+            max-width: fit-content; // Hug the content
+
+            // Make first column smaller on mobile
+            @media (max-width: $tablet-breakpoint) {
+              padding-left: 0.5rem !important; // Reduce left padding
+              padding-right: 0.5rem !important; // Reduce right padding
+              width: auto !important; // Force auto width, override inline width attribute
+              max-width: 50px !important; // Limit max width to keep it narrow
+              min-width: auto !important; // Ensure no min-width
+              white-space: nowrap !important; // Prevent wrapping
+            }
+          }
+          // Exclude first column from min-width - apply to other columns
+          th:not(:first-child),
+          td:not(:first-child) {
+            min-width: 200px; // Ensure columns don't shrink too much
+          }
+
+          // Mobile responsive: allow columns to wrap and set max-width
+          @media (max-width: $tablet-breakpoint) {
+            // Allow columns to expand up to 400px max-width, with wrapping
+            th:not(:first-child),
+            td:not(:first-child) {
+              min-width: 200px !important; // Allow columns to expand when space is available
+              max-width: 400px !important; // Prevent columns from exceeding 400px
+              width: auto !important; // Let browser calculate width between min and max
+              word-wrap: break-word;
+              overflow-wrap: break-word;
+              white-space: normal !important;
+            }
+          }
+        }
+
+        // Make tables scrollable on mobile/tablet (only if needed)
+        @media (max-width: $tablet-breakpoint) {
+          overflow-x: auto;
+          overflow-y: visible;
+          -webkit-overflow-scrolling: touch;
+
+          .table-background {
+            width: 100% !important; // Allow table to fit container width
+            min-width: auto !important; // Remove forced minimum width
+            table-layout: auto; // Allow flexible column widths
+          }
+        }
+      }
+    }
+  }
+
+  .section-subtitle {
+    @apply max-w-[692px] mt-2 mb-5;
+
+    p {
+      @apply mb-[9px] last:mb-0;
+    }
+  }
+
+  &.section--intro-carousel {
+    @apply relative;
+
+    // Override section--text 8px padding and container padding removal, apply 16px padding on mobile
+    @media (max-width: $desktop-breakpoint) {
+      &.section--text .container {
+        @include mobile-container-padding($desktop-breakpoint);
+      }
+
+      .container {
+        @include mobile-container-padding($desktop-breakpoint);
+      }
+    }
+
+    .section--img-text__block-text {
+      @apply w-[80%] md:w-full flex flex-col gap-4;
+
+      @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        @apply w-full;
+      }
+    }
+    .carousel-container {
+      @apply w-full p-0 px-[83px] md:px-10 mt-6 md:mt-0;
+      // margin-top: 24px; // Add 24px vertical spacing from previous paragraph
+
+      // Add 24px top padding on mobile/tablet (below desktop breakpoint)
+      @media (max-width: $desktop-breakpoint) {
+        @apply pt-6; // 24px = 1.5rem = 6 * 4px
+      }
+    }
+    .VueCarousel-wrapper {
+      @apply px-0 py-10;
+      overflow: visible;
+    }
+
+    // Add 16px horizontal gaps between carousel cards
+    .VueCarousel-inner {
+      @apply gap-4; // 16px = 1rem = 4 * 4px
+    }
+    .carousel-container .VueCarousel-navigation {
+      @apply h-10 flex justify-end p-0 gap-2;
+
+      .VueCarousel-navigation-button {
+        @apply translate-x-0 translate-y-0 m-0 w-10 h-10 text-[0px] bg-transparent #{!important};
+      }
+
+      .VueCarousel-navigation-prev {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><mask id="mask0_7699_7905" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40"><rect width="40" height="40" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_7699_7905)"><path d="M17.6475 20.8333H25C25.2361 20.8333 25.434 20.7533 25.5938 20.5933C25.7535 20.4333 25.8333 20.2351 25.8333 19.9988C25.8333 19.7624 25.7535 19.5646 25.5938 19.4054C25.434 19.2463 25.2361 19.1667 25 19.1667H17.6475L20.5896 16.2242C20.7457 16.0756 20.8238 15.8861 20.8238 15.6558C20.8238 15.4258 20.7457 15.2329 20.5896 15.0771C20.4338 14.921 20.2408 14.8429 20.0108 14.8429C19.7806 14.8429 19.5911 14.921 19.4425 15.0771L15.4617 19.0575C15.1922 19.3269 15.0575 19.6411 15.0575 20C15.0575 20.3589 15.1922 20.6731 15.4617 20.9425L19.4425 24.9229C19.5983 25.079 19.7894 25.1517 20.0158 25.1408C20.2425 25.1303 20.4338 25.0469 20.5896 24.8908C20.7457 24.735 20.8238 24.5421 20.8238 24.3121C20.8238 24.0821 20.7457 23.8926 20.5896 23.7437L17.6475 20.8333ZM20.0054 35C17.9312 35 15.9811 34.6064 14.155 33.8192C12.3292 33.0319 10.7408 31.9636 9.39 30.6142C8.03917 29.2647 6.96986 27.6778 6.18208 25.8533C5.39403 24.0292 5 22.0799 5 20.0054C5 17.9312 5.39361 15.9811 6.18083 14.155C6.96806 12.3292 8.03639 10.7408 9.38583 9.39C10.7353 8.03917 12.3222 6.96986 14.1467 6.18208C15.9708 5.39403 17.9201 5 19.9946 5C22.0688 5 24.0189 5.39361 25.845 6.18083C27.6708 6.96806 29.2592 8.03639 30.61 9.38583C31.9608 10.7353 33.0301 12.3222 33.8179 14.1467C34.606 15.9708 35 17.9201 35 19.9946C35 22.0688 34.6064 24.0189 33.8192 25.845C33.0319 27.6708 31.9636 29.2592 30.6142 30.61C29.2647 31.9608 27.6778 33.0301 25.8533 33.8179C24.0292 34.606 22.0799 35 20.0054 35ZM20 33.3333C23.7222 33.3333 26.875 32.0417 29.4583 29.4583C32.0417 26.875 33.3333 23.7222 33.3333 20C33.3333 16.2778 32.0417 13.125 29.4583 10.5417C26.875 7.95833 23.7222 6.66667 20 6.66667C16.2778 6.66667 13.125 7.95833 10.5417 10.5417C7.95833 13.125 6.66667 16.2778 6.66667 20C6.66667 23.7222 7.95833 26.875 10.5417 29.4583C13.125 32.0417 16.2778 33.3333 20 33.3333Z" fill="%2343A0BD"/></g></svg>')
+          center no-repeat !important;
+      }
+
+      .VueCarousel-navigation-next {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><mask id="mask0_7699_7908" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40"><rect width="40" height="40" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_7699_7908)"><path d="M22.3525 20.8333L19.4104 23.7758C19.2543 23.9317 19.1817 24.1175 19.1925 24.3333C19.2031 24.5492 19.2864 24.735 19.4425 24.8908C19.5983 25.0469 19.7913 25.125 20.0213 25.125C20.2513 25.125 20.4407 25.0469 20.5896 24.8908L24.5383 20.9425C24.8078 20.6731 24.9425 20.3589 24.9425 20C24.9425 19.6411 24.8078 19.3269 24.5383 19.0575L20.5575 15.0771C20.4017 14.921 20.2158 14.8429 20 14.8429C19.7842 14.8429 19.5983 14.921 19.4425 15.0771C19.2864 15.2329 19.2083 15.4258 19.2083 15.6558C19.2083 15.8861 19.2864 16.0756 19.4425 16.2242L22.3525 19.1667H15C14.7639 19.1667 14.566 19.2467 14.4062 19.4067C14.2465 19.5667 14.1667 19.7649 14.1667 20.0013C14.1667 20.2376 14.2465 20.4354 14.4062 20.5946C14.566 20.7537 14.7639 20.8333 15 20.8333H22.3525ZM20.0054 35C17.9312 35 15.9811 34.6064 14.155 33.8192C12.3292 33.0319 10.7408 31.9636 9.39 30.6142C8.03917 29.2647 6.96986 27.6778 6.18208 25.8533C5.39403 24.0292 5 22.0799 5 20.0054C5 17.9312 5.39361 15.9811 6.18083 14.155C6.96806 12.3292 8.03639 10.7408 9.38583 9.39C10.7353 8.03917 12.3222 6.96986 14.1467 6.18208C15.9708 5.39403 17.9201 5 19.9946 5C22.0688 5 24.0189 5.39361 25.845 6.18083C27.6708 6.96806 29.2592 8.03639 30.61 9.38583C31.9608 10.7353 33.0301 12.3222 33.8179 14.1467C34.606 15.9708 35 17.9201 35 19.9946C35 22.0688 34.6064 24.0189 33.8192 25.845C33.0319 27.6708 31.9636 29.2592 30.6142 30.61C29.2647 31.9608 27.6778 33.0301 25.8533 33.8179C24.0292 34.606 22.0799 35 20.0054 35ZM20 33.3333C23.7222 33.3333 26.875 32.0417 29.4583 29.4583C32.0417 26.875 33.3333 23.7222 33.3333 20C33.3333 16.2778 32.0417 13.125 29.4583 10.5417C26.875 7.95833 23.7222 6.66667 20 6.66667C16.2778 6.66667 13.125 7.95833 10.5417 10.5417C7.95833 13.125 6.66667 16.2778 6.66667 20C6.66667 23.7222 7.95833 26.875 10.5417 29.4583C13.125 32.0417 16.2778 33.3333 20 33.3333Z" fill="%2343A0BD"/></g></svg>')
+          center no-repeat;
+      }
+
+      .VueCarousel-navigation--disabled {
+        @apply opacity-50 #{!important};
+      }
+    }
+  }
+
+  &.section--img-text {
+    // Add 8px left and right padding on mobile/tablet
+    @media (max-width: $tablet-breakpoint) {
+      .container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+    }
+
+    .section--img-text__block {
+      @apply flex gap-6;
+
+      > div:first-child {
+        @apply w-[48.85714286%];
+      }
+
+      > div:last-child {
+        @apply flex-1;
+      }
+
+      // From TRACKING CHANGE section and beyond, use grid layout
+      &.pl-0,
+      &.pl-0 ~ .section--img-text__block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        @media (max-width: $tablet-breakpoint) {
+          grid-template-columns: 1fr;
+        }
+
+        > div:first-child {
+          width: 100%;
+        }
+
+        > div:last-child {
+          width: 100%;
+        }
+      }
+
+      .container {
+        @apply lg:order-2 lg:my-5;
+      }
+
+      img {
+        @apply lg:mx-auto lg:block lg:mb-4;
+      }
+      .btn {
+        @apply inline-flex;
+        img {
+          @apply m-auto;
+        }
+      }
+
+      &.is-flushed {
+        @apply mt-12 gap-0 lg:mt-0;
+        &:first-child {
+          @apply lg:-mt-16;
+        }
+        & + .is-flushed {
+          @apply pt-40 lg:pt-3;
+        }
+      }
+
+      .btn {
+        @apply mt-24;
+      }
+
+      .section--img-text__block-text {
+        @apply flex flex-col;
+        h2 {
+          @apply mb-2;
+
+          @media (max-width: $tablet-breakpoint) {
+            @apply text-[24px] leading-[36px];
+          }
+        }
+        p {
+          @apply mb-[9px] last:mb-0;
+        }
+
+        ol {
+          @apply list-decimal list-inside;
+
+          li {
+            @apply list-decimal mb-[9px] last:mb-0 before:hidden;
+          }
+        }
+      }
+      .section--img-text__block-text {
+        .section--img-text__block-nested {
+          @apply grid gap-4 mt-10;
+        }
+      }
+    }
+  }
+
+  &#about {
+    .container {
+      @apply flex flex-col gap-[72px] pl-[76px];
+
+      @media (max-width: $desktop-breakpoint) {
+        @include mobile-container-padding($desktop-breakpoint);
+      }
+
+      .section--img-text__block-text {
+        @apply last:pl-[36px];
+
+        @media (max-width: $desktop-breakpoint) {
+          padding-left: 0 !important; // Remove extra left padding on mobile
+        }
+      }
+
+      // All blocks in #about section should use grid layout
+      .section--img-text__block {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        @media (max-width: $desktop-breakpoint) {
+          grid-template-columns: 1fr !important;
+        }
+
+        > div:first-child {
+          width: 100% !important;
+        }
+
+        > div:last-child {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  &.section--main {
+    @apply h-96 flex flex-col justify-center items-center mt-0 sm:h-32;
+    & + .section {
+      @apply sm:mt-6;
+    }
+    @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      @apply h-24;
+      & + .section {
+        @apply mt-6;
+      }
+    }
+    img {
+      @apply h-full w-full object-cover;
+    }
+  }
+
+  &.section--news {
+    @apply py-16 mt-0;
+
+    // Ensure container has proper padding on mobile/tablet
+    .container {
+      @media (max-width: $tablet-breakpoint) {
+        @include mobile-container-padding($tablet-breakpoint);
+      }
+    }
+  }
+
+  &.section--documentation {
+    @apply py-16 mt-0;
+  }
+
+  &.section--latest-news {
+    .row {
+      @apply flex flex-row justify-between;
+
+      &.row--cards {
+        @apply lg:flex-col;
+      }
+    }
+  }
+  &.section--contact {
+    .container {
+      @media (max-width: $desktop-breakpoint) {
+        @include mobile-container-padding($desktop-breakpoint);
+      }
+    }
+  }
+
+  &.section--faq {
+    &.section--text .container {
+      @media (max-width: $desktop-breakpoint) {
+        @apply px-4 #{!important};
+      }
+    }
+  }
+
+  &.section--collaboration {
+    @apply pt-16 pb-6 mt-0;
+    .collaboration-content {
+      @apply flex flex-col gap-6 mb-4 max-w-[692px];
+      h3 {
+        @apply text-turqy mb-4;
+      }
+      p {
+        @apply mb-[9px] last:mb-0;
+      }
+
+      blockquote {
+        @apply border-l-4 border-turqy pl-4 text-turqy text-[20px] leading-[32px] font-semibold;
+      }
+    }
+    .guidelines-content {
+      @apply flex flex-col gap-4 py-8;
+
+      .guidelines-content__accordion {
+        @apply py-8 last:pb-0;
+      }
+    }
+  }
+  &.section--guidelines {
+    .text-group {
+      p {
+        @apply mb-[9px] last:mb-0;
+      }
+    }
+  }
+  &.section--terms {
+    ul {
+      @apply pl-4;
+      li {
+        @apply mb-8 leading-6 relative;
+        &::before {
+          content: '';
+          @apply w-2 h-2 bg-turqy absolute top-2 -left-4 border-radius--50;
+        }
+        ul {
+          @apply pl-4 mt-4;
+          > li {
+            @apply mb-4 leading-6 relative;
+            &::before {
+              content: '';
+              @apply w-2 h-2 border border-turqy bg-transparent top-2 -left-4 border-radius--50;
+            }
+          }
+        }
+      }
+    }
+    ol {
+      @apply pl-6 mt-4;
+      counter-reset: section;
+
+      li {
+        @apply mb-8 leading-6 relative;
+        &::before {
+          content: counter(section) '. ';
+          counter-increment: section;
+          @apply w-0 h-0 top-0 -left-6 text-turqy font-bold;
+        }
+      }
+    }
+  }
+
+
+
+  &.section--assessment-info {
+    @apply mt-8 md:mt-10;
+
+    // Add 8px left and right padding on mobile only (below tablet breakpoint)
+    // BUT remove padding when also has section--ma-data class to avoid double padding
+    &:not(.section--ma-data) {
+      @media (max-width: $tablet-breakpoint) {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+
+  &.section--assessment-map {
+    &.no-map-data {
+      @apply h-0 overflow-hidden;
+    }
+
+    // Break map component out of parent section padding
+    @media (max-width: $tablet-breakpoint) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: -16px !important;
+      margin-right: -16px !important;
+      width: calc(100% + 32px) !important;
+      max-width: calc(100% + 32px) !important;
+    }
+  }
+
+  // When section--assessment-map is inside section--assessment-info, break it out
+  .section--assessment-info .section--assessment-map {
+    @media (max-width: $tablet-breakpoint) {
+      margin-left: -16px !important;
+      margin-right: -16px !important;
+      width: calc(100% + 32px) !important;
+      max-width: calc(100% + 32px) !important;
+    }
+  }
+
+  // Add 8px padding to all assessment content sections on mobile (except map)
+  .section--assessment-collaborators,
+  .section--assessment-survey,
+  .section--assessment-edit-publish-settings {
+    @media (max-width: $tablet-breakpoint) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  // Report text section styling - now handled by .tab-content class
+  // Keeping minimal styles here for non-tab-content usage
+  .section--ma-data {
+    // Add bottom spacing for below tablet breakpoint
+    @media (max-width: $tablet-breakpoint) {
+      margin-bottom: 32px !important;
+      padding-bottom: 0 !important; // Use margin instead of padding for consistent spacing
+    }
+
+    // Only apply styles if NOT using tab-content class
+    &:not(.tab-content) {
+      // Mobile section padding
+      @media (max-width: $tablet-breakpoint) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+
+  .section--assessment-collaborators {
+    @apply pb-10;
+    // Tab content styling now handled by .tab-content class
+    // Only apply styles if NOT using tab-content class
+    &:not(.tab-content) {
+      // Remove any margins from section itself on smaller than tablet view
+      @media (max-width: $tablet-breakpoint) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+
+    // Override main .container mx-auto rule with higher specificity
+    // Note: 300px bottom padding only applied to tab-content sections (see below)
+    > .container,
+    .container {
+      @apply flex flex-col gap-8;
+      // Remove mixins - 300px padding only for assessment tabs (tab-content)
+      // Edit pages have their own padding in assessment-edit.scss
+
+      // Add left margin and right padding to text on smaller than tablet view
+      > p.text-subtitle,
+      p.text-subtitle {
+        @media (max-width: $tablet-breakpoint) {
+          margin-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+    }
+
+    .elinor__collaborators {
+      // Remove all margin and padding - align with outer container's left edge
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      .container {
+        // Remove all padding/margin and border/radius - ensure left alignment
+        // Exclude this nested container from bottom padding to avoid double whitespace
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important; // Remove bottom padding to prevent double whitespace
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+      }
+
+      // Style checkmark image directly in table cells
+      img[src*='check_circle.svg'] {
+        @apply w-[24px] h-[24px] m-0;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Tab content class - dedicated class for assessment tab content sections
+// This avoids conflicts with existing section styles
+.section.tab-content {
+  // Override base .section margin-top (5rem/80px) to ensure only 2rem top margin
+  margin-top: 2rem !important;
+
+  // Mobile section padding and margin overrides
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 2rem !important; // Keep margin-top for spacing from tabs
+    padding-top: 2rem !important; // Also use padding-top for spacing from tabs
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  // Note: Container padding (300px bottom whitespace) is only applied to assessment pages
+  // See .page--assessment .section.tab-content selector below
+}
+
+// Override padding for .section--ma-data.tab-content specifically
+.section.section--ma-data.tab-content {
+  @media (max-width: $tablet-breakpoint) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+// Ensure tabs section has no bottom margin/padding so spacing is controlled by content sections
+.section--assessment-tabs,
+.section.section--tab.section--assessment-tabs {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  // Ensure container inside tabs section has no bottom spacing
+  .container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+
+    @media (max-width: $tablet-breakpoint) {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+// Adjacent sibling selector: content sections immediately after tabs get 2rem spacing
+.section--assessment-tabs + .section.tab-content,
+.section.section--tab.section--assessment-tabs + .section.tab-content {
+  margin-top: 2rem !important; // 2rem spacing from tabs section (desktop)
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 2rem !important; // Keep margin-top for spacing from tabs
+    padding-top: 2rem !important; // Also use padding-top for spacing from tabs
+  }
+}
+
+// Page-specific selector for mobile - use padding-top instead of margin-top
+.page--assessment .section--assessment-tabs ~ .section.tab-content,
+.page--assesment .section--assessment-tabs ~ .section.tab-content,
+main .section--assessment-tabs ~ .section.tab-content {
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 0 !important; // Remove margin-top
+    padding-top: 2rem !important; // Use padding-top for spacing from tabs
+  }
+}
+
+// Even more specific: target content sections that come after tabs section
+.page--assessment
+  .section.section--tab.section--assessment-tabs
+  ~ .section.tab-content,
+.page--assesment
+  .section.section--tab.section--assessment-tabs
+  ~ .section.tab-content {
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 2rem !important; // Keep margin-top for spacing from tabs
+    padding-top: 2rem !important; // Also use padding-top for spacing from tabs
+  }
+}
+
+// High specificity overrides for tab-content sections
+// Target elements with both section class and tab-content class
+// ONLY apply 300px bottom padding to assessment pages
+.section.section--ma-data.tab-content,
+.section.section--assessment-collaborators.tab-content,
+.page--assessment .section.tab-content,
+.page--assesment .section.tab-content {
+  margin-top: 2rem !important; // Desktop: use margin-top
+
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 0 !important; // Mobile: remove margin-top
+    padding-top: 2rem !important; // Mobile: use padding-top instead
+  }
+
+  // .container {
+  //   @include assessment-section-container-padding;
+  //   @include assessment-section-mobile-container;
+  // }
+}
+
+// Additional mobile-specific override with maximum specificity
+.page--assessment .section.section--ma-data.tab-content,
+.page--assesment .section.section--ma-data.tab-content,
+main .section.section--ma-data.tab-content,
+.page--assessment .section.section--assessment-collaborators.tab-content,
+.page--assesment .section.section--assessment-collaborators.tab-content,
+main .section.section--assessment-collaborators.tab-content {
+  @media (max-width: $tablet-breakpoint) {
+    margin-top: 2rem !important; // Keep margin-top for spacing from tabs
+    padding-top: 2rem !important; // Also use padding-top for spacing from tabs
+  }
+}
+
+// Shared standalone overrides for assessment sections (DRY principle)
+// These ensure higher specificity than base .section rules
+// Both sections use margin-top: 2rem (32px) for consistent spacing from tabs
+@include assessment-section-standalone-override(
+  'assessment-collaborators',
+  2rem
+);
+@include assessment-section-standalone-override('ma-data', 2rem);
+
+// Override nested container inside elinor__collaborators - ensure no left spacing
+// Apply at all screen sizes to ensure left alignment with text above
+.page--assessment
+  .section--assessment-collaborators
+  .elinor__collaborators
+  .container,
+.page--assesment
+  .section--assessment-collaborators
+  .elinor__collaborators
+  .container,
+main .section--assessment-collaborators .elinor__collaborators .container {
+  // Override all possible margin/padding sources at all screen sizes
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important; // Remove bottom padding to prevent double whitespace
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+// Ensure table-scroll-wrapper has rounded corners - high specificity override
+.page--assessment
+  .section--assessment-collaborators
+  .elinor__collaborators
+  .table-scroll-wrapper,
+.page--assesment
+  .section--assessment-collaborators
+  .elinor__collaborators
+  .table-scroll-wrapper,
+main
+  .section--assessment-collaborators
+  .elinor__collaborators
+  .table-scroll-wrapper,
+.section--assessment-collaborators
+  .elinor__collaborators
+  .table-scroll-wrapper {
+  // Desktop/tablet: rounded on all corners
+  border-radius: 16px !important;
+  @apply border border-grayy-border;
+  // Remove any padding/margin that creates gap between border and table
+  padding: 0 !important;
+  margin: 0 !important;
+  // Use overflow: hidden to clip rounded corners, then re-enable horizontal scroll
+  overflow: hidden !important;
+  overflow-x: auto !important; // Allow horizontal scrolling
+  overflow-y: hidden !important; // Clip vertically
+  -webkit-overflow-scrolling: touch;
+
+  // Below tablet: only round left corners (table extends beyond viewport)
+  @media (max-width: $tablet-breakpoint) {
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .table-background {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: none !important;
+    margin: 0 !important; // Ensure no margin creates gap
+    width: 100% !important; // Fill wrapper completely
+
+    // Round left corner cells (always)
+    thead tr:first-child th:first-child {
+      border-top-left-radius: 16px !important;
+      border-top: none !important;
+      border-left: none !important;
+    }
+    tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 16px !important;
+      border-bottom: none !important;
+      border-left: none !important;
+    }
+
+    // Round right corner cells (desktop/tablet only)
+    thead tr:first-child th:last-child {
+      border-top-right-radius: 16px !important;
+      border-top: none !important;
+      border-right: none !important;
+
+      // Below tablet: no right rounding
+      @media (max-width: $tablet-breakpoint) {
+        border-top-right-radius: 0 !important;
+        @apply border-r border-grayy-border; // Keep right border
+      }
+    }
+    tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 16px !important;
+      border-bottom: none !important;
+      border-right: none !important;
+
+      // Below tablet: no right rounding
+      @media (max-width: $tablet-breakpoint) {
+        border-bottom-right-radius: 0 !important;
+        @apply border-r border-grayy-border; // Keep right border
+      }
+    }
+
+    // Remove top/bottom borders from header and last row
+    thead tr:first-child th {
+      border-top: none !important;
+    }
+    tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    // Remove left border from first column
+    th:first-child,
+    td:first-child {
+      border-left: none !important;
+    }
+
+    // Remove right border from last column (desktop/tablet only)
+    th:last-child,
+    td:last-child {
+      border-right: none !important;
+
+      // Below tablet: keep right border since table extends
+      @media (max-width: $tablet-breakpoint) {
+        @apply border-r border-grayy-border;
+      }
+    }
+  }
+}
+
+// Methodology page styles (moved outside .section block for correct selector matching)
+.page--methodology {
+  &__content {
+    @apply flex flex-col gap-[64px] pt-12 pb-[64px] bg-white #{!important};
+
+    // Add padding to wrapper on mobile/tablet - avoids container padding conflicts
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+    }
+
+    section {
+      @apply m-0 p-0;
+      margin-left: 8px;
+      margin-right: 8px;
+
+      // Remove section margins on mobile since wrapper has padding
+      @media (max-width: $tablet-breakpoint) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .container {
+        @apply flex flex-col gap-[24px];
+
+        // Remove container padding on mobile since wrapper has padding
+        @media (max-width: 1024px) {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        h3 {
+          @apply mb-2;
+        }
+        .section-subtitle {
+          @apply m-0;
+        }
+        .background-grid {
+          @apply mb-0;
+        }
+      }
+    }
+  }
+
+  // Add padding for banner section wrapper
+  .section--banner {
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+
+// Collaboration page styles (same approach as methodology page)
+.page--collaboration {
+  &__content {
+    // Add padding to wrapper on mobile/tablet - avoids container padding conflicts
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+    }
+
+    section {
+      .container {
+        // Remove container padding on mobile since wrapper has padding
+        @media (max-width: 1024px) {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    }
+  }
+
+  // Add padding for banner section wrapper
+  .section--banner {
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+
+// Documentation page styles (same approach as methodology and collaboration pages)
+.page--documentation {
+  // Add padding for documentation section container
+  .section--documentation .container {
+    @media (max-width: 1024px) {
+      @include mobile-container-padding(1024px);
+    }
+  }
+
+  // Add padding for banner section wrapper and make image hug text on mobile
+  .section--banner {
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+
+      // Make banner section hug text content on mobile (remove fixed aspect ratio)
+      // Image stays as background but section height adapts to content
+      aspect-ratio: auto !important;
+      min-height: auto !important;
+      height: auto !important;
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+
+      // Keep image as background (absolute, covering the section)
+      img {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        top: 0 !important;
+        left: 0 !important;
+        z-index: 0 !important;
+      }
+
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        height: auto !important;
+        align-items: flex-start !important;
+      }
+    }
+  }
+}
+
+// News page styles - add padding for banner section wrapper
+.page--news {
+  // Add padding for banner section wrapper
+  .section--banner {
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+
+// FAQ page styles - add padding for banner section wrapper
+.page--faq {
+  // Add padding for banner section wrapper
+  .section--banner {
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+
+// Contact page styles - add padding for banner section wrapper
+.page--contact {
+  // Add padding for banner section wrapper
+  .section--banner {
+    @media (max-width: 1024px) {
+      padding-left: $mobile-container-padding !important;
+      padding-right: $mobile-container-padding !important;
+
+      .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+}
+
+// Final override for tab-content sections - maximum specificity to ensure it wins
+// This must come after all other rules to override base .section mt-20
+.section.tab-content,
+.section.section--ma-data.tab-content,
+.section.section--assessment-collaborators.tab-content {
+  margin-top: 2rem !important; // Override base .section mt-20 (5rem) - desktop
+}
+
+// Mobile-specific final override - use padding-top instead of margin-top
+@media (max-width: $tablet-breakpoint) {
+  .section.tab-content,
+  .section.section--ma-data.tab-content,
+  .section.section--assessment-collaborators.tab-content,
+  .page--assessment .section.tab-content,
+  .page--assesment .section.tab-content,
+  main .section.tab-content {
+    margin-top: 0 !important; // Remove margin-top on mobile
+    padding-top: 2rem !important; // Use padding-top for spacing from tabs
+  }
+}
+
+.section.section--tab {
+  @apply mt-0 relative;
+
+  &:before {
+      content: '';
+      @apply absolute bottom-0 left-0 w-full h-[2px] bg-[#DADADA];
+  }
+
+  .elinor__tabs {
+      @apply flex items-center justify-start gap-2;
+
+      li {
+          .btn--tab {
+              @apply flex items-center justify-start;
+              @apply py-2 pr-4 pl-3 rounded-tl-lg rounded-tr-lg border-transparent;
+
+              .txt {
+                  @apply text-[#9C9C9C] text-center font-montserrat text-[16px] font-semibold leading-[30px];
+              }
+
+              .bullet {
+                  @apply text-[#9C9C9C] border-[#9C9C9C];
+              }
+
+              &:hover {
+                  .txt {
+                      @apply text-turqy;
+                  }
+
+                  .bullet {
+                      @apply text-turqy border-turqy;
+                  }
+              }
+
+              &.nuxt-link-active {
+                  @apply bg-[#E4F0F4] border-b-turqy border-b-[2px] ;
+
+                  .txt {
+                      @apply text-turqy;
+                  }
+
+                  .bullet {
+                      @apply text-turqy border-turqy;
+                  }
+              }
+          }
+      }
+  }
+}

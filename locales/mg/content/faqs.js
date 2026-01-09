@@ -1,285 +1,306 @@
 export default [
-    {
-        type: 'default',
-        title: 'What is the main purpose of the tool?',
-        text: `
+  {
+    type: 'default',
+    title: "Inona ny tanjona lehibe amin'ity fitaovana ity?",
+    text: `
             <p>
-                The main purpose of Elinor is to track attributes critical to the success of area-based conservation
-                over time,and share this information with decision makers and conservation supporters working at local,
-                national or international scales.
+                Ny tanjona lehiben'i Elinor dia ny hanaraha-maso ireo toetra manan-danja amin'ny fahombiazan'ny 
+                fiarovana mifototra amin'ny faritra rehefa mandeha ny fotoana, ary hizara io fampahalalana io amin'ireo 
+                mpanapa-kevitra sy ireo mpanohana ny fiarovana miasa amin'ny sehatra eo an-toerana, nasionaly na iraisam-pirenena.
             </p>
             <p>
-                The tool was specifically designed knowing many conservation practitioners (1) are familiar with and
-                use an adopted version of the METT in their work and (2) face budget and time constraints for conservation
-                monitoring and evaluation, and may need flexible  approaches for collecting standardized data.
+                Novolavolaina manokana io fitaovana io satria fantatra fa maro ireo mpiasa amin'ny fiarovana (1) mahazatra 
+                sy mampiasa dikan-teny amin'ny METT amin'ny asany ary (2) miatrika tsy ampy tetibola sy fotoana ho an'ny 
+                fanaraha-maso sy fanombanana ny fiarovana, ary mety mila fomba azo ovaina amin'ny fanangonana angon-drakitra 
+                manara-penitra.
             </p>
             <p>
-                Because of this, this low-cost and simple assessment has been developed collaboratively with members
-                of the conservation community, building off of the scoring system of the METT and questions from
-                existing protocols (see reference list), and covers a range of management and governance issue
-                considered important to success.
+                Noho izany, ity fanombanana mora vidy sy tsotra ity dia novolavolaina miaraka amin'ireo mpikambana ao amin'ny 
+                vondrom-piarovana, miorina amin'ny rafitra famaritana isa METT sy fanontaniana avy amin'ny protocole efa misy 
+                (jereo ny lisitra fanondroana), ary mandrakotra olana samihafa momba ny fitantanana sy ny fitantanana izay 
+                heverina fa manan-danja amin'ny fahombiazana.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What kinds of decisions will this tool help inform?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: "Karazana fanapahan-kevitra inona no hampiofanin'ity fitaovana ity?",
+    text: `
             <p>
-                For project and site managers, information from the assessment can help:
+                Ho an'ireo mpitantana tetikasa sy toerana, ny fampahalalana avy amin'ny fanombanana dia afaka manampy:
             </p>
             <ul>
                 <li>
-                    Communicate with key stakeholders what issues of equitable management and governance are
-                    important to pay attention to
+                    Hifandray amin'ireo mpandray anjara lehibe momba ny olana momba ny fitantanana sy fitantanana ara-drariny 
+                    izay manan-danja isika tokony hitandrina
                 </li>
                 <li>
-                    Identify what actions might be most suitable for an area under protection or management to help
-                    improve its management and governance status
+                    Hamantatra izay hetsika mety hanjary mety indrindra amin'ny faritra iray ambanin'ny fiarovana na 
+                    fitantanana mba hanatsarana ny fitantanana sy fitantanana azy
                </li>
                <li>
-                    Identify where a more in-depth assessment of management, governance, equity, or climate is needed
+                    Hamantatra izay mila fanombanana lalina kokoa momba ny fitantanana, fitantanana, fahamarinana, na toetr'andro
                </li>
             </ul>
-            <p>For regional and international decision-makers, the assessment data can help:</p>
+            <p>Ho an'ireo mpanapa-kevitra isam-paritra sy iraisam-pirenena, ny angon-drakitry ny fanombanana dia afaka manampy:</p>
             <ul>
-                <li>Provide a broad overview of perceived status and trends in management and governance</li>
-                <li>Prompt conversations on equitable management and governance at national and international
-                 scales to inspire change in policy and practice</li>
-                <li>Identify areas requiring more in-depth research</li>
+                <li>Manome topimaso midadasika momba ny sata sy ny fironana eo amin'ny fitantanana sy fitantanana</li>
+                <li>Manentana resaka momba ny fitantanana sy fitantanana ara-drariny amin'ny ambaratongam-pirenena sy 
+                iraisam-pirenena mba hanentanana fiovana amin'ny politika sy fomba fanao</li>
+                <li>Hamantatra ireo faritra mitaky fikarohana lalina kokoa</li>
             </ul>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Who should complete an assessment?',
-        text: `
-            <p>The Elinor assessment was initially designed to meet the needs of conservationists working for
-                non-governmental organizations (NGOs) but can be used by any individual working to support a
-                managed area. The assessment can be completed in one of two ways:
+  },
+  {
+    type: 'default',
+    title: 'Iza no tokony hamita fanombanana?',
+    text: `
+            <p>Ny fanombanana Elinor dia novolavolaina tany am-boalohany mba hiatrehana ny filan'ireo mpanohana ny 
+                tontolo iainana miasa ho an'ny fikambanana tsy miankina amin'ny governemanta (ONG) saingy azon'ny 
+                olona rehetra miasa hanohana ny faritra iray voatantana ampiasaina. Ny fanombanana dia azo tanterahina 
+                amin'ny fomba roa:
             </p>
             <ol>
                 <li>
-                    As a <strong>field-based focus group.</strong> This is the way that many governance assessments
-                    are traditionally completed; leveraging diverse perceptions from key stakeholders involved in the
-                    management and governance of a particular area. On the ElinorData.org website, you will find a full
-                    field protocol that can be used to guide ethical data collection with stakeholders. This guidance
-                    offers insights on how to ethically lead a group, obtain the right permissions for using the data,
-                    and to probe for diverse perspectives; especially of those who may have been traditionally marginalized.
-                    This is the preferred pathway, as it allows diverse voices to contribute to the assessment,
-                    providing a more holistic perspective on the status of management and governance in an area.
-                    See the <a href='/documentation'>Elinor assessment tool</a> and protocol for guidance on how to lead
-                    a focus group.
+                    Amin'ny maha <strong>vondrona fifantohana mifototra amin'ny saha.</strong> Izany no fomba fanaovana 
+                    fanombanana momba ny fitantanana mahazatra; mampiasa fomba fijery samihafa avy amin'ireo mpandray anjara 
+                    lehibe tafiditra amin'ny fitantanana sy fitantanana faritra manokana. Ao amin'ny tranokala 
+                    ElinorData.org, hahita protocole feno mifototra amin'ny saha ianao izay azo ampiasaina hitarihana 
+                    fanangonana angon-drakitra ara-moraly miaraka amin'ireo mpandray anjara. Ity fitarihana ity dia 
+                    manome hevitra momba ny fomba hitarihana vondrona iray ara-moraly, hahazoana fahazoan-dalana marina 
+                    amin'ny fampiasana ny angona, ary handinihana fomba fijery samihafa; indrindra ireo izay mety ho 
+                    natao ho an'ny sisintany tamin'ny fomba nentim-paharazana. Izany no lalana alaina indrindra, satria 
+                    mamela ireo feo samihafa handray anjara amin'ny fanombanana, manome fomba fijery feno kokoa momba ny 
+                    sata ny fitantanana sy fitantanana amin'ny faritra iray. Jereo ny 
+                    <a href='/documentation'>fitaovana fanombanana Elinor</a> sy ny protocole ho torolalana momba ny 
+                    fomba hitarihana vondrona ifantohan-kevitra.
                 </li>
                 <li>
-                    <strong>As a desk based assessment.</strong> This pathway is for those who have limited time or
-                        resources for carrying out a participatory focus group. This option allows for some data to be
-                        generated on the managed area, which can provide an often adequate and helpful assessment on
-                        the current status and trends in the area, and can help users identify any critical knowledge
-                        gaps that would require further research and investment.
+                    <strong>Amin'ny maha fanombanana mifototra amin'ny desk.</strong> Ity lalana ity dia ho an'ireo 
+                        izay manana fotoana na loharanom-bola voafetra amin'ny fanaovana vondrona fifantohan-kevitra 
+                        tena miasa. Ity safidy ity dia mamela angona sasany hatsangana amin'ny faritra voatantana, 
+                        izay afaka manome fanombanana matetika ampy sy manampy momba ny sata ankehitriny sy ny fironana 
+                        amin'ny faritra, ary afaka manampy ireo mpampiasa hamantatra izay banga fahalalana manan-danja 
+                        izay mitaky fikarohana sy fampiasam-bola bebe kokoa.
                 </li>
             </ol>
             <p>
-                When inputting data into the ElinorData system, users can indicate which pathway they took to
-                generate the data in the assessment so any future users of the data can consider who’s perspectives
-                were represented in the data.
+                Rehefa mampiditra angona ao amin'ny rafitra ElinorData, ireo mpampiasa dia afaka manondro izay lalana 
+                nalany hiteraka ny angona amin'ny fanombanana mba ahafahan'ireo mpampiasa ho avy hijery izay fomba 
+                fijerin'olona notarihina tao amin'ny angona.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Who has the rights and access to the data entered in this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      "Iza no manana ny zo sy miditra amin'ny angona nampidirina amin'ity fitaovana ity?",
+    text: `
             <p>
-                Data ethics, rights, and privacy is a central component of the Elinor tool and data system.
-                The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and
-                ethics with focus group participants, for those who gather data on Elinor via a focus group
-                discussion. The Elinor Terms of Services and Collaboration Principles outline in detail how data is
-                stored and used on the platform.
+                Ny etika, zo, ary fiainana manokana momba ny angona dia singa fototra amin'ny fitaovana Elinor sy ny 
+                rafitra angona. Ny fitaovana fanombanana Elinor sy ny antontan-taratasy protocole dia manolotra torolalana 
+                momba ny fomba hifanakalozan-kevitra momba ny fiainana manokana sy ny etika miaraka amin'ireo mpandray 
+                anjara vondrona fifantohan-kevitra, ho an'ireo izay manangona angona momba ny Elinor amin'ny alalan'ny 
+                fifanakalozan-kevitra vondrona fifantohan-kevitra. Ny Fepetra momba ny serivisy Elinor sy ny foto-kevitra 
+                fiaraha-miasa dia mamaritra amin'ny antsipiriany ny fomba fitahirizana sy fampiasana ny angona amin'ny sehatra.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Will I know how my data is being used?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Hahalala ve aho ny fomba fampiasana ny angonako?',
+    text: `
             <p>
-                For data made publicly available, users will eventually be able to ‘opt in’ to notifications that
-                tell users where and when their assessment data is being downloaded to help users understand what
-                their assessment data is being used for.
+                Ho an'ny angona nataon'ny daholobe, ireo mpampiasa dia ho afaka 'miditra' amin'ny fampandrenesana izay 
+                milaza amin'ireo mpampiasa hoe aiza sy rahoviana ny angon-drakitry ny fanombanany dia nalaina mba 
+                hanampy ireo mpampiasa hahatakatra izay fampiasana ny angon-drakitry ny fanombanana.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      "Mampiasa ny METT (na dikan-teny novaina amin'ny METT) aho amin'ny tetikasako - ahoana ny fifandraisan'i Elinor amin'ny METT?",
+    text: `
             <p>
-                Elinor builds directly off the years of experience project teams have using the METT assessment and
-                other tools designed to measure environmental governance. The Elinor assessment was designed to
-                mirror the METT as closely as possible, and pulls questions directly from the METT and uses the same
-                scale. Refer to this crosswalk between the METT, SAGE and Elinor to help users understand the
-                similarities and differences between the different tools.
+                Manana fototra mivantana avy amin'ireo taona niasan'ny ekipa tetikasa tamin'ny fampiasana ny fanombanana 
+                METT sy fitaovana hafa natao handrefesana ny fitantanana ny tontolo iainana ny Elinor. Ny fanombanana 
+                Elinor dia novolavolaina hitovy amin'ny METT araka izay tratra, ary maka fanontaniana mivantana avy amin'ny 
+                METT ary mampiasa ny mizana mitovy. Jereo ity crosswalk eo amin'ny METT, SAGE ary Elinor ity mba hanampiana 
+                ireo mpampiasa hahatakatra ny fitoviana sy ny fahasamihafana eo amin'ireo fitaovana samihafa.
             </p>
             <p>
-                If you use the METT currently, if you obtain informed consent from participants in your METT
-                assessment, you can enter the data gathered from the METT into the Elinor database. Pay careful
-                attention to the data privacy settings and ensure you have the rights to enter the data in the
-                ElinorData system.
+                Raha mampiasa ny METT amin'izao fotoana izao ianao, raha mahazo fanekena ara-moraly avy amin'ireo mpandray 
+                anjara amin'ny fanombanana METT nataonao, dia afaka mampiditra ny angona azo avy amin'ny METT ao amin'ny 
+                tahiry Elinor ianao. Tandremana tsara ny toeran'ny tsiambaratelo momba ny angona ary ataovy azo antoka fa 
+                manana ny zo hampiditra ny angona ao amin'ny rafitra ElinorData ianao.
             </p>
             <p>
-                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view a comparison of governance and management assessment tools</a>
+                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Tsindrio eto mba hijery ny fampitahana ireo fitaovana fanombanana fitantanana sy fitantanana</a>
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What are the specific things this tool will help me track?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: "Inona ireo zavatra manokana hampiasain'ity fitaovana ity hanarako?",
+    text: `
             <p>
-                 This tool focuses on compiling basic information about areas under management or protection, and
-                 assessing the status of <strong>nine attributes important for area-based conservation and
-                 management:</strong>
+                 Ity fitaovana ity dia mifantoka amin'ny fanangonana fampahalalana fototra momba ireo faritra ambanin'ny 
+                 fitantanana na fiarovana, ary manombana ny <strong>toetra sivy manan-danja amin'ny fiarovana sy 
+                 fitantanana mifototra amin'ny faritra:</strong>
             </p>
             <ol>
-                <li>Resource boundaries</li>
-                <li>Monitoring and enforcement</li>
-                <li>Capacity for adaptive management</li>
-                <li>Operational capacity</li>
-                <li>Inclusive and equitable management</li>
-                <li> Clearly defined rights and decision making</li>
-                <li>Clear and congruent regulations</li>
-                <li>Transparency and accountability</li>
-                <li>Perceived outcomes</li>
+                <li>Sisin-tanin'ny loharano</li>
+                <li>Fanaraha-maso sy fampiharana</li>
+                <li>Fahaiza-manao amin'ny fitantanana adaptive</li>
+                <li>Fahafaha-manao miasa</li>
+                <li>Fitantanana tafiditra sy ara-drariny</li>
+                <li>Zo ary fanapahan-kevitra voafaritra mazava</li>
+                <li>Fitsipika mazava sy mifanaraka</li>
+                <li>Transparence sy andraikitra</li>
+                <li>Valim-panantenana hita</li>
             </ol>
             <p>
-                The data system will also allow tool users to append relevant documents like management plans and
-                geospatial files to facilitate knowledge management and sharing across spatial scales and access
-                decision-friendly visualizations of site-level data and aggregate data.
+                Ny rafitra angona koa dia hamela ireo mpampiasa fitaovana hampiditra antontan-taratasy mifandraika toy ny 
+                drafitra fitantanana sy rakitra geospatial mba hanamora ny fitantanana fahalalana sy fizarana manerana ny 
+                ambaratongam-pahitana ary miditra amin'ny sary hita maso mifanentana amin'ny fanapahan-kevitra momba ny 
+                angon-drakitra amin'ny ambaratongam-paritra sy angon-drakitra vonjimaika.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'How will the data be analysed and presented?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Ahoana no fomba hanadihadian-drakitra sy hanehoana ny angona?',
+    text: `
             <p>
-                The Elinor database and web platform will provide simple visuals at a site, regional, and
-                international level that show trends over time, aggregated by the nine attributes listed above.
-                More robust analysis can be carried out on the data collected using the social science theories and
-                frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool
-                resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and
-                resilience thinking. Depending on the data privacy settings chosen by users, data from across
-                regions will be available for public use.
+                Ny tahiry Elinor sy ny sehatra tranonkala dia hanome sary tsotra amin'ny ambaratongam-paritra, 
+                isam-paritra, ary iraisam-pirenena izay mampiseho ny fironana rehefa mandeha ny fotoana, nangonina tamin'ny 
+                alalan'ny toetra sivy voatanisa etsy ambony. Fanadihadiana matanjaka kokoa dia azo tanterahina amin'ny 
+                angon-drakitra nangonina amin'ny fampiasana ireo teoria sy rafitra momba ny siansa sosialy izay fototry ny 
+                fanontaniana amin'ity fitaovana ity - indrindra ny teorian'i Elinor Ostrom momba ny fitantanana loharano 
+                ifampiombonana, ny fahamarinana amin'ny fitantanana loharano (ohatra: Bennett sy Satterfield 2018), ary 
+                ny fisainana faharetana. Arakaraka ny toeran'ny fiainan'ny tsiambaratelo nofidin'ny mpampiasa, ny angona 
+                avy amin'ny faritra samihafa dia ho azo ampiasaina ho an'ny daholobe.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      "Manangona angona momba ny fitantanana sy fitantanana aho amin'ny alalan'ny fanadihadiana mifototra amin'ny saha. Mila mijanona ve aho amin'izany ary mampiasa ity fitaovana ity?",
+    text: `
             <p>
-                No! This tool was designed to complement in-depth, field-based data collection. If you currently
-                collect data using field-based surveys or focus groups, you can use the data you already collect to
-                inform the answers to the questions asked in Elinor - just make sure you have the rights and
-                permissions to do so. Conversely, information gathered using this tool can help you understand what
-                topics require more in-depth field-based surveys.
+                Tsia! Ity fitaovana ity dia novolavolaina hampiarahana amin'ny fanangonana angona mifototra amin'ny saha 
+                lalina. Raha manangona angona amin'izao fotoana izao amin'ny fampiasana fanadihadiana mifototra amin'ny 
+                saha na vondrona fifantohan-kevitra ianao, dia azonao ampiasaina ny angona efa nangonina mba hamelana ny 
+                valiny amin'ny fanontaniana napetraka ao amin'ny Elinor - ataovy azo antoka fotsiny fa manana ny zo sy 
+                ny fahazoan-dalana hanao izany. Mifamadika amin'izany, ny fampahalalana nangonina amin'ny fampiasana ity 
+                fitaovana ity dia afaka manampy anao hahatakatra izay lohahevitra mitaky fanadihadiana mifototra amin'ny 
+                saha lalina kokoa.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What are the main advantages to using this tool?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: "Inona ireo tombony lehibe amin'ny fampiasana ity fitaovana ity?",
+    text: `
             <p>
-                The Elinor tool and data system was designed to streamline the data entry, storage, and
-                visualization process. By doing so, users gain three key advantages:
+                Ny fitaovana Elinor sy ny rafitra angona dia novolavolaina hanatsorana ny fizotran'ny fampidirana angona, 
+                fitahirizana, ary fanehoana. Amin'ny fanaovana izany, ireo mpampiasa dia mahazo tombontsoa telo lehibe:
             </p>
             <ol>
                 <li>
-                    <strong>The data collection, entry and visualization process becomes streamlined.</strong>
-                    For users working across multiple sites, all data can be stored and organized in the same way,
-                    and outputted into forms that are useful for communicating results to key audiences.
+                    <strong>Ny fizotran'ny fanangonana angona, fampidirana ary fanehoana dia lasa mora kokoa.</strong>
+                    Ho an'ireo mpampiasa miasa manerana ny toerana maro, ny angona rehetra dia azo tehirizina sy 
+                    voalamina amin'ny fomba mitovy, ary avoaka ho endrika ilaina amin'ny fampitana valiny amin'ireo 
+                    mpihaino lehibe.
                 </li
                 <li>
-                    <strong>Users are connected to a global community of conservationists striving to improve
-                    management and governance.</strong> Management and governance has long been an important topic
-                    in conservation, but gathering and sharing data on this subject has been difficult. One of the
-                    main barriers to data sharing is the time and energy that is often required to formalize and
-                    clean data for others to use: Elinor automates this, and allows users to selectively share data
-                    with individual users or the general public with a click of a button!
+                    <strong>Ny mpampiasa dia mifandray amin'ny vondrom-bahoaka manerantany izay miezaka hanatsara ny 
+                    fitantanana sy fitantanana.</strong> Ny fitantanana sy fitantanana dia lohahevitra manan-danja efa 
+                    ela teo amin'ny fiarovana, saingy ny fanangonana sy fizarana angona momba ity lohahevitra ity dia 
+                    sarotra. Iray amin'ireo sakana lehibe amin'ny fizarana angona dia ny fotoana sy ny hery izay matetika 
+                    ilaina mba hanaovana sy hanadiovana angona ho an'ny hafa hampiasa: Elinor dia manao automatique an'izany, 
+                    ary mamela ireo mpampiasa hifidy hizara angona amin'ireo mpampiasa tsirairay na ny daholobe amin'ny 
+                    alalan'ny kitendry bokotra iray!
                 </li>
             </ol>
         `,
-    },
-    {
-        type: 'default',
-        title: 'Where is my data stored?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: 'Aiza no itahirizana ny angonako?',
+    text: `
             <p>
-                ElinorData.org uses Amazon Web Services to store the data.
+                Ny ElinorData.org dia mampiasa Amazon Web Services mba hitahirizana ny angona.
             </p>
         `,
-    },
-    {
-        type: 'default',
-        title: 'What are some things I should keep in mind when I’m making my decision about using this tool?',
-        text: `
-            <p>No one tool does every job. It’s important to remember that:</p>
+  },
+  {
+    type: 'default',
+    title:
+      'Inona ireo zavatra tokony hotsaroako rehefa manao ny fanapahan-kevitro momba ny fampiasana ity fitaovana ity?',
+    text: `
+            <p>Tsy misy fitaovana iray manao asa rehetra. Zava-dehibe ny mahatsiaro fa:</p>
             <ol class='list-inside list-disc'>
                 <li>
-                    <strong>This tool does not gather in-depth data.</strong> This tool does not replace the need
-                    for working with communities on an in-depth assessment of the issues identified by the tool.
+                    <strong>Ity fitaovana ity dia tsy manangona angona lalina.</strong> Ity fitaovana ity dia tsy manolo 
+                    ny filana hiasa miaraka amin'ny vondrom-bahoaka amin'ny fanombanana lalina ny olana hitan'ny fitaovana.
                 </li
                 <li>
-                    <strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed
-                    to track indicators commonly recognized as being important for management and governance of
-                    coastal managed and conserved areas. It does not measure specific changes in laws and
-                    regulations, which may have great impacts on conservation activities in any given place.
+                    <strong>Ity fitaovana ity dia tsy miankandoka amin'ny lalàna sy fitsipika eo an-toerana.</strong> 
+                    Ity fitaovana ity dia novolavolaina mba hanaraha-maso ireo famantarana ekena amin'ny ankapobeny fa 
+                    manan-danja amin'ny fitantanana sy fitantanana ny faritra ara-kanda voatantana sy voahaja. Tsy 
+                    mandrefy fiovana manokana amin'ny lalàna sy fitsipika, izay mety hisy fiantraikany lehibe amin'ny 
+                    hetsika fiarovana amin'ny toerana iray.
                 </li>
             </ol>
         `,
-    },
-    {
-        type: 'default',
-        title: 'OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      "OK, mampiasa ny fitaovana aho. Ahoana no anaovako fanapahan-kevitra hoe inona no 'isaina' ho faritra voatantana na voahaja?",
+    text: `
             <p>
-                This depends on your context. In this tool, we refer to the boundary of the area to be assessed as
-                the management area (MA). A management area refers to a site/location to which management actions
-                are directed. A management area (MA) can be one protected area, or one conserved area (see glossary
-                for definitions), or a broader area that encompasses several protected areas/conserved areas.
+                Izany dia miankina amin'ny toe-javatra misy anao. Amin'ity fitaovana ity, milaza izahay ny sisin-tanin'ny 
+                faritra hoombana ho faritra fitantanana (MA). Ny faritra fitantanana dia manondro toerana/toerana izay 
+                itarihan'ny hetsika fitantanana. Ny faritra fitantanana (MA) dia mety ho faritra arovana iray, na faritra 
+                arovana iray (jereo ny glossary ho an'ny famaritana), na faritra midadasika kokoa izay ahitana faritra 
+                arovana/faritra arovana maromaro.
             </p>
-            <p>Therefore, the user of this tool may decide to conduct this assessment on:</p>
+            <p>Noho izany, ny mpampiasa ity fitaovana ity dia mety hanapa-kevitra hanao ity fanombanana ity amin'ny:</p>
             <ol class='list-inside list-disc'>
                 <li>
-                    An individual protected area or conserved area. For example, this could be an assessment of an
-                    area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a
-                    single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and
-                    protected areas and consider these as one management area, answering the questions with all of
-                    these areas in mind. For example, a Biosphere Reserve with multiple protected areas or
-                    conserved areas.
+                    Faritra arovana tsirairay na faritra arovana. Ohatra, ity dia mety ho fanombanana amin'ny faritra 
+                    tantanin'ny Vondrona Fitantanana Tora-pasika (BMU). Mifamadika amin'izany, ity dia mety ho fanombanana 
+                    amin'ny Faritra Arovana tokana.</li><li>Tontolo ranomasina/tany midadasika kokoa miaraka amin'ny 
+                    faritra arovana sy faritra arovana maro ary heverina ho faritra fitantanana iray, hamaly ireo 
+                    fanontaniana amin'ireo faritra rehetra ireo. Ohatra, Reserve Biosphère miaraka amin'ny faritra arovana 
+                    na faritra arovana maro.
                 </li>
             </ol>
         `,
-    },
-    {
-        type: 'default',
-        title: 'I work for a national NGO - how do I decide which sites to use the Elinor assessment in?',
-        text: `
+  },
+  {
+    type: 'default',
+    title:
+      "Miasa ho an'ny ONG nasionaly aho - ahoana no fanaovako fanapahan-kevitra hoe iza ny toerana hampiasana ny fanombanana Elinor?",
+    text: `
             <p>
-                Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.
+                Jereo ny Fizarana 1 amin'ny fitaovana fanombanana Elinor sy ny protocole ho torolalana momba ny fomba 
+                hanatanterahana santionany.
             </p>`,
-    },
-    {
-        type: 'default',
-        title: 'How are the scores shown in the site reports calculated?',
-        text: `
+  },
+  {
+    type: 'default',
+    title: "Ahoana no kajiana ny isa aseho amin'ny tatitra momba ny toerana?",
+    text: `
             <p>
-                Elinor includes 35 indicators across 10 core attributes of governance and management. Scores are calculated for each indicator, each attribute, and each managed area in total. Each indicator is assigned a score between 0 and 3 (with 0 being the least desirable and 4 being most desirable) on a scale that is customized for each indicator. For example, the scale for awareness of boundaries, records whether boundaries are known by most (3), some (2), a few (1) or none (0) of the relevant groups, while clearly defined boundaries, meanwhile, record whether boundaries are well demarcated (3), demarcated with some deficiencies (2), demarcated with major deficiencies (1), or not demarcated at all (0). Attribute scores, meanwhile, are calculated using a points percentage (i.e., total number of points received/total number of points possible) of indicators associated with each attribute, which is adjusted to a score out of 10 for easy interpretation. Finally, the total score for the managed area is calculated as a percentage of all attribute points received out of all attributes possible. Indicator, attribute and MA scores are assigned an action-oriented assessment category (Plan, Build, Strengthen, Maintain) to enable action-oriented interpretation. <strong>Note that the scores given by Elinor should not alone be used to determine the strengths or needs of the area's governance and management.</strong> It may be that a lower score on some attribute or indicator is sufficient for one site, but not another. The scores should be interpreted alongside the qualitative explanations entered into Elinor in order for decision-makers to choose the appropriate next steps.
+                Elinor dia ahitana famantarana 35 manerana ny toetra fototra 10 momba ny fitantanana sy fitantanana. Ny isa dia kajiana ho an'ny famantarana tsirairay, toetra tsirairay, ary faritra voatantana manontolo. Ny famantarana tsirairay dia omena isa eo anelanelan'ny 0 sy 3 (miaraka amin'ny 0 no tsy mahasoa indrindra ary 4 no tiana indrindra) amin'ny mizana namboarina manokana ho an'ny famantarana tsirairay. Ohatra, ny mizana ho an'ny fahatsiarovan-tena momba ny sisintany, dia mirakitra raha ny sisintany dia fantatry ny ankamaroan'ny (3), sasany (2), vitsivitsy (1) na tsy misy (0) amin'ireo vondrona mifandraika, raha ny sisintany voafaritra mazava, kosa, dia mirakitra raha ny sisintany dia voamariky tsara (3), voamariky miaraka amin'ny tsy fahampiana sasany (2), voamariky miaraka amin'ny tsy fahampiana lehibe (1), na tsy voamariky mihitsy (0). Ny isan'ny toetra, mandritra izany, dia kajiana amin'ny fampiasana isan-jaton'ny isa (izany hoe, fitambaran'ny isa azo/fitambaran'ny isa azo) amin'ny famantarana mifandray amin'ny toetra tsirairay, izay amboarina ho isa amin'ny 10 ho an'ny fandikana mora. Farany, ny totalin'ny isa ho an'ny faritra voatantana dia kajiana ho isan-jaton'ny isan'ny toetra rehetra azo amin'ny toetra rehetra azo. Ny isan'ny famantarana, toetra ary MA dia omena sokajy fanombanana mifantoka amin'ny hetsika (Plan, Build, Strengthen, Maintain) mba ahafahana mandika mifantoka amin'ny hetsika. <strong>Mariho fa ny isa omen'i Elinor dia tsy tokony ampiasaina irery mba hamaritana ny tanjaka na ny filan'ny fitantanana sy fitantanana amin'ny faritra.</strong> Mety ho isa ambany kokoa amin'ny toetra na famantarana sasany dia ampy ho an'ny toerana iray, fa tsy iray hafa. Ny isa dia tokony hadika miaraka amin'ny fanazavana qualitative nampidirina ao amin'ny Elinor mba ahafahan'ireo mpanapa-kevitra hisafidy ny dingana manaraka mety.
             </p>
 	`,
-    } /*,
+  } /*,
     {
         type: 'box',
         title: 'Type box title',

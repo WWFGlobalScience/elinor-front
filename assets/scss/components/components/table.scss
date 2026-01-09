@@ -1,187 +1,306 @@
 //tables
 .c-data-table {
-    @apply w-full mb-12;
+  @apply w-full mb-12;
 
-    thead {
-        @apply relative;
-        &::after {
-            content: '';
-            @apply absolute h-14 w-screen bg-turqy-lighter right-0 top-0 mx-auto;
-            left: -10vw;
-            @media (max-width: 768px) {
-                left: -7vw;
-            }
-            @media (max-width: 767px) {
-                left: -4vw;
-            }
-        }
-        th {
-            @apply text-xs text-grayy font-normal text-left z-10 w-16 h-14;
-            &.c-data-table__main-cell {
-                @apply w-7/12;
-            }
-        }
+  thead {
+    @apply relative;
+    &::after {
+      content: '';
+      @apply absolute h-14 w-screen bg-turqy-lighter right-0 top-0 mx-auto;
+      left: -10vw;
+      @media (max-width: $tablet-breakpoint) {
+        left: -7vw;
+      }
+      @media (max-width: $tablet-breakpoint - 1px) {
+        left: -4vw;
+      }
     }
-
-    tbody {
-        td {
-            @apply text-base text-grayy h-16 border-b border-grayy-border sm:text-sm;
-        }
+    th {
+      @apply text-xs text-grayy font-normal text-left z-10 w-16 h-14;
+      &.c-data-table__main-cell {
+        @apply w-7/12;
+      }
     }
+  }
 
-    .c-data-table__initial {
-        @apply w-9 h-9 rounded-full mr-3 inline-flex items-center justify-center text-sm text-white sm:w-5 sm:h-5 sm:flex;
-
-        &.admin {
-            @apply bg-redy-lighter;
-        }
-        &.contributor {
-            @apply bg-yellowy-lighter;
-        }
-        &.observer {
-            @apply bg-bluy;
-        }
+  tbody {
+    td {
+      @apply text-base text-grayy h-16 border-b border-grayy-border sm:text-sm;
     }
+  }
+
+  .c-data-table__initial {
+    @apply w-9 h-9 rounded-full mr-3 inline-flex items-center justify-center text-sm text-white sm:w-5 sm:h-5;
+
+    &.admin {
+      @apply bg-redy-lighter;
+    }
+    &.contributor {
+      @apply bg-yellowy-lighter;
+    }
+    &.observer {
+      @apply bg-bluy;
+    }
+  }
+}
+
+// Reusable scrollable table wrapper (DRY)
+.table-scroll-wrapper {
+  @apply block w-full;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+
+  .table-background {
+    @media (max-width: $tablet-breakpoint) {
+      width: 100% !important; // Allow table to fit container width
+      min-width: auto !important; // Remove forced minimum width
+      table-layout: auto; // Allow flexible column widths
+    }
+  }
 }
 
 .table-background {
-    @apply border border-grayy-border;
-    th,
-    td {
-        @apply p-3 text-left border border-grayy-border leading-6;
+  @apply border border-grayy-border;
+  th,
+  td {
+    @apply p-3 text-left border border-grayy-border leading-6;
+  }
+  // First column should not have min-width and should be narrow
+  th:first-child,
+  td:first-child {
+    min-width: auto !important; // Explicitly no min-width for first column
+    width: auto !important; // Let it size to content, override inline width
+    max-width: fit-content; // Hug the content
+
+    // Make first column smaller on mobile
+    @media (max-width: $tablet-breakpoint) {
+      padding-left: 0.5rem !important; // Reduce left padding
+      padding-right: 0.5rem !important; // Reduce right padding
+      width: auto !important; // Force auto width, override inline width attribute
+      max-width: 50px !important; // Limit max width to keep it narrow
+      min-width: auto !important; // Ensure no min-width
+      white-space: nowrap !important; // Prevent wrapping
     }
-    th {
-        @apply bg-turqy text-white;
+  }
+  // Exclude first column from min-width - apply to other columns
+  th:not(:first-child),
+  td:not(:first-child) {
+    min-width: 200px; // Ensure columns don't shrink too much
+  }
+
+  // Mobile responsive: allow columns to wrap and set max-width
+  @media (max-width: $tablet-breakpoint) {
+    // Allow columns to expand up to 400px max-width, with wrapping
+    th:not(:first-child),
+    td:not(:first-child) {
+      min-width: 200px !important; // Allow columns to expand when space is available
+      max-width: 400px !important; // Prevent columns from exceeding 400px
+      width: auto !important; // Let browser calculate width between min and max
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal !important;
     }
-    tr {
-        @apply align-top;
+  }
+
+  th {
+    @apply bg-turqy text-white;
+  }
+  tr {
+    @apply align-top;
+  }
+
+  // Make table responsive on mobile/tablet (when inside wrapper)
+  .table-scroll-wrapper & {
+    @media (max-width: $tablet-breakpoint) {
+      width: 100% !important; // Allow table to fit container width
+      min-width: auto !important; // Remove forced minimum width
+      table-layout: auto; // Allow flexible column widths
     }
+  }
 }
 
 .table-score-values {
-    caption {
-        p {
-            @apply flex;
+  caption {
+    p {
+      @apply flex;
+    }
+    p:before,
+    p:after {
+      color: transparent;
+      content: '';
+      flex: 1;
+      border-bottom: groove 1px;
+      border-color: transparent;
+      margin: auto 1rem;
+      box-shadow: 0 -1px #bddade;
+    }
+  }
+  th,
+  td {
+    @apply px-2 py-2;
+    min-width: 200px; // Prevent columns from shrinking too small
+  }
+  th {
+    @apply text-base leading-[20px] text-turqy font-montserratBoldPdf pb-6;
+  }
+}
+
+// Wrapper for score table to enable horizontal scrolling
+.score-table-wrapper {
+  // Mobile: adjust padding and border-radius, make full width
+  @media (max-width: $tablet-breakpoint) {
+    padding-left: 16px !important; // 16px left padding on mobile
+    padding-right: 16px !important; // 16px right padding on mobile
+    padding-top: 1rem !important; // Keep some top padding
+    padding-bottom: 1rem !important; // Keep some bottom padding
+    border-radius: 0 !important; // Remove rounded corners
+    // Break out of container padding (container has px-4 on mobile = 1rem = 16px)
+    // Then add back 16px padding, so net effect is 16px padding from viewport edge
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    width: calc(
+      100% + 2rem
+    ) !important; // Full width including container padding
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+
+    .table-score-values {
+      min-width: 720px;
+      width: max-content;
+    }
+  }
+  .item-legend {
+    @apply justify-start;
+    .text {
+      @apply text-xs text-turqy font-montserratBoldPdf;
+    }
+  }
+  .description {
+    @apply flex border-l border-r border-turqy-middle px-4 min-w-[150px];
+  }
+
+  // Fix alignment for description container - align left instead of center
+  // This targets the flex container inside td cells in score-table-wrapper
+  .table-score-values {
+    td {
+      > div.flex {
+        // Align content left to fix vertical divider alignment
+        justify-content: flex-start !important;
+        align-items: flex-start !important; // Allow content to wrap from top
+        flex-wrap: wrap; // Allow wrapping
+
+        .description {
+          @apply text-left;
+          // Allow text to break into multiple lines with max-width constraint
+          white-space: normal !important;
+          word-wrap: break-word !important;
+          overflow-wrap: break-word !important;
+          // Change display to block/inline-block to allow text wrapping
+          display: block !important; // Change from flex to allow text wrapping
+          max-width: 350px !important; // Limit width to 350px
+          // Keep existing borders and padding from base .description class
         }
-        p:before,
-        p:after {
-            color: transparent;
-            content: '';
-            flex: 1;
-            border-bottom: groove 1px;
-            border-color: transparent;
-            margin: auto 1rem;
-            box-shadow: 0 -1px #bddade;
-        }
+      }
+    }
+  }
+  .num {
+    @apply text-center font-montserratBoldPdf;
+  }
+  &--report {
+    th {
+      @apply text-small leading-3 text-turqy font-montserratBoldPdf;
     }
     th,
     td {
-        @apply px-2 py-6;
-    }
-    th {
-        @apply text-sm text-turqy font-montserratBoldPdf;
+      @apply py-2;
     }
     .item-legend {
-        @apply justify-start;
-        .text {
-            @apply text-xs text-turqy font-montserratBoldPdf;
-        }
+      @apply justify-start;
+      .text {
+        @apply text-[11px] text-grayy font-semibold;
+      }
     }
     .description {
-        @apply flex border-l text-[14px] font-montserratMediumPdf border-r border-turqy-middle px-4 min-w-[150px];
+      @apply text-small text-grayy-lighter py-0 border-0 pl-9;
     }
     .num {
-        @apply text-center font-montserratBoldPdf;
+      @apply text-center text-grayy font-semibold text-[12px];
     }
-    &--report {
-        th {
-            @apply text-small leading-3 text-turqy font-montserratBoldPdf;
-        }
-        th,
+    td.hr {
+      @apply border-b border-turqy-middle pb-2 pt-0;
+    }
+    tr {
+      &:last-child {
         td {
-            @apply py-2;
+          &:last-child {
+            @apply border-b-0 pb-0;
+          }
         }
-        .item-legend {
-            @apply justify-start;
-            .text {
-                @apply text-[11px] text-grayy font-semibold;
-            }
-        }
-        .description {
-            @apply text-small text-grayy-lighter py-0 border-0 pl-9;
-        }
-        .num {
-            @apply text-center text-grayy font-semibold text-[12px];
-        }
-        td.hr {
-            @apply border-b border-turqy-middle pb-2 pt-0;
-        }
-        tr {
-            &:last-child {
-                td {
-                    &:last-child {
-                        @apply border-b-0 pb-0;
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .table-score-assessment {
-    border-collapse: separate;
-    border-spacing: 0;
-    overflow: hidden;
-    th,
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  th,
+  td {
+    @apply px-4;
+  }
+  th {
+    &.title-col {
+      @apply uppercase text-[9px] align-top text-grayy font-montserratSemiBoldPdf leading-[150%];
+    }
+  }
+  td {
+    .dot-row,
+    .dot-col {
+      @apply text-center text-white font-montserratSemiBoldPdf border-radius--50 inline-flex justify-center items-center w-8 h-8;
+    }
+    &:not(:first-child) {
+      @apply text-center;
+      &::before {
+        @apply content-['|'] absolute top-1/2 left-0 -translate-y-1/2 text-grayy-border;
+      }
+    }
+    .dot-row {
+      @apply w-12 h-12 text-[20px];
+    }
+  }
+  tbody {
+    tr {
+      th {
+        &.title-row {
+          span {
+            @apply block pt-6 text-left mb-[-10px];
+            h3 {
+              @apply inline-block bg-white px-1 uppercase text-sm  text-grayy font-montserratSemiBoldPdf z-10;
+            }
+          }
+        }
+      }
+      td {
+        @apply py-4;
+      }
+    }
+  }
+  .wrapper-row {
     td {
-        @apply px-4;
+      @apply border-grayy-border border-t border-b overflow-hidden;
+      &:first-child {
+        @apply border-l rounded-l-3xl;
+      }
+      &:last-child {
+        @apply border-r rounded-r-3xl;
+      }
     }
-    th {
-        &.title-col {
-            @apply uppercase text-[9px] align-top text-grayy font-montserratSemiBoldPdf;
-        }
-    }
-    td {
-        .dot-row,
-        .dot-col {
-            @apply text-center text-white font-montserratSemiBoldPdf border-radius--50 inline-flex justify-center items-center w-8 h-8;
-        }
-        &:not(:first-child) {
-            @apply text-center;
-            &::before {
-                @apply content-['|'] absolute top-1/2 left-0 -translate-y-1/2 text-grayy-border;
-            }
-        }
-        .dot-row {
-            @apply w-12 h-12 text-[20px];
-        }
-    }
-    tbody {
-        tr {
-            th {
-                &.title-row {
-                    span {
-                        @apply block pt-6 text-left mb-[-10px];
-                        h3 {
-                            @apply inline-block bg-white px-1 uppercase text-sm  text-grayy font-montserratSemiBoldPdf z-10;
-                        }
-                    }
-                }
-            }
-            td {
-                @apply py-4;
-            }
-        }
-    }
-    .wrapper-row {
-        td {
-            @apply border-grayy-border border-t border-b overflow-hidden;
-            &:first-child {
-                @apply border-l rounded-l-3xl;
-            }
-            &:last-child {
-                @apply border-r rounded-r-3xl;
-            }
-        }
-    }
+  }
 }

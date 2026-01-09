@@ -1,7 +1,7 @@
 <template>
-    <div v-if="assessment">
-        <map-assessment-header :assessment="assessment.properties" />
-        <div
+  <div v-if="assessment">
+    <map-assessment-header :assessment="assessment.properties" />
+    <!-- <div
             class="flex flex-col gap-4 border-t border-b p-4 border-grayy-border"
         >
             <div
@@ -28,30 +28,31 @@
                     {{ assessment.properties.management_area.name }}
                 </p>
             </div>
-        </div>
-        <div class="flex justify-start p-4">
-            <a
-                @click="viewFunction"
-                role="button"
-                class="btn--border-turqy btn--border-turqy--small btn--opacity--child"
-            >
-                <span class="btn--opacity__target pt-2 pb-2">{{
-                    $t('pages.map.popup.view')
-                }}</span>
-                <img src="~/assets/img/ico-button-arrow-turqy.svg" alt="" />
-            </a>
-        </div>
+        </div> -->
+    <div class="flex justify-start pt-2">
+      <a
+        @click="viewFunction"
+        role="button"
+        class="btn !py-1.5 w-full !justify-center"
+      >
+        <span
+          class="btn--opacity__target text-[12px] font-semibold leading-[22px] !m-0"
+          >See Attribute Score</span
+        >
+        <!-- <img src="~/assets/img/ico-button-arrow-turqy.svg" alt="" /> -->
+      </a>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'map-popup',
-    props: ['assessment', 'click'],
-    methods: {
-        viewFunction: function () {
-            this.click();
-        },
+  name: 'map-popup',
+  props: ['assessment', 'click'],
+  methods: {
+    viewFunction: function () {
+      this.click();
     },
+  },
 };
 </script>

@@ -1,38 +1,38 @@
 .score-legend {
-    @apply flex flex-row flex-nowrap justify-between p-4 border border-grayy-border;
-    @media (max-width: 1224px) {
-        @apply flex-wrap justify-start w-auto;
-    }
+  @apply flex flex-row flex-nowrap justify-between p-4 border border-grayy-border;
+  @media (max-width: 1224px) {
+    @apply flex-wrap justify-start w-auto;
+  }
 }
 .item-legend {
-    @apply flex justify-center items-center flex-1 items-center gap-2 px-2;
+  @apply flex justify-center items-center flex-1 gap-2;
+  @media (max-width: 1224px) {
+    @apply justify-start py-2;
+  }
+  &:not(:last-child) {
+    @apply border-r;
     @media (max-width: 1224px) {
-        @apply justify-start py-2;
+      @apply border-0;
     }
-    &:not(:last-child) {
-        @apply border-r;
-        @media (max-width: 1224px) {
-            @apply border-0;
-        }
-    }
-    .text {
-        @apply text-[10px] mb-0 uppercase;
-    }
+  }
+  .text {
+    @apply text-[10px] mb-0 uppercase;
+  }
 }
 
 .title-dot-wrapper {
-    @apply flex justify-start items-center gap-4 bg-white z-10;
-    .title-dot {
-        @apply flex justify-center items-center w-7 h-7 rounded-full text-white font-semibold text-[12px];
-    }
+  @apply flex justify-start items-start gap-4 sm:gap-2 bg-white z-10;
+  .title-dot {
+    @apply flex justify-center items-center w-7 h-7 rounded-full text-white font-semibold text-[12px];
+  }
 }
 
 .dot-score {
-    @apply flex justify-center items-center w-6 h-6 rounded-full text-white font-semibold text-[12px] ml-2;
+  @apply flex justify-center items-center w-6 h-6 rounded-full text-white font-semibold text-[12px] ml-2;
 }
 
 .report-text {
-    strong {
-        @apply text-turqy font-montserratSemiBoldPdf;
-    }
+  strong {
+    @apply text-turqy font-montserratSemiBoldPdf;
+  }
 }

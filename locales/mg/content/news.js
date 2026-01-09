@@ -1,80 +1,49 @@
 export default [
-    {
-        date: '2-28-2024',
-        title: 'Announcing new features in Elinor',
-        text: `
-              In a bid to make Elinor more usable, we are happy to announce three new features:
-              1. Aggregate Reports:
-              You can now generate an aggregate report for multiple assessments selections  by country, year or type of assessment. The Aggregate Report button is located on the assessments page.
-              2.Multiple languages: You can switch to your favorite language using the switcher at the top right of the page.  More languages will be uploaded soon.
-              3. Offline capability: This allows you to download a survey as an Excel file if you have an unstable Internet connection. This capability gives you the flexibility to complete a survey offline then upload it once you are connected to the internet .  More offline features will be added soon.
+  {
+    date: '2-28-2024',
+    title: "Fanambaram-baovao momba ny endri-javatra vaovao ao amin'i Elinor",
+    text: `
+              Mba hahatonga an'i Elinor ho azo ampiasaina kokoa, faly izahay manambara endri-javatra telo vaovao:
+              1. Tatitra Aggregate:
+              Azonao atao ankehitriny ny mamorona tatitra aggregate ho an'ny safidy fanombanana maro araka ny firenena, taona na karazana fanombanana. Ny bokotra Tatitra Aggregate dia hita ao amin'ny pejy fanombanana.
+              2. Fiteny maro: Azonao atao ny mifindra amin'ny fiteny tianao amin'ny fampiasana ny switcher eo amin'ny lafiny havanana ambony amin'ny pejy. Fiteny bebe kokoa dia hampidirina avy hatrany.
+              3. Fahaiza-manao offline: Izany dia ahafahan'ny olona maka survey ho Excel file raha tsy marin-toerana ny fifandraisana Internet. Ity fahaiza-manao ity dia manome anao ny fahaiza-manao hameno survey offline avy eo hampiditra azy rehefa mifandray amin'ny internet ianao. Endri-javatra offline bebe kokoa dia hampiana avy hatrany.
           `,
-    },
-    {
-        date: '2-28-2024',
-        title: 'A comparison of governance and management assessment tools',
-        text: `
-              There are many tools designed to assess governance and management for area-based conservation. This knowledge
-              brief is designed to assist individuals in identifying and understanding the synergies and differences between
-              three conservation management and governance assessment tools: Elinor, the Management Effectiveness Tracking
-              Tool 4 (METT 4), and Site-level Assessment of Governance and Equity (SAGE). The first part of this document
-              compares the background/site information sections of Elinor, METT 4, and SAGE. The second part compares the
-              assessment questions in Elinor (35), METT 4 (38), and SAGE (50). Finally, the document ends with a guide to
-              help users determine which assessment to use based on their management and governance objectives.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
+  },
+  {
+    date: '2-28-2024',
+    title: 'Fampitahana ireo fitaovana fanombanana fitantanana sy fitantanana',
+    text: `
+              Misy fitaovana maro novolavolaina hanombanana ny fitantanana sy fitantanana ho an'ny fiarovana mifototra amin'ny faritra. Ity fahalalana fohy ity dia natao hanampiana ny olona hamantatra sy hahatakatra ny synergy sy ny fahasamihafana eo amin'ny fitaovana fanombanana fitantanana sy fitantanana fiarovana telo: Elinor, ny Management Effectiveness Tracking Tool 4 (METT 4), ary Site-level Assessment of Governance and Equity (SAGE). Ny ampahany voalohany amin'ity antontan-taratasy ity dia mampitaha ny ampahany fampahalalana momba ny background/site amin'ny Elinor, METT 4, ary SAGE. Ny ampahany faharoa dia mampitaha ny fanontaniana fanombanana ao amin'ny Elinor (35), METT 4 (38), ary SAGE (50). Farany, ny antontan-taratasy dia miafara amin'ny toromarika hanampiana ireo mpampiasa hamaritra izay fanombanana ampiasaina mifototra amin'ny tanjona fitantanana sy fitantanana.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Tsindrio eto mba hijery ny fampitahana</a>
           `,
-    },
-    {
-        date: '6-20-2022',
-        title: 'New Elinor updates allow automated reporting and more user-friendly features',
-        text: `
-              We are happy to announce that the latest version of the Elinor tool (v2023.1) has been released and is ready for online use! This version contains several new exciting features. ElinorData.org can now automatically produce reports for completed assessments that provide high-level overviews of the results for easier learning and reporting. Users can also see their preliminary results update as they enter data into the system. We have made minor revisions to the assessment text, including fixing typos, edits for inclusive language, and improve clarity in question wording. Some questions have been reorganized under different attributes as well. None of these changes affect existing data already entered into the system. These features are the result of a year-long effort to continually improve the Elinor tool. We encourage you to try them out and send us any feedback you may have. Thanks so much for your continued use of ElinorData.org. We'll be back in August with more news after we present Elinor at the International Congress on Conservation Biology in Kigali, Rwanda!
+  },
+  {
+    date: '6-20-2022',
+    title:
+      'Fanavaozana Elinor vaovao mamela tatitra automatique sy endri-javatra mora ampiasaina kokoa',
+    text: `
+              Faly izahay manambara fa ny kinova farany amin'ny fitaovana Elinor (v2023.1) dia navoaka ary vonona ho ampiasaina an-tserasera! Ity kinova ity dia misy endri-javatra vaovao mahaliana maro. ElinorData.org dia afaka mamorona tatitra ho automatique ho an'ny fanombanana vita izay manome topimaso avo lenta momba ny valiny mba hanamorana ny fianarana sy tatitra. Ny mpampiasa dia afaka mahita ny valizan'izy ireo mialoha amin'ny alalan'ny fampidirana angona ao amin'ny rafitra. Nanao fanavaozana kely tamin'ny soratra fanombanana izahay, ao anatin'izany ny fanitsiana fahadisoana, fanitsiana ho an'ny fiteny tafiditra, ary hanatsarana ny mazava amin'ny fandaminana fanontaniana. Fanontaniana sasany dia noresahina indray teo ambanin'ny toetra samihafa koa. Tsy misy amin'ireo fanovana ireo izay misy fiantraikany amin'ny angona efa misy efa nampidirina ao amin'ny rafitra. Ireo endri-javatra ireo dia vokatry ny ezaka naharitra herintaona mba hanatsarana hatrany ny fitaovana Elinor. Entanin-tsika ireo hizaha toetra azy ireo ary handefasa anay izay fanehoan-kevitra azonao omena. Misaotra betsaka amin'ny fampiasana mitohy ny ElinorData.org. Hiverina amin'ny volana Aogositra izahay miaraka amin'ny vaovao bebe kokoa aorian'ny fanoloranay ny Elinor ao amin'ny International Congress on Conservation Biology any Kigali, Rwanda!
           `,
-    },
-    {
-        date: '7-21-2022',
-        title: 'Elinor 2022.1 released',
-        text: `
-              We are glad to release the first version of Elinor - v2022.1. This is the culmination of two years of work
-              by both our social science and technology teams to enable users to creatively capture management and
-              governance information and optionally share with a wide audience in accordance to our collaboration
-              principles. This version enables users to create accounts and securely capture assessments data for
-              storage in our cloud system. Details of the protocol can be found here. We have made all efforts to make
-              the user interface easy and friendly to make the user focus on the main task of capturing management and
-              governance information. We encourage users to review the terms of use prior to creating accounts and
-              populating data. We hope that this will bring a pleasant experience and we welcome you to send us comments,
-              questions and ideas through the contact form on this website. In the next phase of the web application
-              we’ll bring to you reporting and visualization capabilities to enable you view and make sense of your data
-              and in future releases we shall incorporate spatial data to help broaden the context of managed area
-              management and governance.
+  },
+  {
+    date: '7-21-2022',
+    title: 'Navoaka ny Elinor 2022.1',
+    text: `
+              Faly izahay hamoaka ny kinova voalohany amin'i Elinor - v2022.1. Izany no vokatra roa taona tamin'ny asa nataon'ny ekipa siansa sosialy sy teknolojia mba ahafahan'ny mpampiasa mamorona fomba mahaforina hanangonana fampahalalana momba ny fitantanana sy fitantanana ary mizara amin'ny mpihaino midadasika araka ny fitsipika fiaraha-miasa. Ity kinova ity dia ahafahan'ny mpampiasa mamorona kaonty sy hanangona angon-drakitra fanombanana azo antoka mba hitahirizana ao amin'ny rafitra rahona. Antsipiriany momba ny protocole dia hita eto. Nanao ezaka rehetra izahay mba hahatonga ny interface mpampiasa ho mora sy sariaka mba hampifantoka ny mpampiasa amin'ny asa lehibe amin'ny fanangonana fampahalalana momba ny fitantanana sy fitantanana. Mamporisika ireo mpampiasa hizaha ny fepetra fampiasana alohan'ny hamoronana kaonty sy hampiasana angona izahay. Manantena izahay fa hiteraka traikefa mahafinaritra izany ary tongasoa ianao handefasa aminay hevitra, fanontaniana ary hevitra amin'ny alalan'ny endrika fifandraisana amin'ity tranokala ity. Amin'ny dingana manaraka amin'ny fampiharana tranonkala dia hateriny aminao ny fahaiza-manao tatitra sy fanehoana mba ahafahan'ny olona mijery sy mahatakatra ny angonao ary amin'ny famoahana ho avy dia hampiditra angon-drakitra spatial mba hanampy hanitatra ny tontolon'ny fitantanana sy fitantanana faritra voatantana.
           `,
-    },
-    {
-        date: '7-21-2022',
-        title: 'Elinor compliments other tools',
-        text: `
-              There are many tools that can be used to assess governance and management of managed areas for area based
-              conservation. Two of such tools are METT 4 and SAGE. Elinor does not replace these tools but rather
-              provinces a lighter touch alternative that makes it easier to track trends over time and when fully
-              developed will bring spatial components for visualizing trends and regional coverage of assessments. All
-              the tools are ideally completed by focus groups by Elinor allows completion by an individual, making it
-              more flexible where there are resource constraints. Elinor provides modern cloud storage capability that
-              also enables easier backup and sharing of data. To determine when to use Elinor or select other tools,
-              read the <a href=”/background”>background information</a>.
+  },
+  {
+    date: '7-21-2022',
+    title: 'Elinor dia manohana fitaovana hafa',
+    text: `
+              Misy fitaovana maro izay azo ampiasaina hanombanana ny fitantanana sy fitantanana faritra voatantana ho an'ny fiarovana mifototra amin'ny faritra. Roa amin'ireo fitaovana toy izany dia ny METT 4 sy SAGE. Elinor dia tsy manolo ireo fitaovana ireo fa safidy maivana kokoa izay manamora ny fanaraha-maso ny fironana rehefa mandeha ny fotoana ary rehefa voavoatra tanteraka dia hitondra singa spatial ho an'ny fanehoana fironana sy fandrakofana isam-paritra ny fanombanana. Ny fitaovana rehetra dia tanteraka amin'ny fomba idealy amin'ny vondrona fifantohan-kevitra saingy mamela ny fanatanterahana amin'ny olona tsirairay ny Elinor, ka mahatonga azy io ho mora kokoa raha misy tsy fahampian'ny loharano. Elinor dia manome fahaiza-manao fitahirizana rahona maoderina izay manamora koa ny backup sy fizarana angona. Hamaritra hoe rahoviana ny fampiasana ny Elinor na hifidy fitaovana hafa, vakio ny <a href="/background">fampahalalana momba ny background</a>.
           `,
-    },
-    {
-        date: '7-21-2022',
-        title: 'How we built Elinor',
-        text: `
-              Designing and architecting web based tools takes a lot of effort. Realizing the Elinor tool took time and
-              effort from three distinct groups: scientists who researched and developed the protocol, backend engineers
-              who designed the architecture to deliver a modern and stable structure and frontend developers and UX/UX
-              specialists who made the tool interface flexible, beautiful and easy to use. Part of the engineering in
-              based on past experience building similar tools like the MERMAID which brough efficiency and stability.
-              Taking an iterative approach, we continue to consult with various stakeholders and experts both on
-              engineering and science. We have made the code open source to promote collaboration and encourage all
-              users to open their data for sharing but we intentionally leave the decision to share with the data owners
-              while we provide a solid platform to facilitate the sharing.
+  },
+  {
+    date: '7-21-2022',
+    title: 'Ahoana no nanamboaranay ny Elinor',
+    text: `
+              Ny famolavolana sy fandrafetana fitaovana mifototra amin'ny tranonkala dia mitaky ezaka be. Ny fahitana ny fitaovana Elinor dia naka fotoana sy ezaka avy amin'ny vondrona telo miavaka: mpahay siansa izay nanao fikarohana sy namolavola ny protocole, injeniera backend izay namolavola ny maritrano hanolotra rafitra maoderina sy miorina ary mpamorona frontend sy mpanankevitra UX/UX izay nahatonga ny interface fitaovana ho mora, tsara tarehy ary mora ampiasaina. Ampahany amin'ny injeniera dia mifototra amin'ny traikefa taloha nanamboarana fitaovana mitovy amin'ny MERMAID izay nitondra fahombiazana sy fahamarinan-toerana. Amin'ny fomba iterative, dia manohy manao fifanakalozan-kevitra amin'ireo mpandray anjara samihafa sy manam-pahaizana isika na amin'ny injeniera na amin'ny siansa. Nahatonga ny kaody ho open source izahay mba hampiroboroboana ny fiaraha-miasa ary manentana ny mpampiasa rehetra hanokatra ny angona ho an'ny fizarana saingy mamela fotsiny ny fanapahan-kevitra hizara amin'ireo tompon'ny angona raha manome sehatra matanjaka mba hanamora ny fizarana.
           `,
-    },
+  },
 ];

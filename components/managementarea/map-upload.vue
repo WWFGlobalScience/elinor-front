@@ -1,9 +1,9 @@
 <template>
-    <div class="map__upload">Upload</div>
+  <div class="map__upload">Upload</div>
 </template>
 
 <script>
 export default {
-    name: 'map-upload',
+  name: 'map-upload',
 };
 </script>

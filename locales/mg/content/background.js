@@ -1,129 +1,120 @@
 export default `
-<div class="container">
-    <h1 class="c-title--main">About the assessment</h1>
-    <div class="info-block">
-        <p>The Elinor assessment collects background information on the managed area, and information on nine attributes important for area-based conservation and management through 35 questions.</p>
+<div class="background-grid">
+    <div class="background-grid__item">
+        <table class="table-background">
+            <tr>
+                <th>#</th>
+                <th>Fanontaniana</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Anaran'ny mpandrindra tompon'andraikitra amin'ny fanolorana ny fanombanana</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Anaran'ny andrim-panjakana mifandray amin'ity MA ity</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Andraikitry ny mpandrindra tompon'andraikitra amin'ny fanolorana ny fanombanana</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Antsipirian'ny fifandraisana amin'ny mpandrindra manolotra ny fanombanana</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Datin'ny fanombanana (andro/volana/taona)</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Ahoana no nanangonana ny fampahalalana tamin'ity fanombanana ity?</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Isan'ny olona nanao fifanakalozan-kevitra avy amin'ny vondrona mpandray anjara lehibe</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Fanehoana ny lahy sy vavy amin'ireo mpandray anjara noresahina</td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>Antony amin'ny fanombanana (ohatra: fanaraha-maso isan-taona, baseline tetikasa)</td>
+            </tr>
+            <tr>
+                <td>10.</td>
+                <td>Anaran'ny MA</td>
+            </tr>
+            <tr>
+                <td>11.</td>
+                <td>Firenena/Firenena izay misy ny MA</td>
+            </tr>
+            <tr>
+                <td>12.</td>
+                <td>Fanjakana/Faritany izay misy ny MA</td>
+            </tr>
+        </table>
     </div>
-    <div class="info-block">
-        <h2 class="c-title--md">Background Information</h2>
-        <div class="g-grid--2-1-lg">
-            <div class="g-colspan--1-full-lg">
-                <table class="table-background">
-                    <tr>
-                        <th>#</th>
-                        <th>Information</th>
-                    </tr>
-                    <tr>
-                        <td>1.</td>
-                        <td>Name of facilitator responsible for submitting the assessment</td>
-                    </tr>
-                    <tr>
-                        <td>2.</td>
-                        <td>Name of institution associated with this MA</td>
-                    </tr>
-                    <tr>
-                        <td>3.</td>
-                        <td>Role of facilitator responsible for submitting the assessment</td>
-                    </tr>
-                    <tr>
-                        <td>4.</td>
-                        <td>Contact details of facilitator submitting the assessment</td>
-                    </tr>
-                    <tr>
-                        <td>5.</td>
-                        <td>Date of assessment (day/month/year)</td>
-                    </tr>
-                    <tr>
-                        <td>6.</td>
-                        <td>How was the information this assessment gathered?</td>
-                    </tr>
-                    <tr>
-                        <td>7.</td>
-                        <td>Number of people engaged from key stakeholder groups</td>
-                    </tr>
-                    <tr>
-                        <td>8.</td>
-                        <td>Gender representation of stakeholders consulted</td>
-                    </tr>
-                    <tr>
-                        <td>9.</td>
-                        <td>Rationale for assessment (e.g. annual monitoring, project baseline)</td>
-                    </tr>
-                    <tr>
-                        <td>10.</td>
-                        <td>Name of MA</td>
-                    </tr>
-                    <tr>
-                        <td>11.</td>
-                        <td>Country/Countries where MA is located</td>
-                    </tr>
-                    <tr>
-                        <td>12.</td>
-                        <td>State(s)/Province(s) where MA is located</td>
-                    </tr>
-                    <tr>
-                        <td>13.</td>
-                        <td>Date of formal establishment (if applicable)</td>
-                    </tr>
-                    <tr>
-                        <td>14.</td>
-                        <td>Are the rights of the MA authority formally recognized at the…</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="g-colspan--1-full-lg">
-                <table class="table-background">
-                    <tr>
-                        <th>#</th>
-                        <th>Information</th>
-                    </tr>
-                    <tr>
-                        <td>15.</td>
-                        <td>Size of MA (ha)</td>
-                    </tr>
-                    <tr>
-                        <td>16A.</td>
-                        <td>GPS coordinates of MA</td>
-                    </tr>
-                    <tr>
-                        <td>16B.</td>
-                        <td>Map or spatial file of MA</td>
-                    </tr>
-                    <tr>
-                        <td>17.</td>
-                        <td>MA governance type</td>
-                    </tr>
-                    <tr>
-                        <td>18.</td>
-                        <td>MA objectives</td>
-                    </tr>
-                    <tr>
-                        <td>19.</td>
-                        <td>Name of management authority</td>
-                    </tr>
-                    <tr>
-                        <td>20.</td>
-                        <td>Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?</td>
-                    </tr>
-                    <tr>
-                        <td>21A.</td>
-                        <td>Focal area within MA</td>
-                    </tr>
-                    <tr>
-                        <td>21B.</td>
-                        <td>Name of larger PA/CA this focal area is contained within</td>
-                    </tr>
-                    <tr>
-                        <td>22.</td>
-                        <td>Associated ID in World Database on Protected Areas</td>
-                    </tr>
-                    <tr>
-                        <td>23.</td>
-                        <td>Consent from MA authority</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+    <div class="background-grid__item">
+        <table class="table-background">
+            <tr>
+                <th>No</th>
+                <th>Fanontaniana</th>
+            </tr>
+            <tr>
+                <td>13.</td>
+                <td>Datin'ny fanorenana ara-pitsipika (raha misy)</td>
+            </tr>
+            <tr>
+                <td>14.</td>
+                <td>Ekena ara-pitsipika ve ny zon'ny manampahefana amin'ny MA amin'ny…</td>
+            </tr>
+            <tr>
+                <td>15.</td>
+                <td>Haben'ny MA (ha)</td>
+            </tr>
+            <tr>
+                <td>16A.</td>
+                <td>Toerana GPS an'ny MA</td>
+            </tr>
+            <tr>
+                <td>16B.</td>
+                <td>Sarintany na rakitra spatial an'ny MA</td>
+            </tr>
+            <tr>
+                <td>17.</td>
+                <td>Karazana fitantanana ny MA</td>
+            </tr>
+            <tr>
+                <td>18.</td>
+                <td>Tanjon'ny MA</td>
+            </tr>
+            <tr>
+                <td>19.</td>
+                <td>Anaran'ny manampahefana mpitantana</td>
+            </tr>
+            <tr>
+                <td>20.</td>
+                <td>Mahazo fanampiana ara-teknika, ara-bola na karazana fanampiana hafa ve ny manampahefana mpitantana ny MA avy amin'ireo vondrona na fikambanana manaraka ireo?</td>
+            </tr>
+            <tr>
+                <td>21A.</td>
+                <td>Faritra ifantohana ao anatin'ny MA</td>
+            </tr>
+            <tr>
+                <td>21B.</td>
+                <td>Anaran'ny PA/CA lehibe kokoa misy an'ity faritra ifantohana ity</td>
+            </tr>
+            <tr>
+                <td>22.</td>
+                <td>ID mifandraika amin'ny World Database on Protected Areas</td>
+            </tr>
+            <tr>
+                <td>23.</td>
+                <td>Fanekena avy amin'ny manampahefana MA</td>
+            </tr>
+        </table>
     </div>
 </div>
 `;

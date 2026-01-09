@@ -1,22 +1,19 @@
 <template>
-    <header class="header--page">
-        <div class="container">
-            <h1 class="mb-0">
-                <img src="~/assets/img/ico-assessments-turqy.svg" />
-                <span>{{ $t('pages.assessments.list.title') }}</span>
-            </h1>
-        </div>
-    </header>
+  <header class="header--page">
+    <div class="container">
+      <h1 class="mb-0 text-turqy">{{ $t('pages.assessments.list.title') }}</h1>
+    </div>
+  </header>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 export default {
-    name: 'assessments-header',
-    methods: {
-        ...mapActions({
-            popupState: 'popup/popupState',
-        }),
-    },
+  name: 'assessments-header',
+  methods: {
+    ...mapActions({
+      popupState: 'popup/popupState',
+    }),
+  },
 };
 </script>
