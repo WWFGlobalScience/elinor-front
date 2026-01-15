@@ -609,7 +609,7 @@
               :to="`/assessments/edit/${id}/managed-area`"
               class="btn btn--md"
             >
-              <span class="btn--opacity__target">Next: Managed Area</span>
+              <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}:  Managed Area</span>
               <img
                 src="~/assets/img/arrow_right_alt.svg"
                 :alt="$t('pages.assessments.edit.tabs.nextStep')"

@@ -15,11 +15,11 @@
       <div class="year">{{ assessment.year }}</div>
     </div>
     <div>
-      <h4>Attribute scores</h4>
+      <h4>{{ $t('pages.assessments.view.tabs.survey.attributeScoresTitle') }}</h4>
       <assessment-report-partials-score-chart></assessment-report-partials-score-chart>
     </div>
     <div class="text-box">
-      <h4 class="title">ASSESSMENT SUMMARY</h4>
+      <h4 class="title">{{ $t('report.cover.assessmentSummary') }}</h4>
       <div class="text-box-content">
         <div class="text block">{{ summary }}</div>
       </div>

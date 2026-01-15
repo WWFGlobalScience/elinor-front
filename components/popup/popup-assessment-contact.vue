@@ -14,7 +14,7 @@
               <input
                 type="text"
                 value=""
-                :placeholder="`Type here`"
+                :placeholder="$t('default.typeHere')"
                 v-model="form.name"
               />
               <template v-if="errors.name">
@@ -32,7 +32,7 @@
               <input
                 type="text"
                 value=""
-                :placeholder="`Type here`"
+                :placeholder="$t('default.typeHere')"
                 v-model="form.subject"
               />
               <template v-if="errors.subject">
@@ -50,7 +50,7 @@
               <input
                 type="text"
                 value=""
-                :placeholder="`Type here`"
+                :placeholder="$t('default.typeHere')"
                 v-model="form.email"
               />
               <template v-if="errors.email">
@@ -68,7 +68,7 @@
               <textarea
                 class="!h-[100px]"
                 v-model="form.message"
-                :placeholder="`Type here`"
+                :placeholder="$t('default.typeHere')"
               ></textarea>
               <template v-if="errors.message">
                 <p class="msg msg--error" v-for="error in errors.message">

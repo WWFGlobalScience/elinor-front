@@ -77,7 +77,7 @@
                   })
                 "
               >
-                <span class="sr-only">delete</span>
+                <span class="sr-only">{{ $t('default.delete') }}</span>
                 <img class="" src="~/assets/img/delete-gray.svg" />
               </button>
             </td>

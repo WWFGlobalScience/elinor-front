@@ -289,7 +289,7 @@ export default {
     // Debug store state on component mount
     // console.log('Store state on mount:', this.$store.state.pages);
     // console.log('Current pages:', this.pages);
-
+    // console.log('pageslatest', this.$store.state.pageslatest.list);
     // Check if store is reactive
     this.$store.watch(
       (state) => state.pageslatest.list,
@@ -331,14 +331,22 @@ export default {
     },
     isLinkActive(page) {
       const slug = this.$t(page.slug);
-      if (this.$route.fullPath === '/') {
+
+      // console.log('slug', slug, 'this.$route.fullPath', this.$route.fullPath);
+      if (this.$route.fullPath === '/' && slug === '/') {
+        return true;
+      }
+      if (this.$route.fullPath === '/' || slug === '/') {
         return slug === '';
       }
+
+
 
       if (slug === '') {
         return false;
       }
 
+      // console.log('slug', slug, 'this.$route.fullPath', this.$route.fullPath, 'this.$route.fullPath.indexOf(slug)', this.$route.fullPath.indexOf(slug) !== -1);
       return this.$route.fullPath.indexOf(slug) !== -1;
     },
     getPageTitle(page) {

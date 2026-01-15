@@ -81,14 +81,14 @@
             @click="prevStep"
             :class="{ 'btn--disabled': activeIndex === 1 }"
           >
-            Prev
+            {{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}
           </button>
           <button
             class="btn"
             @click="nextStep"
             :class="{ 'btn--disabled': activeIndex === 7 }"
           >
-            Next
+          {{ $t('pages.assessments.edit.tabs.survey.questions.next') }}
           </button>
         </div>
         <label class="custom-radio custom-radio--mobile">

@@ -84,7 +84,7 @@
                   offset: -80,
                 }"
               >
-                See Questions
+                {{ $t('pages.assessments.edit.seeQuestions') }}
               </a>
             </li>
           </ul>

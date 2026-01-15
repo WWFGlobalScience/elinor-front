@@ -182,7 +182,6 @@ export default {
           'circle-radius': ['step', ['get', 'point_count'], 13, 3, 16, 8, 18],
         },
       },
-
       scoreLayer: {
         type: 'symbol',
         maxzoom: 9,
@@ -236,7 +235,6 @@ export default {
         },
         filter: ['==', '$type', 'Point'],
       },
-
       polygonLayer: {
         type: 'fill',
         minzoom: 9,
@@ -378,39 +376,28 @@ export default {
       }
 
       // console.log('country', this.country);
-      // console.log('filtered', filtered);
       return filtered;
     },
     countries() {
+      const filteredData = this.formatData().filter((f) => {
+        if (!f || !f.properties) return false;
+        
+        return true;
+      });
+      console.log('range', this.range);
+      console.log('country', this.country);
+      console.log('attribute', this.attribute);
+      // console.log('filteredData', filteredData);
       if (
-        !this.filteredData ||
-        !Array.isArray(this.filteredData) ||
-        this.filteredData.length === 0
+        !filteredData ||
+        !Array.isArray(filteredData) ||
+        filteredData.length === 0
       ) {
         return [];
       }
-      // console.log('filteredData', Array.from(
-      //   new Set(
-      //     this.filteredData.reduce((carry, current) => {
-      //       if (
-      //         current &&
-      //         current.properties &&
-      //         current.properties.management_area &&
-      //         current.properties.management_area.countries &&
-      //         Array.isArray(current.properties.management_area.countries)
-      //       ) {
-      //         return [
-      //           ...carry,
-      //           ...current.properties.management_area.countries,
-      //         ];
-      //       }
-      //       return carry;
-      //     }, []),
-      //   ),
-      // ).sort());
       return Array.from(
         new Set(
-          this.filteredData.reduce((carry, current) => {
+          filteredData.reduce((carry, current) => {
             if (
               current &&
               current.properties &&
@@ -502,72 +489,11 @@ export default {
         },
       };
     },
-    // countrySource() {
-    //   // Only create GeoJSON source when we have valid coordinates
-    //   // console.log('countrySourceData', this.countrySourceData);
-    //   if (
-    //     !this.countrySourceData.coordinates ||
-    //     !Array.isArray(this.countrySourceData.coordinates) ||
-    //     this.countrySourceData.coordinates.length === 0
-    //   ) {
-    //     return null;
-    //   }
-
-    //   // Additional validation: ensure coordinates structure is valid for MultiPolygon
-    //   const coords = this.countrySourceData.coordinates;
-    //   if (
-    //     !coords.every(
-    //       (polygon) =>
-    //         Array.isArray(polygon) &&
-    //         polygon.length > 0 &&
-    //         polygon.every(
-    //           (ring) =>
-    //             Array.isArray(ring) &&
-    //             ring.length >= 4 &&
-    //             ring[0].length === 2 &&
-    //             ring[ring.length - 1].length === 2,
-    //         ),
-    //     )
-    //   ) {
-    //     console.warn(
-    //       'countrySource: Invalid MultiPolygon coordinates structure',
-    //       coords,
-    //     );
-    //     return null;
-    //   }
-
-    //   return {
-    //     type: 'geojson',
-    //     data: {
-    //       id: 'countrySource',
-    //       type: 'Feature',
-    //       properties: {},
-    //       geometry: {
-    //         type: 'MultiPolygon',
-    //         coordinates: this.countrySourceData.coordinates,
-    //       },
-    //     },
-    //   };
-    // },
   },
   watch: {
     country() {
       this.getCountryGeoJson(this.country);
     },
-    // countrySourceData: {
-    //   handler(newVal, oldVal) {},
-    //   deep: true,
-    // },
-    /*attribute () {
-            this.map.setLayoutProperty('markersLayer', 'icon-image', [
-                'step',
-                this.attribute ? ["*", ['get', this.attribute, ['get','scores']], 10] : ['get', 'filterScore'],
-                'mark-poor',
-                29, 'mark-average',
-                59, 'mark-good',
-                89, 'mark-excellent',
-            ]);
-        }*/
   },
   methods: {
     ...mapActions({
@@ -590,58 +516,6 @@ export default {
     async onMapLoaded(e) {
       var map = (this.map = e.map);
 
-      // Force map to resize to full width after load
-      // const resizeMap = () => {
-      //   if (map && map.getContainer) {
-      //     const container = map.getContainer();
-      //     if (container) {
-      //       // Get the actual viewport width
-      //       const viewportWidth =
-      //         typeof window !== 'undefined'
-      //           ? window.innerWidth
-      //           : container.clientWidth;
-      //       const isBelowTablet =
-      //         typeof window !== 'undefined' && window.innerWidth <= 768;
-
-      //       // Set container width to full viewport width
-      //       if (isBelowTablet) {
-      //         container.style.width = '100vw';
-      //       } else {
-      //         // Desktop: account for sidebar (231px)
-      //         container.style.width = 'calc(100vw - 231px)';
-      //       }
-
-      //       // Force Mapbox to resize
-      //       map.resize();
-
-      //       // Also update canvas directly if needed
-      //       const canvas = container.querySelector('.mapboxgl-canvas');
-      //       if (canvas) {
-      //         const containerWidth = container.clientWidth;
-      //         canvas.style.width = containerWidth + 'px';
-      //         canvas.setAttribute('width', containerWidth);
-      //       }
-      //     }
-      //   }
-      // };
-
-      // Resize immediately and after a short delay
-      // resizeMap();
-      // setTimeout(resizeMap, 100);
-      // setTimeout(resizeMap, 500);
-
-      // Also resize on window resize
-      // if (typeof window !== 'undefined') {
-      //   const resizeHandler = () => {
-      //     resizeMap();
-      //   };
-      //   window.addEventListener('resize', resizeHandler);
-
-      //   // Clean up on component destroy
-      //   this.$once('hook:beforeDestroy', () => {
-      //     window.removeEventListener('resize', resizeHandler);
-      //   });
-      // }
       map.loadImage('/img/marks/mark-grey.png', (error, image) => {
         if (error) {
           throw error;
@@ -780,6 +654,7 @@ export default {
     },
     formatData() {
       var results = [];
+      console.log('data', this.data);
       this.data.forEach((feature) => {
         if (
           !feature.geometry ||
@@ -858,7 +733,7 @@ export default {
         }
       });
 
-      console.log('results', results);
+      // console.log('results', results);
       return results;
     },
     setDetail(assessment) {

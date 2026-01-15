@@ -136,7 +136,7 @@
     }
 
     .nav__main {
-      @apply mt-10 flex-1;
+      @apply mt-2 flex-1;
       .input__tooltip {
         @apply hidden;
       }
@@ -145,9 +145,9 @@
       }
       ul {
         li {
-          @apply mb-3 text-white;
+          @apply mb-2 text-white;
           .nav__main__link {
-            @apply text-[14px] p-3 font-semibold flex items-center cursor-pointer;
+            @apply text-[14px] px-3 py-[5px] font-semibold flex items-center cursor-pointer;
             span {
               @apply pl-7;
             }
@@ -321,7 +321,7 @@
       @apply flex flex-col gap-2 py-2 border-t border-turqy-darker -mx-3 px-3;
 
       .nav__main__link {
-        @apply text-[14px] text-white p-3  gap-2 font-semibold flex items-center cursor-pointer;
+        @apply text-[14px] text-white px-3 py-2 gap-2 font-semibold flex items-center cursor-pointer;
 
         &.nuxt-link-active {
           @apply bg-turqy-lighter text-turqy;

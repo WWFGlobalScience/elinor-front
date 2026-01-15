@@ -638,14 +638,14 @@
                   src="~/assets/img/arrow_left_alt-white.svg"
                   :alt="$t('pages.assessments.edit.tabs.nextStep')"
                 />
-                <span class="btn--opacity__target">Prev: Assessment Data</span>
+                <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}: Assessment Data</span>
               </NuxtLink>
               <NuxtLink
                 @click.prevent
                 :to="`/assessments/edit/${id}/the-survey`"
                 class="btn btn--md"
               >
-                <span class="btn--opacity__target">Next: The Survey</span>
+                <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}:  The Survey</span>
                 <img
                   src="~/assets/img/arrow_right_alt.svg"
                   alt=""

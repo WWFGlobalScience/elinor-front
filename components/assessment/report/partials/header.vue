@@ -38,18 +38,21 @@ export default {
       const baseUrl =
         'https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/';
       const size = '593x220@2x';
-
+      // console.log('this.managementArea', this.managementArea.point.coordinates);
       if (
         this.managementArea.polygon &&
         this.managementArea.polygon.coordinates.length > 0
       ) {
+        console.log('this is polygon');
         return `${baseUrl}geojson(${this.getGeoJson()})/auto/${size}?padding=40,20,80&access_token=${token}`;
       } else if (
         this.managementArea.point &&
-        this.managementArea.point.coordinates.length == 0
+        this.managementArea.point.coordinates.length > 0
       ) {
-        var center = turf.point(this.managementArea.point.coordinates);
-        return `${baseUrl}${center}/${size}?&access_token=${token}`;
+        const [lon, lat] = this.managementArea.point.coordinates;
+        const zoom = 5;
+        const marker = `pin-l+43a0bd(${lon},${lat})`;
+        return `${baseUrl}${marker}/${lon},${lat},${zoom}/${size}?access_token=${token}`;
       } else {
         return `${baseUrl}auto/${size}?padding=40,20,80&access_token=${token}`;
       }

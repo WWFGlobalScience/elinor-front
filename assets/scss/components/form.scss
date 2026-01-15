@@ -353,12 +353,15 @@
       }
 
       .multiselect__placeholder {
-        @apply block #{!important};
+        @apply block mb-[0] #{!important};
       }
+    }
+    .multiselect__placeholder {
+      @apply mb-[-8px] #{!important};
     }
     .multiselect__placeholder,
     .multiselect__single {
-      @apply mb-0 p-0 text-[#9C9C9C] text-base font-medium min-h-0;
+      @apply mb-0 p-0 text-[#9C9C9C] text-base font-medium min-h-0 overflow-hidden whitespace-nowrap;
     }
     .multiselect__option--highlight {
       @apply bg-[#E4F0F4] text-turqy;

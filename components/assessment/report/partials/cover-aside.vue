@@ -37,8 +37,8 @@
       <div class="legend-item" v-if="assessment.score <= 29">
         <div class="legend-item-color" style="--color: #e35d5e"></div>
         <div class="legend-item-text">
-          <strong>PLAN</strong>
-          for addressing severe governance gaps
+          <strong>{{ $t('report.cover.legend.plan.title') }}</strong>
+          {{ $t('report.cover.legend.plan.description') }}
         </div>
       </div>
       <div
@@ -47,8 +47,8 @@
       >
         <div class="legend-item-color" style="--color: #fbbe21"></div>
         <div class="legend-item-text">
-          <strong>BUILD</strong>
-          upon initial progress to address major governance gaps
+          <strong>{{ $t('report.cover.legend.build.title') }}</strong>
+          {{ $t('report.cover.legend.build.description') }}
         </div>
       </div>
       <div
@@ -57,8 +57,8 @@
       >
         <div class="legend-item-color" style="--color: #bcbc16"></div>
         <div class="legend-item-text">
-          <strong>STRENGTHEN</strong>
-          governance by addressing minor gaps
+          <strong>{{ $t('report.cover.legend.strengthen.title') }}</strong>
+          {{ $t('report.cover.legend.strengthen.description') }}
         </div>
       </div>
       <div
@@ -67,8 +67,8 @@
       >
         <div class="legend-item-color" style="--color: #029262"></div>
         <div class="legend-item-text">
-          <strong>MAINTAIN</strong>
-          strong governance and monitor potential threats
+          <strong>{{ $t('report.cover.legend.maintain.title') }}</strong>
+          {{ $t('report.cover.legend.maintain.description') }}
         </div>
       </div>
     </div>
@@ -97,11 +97,11 @@
         </div>
       </div>
       <div class="info">
-        <div class="label">Year Established</div>
+        <div class="label">{{ $t('pages.report.aside.year') }}</div>
         <div class="value">{{ assessment.year }}</div>
       </div>
       <div class="info">
-        <div class="label">Size</div>
+        <div class="label">{{ $t('pages.report.aside.size') }}</div>
         <div class="value">
           {{
             assessment.management_area !== null && managementArea.reported_size
@@ -111,7 +111,7 @@
         </div>
       </div>
       <div class="info">
-        <div class="label">Governance type</div>
+        <div class="label">{{ $t('pages.report.aside.governanceType') }}</div>
         <div class="value">
           {{
             assessment.management_area !== null &&

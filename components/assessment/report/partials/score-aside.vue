@@ -1,51 +1,51 @@
 <template>
   <div class="scores-aside aside">
     <img src="~/assets/img/report-brand.png" class="logo" />
-    <h3>Assessment</h3>
+    <h3 class="capitalize">{{ $t('pages.assessments.list.totalSingular') }}</h3>
     <div class="legend">
-      <h4>SCORING SYSTEM</h4>
+      <h4 class="uppercase">{{ $t('pages.methodologyPage.subtitle4') }}</h4>
       <div class="legend-item">
         <div class="legend-item-color" style="--color: #029262"></div>
         <div class="legend-item-text">
-          <strong>MAINTAIN</strong><br />
-          Maintainstrong governance and monitor potential threats
+          <strong>{{ $t('report.cover.legend.maintain.title') }}</strong><br />
+          {{ $t('report.cover.legend.maintain.descriptionScore') }}
           <br />
           <br />
-          Indicator: <strong>4</strong><br />
-          Attribute: <strong>9-10</strong>
+          {{ $t('pages.methodologyPage.scoreTable.indicator') }}: <strong>4</strong><br />
+          {{ $t('pages.methodologyPage.scoreTable.attribute') }}: <strong>9-10</strong>
         </div>
       </div>
       <div class="legend-item">
         <div class="legend-item-color" style="--color: #bcbc16"></div>
         <div class="legend-item-text">
-          <strong>STRENGTHEN</strong><br />
-          Strengthen governance by addressing minor gaps
+          <strong>{{ $t('report.cover.legend.strengthen.title') }}</strong><br />
+          {{ $t('report.cover.legend.maintain.descriptionScore') }}
           <br />
           <br />
-          Indicator: <strong>3</strong><br />
-          Attribute: <strong>6-8</strong>
+          {{ $t('pages.methodologyPage.scoreTable.indicator') }}: <strong>3</strong><br />
+          {{ $t('pages.methodologyPage.scoreTable.attribute') }}: <strong>6-8</strong>
         </div>
       </div>
       <div class="legend-item">
         <div class="legend-item-color" style="--color: #fbbe21"></div>
         <div class="legend-item-text">
-          <strong>BUILD</strong><br />
-          Build upon initial progress to address major governance gaps
+          <strong>{{ $t('report.cover.legend.build.title') }}</strong><br />
+          {{ $t('report.cover.legend.build.descriptionScore') }}
           <br />
           <br />
-          Indicator: <strong>2</strong><br />
-          Attribute: <strong>3-5</strong>
+          {{ $t('pages.methodologyPage.scoreTable.indicator') }}: <strong>2</strong><br />
+          {{ $t('pages.methodologyPage.scoreTable.attribute') }}: <strong>3-5</strong>
         </div>
       </div>
       <div class="legend-item">
         <div class="legend-item-color" style="--color: #e35d5e"></div>
         <div class="legend-item-text">
-          <strong>PLAN</strong><br />
-          Develop plans for addressing severe governance gaps
+          <strong>{{ $t('report.cover.legend.plan.title') }}</strong><br />
+          {{ $t('report.cover.legend.plan.descriptionScore') }}
           <br />
           <br />
-          Indicator: <strong>1</strong><br />
-          Attribute: <strong>0-2</strong>
+          {{ $t('pages.methodologyPage.scoreTable.indicator') }}: <strong>1</strong><br />
+          {{ $t('pages.methodologyPage.scoreTable.attribute') }}: <strong>0-2</strong>
         </div>
       </div>
     </div>
