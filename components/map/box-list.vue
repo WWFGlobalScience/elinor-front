@@ -41,7 +41,7 @@
             </p>
         </div> -->
     <div
-      class="flex items-start justify-start gap-1.5 pb-6 flex-col border-t border-grayy-border border-solid pt-[6px]"
+      class="flex items-start justify-start gap-1.5 pb-6 flex-col pt-[6px]"
     >
       <h5>
         {{ assessments.length }} Assessments

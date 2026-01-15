@@ -4,7 +4,7 @@
       {{ $t('pages.assessments.list.DownloadReport.description') }}
     </p>
     <div v-if="isLoading" class="flex justify-center items-center py-8">
-      <span class="text-gray-500">Loading data...</span>
+      <span class="text-gray-500">{{ $t('default.loadingData') }}...</span>
     </div>
     <div v-else class="flex flex-col gap-4">
         <form id="form--search" class="form">
@@ -30,7 +30,7 @@
               </div>
             </div>
           </form>
-        <div class="font-bold">Select filters</div>
+        <div class="font-bold">{{ $t('default.selectFilter') }}</div>
         <form class="form form--assessment grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="input input--multiselect tags-nostyle">
             <div class="multiselect__wrap">
@@ -218,7 +218,7 @@
             <p class="w-[100%] text-body-14 font-medium mb-4">
             Found
             <span class="text-turqy font-bold">{{ assessmentsCount }}</span>
-            Report{{ assessmentsCount === 1 ? '' : 's' }}
+            {{ assessmentsCount === 1 ? $t('pages.assessments.list.totalSingular') : $t('pages.assessments.list.totalPlural') }}
             </p>
             <ul class="assessments-list"  v-if="assessments.length">
             <li v-for="(assessment, index) in assessments" :key="index">
@@ -297,11 +297,11 @@
         <div class="flex justify-between items-center">
             <div>
                 <div v-if="isFiltered">
-                    <span class="text-turqy font-bold">{{ selectedAssessments.length }}</span> report{{ selectedAssessments.length === 1 || selectedAssessments.length === 0 ? '' : 's' }} selected
+                    <span class="text-turqy font-bold">{{ selectedAssessments.length }}</span> {{ selectedAssessments.length === 1 || selectedAssessments.length === 0 ? $t('default.AssessmentSelectedSingular') : $t('default.AssessmentSelectedPlural')  }}
                 </div>
             </div>
             <button class="btn btn--new-sm" :class="{ 'btn--disabled': selectedAssessments.length === 0 && isFiltered }" @click="generateReport">
-                Generate report
+              {{ $t('pages.assessments.list.DownloadReport.title') }}
             </button>
         </div>
     </div>

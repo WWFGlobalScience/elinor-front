@@ -168,14 +168,14 @@
             src="~/assets/img/arrow_left_alt-white.svg"
             :alt="$t('pages.assessments.edit.tabs.nextStep')"
           />
-          <span class="btn--opacity__target">Prev: The Survey</span>
+          <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}:  The Survey</span>
         </NuxtLink>
         <NuxtLink
           @click.prevent
           :to="`/assessments/edit/${id}/collaborators`"
           class="btn btn--md"
         >
-          <span class="btn--opacity__target">Next: Collaborators</span>
+          <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}:  Collaborators</span>
           <img
             src="~/assets/img/arrow_right_alt.svg"
             :alt="$t('pages.assessments.edit.tabs.nextStep')"

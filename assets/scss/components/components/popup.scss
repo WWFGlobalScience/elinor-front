@@ -508,7 +508,7 @@
   &:has(.popup--download-report),
   &:has(.popup--assessment-create) {
     .popup__box {
-      @apply w-[747px];
+      @apply w-[747px] md:w-full;
 
       .form__group {
         @apply flex flex-col gap-6;
@@ -542,6 +542,7 @@
       }
     }
   }
+  &:has(.popup--aggregate-report),
   &:has(.popup--download-report) {
     #form--search {
       @apply mt-4;
@@ -555,7 +556,19 @@
       .input__ico--close {
         @apply right-[6px] left-[unset];
       }
+
     }
+    .input.input--multiselect .multiselect__tags {
+      @apply max-w-[20.8125rem] md:max-w-[calc(100vw-64px)];
+    }
+
+    // .input.input--multiselect.tags-nostyle .multiselect__tags-wrap .multiselect__tag span {
+    //   overflow: hidden;
+    //   display: -webkit-box;
+    //   -webkit-box-orient: vertical;
+    //   -webkit-line-clamp: 1;
+    //   @apply max-w-[100%];
+    // }
   }
 
   &:has(.popup__delete),

@@ -4,12 +4,10 @@
       <div class="survey-list-notes-wrapper">
         <div class="survey-list-notes">
           <p>
-            Select the attributes that correspond with your Assessment. Please
-            refer to the Methodology page for guidelines.
+            {{ $t('pages.assessments.edit.tabs.survey.description1') }}
           </p>
           <p>
-            Click on the active/inactive checkbox to select or deselect
-            attributes
+            {{ $t('pages.assessments.edit.tabs.survey.description2') }}
           </p>
         </div>
         <!-- <div class="btn btn--md btn--tertiary">
@@ -269,14 +267,14 @@
             src="~/assets/img/arrow_left_alt-white.svg"
             :alt="$t('pages.assessments.edit.tabs.nextStep')"
           />
-          <span class="btn--opacity__target">Prev: Managed Area</span>
+          <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}: Managed Area</span>
         </NuxtLink>
         <NuxtLink
           @click.prevent
           :to="`/assessments/edit/${assessment.id}/report-text`"
           class="btn btn--md"
         >
-          <span class="btn--opacity__target">Next: Report Text</span>
+          <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.next') }}: Report Text</span>
           <img
             src="~/assets/img/arrow_right_alt.svg"
             alt=""

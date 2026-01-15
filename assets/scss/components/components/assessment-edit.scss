@@ -951,18 +951,18 @@ main .page--assessment-edit {
           }
 
           h1 {
-            @apply text-[#000] text-[16px] leading-[22px] font-montserratSemiBoldPdf;
+            @apply text-[#000] text-[16px] leading-[22px] font-montserratSemiBoldPdf #{!important};
           }
 
           .year {
-            @apply text-[#000] text-[10px] leading-[12px] font-montserratMediumPdf;
+            @apply text-[#000] text-[10px] leading-[12px] font-montserratMediumPdf #{!important};
           }
         }
       }
     }
 
     h4 {
-      @apply text-[#43A0BD] text-[10px] leading-[13px] uppercase font-montserratBoldPdf;
+      @apply text-[#43A0BD] text-[10px] leading-[13px] uppercase font-montserratBoldPdf #{!important};
 
       &.title {
         @apply bg-white px-[10px] py-[7.5px] ml-2 inline-flex;
@@ -970,7 +970,7 @@ main .page--assessment-edit {
     }
 
     h3 {
-      @apply text-[#000] text-[14px] leading-[20px] font-montserratSemiBoldPdf;
+      @apply text-[#000] text-[14px] leading-[20px] font-montserratSemiBoldPdf #{!important};
     }
 
     .content-objectives {

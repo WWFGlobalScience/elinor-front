@@ -8,7 +8,7 @@
           <img src="~/assets/img/arrow_left_alt.svg" alt="" />
         </nuxt-link>
         <div class="content">
-          <p class="kicker">Attribute</p>
+          <p class="kicker">{{ $t('pages.assessments.edit.tabs.survey.attribute.title') }}</p>
           <h4 class="title">{{ attribute.name }}</h4>
         </div>
       </header>
@@ -156,7 +156,7 @@
                       <textarea
                         name="explanation"
                         ref="textareaExplanation"
-                        placeholder="Type here"
+                        :placeholder="$t('default.typeHere')"
                         class="!h-[195px] !mb-[-10px]"
                         @change="saveExplanation($event.target.value)"
                         >{{ answer && answer.explanation }}</textarea
@@ -169,7 +169,7 @@
           </div>
           <div class="question-separator"></div>
           <div class="question-help">
-            <div class="text-body-14 text-[#9C9C9C] mb-2">Guidelines</div>
+            <div class="text-body-14 text-[#9C9C9C] mb-2">{{ $t('pages.assessments.edit.tabs.survey.questions.guidelines') }}</div>
             <div>
               <accordion
                 :index="1"
@@ -228,7 +228,7 @@
                   >{{
                     $t('pages.assessments.edit.tabs.survey.questions.next')
                   }}
-                  Question</span
+                  {{ $t('pages.assessments.edit.tabs.survey.questions.question') }}</span
                 >
                 <img src="~/assets/img/arrow_right_alt.svg" />
               </nuxt-link>
@@ -242,7 +242,7 @@
                   >{{
                     $t('pages.assessments.edit.tabs.nextStep')
                   }}
-                  Question</span
+                  {{ $t('pages.assessments.edit.tabs.survey.questions.question') }}</span
                 >
                 <img src="~/assets/img/arrow_right_alt.svg" />
               </nuxt-link>

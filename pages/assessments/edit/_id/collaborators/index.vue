@@ -36,7 +36,7 @@
             src="~/assets/img/arrow_left_alt-white.svg"
             :alt="$t('pages.assessments.edit.tabs.nextStep')"
           />
-          <span class="btn--opacity__target">Prev: Report Text</span>
+          <span class="btn--opacity__target">{{ $t('pages.assessments.edit.tabs.survey.questions.prev') }}:  Report Text</span>
         </NuxtLink>
         <!-- <NuxtLink
                 @click.prevent
