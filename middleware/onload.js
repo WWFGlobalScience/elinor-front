@@ -10,18 +10,18 @@ export default function ({ store, app, $axios }) {
   // The store's initial state is set at module load time (build-time),
   // but we need to update it with the actual runtime config value
   // Priority: app.$config (runtime) > defaults to false
-  const runtimeOfflineModeEnabled = app.$config?.offlineMode === true || false;
-  store.commit('layout/setOfflineModeEnabled', runtimeOfflineModeEnabled);
+  // const runtimeOfflineModeEnabled = app.$config?.offlineMode === true || false;
+  // store.commit('layout/setOfflineModeEnabled', runtimeOfflineModeEnabled);
 
-  // Check if offline mode feature flag is enabled using current store state
-  const offlineModeEnabled = store.state.layout.offlineModeEnabled;
+  // // Check if offline mode feature flag is enabled using current store state
+  // const offlineModeEnabled = store.state.layout.offlineModeEnabled;
 
   // Skip dispatching these actions when offline mode feature flag is enabled
   // This prevents API calls when OFFLINE_MODE=true regardless of explicit offline state
-  if (!offlineModeEnabled) {
+  // if (!offlineModeEnabled) {
     store.dispatch('attributes/fetchAttributes');
     store.dispatch('surveyquestions/fetchSurveyQuestions');
-  }
+  // }
 
   store.dispatch('countries/load');
 }

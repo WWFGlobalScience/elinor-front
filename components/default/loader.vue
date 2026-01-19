@@ -38,25 +38,28 @@ export default {
   computed: {
     ...mapState({
       loader: (state) => state.loader.loader,
-      layoutOffline: (state) => state.layout.offline,
+      isOffline: (state) => state.layout.offline,
     }),
-    isOffline() {
-      // Check if offline mode feature flag is enabled using centralized utility
-      const offlineModeEnabled = getOfflineModeFromStore(
-        this.$store.state.layout,
-        this,
-      );
-
-      // Hide loader when offline mode feature flag is enabled
-      // This prevents loader from showing when OFFLINE_MODE=true
-      // even if the user hasn't explicitly gone offline
-      if (offlineModeEnabled) {
-        return true;
-      }
-
-      // Otherwise, only hide when explicitly offline
-      return this.layoutOffline || false;
+    mounted() {
+      console.log('isOffline', this.isOffline);
     },
+    // isOffline() {
+    //   // Check if offline mode feature flag is enabled using centralized utility
+    //   const offlineModeEnabled = getOfflineModeFromStore(
+    //     this.$store.state.layout,
+    //     this,
+    //   );
+
+    //   // Hide loader when offline mode feature flag is enabled
+    //   // This prevents loader from showing when OFFLINE_MODE=true
+    //   // even if the user hasn't explicitly gone offline
+    //   if (offlineModeEnabled) {
+    //     return true;
+    //   }
+
+    //   // Otherwise, only hide when explicitly offline
+    //   return this.layoutOffline || false;
+    // },
   },
 };
 </script>
