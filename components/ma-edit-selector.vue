@@ -10,12 +10,19 @@
                   'pages.assessments.edit.tabs.managementArea.selector.existing',
                 )
               }}</label>
-              <div class="note !text-[#2E2E2E] !text-base">
+              <div class="note !text-[#2E2E2E] !text-base pb-5">
                 {{
                   $t(
-                    'pages.assessments.edit.tabs.managementArea.selector.existingGuide',
+                    'pages.assessments.edit.tabs.managementArea.selector.existingGuide1',
                   )
                 }}
+                <strong>
+                  {{
+                    $t(
+                      'pages.assessments.edit.tabs.managementArea.selector.existingGuide2',
+                    )
+                  }}
+                </strong>
               </div>
               <div class="multiselect__wrap">
                 <multiselect
