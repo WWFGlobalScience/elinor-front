@@ -1,0 +1,346 @@
+.sidebar__main {
+  margin-top: -69px;
+
+  // Desktop: sidebar is fixed, so it doesn't affect flex layout
+  @media (min-width: $desktop-breakpoint-min) {
+    // Sidebar is fixed, so it's out of flow - no need for flex adjustments
+  }
+
+  & + .app__content__main {
+    @apply min-h-screen sm:min-h-0;
+  }
+
+  & + .app__content__main,
+  & + .mgl-map-wrapper,
+  & + .page {
+    // Use flex: 1 to take remaining space instead of viewport width calculation
+    // This prevents overflow issues with scrollbar (100vw includes scrollbar, but 100% doesn't)
+    flex: 1;
+    width: auto;
+    max-width: none;
+    min-width: 0; // Allow flex item to shrink below content size
+    overflow-x: hidden; // Prevent horizontal overflow
+
+    // Desktop: account for fixed sidebar width
+    @media (min-width: $desktop-breakpoint-min) {
+      margin-left: 231px; // Push content to the right of fixed sidebar
+    }
+  }
+
+  // Mobile/Tablet: hide by default, show when menu is open
+  @media (max-width: $desktop-breakpoint) {
+    margin-top: 0 !important; // Reset negative margin on mobile
+    @apply fixed top-0 left-0 bottom-0 z-50;
+    display: none !important; // Hide by default on mobile
+
+    & + .app__content__main,
+    & + .page {
+      max-width: 100vw !important;
+    }
+
+    // Show sidebar when mobile menu is open
+    &.sidebar__mobile--open {
+      display: block !important;
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .sidebar__wrap {
+    @apply bg-turqy h-screen flex flex-col transition-all duration-500;
+    width: 231px;
+
+    // Desktop: ensure sidebar stays fixed when scrolling
+    @media (min-width: $desktop-breakpoint-min) {
+      position: fixed !important; // Use fixed instead of sticky
+      top: 0 !important;
+      left: 0 !important;
+      height: 100vh; // Full viewport height
+      width: 231px;
+      z-index: 30 !important;
+      max-height: 100vh; // Ensure it doesn't exceed viewport height
+      overflow-y: auto; // Allow scrolling if content exceeds viewport
+    }
+
+    // Mobile/Tablet: fixed positioning, hidden by default
+    @media (max-width: $desktop-breakpoint) {
+      @apply fixed top-0 bottom-0 w-screen max-w-[360px];
+      .nav__main__bottom-brand {
+        @apply relative w-12 bottom-1;
+      }
+    }
+
+    @media only screen and (max-width: 823px) and (-webkit-min-device-pixel-ratio: 2) {
+      @apply fixed;
+      .nav__main {
+        &:not(.nav__main--bottom) {
+          @apply mt-1;
+        }
+        &.nav__main--bottom {
+          @apply py-1;
+        }
+        .nav__main__bottom-brand {
+          @apply relative w-12 bottom-1;
+        }
+      }
+    }
+
+    @media (max-height: $tablet-breakpoint) {
+      .nav__main__bottom-brand {
+        @apply hidden;
+      }
+    }
+
+    > * {
+      @apply px-3;
+    }
+
+    .brand {
+      @apply border-b border-turqy-darker py-5 flex-none flex items-center justify-center relative;
+
+      .brand__icon {
+        @apply hidden;
+      }
+      .brand__text {
+        @apply text-center block mx-auto;
+      }
+
+      .sidebar__mobile-close {
+        @apply flex items-center justify-center text-white opacity-70 hover:opacity-100 transition-opacity cursor-pointer z-50;
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0.5rem;
+        background: transparent;
+        border: none;
+        pointer-events: auto;
+
+        // Hide on desktop
+        @media (min-width: $desktop-breakpoint-min) {
+          @apply hidden;
+        }
+
+        svg {
+          @apply w-6 h-6;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &:active {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .nav__main {
+      @apply mt-2 flex-1;
+      .input__tooltip {
+        @apply hidden;
+      }
+      &:not(.nav__main--bottom) {
+        @apply h-full overflow-auto;
+      }
+      ul {
+        li {
+          @apply mb-2 text-white;
+          .nav__main__link {
+            @apply text-[14px] px-3 py-[5px] font-semibold flex items-center cursor-pointer;
+            span {
+              @apply pl-7;
+            }
+            &.nuxt-link-active {
+              @apply bg-turqy-lighter rounded-full text-turqy;
+            }
+          }
+        }
+      }
+
+      // Parent navigation styles
+      .nav__main__parent {
+        @apply mb-3;
+
+        .nav__main__parent__header {
+          @apply text-[14px] p-3 font-semibold flex items-center cursor-pointer justify-between;
+
+          .parent-arrow {
+            @apply transition-transform duration-200;
+          }
+          &--active {
+            @apply bg-[#3A90AB] rounded-full;
+
+            .parent-arrow {
+              @apply rotate-180;
+            }
+          }
+
+          &.nav__main__parent--active {
+            @apply bg-turqy-lighter rounded-full text-turqy;
+          }
+        }
+
+        .nav__main__children {
+          @apply pl-8 pt-3 relative before:content-[''] before:absolute before:left-6 before:top-0 before:w-[1px] before:h-full before:bg-turqy-lighter;
+
+          li {
+            @apply mb-3 last:mb-0;
+
+            .nav__main__child {
+              @apply text-[14px] px-3 py-[5px] font-medium flex gap-2 items-center cursor-pointer;
+
+              &.nuxt-link-active {
+                @apply bg-turqy-lighter rounded-full text-turqy;
+              }
+            }
+          }
+        }
+      }
+    }
+    .nav__main__bottom-brand {
+      @apply absolute left-0 right-0 bottom-4 mx-auto;
+    }
+    .nav__main--bottom {
+      @apply mt-0 border-t border-turqy-darker py-5 w-full bg-turqy flex-none h-24 lg:h-auto md:hidden;
+    }
+  }
+  &.sidebar__main--min {
+    & + .page {
+      // Use flex: 1 instead of viewport width calculation to prevent overflow issues
+      flex: 1;
+      width: auto;
+      max-width: none;
+    }
+    .sidebar__wrap {
+      @apply w-12 transition-all duration-500;
+      .brand {
+        @apply px-2;
+        .brand__icon {
+          @apply block md:hidden;
+        }
+        .brand__text {
+          @apply hidden;
+        }
+      }
+      .nav__main {
+        @apply px-2 flex flex-col justify-start;
+        .input__tooltip {
+          @apply block w-12 h-12 fixed left-0 sm:hidden;
+        }
+        &.nav__main--bottom {
+          @apply md:hidden;
+        }
+        ul {
+          li {
+            a {
+              @apply justify-center h-8 w-8;
+            }
+            span {
+              @apply hidden;
+            }
+          }
+        }
+        .nav__main__bottom-brand {
+          @apply hidden md:block;
+        }
+
+        // Hide children in minimized state
+        .nav__main__parent {
+          .nav__main__children {
+            @apply hidden;
+          }
+        }
+      }
+
+      // On mobile, minimized sidebar should still be hidden by default
+      @media (max-width: $desktop-breakpoint) {
+        width: 231px;
+        @apply fixed top-0 left-0 bottom-0;
+        // Parent handles display none, no need for transform here
+
+        .brand {
+          .brand__text {
+            @apply block;
+          }
+        }
+        .nav__main {
+          @apply justify-start;
+          ul {
+            li {
+              a {
+                @apply justify-start h-auto w-auto;
+              }
+              span {
+                @apply block;
+              }
+            }
+          }
+
+          // Show children in mobile minimized state
+          .nav__main__parent {
+            .nav__main__children {
+              @apply block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // When minimized sidebar is open on mobile
+  @media (max-width: $desktop-breakpoint) {
+    &.sidebar__main--min {
+      display: none !important; // Hide minimized sidebar by default on mobile
+
+      &.sidebar__mobile--open {
+        display: block !important;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+
+  // Additional mobile styles for minimized sidebar
+  @media (max-width: $desktop-breakpoint - 1px) {
+    &.sidebar__main--min {
+      .sidebar__wrap {
+        @apply w-8/12;
+      }
+    }
+  }
+
+  .copyright-wrapper {
+    @apply p-0;
+  }
+
+  .nav__main--top {
+    @apply flex flex-col justify-between;
+
+    .nav__bottom {
+      @apply flex flex-col gap-2 py-2 border-t border-turqy-darker -mx-3 px-3;
+
+      .nav__main__link {
+        @apply text-[14px] text-white px-3 py-2 gap-2 font-semibold flex items-center cursor-pointer;
+
+        &.nuxt-link-active {
+          @apply bg-turqy-lighter text-turqy;
+        }
+      }
+
+      .lang-dropdown .current {
+        @apply text-white flex items-center gap-2 justify-between font-semibold text-[14px] p-3;
+
+        > div {
+          @apply flex items-center gap-2;
+        }
+      }
+    }
+  }
+  .copyright {
+    @apply text-[#7FD4EF] text-[10px] leading-[15px] font-montserrat font-medium flex gap-0.5 flex-col px-4 py-2 bg-[#3A90AB];
+    a {
+      @apply text-[#7FD4EF];
+    }
+  }
+}

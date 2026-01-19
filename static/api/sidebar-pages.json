@@ -9,7 +9,7 @@
       }
     },
     "title": "pages.home.meta.title",
-    "slug": "pages.home.meta.slug",
+    "slug": "/",
     "icons": {
       "gray": "/img/nav-icons/ico-home-gray.svg",
       "white": "/img/nav-icons/ico-home-white.svg",
@@ -33,7 +33,7 @@
     },
     "title": "pages.assessments.meta.title",
     "offlineTitle": "pages.assessments.meta.offlineTitle",
-    "slug": "pages.assessments.meta.slug",
+    "slug": "/assessments",
     "icons": {
       "gray": "/img/nav-icons/ico-assessments-gray.svg",
       "white": "/img/nav-icons/ico-assessments-white.svg",
@@ -57,7 +57,7 @@
         },
         "title": "pages.assessmentsLibrary.meta.title",
         "offlineTitle": "pages.assessments.meta.offlineTitle",
-        "slug": "pages.assessments.meta.slug",
+        "slug": "/assessments",
         "icons": {
           "gray": "/img/nav-icons/ico-library-gray.svg",
           "white": "/img/nav-icons/ico-library-white.svg",
@@ -80,7 +80,7 @@
           }
         },
         "title": "pages.methodologyPage.home.meta.title",
-        "slug": "pages.methodologyPage.home.meta.slug",
+        "slug": "/methodology",
         "icons": {
           "gray": "/img/nav-icons/ico-background-gray.svg",
           "white": "/img/nav-icons/ico-background-white.svg",
@@ -103,7 +103,7 @@
           }
         },
         "title": "pages.collaboration.home.meta.title",
-        "slug": "pages.collaboration.home.meta.slug",
+        "slug": "/collaboration",
         "icons": {
           "gray": "/img/nav-icons/ico-collaboration-gray.svg",
           "white": "/img/nav-icons/ico-collaboration-white.svg",
@@ -128,7 +128,7 @@
       }
     },
     "title": "pages.map.home.meta.title",
-    "slug": "pages.map.home.meta.slug",
+    "slug": "/map",
     "icons": {
       "gray": "/img/nav-icons/ico-map-gray.svg",
       "white": "/img/nav-icons/ico-map-white.svg",
@@ -151,7 +151,7 @@
       }
     },
     "title": "pages.news.home.meta.title",
-    "slug": "pages.news.home.meta.slug",
+    "slug": "/news",
     "icons": {
       "gray": "/img/nav-icons/ico-news-gray.svg",
       "white": "/img/nav-icons/ico-news-white.svg",
@@ -174,7 +174,7 @@
       }
     },
     "title": "pages.documentation.home.meta.title",
-    "slug": "pages.documentation.home.meta.slug",
+    "slug": "/documentation",
     "icons": {
       "gray": "/img/nav-icons/ico-documentation-gray.svg",
       "white": "/img/nav-icons/ico-documentation-white.svg",
@@ -197,7 +197,7 @@
       }
     },
     "title": "pages.faqs.home.meta.title",
-    "slug": "pages.faqs.home.meta.slug",
+    "slug": "/faq",
     "icons": {
       "gray": "/img/nav-icons/ico-faq-gray.svg",
       "white": "/img/nav-icons/ico-faq-white.svg",
@@ -220,7 +220,7 @@
       }
     },
     "title": "pages.contact.home.meta.title",
-    "slug": "pages.contact.home.meta.slug",
+    "slug": "/contact",
     "icons": {
       "gray": "/img/nav-icons/ico-contact-gray.svg",
       "white": "/img/nav-icons/ico-contact-white.svg",

@@ -1,0 +1,231 @@
+// Ensure MglMap component and its wrapper are full width
+// Break out of any container constraints
+// .mgl-map-wrapper,
+// [class*='mgl-map'] {
+//   width: 100% !important;
+//   max-width: 100% !important;
+//   min-width: 100% !important;
+
+//   // Ensure canvas container and canvas are full width
+//   .mapboxgl-canvas-container {
+//     width: 100% !important;
+//     max-width: 100% !important;
+//     min-width: 100% !important;
+//   }
+
+//   .mapboxgl-canvas {
+//     width: 100% !important;
+//     max-width: 100% !important;
+//     min-width: 100% !important;
+//     // Override inline styles set by Mapbox
+//     &[style*='width'] {
+//       width: 100% !important;
+//     }
+//   }
+// }
+
+// Ensure the map page itself breaks out of container constraints
+main .page {
+  // When map is present, ensure full width
+  .min-h-\[100vh\] {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+
+    // On desktop, account for sidebar (231px)
+    @media (min-width: $desktop-breakpoint-min) {
+      width: calc(100vw - 231px) !important;
+      max-width: calc(100vw - 231px) !important;
+      margin-left: calc(-50vw + 115.5px) !important;
+      margin-right: calc(-50vw + 115.5px) !important;
+    }
+  }
+}
+
+.mgl-map-wrapper {
+  @apply lg:min-h-[calc(100vh-70px)];
+  .mapboxgl-map {
+    @apply left-[unset] right-0 #{!important};
+  }
+  .mapboxgl-popup-anchor-top-left {
+    @apply max-w-[218px] #{!important};
+    @apply ml-3 flex-row;
+    .mapboxgl-popup-tip {
+      border: 10px solid;
+      border-color: transparent;
+      align-self: flex-start;
+      border-left: none;
+      border-right-color: #fff;
+      @apply -mt-2;
+    }
+    .mapboxgl-popup-content {
+      @apply border-radius--card w-full -mt-8 p-3 min-w-[208px];
+      .mapboxgl-popup-close-button {
+        display: none;
+      }
+    }
+  }
+}
+
+.map-filters {
+  .multiselect__single,
+  .multiselect__option > span {
+    @apply truncate max-w-full;
+    display: block;
+  }
+  .multiselect__content,
+  .multiselect__option {
+    @apply max-w-full;
+  }
+
+  &__item {
+    width: 230px; // Default width for desktop
+  }
+
+  // Hide desktop filters on mobile/tablet (below tablet breakpoint)
+  &.map-filters-desktop {
+    @media (max-width: $tablet-breakpoint) {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+      width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+// Show filters button for map (reuse from assessments)
+.map-filters-mobile-btn {
+  @apply hidden items-center gap-2 bg-[#43A0BD] hover:bg-[#3A90AB] text-white rounded-full justify-center py-3 px-6 transition-all duration-300 font-medium;
+  right: 1rem; // Default right position
+  margin-right: 36px; // Move 36px to the left to avoid blocking zoom button
+
+  @media (max-width: $tablet-breakpoint) {
+    @apply flex;
+    display: flex !important;
+  }
+
+  // Hide text "Show filters" below mobile view, show only icon
+  @media (max-width: $mobile-breakpoint) {
+    span {
+      display: none !important;
+    }
+    // Adjust padding for icon-only button
+    @apply px-3;
+  }
+
+  img {
+    @apply w-5 h-5;
+    filter: brightness(0) invert(1); // Make icon white
+  }
+}
+
+.box-map {
+  @apply border-radius--card z-50 absolute -translate-y-1/2 left-8 top-1/2 bg-white w-[436px] p-4;
+
+  // Below tablet: make responsive to fit viewport width
+  @media (max-width: $tablet-breakpoint) {
+    @apply left-4 right-4;
+    width: calc(
+      100% - 2rem
+    ) !important; // Full width minus padding (16px on each side)
+    max-width: 100%;
+  }
+
+  ul {
+    @apply h-[300px] overflow-y-auto;
+    > li {
+      @apply border-b border-grayy-border;
+      &:last-child {
+        @apply border-none;
+      }
+      > * {
+        @apply py-2 #{!important};
+      }
+    }
+  }
+}
+
+// Map title container - add margin for sidebar only when sidebar is visible
+.map-title-container {
+  // Desktop: add margin for sidebar (only when sidebar is visible)
+  // @media (min-width: $desktop-breakpoint-min) {
+  //   margin-left: 215px !important; // Account for sidebar width
+  //   margin-right: 215px !important; // Balance spacing
+  // }
+}
+
+// Map title - smaller font on tablet and below
+.map-title {
+  @media (max-width: $tablet-breakpoint) {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+}
+
+// Map legend - move up on tablet and below to avoid scrolling
+.map-legend {
+  // Make container hug its content
+  width: fit-content !important;
+  max-width: calc(100% - 32px);
+
+  // Ensure legend appears above sidebar (sidebar has z-index: 30)
+  z-index: 40 !important;
+
+  // Desktop: show single row, hide two-row layout, add margin for sidebar only when sidebar is visible
+  @media (min-width: $desktop-breakpoint-min) {
+    z-index: 40 !important; // Ensure it's above sidebar on desktop/tablet
+    // margin-left: 215px !important; // Account for sidebar width
+    // margin-right: 215px !important; // Balance spacing
+
+  }
+
+  .map-legend__desktop {
+    @apply flex flex-row items-center gap-4 flex-wrap;
+    display: flex !important;
+
+    > div {
+      @apply sm:w-[45%];
+    }
+  }
+  .map-legend__mobile {
+    display: none !important;
+  }
+
+  // Tablet and below: show two rows, hide single row, move up
+  @media (max-width: $tablet-breakpoint) {
+    // bottom: 80px !important;
+
+    // .map-legend__desktop {
+    //   display: none !important;
+    // }
+    // .map-legend__mobile {
+    //   @apply flex flex-col;
+    //   display: flex !important;
+    // }
+  }
+
+  // Between tablet and desktop: ensure only one is visible
+  // @media (min-width: $tablet-breakpoint-min) and (max-width: $desktop-breakpoint) {
+  //   .map-legend__desktop {
+  //     display: none !important;
+  //   }
+  //   .map-legend__mobile {
+  //     @apply flex flex-col;
+  //     display: flex !important;
+  //   }
+  // }
+
+  // Make items hug each other - reduce spacing
+  .map-legend__desktop,
+  .map-legend__mobile > div {
+    gap: 1rem; // 16px gap between items for tighter spacing
+  }
+}

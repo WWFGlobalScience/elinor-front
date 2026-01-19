@@ -10,7 +10,7 @@ export const state = () => ({
         },
       },
       title: 'pages.home.meta.title',
-      slug: 'pages.home.meta.slug',
+      slug: '/',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-home-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-home-white.svg'),
@@ -34,7 +34,7 @@ export const state = () => ({
       },
       title: 'pages.assessments.meta.title',
       offlineTitle: 'pages.assessments.meta.offlineTitle',
-      slug: 'pages.assessments.meta.slug',
+      slug: '/assessments',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-assessments-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-assessments-white.svg'),
@@ -58,7 +58,7 @@ export const state = () => ({
           },
           title: 'pages.assessmentsLibrary.meta.title',
           offlineTitle: 'pages.assessments.meta.offlineTitle',
-          slug: 'pages.assessments.meta.slug',
+          slug: '/assessments',
           icons: {
             gray: require('~/assets/img/nav-icons/ico-library-gray.svg'),
             white: require('~/assets/img/nav-icons/ico-library-white.svg'),
@@ -81,7 +81,7 @@ export const state = () => ({
             },
           },
           title: 'pages.methodologyPage.home.meta.title',
-          slug: 'pages.methodologyPage.home.meta.slug',
+          slug: '/methodology',
           icons: {
             gray: require('~/assets/img/nav-icons/ico-background-gray.svg'),
             white: require('~/assets/img/nav-icons/ico-background-white.svg'),
@@ -104,7 +104,7 @@ export const state = () => ({
             },
           },
           title: 'pages.collaboration.home.meta.title',
-          slug: 'pages.collaboration.home.meta.slug',
+          slug: '/collaboration',
           icons: {
             gray: require('~/assets/img/nav-icons/ico-collaboration-gray.svg'),
             white: require('~/assets/img/nav-icons/ico-collaboration-white.svg'),
@@ -152,7 +152,7 @@ export const state = () => ({
         },
       },
       title: 'pages.map.home.meta.title',
-      slug: 'pages.map.home.meta.slug',
+      slug: '/map',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-map-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-map-white.svg'),
@@ -175,7 +175,7 @@ export const state = () => ({
         },
       },
       title: 'pages.news.home.meta.title',
-      slug: 'pages.news.home.meta.slug',
+      slug: '/news',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-news-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-news-white.svg'),
@@ -198,7 +198,7 @@ export const state = () => ({
         },
       },
       title: 'pages.documentation.home.meta.title',
-      slug: 'pages.documentation.home.meta.slug',
+      slug: '/documentation',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-documentation-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-documentation-white.svg'),
@@ -221,7 +221,7 @@ export const state = () => ({
         },
       },
       title: 'pages.faqs.home.meta.title',
-      slug: 'pages.faqs.home.meta.slug',
+      slug: '/faq',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-faq-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-faq-white.svg'),
@@ -244,7 +244,7 @@ export const state = () => ({
         },
       },
       title: 'pages.contact.home.meta.title',
-      slug: 'pages.contact.home.meta.slug',
+      slug: '/contact',
       icons: {
         gray: require('~/assets/img/nav-icons/ico-contact-gray.svg'),
         white: require('~/assets/img/nav-icons/ico-contact-white.svg'),

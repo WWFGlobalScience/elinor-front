@@ -1,0 +1,43 @@
+.container {
+  @apply w-full px-32 2xl:px-14 sm:px-4;
+
+  // // Remove padding below desktop view for assessments list
+  // @media (max-width: 1024px) {
+  //   padding-left: 0 !important;
+  //   padding-right: 0 !important;
+  // }
+}
+.container--2xl {
+  @apply w-2xl max-w-2xl px-9 mx-auto 2xl:w-full;
+}
+.container--xl {
+  @apply w-xl max-w-xl px-9 mx-auto xl:w-full;
+}
+.container--lg {
+  @apply w-lg max-w-lg px-9 mx-auto lg:w-full;
+}
+.container--md {
+  @apply w-md max-w-md px-9 mx-auto md:w-full;
+}
+.container--sm {
+  @apply w-sm max-w-sm px-9 mx-auto sm:w-full;
+}
+.container--xs {
+  @apply w-xs max-w-xs px-9 mx-auto xs:w-full;
+}
+.container--full {
+  @apply max-w-full;
+}
+.container--turqy-lighter {
+  @apply bg-turqy-lighter;
+}
+
+.container-lg--responsive {
+  @apply w-8/12 mx-auto 2xl:w-10/12 sm:w-11/12;
+}
+
+.container {
+  .container-lg--responsive {
+    @apply w-10/12 mx-auto 2xl:w-11/12;
+  }
+}

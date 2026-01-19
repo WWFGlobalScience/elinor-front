@@ -168,6 +168,7 @@ export const actions = {
     );
     state.commit('setInstance', response);
     state.commit('assessments/setManagementArea', response, { root: true });
+    window.location.reload();
     setTimeout(() => {
     this.dispatch('loader/loaderState', {
       active: false,

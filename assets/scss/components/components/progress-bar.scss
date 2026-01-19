@@ -1,0 +1,6 @@
+.elinor__progress-bar {
+  @apply relative bg-turqy-lighter h-6 w-full mt-4;
+  .elinor__progress-bar-status {
+    @apply absolute h-full w-0 bg-turqy inset-y-0 left-0 transition duration-500 ease-in-out;
+  }
+}
