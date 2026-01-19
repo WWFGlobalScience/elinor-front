@@ -1,0 +1,281 @@
+//list
+.list-inside {
+  @apply pl-5 relative;
+  li {
+      &::before {
+          content: '';
+          @apply absolute -left-4 top-2 w-1 h-1 bg-grayy;
+      }
+  }
+  &.list-disc {
+      li {
+          &::before {
+              @apply rounded-full;
+          }
+      }
+  }
+  &.list--small {
+      li {
+          @apply text-sm leading-7 text-grayy;
+      }
+  }
+  &.list--light {
+      li {
+          @apply text-xs leading-6 text-grayy-lighter;
+          &::before {
+              content: '';
+              @apply bg-grayy-lighter -left-2 w-2px h-2px;
+          }
+      }
+  }
+}
+
+//survey list
+.survey-list-header {
+  @apply mb-4 flex flex-col gap-4 max-w-[700px];
+}
+.elinor__survey-list {
+  @apply mt-10 pb-10;
+  
+  // Survey list header with expand all button
+  .survey-list-header {
+      @apply mb-6;
+      .expand-all-btn {
+          @apply flex items-center gap-2 text-turqy mt-4;
+      }
+  }
+  
+  // Attribute dropdown styles
+  .attribute-dropdown {
+      @apply mb-[-1px] border-t border-b border-[#E7E7E7] relative hover:border-turqy hover:z-10;
+      
+      .attribute-header {
+          @apply cursor-pointer pr-2 flex items-center sm:items-start justify-between transition-all duration-300 py-[25px] gap-2 sm:py-4 sm:pr-0;
+          
+          .title-border {
+              @apply mb-0 flex-1 after:hidden bg-transparent sm:items-start gap-y-2 sm:flex-col-reverse;
+
+              .title-dot-wrapper {
+                  @apply bg-transparent;
+
+                  .title-dot {
+                      @apply w-8 h-8 min-w-[32px] min-h-[32px] md:w-[28px] md:h-[28px] md:min-w-[28px] md:min-h-[28px];
+                  }
+              }
+              .title-aside {
+                  @apply bg-transparent p-0;
+                  .att-wrap {
+                      @apply  px-2 py-1 bg-[#DADADA] sm:rounded-[4px];
+                      img {
+                          @apply hidden;
+                      }
+                      span {
+                          @apply text-[12px] not-italic font-bold leading-[15px] uppercase tracking-[0.48px] m-0;
+                      }
+
+                      &.active-att {
+                          @apply bg-[#02926233];
+
+                          span {
+                              @apply text-[#029262];
+                          }
+                      }
+                  }
+              }
+              .title {
+                  @apply text-[22px] sm:text-[18px] sm:leading-[28px] font-semibold leading-[30px] not-italic bg-transparent;
+              }
+          }
+          
+          .description-wrap {
+              @apply mb-4;
+          }
+          
+          .dropdown-arrow {
+              @apply w-6 h-6 transition-transform duration-300;
+              background: url('~/assets/img/arrow.svg') no-repeat center;
+          }
+
+                      
+          &.is-expanded {
+              // @apply bg-[#E4F0F4];
+
+              .dropdown-arrow {
+                  @apply rotate-90;
+              }
+
+              .title-border {
+                  // .title {
+                  //     @apply text-turqy;
+                  // }
+              }
+          }
+      }
+      
+      .attribute-header:hover {
+          @apply bg-[#E4F0F4];
+          .dropdown-arrow {
+              background: url('~/assets/img/arrow-turqy.svg') no-repeat center;
+          }
+          .title-border {
+              .title {
+                  @apply text-turqy;
+              }
+          }
+      }
+      .attribute-content {
+          @apply pt-4 pl-8 sm:pl-0;
+          animation: slideDown 0.3s ease-out;
+
+          .description-wrap {
+              @apply mb-4;
+          }
+      }
+  }
+  p {
+      @apply mb-0;
+  }
+  .elinor__survey-question {
+      @apply flex flex-wrap justify-between mb-2 rounded-[16px] p-6 bg-[#F9F9F9];
+      .question {
+          @apply text-[18px] leading-[28px] font-bold;
+      }
+      .txt {
+          @apply flex items-center text-[14px] leading-[24px] text-[#9C9C9C] mb-2;
+          &.txt--explanation {
+              @apply mt-8;
+          }
+          .txt__mark {
+              // @apply w-[12px] h-[12px] bg-turqy border-radius--50 mr-2;
+          }
+      }
+      .answer {
+          @apply leading-[30px] text-[16px] text-[#2E2E2E];
+      }
+      .left {
+          @apply w-1/2 pr-6 sm:w-full;
+      }
+      .right {
+          @apply w-1/2 border-l border-[#DADADA] pl-6 sm:w-full sm:border-l-0 sm:border-t sm:pt-4 sm:pl-0 sm:mt-4;
+      }
+      &.is--inactive,
+      &.is--uncomplete {
+          .txt {
+              .txt__mark {
+                  @apply bg-grayy-border;
+              }
+          }
+      }
+      .completed {
+          @apply flex flex-col;
+      }
+      .uncompleted {
+          @apply flex flex-col;
+      }
+      .txt__uncomplete {
+          @apply text-redy;
+      }
+      .txt__inactive {
+          @apply text-grayy-lighter;
+      }
+      .btn--uncomplete {
+          @apply mt-8 self-start;
+      }
+      & + .title-border {
+          @apply mt-16;
+      }
+  }
+  &.elinor__survey-list--row {
+      .left {
+          @apply flex items-start;
+          .txt {
+              @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-sm mr-6;
+          }
+      }
+      .right {
+          .right__item {
+              @apply flex items-start mb-6;
+              .txt {
+                  @apply w-8 mr-4;
+              }
+          }
+      }
+  }
+}
+
+.number-list {
+  counter-reset: elements-counter;
+  @apply pl-12;
+
+  > li {
+      counter-increment: elements-counter;
+      @apply relative;
+      .number-list__question {
+          @apply text-lg;
+          &::before {
+              content: counter(elements-counter);
+              @apply absolute -left-12 -top-1 border-radius--50 flex justify-center items-center border border-turqy border-solid w-[36px] h-[36px] text-sm text-turqy;
+          }
+      }
+      .number-list__answer {
+          @apply flex flex-col justify-start items-start border-radius--20 bg-turqy-lighter px-10 py-5 text-sm leading-6 italic mt-5;
+          .register {
+              @apply text-8xl;
+          }
+      }
+      &:not(:last-child) {
+          @apply mb-20;
+      }
+  }
+}
+
+.list-delete {
+  li {
+      @apply mb-2 text-grayy-lighter text-sm;
+  }
+}
+
+.list-keys {
+  li {
+      @apply mb-2 text-sm relative font-montserratMediumPdf;
+      &::before {
+          content: '';
+          @apply inline-block w-2 h-2 border-radius--50 bg-turqy mr-2;
+      }
+  }
+  &.key-ok {
+      li {
+          &::before {
+              @apply bg-excellent;
+          }
+      }
+  }
+  &.key-ko {
+      li {
+          &::before {
+              @apply bg-poor;
+          }
+      }
+  }
+  &--xl {
+      li {
+          @apply mb-4 text-[18px] font-montserratMediumPdf;
+          &::before {
+              content: '';
+              @apply inline-block w-3 h-3;
+          }
+      }
+  }
+}
+
+// Animation keyframes for dropdown
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

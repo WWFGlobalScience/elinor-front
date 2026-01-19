@@ -1,0 +1,115 @@
+@import 'core/import.scss';
+@import 'vendor/import.scss';
+@import 'components/import.scss';
+
+// Mobile responsive styles - override header.scss
+.header--main {
+  // Show header when sidebar is hidden (mobile/tablet)
+  // Sidebar is hidden on max-width: $desktop-breakpoint (1024px)
+  @media (max-width: $desktop-breakpoint) {
+    display: block !important;
+  }
+
+  // Hide on desktop and above (when sidebar is visible)
+  @media (min-width: $desktop-breakpoint-min) {
+    display: none !important;
+  }
+
+  // Apply blue background when sidebar is hidden (mobile/tablet)
+  @media (max-width: $desktop-breakpoint) {
+    @apply sticky top-0 z-50 bg-turqy shadow;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+    background-color: #43a0bd !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .header__mobile-menu-toggle {
+    @apply inline-flex items-center justify-center p-2 text-white rounded transition-colors cursor-pointer;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+
+    // Show when sidebar is hidden (mobile/tablet)
+    @media (max-width: $desktop-breakpoint) {
+      display: inline-flex !important;
+    }
+
+    // Hide on desktop and above (when sidebar is visible)
+    @media (min-width: $desktop-breakpoint-min) {
+      @apply hidden;
+    }
+
+    svg {
+      @apply w-6 h-6;
+      stroke: white;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .header--main__wrapper {
+    @apply flex items-center gap-2 px-4 py-3 justify-end;
+    position: relative;
+
+    // Show wrapper when sidebar is hidden (mobile/tablet)
+    @media (max-width: $desktop-breakpoint) {
+      display: flex !important;
+    }
+
+    // Hide on desktop and above (when sidebar is visible)
+    @media (min-width: $desktop-breakpoint-min) {
+      display: none !important;
+    }
+
+    // Hide profile dropdown/avatar completely (all screen sizes)
+    ul:has(.elinor__dropdown),
+    ul:has(.elinor__avatar),
+    .elinor__dropdown {
+      display: none !important;
+    }
+
+    // Logo centered - show when sidebar is hidden
+    .header__logo {
+      @apply absolute left-1/2 transform -translate-x-1/2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+
+      // Show when sidebar is hidden (mobile/tablet)
+      @media (max-width: $desktop-breakpoint) {
+        display: flex !important;
+      }
+
+      // Hide on desktop and above (when sidebar is visible)
+      @media (min-width: $desktop-breakpoint-min) {
+        display: none !important;
+      }
+
+      img {
+        height: auto;
+        max-height: 40px;
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+// Mobile overlay when sidebar is open
+.sidebar__mobile-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300;
+
+  @media (min-width: $desktop-breakpoint-min) {
+    @apply hidden;
+  }
+}
+
+// Mobile close button styles are now in sidebar.scss

@@ -1,0 +1,349 @@
+//data
+.elinor__data-grid {
+  @apply flex flex-col gap-6;
+
+  // Add left padding on smaller than tablet view
+  // @media (max-width: $tablet-breakpoint) {
+  //   padding-left: 16px;
+  // }
+
+  .elinor__data-sublock {
+    @apply w-1/2 p-5 sm:w-full;
+  }
+  .elinor__data-sublist {
+    @apply p-3;
+  }
+  .elinor__data {
+    @apply flex gap-1 flex-col w-1/2;
+    .title {
+      @apply text-[14px] text-[#9C9C9C] font-semibold leading-[24px];
+    }
+    .data {
+      @apply text-[16px] text-[#2E2E2E] font-medium leading-[30px];
+    }
+    &.elinor__data--full {
+      @apply w-full;
+    }
+  }
+  &.elinor__data-grid--3-5 {
+    @apply w-3/5 md:w-11/12 sm:w-full;
+  }
+}
+.elinor__data-wrap {
+  @apply flex justify-between md:flex-col;
+
+  // // Move up 36px on tablet and below
+  // @media (max-width: $tablet-breakpoint) {
+  //   margin-top: -24px;
+  // }
+}
+
+.elinor__data-list {
+  // Take more space on views bigger than tablet
+  @media (min-width: $tablet-breakpoint-min) {
+    flex: 1 1 75%;
+    min-width: 0; // Allow flex item to shrink below content size
+  }
+}
+
+.elinor__data-separator {
+  @apply w-full h-px bg-[#DADADA] my-[32px];
+}
+
+//map
+.elinor__map {
+  @apply h-[55vh];
+  .map__legend {
+    @apply absolute left-[20px] bottom-[20px] bg-turqy-lighter p-4 z-10;
+  }
+}
+
+.custom-radio {
+  @apply relative flex items-start cursor-pointer select-none;
+  input[type='checkbox'],
+  input[type='radio'] {
+    @apply appearance-none w-5 h-5 min-w-[20px] min-h-[20px] transition-colors duration-200 focus:outline-none;
+    background: url('~/assets/img/radio_button_unchecked.svg') no-repeat center
+      center;
+    @apply mr-2;
+    position: relative;
+  }
+  // input[type="radio"]:checked::before {
+  //     content: '';
+  //     @apply absolute left-0 top-0 w-5 h-5 flex items-center justify-center border-2 border-turqy border-solid rounded-full;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  // }
+  input[type='checkbox']:checked,
+  input[type='radio']:checked {
+    background: url('~/assets/img/radio_button_checked.svg') no-repeat center
+      center !important;
+  }
+  /* For accessibility focus ring */
+  input[type='checkbox']:focus-visible,
+  input[type='radio']:focus-visible {
+    @apply ring-2 ring-turqy ring-offset-2;
+  }
+  /* Label text */
+  .custom-radio__label {
+    @apply text-base sm:text-sm text-[#2E2E2E];
+  }
+}
+/* For stacking the pseudo elements correctly */
+.custom-radio input[type='radio'],
+.custom-radio input[type='checkbox'] {
+  position: relative;
+  z-index: 1;
+}
+
+//search
+.search__results {
+  @apply text-grayy-lighter;
+
+  .form {
+    @apply flex items-center gap-4;
+
+    // Mobile: stack vertically
+    // @media (max-width: $tablet-breakpoint) {
+    //   @apply flex-col items-start gap-2 w-full;
+    // }
+  }
+  /* Custom radio button */
+
+  // .custom-radio input[type="radio"]:checked::after {
+  //     z-index: 2;
+  // }
+}
+
+.elinor__pagination {
+  @apply w-full flex gap-2 justify-center mb-12;
+
+  .disabled {
+    @apply hidden;
+  }
+  li {
+    a {
+      @apply w-10 h-10 flex justify-center items-center rounded-full;
+      border: 1px solid #43a0bd;
+    }
+
+    &:first-child,
+    &:last-child {
+      a {
+        @apply w-auto px-[10px];
+        width: auto;
+      }
+    }
+
+    &:first-child {
+      a {
+        @apply pr-4;
+        &::before {
+          content: '';
+          width: 24px;
+          height: 24px;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><mask id="mask0_5536_3429" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_5536_3429)"><path d="M10.108 11.9998L14.354 16.2461C14.4477 16.3396 14.4977 16.4543 14.504 16.5903C14.5105 16.7262 14.4605 16.8472 14.354 16.9536C14.2477 17.0601 14.1297 17.1133 14.0002 17.1133C13.8707 17.1133 13.7528 17.0601 13.6465 16.9536L9.25798 12.5653C9.17082 12.478 9.10957 12.3888 9.07423 12.2978C9.03907 12.2068 9.02148 12.1075 9.02148 11.9998C9.02148 11.8922 9.03907 11.7928 9.07423 11.7018C9.10957 11.6108 9.17082 11.5217 9.25798 11.4343L13.6465 7.04607C13.74 6.9524 13.8547 6.9024 13.9907 6.89607C14.1266 6.88957 14.2477 6.93957 14.354 7.04607C14.4605 7.1524 14.5137 7.27032 14.5137 7.39982C14.5137 7.52932 14.4605 7.64724 14.354 7.75357L10.108 11.9998Z" fill="%2343A0BD"/></g></svg>')
+            center no-repeat;
+        }
+        &:hover::before {
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><mask id="mask0_5536_3429" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_5536_3429)"><path d="M10.108 11.9998L14.354 16.2461C14.4477 16.3396 14.4977 16.4543 14.504 16.5903C14.5105 16.7262 14.4605 16.8472 14.354 16.9536C14.2477 17.0601 14.1297 17.1133 14.0002 17.1133C13.8707 17.1133 13.7528 17.0601 13.6465 16.9536L9.25798 12.5653C9.17082 12.478 9.10957 12.3888 9.07423 12.2978C9.03907 12.2068 9.02148 12.1075 9.02148 11.9998C9.02148 11.8922 9.03907 11.7928 9.07423 11.7018C9.10957 11.6108 9.17082 11.5217 9.25798 11.4343L13.6465 7.04607C13.74 6.9524 13.8547 6.9024 13.9907 6.89607C14.1266 6.88957 14.2477 6.93957 14.354 7.04607C14.4605 7.1524 14.5137 7.27032 14.5137 7.39982C14.5137 7.52932 14.4605 7.64724 14.354 7.75357L10.108 11.9998Z" fill="%23fff"/></g></svg>');
+        }
+      }
+    }
+    &:last-child {
+      a {
+        @apply pl-4;
+
+        &::after {
+          content: '';
+          width: 24px;
+          height: 24px;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><mask id="mask0_5536_3445" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_5536_3445)"><path d="M13.2925 12.0002L9.04647 7.75397C8.9528 7.66047 8.9028 7.54572 8.89647 7.40972C8.88997 7.27389 8.93997 7.1528 9.04647 7.04647C9.1528 6.93997 9.27072 6.88672 9.40022 6.88672C9.52972 6.88672 9.64764 6.93997 9.75397 7.04647L14.1425 11.4347C14.2296 11.5221 14.2909 11.6112 14.3262 11.7022C14.3614 11.7932 14.379 11.8926 14.379 12.0002C14.379 12.1079 14.3614 12.2072 14.3262 12.2982C14.2909 12.3892 14.2296 12.4784 14.1425 12.5657L9.75397 16.954C9.66047 17.0476 9.54572 17.0976 9.40972 17.104C9.27389 17.1105 9.1528 17.0605 9.04647 16.954C8.93997 16.8476 8.88672 16.7297 8.88672 16.6002C8.88672 16.4707 8.93997 16.3528 9.04647 16.2465L13.2925 12.0002Z" fill="%2343A0BD"/></g></svg>')
+            center no-repeat;
+        }
+
+        &:hover {
+          &::after {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><mask id="mask0_5536_3445" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_5536_3445)"><path d="M13.2925 12.0002L9.04647 7.75397C8.9528 7.66047 8.9028 7.54572 8.89647 7.40972C8.88997 7.27389 8.93997 7.1528 9.04647 7.04647C9.1528 6.93997 9.27072 6.88672 9.40022 6.88672C9.52972 6.88672 9.64764 6.93997 9.75397 7.04647L14.1425 11.4347C14.2296 11.5221 14.2909 11.6112 14.3262 11.7022C14.3614 11.7932 14.379 11.8926 14.379 12.0002C14.379 12.1079 14.3614 12.2072 14.3262 12.2982C14.2909 12.3892 14.2296 12.4784 14.1425 12.5657L9.75397 16.954C9.66047 17.0476 9.54572 17.0976 9.40972 17.104C9.27389 17.1105 9.1528 17.0605 9.04647 16.954C8.93997 16.8476 8.88672 16.7297 8.88672 16.6002C8.88672 16.4707 8.93997 16.3528 9.04647 16.2465L13.2925 12.0002Z" fill="%23fff"/></g></svg>');
+          }
+        }
+      }
+    }
+    a {
+      color: #43a0bd;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &:hover {
+        background-color: #43a0bd;
+        @apply text-white;
+      }
+    }
+  }
+  .active {
+    a {
+      background-color: #43a0bd;
+      @apply font-bold text-white;
+    }
+  }
+}
+
+//loader
+.elinor__loader {
+  @apply w-screen h-screen z-30 fixed inset-0 py-2 overflow-hidden;
+
+  -webkit-backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
+
+  .loader__group {
+    @apply flex flex-col absolute left-[1px] top-0 right-0 bottom-0 items-center justify-center z-50;
+    svg {
+      @apply w-12 mx-auto mb-2;
+    }
+    .loader__txt {
+      @apply text-grayy-lighter text-[14px] mt-3;
+    }
+  }
+  .loader__bg {
+    @apply w-full h-full absolute inset-0 bg-white bg-opacity-70;
+    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      @apply bg-opacity-90;
+    }
+  }
+}
+
+//people
+.elinor__people {
+  @apply w-full flex flex-col gap-2 self-start sticky top-[90px] sm:top-0 sm:relative p-6 sm:mb-6;
+
+  // Take smaller portion on views bigger than tablet
+  @media (min-width: $tablet-breakpoint-min) {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  // Move up 36px on tablet and below
+  // @media (max-width: $tablet-breakpoint) {
+  //   margin-top: -36px;
+  // }
+  li {
+    &.elinor__people-header {
+      @apply first:pt-0 pt-6;
+      @apply text-[14px] text-[#9C9C9C] font-semibold leading-[24px];
+    }
+    &.elinor__people-data {
+      @apply flex items-center gap-2;
+      @apply text-[14px] text-[#2E2E2E] font-medium leading-[24px];
+
+      span {
+        @apply text-[16px] text-[#2E2E2E] font-bold w-[28px] flex items-center justify-center;
+      }
+    }
+    &.total {
+      @apply border-t border-[#DADADA] pt-2 mb-0 text-[#2E2E2E] font-bold leading-[24px];
+    }
+  }
+}
+
+//info block
+.info-block {
+  @apply pt-12 pb-6;
+  [class*='c-title--'] {
+    @apply mb-8;
+  }
+  p {
+    @apply mb-[9px] last:mb-0;
+  }
+}
+
+//rounded number
+.rounded-number {
+  @apply flex-none w-8 h-8 rounded-full border border-turqy-border text-turqy flex items-center justify-center text-small mr-2;
+  &--xl {
+    @apply w-14 h-14 text-[26px];
+  }
+}
+
+//message detail
+.message-detail {
+  @apply border-l border-grayy-border pl-6 sm:border-t sm:border-l-0 sm:pl-0 sm:pt-6;
+  .message-detail__title {
+    @apply text-base;
+  }
+  .message-detail__text {
+    @apply text-sm;
+  }
+}
+
+//divider
+.divider {
+  @apply flex justify-between items-center w-2/3 lg:w-full my-12;
+  span {
+    @apply pl-8 pr-2;
+  }
+  &:after {
+    content: '';
+    @apply block w-full h-px pl-2 bg-turqy-middle;
+  }
+}
+
+//btn option
+.options__wrap {
+  @apply flex justify-start items-center w-2/3 lg:w-full flex-row sm:flex-col;
+
+  .option__btn {
+    @apply w-1/2 md:w-full pr-10 sm:pr-0;
+  }
+
+  .option__info {
+    @apply w-1/2 md:w-full sm:mt-5;
+  }
+}
+
+//msg
+.msg {
+  @apply text-xs mt-2 px-4;
+  &.msg--error {
+    @apply text-[#D63C3C];
+  }
+}
+
+//scroll to top button
+.scroll-to-top-btn {
+  @apply fixed bottom-8 right-8 w-12 h-12 bg-[#1446510D] border-0 rounded-full shadow-lg cursor-pointer z-50 transition-all duration-300 ease-in-out;
+  @apply flex items-center justify-center;
+  @apply opacity-0 transform translate-y-4 pointer-events-none;
+
+  &:focus {
+    @apply outline-none ring-2 ring-turqy ring-offset-2;
+  }
+
+  &.is--visible {
+    @apply opacity-100 transform translate-y-0 pointer-events-auto;
+  }
+
+  img {
+    @apply w-6 h-6;
+  }
+
+  &:hover {
+    @apply bg-turqy-darker shadow-xl transform scale-105;
+
+    img {
+      @apply filter brightness-0 invert;
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: $tablet-breakpoint) {
+    @apply bottom-6 right-6 w-10 h-10;
+
+    img {
+      @apply w-5 h-5;
+    }
+  }
+}

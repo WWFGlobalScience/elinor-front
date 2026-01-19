@@ -1,0 +1,13 @@
+//notifications
+.elinor__notifications {
+  @apply fixed top-0 left-0 right-0 w-full bg-red-50 border-b-2 border-red-400 text-red-800 z-50 py-4 px-4 shadow-lg;
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  strong {
+    @apply text-lg font-bold block mb-4;
+  }
+  p {
+    @apply text-base mb-0;
+  }
+}
