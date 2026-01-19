@@ -540,6 +540,8 @@ export default {
   },
 
   mounted() {
+    // Reset alerts when component first initializes
+    this.$store.commit('authentication/resetAlerts');
     // Optionally fetch YouTube durations when component mounts
     // this.fetchYouTubeDurations();
   },
