@@ -15,11 +15,12 @@ export const mutations = {
   },
   setOffline(state, { isOffline }) {
     // Only allow setting offline state if feature flag is enabled
-    if (state.offlineModeEnabled) {
-      state.offline = isOffline;
-    } else {
-      state.offline = false;
-    }
+    // if (state.offlineModeEnabled) {
+    //   state.offline = isOffline;
+    // } else {
+    //   state.offline = false;
+    // }
+    state.offline = isOffline;
   },
   setMobileMenuOpen(state, isOpen) {
     state.mobileMenuOpen = isOpen;
@@ -37,9 +38,9 @@ export const actions = {
   },
   setOffline(state, { isOffline }) {
     // Only allow setting offline state if feature flag is enabled
-    if (!state.state.offlineModeEnabled) {
-      return;
-    }
+    // if (!state.state.offlineModeEnabled) {
+    //   return;
+    // }
     state.commit('setOffline', { isOffline });
     state.commit('loader/disableLoader', null, { root: true });
   },
