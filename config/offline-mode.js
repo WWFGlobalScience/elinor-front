@@ -28,7 +28,7 @@ export const isOfflineModeEnabled = (context = null) => {
   }
 
   // Default: offline mode is disabled (FALSE)
-  return false;
+  return true;
 };
 
 /**

@@ -209,12 +209,12 @@ export default async () => {
       disableAutoPageTrack: false,
     },
     publicRuntimeConfig: {
-      recaptcha: {
+      recaptcha: {  
         siteKey: '6LezqLQgAAAAAPYyaUpHoZfIIMCLyQhqs_4dSfUj',
         version: 3,
       },
-      mapboxAccessToken: process.env.MAPBOX_ACCESS_TOKEN,
-      offlineMode: process.env.OFFLINE_MODE === 'true', // Only enabled if explicitly set to 'true', defaults to false
+      mapboxAccessToken: process.env.MAPBOX_ACCESS_TOKEN || 'pk.eyJ1IjoiZGV2c2VydmljZSIsImEiOiJja3N3M2Q1NnYwMDNmMnVtcjJpY3d6c3h0In0.zgYtQB7I3zrxIeR2_a2wjA',
+      offlineMode: 'true', // Only enabled if explicitly set to 'true', defaults to false
     },
     vue: {
       config: {

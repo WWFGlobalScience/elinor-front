@@ -729,6 +729,8 @@ export default {
     if (this.managementArea) {
       // console.log('managementArea', this.managementArea);
     }
+    // console.log('assessment', this.assessment);
+    // console.log('managementArea', this.managementArea);
     const mapboxToken = this.$config.mapboxAccessToken;
 
     if (!mapboxToken) {
