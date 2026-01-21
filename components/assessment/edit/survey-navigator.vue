@@ -201,7 +201,7 @@ export default {
           }, 100);
         });
       } else {
-        if (isAttributeSelected) {
+        if (isAttributeSelected && !this.isOffline) {
           window.location.href = `/assessments/edit/${assessmentId}/the-survey/${question.id}/#question`;
         }
       }

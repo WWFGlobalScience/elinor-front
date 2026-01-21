@@ -321,7 +321,7 @@
           :paginationEnabled="true"
           @dragging="handleDragging"
         >
-          <slide v-for="(item, index) in items" :key="index">
+          <slide v-for="(item, index) in items" :key="index" :class="`slide-${index}`">
             <button
               @click="
                 popupState({
