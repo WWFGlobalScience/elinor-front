@@ -83,6 +83,7 @@ export default {
           attributes: (state) => state.attributes.list,
           questions: (state) => state.surveyquestions.list,
           isOffline: (state) => state.layout.offline,
+          isNetworkError: (state) => state.layout.isNetworkError,
           isSurveyOffline: (state) => !!state.assessments.assessment.checkout,
       }),
       completedQuestions() {
@@ -107,6 +108,7 @@ export default {
   mounted() {
       window.addEventListener('online', this.updateOnlineStatus);
       window.addEventListener('offline', this.updateOnlineStatus);
+    //   console.log('hasConnection', navigator); 
   },
   methods: {
       isAssessmentCollaborator,
@@ -116,6 +118,7 @@ export default {
           downloadAssessment: 'assessments/downloadAssessment',
           setOffline: 'assessments/setOffline',
           setOnline: 'assessments/setOnline',
+          
       }),
       updateOnlineStatus({ type }) {
           this.hasConnection = type === 'online';
@@ -140,7 +143,11 @@ export default {
           });
       },
       toggleConnection() {
-          if (this.hasConnection) {
+        // Example usage
+        // Example usage
+        this.$store.dispatch('layout/checkNetworkStatus').then(() => {
+        //   console.log('isNetworkError', this.isNetworkError);
+        if (!this.isNetworkError) {
               if (this.isSurveyOffline) {
                   this.setOnline();
               } else {
@@ -153,6 +160,10 @@ export default {
                   title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
               });
           }
+        });
+
+        // return;
+
       },
   },
 };

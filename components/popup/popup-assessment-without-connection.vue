@@ -26,7 +26,7 @@ export default {
     }),
   },
   mounted() {
-    this.popupState({ active: false });
+    // this.popupState({ active: false });
   },
 };
 </script>
