@@ -8,6 +8,7 @@
               ? 'col-span-1'
               : 'col-span-2'
           "
+          v-if="assessments.length > 0"
         >
           <span>{{ $t('pages.assessments.list.total') }}</span>
           {{ (currentPage - 1) * perPage + 1 }} -
@@ -25,6 +26,7 @@
             {{ $t('pages.assessments.list.totalSingular') }}
           </span>
         </div>
+        <div v-else></div>
         <div class="form form--mt-0" v-if="$auth.loggedIn">
           <label class="custom-radio">
             <input

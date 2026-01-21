@@ -71,7 +71,17 @@ export default async () => {
           name: 'viewport',
           content: 'width=device-width, initial-scale=1',
         },
-        { hid: 'description', name: 'description', content: '' },
+        { hid: 'description', name: 'description', content: 'Monitoring Governance and Management of Area-based Conservation' },
+        // Open Graph Meta Tags
+        { hid: 'og:title', property: 'og:title', content: 'Elinor' },
+        { hid: 'og:description', property: 'og:description', content: 'Monitoring Governance and Management of Area-based Conservation' },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
+        { hid: 'og:url', property: 'og:url', content: 'https://elinor.network' },
+        { hid: 'og:site_name', property: 'og:site_name', content: 'Elinor' },
+        // Twitter Card Meta Tags
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'twitter:title', name: 'twitter:title', content: 'Elinor' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'Monitoring Governance and Management of Area-based Conservation' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
       script: [

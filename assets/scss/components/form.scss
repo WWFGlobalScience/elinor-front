@@ -331,6 +331,11 @@
       @apply hidden;
     }
 
+    .multiselect__content-wrapper {
+      width: fit-content;
+      min-width: 100%;
+    }
+
     .multiselect__tags {
       @apply w-full px-4 py-[11px] bg-white border border-solid border-grayy-border text-grayy text-base font-medium min-h-0 rounded-[12px] pr-[36px] focus:border-grayy-lighter text-[12px] relative;
       &::after {
