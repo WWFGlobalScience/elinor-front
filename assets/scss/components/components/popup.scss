@@ -1,122 +1,738 @@
 //popup
 .elinor__popup {
-    @apply w-screen h-screen fixed top-0 left-0 z-40 flex items-center m-auto overflow-auto py-8 sm:p-0;
-    @media only screen and (min-device-width: 320px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
-        @apply p-0;
+  @apply w-screen h-screen fixed top-0 left-0 md:p-4 z-40 flex items-center m-auto overflow-auto py-8 sm:p-0;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    @apply p-0;
+  }
+  .popup__overlay {
+    @apply w-full h-full fixed top-0 left-0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+
+  .popup__box {
+    @apply w-[930px] p-8 md:p-4 z-10 shadow-xl m-auto md:w-11/12 sm:w-full flex flex-col gap-6 md:mx-4;
+    border-radius: 16px;
+    background: #fff;
+    /* Pop Up */
+    box-shadow: 0 5px 16.6px 0 rgba(0, 0, 0, 0.11);
+    .popup__header {
+      @apply flex justify-between items-center;
+
+      h3 {
+        @apply md:text-[18px] md:leading-[28px];
+      }
+      span {
+        @apply text-[22px];
+      }
     }
+    .popup__content {
+      @apply bg-white;
+      .input.input--file {
+        .file {
+          @apply h-64 flex flex-col justify-center;
+        }
+        .file__buttons {
+          @apply sm:flex-col sm:items-start;
+        }
+      }
+      &.popup__content--form {
+        .btn-row {
+          @apply flex justify-between items-center mt-10;
+        }
+      }
+      &.popup--show-video {
+        @apply p-0;
+        .popup-video,
+        iframe {
+          @apply w-full;
+          aspect-ratio: 16/9;
+        }
+      }
+      &.popup--filters-mobile {
+        .form__group {
+          .form__row {
+            @apply flex-col;
+
+            .input {
+              @apply w-full;
+            }
+          }
+        }
+
+        .input.input--multiselect {
+          @apply w-full;
+        }
+
+        // Center-align button labels
+        .btn--border-turqy {
+          @apply justify-center;
+        }
+      }
+
+      .popup__map-img {
+        top: 6.563rem;
+        height: calc(100% - 6.563rem);
+        @apply fixed right-0 w-6/12 object-cover sm:relative sm:w-full sm:top-0 sm:h-auto;
+      }
+      .popup__map {
+        @apply relative flex justify-center items-center flex-col mt-16 -mx-20;
+        & > div {
+          @apply w-full px-20 sm:px-4;
+        }
+        .header--map {
+          @apply flex justify-between items-center sm:flex-col sm:px-4 sm:w-screen sm:items-start;
+          .form__row {
+            @apply items-end sm:items-start sm:mb-4;
+          }
+        }
+      }
+      .popup__map.image {
+        @apply mt-0 #{!important};
+      }
+      .popup__footer {
+        @apply flex justify-end pt-11;
+        & > * {
+          @apply ml-4;
+        }
+      }
+
+      &--form {
+        .form__group {
+          @apply flex flex-col gap-6;
+
+          .form__row {
+            @apply m-0;
+          }
+        }
+      }
+    }
+
+    &.popup__box--min {
+      @apply max-w-[418px] w-full;
+    }
+    @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      width: 100% !important;
+      @apply h-full;
+      .popup__content {
+        @apply h-3/4 overflow-auto;
+      }
+    }
+  }
+
+  //onboarding
+  &.popup__onboarding {
+    // Make popup container full screen below desktop
+    @media (max-width: $desktop-breakpoint) {
+      @apply p-0;
+      align-items: stretch !important;
+    }
+
+    .popup__box {
+      @apply rounded-[16px] p-0 h-full max-h-[744px] w-full max-w-[1000px];
+      position: relative; // Ensure close button can be positioned relative to this
+      overflow-y: auto; // Enable vertical scrolling on desktop when content exceeds max-height
+      overflow-x: hidden; // Prevent horizontal scrolling
+
+      h3 {
+        @apply md:text-[18px] md:leading-[28px];
+      }
+      // Make modal full width and height, not rounded below desktop
+      @media (max-width: $desktop-breakpoint) {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        border-radius: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: visible !important; // Allow close button to be visible
+        margin: 0 !important;
+      }
+
+      .popup__content {
+        @apply flex h-full md:pt-12;
+        position: relative !important;
+        min-height: 0; // Allow flex container to shrink below content size for scrolling
+
+        // Close button styles - simple white X icon, fixed position
+        .popup__close-btn {
+          @apply absolute top-4 right-4 z-[100] p-2.5 rounded-full bg-[#2E2E2E33];
+
+          // &:hover {
+          //   opacity: 0.7;
+          // }
+
+        }
+
+        // Make popup content stack vertically below desktop breakpoint
+        @media (max-width: $desktop-breakpoint) {
+          @apply flex-col;
+          min-height: 0 !important;
+          overflow-y: auto !important;
+          overflow-x: hidden !important;
+        }
+
+        .left-content {
+          @apply min-w-[400px] max-w-[400px] py-8 px-6 flex flex-col gap-y-8;
+          @apply border-r border-solid border-[#DADADA];
+          overflow-y: auto; // Enable vertical scrolling on desktop when content is tall
+          min-height: 0; // Allow flex item to shrink below content size
+
+          // Full height on desktop (above tablet)
+          @media (min-width: $desktop-breakpoint-min) {
+            height: 100% !important; // Ensure full height on desktop
+            align-self: stretch; // Stretch to fill parent height
+          }
+
+          // Remove fixed width and border below desktop, make it full width and floating on top
+          @media (max-width: $desktop-breakpoint) {
+            min-width: auto !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            border-right: none !important;
+            border-bottom: 1px solid #dadada !important;
+            position: relative !important;
+            z-index: 20 !important;
+            background-color: #ffffff !important;
+            display: flex !important;
+            flex-shrink: 0 !important; // Prevent shrinking
+            order: -1 !important; // Ensure it appears first in flex column
+            visibility: visible !important;
+            opacity: 1 !important;
+            padding-top: 16px !important;
+            padding-bottom: 16px !important;
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+            gap: 16px !important; // Reduce vertical gap to 16px
+          }
+
+          // Add right padding between mobile and tablet to prevent overlap with close button
+          @media (min-width: $mobile-breakpoint-min) and (max-width: $tablet-breakpoint) {
+            padding-right: 36px !important;
+          }
+
+          // Reduce spacing in child elements below desktop
+          @media (max-width: $desktop-breakpoint) {
+            > div:first-child {
+              // Title and description container
+              p {
+                margin-top: 8px !important; // Keep mt-2 spacing (8px)
+              }
+            }
+          }
+
+          // Hide desktop checkbox below desktop, show on desktop and above
+          .custom-radio--desktop {
+            @media (max-width: $desktop-breakpoint) {
+              display: none !important;
+            }
+          }
+
+          .steps {
+            @apply flex flex-col gap-3;
+
+            // Horizontal timeline stepper below desktop
+            @media (max-width: $desktop-breakpoint) {
+              @apply flex-row gap-0;
+              overflow-x: auto !important;
+              overflow-y: hidden !important;
+              padding: 0 !important; // Remove padding on mobile
+              -webkit-overflow-scrolling: touch;
+              justify-content: center !important; // Center horizontally
+              align-items: center !important; // Center vertically
+
+              // Hide scrollbar but keep functionality
+              scrollbar-width: none; // Firefox
+              -ms-overflow-style: none; // IE/Edge
+
+              &::-webkit-scrollbar {
+                display: none; // Chrome/Safari
+              }
+            }
+
+            .step {
+              @apply flex gap-2 p-2 items-center rounded-full transition-all duration-300 cursor-pointer;
+
+              // Horizontal timeline layout below desktop
+              @media (max-width: $desktop-breakpoint) {
+                @apply flex-col items-center justify-start gap-1;
+                min-width: 40px !important;
+                max-width: 40px !important;
+                padding: 0.5rem 0.25rem !important;
+                position: relative !important;
+                flex-shrink: 0 !important;
+
+                // Add connector line between steps (except last) with 16px gap
+                &:not(:last-child)::after {
+                  content: '';
+                  position: absolute;
+                  top: 12px;
+                  left: calc(
+                    100% + 8px
+                  ); // Start from right edge of step + 8px (half of 16px gap)
+                  width: 16px !important; // Fixed 16px gap
+                  height: 2px;
+                  background-color: #dadada;
+                  z-index: 0;
+                  transition: background-color 0.3s ease;
+                }
+
+                // Active step connector should be colored
+                &.isActive::after {
+                  background-color: #43a0bd;
+                }
+
+                // Color connectors for steps after the active one (incomplete)
+                &.isActive ~ .step::after {
+                  background-color: #dadada !important;
+                }
+              }
+
+              // Color connectors for completed steps (before active step)
+              // This works by checking if a step comes before an active step
+              @media (max-width: $desktop-breakpoint) {
+                // When step 2 is active, step 1's connector should be colored
+                // We'll handle this with a data attribute or class in the component
+                // For now, just color the active step's connector
+              }
+
+              .step-number {
+                @apply flex flex-col min-w-[24px] max-w-[24px] h-[24px] text-[12px] font-bold rounded-full bg-[#E4F0F4] text-[#2E2E2E] items-center justify-center transition-all duration-300;
+
+                // Larger step number below desktop for better visibility
+                @media (max-width: $desktop-breakpoint) {
+                  min-width: 24px !important;
+                  max-width: 24px !important;
+                  height: 24px !important;
+                  position: relative !important;
+                  z-index: 1 !important;
+                }
+              }
+
+              .body-text-14 {
+                @apply text-[14px] leading-[24px] text-[#2E2E2E] font-bold transition-all duration-300;
+
+                // Hide text below desktop, only show numbers
+                @media (max-width: $desktop-breakpoint) {
+                  display: none !important;
+                }
+              }
+
+              &.isActive,
+              &:hover {
+                @apply bg-[#E4F0F4];
+
+                .step-number {
+                  @apply bg-turqy text-white;
+                }
+
+                .body-text-14 {
+                  @apply text-turqy;
+                }
+              }
+
+              // Remove hover background below desktop for cleaner look
+              @media (max-width: $desktop-breakpoint) {
+                &:hover {
+                  background-color: transparent !important;
+                }
+
+                &.isActive {
+                  background-color: transparent !important;
+                }
+              }
+            }
+          }
+        }
+        .right-content {
+          @apply flex-1 flex flex-col;
+
+          // Ensure right content takes full width below desktop and has proper height
+          @media (max-width: $desktop-breakpoint) {
+            width: 100% !important;
+            flex: 1 1 auto !important;
+            min-height: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            position: relative !important;
+            z-index: 1 !important; // Lower than left-content
+            order: 1 !important; // Ensure it appears after left-content
+          }
+
+          .image-content {
+            @apply max-h-[392px] min-h-[392px] relative;
+
+            // Make image content responsive below desktop
+            @media (max-width: $desktop-breakpoint) {
+              max-height: 250px !important;
+              min-height: 250px !important;
+            }
+
+            .onboarding-images {
+              @apply absolute top-0 left-0 w-full h-full;
+
+              .onboarding-images__item {
+                @apply relative w-full h-full;
+
+                img {
+                  @apply object-cover absolute top-0 left-0 w-full h-full;
+                }
+
+                video {
+                  @apply object-cover absolute top-0 left-0 w-full h-full;
+                }
+              }
+            }
+          }
+          .text-content {
+            @apply flex flex-col justify-between flex-1 p-6;
+
+            // Ensure text content uses full height below desktop for button positioning
+            @media (max-width: $desktop-breakpoint) {
+              min-height: 0 !important;
+              flex: 1 1 auto !important;
+            }
+
+            .text-content-item {
+              @apply hidden flex-col gap-4;
+
+              &.isActive {
+                @apply flex;
+              }
+
+              ul {
+                @apply pl-4;
+                li {
+                  @apply list-disc ml-2 mb-2;
+                }
+              }
+            }
+
+            .btn-row {
+              @apply flex justify-end gap-4 items-center mt-10;
+
+              // Ensure buttons always stay at bottom below desktop
+              // Keep buttons side by side in one row (special case for nav buttons)
+              @media (max-width: $desktop-breakpoint) {
+                @apply flex-row; // Keep side by side, not stacked
+                margin-top: auto !important;
+                padding-top: 1rem !important;
+                justify-content: space-between !important; // Space them apart
+              }
+
+              .btn {
+                @apply w-[120px] justify-center hover:bg-[#3A90AB];
+
+                // Keep button width on mobile for nav buttons
+                @media (max-width: $desktop-breakpoint) {
+                  width: 120px !important;
+                  flex: 0 0 auto !important; // Don't grow or shrink
+                }
+              }
+            }
+
+            // Show mobile checkbox below buttons below desktop only
+            .custom-radio--mobile {
+              display: none !important; // Hidden by default
+
+              @media (max-width: $desktop-breakpoint) {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin-top: 1rem !important;
+                text-align: center !important;
+              }
+            }
+          }
+        }
+        // @apply bg-white px-8 py-11 rounded-b-xl border-turqy border border-solid;
+      }
+    }
+  }
+
+  //news
+  &.popup__news {
     .popup__overlay {
-        @apply w-full h-full fixed top-0 left-0 bg-white opacity-50;
+      @apply bg-[#222222] opacity-80;
     }
     .popup__box {
-        @apply w-[1000px] z-10 shadow-xl m-auto md:w-11/12 sm:w-full;
+      @apply w-full max-w-[812px] max-h-[550px] relative rounded-2xl p-0;
+      .close-btn {
+        @apply absolute top-5 right-5 rounded-full bg-[#E4F0F4] w-10 h-10 flex items-center justify-center z-10;
+      }
+      .popup__content {
+        @apply px-6 py-8 max-h-[550px] overflow-y-auto w-full rounded-2xl border border-solid border-[#E5E5E5] bg-white;
+      }
+    }
+  }
+
+  &.popup__video {
+    .popup__overlay {
+      @apply bg-[#222222] opacity-80;
+    }
+    .popup__box {
+      @apply w-full max-w-[920px] max-h-[80vh] relative rounded-2xl;
+      .close-btn {
+        @apply absolute -top-5 -right-5 rounded-full bg-[#E4F0F4] w-10 h-10 flex items-center justify-center z-10;
+
+        // Position inside popup box on smaller screens to prevent cropping
+        @media (max-width: $desktop-breakpoint) {
+          @apply top-5 right-5;
+        }
+      }
+      .popup__content {
+        @apply max-h-[60vh] overflow-y-auto w-full rounded-2xl;
+      }
+    }
+  }
+
+  //xs
+  &.popup__xs {
+    .popup__box {
+      @apply w-[747px];
+      .popup__content {
+        .title {
+          @apply text-lg font-bold text-yellowy-lighter mb-4;
+        }
+
+        .btn-row {
+          @apply flex justify-between items-center mt-8;
+        }
+      }
+    }
+  }
+
+  &:has(.popup--small),
+  &:has(.popup--organization),
+  &:has(.popup--aggregate-report),
+  &:has(.popup--download-report),
+  &:has(.popup--assessment-create) {
+    .popup__box {
+      @apply w-[747px] md:w-full;
+
+      .form__group {
+        @apply flex flex-col gap-6;
+
+        .form__row {
+          @apply m-0 #{!important};
+
+          .label {
+            @apply leading-6 #{!important};
+          }
+        }
+      }
+    }
+  }
+
+  &:has(.popup--selected-ma) {
+    .popup__box {
+      @apply w-[1109px] h-[calc(100vh-96px)] p-0 overflow-hidden;
+      header {
+        @apply hidden;
+      }
+      .popup__content {
+        @apply flex flex-col h-full;
 
         .popup__header {
-            @apply flex justify-between items-center bg-turqy-lighter px-20 py-10 rounded-t-xl sm:px-8 sm:rounded-none;
-            span {
-                @apply text-[22px];
-            }
+          @apply px-8 py-6;
         }
-        .popup__content {
-            @apply bg-white px-20 py-10 rounded-b-xl sm:px-4 sm:rounded-none;
-            .input.input--file {
-                .file {
-                    @apply h-64 flex flex-col justify-center;
-                }
-                .file__buttons {
-                    @apply sm:flex-col sm:items-start;
-                }
-            }
-            &.popup__content--form {
-                .btn-row {
-                    @apply flex justify-between items-center mt-10;
-                }
-            }
-            &.popup--show-video {
-                @apply p-0;
-                .popup-video,
-                iframe {
-                    @apply w-full;
-                    aspect-ratio: 16/9;
-                }
-            }
+        .selected-ma-content {
+          @apply flex-grow overflow-y-auto px-8 pb-8;
+        }
+      }
+    }
+  }
+  &:has(.popup--aggregate-report),
+  &:has(.popup--download-report) {
+    #form--search {
+      @apply mt-4;
 
-            .popup__map-img {
-                top: 6.563rem;
-                height: calc(100% - 6.563rem);
-                @apply fixed right-0 w-6/12 object-cover sm:relative sm:w-full sm:top-0 sm:h-auto;
-            }
-            .popup__map {
-                @apply relative flex justify-center items-center flex-col mt-16 -mx-20;
-                & > div {
-                    @apply w-full px-20 sm:px-4;
-                }
-                .header--map {
-                    @apply flex justify-between items-center sm:flex-col sm:px-4 sm:w-screen sm:items-start;
-                    .form__row {
-                        @apply items-end sm:items-start sm:mb-4;
-                    }
-                }
-            }
-            .popup__map.image {
-                @apply mt-0 #{!important};
-            }
-            .popup__footer {
-                @apply flex justify-end pt-11;
-                & > * {
-                    @apply ml-4;
-                }
-            }
-        }
+      input {
+        @apply pl-12;
+      }
+      .input__ico {
+        @apply right-[unset] left-[6px];
+      }
+      .input__ico--close {
+        @apply right-[6px] left-[unset];
+      }
 
-        &.popup__box--min {
-            @apply w-3/12 2xl:w-5/12 lg:w-6/12 md:w-8/12 sm:w-full;
-        }
-        @media only screen and (max-device-width: 823px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-            width: 100% !important;
-            @apply h-full;
-            .popup__content {
-                @apply h-3/4 overflow-auto;
-            }
-        }
+    }
+    .input.input--multiselect .multiselect__tags {
+      @apply max-w-[20.8125rem] md:max-w-[calc(100vw-64px)];
     }
 
-    //onboarding
-    &.popup__onboarding {
-        .popup__box {
-            @apply rounded-b-xl;
-            .popup__header {
-                @apply bg-turqy text-white px-8 py-8;
-                span {
-                    @apply text-[22px];
-                }
-                button img {
-                    -webkit-filter: invert(94%) sepia(6%) saturate(101%)
-                        hue-rotate(217deg) brightness(200%) contrast(100%);
-                    filter: invert(94%) sepia(6%) saturate(101%)
-                        hue-rotate(217deg) brightness(200%) contrast(100%);
-                }
-            }
-            .popup__content {
-                @apply bg-white px-8 py-11 rounded-b-xl border-turqy border border-solid;
-            }
-        }
-    }
+    // .input.input--multiselect.tags-nostyle .multiselect__tags-wrap .multiselect__tag span {
+    //   overflow: hidden;
+    //   display: -webkit-box;
+    //   -webkit-box-orient: vertical;
+    //   -webkit-line-clamp: 1;
+    //   @apply max-w-[100%];
+    // }
+  }
 
-    //xs
-    &.popup__xs {
-        .popup__box {
-            @apply w-[570px] border-radius--20;
-            .popup__content {
-                .title {
-                    @apply text-lg font-bold text-yellowy-lighter mb-4;
+  &:has(.popup__delete),
+  &:has(.popup__report) {
+    .popup__box {
+      @apply max-w-[418px] p-6 gap-[9px];
+
+      h3 {
+        @apply text-[22px] font-semibold leading-[30px] text-[#2E2E2E] #{!important};
+      }
+
+      .btn-area {
+        @apply flex flex-col gap-2 mt-6;
+
+        .btn {
+          @apply w-full justify-center;
+        }
+      }
+    }
+  }
+
+  &:has(.popup--aggregate-report),
+  &:has(.popup--download-report) {
+    .popup__box {
+      @apply gap-4;
+
+      .popup--aggregate-report {
+        @apply flex flex-col gap-6;
+      }
+
+      .assessments-list {
+        @apply flex flex-col gap-2;
+
+        li {
+          .assessment-item {
+            @apply flex items-center justify-between py-6 px-4 gap-4 bg-[#F9F9F9] rounded-[16px];
+
+            .score-box {
+              @apply w-[56px] h-[56px] rounded-full flex items-center justify-center;
+            }
+
+            .content {
+              @apply flex flex-col flex-1 gap-1;
+
+              .name {
+                @apply text-base font-semibold text-[#2E2E2E];
+              }
+
+              .info {
+                @apply flex items-center gap-1;
+              }
+
+              .separator {
+                @apply text-sm leading-6 font-medium text-[#DADADA];
+              }
+
+              .year,
+              .type {
+                @apply text-sm leading-6 font-medium text-[#2E2E2E];
+              }
+            }
+
+            .checkbox-box {
+              @apply pl-2 flex-shrink;
+
+              .checkbox {
+                @apply w-6 h-6 relative block;
+                input {
+                  @apply w-6 h-6 absolute top-0 left-0 opacity-0 z-10;
+                }
+                img {
+                  @apply w-6 h-6 absolute top-0 left-0;
+
+                  &:nth-child(2) {
+                    @apply opacity-100 top-0 left-0;
+                  }
+
+                  &:nth-child(3) {
+                    @apply opacity-0 top-0 left-0;
+                  }
                 }
 
-                .btn-row {
-                    @apply flex justify-between items-center mt-8;
+                input:checked ~ img {
+                  &:nth-child(2) {
+                    @apply opacity-0 top-0 left-0;
+                  }
+
+                  &:nth-child(3) {
+                    @apply opacity-100 top-0 left-0;
+                  }
                 }
+              }
             }
+          }
         }
+      }
     }
+  }
+
+  .popup--collaborator-add {
+    .form {
+      .input.input--radios.input--radios-question {
+        .radios__wrap {
+          @apply mt-0;
+
+          .radio {
+            @apply w-[24px] h-[24px] border-none;
+
+            input {
+              @apply w-[24px] h-[24px];
+            }
+
+            img {
+              @apply w-[24px] h-[24px] m-0;
+
+              &:nth-child(2) {
+                @apply opacity-100;
+              }
+
+              &:nth-child(3) {
+                @apply opacity-0;
+              }
+            }
+
+            input:checked ~ img {
+              &:nth-child(2) {
+                @apply opacity-0;
+              }
+
+              &:nth-child(3) {
+                @apply opacity-100;
+              }
+            }
+          }
+        }
+
+        .c-title--base {
+          @apply text-base font-bold leading-[30px] text-[#2E2E2E] mb-2;
+        }
+
+        ul {
+          @apply list-disc list-inside -ml-8;
+          li {
+            @apply text-[14px] font-medium leading-[24px] text-[#2E2E2E] pl-2;
+
+            &:before {
+              @apply w-[3px] h-[3px] top-[10px] bg-[#2E2E2E] rounded-full;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popup__box--min:has(
+      .popup--assessment-delete,
+      .popup--assessment-toggle-attribute,
+      .popup--assessment-publish
+    ) {
+    @apply gap-2;
+    h3 {
+      @apply text-[22px] font-semibold leading-[30px] text-[#2E2E2E] #{!important};
+    }
+  }
 }
 
 //num
@@ -126,93 +742,93 @@
 
 // circle
 .circle-rang {
-    @apply flex items-center justify-center text-[20px] text-turqy w-[62px] h-[62px] bg-white border border-solid border-turqy border-radius--50;
+  @apply flex items-center justify-center text-[20px] text-turqy w-[62px] h-[62px] bg-white border border-solid border-turqy border-radius--50;
 }
 
 //onboarding steps
 .elinor__step-card {
-    @apply border-turqy border border-solid border-radius--card py-[30px] pr-[40px] pl-[50px] ml-[25px];
-    .title {
-        @apply text-[18px] font-bold mb-3;
+  @apply border-turqy border border-solid border-radius--card py-[30px] pr-[40px] pl-[50px] ml-[25px];
+  .title {
+    @apply text-[18px] font-bold mb-3;
+  }
+  .text {
+    @apply text-[16px] mb-3;
+  }
+  &::before {
+    @apply flex items-center justify-center flex-shrink-0 text-[24px] w-[50px] h-[50px] bg-white text-turqy border-turqy border border-solid border-radius--50;
+    position: absolute;
+    left: -25px;
+    top: 25px;
+  }
+  ul {
+    @apply pl-4;
+    li {
+      @apply list-disc ml-2;
     }
-    .text {
-        @apply text-[16px] mb-3;
-    }
-    &::before {
-        @apply flex items-center justify-center flex-shrink-0 text-[24px] w-[50px] h-[50px] bg-white text-turqy border-turqy border border-solid border-radius--50;
-        position: absolute;
-        left: -25px;
-        top: 25px;
-    }
-    ul {
-        @apply pl-4;
-        li {
-            @apply list-disc ml-2;
-        }
-    }
+  }
 
-    &.step-card--row {
-        @apply flex items-center justify-between sm:block;
-        .step-info {
-            @apply flex items-start mr-6 sm:mr-0 sm:block;
-            .title {
-                @apply mr-6 mt-2;
-            }
-        }
-        .circle-rang {
-            @apply flex-shrink-0;
-        }
+  &.step-card--row {
+    @apply flex items-center justify-between sm:block;
+    .step-info {
+      @apply flex items-start mr-6 sm:mr-0 sm:block;
+      .title {
+        @apply mr-6 mt-2;
+      }
     }
+    .circle-rang {
+      @apply flex-shrink-0;
+    }
+  }
 }
 
 //onboarding list
 .elinor__steps-list {
-    @apply grid grid-cols-2;
-    grid-row-gap: 30px;
-    grid-column-gap: 20px;
-    counter-reset: step-counter;
-    .elinor__step-card {
-        @apply sm:col-span-2;
-        counter-increment: step-counter;
-        &:before {
-            content: counter(step-counter);
-        }
-        &.step-card--row {
-            grid-column: 1 / span 2;
-        }
+  @apply grid grid-cols-2;
+  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  counter-reset: step-counter;
+  .elinor__step-card {
+    @apply sm:col-span-2;
+    counter-increment: step-counter;
+    &:before {
+      content: counter(step-counter);
     }
+    &.step-card--row {
+      grid-column: 1 / span 2;
+    }
+  }
 }
 
 //onboarding intro
 .elinor__popup-intro {
-    @apply flex items-end justify-between mr-[-32px] ml-[-32px] mb-10 sm:block;
-    .intro-content {
-        @apply px-8 sm:mb-5;
-        .title {
-            @apply text-[22px] mb-3;
-        }
-        .text {
-            @apply text-[20px] mb-3;
-        }
+  @apply flex items-end justify-between mr-[-32px] ml-[-32px] mb-10 sm:block;
+  .intro-content {
+    @apply px-8 sm:mb-5;
+    .title {
+      @apply text-[22px] mb-3;
     }
-    .intro-picture {
-        @apply flex-shrink-0 sm:text-center;
-        img {
-            margin: 0 auto;
-        }
+    .text {
+      @apply text-[20px] mb-3;
     }
+  }
+  .intro-picture {
+    @apply flex-shrink-0 sm:text-center;
+    img {
+      margin: 0 auto;
+    }
+  }
 }
 
 //cta
 .elinor__btn-group {
-    @apply flex items-center justify-center sm:flex-col;
-    -moz-column-gap: 24px;
-    column-gap: 24px;
-    row-gap: 18px;
+  @apply flex items-center justify-center sm:flex-col;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+  row-gap: 18px;
 }
 .elinor__cta-bar {
-    @apply flex items-center justify-center py-8 mt-14 border-b border-t border-grayy-border sm:block;
-    .title {
-        @apply text-[22px] mr-8 sm:mb-6 sm:text-center;
-    }
+  @apply flex items-center justify-center py-8 mt-14 border-b border-t border-grayy-border sm:block;
+  .title {
+    @apply text-[22px] mr-8 sm:mb-6 sm:text-center;
+  }
 }

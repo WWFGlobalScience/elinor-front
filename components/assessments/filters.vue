@@ -1,132 +1,140 @@
 <template>
-    <section class="section section--filters">
-        <div class="container">
-            <ul>
-                <li>
-                    <form
-                        id="form--search"
-                        @submit="$event.preventDefault()"
-                        class="form"
-                    >
-                        <div class="form__group">
-                            <div class="form__row">
-                                <div class="input input--ico">
-                                    <input
-                                        type="text"
-                                        :placeholder="
-                                            $t(
-                                                'pages.assessments.list.filters.search',
-                                            )
-                                        "
-                                        v-model="searchText"
-                                    />
-                                    <div class="input__ico">
-                                        <span></span>
-                                        <button
-                                            type="submit"
-                                            form="form--search"
-                                        >
-                                            <img
-                                                src="~/assets/img/ico-search-turqy.svg"
-                                            />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-                <li>
-                    <button
-                        type="button"
-                        class="btn--border-turqy btn--opacity--child"
-                        @click="
-                            popupState({
-                                active: true,
-                                component: 'popup-assessment-aggregate-report',
-                                title: 'pages.assessments.list.aggregateReport.title',
-                            })
-                        "
-                    >
-                        <span class="btn--opacity__target">{{
-                            $t('pages.assessments.list.aggregateReport.button')
-                        }}</span>
-                        <img src="~/assets/img/ico-filters-turqy.svg" />
-                    </button>
-                </li>
-                <li>
-                    <button
-                        type="button"
-                        class="btn--border-turqy btn--opacity--child"
-                        @click="
-                            popupState({
-                                active: true,
-                                component: 'popup-assessments-filter',
-                                title: 'pages.assessments.list.filters.popup.title',
-                            })
-                        "
-                    >
-                        <span class="btn--opacity__target"
-                            ><template v-if="filtersApplied > 0"
-                                >({{ filtersApplied }})</template
-                            >
-                            {{
-                                $t('pages.assessments.list.filters.button')
-                            }}</span
-                        >
-                        <img src="~/assets/img/ico-filters-turqy.svg" />
-                    </button>
-                </li>
-                <!--<li>
-                    <button type="button" class="btn--border-turqy btn--opacity--child">
-                        <span class="btn--opacity__target">{{ $t( 'default.order.button' ) }}</span>
-                        <img src="~/assets/img/ico-order-turqy.svg">
-                    </button>
-                </li>-->
-            </ul>
-        </div>
-    </section>
+  <div class="filters-container">
+    <div class="filters-container__item input input--multiselect">
+      <div class="multiselect__wrap">
+        <multiselect
+          :placeholder="
+            $t('pages.assessments.list.filters.popup.placeholders.countries')
+          "
+          :value="getCountryByCode(management_area_country)"
+          track-by="code"
+          label="name"
+          :options="[
+            { value: 'all', name: 'All Countries' },
+            ...management_area_countries,
+          ]"
+          :multiple="false"
+          :searchable="false"
+          :showLabels="false"
+          :allow-empty="false"
+          open-direction="bottom"
+          @input="onFilterChanged('management_area_countries', $event.code)"
+        >
+        </multiselect>
+      </div>
+    </div>
+    <div class="filters-container__item input input--multiselect">
+      <div class="multiselect__wrap">
+        <multiselect
+          :placeholder="
+            $t('pages.assessments.list.filters.popup.placeholders.year')
+          "
+          :value="filters['year']"
+          :options="[
+            $t('pages.assessments.list.filters.popup.placeholders.year'),
+            ...years,
+          ]"
+          :multiple="false"
+          :searchable="false"
+          :showLabels="false"
+          :allow-empty="true"
+          open-direction="bottom"
+          @input="onFilterChanged('year', $event)"
+        >
+        </multiselect>
+      </div>
+    </div>
+    <div class="filters-container__item input input--multiselect">
+      <div class="multiselect__wrap">
+        <multiselect
+          :value="getStatusById(filters.status)"
+          :placeholder="
+            $t('pages.assessments.list.filters.popup.placeholders.status')
+          "
+          track-by="id"
+          label="name"
+          :options="statuses"
+          :multiple="false"
+          :searchable="false"
+          :showLabels="false"
+          :allow-empty="true"
+          open-direction="bottom"
+          @input="onFilterChanged('status', $event.id)"
+        >
+        </multiselect>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
+
 export default {
-    name: 'assessments-filters',
-    data() {
-        return {
-            timer: null,
-            searchText: null,
-        };
-    },
-    watch: {
-        searchText(value) {
-            this.delay(() => {
-                this.search(value);
-            }, 800);
+  name: 'assessments-filters',
+  data() {
+    return {
+      // years: [new Date().getFullYear() - 1, new Date().getFullYear()],
+      statuses: [
+        {
+          id: 'all',
+          name: this.$t(
+            'pages.assessments.list.filters.popup.placeholders.status',
+          ),
         },
+        { id: 90, name: this.$t('pages.assessments.statuses.90') },
+        { id: 80, name: this.$t('pages.assessments.statuses.80') },
+        { id: 10, name: this.$t('pages.assessments.statuses.10') },
+      ],
+    };
+  },
+  mounted() {
+    this.$store.dispatch('assessments/fetchCountries');
+    this.$store.dispatch('countries/fetchCountries');
+  },
+  computed: {
+    ...mapState({
+      filters: (state) => state.assessments.filters,
+      management_area_countries: (state) => state.assessments.allCountries,
+      management_area_country: (state) =>
+        state.assessments.filters.management_area_countries,
+      years: (state) => state.assessments.allYears,
+    }),
+  },
+  methods: {
+    ...mapActions({
+      popupState: 'popup/popupState',
+      resetFilters: 'assessments/resetFilters',
+      filter: 'assessments/filter',
+      removeFilter: 'assessments/removeFilter',
+    }),
+    onFilterChanged(name, value) {
+      if (
+        value !== 'all' &&
+        value !==
+          this.$t('pages.assessments.list.filters.popup.placeholders.year') &&
+        value !==
+          this.$t('pages.assessments.list.filters.popup.placeholders.status')
+      ) {
+        this.filter({ name, value });
+      } else {
+        this.filter({ name, value: null });
+      }
+
+      // this.filter({ name, value });
     },
-    computed: {
-        filtersApplied() {
-            return Object.keys(this.filters).filter(
-                (filterName) => this.filters[filterName] !== null,
-            ).length;
-        },
-        ...mapState({
-            filters: (state) => state.assessments.filters,
-        }),
+    getCountryByCode(code) {
+      if (code) {
+        return this.management_area_countries.filter(
+          (country) => country.code === code,
+        )[0];
+      }
     },
-    deactivated() {
-        this.searchText = null;
+    getStatusById(id) {
+      if (id) {
+        return this.statuses.filter((status) => status.id === id)[0];
+      }
     },
-    methods: {
-        ...mapActions({
-            popupState: 'popup/popupState',
-            search: 'assessments/search',
-        }),
-        delay(fn, ms) {
-            clearTimeout(this.timer);
-            this.timer = setTimeout(fn, ms || 0);
-        },
-    },
+  },
 };
 </script>
