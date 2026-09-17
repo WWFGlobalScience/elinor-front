@@ -60,10 +60,11 @@ export const actions = {
       }
       this.$router.push('/');
     } catch (error) {
-      if (error.response.data.non_field_errors) {
+      const errors = error.response && error.response.data;
+      if (errors && errors.non_field_errors) {
         if (
-          error.response.data.non_field_errors[0].indexOf('email') !== -1 ||
-          error.response.data.non_field_errors[0].indexOf('correo') !== -1
+          errors.non_field_errors[0].indexOf('email') !== -1 ||
+          errors.non_field_errors[0].indexOf('correo') !== -1
         ) {
           state.commit('setAlert', {
             name: 'emailVerificationRequired',
@@ -71,7 +72,7 @@ export const actions = {
           });
           state.commit('setError', null);
         } else {
-          state.commit('setError', error.response.data.non_field_errors[0]);
+          state.commit('setError', errors.non_field_errors[0]);
         }
       }
     }
@@ -101,7 +102,7 @@ export const actions = {
         this.$router.push(`/status/email-verification-sent`);
       })
       .catch((e) => {
-        const error = { ...e.response.data };
+        const error = { ...((e.response && e.response.data) || {}) };
         if (error.non_field_errors) {
           if (
             error.non_field_errors[0] ===
@@ -136,7 +137,7 @@ export const actions = {
         });
       })
       .catch((error) => {
-        state.commit('setError', error.response.data);
+        state.commit('setError', error.response && error.response.data);
       });
   },
   async resendEmail(state, email) {
@@ -153,10 +154,8 @@ export const actions = {
         this.$router.push(`/status/email-verification-sent`);
       })
       .catch((error) => {
-        state.commit(
-          'setError',
-          error.response.data.message || error.response.data.detail,
-        );
+        const data = error.response && error.response.data;
+        state.commit('setError', (data && (data.message || data.detail)) || true);
       });
 
     this.dispatch('loader/loaderState', {
@@ -167,7 +166,10 @@ export const actions = {
   async forgotPassword(state, email) {
     await this.$axios
       .$post('rest-auth/password/reset/', { email })
-      .finally((response) => {
+      .catch((error) => {
+        console.error('[forgotPassword] Error:', error);
+      })
+      .finally(() => {
         state.commit('setAlert', {
           name: 'forgotPasswordEmailSent',
           value: true,
@@ -192,7 +194,7 @@ export const actions = {
         this.$router.push(`/status/password-changed-successfully`);
       })
       .catch((error) => {
-        state.commit('setError', error.response.data);
+        state.commit('setError', error.response && error.response.data);
       });
   },
   async confirmEmail(state, token) {

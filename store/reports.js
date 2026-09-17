@@ -40,6 +40,9 @@ export const actions = {
       .then((response) => {
         state.commit('setList', response.data);
       })
+      .catch((error) => {
+        console.error('[fetchReports] Error:', error);
+      })
       .finally(() => {
         if (notHasParams) {
           this.dispatch('loader/loaderState', {
@@ -67,6 +70,9 @@ export const actions = {
       .get('v2/reports/assessments/geojson/', { params })
       .then((response) => {
         state.commit('setList', response.data.features);
+      })
+      .catch((error) => {
+        console.error('[fetchReportsGeoJson] Error:', error);
       })
       .finally(() => {
         if (notHasParams) {

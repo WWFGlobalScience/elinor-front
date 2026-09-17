@@ -489,6 +489,8 @@ export default {
     this.isLoading = true;
     try {
       await this.$store.dispatch('assessments/fetchReportData');
+    } catch (error) {
+      console.error('[popup-assessment-download-report] Error:', error);
     } finally {
       this.isLoading = false;
       this.$nextTick(() => {

@@ -201,7 +201,9 @@ export default {
           message: this.message,
           recaptcha,
         });
-      } catch (error) {}
+      } catch (error) {
+        console.error('[contact] Error:', error);
+      }
     },
   },
 };

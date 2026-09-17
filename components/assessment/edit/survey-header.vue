@@ -160,6 +160,8 @@ export default {
                   title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
               });
           }
+        }).catch((error) => {
+          console.error('[toggleConnection] Error:', error);
         });
 
         // return;

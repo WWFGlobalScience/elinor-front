@@ -152,6 +152,9 @@ export default {
               'authentication/resetProfileUpdatedSuccessfully',
             );
           }, 5000);
+        })
+        .catch((error) => {
+          console.error('[updateProfile] Error:', error);
         });
     },
   },

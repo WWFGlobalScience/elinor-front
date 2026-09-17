@@ -110,9 +110,13 @@ export default {
       this.$axios({
         method: 'get',
         url: `v2/reports/assessments/?management_area_countries=${value}`,
-      }).then((response) => {
-        this.report = response.data.results;
-      });
+      })
+        .then((response) => {
+          this.report = response.data.results;
+        })
+        .catch((error) => {
+          console.error('[popup-assessments-country-report] Error:', error);
+        });
     },
     getCountryByCode(code) {
       if (code) {

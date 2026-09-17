@@ -378,12 +378,16 @@ export const actions = {
       });
     } catch (error) {
       state.commit('setCountriesDataMeta', { isFetching: false });
-      throw error;
+      console.error('[fetchCountries] Error:', error);
     }
   },
   async fetchReportData(state) {
-    const response = await this.$axios.get('v2/reports/assessments/');
-    state.commit('setReportData', response.data.results.filter(a => a.published_version));
+    try {
+      const response = await this.$axios.get('v2/reports/assessments/');
+      state.commit('setReportData', response.data.results.filter(a => a.published_version));
+    } catch (error) {
+      console.error('[fetchReportData] Error:', error);
+    }
   },
   async refreshCountries(state) {
     return this.dispatch('assessments/fetchCountries', { forceRefresh: true });
@@ -444,8 +448,6 @@ export const actions = {
         console.error('[fetchAssessments] Error:', error);
         // Error handling is done in axios plugin (onError interceptor)
         // which will show user-friendly error notification and forcefully deactivate loader
-        // No need to deactivate loader here - axios interceptor already handled it via disableLoader
-        throw error; // Re-throw so caller knows about the error
       });
   },
 
@@ -511,6 +513,8 @@ export const actions = {
       });
       // console.log('assessmentReportResponse', assessmentReportResponse.data);
       state.commit('setAssessmentReport', assessmentReportResponse.data);
+    } catch (error) {
+      console.error('[fetchReport] Error:', error);
     } finally {
       this.dispatch('loader/loaderState', {
         active: false,
@@ -586,10 +590,11 @@ export const actions = {
     })
       .then((response) => {
         state.commit('setProgress', calculateProgress(response?.data));
-      })
-      .finally(async () => {
-        await state.commit('setAssessmentField', { field, value });
+        state.commit('setAssessmentField', { field, value });
         state.commit('setLastEdit');
+      })
+      .catch((error) => {
+        console.error('[editAssessmentField] Error:', error);
       });
   },
 
@@ -613,13 +618,15 @@ export const actions = {
     })
       .then((response) => {
         state.commit('setProgress', calculateProgress(response?.data));
-      })
-      .finally(async () => {
-        // Update all fields in state
         for (const { field, value } of fields) {
-          await state.commit('setAssessmentField', { field, value });
+          state.commit('setAssessmentField', { field, value });
         }
         state.commit('setLastEdit');
+      })
+      .catch((error) => {
+        console.error('[editAssessmentFields] Error:', error);
+      })
+      .finally(() => {
         this.dispatch('loader/loaderState', {
           active: false,
           text: '',
@@ -660,40 +667,38 @@ export const actions = {
       text: 'Publishing assessment...',
     });
     this.dispatch('popup/popupState', { active: false });
-    const versionResponse = await this.$axios.get('v2/assessmentversion');
-    const published_version = versionResponse.data;
-    this.$axios({
-      method: 'patch',
-      url: `/v2/assessments/${id}/`,
-      data: { data_policy: 90, published_version },
-    })
-      .then(() => {
-        state.commit('setAssessmentField', {
-          field: 'data_policy',
-          value: 90,
-        });
-        state.commit('setLastEdit');
-        // this.$router.push('/assessments');
-        this.$toast.success(
-          this.$i18n.t(
-            'statusMessaging.assessments.publishingAssessmentSuccess',
-          ),
-        );
-        setTimeout(() => {
-          window.location.href = `/assessments/${id}/publish-settings`;
-        }, 1000);
-      })
-      .catch(() => {
-        this.$toast.error(
-          this.$i18n.t('statusMessaging.assessments.publishingAssessmentError'),
-        );
-      })
-      .finally(() => {
-        this.dispatch('loader/loaderState', {
-          active: false,
-          text: '',
-        });
+    try {
+      const versionResponse = await this.$axios.get('v2/assessmentversion');
+      const published_version = versionResponse.data;
+      await this.$axios({
+        method: 'patch',
+        url: `/v2/assessments/${id}/`,
+        data: { data_policy: 90, published_version },
       });
+      state.commit('setAssessmentField', {
+        field: 'data_policy',
+        value: 90,
+      });
+      state.commit('setLastEdit');
+      this.$toast.success(
+        this.$i18n.t(
+          'statusMessaging.assessments.publishingAssessmentSuccess',
+        ),
+      );
+      setTimeout(() => {
+        window.location.href = `/assessments/${id}/publish-settings`;
+      }, 1000);
+    } catch (error) {
+      console.error('[publish] Error:', error);
+      this.$toast.error(
+        this.$i18n.t('statusMessaging.assessments.publishingAssessmentError'),
+      );
+    } finally {
+      this.dispatch('loader/loaderState', {
+        active: false,
+        text: '',
+      });
+    }
   },
 
   async unpublish(state, id) {
@@ -805,24 +810,28 @@ export const actions = {
       });
     }
 
-    const response = await this.$axios({
-      method: 'post',
-      url: `/v2/surveyanswerlikerts/`,
-      data: {
-        question: questionId,
-        assessment: assessmentId,
-        choice,
-        explanation,
-      },
-    });
+    try {
+      const response = await this.$axios({
+        method: 'post',
+        url: `/v2/surveyanswerlikerts/`,
+        data: {
+          question: questionId,
+          assessment: assessmentId,
+          choice,
+          explanation,
+        },
+      });
 
-    const assessmentResponse = await this.$axios.get(
-      `v2/assessments/${assessmentId}/`,
-    );
-    state.commit('addSurveyAnswer', {
-      answer: response.data,
-      percent_complete: assessmentResponse.data.percent_complete,
-    });
+      const assessmentResponse = await this.$axios.get(
+        `v2/assessments/${assessmentId}/`,
+      );
+      state.commit('addSurveyAnswer', {
+        answer: response.data,
+        percent_complete: assessmentResponse.data.percent_complete,
+      });
+    } catch (error) {
+      console.error('[storeSurveyAnswer] Error:', error);
+    }
   },
 
   async updateSurveyAnswer(
@@ -840,18 +849,22 @@ export const actions = {
       });
     }
 
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/surveyanswerlikerts/${id}/`,
-      data: {
-        question: questionId,
-        assessment: assessmentId,
-        choice,
-        explanation,
-      },
-    });
+    try {
+      const response = await this.$axios({
+        method: 'patch',
+        url: `/v2/surveyanswerlikerts/${id}/`,
+        data: {
+          question: questionId,
+          assessment: assessmentId,
+          choice,
+          explanation,
+        },
+      });
 
-    state.commit('updateSurveyAnswer', response.data);
+      state.commit('updateSurveyAnswer', response.data);
+    } catch (error) {
+      console.error('[updateSurveyAnswer] Error:', error);
+    }
   },
 
   async removeSurveyAnswer(state, id) {
@@ -899,7 +912,10 @@ export const actions = {
       state.commit('setContactSent', true);
     } catch (error) {
       state.commit('setContactSent', false);
-      state.commit('setContactErrors', error.response.data);
+      state.commit(
+        'setContactErrors',
+        (error.response && error.response.data) || {},
+      );
     }
   },
 
@@ -922,7 +938,10 @@ export const actions = {
       state.commit('setFlagSent', true);
     } catch (error) {
       state.commit('setFlagSent', false);
-      state.commit('setFlagErrors', error.response.data);
+      state.commit(
+        'setFlagErrors',
+        (error.response && error.response.data) || {},
+      );
     }
   },
 
@@ -1042,7 +1061,10 @@ export const actions = {
         config,
       );
     } catch (error) {
-      state.commit('setSurveyFileError', error.response.data);
+      state.commit(
+        'setSurveyFileError',
+        (error.response && error.response.data) || true,
+      );
     } finally {
       this.dispatch('loader/loaderState', { active: false });
     }
@@ -1054,121 +1076,129 @@ export const actions = {
 
   async filterAggregateReport(store, { field, value }) {
     store.commit('filterAggregateReport', { field, value });
-    const filters = { ...store.state.aggregateReport.filters };
-    filters[field] = value;
+    try {
+      const filters = { ...store.state.aggregateReport.filters };
+      filters[field] = value;
 
-    let queryParams = [];
+      let queryParams = [];
 
-    // if (filters.year) {
-    //     queryParams.push(`year=${filters.year}`);
-    // }
+      // if (filters.year) {
+      //     queryParams.push(`year=${filters.year}`);
+      // }
 
-    if (filters.type) {
-      queryParams.push(`collection_method=${filters.type.id}`);
-    }
-    const queryParamsString = `&${queryParams.join('&')}`;
-    let results = [];
-    for (const managementArea of filters.managementAreas) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    for (const country of filters.countries) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    for (const year of filters.year) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&year=${year}${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    if (
-      filters.managementAreas.length === 0 &&
-      filters.countries.length === 0 &&
-      filters.year.length === 0 &&
-      filters.type
-    ) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    const processed = [];
-    const withoutDuplicates = results.filter((result) => {
-      if (processed.indexOf(result.id) === -1) {
-        processed.push(result.id);
-        return true;
+      if (filters.type) {
+        queryParams.push(`collection_method=${filters.type.id}`);
       }
-    });
+      const queryParamsString = `&${queryParams.join('&')}`;
+      let results = [];
+      for (const managementArea of filters.managementAreas) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
 
-    store.commit('assessmentAggregateReport', withoutDuplicates);
+      for (const country of filters.countries) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
+
+      for (const year of filters.year) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&year=${year}${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
+
+      if (
+        filters.managementAreas.length === 0 &&
+        filters.countries.length === 0 &&
+        filters.year.length === 0 &&
+        filters.type
+      ) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
+
+      const processed = [];
+      const withoutDuplicates = results.filter((result) => {
+        if (processed.indexOf(result.id) === -1) {
+          processed.push(result.id);
+          return true;
+        }
+      });
+
+      store.commit('assessmentAggregateReport', withoutDuplicates);
+    } catch (error) {
+      console.error('[filterAggregateReport] Error:', error);
+    }
   },
 
   async removeFilterAggregateReport(store, { field, index }) {
     store.commit('removeFilterAggregateReport', { field, index });
-    const filters = store.state.aggregateReport.filters;
+    try {
+      const filters = store.state.aggregateReport.filters;
 
-    let queryParams = [];
+      let queryParams = [];
 
-    // if (filters.year) {
-    //     queryParams.push(`year=${filters.year}`);
-    // }
+      // if (filters.year) {
+      //     queryParams.push(`year=${filters.year}`);
+      // }
 
-    if (filters.type) {
-      queryParams.push(`collection_method=${filters.type.id}`);
-    }
-    const queryParamsString = `&${queryParams.join('&')}`;
-    let results = [];
-    for (const managementArea of filters.managementAreas) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    for (const country of filters.countries) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    for (const year of filters.year) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&year=${year}${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    if (
-      filters.managementAreas.length === 0 &&
-      filters.countries.length === 0 &&
-      filters.year.length === 0 &&
-      filters.type
-    ) {
-      const response = await this.$axios.get(
-        `v2/reports/assessments/?limit=99999&${queryParamsString}`,
-      );
-      results = results.concat(response.data.results);
-    }
-
-    const processed = [];
-    const withoutDuplicates = results.filter((result) => {
-      if (processed.indexOf(result.id) === -1) {
-        processed.push(result.id);
-        return true;
+      if (filters.type) {
+        queryParams.push(`collection_method=${filters.type.id}`);
       }
-    });
+      const queryParamsString = `&${queryParams.join('&')}`;
+      let results = [];
+      for (const managementArea of filters.managementAreas) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&management_area=${managementArea.id}${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
 
-    store.commit('assessmentAggregateReport', withoutDuplicates);
+      for (const country of filters.countries) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&management_area_countries=${country.code}${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
+
+      for (const year of filters.year) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&year=${year}${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
+
+      if (
+        filters.managementAreas.length === 0 &&
+        filters.countries.length === 0 &&
+        filters.year.length === 0 &&
+        filters.type
+      ) {
+        const response = await this.$axios.get(
+          `v2/reports/assessments/?limit=99999&${queryParamsString}`,
+        );
+        results = results.concat(response.data.results);
+      }
+
+      const processed = [];
+      const withoutDuplicates = results.filter((result) => {
+        if (processed.indexOf(result.id) === -1) {
+          processed.push(result.id);
+          return true;
+        }
+      });
+
+      store.commit('assessmentAggregateReport', withoutDuplicates);
+    } catch (error) {
+      console.error('[removeFilterAggregateReport] Error:', error);
+    }
   },
   reset(state) {
     state.dispatch('fetchAssessments');
@@ -1270,13 +1300,14 @@ export const actions = {
     })
       .then((response) => {
         state.commit('setProgress', calculateProgress(response?.data));
-      })
-      .finally(() => {
         state.commit('setAssessmentField', {
           field: 'checkout',
           value: null,
         });
         state.commit('setLastEdit');
+      })
+      .catch((error) => {
+        console.error('[setOnline] Error:', error);
       });
 
     state.state.assessment.surveyAnswers.forEach((answer) => {

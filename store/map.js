@@ -42,6 +42,8 @@ export const actions = {
       state.commit('resetFilters');
       // console.log('response.data.features', response.data.features.filter(f => f.properties.published_version));
       state.commit('setList', response.data.features.filter(f => f.properties.published_version));
+    } catch (error) {
+      console.error('[fetchMap] Error:', error);
     } finally {
       this.dispatch('loader/loaderState', {
         active: false,

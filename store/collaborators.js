@@ -35,8 +35,8 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        console.log(error);
-        state.commit('setError', error.response.data);
+        console.error('[createCollaborator] Error:', error);
+        state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', { active: false });
@@ -65,8 +65,9 @@ export const actions = {
           { root: true },
         );
       })
-      .catch((error) => () => {
-        state.commit('setError', error.response.data);
+      .catch((error) => {
+        console.error('[updateCollaborator] Error:', error);
+        state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', { active: false });
@@ -90,7 +91,8 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        state.commit('setError', error.response.data);
+        console.error('[deleteCollaborator] Error:', error);
+        state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', { active: false });

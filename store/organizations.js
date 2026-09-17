@@ -43,12 +43,16 @@ export const actions = {
         return organization;
       })
       .catch((error) => {
-        const errorMessage = error.response.data.name[0];
+        const errorMessage =
+          error.response &&
+          error.response.data &&
+          error.response.data.name &&
+          error.response.data.name[0];
 
         this.$toast.error(
           `${this.$i18n.t(
             'statusMessaging.organizations.organizationCreatedError',
-          )} ${errorMessage}`,
+          )}${errorMessage ? ` ${errorMessage}` : ''}`,
         );
       });
   },
