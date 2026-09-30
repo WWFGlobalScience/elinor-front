@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
   filters: { management_area_countries: undefined, attributes: undefined },
@@ -41,7 +43,7 @@ export const actions = {
         state.commit('setList', response.data);
       })
       .catch((error) => {
-        console.error('[fetchReports] Error:', error);
+        toastApiError(this, error);
       })
       .finally(() => {
         if (notHasParams) {
@@ -72,7 +74,7 @@ export const actions = {
         state.commit('setList', response.data.features);
       })
       .catch((error) => {
-        console.error('[fetchReportsGeoJson] Error:', error);
+        toastApiError(this, error);
       })
       .finally(() => {
         if (notHasParams) {

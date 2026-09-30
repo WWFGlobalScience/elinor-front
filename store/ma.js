@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   mas: [],
   ma: {},
@@ -45,16 +47,7 @@ export const actions = {
       );
       state.commit('setMas', mas);
     } catch (error) {
-      console.error('[getMas] Error:', error);
-      this.commit(
-        'notifications/setNotification',
-        {
-          active: true,
-          text: 'default.error.network',
-          button: 'default.error.button',
-        },
-        { root: true },
-      );
+      toastApiError(this, error);
     }
   },
   async getMa(state, id) {
@@ -64,16 +57,7 @@ export const actions = {
       );
       state.commit('setMa', ma);
     } catch (error) {
-      console.error('[getMa] Error:', error);
-      this.commit(
-        'notifications/setNotification',
-        {
-          active: true,
-          text: 'default.error.network',
-          button: 'default.error.button',
-        },
-        { root: true },
-      );
+      toastApiError(this, error);
     }
   },
   async getFirstMa(state) {
@@ -83,16 +67,7 @@ export const actions = {
       );
       state.commit('setFirstMa', mas[0]);
     } catch (error) {
-      console.error('[getFirstMa] Error:', error);
-      this.commit(
-        'notifications/setNotification',
-        {
-          active: true,
-          text: 'default.error.network',
-          button: 'default.error.button',
-        },
-        { root: true },
-      );
+      toastApiError(this, error);
     }
   },
   maSelectorChange(state, value) {

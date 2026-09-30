@@ -72,6 +72,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 import { jsPDF } from 'jspdf';
 
 export default {
@@ -115,7 +116,7 @@ export default {
           this.report = response.data.results;
         })
         .catch((error) => {
-          console.error('[popup-assessments-country-report] Error:', error);
+          toastApiError(this, error);
         });
     },
     getCountryByCode(code) {

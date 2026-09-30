@@ -8,6 +8,7 @@ export const mutations = {
   },
 };
 
+import { toastApiError } from '~/config/api-error';
 import { getOfflineModeFromStore } from '~/config/offline-mode';
 
 export const actions = {
@@ -43,7 +44,7 @@ export const actions = {
       // Deactivate loader on success
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error('[fetchSurveyQuestions] Error:', e);
+      toastApiError(this, e);
       // Error handling is done in axios plugin (onError interceptor)
       // which will show user-friendly error notification and forcefully deactivate loader
       // No need to deactivate loader here - axios interceptor already handled it

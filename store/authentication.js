@@ -1,4 +1,5 @@
 import { LOCAL_STORAGE_KEY } from '~/config/localStorageKey';
+import { toastApiError } from '~/config/api-error';
 
 export const state = () => ({
   error: null,
@@ -167,7 +168,7 @@ export const actions = {
     await this.$axios
       .$post('rest-auth/password/reset/', { email })
       .catch((error) => {
-        console.error('[forgotPassword] Error:', error);
+        toastApiError(this, error);
       })
       .finally(() => {
         state.commit('setAlert', {

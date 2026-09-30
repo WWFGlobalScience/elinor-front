@@ -103,6 +103,7 @@ export default async () => {
       },
       { src: '~/plugins/vuex-persist', ssr: false },
       '~/plugins/axios.js',
+      { src: '~/plugins/ignore-extension-errors.js', mode: 'client' },
       // { src: "~/plugins/sw-update.js", mode: "client" }
     ],
     buildModules: [

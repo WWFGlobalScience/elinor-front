@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
   pagination: { count: 0, next: 0 },
@@ -39,7 +41,7 @@ export const actions = {
 
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
   async downloadDocument(state, document) {
@@ -68,7 +70,7 @@ export const actions = {
 
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 };

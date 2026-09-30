@@ -119,6 +119,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 
 export default {
   data() {
@@ -154,7 +155,7 @@ export default {
           }, 5000);
         })
         .catch((error) => {
-          console.error('[updateProfile] Error:', error);
+          toastApiError(this, error);
         });
     },
   },

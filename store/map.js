@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   // Note: list and countrySourceData are excluded from vuex-persist to prevent localStorage quota issues
   list: [],
@@ -43,7 +45,7 @@ export const actions = {
       // console.log('response.data.features', response.data.features.filter(f => f.properties.published_version));
       state.commit('setList', response.data.features.filter(f => f.properties.published_version));
     } catch (error) {
-      console.error('[fetchMap] Error:', error);
+      toastApiError(this, error);
     } finally {
       this.dispatch('loader/loaderState', {
         active: false,

@@ -20,6 +20,7 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 
 import { jsPDF } from 'jspdf';
 import '../../assets/fonts/montserrat/Montserrat-Medium-normal.js';
@@ -55,7 +56,7 @@ export default {
           this.report = response.data.results;
         })
         .catch((error) => {
-          console.error('[report-country] Error:', error);
+          toastApiError(this, error);
         });
     },
   },

@@ -310,6 +310,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 import { jsPDF } from 'jspdf';
 
 export default {
@@ -490,7 +491,7 @@ export default {
     try {
       await this.$store.dispatch('assessments/fetchReportData');
     } catch (error) {
-      console.error('[popup-assessment-download-report] Error:', error);
+      toastApiError(this, error);
     } finally {
       this.isLoading = false;
       this.$nextTick(() => {

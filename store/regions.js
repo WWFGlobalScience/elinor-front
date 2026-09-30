@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
 });
@@ -25,7 +27,7 @@ export const actions = {
 
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 };

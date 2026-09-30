@@ -1,4 +1,5 @@
 import { locales } from '~/locales';
+import { toastApiError } from '~/config/api-error';
 
 export const state = () => ({
   list: {},
@@ -37,7 +38,7 @@ export const actions = {
 
       state.commit('setManagementAreaCountries', response.data);
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 };

@@ -1,35 +1,6 @@
-import { isOfflineModeEnabled } from '~/config/offline-mode';
+import { isValidationError, toastApiError } from '~/config/api-error';
 
 let isHandling401 = false;
-
-const VALIDATION_STATUSES = [400, 422];
-
-function getErrorNotificationText(error, offlineModeEnabled) {
-  if (!error.response) {
-    return offlineModeEnabled
-      ? 'default.error.offlineMode'
-      : 'default.error.network';
-  }
-
-  const status = error.response.status;
-
-  if (status === 403) return 'default.error.forbidden';
-  if (status === 404) return 'default.error.notFound';
-  if (status === 409) return 'default.error.conflict';
-  if (status === 429) return 'default.error.tooManyRequests';
-  if (status >= 500) {
-    return offlineModeEnabled
-      ? 'default.error.offlineMode'
-      : 'default.error.serverError';
-  }
-
-  return 'default.error.text';
-}
-
-function isValidationError(error) {
-  const status = error.response && error.response.status;
-  return VALIDATION_STATUSES.includes(status);
-}
 
 export default function ({ $axios, app, store }) {
   $axios.onError((error) => {
@@ -42,7 +13,6 @@ export default function ({ $axios, app, store }) {
     // Set error flag to prevent loader from being reactivated by other pending requests
     store.commit('loader/setErrorOccurred', true);
 
-    const offlineModeEnabled = isOfflineModeEnabled(app);
     const status = error.response && error.response.status;
 
     // Handle 401 errors (unauthorized) - only once to prevent duplicate logout/toast
@@ -58,13 +28,7 @@ export default function ({ $axios, app, store }) {
       throw error;
     }
 
-    console.error('[Axios] HTTP error detected:', error);
-
-    store.commit('notifications/setNotification', {
-      active: true,
-      text: getErrorNotificationText(error, offlineModeEnabled),
-      button: 'default.error.button',
-    });
+    toastApiError(app, error);
 
     throw error;
   });

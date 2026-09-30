@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   users: [],
   user: {},
@@ -15,7 +17,7 @@ export const actions = {
       let users = await this.$axios.$get(`v2/users/`);
       state.commit('setUsers', users.results);
     } catch (error) {
-      console.error('[fetchUsers] Error:', error);
+      toastApiError(this, error);
     }
   },
   async findUsers(state, username) {
@@ -23,7 +25,7 @@ export const actions = {
       let users = await this.$axios.$get('v2/users/?search=' + username);
       state.commit('setUsers', users.results);
     } catch (error) {
-      console.error('[findUsers] Error:', error);
+      toastApiError(this, error);
     }
   },
   async findUser(state, id) {
@@ -31,7 +33,7 @@ export const actions = {
       let response = await this.$axios.$get('v2/users/' + id);
       return response.data;
     } catch (error) {
-      console.error('[findUser] Error:', error);
+      toastApiError(this, error);
     }
   },
 };

@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { toastApiError } from '~/config/api-error';
 import { getOfflineModeFromStore } from '~/config/offline-mode';
 import {
   calculateProgress,
@@ -378,7 +379,7 @@ export const actions = {
       });
     } catch (error) {
       state.commit('setCountriesDataMeta', { isFetching: false });
-      console.error('[fetchCountries] Error:', error);
+      toastApiError(this, error);
     }
   },
   async fetchReportData(state) {
@@ -386,7 +387,7 @@ export const actions = {
       const response = await this.$axios.get('v2/reports/assessments/');
       state.commit('setReportData', response.data.results.filter(a => a.published_version));
     } catch (error) {
-      console.error('[fetchReportData] Error:', error);
+      toastApiError(this, error);
     }
   },
   async refreshCountries(state) {
@@ -445,7 +446,7 @@ export const actions = {
         return response;
       })
       .catch((error) => {
-        console.error('[fetchAssessments] Error:', error);
+        toastApiError(this, error);
         // Error handling is done in axios plugin (onError interceptor)
         // which will show user-friendly error notification and forcefully deactivate loader
       });
@@ -514,7 +515,7 @@ export const actions = {
       // console.log('assessmentReportResponse', assessmentReportResponse.data);
       state.commit('setAssessmentReport', assessmentReportResponse.data);
     } catch (error) {
-      console.error('[fetchReport] Error:', error);
+      toastApiError(this, error);
     } finally {
       this.dispatch('loader/loaderState', {
         active: false,
@@ -544,7 +545,7 @@ export const actions = {
         );
       })
       .catch((error) => {
-        console.error(error);
+        toastApiError(this, error);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', {
@@ -570,7 +571,7 @@ export const actions = {
         state.commit('setProgress', calculateProgress(response.data));
       })
       .catch((error) => {
-        console.error(error);
+        toastApiError(this, error);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', {
@@ -594,7 +595,7 @@ export const actions = {
         state.commit('setLastEdit');
       })
       .catch((error) => {
-        console.error('[editAssessmentField] Error:', error);
+        toastApiError(this, error);
       });
   },
 
@@ -624,7 +625,7 @@ export const actions = {
         state.commit('setLastEdit');
       })
       .catch((error) => {
-        console.error('[editAssessmentFields] Error:', error);
+        toastApiError(this, error);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', {
@@ -657,7 +658,7 @@ export const actions = {
       state.commit('setProgress', calculateProgress(response.data));
       state.commit('setLastEdit');
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 
@@ -689,7 +690,7 @@ export const actions = {
         window.location.href = `/assessments/${id}/publish-settings`;
       }, 1000);
     } catch (error) {
-      console.error('[publish] Error:', error);
+      toastApiError(this, error);
       this.$toast.error(
         this.$i18n.t('statusMessaging.assessments.publishingAssessmentError'),
       );
@@ -762,7 +763,7 @@ export const actions = {
         this.$router.push(`/assessments/${id}/publish-settings`);
       })
       .catch((error) => {
-        console.error(error);
+        toastApiError(this, error);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', {
@@ -830,7 +831,7 @@ export const actions = {
         percent_complete: assessmentResponse.data.percent_complete,
       });
     } catch (error) {
-      console.error('[storeSurveyAnswer] Error:', error);
+      toastApiError(this, error);
     }
   },
 
@@ -863,7 +864,7 @@ export const actions = {
 
       state.commit('updateSurveyAnswer', response.data);
     } catch (error) {
-      console.error('[updateSurveyAnswer] Error:', error);
+      toastApiError(this, error);
     }
   },
 
@@ -882,7 +883,7 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        console.error(error);
+        toastApiError(this, error);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', {
@@ -954,7 +955,7 @@ export const actions = {
 
       this.$router.push('/assessments');
     } catch (error) {
-      console.error(error);
+      toastApiError(this, error);
     }
   },
 
@@ -977,7 +978,7 @@ export const actions = {
       window.document.body.appendChild(link);
       link.click();
     } catch (error) {
-      console.error(error);
+      toastApiError(this, error);
     } finally {
       this.dispatch('loader/loaderState', { active: false });
     }
@@ -1000,7 +1001,7 @@ export const actions = {
       window.document.body.appendChild(link);
       link.click();
     } catch (error) {
-      console.error(error);
+      toastApiError(this, error);
     } finally {
       this.dispatch('loader/loaderState', { active: false });
     }
@@ -1027,7 +1028,7 @@ export const actions = {
       window.document.body.appendChild(link);
       link.click();
     } catch (error) {
-      console.error(error);
+      toastApiError(this, error);
     } finally {
       this.dispatch('loader/loaderState', { active: false });
       state.dispatch('popup/popupState', { active: false }, { root: true });
@@ -1134,7 +1135,7 @@ export const actions = {
 
       store.commit('assessmentAggregateReport', withoutDuplicates);
     } catch (error) {
-      console.error('[filterAggregateReport] Error:', error);
+      toastApiError(this, error);
     }
   },
 
@@ -1197,7 +1198,7 @@ export const actions = {
 
       store.commit('assessmentAggregateReport', withoutDuplicates);
     } catch (error) {
-      console.error('[removeFilterAggregateReport] Error:', error);
+      toastApiError(this, error);
     }
   },
   reset(state) {
@@ -1279,7 +1280,7 @@ export const actions = {
             state.commit('removeSurveyAnswer', answer.id);
           })
           .catch((error) => {
-            console.error(error);
+            toastApiError(this, error);
           });
       }
     }
@@ -1307,7 +1308,7 @@ export const actions = {
         state.commit('setLastEdit');
       })
       .catch((error) => {
-        console.error('[setOnline] Error:', error);
+        toastApiError(this, error);
       });
 
     state.state.assessment.surveyAnswers.forEach((answer) => {

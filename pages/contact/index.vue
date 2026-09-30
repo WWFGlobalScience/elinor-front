@@ -150,6 +150,7 @@
 </template>
 <script>
 import { mapActions, mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 
 export default {
   name: 'contact',
@@ -202,7 +203,7 @@ export default {
           recaptcha,
         });
       } catch (error) {
-        console.error('[contact] Error:', error);
+        toastApiError(this, error);
       }
     },
   },

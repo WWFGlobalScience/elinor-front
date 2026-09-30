@@ -64,6 +64,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 import {
   isAssessmentCollaborator,
   isAssessmentObserver,
@@ -161,7 +162,7 @@ export default {
               });
           }
         }).catch((error) => {
-          console.error('[toggleConnection] Error:', error);
+          toastApiError(this, error);
         });
 
         // return;

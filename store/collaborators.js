@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { toastApiError } from '~/config/api-error';
 
 export const state = () => ({
   error: null,
@@ -35,7 +36,7 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        console.error('[createCollaborator] Error:', error);
+        toastApiError(this, error);
         state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
@@ -66,7 +67,7 @@ export const actions = {
         );
       })
       .catch((error) => {
-        console.error('[updateCollaborator] Error:', error);
+        toastApiError(this, error);
         state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
@@ -91,7 +92,7 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        console.error('[deleteCollaborator] Error:', error);
+        toastApiError(this, error);
         state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {

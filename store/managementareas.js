@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { toastApiError } from '~/config/api-error';
 
 export const state = () => ({
   list: [],
@@ -56,10 +57,6 @@ const mapToForm = (state, data, locale) => {
 
 const mapCollectionToForm = (state, collection, locale) => {
   return collection.map((item) => mapToForm(state, item, locale));
-};
-
-const logApiError = (context, error) => {
-  console.error(`[${context}] Error:`, error);
 };
 
 export const mutations = {
@@ -149,7 +146,7 @@ export const actions = {
       );
       state.commit('setList', managementAreas);
     } catch (error) {
-      logApiError('fetchManagementAreas', error);
+      toastApiError(this, error);
     }
   },
   async fetchManagementArea(state, id) {
@@ -161,7 +158,7 @@ export const actions = {
       state.commit('assessments/setManagementArea', response, { root: true });
       await state.dispatch('fetchZones', id);
     } catch (error) {
-      logApiError('fetchManagementArea', error);
+      toastApiError(this, error);
     }
   },
   async createManagementArea(state, { form, assessmentId }) {
@@ -190,7 +187,7 @@ export const actions = {
         });
       }, 2000);
     } catch (error) {
-      logApiError('createManagementArea', error);
+      toastApiError(this, error);
       this.dispatch('loader/loaderState', {
         active: false,
         showText: false,
@@ -225,7 +222,7 @@ export const actions = {
       state.commit('assessments/setLastEdit', {}, { root: true });
       state.dispatch('assessments/updateAssessmentProgress', {}, { root: true });
     } catch (error) {
-      logApiError('editManagementAreaField', error);
+      toastApiError(this, error);
     }
   },
   async editManagementAreaFileField(
@@ -273,7 +270,7 @@ export const actions = {
       );
       state.commit('setZones', response.results);
     } catch (error) {
-      logApiError('fetchZones', error);
+      toastApiError(this, error);
     }
   },
   async createZone(state, { form, managementAreaId }) {
@@ -282,7 +279,7 @@ export const actions = {
       let response = await this.$axios.$post(`v2/managementareazones/`, form);
       state.commit('addZone', response.data);
     } catch (error) {
-      logApiError('createZone', error);
+      toastApiError(this, error);
     }
   },
   async updateZone(state, { form, id }) {
@@ -293,7 +290,7 @@ export const actions = {
       );
       state.commit('updateZone', response.data);
     } catch (error) {
-      logApiError('updateZone', error);
+      toastApiError(this, error);
     }
   },
   async fetchAuthorities(state, search) {
@@ -303,7 +300,7 @@ export const actions = {
       );
       state.commit('setAuthorities', response.results);
     } catch (error) {
-      logApiError('fetchAuthorities', error);
+      toastApiError(this, error);
     }
   },
   async onManagementAreaNew(state, assessment) {
@@ -345,7 +342,7 @@ export const actions = {
       state.commit('removeImportFile');
       state.commit('setPoint', point);
     } catch (error) {
-      logApiError('setPoint', error);
+      toastApiError(this, error);
     }
   },
   async setPolygon(state, polygon) {
@@ -359,7 +356,7 @@ export const actions = {
       state.commit('removeImportFile');
       state.commit('setPolygon', polygon);
     } catch (error) {
-      logApiError('setPolygon', error);
+      toastApiError(this, error);
     }
   },
   async removeImportFile(state) {
@@ -372,7 +369,7 @@ export const actions = {
       // console.log('response', response);
       state.commit('removeImportFile');
     } catch (error) {
-      logApiError('removeImportFile', error);
+      toastApiError(this, error);
     }
   },
   async removePoint(state) {
@@ -384,7 +381,7 @@ export const actions = {
       });
       state.commit('removePoint');
     } catch (error) {
-      logApiError('removePoint', error);
+      toastApiError(this, error);
     }
   },
   async removePolygon(state) {
@@ -396,7 +393,7 @@ export const actions = {
       });
       state.commit('removePolygon');
     } catch (error) {
-      logApiError('removePolygon', error);
+      toastApiError(this, error);
     }
   },
   async editZoneField(state, { field, index, value }) {
@@ -433,7 +430,7 @@ export const actions = {
       }
       state.commit('setZoneField', { field, index, value });
     } catch (error) {
-      logApiError('editZoneField', error);
+      toastApiError(this, error);
     }
   },
   async resetImportFileError(state) {
@@ -488,7 +485,7 @@ export const actions = {
         });
       }
     } catch (error) {
-      logApiError('setRegion', error);
+      toastApiError(this, error);
     }
   },
   async removeRegion(state, regionId) {
@@ -507,7 +504,7 @@ export const actions = {
         value: response.data.regions,
       });
     } catch (error) {
-      logApiError('removeRegion', error);
+      toastApiError(this, error);
     }
   },
   async clearProtectedArea(state) {
@@ -519,7 +516,7 @@ export const actions = {
       });
       state.commit('setEditWdpaId', true);
     } catch (error) {
-      logApiError('clearProtectedArea', error);
+      toastApiError(this, error);
     }
   },
   async protectedAreaByWdpaId(
@@ -576,7 +573,7 @@ export const actions = {
       state.commit('addAuthorityToList', authority);
       return authority;
     } catch (error) {
-      logApiError('createAuthority', error);
+      toastApiError(this, error);
     }
   },
   async deleteZone(state, { zoneId, index }) {
@@ -589,7 +586,7 @@ export const actions = {
       }
       state.commit('deleteZone', index);
     } catch (error) {
-      logApiError('deleteZone', error);
+      toastApiError(this, error);
     }
   },
   async deleteAllZones(state) {
@@ -603,13 +600,13 @@ export const actions = {
             method: 'delete',
             url: `/v2/managementareazones/${zone.id}/`,
           }).catch((error) => {
-            logApiError('deleteAllZones', error);
+            toastApiError(this, error);
           });
         }),
       );
       state.commit('deleteAllZones');
     } catch (error) {
-      logApiError('deleteAllZones', error);
+      toastApiError(this, error);
     }
   },
 };
