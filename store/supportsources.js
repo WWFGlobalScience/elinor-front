@@ -14,7 +14,7 @@ export const actions = {
   async fetchSupportSources(state, search) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching support sources...',
+      text: 'statusMessaging.loader.supportsources.fetchingSupportSources',
     });
 
     try {

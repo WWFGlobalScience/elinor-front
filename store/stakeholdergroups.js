@@ -14,7 +14,7 @@ export const actions = {
   async fetchStakeholderGroups(state, search) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching stake holder groups...',
+      text: 'statusMessaging.loader.stakeholdergroups.fetchingStakeHolderGroups',
     });
 
     try {

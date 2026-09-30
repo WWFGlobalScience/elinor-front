@@ -14,7 +14,7 @@ export const actions = {
   async fetchRegions(state, search) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching regions...',
+      text: 'statusMessaging.loader.regions.fetchingRegions',
     });
 
     try {

@@ -158,19 +158,23 @@
                       type="button"
                       @click="togglePasswordVisibility"
                       class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
-                      :title="showPassword ? 'Hide password' : 'Show password'"
+                      :title="
+                        showPassword
+                          ? $t('default.hidePassword')
+                          : $t('default.showPassword')
+                      "
                     >
                       <img
                         v-if="!showPassword"
                         src="~/assets/img/visibility_off.svg"
                         class="w-5 h-5"
-                        alt="Hide password"
+                        :alt="$t('default.hidePassword')"
                       />
                       <img
                         v-else
                         src="~/assets/img/ico-eye-turqy-light.svg"
                         class="w-5 h-5 opacity-100"
-                        alt="Show password"
+                        :alt="$t('default.showPassword')"
                       />
                     </button>
                   </div>
@@ -273,7 +277,7 @@
             <div class="container">
                 <img
                     src="~/assets/img/elinor-illustration.svg"
-                    alt="ellinor illustration"
+                    :alt="$t('pages.home.public.heroIllustrationAlt')"
                 />
                 <p class="section--intro__info">
                     {{ $t('pages.home.public.content.introduction.text') }}
@@ -298,11 +302,9 @@
     >
       <div class="container">
         <div class="section--img-text__block-text">
-          <h2>HOW TO USE ELINOR</h2>
+          <h2>{{ $t('pages.home.public.howToUseElinor') }}</h2>
           <div class="text-subtitle">
-            The videos below demonstrate many of Elinor’s key features. Check
-            them out to learn how to start your own assessment, or see the
-            Methodology and Documentation pages for more detailed information.
+            {{ $t('pages.home.public.howToUseElinorSubtitle') }}
           </div>
         </div>
       </div>
@@ -337,7 +339,7 @@
               <div class="relative">
                 <img
                   :id="`thumb-${item.id}`"
-                  :alt="`Contenido del video ${item.title}`"
+                  :alt="$t('pages.home.public.videoAlt', { title: $t(item.title) })"
                   class="carousel-thumb"
                   :src="`https://img.youtube.com/vi/${item.id}/hqdefault.jpg`"
                 />
@@ -377,7 +379,7 @@
               </div>
               <div class="card-carousel__info">
                 <h4>
-                  {{ item.title }}
+                  {{ $t(item.title) }}
                 </h4>
               </div>
             </button>
@@ -500,27 +502,27 @@ export default {
       items: [
         {
           id: '9bxrsgW82L4',
-          title: 'Introduction to Elinor',
+          title: 'pages.home.onboarding.video1.title',
           duration: '2:45',
         },
         {
           id: 'nA5LNNuqpKQ',
-          title: 'How to create a new assessment',
+          title: 'pages.home.onboarding.video2.title',
           duration: '4:12',
         },
         {
           id: 'CX8LucMtgdg',
-          title: 'How to generate a report',
+          title: 'pages.home.onboarding.video3.title',
           duration: '3:28',
         },
         {
           id: '1AJ-g-2y8pQ',
-          title: 'How to change assestment privacy',
+          title: 'pages.home.onboarding.video4.title',
           duration: '1:55',
         },
         {
           id: 'z1T6DnDNVIg',
-          title: 'How to add a Collaborator',
+          title: 'pages.home.onboarding.video5.title',
           duration: '2:18',
         },
       ],

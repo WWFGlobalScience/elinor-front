@@ -172,7 +172,7 @@
                 class="icon"
                 title="Delete"
                 >
-                <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+                <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
                 <span class="visually-hidden">{{ $t('default.delete') }}</span>
                 </a>
             </li>
@@ -184,7 +184,7 @@
                 class="icon"
                 title="Delete"
                 >
-                <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+                <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
                 <span class="visually-hidden">{{ $t('default.delete') }}</span>
                 </a>
             </li>
@@ -196,7 +196,7 @@
                 class="icon"
                 title="Delete"
                 >
-                <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+                <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
                 <span class="visually-hidden">{{ $t('default.delete') }}</span>
                 </a>
             </li>
@@ -208,7 +208,7 @@
                 class="icon"
                 title="Delete"
                 >
-                <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+                <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
                 <span class="visually-hidden">{{ $t('default.delete') }}</span>
                 </a>
             </li>

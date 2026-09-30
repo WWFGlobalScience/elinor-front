@@ -7,12 +7,12 @@
     <div class="attribute-checkbox-icon" v-if="!checkIsLoading()">
       <img
         src="~/assets/img/check_circle.svg"
-        alt="Checkbox checked"
+        :alt="$t('default.checkbox.checked')"
         v-if="isAttributeChecked(attribute)"
       />
       <img
         src="~/assets/img/radio_button_unchecked-gray.svg"
-        alt="Checkbox unchecked"
+        :alt="$t('default.checkbox.unchecked')"
         v-else
       />
     </div>

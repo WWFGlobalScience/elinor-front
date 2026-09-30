@@ -29,7 +29,7 @@ export const actions = {
 
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching questions...',
+      text: 'statusMessaging.loader.surveyquestions.fetchingQuestions',
     });
 
     try {

@@ -308,7 +308,7 @@ export const actions = {
     this.dispatch('loader/loaderState', {
       active: true,
       showText: true,
-      text: 'Creating management area...',
+      text: 'statusMessaging.loader.managementareas.creatingManagementArea',
     });
     state.dispatch('createManagementArea', {
       form,
@@ -325,7 +325,7 @@ export const actions = {
     this.dispatch('loader/loaderState', {
       active: true,
       showText: true,
-      text: 'Creating management area...',
+      text: 'statusMessaging.loader.managementareas.creatingManagementArea',
     });
   },
   async onDateEstablishmentSelected(state, date) {

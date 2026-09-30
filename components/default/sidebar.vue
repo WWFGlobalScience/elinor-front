@@ -26,7 +26,7 @@
         <button
           @click.stop="closeMobileMenu"
           class="sidebar__mobile-close"
-          aria-label="Close menu"
+          :aria-label="$t('default.closeMenu')"
           type="button"
         >
           <svg
@@ -192,7 +192,7 @@
                     style="cursor: pointer"
                     class="nav__main__bottom-brand"
                     src="~/assets/img/elinor-sidebar-circle.svg"
-                    alt="elinor-sidebar-circle"
+                    :alt="$t('default.sidebarCircleAlt')"
                 /> -->
         <div class="nav__bottom">
           <default-language-selector />
@@ -202,7 +202,7 @@
             to="/sign-in"
             class="btn--opacity--child nav__main__link"
           >
-            <img src="~/assets/img/ico-signin-white.svg" alt="sign in" />
+            <img src="~/assets/img/ico-signin-white.svg" :alt="$t('pages.home.public.signInButton')" />
             <span class="btn--opacity__target">Sign in</span>
           </NuxtLink>
         </div>
@@ -223,13 +223,13 @@
                             <img
                                 v-if="isSidebarOpen"
                                 src="~/assets/img/ico-minimize-white.svg"
-                                alt="minimize"
+                                :alt="$t('default.minimize')"
                                 class="center-v"
                             />
                             <img
                                 v-else
                                 src="~/assets/img/ico-maximize-white.svg"
-                                alt="maximize"
+                                :alt="$t('default.maximize')"
                                 class="center-v w-4 btn--opacity__target"
                             />
                             <span class="btn--opacity__target">{{

@@ -6,8 +6,9 @@
                   $t(
                       'pages.assessments.edit.tabs.survey.navigator.completed',
                   )
-              }} <span>{{ completedQuestions }}</span> 
-               to {{ totalQuestions }}
+              }} <span>{{ completedQuestions }}</span>
+              {{ $t('pages.assessments.edit.tabs.survey.navigator.toTotal') }}
+              {{ totalQuestions }}
           </div>
           <div class="header-btns">
               <div class="assessment__btns relative">
@@ -40,10 +41,10 @@
               <div class="switchers-container">
                   <div class="switchers" :class="{ 'is--offline': isSurveyOffline }">
                       <span :class="{ 'is--active': !isSurveyOffline }" @click="toggleConnection">
-                          online
+                          {{ $t('pages.assessments.edit.tabs.survey.modeOnline') }}
                       </span>
                       <span :class="{ 'is--active': isSurveyOffline }" @click="toggleConnection">
-                          offline
+                          {{ $t('pages.assessments.edit.tabs.survey.modeOffline') }}
                       </span>
                   </div>
                   <div 
@@ -51,7 +52,7 @@
                       @mouseenter="isInfoTooltipOpen = true"
                       @mouseleave="isInfoTooltipOpen = false"
                   >
-                      <img src="~/assets/img/info.svg" alt="Info" />
+                      <img src="~/assets/img/info.svg" :alt="$t('default.info')" />
                       <div class="absolute w-[400px] top-full right-0 bg-white shadow-md px-3 py-2 z-20 mt-2" v-if="isInfoTooltipOpen">
                           <p class="text-sm text-[#2E2E2E] font-medium leading-6">{{ $t('pages.assessments.edit.offlineSurveyInfo') }}</p>
                       </div>

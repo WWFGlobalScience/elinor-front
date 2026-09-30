@@ -22,7 +22,7 @@
               'pages.assessments.edit.tabs.collaborators.addCollaboratorButton',
             )
           }}</span>
-          <img src="~/assets/img/add_circle.svg" alt="add collaborator" />
+          <img src="~/assets/img/add_circle.svg" :alt="$t('pages.assessments.edit.tabs.collaborators.addCollaboratorButton')" />
         </button>
       </div>
       <assessment-edit-collaborators-list></assessment-edit-collaborators-list>

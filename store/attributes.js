@@ -29,7 +29,7 @@ export const actions = {
 
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching attributes...',
+      text: 'statusMessaging.loader.attributes.fetchingAttributes',
     });
 
     let hasError = false;

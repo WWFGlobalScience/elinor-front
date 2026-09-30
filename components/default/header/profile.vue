@@ -42,13 +42,13 @@
         <img
           v-if="isSidebarOpen"
           src="~/assets/img/ico-maximize-turqy.svg"
-          alt="maximize"
+          :alt="$t('default.maximize')"
           class="center-v w-12"
         />
         <img
           v-else
           src="~/assets/img/ico-minimize-turqy.svg"
-          alt="minimize"
+          :alt="$t('default.minimize')"
           class="center-v w-12 btn--opacity__target"
         />
       </li>

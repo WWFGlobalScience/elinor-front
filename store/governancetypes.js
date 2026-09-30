@@ -14,7 +14,7 @@ export const actions = {
   async fetchGovernanceTypes(state, search) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching governance types...',
+      text: 'statusMessaging.loader.governancetypes.fetchingGovernanceTypes',
     });
 
     try {

@@ -39,7 +39,7 @@
             v-if="assessment.status !== 10 && !isSurveyOffline"
             @click="download"
             >
-                <img src="~/assets/img/download-ico.svg" alt="Download Data" />
+                <img src="~/assets/img/download-ico.svg" :alt="$t('default.downloadData')" />
                 <span>{{ $t('default.downloadSummary') }}</span>
             </a> -->
       <span class="separator" v-if="
@@ -57,7 +57,7 @@
         @click="destroy"
         class="delete-btn"
       >
-        <img src="~/assets/img/delete.svg" alt="Delete" />
+        <img src="~/assets/img/delete.svg" :alt="$t('default.delete')" />
         <span>Delete Assessment</span>
       </a>
     </div>

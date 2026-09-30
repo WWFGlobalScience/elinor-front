@@ -41,7 +41,7 @@ export const actions = {
   async signIn(state, credentials) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Login...',
+      text: 'statusMessaging.loader.authentication.login',
     });
 
     try {
@@ -56,7 +56,7 @@ export const actions = {
         this.dispatch('popup/popupState', {
           active: true,
           component: 'popup-user-organization',
-          title: 'Before you go',
+          title: 'popup.organization.beforeYouGo',
         });
       }
       this.$router.push('/');
@@ -86,7 +86,7 @@ export const actions = {
   async signUp(state, form) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Registering...',
+      text: 'statusMessaging.loader.authentication.registering',
     });
     await this.$axios
       .$post('rest-auth/registration/', {
@@ -144,7 +144,7 @@ export const actions = {
   async resendEmail(state, email) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Sending verification email...',
+      text: 'statusMessaging.loader.authentication.sendingVerificationEmail',
     });
 
     await this.$axios

@@ -15,7 +15,7 @@
             >
             <div class="multiselect__wrap">
               <multiselect
-                placeholder="Year"
+                :placeholder="$t('pages.assessments.list.create.popup.labels.year')"
                 :value="selectYear.value"
                 :options="selectYear.options"
                 :multiple="false"

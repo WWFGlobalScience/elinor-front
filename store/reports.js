@@ -33,7 +33,7 @@ export const actions = {
     if (notHasParams) {
       this.dispatch('loader/loaderState', {
         active: true,
-        text: 'Getting assessments...',
+        text: 'statusMessaging.loader.reports.gettingAssessments',
       });
     }
 
@@ -64,7 +64,7 @@ export const actions = {
     if (notHasParams) {
       this.dispatch('loader/loaderState', {
         active: true,
-        text: 'Getting assessments...',
+        text: 'statusMessaging.loader.reports.gettingAssessments',
       });
     }
 

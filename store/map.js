@@ -33,7 +33,7 @@ export const actions = {
   async fetchMap(state) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Getting map data...',
+      text: 'statusMessaging.loader.map.gettingMapData',
     });
 
     try {

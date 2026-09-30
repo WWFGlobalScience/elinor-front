@@ -97,7 +97,7 @@
       </div>
     </div>
     <div v-if="isOffline" class="is--offline-warning">
-      <img src="~/assets/img/warning.svg" alt="Warning" />
+      <img src="~/assets/img/warning.svg" :alt="$t('default.warning')" />
       <span>
         {{ $t('pages.assessments.edit.offlineSurveyWarning') }}
       </span>

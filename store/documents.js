@@ -21,7 +21,7 @@ export const actions = {
   async fetchDocuments(state, { page, sortBy, sortOrder }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching documents...',
+      text: 'statusMessaging.loader.documents.fetchingDocuments',
     });
 
     try {
@@ -47,7 +47,7 @@ export const actions = {
   async downloadDocument(state, document) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Downloading document...',
+      text: 'statusMessaging.loader.documents.downloadingDocument',
     });
 
     try {

@@ -30,7 +30,11 @@
                   <div class="header__save relative">
                       <assessment-status class="mb-7"></assessment-status>
                       <span class="progress-percentage" v-if="!progress.published">
-                          {{ getPublishPercentage() }}% completed
+                          {{
+                              $t('pages.assessments.edit.percentCompleted', {
+                                  percent: getPublishPercentage(),
+                              })
+                          }}
                       </span>
                       <!-- <template v-if="assessment.status !== 10">
                           <button
@@ -69,7 +73,7 @@
                   isSaved
               "
           >
-              Your progress has been saved successfully!
+              {{ $t('pages.assessments.edit.progressSavedSuccess') }}
           </div>
       </div>
       <!-- <p

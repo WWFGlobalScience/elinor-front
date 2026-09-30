@@ -423,8 +423,8 @@ export const actions = {
     const notHasParams = Object.keys(params).length === 0;
 
     const loaderText = notHasParams
-      ? 'Getting assessments...'
-      : 'Filtering assessments...';
+      ? 'statusMessaging.loader.assessments.gettingAssessments'
+      : 'statusMessaging.loader.assessments.filteringAssessments';
 
     this.dispatch('loader/loaderState', {
       active: true,
@@ -459,7 +459,7 @@ export const actions = {
   async fetchAssessment(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Getting assessment data...',
+      text: 'statusMessaging.loader.assessments.gettingAssessmentData',
     });
 
     const isOffline = state.rootState.layout.offline;
@@ -504,7 +504,7 @@ export const actions = {
   async fetchReport(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Getting report data...',
+      text: 'statusMessaging.loader.assessments.gettingReportData',
     });
 
     try {
@@ -527,7 +527,7 @@ export const actions = {
   async createAssessment(state, form) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Creating assessment...',
+      text: 'statusMessaging.loader.assessments.creatingAssessment',
     });
     this.$axios({
       method: 'post',
@@ -558,7 +558,7 @@ export const actions = {
   async editAssessment(state, { form, id }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Saving assessment data...',
+      text: 'statusMessaging.loader.assessments.savingAssessmentData',
     });
     this.$axios({
       method: 'patch',
@@ -608,7 +608,7 @@ export const actions = {
 
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Clearing data...',
+      text: 'statusMessaging.loader.assessments.clearingData',
       showText: true,
     });
 
@@ -665,7 +665,7 @@ export const actions = {
   async publish(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Publishing assessment...',
+      text: 'statusMessaging.loader.assessments.publishingAssessment',
     });
     this.dispatch('popup/popupState', { active: false });
     try {
@@ -705,7 +705,7 @@ export const actions = {
   async unpublish(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Unpublishing assessment...',
+      text: 'statusMessaging.loader.assessments.unpublishingAssessment',
     });
     this.dispatch('popup/popupState', { active: false });
     this.$axios({
@@ -746,7 +746,7 @@ export const actions = {
   async finalize(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Finalizing assessment...',
+      text: 'statusMessaging.loader.assessments.finalizingAssessment',
     });
     this.$axios({
       method: 'patch',
@@ -871,7 +871,7 @@ export const actions = {
   async removeSurveyAnswer(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Deleting survey answer...',
+      text: 'statusMessaging.loader.assessments.deletingSurveyAnswer',
     });
 
     this.$axios({
@@ -963,7 +963,7 @@ export const actions = {
     this.dispatch('loader/loaderState', {
       active: true,
       showText: true,
-      text: 'Downloading assessment...',
+      text: 'statusMessaging.loader.assessments.downloadingAssessment',
     });
     try {
       const responseType = 'blob';
@@ -987,7 +987,7 @@ export const actions = {
   async downloadAssessments(state) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Downloading assessments...',
+      text: 'statusMessaging.loader.assessments.downloadingAssessments',
     });
     try {
       const responseType = 'blob';
@@ -1010,7 +1010,7 @@ export const actions = {
   async downloadSurveyFile(state, assessmentId) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Downloading survey file...',
+      text: 'statusMessaging.loader.assessments.downloadingSurveyFile',
     });
     try {
       const responseType = 'blob';
@@ -1041,7 +1041,7 @@ export const actions = {
   ) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Uploading survey file...',
+      text: 'statusMessaging.loader.assessments.uploadingSurveyFile',
     });
 
     let formData = new FormData();
@@ -1264,7 +1264,7 @@ export const actions = {
     this.dispatch('loader/loaderState', {
       active: true,
       showText: true,
-      text: 'Preparing your assessment to go online. Please standby.',
+      text: 'pages.assessments.edit.tabs.survey.turningOnline',
     });
 
     const attributes = [...state.state.assessment.attributes];

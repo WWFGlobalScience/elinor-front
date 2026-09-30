@@ -52,7 +52,7 @@
         >
           <img
             src="~/assets/img/mail.svg"
-            alt="Contact"
+            :alt="$t('pages.assessments.actions.contact.title')"
             class="!transform-none"
           />
           <span class="!ml-1 group-hover:underline">{{
@@ -71,7 +71,7 @@
           class="btn btn--border-turqy !border-0 !p-2 !m-0 group"
           title="Flag"
         >
-          <img src="~/assets/img/flag.svg" alt="Flag" class="!transform-none" />
+          <img src="~/assets/img/flag.svg" :alt="$t('default.flag')" class="!transform-none" />
           <span class="!ml-1 group-hover:underline">{{
             $t('default.flag')
           }}</span>

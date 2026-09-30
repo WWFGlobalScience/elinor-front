@@ -20,7 +20,7 @@ export const actions = {
   async contact(state, { name, subject, email, message, recaptcha }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Sending contact...',
+      text: 'statusMessaging.loader.contact.sendingContact',
     });
 
     try {

@@ -3,7 +3,7 @@
     <div class="page--assessments__top">
       <img
         src="~/assets/img/assessment-bg.svg"
-        alt="assessment top bg"
+        :alt="$t('pages.assessments.meta.imageAlt')"
         class="page--assessments__top-img"
       />
       <assessments-header></assessments-header>
@@ -31,7 +31,7 @@
         @click="showFiltersModal"
       >
         <span>{{ $t('pages.assessments.list.filters.showFilters') }}</span>
-        <img src="~/assets/img/ico-filters-turqy.svg" alt="Filters" />
+        <img src="~/assets/img/ico-filters-turqy.svg" :alt="$t('default.filters')" />
       </button>
     </div>
     <assessments-results></assessments-results>

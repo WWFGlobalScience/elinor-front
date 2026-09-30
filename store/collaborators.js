@@ -18,7 +18,7 @@ export const actions = {
   async createCollaborator(state, form) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Creating collaborator...',
+      text: 'statusMessaging.loader.collaborators.creatingCollaborator',
     });
 
     const data = this.$formDataStringify(form);
@@ -47,7 +47,7 @@ export const actions = {
   async updateCollaborator(state, { role, collaborator, assessmentId }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Updating collaborator...',
+      text: 'statusMessaging.loader.collaborators.updatingCollaborator',
     });
 
     this.$axios({
@@ -78,7 +78,7 @@ export const actions = {
   async deleteCollaborator(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Deleting collaborator...',
+      text: 'statusMessaging.loader.collaborators.deletingCollaborator',
     });
 
     this.$axios({
