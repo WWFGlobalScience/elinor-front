@@ -258,6 +258,8 @@ export default async () => {
       theme: 'bubble',
       position: 'bottom-right',
       duration: 7000,
+      className: 'elinor-toast',
+      keepOnHover: true,
     },
   };
 };
