@@ -39,13 +39,32 @@
                   </a>
               </div>
               <div class="switchers-container">
-                  <div class="switchers" :class="{ 'is--offline': isSurveyOffline }">
+                  <div
+                      class="switchers"
+                      :class="{
+                          'is--offline': isSurveyOffline,
+                          'is--switching': isGoingOffline,
+                      }"
+                      :aria-busy="isGoingOffline ? 'true' : 'false'"
+                  >
                       <span :class="{ 'is--active': !isSurveyOffline }" @click="toggleConnection">
                           {{ $t('pages.assessments.edit.tabs.survey.modeOnline') }}
                       </span>
-                      <span :class="{ 'is--active': isSurveyOffline }" @click="toggleConnection">
-                          {{ $t('pages.assessments.edit.tabs.survey.modeOffline') }}
+                      <span
+                          :class="{
+                              'is--active': isSurveyOffline,
+                              'is--pending': isGoingOffline,
+                          }"
+                          @click="toggleConnection"
+                      >
+                          <span v-if="isGoingOffline" class="switchers-spinner vs__spinner"></span>
+                          <template v-else>
+                              {{ $t('pages.assessments.edit.tabs.survey.modeOffline') }}
+                          </template>
                       </span>
+                      <div v-if="isGoingOffline" class="switchers-status">
+                          {{ $t('pages.assessments.edit.tabs.survey.goingOffline') }}
+                      </div>
                   </div>
                   <div 
                       class="cursor-pointer relative"
@@ -77,6 +96,8 @@ export default {
       return {
           hasConnection: navigator.onLine,
           isInfoTooltipOpen: false,
+          isTogglingConnection: false,
+          isGoingOffline: false,
       };
   },
   computed: {
@@ -144,30 +165,38 @@ export default {
               title: 'pages.assessments.uploadSurveyFile.title',
           });
       },
-      toggleConnection() {
-        // Example usage
-        // Example usage
-        this.$store.dispatch('layout/checkNetworkStatus').then(() => {
-        //   console.log('isNetworkError', this.isNetworkError);
-        if (!this.isNetworkError) {
-              if (this.isSurveyOffline) {
-                  this.setOnline();
-              } else {
-                  this.setOffline();
-              }
-          } else {
-              this.popupState({
-                  active: true,
-                  component: 'popup-assessment-without-connection',
-                  title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
-              });
+      async toggleConnection() {
+          if (this.isTogglingConnection) {
+              return;
           }
-        }).catch((error) => {
-          toastApiError(this, error);
-        });
 
-        // return;
+          this.isTogglingConnection = true;
+          this.isGoingOffline = !this.isSurveyOffline;
+          await this.$nextTick();
 
+          try {
+              await this.$store.dispatch('layout/checkNetworkStatus');
+
+              if (this.isNetworkError) {
+                  this.popupState({
+                      active: true,
+                      component: 'popup-assessment-without-connection',
+                      title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
+                  });
+                  return;
+              }
+
+              if (this.isSurveyOffline) {
+                  await this.setOnline();
+              } else {
+                  await this.setOffline();
+              }
+          } catch (error) {
+              toastApiError(this, error);
+          } finally {
+              this.isTogglingConnection = false;
+              this.isGoingOffline = false;
+          }
       },
   },
 };
