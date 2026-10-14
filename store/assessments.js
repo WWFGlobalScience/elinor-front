@@ -582,21 +582,20 @@ export const actions = {
   },
 
   async editAssessmentField(state, { field, value, id }) {
-    this.$axios({
-      method: 'patch',
-      url: `/v2/assessments/${id}/`,
-      data: {
-        [field]: (value && value.id) || value,
-      },
-    })
-      .then((response) => {
-        state.commit('setProgress', calculateProgress(response?.data));
-        state.commit('setAssessmentField', { field, value });
-        state.commit('setLastEdit');
-      })
-      .catch((error) => {
-        toastApiError(this, error);
+    try {
+      const response = await this.$axios({
+        method: 'patch',
+        url: `/v2/assessments/${id}/`,
+        data: {
+          [field]: (value && value.id) || value,
+        },
       });
+      state.commit('setProgress', calculateProgress(response?.data));
+      state.commit('setAssessmentField', { field, value });
+      state.commit('setLastEdit');
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
 
   async editAssessmentFields(state, { fields, id }) {

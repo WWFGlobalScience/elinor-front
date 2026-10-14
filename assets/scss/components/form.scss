@@ -81,6 +81,9 @@
   }
   .character-counter {
     @apply text-right text-sm text-[#9C9C9C] mt-1 font-medium;
+    &.is-invalid {
+      @apply text-[#D63C3C];
+    }
   }
   .label {
     @apply block text-[16px] leading-[30px] mb-2 font-semibold;

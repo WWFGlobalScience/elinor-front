@@ -42,6 +42,10 @@ export default {
       type: Object,
       required: true,
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     ...mapState({
@@ -55,8 +59,7 @@ export default {
       popupState: 'popup/popupState',
     }),
     checkIsLoading() {
-      // console.log('isAttributeLoading', this.isAttributeLoading);
-      return this.isAttributeLoading;
+      return this.isAttributeLoading || this.loading;
     },
     isAttributeChecked(attribute) {
       setTimeout(() => {
