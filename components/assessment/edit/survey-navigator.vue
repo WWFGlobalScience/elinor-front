@@ -200,10 +200,12 @@ export default {
             });
           }, 100);
         });
-      } else {
-        if (isAttributeSelected && !this.isOffline) {
-          window.location.href = `/assessments/edit/${assessmentId}/the-survey/${question.id}/#question`;
+      } else if (isAttributeSelected) {
+        const path = `/assessments/edit/${assessmentId}/the-survey/${question.id}`;
+        if (parseInt(questionId) === parseInt(question.id)) {
+          return;
         }
+        this.$router.push({ path, hash: '#question' }).catch(() => {});
       }
     },
   },

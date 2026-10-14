@@ -43,12 +43,21 @@
                       class="switchers"
                       :class="{
                           'is--offline': isSurveyOffline,
-                          'is--switching': isGoingOffline,
+                          'is--switching': isSwitchingConnection,
                       }"
-                      :aria-busy="isGoingOffline ? 'true' : 'false'"
+                      :aria-busy="isSwitchingConnection ? 'true' : 'false'"
                   >
-                      <span :class="{ 'is--active': !isSurveyOffline }" @click="toggleConnection">
-                          {{ $t('pages.assessments.edit.tabs.survey.modeOnline') }}
+                      <span
+                          :class="{
+                              'is--active': !isSurveyOffline,
+                              'is--pending': isGoingOnline,
+                          }"
+                          @click="toggleConnection"
+                      >
+                          <span v-if="isGoingOnline" class="switchers-spinner vs__spinner"></span>
+                          <template v-else>
+                              {{ $t('pages.assessments.edit.tabs.survey.modeOnline') }}
+                          </template>
                       </span>
                       <span
                           :class="{
@@ -62,8 +71,12 @@
                               {{ $t('pages.assessments.edit.tabs.survey.modeOffline') }}
                           </template>
                       </span>
-                      <div v-if="isGoingOffline" class="switchers-status">
-                          {{ $t('pages.assessments.edit.tabs.survey.goingOffline') }}
+                      <div v-if="isSwitchingConnection" class="switchers-status">
+                          {{
+                              isGoingOnline
+                                  ? $t('pages.assessments.edit.tabs.survey.goingOnline')
+                                  : $t('pages.assessments.edit.tabs.survey.goingOffline')
+                          }}
                       </div>
                   </div>
                   <div 
@@ -98,6 +111,7 @@ export default {
           isInfoTooltipOpen: false,
           isTogglingConnection: false,
           isGoingOffline: false,
+          isGoingOnline: false,
       };
   },
   computed: {
@@ -126,6 +140,9 @@ export default {
       },
       totalQuestions() {
           return this.activeQuestions.length;
+      },
+      isSwitchingConnection() {
+          return this.isGoingOffline || this.isGoingOnline;
       },
   },
   mounted() {
@@ -172,6 +189,7 @@ export default {
 
           this.isTogglingConnection = true;
           this.isGoingOffline = !this.isSurveyOffline;
+          this.isGoingOnline = this.isSurveyOffline;
           await this.$nextTick();
 
           try {
@@ -196,6 +214,7 @@ export default {
           } finally {
               this.isTogglingConnection = false;
               this.isGoingOffline = false;
+              this.isGoingOnline = false;
           }
       },
   },
