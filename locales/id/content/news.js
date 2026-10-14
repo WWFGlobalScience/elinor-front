@@ -1,75 +1,83 @@
 export default [
   {
-    date: '2-28-2024',
-    title: 'Announcing new features in Elinor',
+    date: '7-05-2026',
+    title: 'Elinor digunakan untuk menilai status dan tren tata kelola komunitas di Samudra Hindia Barat Daya',
     text: `
-              In a bid to make Elinor more usable, we are happy to announce three new features:
-              1. Aggregate Reports:
-              You can now generate an aggregate report for multiple assessments selections  by country, year or type of assessment. The Aggregate Report button is located on the assessments page.
-              2.Multiple languages: You can switch to your favorite language using the switcher at the top right of the page.  More languages will be uploaded soon.
-              3. Offline capability: This allows you to download a survey as an Excel file if you have an unstable Internet connection. This capability gives you the flexibility to complete a survey offline then upload it once you are connected to the internet .  More offline features will be added soon.
+  Studi baru yang diterbitkan di <em>Conservation Biology</em> memanfaatkan data dari platform ElinorData.org untuk menilai status terkini tata kelola pesisir berbasis komunitas di 52 kawasan yang dikelola komunitas di lima negara Southwest Indian Ocean (SWIO). Temuan menunjukkan bahwa tata kelola lokal yang lebih kuat berasosiasi secara signifikan dengan hasil sosial dan ekologis yang dipersepsikan lebih baik, meskipun kemajuan masih tidak merata pada atribut seperti kapasitas operasional dan manajemen adaptif. Studi baru ini menunjukkan bahwa para konservasionis dapat memanfaatkan platform Elinor untuk mengidentifikasi kesenjangan tata kelola yang berubah dari waktu ke waktu, berbagi inovasi pengelolaan lokal, dan merancang intervensi yang lebih terarah serta berbasis bukti demi keberhasilan konservasi jangka panjang. Baca studi lengkapnya di sini - <a href="https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325">https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325</a>`,
+  },
+  {
+    date: '2-28-2024',
+    title: 'Mengumumkan fitur baru di Elinor',
+    text: `
+              Dalam upaya membuat Elinor lebih mudah digunakan, kami dengan senang hati mengumumkan tiga fitur baru:
+              1. Laporan Agregat:
+              Anda kini dapat menghasilkan laporan agregat untuk beberapa pemilihan penilaian berdasarkan negara, tahun, atau jenis penilaian. Tombol Laporan Agregat terletak di halaman penilaian.
+              2. Beberapa bahasa: Anda dapat beralih ke bahasa pilihan Anda menggunakan pengalih di pojok kanan atas halaman. Bahasa lainnya akan diunggah segera.
+              3. Kemampuan luring: Fitur ini memungkinkan Anda mengunduh survei sebagai berkas Excel jika koneksi internet tidak stabil. Kemampuan ini memberi Anda fleksibilitas untuk menyelesaikan survei secara luring, lalu mengunggahnya setelah terhubung ke internet. Fitur luring lainnya akan ditambahkan segera.
           `,
   },
   {
     date: '2-28-2024',
-    title: 'A comparison of governance and management assessment tools',
+    title: 'Perbandingan alat penilaian tata kelola dan manajemen',
     text: `
-             Ada banyak alat yang dirancang untuk menilai tata kelola dan manajemen untuk konservasi berbasis area. Ringkasan pengetahuan ini dirancang untuk membantu individu dalam mengidentifikasi dan memahami sinergi dan perbedaan antara tiga alat penilaian manajemen dan tata kelola konservasi: Elinor, Alat Pelacakan Efektivitas Manajemen 4 (METT 4), dan Penilaian Tata Kelola dan Ekuitas Tingkat Lokasi (SAGE). Bagian pertama dari dokumen ini membandingkan bagian informasi latar belakang/lokasi Elinor, METT 4, dan SAGE. Bagian kedua membandingkan pertanyaan penilaian dalam Elinor (35), METT 4 (38), dan SAGE (50). Akhirnya, dokumen diakhiri dengan panduan untuk membantu pengguna menentukan penilaian mana yang akan digunakan berdasarkan tujuan manajemen dan tata kelola mereka.        <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
+              Terdapat banyak alat yang dirancang untuk menilai tata kelola dan manajemen bagi konservasi berbasis kawasan. Ringkasan pengetahuan ini disusun untuk membantu individu mengidentifikasi dan memahami sinergi serta perbedaan antara tiga alat penilaian manajemen dan tata kelola konservasi: Elinor, Management Effectiveness Tracking Tool 4 (METT 4), dan Site-level Assessment of Governance and Equity (SAGE). Bagian pertama dokumen ini membandingkan bagian informasi latar belakang/lokasi pada Elinor, METT 4, dan SAGE. Bagian kedua membandingkan pertanyaan penilaian pada Elinor (35), METT 4 (38), dan SAGE (50). Akhirnya, dokumen diakhiri dengan panduan untuk membantu pengguna menentukan penilaian mana yang akan digunakan berdasarkan tujuan manajemen dan tata kelola mereka.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Klik di sini untuk melihat perbandingan</a>
           `,
   },
   {
     date: '6-20-2022',
     title:
-      'New Elinor updates allow automated reporting and more user-friendly features',
+      'Pembaruan Elinor yang baru memungkinkan pelaporan otomatis dan fitur yang lebih ramah pengguna',
     text: `
-              We are happy to announce that the latest version of the Elinor tool (v2023.1) has been released and is ready for online use! This version contains several new exciting features. ElinorData.org can now automatically produce reports for completed assessments that provide high-level overviews of the results for easier learning and reporting. Users can also see their preliminary results update as they enter data into the system. We have made minor revisions to the assessment text, including fixing typos, edits for inclusive language, and improve clarity in question wording. Some questions have been reorganized under different attributes as well. None of these changes affect existing data already entered into the system. These features are the result of a year-long effort to continually improve the Elinor tool. We encourage you to try them out and send us any feedback you may have. Thanks so much for your continued use of ElinorData.org. We'll be back in August with more news after we present Elinor at the International Congress on Conservation Biology in Kigali, Rwanda!
+              Kami dengan senang hati mengumumkan bahwa versi terbaru alat Elinor (v2023.1) telah dirilis dan siap digunakan secara daring! Versi ini memuat beberapa fitur baru yang menarik. ElinorData.org kini dapat secara otomatis menghasilkan laporan untuk penilaian yang telah diselesaikan, yang memberikan tinjauan tingkat tinggi atas hasil agar lebih mudah dipelajari dan dilaporkan. Pengguna juga dapat melihat hasil awal yang diperbarui seiring mereka memasukkan data ke dalam sistem. Kami telah melakukan revisi kecil pada teks penilaian, termasuk memperbaiki kesalahan ketik, penyuntingan untuk bahasa yang inklusif, dan peningkatan kejelasan rumusan pertanyaan. Beberapa pertanyaan juga telah ditata ulang di bawah atribut yang berbeda. Tidak satu pun perubahan ini memengaruhi data yang sudah dimasukkan ke dalam sistem. Fitur-fitur ini merupakan hasil upaya selama setahun untuk terus meningkatkan alat Elinor. Kami mendorong Anda untuk mencobanya dan mengirimkan umpan balik yang Anda miliki. Terima kasih banyak atas penggunaan ElinorData.org yang berkelanjutan. Kami akan kembali pada bulan Agustus dengan berita selengkapnya setelah kami mempresentasikan Elinor di International Congress on Conservation Biology di Kigali, Rwanda!
           `,
   },
   {
     date: '7-21-2022',
-    title: 'Elinor 2022.1 released',
+    title: 'Elinor 2022.1 dirilis',
     text: `
-              We are glad to release the first version of Elinor - v2022.1. This is the culmination of two years of work
-              by both our social science and technology teams to enable users to creatively capture management and
-              governance information and optionally share with a wide audience in accordance to our collaboration
-              principles. This version enables users to create accounts and securely capture assessments data for
-              storage in our cloud system. Details of the protocol can be found here. We have made all efforts to make
-              the user interface easy and friendly to make the user focus on the main task of capturing management and
-              governance information. We encourage users to review the terms of use prior to creating accounts and
-              populating data. We hope that this will bring a pleasant experience and we welcome you to send us comments,
-              questions and ideas through the contact form on this website. In the next phase of the web application
-              we’ll bring to you reporting and visualization capabilities to enable you view and make sense of your data
-              and in future releases we shall incorporate spatial data to help broaden the context of managed area
-              management and governance.
+              Kami dengan senang hati merilis versi pertama Elinor - v2022.1. Ini merupakan puncak dari dua tahun kerja
+              tim ilmu sosial dan teknologi kami untuk memungkinkan pengguna merekam informasi manajemen dan
+              tata kelola secara kreatif, serta secara opsional membagikannya kepada khalayak luas sesuai dengan
+              prinsip kolaborasi kami. Versi ini memungkinkan pengguna membuat akun dan merekam data penilaian secara
+              aman untuk disimpan dalam sistem cloud kami. Rincian protokol dapat ditemukan di sini. Kami telah berupaya
+              agar antarmuka pengguna mudah dan ramah sehingga pengguna dapat berfokus pada tugas utama merekam informasi
+              manajemen dan tata kelola. Kami mendorong pengguna untuk meninjau ketentuan penggunaan sebelum membuat akun
+              dan mengisi data. Kami berharap hal ini memberikan pengalaman yang menyenangkan, dan kami mengundang Anda
+              untuk mengirimkan komentar, pertanyaan, dan gagasan melalui formulir kontak di situs web ini. Pada tahap
+              berikutnya dari aplikasi web, kami akan menghadirkan kemampuan pelaporan dan visualisasi agar Anda dapat
+              melihat dan memahami data Anda, dan pada rilis mendatang kami akan memasukkan data spasial untuk membantu
+              memperluas konteks manajemen dan tata kelola kawasan yang dikelola.
           `,
   },
   {
     date: '7-21-2022',
-    title: 'Elinor compliments other tools',
+    title: 'Elinor melengkapi alat lain',
     text: `
-              There are many tools that can be used to assess governance and management of managed areas for area based
-              conservation. Two of such tools are METT 4 and SAGE. Elinor does not replace these tools but rather
-              provinces a lighter touch alternative that makes it easier to track trends over time and when fully
-              developed will bring spatial components for visualizing trends and regional coverage of assessments. All
-              the tools are ideally completed by focus groups by Elinor allows completion by an individual, making it
-              more flexible where there are resource constraints. Elinor provides modern cloud storage capability that
-              also enables easier backup and sharing of data. To determine when to use Elinor or select other tools,
-              read the <a href=”/background”>background information</a>.
+              Terdapat banyak alat yang dapat digunakan untuk menilai tata kelola dan manajemen kawasan yang dikelola bagi
+              konservasi berbasis kawasan. Dua di antaranya adalah METT 4 dan SAGE. Elinor tidak menggantikan alat-alat
+              tersebut, melainkan menyediakan alternatif yang lebih ringan sehingga lebih mudah untuk melacak tren dari
+              waktu ke waktu, dan apabila telah dikembangkan secara penuh akan menghadirkan komponen spasial untuk
+              memvisualisasikan tren dan cakupan regional penilaian. Semua alat idealnya diselesaikan melalui kelompok
+              fokus, tetapi Elinor memungkinkan penyelesaian oleh individu, sehingga lebih fleksibel apabila terdapat
+              keterbatasan sumber daya. Elinor menyediakan kemampuan penyimpanan cloud modern yang juga memudahkan
+              pencadangan dan berbagi data. Untuk menentukan kapan menggunakan Elinor atau memilih alat lain,
+              baca <a href="/background">informasi latar belakang</a>.
           `,
   },
   {
     date: '7-21-2022',
-    title: 'How we built Elinor',
+    title: 'Bagaimana kami membangun Elinor',
     text: `
-              Designing and architecting web based tools takes a lot of effort. Realizing the Elinor tool took time and
-              effort from three distinct groups: scientists who researched and developed the protocol, backend engineers
-              who designed the architecture to deliver a modern and stable structure and frontend developers and UX/UX
-              specialists who made the tool interface flexible, beautiful and easy to use. Part of the engineering in
-              based on past experience building similar tools like the MERMAID which brough efficiency and stability.
-              Taking an iterative approach, we continue to consult with various stakeholders and experts both on
-              engineering and science. We have made the code open source to promote collaboration and encourage all
-              users to open their data for sharing but we intentionally leave the decision to share with the data owners
-              while we provide a solid platform to facilitate the sharing.
+              Merancang dan mengarsiteki alat berbasis web membutuhkan banyak upaya. Mewujudkan alat Elinor membutuhkan
+              waktu dan upaya dari tiga kelompok yang berbeda: ilmuwan yang meneliti dan mengembangkan protokol, insinyur
+              backend yang merancang arsitektur untuk menghasilkan struktur yang modern dan stabil, serta pengembang
+              frontend dan spesialis UI/UX yang membuat antarmuka alat menjadi fleksibel, indah, dan mudah digunakan.
+              Sebagian rekayasa didasarkan pada pengalaman sebelumnya membangun alat serupa seperti MERMAID, yang
+              menghadirkan efisiensi dan stabilitas. Dengan pendekatan iteratif, kami terus berkonsultasi dengan berbagai
+              pemangku kepentingan dan pakar, baik di bidang rekayasa maupun sains. Kami telah membuka kode sumber untuk
+              mendorong kolaborasi dan mendorong semua pengguna untuk membuka data mereka agar dapat dibagikan, tetapi
+              kami secara sengaja menyerahkan keputusan berbagi kepada pemilik data, sementara kami menyediakan platform
+              yang kokoh untuk memfasilitasi berbagi tersebut.
           `,
   },
 ];

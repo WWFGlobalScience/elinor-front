@@ -1,5 +1,11 @@
 export default [
   {
+    date: 'Julai 5, 2026',
+    title: 'Elinor imetumika kutathmini hali na mwelekeo wa utawala wa jamii katika Bahari ya Hindi ya Kusini-Magharibi',
+    text: `
+  Utafiti mpya uliochapishwa katika <em>Conservation Biology</em> unatumia data kutoka jukwaa la ElinorData.org kutathmini hali ya sasa ya utawala wa pwani unaoongozwa na jamii katika maeneo 52 yanayosimamiwa na jamii katika nchi tano za Bahari ya Hindi ya Kusini-Magharibi (SWIO). Matokeo yanaonyesha kuwa utawala thabiti wa ndani unahusishwa kwa kiasi kikubwa na matokeo bora yanayotambuliwa ya kijamii na kiikolojia, ingawa maendeleo bado hayalingani katika sifa kama uwezo wa utekelezaji na usimamizi wa ukabilianaji. Utafiti huu mpya unaonyesha kwamba wahifadhi wanaweza kutumia jukwaa la Elinor kutambua mapungufu ya utawala yanayobadilika baada ya muda, kushiriki ubunifu wa usimamizi wa ndani, na kubuni hatua zinazolengwa zaidi na zinazoongozwa na ushahidi kwa mafanikio ya uhifadhi wa muda mrefu. Soma utafiti kamili hapa - <a href="https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325">https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325</a>`,
+  },
+  {
     date: 'Februari 28, 2024',
     title: 'Matangazo ya vipengele vipya katika Elinor',
     text: `

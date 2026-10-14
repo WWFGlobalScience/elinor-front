@@ -1,5 +1,36 @@
 export default [
   {
+    date: '05-07-2026',
+    title:
+      'Elinor usada para avaliar o status e as tendências da governança comunitária no Oceano Índico Sudoeste',
+    text: `
+  Um novo estudo publicado em <em>Conservation Biology</em> utiliza dados da plataforma ElinorData.org para avaliar o status atual da governança costeira baseada na comunidade em 52 áreas gerenciadas pela comunidade em cinco países do Oceano Índico Sudoeste (SWIO). Os resultados revelam que uma governança local mais forte está significativamente associada a melhores resultados sociais e ecológicos percebidos, embora o progresso permaneça desigual em atributos como capacidade operacional e gestão adaptativa. Este novo estudo mostra que conservacionistas podem utilizar a plataforma Elinor para identificar lacunas de governança que mudam ao longo do tempo, compartilhar inovações de gestão localizadas e projetar intervenções mais direcionadas e baseadas em evidências para o sucesso da conservação a longo prazo. Leia o estudo completo aqui - <a href="https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325">https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325</a>`,
+  },
+  {
+    date: '28-02-2024',
+    title: 'Anunciando novos recursos na Elinor',
+    text: `
+              Com o objetivo de tornar a Elinor mais utilizável, temos o prazer de anunciar três novos recursos:
+              1. Relatórios Agregados:
+              Agora você pode gerar um relatório agregado para múltiplas seleções de avaliações por país, ano ou tipo de avaliação. O botão Relatório Agregado está localizado na página de avaliações.
+              2. Múltiplos idiomas: Você pode mudar para o seu idioma favorito usando o seletor no canto superior direito da página. Mais idiomas serão disponibilizados em breve.
+              3. Capacidade offline: Isso permite que você baixe uma pesquisa como um arquivo Excel se tiver uma conexão de Internet instável. Essa capacidade oferece a flexibilidade de completar uma pesquisa offline e depois carregá-la quando estiver conectado à internet. Mais recursos offline serão adicionados em breve.
+          `,
+  },
+  {
+    date: '28-02-2024',
+    title: 'Uma comparação de ferramentas de avaliação de governança e gestão',
+    text: `
+              Existem muitas ferramentas projetadas para avaliar governança e gestão para a conservação baseada em áreas. Este resumo de conhecimento
+              foi elaborado para ajudar indivíduos a identificar e compreender as sinergias e diferenças entre
+              três ferramentas de avaliação de gestão e governança da conservação: Elinor, a Management Effectiveness Tracking
+              Tool 4 (METT 4) e Site-level Assessment of Governance and Equity (SAGE). A primeira parte deste documento
+              compara as seções de informações de fundo/sítio da Elinor, METT 4 e SAGE. A segunda parte compara as
+              perguntas de avaliação na Elinor (35), METT 4 (38) e SAGE (50). Por fim, o documento termina com um guia para
+              ajudar os usuários a determinar qual avaliação usar com base em seus objetivos de gestão e governança.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Clique aqui para ver a comparação</a>
+          `,
+  },
+  {
     date: '20-06-2022',
     title:
       'Novas atualizações da Elinor permitem relatórios automatizados e recursos mais amigáveis ao usuário',
