@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--ma-edit-ma">Edit ma</section>
+  <section class="section section--ma-edit-ma">{{ $t('pages.managedAreas.edit.title') }}</section>
 </template>
 
 <script>

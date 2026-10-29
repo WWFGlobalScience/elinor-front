@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { toastApiError } from '~/config/api-error';
 
 export const state = () => ({
   error: null,
@@ -17,7 +18,7 @@ export const actions = {
   async createCollaborator(state, form) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Creating collaborator...',
+      text: 'statusMessaging.loader.collaborators.creatingCollaborator',
     });
 
     const data = this.$formDataStringify(form);
@@ -35,8 +36,8 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        console.log(error);
-        state.commit('setError', error.response.data);
+        toastApiError(this, error);
+        state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', { active: false });
@@ -46,7 +47,7 @@ export const actions = {
   async updateCollaborator(state, { role, collaborator, assessmentId }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Updating collaborator...',
+      text: 'statusMessaging.loader.collaborators.updatingCollaborator',
     });
 
     this.$axios({
@@ -65,8 +66,9 @@ export const actions = {
           { root: true },
         );
       })
-      .catch((error) => () => {
-        state.commit('setError', error.response.data);
+      .catch((error) => {
+        toastApiError(this, error);
+        state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', { active: false });
@@ -76,7 +78,7 @@ export const actions = {
   async deleteCollaborator(state, id) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Deleting collaborator...',
+      text: 'statusMessaging.loader.collaborators.deletingCollaborator',
     });
 
     this.$axios({
@@ -90,7 +92,8 @@ export const actions = {
         this.dispatch('popup/popupState', { active: false });
       })
       .catch((error) => {
-        state.commit('setError', error.response.data);
+        toastApiError(this, error);
+        state.commit('setError', error.response && error.response.data);
       })
       .finally(() => {
         this.dispatch('loader/loaderState', { active: false });

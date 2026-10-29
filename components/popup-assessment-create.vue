@@ -15,7 +15,7 @@
             >
             <div class="multiselect__wrap">
               <multiselect
-                placeholder="Year"
+                :placeholder="$t('pages.assessments.list.create.popup.labels.year')"
                 :value="selectYear.value"
                 :options="selectYear.options"
                 :multiple="false"
@@ -57,8 +57,29 @@
                 $t('pages.assessments.list.create.popup.placeholders.name')
               "
               v-model="form.name"
+              :minlength="minNameLength"
+              :class="{ 'input--error': showNameError }"
               required
             />
+            <div class="flex justify-between items-center gap-3">
+              <div
+                class="note mb-0"
+                :class="{ 'text-[#D63C3C]': showNameError }"
+              >
+                {{
+                  $t(
+                    'pages.assessments.list.create.popup.nameMinLength',
+                    { min: minNameLength },
+                  )
+                }}
+              </div>
+              <div
+                class="character-counter mt-0"
+                :class="{ 'is-invalid': showNameError }"
+              >
+                {{ nameLength }} / {{ minNameLength }}
+              </div>
+            </div>
           </div>
         </div>
         <!-- <div class="form__row -mt-3">
@@ -108,6 +129,7 @@ export default {
       form: {
         name: null,
       },
+      minNameLength: 20,
     };
   },
   methods: {
@@ -116,27 +138,29 @@ export default {
     }),
     onSelectYearChange(value) {
       this.selectYear.value = value;
-      //    console.log(document.querySelector('input[name="year"]').value);
     },
-    submit() {
+    submit(event) {
       event.preventDefault();
+      if (!this.isFormValid) return;
       this.createAssessment(event.target);
     },
   },
   computed: {
+    nameLength() {
+      return (this.form.name || '').length;
+    },
+    isNameValid() {
+      return this.nameLength >= this.minNameLength;
+    },
+    showNameError() {
+      return this.nameLength > 0 && !this.isNameValid;
+    },
     isFormValid() {
-      // Check if flag_type is selected
       if (this.selectYear.value === false || this.selectYear.value === null) {
         return false;
       }
 
-      // console.log(this.form.name);
-      // console.log(this.selectYear.value);
-      if (this.form.name === null) {
-        return false;
-      }
-
-      return true;
+      return this.isNameValid;
     },
   },
 };

@@ -119,6 +119,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 
 export default {
   data() {
@@ -152,6 +153,9 @@ export default {
               'authentication/resetProfileUpdatedSuccessfully',
             );
           }, 5000);
+        })
+        .catch((error) => {
+          toastApiError(this, error);
         });
     },
   },

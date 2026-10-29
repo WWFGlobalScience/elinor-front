@@ -3,7 +3,7 @@
     <section class="section section--banner">
       <img src="~/assets/img/collaboration-section.jpg" alt="" />
       <div class="container">
-        <h1>Collaboration</h1>
+        <h1>{{ $t('pages.collaboration.home.meta.title') }}</h1>
       </div>
     </section>
     <div class="page--collaboration__content">

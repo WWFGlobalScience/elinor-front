@@ -6,8 +6,9 @@
                   $t(
                       'pages.assessments.edit.tabs.survey.navigator.completed',
                   )
-              }} <span>{{ completedQuestions }}</span> 
-               to {{ totalQuestions }}
+              }} <span>{{ completedQuestions }}</span>
+              {{ $t('pages.assessments.edit.tabs.survey.navigator.toTotal') }}
+              {{ totalQuestions }}
           </div>
           <div class="header-btns">
               <div class="assessment__btns relative">
@@ -38,20 +39,52 @@
                   </a>
               </div>
               <div class="switchers-container">
-                  <div class="switchers" :class="{ 'is--offline': isSurveyOffline }">
-                      <span :class="{ 'is--active': !isSurveyOffline }" @click="toggleConnection">
-                          online
+                  <div
+                      class="switchers"
+                      :class="{
+                          'is--offline': isSurveyOffline,
+                          'is--switching': isSwitchingConnection,
+                      }"
+                      :aria-busy="isSwitchingConnection ? 'true' : 'false'"
+                  >
+                      <span
+                          :class="{
+                              'is--active': !isSurveyOffline,
+                              'is--pending': isGoingOnline,
+                          }"
+                          @click="toggleConnection"
+                      >
+                          <span v-if="isGoingOnline" class="switchers-spinner vs__spinner"></span>
+                          <template v-else>
+                              {{ $t('pages.assessments.edit.tabs.survey.modeOnline') }}
+                          </template>
                       </span>
-                      <span :class="{ 'is--active': isSurveyOffline }" @click="toggleConnection">
-                          offline
+                      <span
+                          :class="{
+                              'is--active': isSurveyOffline,
+                              'is--pending': isGoingOffline,
+                          }"
+                          @click="toggleConnection"
+                      >
+                          <span v-if="isGoingOffline" class="switchers-spinner vs__spinner"></span>
+                          <template v-else>
+                              {{ $t('pages.assessments.edit.tabs.survey.modeOffline') }}
+                          </template>
                       </span>
+                      <div v-if="isSwitchingConnection" class="switchers-status">
+                          {{
+                              isGoingOnline
+                                  ? $t('pages.assessments.edit.tabs.survey.goingOnline')
+                                  : $t('pages.assessments.edit.tabs.survey.goingOffline')
+                          }}
+                      </div>
                   </div>
                   <div 
                       class="cursor-pointer relative"
                       @mouseenter="isInfoTooltipOpen = true"
                       @mouseleave="isInfoTooltipOpen = false"
                   >
-                      <img src="~/assets/img/info.svg" alt="Info" />
+                      <img src="~/assets/img/info.svg" :alt="$t('default.info')" />
                       <div class="absolute w-[400px] top-full right-0 bg-white shadow-md px-3 py-2 z-20 mt-2" v-if="isInfoTooltipOpen">
                           <p class="text-sm text-[#2E2E2E] font-medium leading-6">{{ $t('pages.assessments.edit.offlineSurveyInfo') }}</p>
                       </div>
@@ -64,6 +97,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 import {
   isAssessmentCollaborator,
   isAssessmentObserver,
@@ -75,6 +109,9 @@ export default {
       return {
           hasConnection: navigator.onLine,
           isInfoTooltipOpen: false,
+          isTogglingConnection: false,
+          isGoingOffline: false,
+          isGoingOnline: false,
       };
   },
   computed: {
@@ -103,6 +140,9 @@ export default {
       },
       totalQuestions() {
           return this.activeQuestions.length;
+      },
+      isSwitchingConnection() {
+          return this.isGoingOffline || this.isGoingOnline;
       },
   },
   mounted() {
@@ -142,28 +182,40 @@ export default {
               title: 'pages.assessments.uploadSurveyFile.title',
           });
       },
-      toggleConnection() {
-        // Example usage
-        // Example usage
-        this.$store.dispatch('layout/checkNetworkStatus').then(() => {
-        //   console.log('isNetworkError', this.isNetworkError);
-        if (!this.isNetworkError) {
-              if (this.isSurveyOffline) {
-                  this.setOnline();
-              } else {
-                  this.setOffline();
-              }
-          } else {
-              this.popupState({
-                  active: true,
-                  component: 'popup-assessment-without-connection',
-                  title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
-              });
+      async toggleConnection() {
+          if (this.isTogglingConnection) {
+              return;
           }
-        });
 
-        // return;
+          this.isTogglingConnection = true;
+          this.isGoingOffline = !this.isSurveyOffline;
+          this.isGoingOnline = this.isSurveyOffline;
+          await this.$nextTick();
 
+          try {
+              await this.$store.dispatch('layout/checkNetworkStatus');
+
+              if (this.isNetworkError) {
+                  this.popupState({
+                      active: true,
+                      component: 'popup-assessment-without-connection',
+                      title: 'pages.assessments.edit.tabs.survey.withoutConnectionPopupTitle',
+                  });
+                  return;
+              }
+
+              if (this.isSurveyOffline) {
+                  await this.setOnline();
+              } else {
+                  await this.setOffline();
+              }
+          } catch (error) {
+              toastApiError(this, error);
+          } finally {
+              this.isTogglingConnection = false;
+              this.isGoingOffline = false;
+              this.isGoingOnline = false;
+          }
       },
   },
 };

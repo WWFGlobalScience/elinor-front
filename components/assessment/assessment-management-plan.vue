@@ -17,9 +17,9 @@
             <span class="btn--opacity__target">{{
               $t('pages.assessments.view.tabs.info.buttons.managementPlanFile')
             }}</span>
-            <img src="~/assets/img/download-white.svg" alt="Download" />
+            <img src="~/assets/img/download-white.svg" :alt="$t('default.download')" />
           </a>
-          <span v-else class="text-grayy-lighter">No document provided</span>
+          <span v-else class="text-grayy-lighter">{{ $t('pages.assessments.view.tabs.info.noDocument') }}</span>
         </div>
         <div class="elinor__people"></div>
       </div>

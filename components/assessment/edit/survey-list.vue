@@ -20,17 +20,21 @@
           <button class="expand-all-btn" @click="toggleAllAttributes">
             <img
               src="~/assets/img/expand_all.svg"
-              alt="arrow"
+              :alt="$t('default.arrow')"
               v-if="!allAttributesExpanded"
               class="w-6 h-6"
             />
             <img
               src="~/assets/img/collapse_all.svg"
-              alt="arrow"
+              :alt="$t('default.arrow')"
               v-if="allAttributesExpanded"
               class="w-6 h-6"
             />
-            {{ allAttributesExpanded ? 'Collapse all' : 'Expand all' }}
+            {{
+              allAttributesExpanded
+                ? $t('pages.assessments.edit.tabs.survey.collapseAll')
+                : $t('pages.assessments.edit.tabs.survey.expandAll')
+            }}
           </button>
         </div>
         <template v-for="(attribute, index) in attributes">
@@ -69,7 +73,11 @@
                     {{ attribute.name }}
                   </h3>
                 </div>
-                <AttributeItem :attribute="attribute"></AttributeItem>
+                <AttributeItem
+                  :ref="'attributeItem-' + attribute.id"
+                  :attribute="attribute"
+                  :loading="!!activatingAttributes[attribute.id]"
+                ></AttributeItem>
                 <!-- 
                                 <div class="title-aside">
                                     <span
@@ -248,6 +256,25 @@
                         )
                       }}
                     </p>
+                    <button
+                      type="button"
+                      class="btn btn--opacity--child btn--uncomplete btn--md"
+                      :class="{
+                        'btn--disabled': activatingAttributes[attribute.id],
+                      }"
+                      :disabled="!!activatingAttributes[attribute.id]"
+                      @click.stop="activateAttribute(attribute, $event)"
+                    >
+                      <span class="btn--opacity__target">{{
+                        activatingAttributes[attribute.id]
+                          ? $t(
+                              'pages.assessments.edit.tabs.survey.activatingAttribute',
+                            )
+                          : $t(
+                              'pages.assessments.edit.tabs.survey.activateAttribute',
+                            )
+                      }}</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -320,6 +347,7 @@ export default {
       },
       scoreColors: ['poor', 'average', 'good', 'excellent'],
       expandedAttributes: {}, // Track which attributes are expanded
+      activatingAttributes: {},
     };
   },
   mounted() {
@@ -354,7 +382,39 @@ export default {
   methods: {
     ...mapActions({
       popupState: 'popup/popupState',
+      toggleAssessmentAttribute: 'assessments/toggleAttribute',
     }),
+    getAttributeItem(attributeId) {
+      const item = this.$refs[`attributeItem-${attributeId}`];
+      return Array.isArray(item) ? item[0] : item;
+    },
+    async activateAttribute(attribute, event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (
+        this.isAttributeChecked(attribute) ||
+        this.activatingAttributes[attribute.id]
+      ) {
+        return;
+      }
+
+      this.$set(this.activatingAttributes, attribute.id, true);
+      await this.$nextTick();
+
+      const item = this.getAttributeItem(attribute.id);
+      if (item) {
+        item.isAttributeLoading = true;
+      }
+
+      try {
+        await this.toggleAssessmentAttribute({
+          assessmentId: this.assessment.id,
+          attributeId: attribute.id,
+        });
+      } finally {
+        this.$set(this.activatingAttributes, attribute.id, false);
+      }
+    },
     getAttributeQuestions(attribute) {
       return this.questions.filter(
         (question) => question.attribute === attribute.id,

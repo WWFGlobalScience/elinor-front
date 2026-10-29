@@ -1,7 +1,7 @@
 <template>
   <div v-if="assessment.management_area !== null && managementArea">
     <a @click="downloadPdf">
-      <img src="~/assets/img/download-ico.svg" alt="Download Data" />
+      <img src="~/assets/img/download-ico.svg" :alt="$t('default.downloadData')" />
       <span>{{ $t('default.downloadSummary') }}</span>
     </a>
     <div class="report-wrap">
@@ -35,7 +35,7 @@ export default {
     if (this.isReportGenerating) {
       this.$store.dispatch('loader/loaderState', {
         active: true,
-        text: 'Generating report...',
+        text: 'popup.generateReport.btnGenerating',
       });
     } else {
       this.$store.dispatch('loader/loaderState', {
@@ -53,7 +53,7 @@ export default {
 
       this.$store.dispatch('loader/loaderState', {
         active: true,
-        text: 'Generating report...',
+        text: 'popup.generateReport.btnGenerating',
       });
 
       try {

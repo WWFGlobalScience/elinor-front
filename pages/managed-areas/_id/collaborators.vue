@@ -1,5 +1,7 @@
 <template>
-  <section class="section section--ma-collaborators">collaborators</section>
+  <section class="section section--ma-collaborators">
+    {{ $t('pages.managedAreas.collaborators.title') }}
+  </section>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="popup__content popup--filters">
-    <h4 class="c-title--modal mb-6">Select countries to generate report</h4>
+    <h4 class="c-title--modal mb-6">{{ $t('popup.countryReport.title') }}</h4>
     <form class="form form--ma-selector form--mt-0">
       <div class="form__group">
         <div class="form__row">
@@ -72,6 +72,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 import { jsPDF } from 'jspdf';
 
 export default {
@@ -110,9 +111,13 @@ export default {
       this.$axios({
         method: 'get',
         url: `v2/reports/assessments/?management_area_countries=${value}`,
-      }).then((response) => {
-        this.report = response.data.results;
-      });
+      })
+        .then((response) => {
+          this.report = response.data.results;
+        })
+        .catch((error) => {
+          toastApiError(this, error);
+        });
     },
     getCountryByCode(code) {
       if (code) {

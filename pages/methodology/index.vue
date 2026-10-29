@@ -12,7 +12,7 @@
       <section class="section section--approach">
         <div class="container">
           <div>
-            <h3 class="text-[#43A0BD]">The Approaches</h3>
+            <h3 class="text-[#43A0BD]">{{ $t('pages.methodologyPage.approaches.title') }}</h3>
             <div class="section-subtitle">
               <p>{{ $t('pages.methodologyPage.paragraph1') }}</p>
             </div>
@@ -82,7 +82,7 @@
                 <table class="table-background">
                   <thead>
                     <tr>
-                      <th>No</th>
+                      <th>{{ $t('default.table.no') }}</th>
                       <th>
                         {{ $t('pages.background.attribute_title.name') }}
                       </th>

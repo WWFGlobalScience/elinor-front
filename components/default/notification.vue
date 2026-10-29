@@ -11,7 +11,7 @@
             type="button"
             class="text-grayy-lighter hover:opacity-70 transition-opacity text-2xl leading-none p-0 bg-transparent border-0 cursor-pointer"
             @click="dismissNotification"
-            aria-label="Dismiss"
+            :aria-label="$t('default.dismiss')"
           >
             ×
           </button>

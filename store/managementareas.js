@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { toastApiError } from '~/config/api-error';
 
 export const state = () => ({
   list: [],
@@ -133,75 +134,96 @@ export const mutations = {
 
 export const actions = {
   async fetchManagementAreas(state, search) {
-    const response = await this.$axios.$get(
-      `v2/managementareas/?search=${search}`,
-    );
-    const locale = this.$i18n.locale;
-    const managementAreas = mapCollectionToForm(
-      state,
-      response.results,
-      locale,
-    );
-    state.commit('setList', managementAreas);
+    try {
+      const response = await this.$axios.$get(
+        `v2/managementareas/?search=${search}`,
+      );
+      const locale = this.$i18n.locale;
+      const managementAreas = mapCollectionToForm(
+        state,
+        response.results,
+        locale,
+      );
+      state.commit('setList', managementAreas);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async fetchManagementArea(state, id) {
-    const response = await this.$axios.$get(`v2/managementareas/${id}/`);
-    const locale = this.$i18n.locale;
-    const managementArea = mapToForm(state, response, locale);
-    state.commit('setInstance', managementArea);
-    state.commit('assessments/setManagementArea', response, { root: true });
-    await state.dispatch('fetchZones', id);
+    try {
+      const response = await this.$axios.$get(`v2/managementareas/${id}/`);
+      const locale = this.$i18n.locale;
+      const managementArea = mapToForm(state, response, locale);
+      state.commit('setInstance', managementArea);
+      state.commit('assessments/setManagementArea', response, { root: true });
+      await state.dispatch('fetchZones', id);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async createManagementArea(state, { form, assessmentId }) {
-    let response = await this.$axios.$post(
-      `v2/managementareas/`,
-      mapToForeignKeys(form),
-    );
-    state.dispatch(
-      'assessments/editAssessmentField',
-      {
-        field: 'management_area',
-        value: response.id,
-        id: assessmentId,
-      },
-      { root: true },
-    );
-    state.commit('setInstance', response);
-    state.commit('assessments/setManagementArea', response, { root: true });
-    window.location.reload();
-    setTimeout(() => {
-    this.dispatch('loader/loaderState', {
-      active: false,
+    try {
+      let response = await this.$axios.$post(
+        `v2/managementareas/`,
+        mapToForeignKeys(form),
+      );
+      state.dispatch(
+        'assessments/editAssessmentField',
+        {
+          field: 'management_area',
+          value: response.id,
+          id: assessmentId,
+        },
+        { root: true },
+      );
+      state.commit('setInstance', response);
+      state.commit('assessments/setManagementArea', response, { root: true });
+      window.location.reload();
+      setTimeout(() => {
+        this.dispatch('loader/loaderState', {
+          active: false,
+          showText: false,
+          text: '',
+        });
+      }, 2000);
+    } catch (error) {
+      toastApiError(this, error);
+      this.dispatch('loader/loaderState', {
+        active: false,
         showText: false,
         text: '',
       });
-    }, 2000);
+    }
   },
   async editManagementAreaField(state, { field, value, id, assessmentId }) {
-    const data = mapToForeignKeys({ [field]: value });
-    let response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${id}/`,
-      data: {
-        [field]: data[field],
-      },
-    });
-    if (field === 'countries') {
-      value = value.map((country) => {
-        return {
-          code: country,
-          name: state.rootState.countries.list[this.$i18n.locale].filter(
-            (c) => c.code === country,
-          )[0].name,
-        };
+    try {
+      const data = mapToForeignKeys({ [field]: value });
+      let response = await this.$axios({
+        method: 'patch',
+        url: `/v2/managementareas/${id}/`,
+        data: {
+          [field]: data[field],
+        },
       });
+      if (field === 'countries') {
+        value = value.map((country) => {
+          return {
+            code: country,
+            name: state.rootState.countries.list[this.$i18n.locale].filter(
+              (c) => c.code === country,
+            )[0].name,
+          };
+        });
+      }
+      state.commit('setInstanceField', { field, value });
+      state.commit('assessments/setManagementArea', response.data, {
+        root: true,
+      });
+      state.commit('assessments/setLastEdit', {}, { root: true });
+      state.dispatch('assessments/updateAssessmentProgress', {}, { root: true });
+    } catch (error) {
+      toastApiError(this, error);
     }
-    state.commit('setInstanceField', { field, value });
-    state.commit('assessments/setManagementArea', response.data, {
-      root: true,
-    });
-    state.commit('assessments/setLastEdit', {}, { root: true });
-    state.dispatch('assessments/updateAssessmentProgress', {}, { root: true });
   },
   async editManagementAreaFileField(
     state,
@@ -235,39 +257,58 @@ export const actions = {
       state.commit('assessments/setLastEdit', {}, { root: true });
       state.commit('setImportFile', response.data.import_file);
     } catch (error) {
-      state.commit('setImportFileError', error.response.data);
+      state.commit(
+        'setImportFileError',
+        (error.response && error.response.data) || true,
+      );
     }
   },
   async fetchZones(state, id) {
-    let response = await this.$axios.$get(
-      `v2/managementareazones/?management_area=` + id,
-    );
-    state.commit('setZones', response.results);
+    try {
+      let response = await this.$axios.$get(
+        `v2/managementareazones/?management_area=` + id,
+      );
+      state.commit('setZones', response.results);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async createZone(state, { form, managementAreaId }) {
-    form.management_area = managementAreaId;
-    let response = await this.$axios.$post(`v2/managementareazones/`, form);
-    state.commit('addZone', response.data);
+    try {
+      form.management_area = managementAreaId;
+      let response = await this.$axios.$post(`v2/managementareazones/`, form);
+      state.commit('addZone', response.data);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async updateZone(state, { form, id }) {
-    let response = await this.$axios.$patch(
-      `v2/managementareazones/${id}/`,
-      form,
-    );
-    state.commit('updateZone', response.data);
+    try {
+      let response = await this.$axios.$patch(
+        `v2/managementareazones/${id}/`,
+        form,
+      );
+      state.commit('updateZone', response.data);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async fetchAuthorities(state, search) {
-    let response = await this.$axios.$get(
-      `v2/managementauthorities/?search=` + search,
-    );
-    state.commit('setAuthorities', response.results);
+    try {
+      let response = await this.$axios.$get(
+        `v2/managementauthorities/?search=` + search,
+      );
+      state.commit('setAuthorities', response.results);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async onManagementAreaNew(state, assessment) {
     const form = { name: assessment.name + ' managed area', countries: [] };
     this.dispatch('loader/loaderState', {
       active: true,
       showText: true,
-      text: 'Creating management area...',
+      text: 'statusMessaging.loader.managementareas.creatingManagementArea',
     });
     state.dispatch('createManagementArea', {
       form,
@@ -284,163 +325,199 @@ export const actions = {
     this.dispatch('loader/loaderState', {
       active: true,
       showText: true,
-      text: 'Creating management area...',
+      text: 'statusMessaging.loader.managementareas.creatingManagementArea',
     });
   },
   async onDateEstablishmentSelected(state, date) {
     state.commit('setDateEstablishment', date);
   },
   async setPoint(state, point) {
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { polygon: null, point, import_file: null },
-    });
-    state.commit('removePolygon');
-    state.commit('removeImportFile');
-    state.commit('setPoint', point);
-  },
-  async setPolygon(state, polygon) {
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { polygon, point: null, import_file: null },
-    });
-    state.commit('removePoint');
-    state.commit('removeImportFile');
-    state.commit('setPolygon', polygon);
-  },
-  async removeImportFile(state) {
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { import_file: null },
-    });
-    // console.log('response', response);
-    state.commit('removeImportFile');
-  },
-  async removePoint(state) {
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { point: null },
-    });
-    state.commit('removePoint');
-  },
-  async removePolygon(state) {
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { polygon: null },
-    });
-    state.commit('removePolygon');
-  },
-  async editZoneField(state, { field, index, value }) {
-    const zone = { ...state.state.zones[index] };
-    zone[field] = value;
-    if (zone && zone.id) {
+    try {
       await this.$axios({
         method: 'patch',
-        url: `/v2/managementareazones/${zone.id}/`,
-        data: { [field]: value },
+        url: `/v2/managementareas/${state.state.instance.id}/`,
+        data: { polygon: null, point, import_file: null },
       });
-      // console.log('this is add zone', zone);
-    } else {
-      if (zone && zone.name && zone.access_level && zone.description) {
-        // console.log('this is edit zone', zone);
-        const data = {
-          ...zone,
-          management_area: state.state.instance.id,
-        };
-        const response = await this.$axios({
-          method: 'post',
-          url: `/v2/managementareazones/`,
-          data,
-        });
-        state.commit('setZoneField', {
-          field: 'id',
-          index,
-          value: response.data.id,
-        });
-
-        // console.log('response', response);
-      }
+      state.commit('removePolygon');
+      state.commit('removeImportFile');
+      state.commit('setPoint', point);
+    } catch (error) {
+      toastApiError(this, error);
     }
-    state.commit('setZoneField', { field, index, value });
+  },
+  async setPolygon(state, polygon) {
+    try {
+      await this.$axios({
+        method: 'patch',
+        url: `/v2/managementareas/${state.state.instance.id}/`,
+        data: { polygon, point: null, import_file: null },
+      });
+      state.commit('removePoint');
+      state.commit('removeImportFile');
+      state.commit('setPolygon', polygon);
+    } catch (error) {
+      toastApiError(this, error);
+    }
+  },
+  async removeImportFile(state) {
+    try {
+      await this.$axios({
+        method: 'patch',
+        url: `/v2/managementareas/${state.state.instance.id}/`,
+        data: { import_file: null },
+      });
+      // console.log('response', response);
+      state.commit('removeImportFile');
+    } catch (error) {
+      toastApiError(this, error);
+    }
+  },
+  async removePoint(state) {
+    try {
+      await this.$axios({
+        method: 'patch',
+        url: `/v2/managementareas/${state.state.instance.id}/`,
+        data: { point: null },
+      });
+      state.commit('removePoint');
+    } catch (error) {
+      toastApiError(this, error);
+    }
+  },
+  async removePolygon(state) {
+    try {
+      await this.$axios({
+        method: 'patch',
+        url: `/v2/managementareas/${state.state.instance.id}/`,
+        data: { polygon: null },
+      });
+      state.commit('removePolygon');
+    } catch (error) {
+      toastApiError(this, error);
+    }
+  },
+  async editZoneField(state, { field, index, value }) {
+    try {
+      const zone = { ...state.state.zones[index] };
+      zone[field] = value;
+      if (zone && zone.id) {
+        await this.$axios({
+          method: 'patch',
+          url: `/v2/managementareazones/${zone.id}/`,
+          data: { [field]: value },
+        });
+        // console.log('this is add zone', zone);
+      } else {
+        if (zone && zone.name && zone.access_level && zone.description) {
+          // console.log('this is edit zone', zone);
+          const data = {
+            ...zone,
+            management_area: state.state.instance.id,
+          };
+          const response = await this.$axios({
+            method: 'post',
+            url: `/v2/managementareazones/`,
+            data,
+          });
+          state.commit('setZoneField', {
+            field: 'id',
+            index,
+            value: response.data.id,
+          });
+
+          // console.log('response', response);
+        }
+      }
+      state.commit('setZoneField', { field, index, value });
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async resetImportFileError(state) {
     state.commit('resetImportFileError');
   },
   async setRegion(state, result) {
-    const name = result.text;
-    const regionsResponse = await this.$axios({
-      method: 'get',
-      url: `/v2/regions/?search=${name}`,
-    });
-
-    const region = regionsResponse.data.results[0];
-    // console.log('region', regionsResponse);
-    let regionIdToAssociate;
-    if (!region) {
-      const country = result.context[0].short_code;
-      // console.log('country', country);
-      const createdRegionResponse = await this.$axios({
-        method: 'post',
-        url: `/v2/regions/`,
-        data: {
-          name: name,
-          name_en: name,
-          name_fr: name,
-          name_es: name,
-          name_ind: name,
-          name_sw: name,
-          name_pt: name,
-          country: country.toUpperCase(),
-        },
+    try {
+      const name = result.text;
+      const regionsResponse = await this.$axios({
+        method: 'get',
+        url: `/v2/regions/?search=${name}`,
       });
-      const createdRegion = createdRegionResponse.data;
-      regionIdToAssociate = createdRegion.id;
-    } else {
-      regionIdToAssociate = region.id;
-    }
 
-    const regions = state.state.instance.regions.map((region) => region.id);
-    // console.log('regions', regions);
-    if (regions.indexOf(regionIdToAssociate) === -1) {
-      regions.push(regionIdToAssociate);
+      const region = regionsResponse.data.results[0];
+      // console.log('region', regionsResponse);
+      let regionIdToAssociate;
+      if (!region) {
+        const country = result.context[0].short_code;
+        // console.log('country', country);
+        const createdRegionResponse = await this.$axios({
+          method: 'post',
+          url: `/v2/regions/`,
+          data: {
+            name: name,
+            name_en: name,
+            name_fr: name,
+            name_es: name,
+            name_ind: name,
+            name_sw: name,
+            name_pt: name,
+            country: country.toUpperCase(),
+          },
+        });
+        const createdRegion = createdRegionResponse.data;
+        regionIdToAssociate = createdRegion.id;
+      } else {
+        regionIdToAssociate = region.id;
+      }
+
+      const regions = state.state.instance.regions.map((region) => region.id);
+      // console.log('regions', regions);
+      if (regions.indexOf(regionIdToAssociate) === -1) {
+        regions.push(regionIdToAssociate);
+        const response = await this.$axios({
+          method: 'patch',
+          url: `/v2/managementareas/${state.state.instance.id}/`,
+          data: { regions },
+        });
+        state.commit('setInstanceField', {
+          field: 'regions',
+          value: response.data.regions,
+        });
+      }
+    } catch (error) {
+      toastApiError(this, error);
+    }
+  },
+  async removeRegion(state, regionId) {
+    try {
+      const regions = state.state.instance.regions
+        .filter((region) => region.id !== regionId)
+        .map((region) => region.id);
       const response = await this.$axios({
         method: 'patch',
         url: `/v2/managementareas/${state.state.instance.id}/`,
         data: { regions },
       });
+
       state.commit('setInstanceField', {
         field: 'regions',
         value: response.data.regions,
       });
+    } catch (error) {
+      toastApiError(this, error);
     }
   },
-  async removeRegion(state, regionId) {
-    const regions = state.state.instance.regions
-      .filter((region) => region.id !== regionId)
-      .map((region) => region.id);
-    const response = await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { regions },
-    });
-
-    state.commit('setInstanceField', {
-      field: 'regions',
-      value: response.data.regions,
-    });
-  },
   async clearProtectedArea(state) {
-    await this.$axios({
-      method: 'patch',
-      url: `/v2/managementareas/${state.state.instance.id}/`,
-      data: { protected_area: null },
-    });
-    state.commit('setEditWdpaId', true);
+    try {
+      await this.$axios({
+        method: 'patch',
+        url: `/v2/managementareas/${state.state.instance.id}/`,
+        data: { protected_area: null },
+      });
+      state.commit('setEditWdpaId', true);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async protectedAreaByWdpaId(
     state,
@@ -481,38 +558,55 @@ export const actions = {
         assessmentId,
       });
     } catch (e) {
-      state.commit('setEditWdpaIdError', e.response.data);
+      state.commit('setEditWdpaIdError', (e.response && e.response.data) || true);
       state.commit('setEditWdpaId', true);
     }
   },
   async createAuthority(state, name) {
-    const response = await this.$axios({
-      method: 'post',
-      url: 'v2/managementauthorities/',
-      data: { name },
-    });
-    const authority = response.data;
-    state.commit('addAuthorityToList', authority);
-    return authority;
+    try {
+      const response = await this.$axios({
+        method: 'post',
+        url: 'v2/managementauthorities/',
+        data: { name },
+      });
+      const authority = response.data;
+      state.commit('addAuthorityToList', authority);
+      return authority;
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async deleteZone(state, { zoneId, index }) {
-    if (zoneId) {
-      await this.$axios({
-        method: 'delete',
-        url: `/v2/managementareazones/${zoneId}/`,
-      });
-    }
-    state.commit('deleteZone', index);
-  },
-  async deleteAllZones(state) {
-    state.state.zones.forEach((zone) => {
-      if (zone.id) {
-        this.$axios({
+    try {
+      if (zoneId) {
+        await this.$axios({
           method: 'delete',
-          url: `/v2/managementareazones/${zone.id}/`,
+          url: `/v2/managementareazones/${zoneId}/`,
         });
       }
-    });
-    state.commit('deleteAllZones');
+      state.commit('deleteZone', index);
+    } catch (error) {
+      toastApiError(this, error);
+    }
+  },
+  async deleteAllZones(state) {
+    try {
+      await Promise.all(
+        state.state.zones.map((zone) => {
+          if (!zone.id) {
+            return Promise.resolve();
+          }
+          return this.$axios({
+            method: 'delete',
+            url: `/v2/managementareazones/${zone.id}/`,
+          }).catch((error) => {
+            toastApiError(this, error);
+          });
+        }),
+      );
+      state.commit('deleteAllZones');
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
 };

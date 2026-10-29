@@ -8,7 +8,7 @@
         <NuxtLink to="/">
           <img
             src="~/assets/img/elinor-sidebar-circle.svg"
-            alt="elinor-icon turqy"
+            :alt="$t('default.brandIconAlt')"
           />
         </NuxtLink>
         <ul v-if="$route.path === '/'">

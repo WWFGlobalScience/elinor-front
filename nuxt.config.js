@@ -103,6 +103,7 @@ export default async () => {
       },
       { src: '~/plugins/vuex-persist', ssr: false },
       '~/plugins/axios.js',
+      { src: '~/plugins/ignore-extension-errors.js', mode: 'client' },
       // { src: "~/plugins/sw-update.js", mode: "client" }
     ],
     buildModules: [
@@ -257,6 +258,8 @@ export default async () => {
       theme: 'bubble',
       position: 'bottom-right',
       duration: 7000,
+      className: 'elinor-toast',
+      keepOnHover: true,
     },
   };
 };

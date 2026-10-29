@@ -40,7 +40,7 @@
               <input
                 type="text"
                 value=""
-                placeholder="Other flag type"
+                :placeholder="$t('pages.assessments.actions.flag.otherType')"
                 v-model="form.flag_type_other"
               />
               <template v-if="errors.flag_type_other">

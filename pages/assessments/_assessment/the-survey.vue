@@ -11,9 +11,9 @@
       @click="scrollToTop"
       class="scroll-to-top-btn"
       :class="{ 'is--visible': showScrollToTop }"
-      aria-label="Scroll to top"
+      :aria-label="$t('default.scrollToTop')"
     >
-      <img src="~/assets/img/arrow_upward_alt.svg" alt="Scroll to top" />
+      <img src="~/assets/img/arrow_upward_alt.svg" :alt="$t('default.scrollToTop')" />
     </button>
   </section>
 </template>

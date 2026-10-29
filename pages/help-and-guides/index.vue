@@ -1,5 +1,5 @@
 <template>
-  <article class="page page--flushed">help</article>
+  <article class="page page--flushed">{{ $t('pages.helpAndGuides.title') }}</article>
 </template>
 
 <script>

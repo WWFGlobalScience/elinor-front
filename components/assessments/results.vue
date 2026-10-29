@@ -213,7 +213,7 @@
                     class="assessment-status status--pending"
                   >
                     <div class="edit">
-                      <img src="~/assets/img/edit.svg" alt="edit" />
+                      <img src="~/assets/img/edit.svg" :alt="$t('pages.assessments.list.editButton')" />
                       <span>Edit</span>
                     </div>
                     <span class="text">

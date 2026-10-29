@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img class="map" alt="mapox image" :src="getMapImageUrl()" />
+    <img class="map" :alt="$t('pages.report.mapImageAlt')" :src="getMapImageUrl()" />
     <img src="~/assets/img/report-brand.png" class="brand" />
   </div>
 </template>

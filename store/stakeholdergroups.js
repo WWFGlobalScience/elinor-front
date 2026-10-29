@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
 });
@@ -12,7 +14,7 @@ export const actions = {
   async fetchStakeholderGroups(state, search) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching stake holder groups...',
+      text: 'statusMessaging.loader.stakeholdergroups.fetchingStakeHolderGroups',
     });
 
     try {
@@ -25,7 +27,7 @@ export const actions = {
 
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 };

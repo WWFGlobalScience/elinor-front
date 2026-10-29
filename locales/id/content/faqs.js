@@ -1,241 +1,255 @@
 export default [
   {
     type: 'default',
-    title: 'What is the main purpose of the tool?',
+    title: 'Apa tujuan utama alat ini?',
     text: `
             <p>
-                The main purpose of Elinor is to track attributes critical to the success of area-based conservation
-                over time,and share this information with decision makers and conservation supporters working at local,
-                national or international scales.
+                Tujuan utama Elinor adalah melacak atribut yang penting bagi keberhasilan konservasi berbasis
+                kawasan dari waktu ke waktu, dan membagikan informasi ini kepada pengambil keputusan serta pendukung
+                konservasi yang bekerja pada skala lokal, nasional, atau internasional.
             </p>
             <p>
-                The tool was specifically designed knowing many conservation practitioners (1) are familiar with and
-                use an adopted version of the METT in their work and (2) face budget and time constraints for conservation
-                monitoring and evaluation, and may need flexible  approaches for collecting standardized data.
+                Alat ini dirancang secara khusus dengan pemahaman bahwa banyak praktisi konservasi (1) telah akrab
+                dengan dan menggunakan versi METT yang diadopsi dalam pekerjaan mereka, dan (2) menghadapi kendala
+                anggaran serta waktu untuk pemantauan dan evaluasi konservasi, sehingga mungkin membutuhkan pendekatan
+                yang fleksibel untuk mengumpulkan data yang terstandar.
             </p>
             <p>
-                Because of this, this low-cost and simple assessment has been developed collaboratively with members
-                of the conservation community, building off of the scoring system of the METT and questions from
-                existing protocols (see reference list), and covers a range of management and governance issue
-                considered important to success.
+                Karena itu, penilaian berbiaya rendah dan sederhana ini dikembangkan secara kolaboratif bersama
+                anggota komunitas konservasi, dengan bertumpu pada sistem penilaian METT dan pertanyaan dari
+                protokol yang sudah ada (lihat daftar rujukan), serta mencakup berbagai isu manajemen dan tata
+                kelola yang dianggap penting bagi keberhasilan.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'What kinds of decisions will this tool help inform?',
+    title: 'Keputusan seperti apa yang akan dibantu oleh alat ini?',
     text: `
             <p>
-                For project and site managers, information from the assessment can help:
+                Bagi manajer proyek dan lokasi, informasi dari penilaian dapat membantu:
             </p>
             <ul>
                 <li>
-                    Communicate with key stakeholders what issues of equitable management and governance are
-                    important to pay attention to
+                    Mengomunikasikan kepada pemangku kepentingan utama isu manajemen dan tata kelola yang adil
+                    yang penting untuk diperhatikan
                 </li>
                 <li>
-                    Identify what actions might be most suitable for an area under protection or management to help
-                    improve its management and governance status
+                    Mengidentifikasi tindakan yang paling sesuai bagi suatu kawasan yang dilindungi atau dikelola
+                    untuk membantu meningkatkan status manajemen dan tata kelolanya
                </li>
                <li>
-                    Identify where a more in-depth assessment of management, governance, equity, or climate is needed
+                    Mengidentifikasi di mana penilaian yang lebih mendalam mengenai manajemen, tata kelola, keadilan,
+                    atau iklim diperlukan
                </li>
             </ul>
-            <p>For regional and international decision-makers, the assessment data can help:</p>
+            <p>Bagi pengambil keputusan regional dan internasional, data penilaian dapat membantu:</p>
             <ul>
-                <li>Provide a broad overview of perceived status and trends in management and governance</li>
-                <li>Prompt conversations on equitable management and governance at national and international
-                 scales to inspire change in policy and practice</li>
-                <li>Identify areas requiring more in-depth research</li>
+                <li>Memberikan tinjauan luas tentang status dan tren manajemen serta tata kelola yang dipersepsikan</li>
+                <li>Mendorong percakapan tentang manajemen dan tata kelola yang adil pada skala nasional dan
+                 internasional untuk menginspirasi perubahan kebijakan dan praktik</li>
+                <li>Mengidentifikasi kawasan yang memerlukan penelitian lebih mendalam</li>
             </ul>
         `,
   },
   {
     type: 'default',
-    title: 'Who should complete an assessment?',
+    title: 'Siapa yang seharusnya menyelesaikan penilaian?',
     text: `
-            <p>The Elinor assessment was initially designed to meet the needs of conservationists working for
-                non-governmental organizations (NGOs) but can be used by any individual working to support a
-                managed area. The assessment can be completed in one of two ways:
+            <p>Penilaian Elinor semula dirancang untuk memenuhi kebutuhan para konservasionis yang bekerja di
+                organisasi nonpemerintah (NGO), tetapi dapat digunakan oleh siapa pun yang bekerja untuk mendukung
+                suatu kawasan yang dikelola. Penilaian dapat diselesaikan dengan salah satu dari dua cara:
             </p>
             <ol>
                 <li>
-                    As a <strong>field-based focus group.</strong> This is the way that many governance assessments
-                    are traditionally completed; leveraging diverse perceptions from key stakeholders involved in the
-                    management and governance of a particular area. On the ElinorData.org website, you will find a full
-                    field protocol that can be used to guide ethical data collection with stakeholders. This guidance
-                    offers insights on how to ethically lead a group, obtain the right permissions for using the data,
-                    and to probe for diverse perspectives; especially of those who may have been traditionally marginalized.
-                    This is the preferred pathway, as it allows diverse voices to contribute to the assessment,
-                    providing a more holistic perspective on the status of management and governance in an area.
-                    See the <a href='/documentation'>Elinor assessment tool</a> and protocol for guidance on how to lead
-                    a focus group.
+                    Sebagai <strong>kelompok fokus berbasis lapangan.</strong> Inilah cara banyak penilaian tata kelola
+                    secara tradisional diselesaikan; dengan memanfaatkan persepsi yang beragam dari pemangku kepentingan
+                    utama yang terlibat dalam manajemen dan tata kelola suatu kawasan. Di situs web ElinorData.org, Anda
+                    akan menemukan protokol lapangan lengkap yang dapat digunakan untuk memandu pengumpulan data yang
+                    etis bersama pemangku kepentingan. Panduan ini menawarkan wawasan tentang cara memimpin kelompok
+                    secara etis, memperoleh izin yang tepat untuk menggunakan data, dan menggali perspektif yang beragam;
+                    terutama dari mereka yang secara tradisional mungkin terpinggirkan.
+                    Ini adalah jalur yang diutamakan, karena memungkinkan berbagai suara berkontribusi pada penilaian,
+                    sehingga memberikan perspektif yang lebih holistik tentang status manajemen dan tata kelola di
+                    suatu kawasan.
+                    Lihat <a href='/documentation'>alat penilaian Elinor</a> dan protokol untuk panduan tentang cara
+                    memimpin kelompok fokus.
                 </li>
                 <li>
-                    <strong>As a desk based assessment.</strong> This pathway is for those who have limited time or
-                        resources for carrying out a participatory focus group. This option allows for some data to be
-                        generated on the managed area, which can provide an often adequate and helpful assessment on
-                        the current status and trends in the area, and can help users identify any critical knowledge
-                        gaps that would require further research and investment.
+                    <strong>Sebagai penilaian berbasis meja.</strong> Jalur ini ditujukan bagi mereka yang memiliki
+                        waktu atau sumber daya terbatas untuk melaksanakan kelompok fokus partisipatif. Opsi ini
+                        memungkinkan dihasilkannya sejumlah data tentang kawasan yang dikelola, yang sering kali
+                        dapat memberikan penilaian yang memadai dan bermanfaat mengenai status dan tren terkini di
+                        kawasan tersebut, serta membantu pengguna mengidentifikasi kesenjangan pengetahuan penting
+                        yang memerlukan penelitian dan investasi lebih lanjut.
                 </li>
             </ol>
             <p>
-                When inputting data into the ElinorData system, users can indicate which pathway they took to
-                generate the data in the assessment so any future users of the data can consider who’s perspectives
-                were represented in the data.
+                Saat memasukkan data ke dalam sistem ElinorData, pengguna dapat menunjukkan jalur mana yang mereka
+                tempuh untuk menghasilkan data dalam penilaian, sehingga setiap pengguna data di masa depan dapat
+                mempertimbangkan perspektif siapa yang terwakili dalam data tersebut.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'Who has the rights and access to the data entered in this tool?',
+    title: 'Siapa yang memiliki hak dan akses atas data yang dimasukkan ke dalam alat ini?',
     text: `
             <p>
-                Data ethics, rights, and privacy is a central component of the Elinor tool and data system.
-                The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and
-                ethics with focus group participants, for those who gather data on Elinor via a focus group
-                discussion. The Elinor Terms of Services and Collaboration Principles outline in detail how data is
-                stored and used on the platform.
+                Etika data, hak, dan privasi merupakan komponen sentral dari alat dan sistem data Elinor.
+                Dokumen alat penilaian dan protokol Elinor menawarkan panduan tentang cara membahas privasi dan
+                etika data dengan peserta kelompok fokus, bagi mereka yang mengumpulkan data Elinor melalui diskusi
+                kelompok fokus. Ketentuan Layanan dan Prinsip Kolaborasi Elinor menguraikan secara rinci bagaimana
+                data disimpan dan digunakan di platform.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'Will I know how my data is being used?',
+    title: 'Apakah saya akan mengetahui bagaimana data saya digunakan?',
     text: `
             <p>
-                For data made publicly available, users will eventually be able to ‘opt in’ to notifications that
-                tell users where and when their assessment data is being downloaded to help users understand what
-                their assessment data is being used for.
+                Untuk data yang dibuat tersedia secara publik, pengguna pada akhirnya akan dapat ‘ikut serta’
+                dalam notifikasi yang memberitahukan di mana dan kapan data penilaian mereka diunduh, guna membantu
+                pengguna memahami untuk apa data penilaian mereka digunakan.
             </p>
         `,
   },
   {
     type: 'default',
     title:
-      'I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?',
+      'Saya sudah menggunakan METT (atau versi modifikasi METT) dalam proyek saya - bagaimana hubungan Elinor dengan METT?',
     text: `
             <p>
-                Elinor builds directly off the years of experience project teams have using the METT assessment and
-                other tools designed to measure environmental governance. The Elinor assessment was designed to
-                mirror the METT as closely as possible, and pulls questions directly from the METT and uses the same
-                scale. Refer to this crosswalk between the METT, SAGE and Elinor to help users understand the
-                similarities and differences between the different tools.
+                Elinor dibangun langsung dari pengalaman bertahun-tahun tim proyek dalam menggunakan penilaian METT
+                dan alat lain yang dirancang untuk mengukur tata kelola lingkungan. Penilaian Elinor dirancang untuk
+                mencerminkan METT sedekat mungkin, mengambil pertanyaan langsung dari METT, dan menggunakan skala
+                yang sama. Rujuk perbandingan antara METT, SAGE, dan Elinor ini untuk membantu pengguna memahami
+                persamaan dan perbedaan di antara berbagai alat tersebut.
             </p>
             <p>
-                If you use the METT currently, if you obtain informed consent from participants in your METT
-                assessment, you can enter the data gathered from the METT into the Elinor database. Pay careful
-                attention to the data privacy settings and ensure you have the rights to enter the data in the
-                ElinorData system.
+                Jika Anda saat ini menggunakan METT, dan memperoleh persetujuan yang diinformasikan dari peserta
+                dalam penilaian METT Anda, Anda dapat memasukkan data yang dikumpulkan dari METT ke dalam basis data
+                Elinor. Perhatikan dengan saksama pengaturan privasi data dan pastikan Anda memiliki hak untuk
+                memasukkan data ke dalam sistem ElinorData.
+            </p>
+            <p>
+                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Klik di sini untuk melihat perbandingan alat penilaian tata kelola dan manajemen</a>
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'What are the specific things this tool will help me track?',
+    title: 'Hal spesifik apa yang akan dibantu dilacak oleh alat ini?',
     text: `
             <p>
-                 This tool focuses on compiling basic information about areas under management or protection, and
-                 assessing the status of <strong>nine attributes important for area-based conservation and
-                 management:</strong>
+                 Alat ini berfokus pada penyusunan informasi dasar tentang kawasan yang dikelola atau dilindungi, dan
+                 menilai status <strong>sembilan atribut yang penting bagi konservasi dan
+                 manajemen berbasis kawasan:</strong>
             </p>
             <ol>
-                <li>Resource boundaries</li>
-                <li>Monitoring and enforcement</li>
-                <li>Capacity for adaptive management</li>
-                <li>Operational capacity</li>
-                <li>Inclusive and equitable management</li>
-                <li> Clearly defined rights and decision making</li>
-                <li>Clear and congruent regulations</li>
-                <li>Transparency and accountability</li>
-                <li>Perceived outcomes</li>
+                <li>Batas Sumber Daya</li>
+                <li>Pemantauan dan penegakan</li>
+                <li>Kapasitas untuk manajemen adaptif</li>
+                <li>Kapasitas operasional</li>
+                <li>Manajemen inklusif dan adil</li>
+                <li> Hak dan pengambilan keputusan yang jelas didefinisikan</li>
+                <li>Peraturan yang jelas dan kongruen</li>
+                <li>Transparansi dan akuntabilitas</li>
+                <li>Persepsi hasil</li>
             </ol>
             <p>
-                The data system will also allow tool users to append relevant documents like management plans and
-                geospatial files to facilitate knowledge management and sharing across spatial scales and access
-                decision-friendly visualizations of site-level data and aggregate data.
+                Sistem data juga akan memungkinkan pengguna alat untuk melampirkan dokumen relevan seperti rencana
+                pengelolaan dan berkas geospasial guna memfasilitasi manajemen pengetahuan dan berbagi lintas skala
+                spasial, serta mengakses visualisasi data tingkat lokasi dan data agregat yang ramah bagi pengambilan
+                keputusan.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'How will the data be analysed and presented?',
+    title: 'Bagaimana data akan dianalisis dan disajikan?',
     text: `
             <p>
-                The Elinor database and web platform will provide simple visuals at a site, regional, and
-                international level that show trends over time, aggregated by the nine attributes listed above.
-                More robust analysis can be carried out on the data collected using the social science theories and
-                frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool
-                resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and
-                resilience thinking. Depending on the data privacy settings chosen by users, data from across
-                regions will be available for public use.
+                Basis data dan platform web Elinor akan menyediakan visual sederhana pada tingkat lokasi, regional,
+                dan internasional yang menunjukkan tren dari waktu ke waktu, diagregasikan menurut sembilan atribut
+                yang tercantum di atas.
+                Analisis yang lebih kuat dapat dilakukan terhadap data yang dikumpulkan dengan menggunakan teori dan
+                kerangka ilmu sosial yang mendasari pertanyaan dalam alat ini - yaitu teori tata kelola sumber daya
+                milik bersama Elinor Ostrom, keadilan dalam tata kelola sumber daya (mis. Bennett and Satterfield 2018),
+                dan pemikiran ketahanan. Tergantung pada pengaturan privasi data yang dipilih pengguna, data dari
+                berbagai wilayah akan tersedia untuk penggunaan publik.
             </p>
         `,
   },
   {
     type: 'default',
     title:
-      'I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?',
+      'Saya sudah mengumpulkan data manajemen dan tata kelola melalui survei lapangan. Apakah saya perlu menghentikannya dan menggunakan alat ini?',
     text: `
             <p>
-                No! This tool was designed to complement in-depth, field-based data collection. If you currently
-                collect data using field-based surveys or focus groups, you can use the data you already collect to
-                inform the answers to the questions asked in Elinor - just make sure you have the rights and
-                permissions to do so. Conversely, information gathered using this tool can help you understand what
-                topics require more in-depth field-based surveys.
+                Tidak! Alat ini dirancang untuk melengkapi pengumpulan data lapangan yang mendalam. Jika saat ini
+                Anda mengumpulkan data menggunakan survei lapangan atau kelompok fokus, Anda dapat menggunakan data
+                yang sudah Anda kumpulkan untuk menginformasikan jawaban atas pertanyaan yang diajukan di Elinor -
+                pastikan saja Anda memiliki hak dan izin untuk melakukannya. Sebaliknya, informasi yang dikumpulkan
+                menggunakan alat ini dapat membantu Anda memahami topik mana yang memerlukan survei lapangan yang
+                lebih mendalam.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'What are the main advantages to using this tool?',
+    title: 'Apa keunggulan utama menggunakan alat ini?',
     text: `
             <p>
-                The Elinor tool and data system was designed to streamline the data entry, storage, and
-                visualization process. By doing so, users gain three key advantages:
+                Alat dan sistem data Elinor dirancang untuk merampingkan proses entri, penyimpanan, dan
+                visualisasi data. Dengan demikian, pengguna memperoleh tiga keunggulan utama:
             </p>
             <ol>
                 <li>
-                    <strong>The data collection, entry and visualization process becomes streamlined.</strong>
-                    For users working across multiple sites, all data can be stored and organized in the same way,
-                    and outputted into forms that are useful for communicating results to key audiences.
-                </li
+                    <strong>Proses pengumpulan, entri, dan visualisasi data menjadi lebih ramping.</strong>
+                    Bagi pengguna yang bekerja di berbagai lokasi, semua data dapat disimpan dan diorganisasikan
+                    dengan cara yang sama, serta dikeluarkan dalam bentuk yang berguna untuk mengomunikasikan hasil
+                    kepada khalayak utama.
+                </li>
                 <li>
-                    <strong>Users are connected to a global community of conservationists striving to improve
-                    management and governance.</strong> Management and governance has long been an important topic
-                    in conservation, but gathering and sharing data on this subject has been difficult. One of the
-                    main barriers to data sharing is the time and energy that is often required to formalize and
-                    clean data for others to use: Elinor automates this, and allows users to selectively share data
-                    with individual users or the general public with a click of a button!
+                    <strong>Pengguna terhubung dengan komunitas global para konservasionis yang berupaya meningkatkan
+                    manajemen dan tata kelola.</strong> Manajemen dan tata kelola telah lama menjadi topik penting
+                    dalam konservasi, tetapi mengumpulkan dan berbagi data tentang pokok ini sulit dilakukan. Salah
+                    satu hambatan utama berbagi data adalah waktu dan energi yang sering diperlukan untuk memformalkan
+                    dan membersihkan data agar dapat digunakan orang lain: Elinor mengotomatiskan hal ini, dan
+                    memungkinkan pengguna untuk secara selektif berbagi data dengan pengguna perorangan atau publik
+                    umum hanya dengan satu klik tombol!
                 </li>
             </ol>
         `,
   },
   {
     type: 'default',
-    title: 'Where is my data stored?',
+    title: 'Di mana data saya disimpan?',
     text: `
             <p>
-                ElinorData.org uses Amazon Web Services to store the data.
+                ElinorData.org menggunakan Amazon Web Services untuk menyimpan data.
             </p>
         `,
   },
   {
     type: 'default',
     title:
-      'What are some things I should keep in mind when I’m making my decision about using this tool?',
+      'Hal apa yang perlu saya pertimbangkan ketika memutuskan untuk menggunakan alat ini?',
     text: `
-            <p>No one tool does every job. It’s important to remember that:</p>
-            <ol class='list-inside list-disc'>
+            <p>Tidak ada satu alat pun yang mengerjakan setiap tugas. Penting untuk diingat bahwa:</p>
+            <ol>
                 <li>
-                    <strong>This tool does not gather in-depth data.</strong> This tool does not replace the need
-                    for working with communities on an in-depth assessment of the issues identified by the tool.
-                </li
+                    <strong>Alat ini tidak mengumpulkan data yang mendalam.</strong> Alat ini tidak menggantikan
+                    kebutuhan untuk bekerja bersama komunitas dalam penilaian mendalam terhadap isu-isu yang
+                    diidentifikasi oleh alat ini.
+                </li>
                 <li>
-                    <strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed
-                    to track indicators commonly recognized as being important for management and governance of
-                    coastal managed and conserved areas. It does not measure specific changes in laws and
-                    regulations, which may have great impacts on conservation activities in any given place.
+                    <strong>Alat ini bersifat agnostik terhadap hukum dan peraturan setempat.</strong> Alat ini
+                    dikembangkan untuk melacak indikator yang secara umum diakui penting bagi manajemen dan tata
+                    kelola kawasan pesisir yang dikelola dan dikonservasi. Alat ini tidak mengukur perubahan spesifik
+                    dalam hukum dan peraturan, yang mungkin berdampak besar pada kegiatan konservasi di suatu tempat.
                 </li>
             </ol>
         `,
@@ -243,23 +257,24 @@ export default [
   {
     type: 'default',
     title:
-      'OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?',
+      'Baik, saya menggunakan alat ini. Bagaimana saya menentukan apa yang ‘dihitung’ sebagai kawasan yang dikelola atau dikonservasi?',
     text: `
             <p>
-                This depends on your context. In this tool, we refer to the boundary of the area to be assessed as
-                the management area (MA). A management area refers to a site/location to which management actions
-                are directed. A management area (MA) can be one protected area, or one conserved area (see glossary
-                for definitions), or a broader area that encompasses several protected areas/conserved areas.
+                Hal ini bergantung pada konteks Anda. Dalam alat ini, kami merujuk pada batas kawasan yang akan
+                dinilai sebagai kawasan pengelolaan (MA). Kawasan pengelolaan merujuk pada suatu lokasi yang menjadi sasaran
+                tindakan pengelolaan. Suatu kawasan pengelolaan (MA) dapat berupa satu kawasan lindung, atau satu kawasan
+                konservasi (lihat glosarium untuk definisi), atau kawasan yang lebih luas yang mencakup beberapa
+                kawasan lindung/kawasan konservasi.
             </p>
-            <p>Therefore, the user of this tool may decide to conduct this assessment on:</p>
-            <ol class='list-inside list-disc'>
+            <p>Oleh karena itu, pengguna alat ini dapat memutuskan untuk melakukan penilaian ini pada:</p>
+            <ol>
                 <li>
-                    An individual protected area or conserved area. For example, this could be an assessment of an
-                    area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a
-                    single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and
-                    protected areas and consider these as one management area, answering the questions with all of
-                    these areas in mind. For example, a Biosphere Reserve with multiple protected areas or
-                    conserved areas.
+                    Satu kawasan lindung atau kawasan konservasi. Misalnya, ini dapat berupa penilaian atas
+                    kawasan yang dikelola oleh Beach Management Unit (BMU). Atau, penilaian atas satu
+                    kawasan lindung.</li><li>Bentang laut/lanskap yang lebih luas dengan beberapa kawasan konservasi dan
+                    kawasan lindung, dan menganggapnya sebagai satu kawasan pengelolaan, dengan menjawab pertanyaan
+                    dengan mempertimbangkan semua kawasan tersebut. Misalnya, suatu Cagar Biosfer dengan
+                    beberapa kawasan lindung atau kawasan konservasi.
                 </li>
             </ol>
         `,
@@ -267,18 +282,18 @@ export default [
   {
     type: 'default',
     title:
-      'I work for a national NGO - how do I decide which sites to use the Elinor assessment in?',
+      'Saya bekerja untuk NGO nasional - bagaimana saya memutuskan lokasi mana yang akan menggunakan penilaian Elinor?',
     text: `
             <p>
-                Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.
+                Rujuk Bagian 1 dari alat penilaian dan protokol Elinor untuk panduan tentang cara melakukan sampling.
             </p>`,
   },
   {
     type: 'default',
-    title: 'How are the scores shown in the site reports calculated?',
+    title: 'Bagaimana skor yang ditampilkan dalam laporan situs dihitung?',
     text: `
             <p>
-                Elinor includes 35 indicators across 10 core attributes of governance and management. Scores are calculated for each indicator, each attribute, and each managed area in total. Each indicator is assigned a score between 0 and 3 (with 0 being the least desirable and 4 being most desirable) on a scale that is customized for each indicator. For example, the scale for awareness of boundaries, records whether boundaries are known by most (3), some (2), a few (1) or none (0) of the relevant groups, while clearly defined boundaries, meanwhile, record whether boundaries are well demarcated (3), demarcated with some deficiencies (2), demarcated with major deficiencies (1), or not demarcated at all (0). Attribute scores, meanwhile, are calculated using a points percentage (i.e., total number of points received/total number of points possible) of indicators associated with each attribute, which is adjusted to a score out of 10 for easy interpretation. Finally, the total score for the managed area is calculated as a percentage of all attribute points received out of all attributes possible. Indicator, attribute and MA scores are assigned an action-oriented assessment category (Plan, Build, Strengthen, Maintain) to enable action-oriented interpretation. <strong>Note that the scores given by Elinor should not alone be used to determine the strengths or needs of the area's governance and management.</strong> It may be that a lower score on some attribute or indicator is sufficient for one site, but not another. The scores should be interpreted alongside the qualitative explanations entered into Elinor in order for decision-makers to choose the appropriate next steps.  
+                Elinor mencakup 35 indikator di 10 atribut inti tata kelola dan manajemen. Skor dihitung untuk setiap indikator, setiap atribut, dan setiap kawasan yang dikelola secara keseluruhan. Setiap indikator diberi skor antara 0 dan 3 (dengan 0 sebagai yang paling tidak diinginkan dan 4 sebagai yang paling diinginkan) pada skala yang disesuaikan untuk setiap indikator. Misalnya, skala untuk kesadaran terhadap batas mencatat apakah batas diketahui oleh sebagian besar (3), sebagian (2), sedikit (1), atau tidak satu pun (0) dari kelompok yang relevan, sementara batas yang didefinisikan dengan jelas mencatat apakah batas ditandai dengan baik (3), ditandai dengan beberapa kekurangan (2), ditandai dengan kekurangan besar (1), atau tidak ditandai sama sekali (0). Sementara itu, skor atribut dihitung menggunakan persentase poin (yaitu, jumlah total poin yang diterima/jumlah total poin yang mungkin) dari indikator yang terkait dengan setiap atribut, yang kemudian disesuaikan menjadi skor dari 10 agar mudah ditafsirkan. Akhirnya, skor total untuk kawasan yang dikelola dihitung sebagai persentase dari seluruh poin atribut yang diterima terhadap seluruh atribut yang mungkin. Skor indikator, atribut, dan MA diberi kategori penilaian yang berorientasi aksi (Rencana, Bangun, Perkuat, Pertahankan) untuk memungkinkan penafsiran yang berorientasi aksi. <strong>Perhatikan bahwa skor yang diberikan oleh Elinor tidak boleh digunakan semata-mata untuk menentukan kekuatan atau kebutuhan tata kelola dan manajemen kawasan.</strong> Mungkin saja skor yang lebih rendah pada suatu atribut atau indikator sudah memadai untuk satu lokasi, tetapi tidak untuk lokasi lain. Skor harus ditafsirkan bersama penjelasan kualitatif yang dimasukkan ke Elinor agar pengambil keputusan dapat memilih langkah berikutnya yang sesuai.
             </p>
 	`,
   } /*,
