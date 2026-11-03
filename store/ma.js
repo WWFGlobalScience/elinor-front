@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   mas: [],
   ma: {},
@@ -22,43 +24,51 @@ export const mutations = {
   },
   maSelectorChange(state, payload) {
     state.edit.maSelector.value = payload;
-    state.edit.maSelector.value == null
-      ? (state.edit.maOrigin = 'new')
-      : (state.edit.maOrigin = 'old');
+    state.edit.maOrigin = payload == null ? 'new' : 'old';
   },
   maSelectorNew(state) {
     state.edit.maOrigin = 'new';
   },
 };
 
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+  }
+  return response.json();
+}
+
 export const actions = {
   async getMas(state) {
-    const response = await fetch(
-      'https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas',
-    );
-    //const response = await fetch( 'api/ma.json' )
-    const mas = await response.json();
-    state.commit('setMas', mas);
+    try {
+      const mas = await fetchJson(
+        'https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas',
+      );
+      state.commit('setMas', mas);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async getMa(state, id) {
-    const response = await fetch(
-      `https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas/${id}`,
-    );
-    //const response = await fetch( 'api/ma.json' )
-    const ma = await response.json();
-
-    console.log(ma);
-
-    state.commit('setMa', ma);
+    try {
+      const ma = await fetchJson(
+        `https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas/${id}`,
+      );
+      state.commit('setMa', ma);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   async getFirstMa(state) {
-    const response = await fetch(
-      'https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas',
-    );
-    //const response = await fetch( 'api/ma.json' )
-    const mas = await response.json();
-    console.log(mas[0]);
-    state.commit('setFirstMa', mas[0]);
+    try {
+      const mas = await fetchJson(
+        'https://60c19fea4f7e880017dbfed8.mockapi.io/api/v1/mas',
+      );
+      state.commit('setFirstMa', mas[0]);
+    } catch (error) {
+      toastApiError(this, error);
+    }
   },
   maSelectorChange(state, value) {
     state.commit('maSelectorChange', value);

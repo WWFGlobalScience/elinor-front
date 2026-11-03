@@ -1,3 +1,53 @@
+// vue-toasted — Figma ELINOR toast (7699:7762)
+.toasted-container {
+  padding: 24px;
+
+  .toasted.bubble,
+  .toasted.toasted-primary,
+  .toasted.elinor-toast {
+    @apply font-montserrat font-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: auto;
+    padding: 8px 24px;
+    border-radius: 8px !important;
+    box-shadow: none;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 500;
+    background-color: #e4f0f4 !important;
+    color: #3a90ab !important;
+
+    .material-icons,
+    .mdi {
+      display: none;
+    }
+  }
+
+  .toasted.bubble.info,
+  .toasted.toasted-primary.info,
+  .toasted.elinor-toast.info {
+    background-color: #e4f0f4 !important;
+    color: #3a90ab !important;
+  }
+
+  .toasted.bubble.success,
+  .toasted.toasted-primary.success,
+  .toasted.elinor-toast.success {
+    background-color: #d8f7ed !important;
+    color: #029262 !important;
+  }
+
+  .toasted.bubble.error,
+  .toasted.toasted-primary.error,
+  .toasted.elinor-toast.error {
+    background-color: #f4d7d7 !important;
+    color: #d63c3c !important;
+  }
+}
+
 //notifications
 .elinor__notifications {
   @apply fixed top-0 left-0 right-0 w-full bg-red-50 border-b-2 border-red-400 text-red-800 z-50 py-4 px-4 shadow-lg;

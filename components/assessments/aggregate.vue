@@ -15,8 +15,8 @@
         $t('pages.assessments.list.DownloadReport.title')
       }}</span>
       <div class="icon-area">
-        <img src="~/assets/img/ico-download-2.svg" alt="Download Data" />
-        <img src="~/assets/img/ico-down-white.svg" alt="Download Data" />
+        <img src="~/assets/img/ico-download-2.svg" :alt="$t('default.downloadData')" />
+        <img src="~/assets/img/ico-down-white.svg" :alt="$t('default.downloadData')" />
       </div>
     </button>
     <button

@@ -117,20 +117,22 @@
                         @click="togglePasswordVisibility"
                         class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
                         :title="
-                          showPassword ? 'Hide password' : 'Show password'
+                          showPassword
+                            ? $t('default.hidePassword')
+                            : $t('default.showPassword')
                         "
                       >
                         <img
                           v-if="!showPassword"
                           src="~/assets/img/visibility_off.svg"
                           class="w-5 h-5"
-                          alt="Hide password"
+                          :alt="$t('default.hidePassword')"
                         />
                         <img
                           v-else
                           src="~/assets/img/ico-eye-turqy-light.svg"
                           class="w-5 h-5 opacity-100"
-                          alt="Show password"
+                          :alt="$t('default.showPassword')"
                         />
                       </button>
                     </div>
@@ -214,27 +216,37 @@ export default {
       items: [
         {
           id: '9bxrsgW82L4',
-          title: 'Introduction to Elinor',
+          title: 'pages.home.onboarding.video1.title',
           duration: '2:45',
         },
         {
           id: 'nA5LNNuqpKQ',
-          title: 'How to create a new assessment',
+          title: 'pages.home.onboarding.video2.title',
           duration: '4:12',
         },
         {
           id: 'CX8LucMtgdg',
-          title: 'How to generate a report',
+          title: 'pages.home.onboarding.video3.title',
           duration: '3:28',
         },
         {
           id: '1AJ-g-2y8pQ',
-          title: 'How to change assestment privacy',
+          title: 'pages.home.onboarding.video4.title',
           duration: '1:55',
         },
         {
           id: 'z1T6DnDNVIg',
-          title: 'How to add a Collaborator',
+          title: 'pages.home.onboarding.video5.title',
+          duration: '2:18',
+        },
+        {
+          id: '1AJ-g-2y8pQ',
+          title: 'pages.home.onboarding.video4.title',
+          duration: '1:55',
+        },
+        {
+          id: 'z1T6DnDNVIg',
+          title: 'pages.home.onboarding.video5.title',
           duration: '2:18',
         },
       ],

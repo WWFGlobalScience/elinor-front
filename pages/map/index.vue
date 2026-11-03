@@ -83,7 +83,7 @@
       @click="showFiltersModal"
     >
       <span>{{ $t('pages.assessments.list.filters.showFilters') }}</span>
-      <img src="~/assets/img/ico-filters-turqy.svg" alt="Filters" />
+      <img src="~/assets/img/ico-filters-turqy.svg" :alt="$t('pages.map.filters.title')" />
     </button>
 
     <map-box-list

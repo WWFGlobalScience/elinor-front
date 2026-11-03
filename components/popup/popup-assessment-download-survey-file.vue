@@ -11,7 +11,7 @@
     </div>
     <div class="file__buttons flex justify-center">
       <button @click="onDownloadSurveyFile" type="button" class="btn btn--md">
-        <span class="btn--opacity__target">Download Now</span>
+        <span class="btn--opacity__target">{{ $t('pages.assessments.downloadSurveyFile.downloadNow') }}</span>
         <!-- <img src="~/assets/img/ico-file-turqy.svg" /> -->
       </button>
     </div>

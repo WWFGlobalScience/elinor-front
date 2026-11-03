@@ -6,7 +6,7 @@
           <div class="form__row">
             <div class="input input--file">
               <label class="label">
-                Upload a spatial file in Shape file format
+                {{ $t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.uploadHeading') }}
               </label>
               <div class="notes" v-if="importedFile === null">
                 <div
@@ -113,7 +113,7 @@
                   v-if="fileAdded && progress === 100 && importFileError"
                   class="description"
                 >
-                  <img src="~/assets/img/ico-file-error.svg" alt="file error" />
+                  <img src="~/assets/img/ico-file-error.svg" :alt="$t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.uploadErrorAlt')" />
                   <h4>
                     {{
                       $t(

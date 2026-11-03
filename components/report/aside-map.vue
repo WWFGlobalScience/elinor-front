@@ -1,10 +1,10 @@
 <template>
   <aside class="aside-report">
     <div id="mapContainer" class="relative">
-      <img class="w-full h-full" alt="mapox image" :src="getMapImageUrl()" />
+      <img class="w-full h-full" :alt="$t('pages.report.mapImageAlt')" :src="getMapImageUrl()" />
       <div class="map-content">
         <div class="brand w-[144px] h-[144px]">
-          <img src="~/assets/img/report-brand.png" alt="logo" />
+          <img src="~/assets/img/report-brand.png" :alt="$t('default.logo')" />
         </div>
         <div v-if="report.management_area" class="card-map">
           <div class="card-map-col">

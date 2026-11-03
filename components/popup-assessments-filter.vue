@@ -1,6 +1,6 @@
 <template>
   <div class="popup__content popup--filters">
-    <h4 class="c-title--modal mb-6">Select filters</h4>
+    <h4 class="c-title--modal mb-6">{{ $t('default.selectFilter') }}</h4>
     <form class="form form--ma-selector form--mt-0">
       <div class="form__group">
         <div class="form__row">

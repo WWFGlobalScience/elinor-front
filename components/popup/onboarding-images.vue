@@ -1,7 +1,7 @@
 <template>
     <div class="onboarding-images">
         <div v-if="activeAsset" class="onboarding-images__item">
-            <img v-if="activeAsset.type === 'image'" :src="activeAsset.src" :alt="activeAsset.alt" />
+            <img v-if="activeAsset.type === 'image'" :src="activeAsset.src" :alt="$t(activeAsset.alt)" />
             <video v-if="activeAsset.type === 'video'" :src="activeAsset.src" autoplay muted loop playsinline>
                 {{ activeAsset.alt }}
             </video>
@@ -23,37 +23,37 @@ export default {
             assets: [
                 {
                     src: require('~/assets/img/onboarding/cover.jpg'),
-                    alt: 'Onboarding Cover',
+                    alt: 'popup.onboarding.imageAlt.cover',
                     type: 'image',
                 },
                 {
                     src: require('~/assets/img/onboarding/onboard-1.mp4'),
-                    alt: 'Onboarding 1',
+                    alt: 'popup.onboarding.imageAlt.step1',
                     type: 'video',
                 },
                 {
                     src: require('~/assets/img/onboarding/onboard-2.mp4'),
-                    alt: 'Onboarding 2',
+                    alt: 'popup.onboarding.imageAlt.step2',
                     type: 'video',
                 },
                 {
                     src: require('~/assets/img/onboarding/onboard-3.mp4'),
-                    alt: 'Onboarding 3',
+                    alt: 'popup.onboarding.imageAlt.step3',
                     type: 'video',
                 },
                 {
                     src: require('~/assets/img/onboarding/onboard-4.mp4'),
-                    alt: 'Onboarding 4',
+                    alt: 'popup.onboarding.imageAlt.step4',
                     type: 'video',
                 },
                 {
                     src: require('~/assets/img/onboarding/onboard-5.mp4'),
-                    alt: 'Onboarding 5',
+                    alt: 'popup.onboarding.imageAlt.step5',
                     type: 'video',
                 },
                 {
                     src: require('~/assets/img/onboarding/onboard-6.mp4'),
-                    alt: 'Onboarding 6',
+                    alt: 'popup.onboarding.imageAlt.step6',
                     type: 'video',
                 },
             ],

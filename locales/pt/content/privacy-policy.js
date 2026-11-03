@@ -1,3 +1,3 @@
 export default `
-    <h1>privacy policy</h1>
+    <h1>política de privacidade</h1>
 `;

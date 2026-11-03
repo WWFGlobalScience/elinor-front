@@ -2,13 +2,13 @@
     <div class="popup__content popup--selected-ma">
         <div class="popup__header">
             <div class="flex items-center gap-4">
-                <h3 class="text-turqy">Managed Area Preview</h3>
+                <h3 class="text-turqy">{{ $t('popup.selectedMa.title') }}</h3>
                 <div class="flex items-center gap-2">
                     <button type="button" class="btn btn--primary btn--new-sm" @click="useManagementArea">
-                        Use this Managed Area
+                        {{ $t('popup.selectedMa.useThis') }}
                     </button>
                     <button type="button" class="btn btn--border-turqy btn--new-sm" @click="addNewManagementArea">
-                        Create New
+                        {{ $t('popup.selectedMa.createNew') }}
                     </button>
                 </div>
             </div>

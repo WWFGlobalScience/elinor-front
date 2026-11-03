@@ -6,7 +6,7 @@
     class="btn btn--border-turqy btn--sm ml-auto"
     title="Report"
   >
-    <img src="~/assets/img/ico-download.png" alt="Download" />
+    <img src="~/assets/img/ico-download.png" :alt="$t('default.download')" />
     <span>{{ $t('pages.report.country.download') }}</span>
     <div class="report-wrap">
       <template v-for="(item, index) in Math.ceil(report.length / 6)">
@@ -20,6 +20,7 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import { toastApiError } from '~/config/api-error';
 
 import { jsPDF } from 'jspdf';
 import '../../assets/fonts/montserrat/Montserrat-Medium-normal.js';
@@ -50,9 +51,13 @@ export default {
       this.$axios({
         method: 'get',
         url: `v2/reports/assessments/?management_area_countries=${this.filters.management_area_countries}&status=${this.filters.status || ''}&year=${this.filters.year || ''}`,
-      }).then((response) => {
-        this.report = response.data.results;
-      });
+      })
+        .then((response) => {
+          this.report = response.data.results;
+        })
+        .catch((error) => {
+          toastApiError(this, error);
+        });
     },
   },
   methods: {

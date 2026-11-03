@@ -56,7 +56,7 @@
                   >
                     <img
                       src="~/assets/img/ico-file-gray.svg"
-                      alt="file uploaded successfully"
+                      :alt="$t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.uploadSuccessAlt')"
                     />
                     <h4>
                       {{
@@ -82,7 +82,7 @@
                   >
                     <img
                       src="~/assets/img/ico-file-error.svg"
-                      alt="file error"
+                      :alt="$t('pages.assessments.edit.tabs.managementArea.popups.spatialFile.uploadErrorAlt')"
                     />
                     <h4>
                       {{

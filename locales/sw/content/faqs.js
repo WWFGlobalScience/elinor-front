@@ -1,241 +1,244 @@
 export default [
   {
     type: 'default',
-    title: 'Je, kusudi kubwa la kifaa cha Elinor ni nini?',
+    title: 'Je, kusudi kuu la kifaa cha Elinor ni nini?',
     text: `
-             <p>
-                 Kusudi kuu la Elinor ni kufuatilia sifa muhimu kwa mafanikio ya uhifadhi wa eneo
-                 baada ya muda, na kushiriki habari hii na watoa maamuzi na wafuasi wa uhifadhi wanaofanya kazi katika eneo hilo,
-                 viwango vya kitaifa au kimataifa.
-             </ p>
-             <p>
-                 Chombo hiki kiliundwa mahsusi kwa kujua watendaji wengi wa uhifadhi (1) wanafahamiana na
-                 kutumia toleo lililopitishwa la METT katika kazi zao na (2) kukabiliana na bajeti na vikwazo vya muda kwa ajili ya uhifadhi
-                 ufuatiliaji na tathmini, na inaweza kuhitaji mbinu rahisi za kukusanya data sanifu.
-             </ p>
-             <p>
-                 Kwa sababu hii, tathmini hii ya gharama nafuu na rahisi imeandaliwa kwa ushirikiano na wanachama
-                 ya jumuiya ya uhifadhi, kujenga kutoka kwa mfumo wa bao wa METT na maswali kutoka
-                 itifaki zilizopo (tazama orodha ya marejeleo), na inashughulikia masuala mbalimbali ya usimamizi na utawala
-                 inachukuliwa kuwa muhimu kwa mafanikio.
-             </ p>
+            <p>
+                Kusudi kuu la Elinor ni kufuatilia sifa muhimu kwa mafanikio ya uhifadhi wa maeneo
+                baada ya muda, na kushiriki taarifa hii na watoa maamuzi na wafuasi wa uhifadhi wanaofanya kazi katika
+                viwango vya ndani, kitaifa au kimataifa.
+            </p>
+            <p>
+                Kifaa hiki kiliundwa mahsusi kwa kujua kwamba watendaji wengi wa uhifadhi (1) wanafahamu na
+                kutumia toleo lililopitishwa la METT katika kazi zao na (2) wanakabiliwa na vikwazo vya bajeti na muda kwa ajili ya
+                ufuatiliaji na tathmini ya uhifadhi, na wanaweza kuhitaji mbinu rahisi za kukusanya data sanifu.
+            </p>
+            <p>
+                Kwa sababu hii, tathmini hii ya gharama nafuu na rahisi imeandaliwa kwa ushirikiano na wanachama
+                wa jumuiya ya uhifadhi, ikijengwa juu ya mfumo wa alama wa METT na maswali kutoka
+                itifaki zilizopo (tazama orodha ya marejeleo), na inashughulikia masuala mbalimbali ya usimamizi na utawala
+                yanayochukuliwa kuwa muhimu kwa mafanikio.
+            </p>
         `,
   },
   {
     type: 'default',
-    title: 'What kinds of decisions will this tool help inform?',
+    title: 'Je, kifaa hiki kitasaidia kufahamisha maamuzi ya aina gani?',
     text: `
             <p>
-                For project and site managers, information from the assessment can help:
+                Kwa wasimamizi wa miradi na maeneo, taarifa kutoka tathmini zinaweza kusaidia:
             </p>
             <ul>
                 <li>
-                    Communicate with key stakeholders what issues of equitable management and governance are
-                    important to pay attention to
+                    Kuwasiliana na wadau muhimu kuhusu masuala ya usimamizi na utawala wenye usawa
+                    ambayo ni muhimu kuyazingatia
                 </li>
                 <li>
-                    Identify what actions might be most suitable for an area under protection or management to help
-                    improve its management and governance status
+                    Kutambua hatua zipi zinaweza kuwa mwafaka zaidi kwa eneo linalolindwa au kusimamiwa ili
+                    kuboresha hali yake ya usimamizi na utawala
                </li>
                <li>
-                    Identify where a more in-depth assessment of management, governance, equity, or climate is needed
+                    Kutambua mahali ambapo tathmini ya kina zaidi ya usimamizi, utawala, usawa, au hali ya hewa inahitajika
                </li>
             </ul>
-            <p>For regional and international decision-makers, the assessment data can help:</p>
+            <p>Kwa watoa maamuzi wa kikanda na kimataifa, data ya tathmini inaweza kusaidia:</p>
             <ul>
-                <li>Provide a broad overview of perceived status and trends in management and governance</li>
-                <li>Prompt conversations on equitable management and governance at national and international
-                 scales to inspire change in policy and practice</li>
-                <li>Identify areas requiring more in-depth research</li>
+                <li>Kutoa muhtasari mpana wa hali na mwelekeo unaotambuliwa katika usimamizi na utawala</li>
+                <li>Kuchochea mazungumzo kuhusu usimamizi na utawala wenye usawa katika viwango vya kitaifa na kimataifa
+                 ili kuhamasisha mabadiliko katika sera na desturi</li>
+                <li>Kutambua maeneo yanayohitaji utafiti wa kina zaidi</li>
             </ul>
         `,
   },
   {
     type: 'default',
-    title: 'Who should complete an assessment?',
+    title: 'Nani anapaswa kukamilisha tathmini?',
     text: `
-            <p>The Elinor assessment was initially designed to meet the needs of conservationists working for
-                non-governmental organizations (NGOs) but can be used by any individual working to support a
-                managed area. The assessment can be completed in one of two ways:
+            <p>Tathmini ya Elinor iliundwa awali kukidhi mahitaji ya wahifadhi wanaofanya kazi katika
+                mashirika yasiyo ya kiserikali (NGOs) lakini inaweza kutumiwa na mtu yeyote anayefanya kazi kusaidia
+                eneo linalosimamiwa. Tathmini inaweza kukamilishwa kwa mojawapo ya njia mbili:
             </p>
             <ol>
                 <li>
-                    As a <strong>field-based focus group.</strong> This is the way that many governance assessments
-                    are traditionally completed; leveraging diverse perceptions from key stakeholders involved in the
-                    management and governance of a particular area. On the ElinorData.org website, you will find a full
-                    field protocol that can be used to guide ethical data collection with stakeholders. This guidance
-                    offers insights on how to ethically lead a group, obtain the right permissions for using the data,
-                    and to probe for diverse perspectives; especially of those who may have been traditionally marginalized.
-                    This is the preferred pathway, as it allows diverse voices to contribute to the assessment,
-                    providing a more holistic perspective on the status of management and governance in an area.
-                    See the <a href='/documentation'>Elinor assessment tool</a> and protocol for guidance on how to lead
-                    a focus group.
+                    Kama <strong>kikundi lengwa cha uga.</strong> Hivi ndivyo tathmini nyingi za utawala
+                    zinavyokamilishwa kwa desturi; kwa kutumia mitazamo mbalimbali kutoka kwa wadau muhimu wanaohusika katika
+                    usimamizi na utawala wa eneo fulani. Kwenye tovuti ya ElinorData.org, utapata itifaki kamili
+                    ya uga inayoweza kutumika kuongoza ukusanyaji wa data kwa maadili pamoja na wadau. Mwongozo huu
+                    unatoa mawazo kuhusu jinsi ya kuongoza kikundi kwa maadili, kupata ruhusa sahihi za kutumia data,
+                    na kuchunguza mitazamo mbalimbali; hasa ya wale ambao wamepuuzwa kwa desturi.
+                    Hii ndiyo njia inayopendekezwa, kwa kuwa inaruhusu sauti mbalimbali kuchangia tathmini,
+                    na kutoa mtazamo kamili zaidi wa hali ya usimamizi na utawala katika eneo.
+                    Tazama <a href='/documentation'>zana ya tathmini ya Elinor</a> na itifaki kwa mwongozo wa jinsi ya kuongoza
+                    kikundi lengwa.
                 </li>
                 <li>
-                    <strong>As a desk based assessment.</strong> This pathway is for those who have limited time or
-                        resources for carrying out a participatory focus group. This option allows for some data to be
-                        generated on the managed area, which can provide an often adequate and helpful assessment on
-                        the current status and trends in the area, and can help users identify any critical knowledge
-                        gaps that would require further research and investment.
+                    <strong>Kama tathmini ya mezani.</strong> Njia hii ni kwa wale walio na muda au
+                        rasilimali chache za kufanya kikundi lengwa cha ushiriki. Chaguo hili linaruhusu data fulani
+                        kuzalishwa kuhusu eneo linalosimamiwa, ambayo inaweza kutoa tathmini inayotosheleza na yenye msaada
+                        kuhusu hali na mwelekeo wa sasa katika eneo, na inaweza kuwasaidia watumiaji kutambua mapungufu muhimu
+                        ya maarifa yanayohitaji utafiti na uwekezaji zaidi.
                 </li>
             </ol>
             <p>
-                When inputting data into the ElinorData system, users can indicate which pathway they took to
-                generate the data in the assessment so any future users of the data can consider who’s perspectives
-                were represented in the data.
+                Wakati wa kuingiza data katika mfumo wa ElinorData, watumiaji wanaweza kuonyesha ni njia gani walitumia
+                kuzalisha data katika tathmini ili watumiaji wowote wa baadaye wa data wazingatie mitazamo ya nani
+                iliwakilishwa katika data.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'Who has the rights and access to the data entered in this tool?',
+    title: 'Nani ana haki na ufikiaji wa data inayoingizwa katika kifaa hiki?',
     text: `
             <p>
-                Data ethics, rights, and privacy is a central component of the Elinor tool and data system.
-                The Elinor assessment tool and protocol document offers guidance on how to discuss data privacy and
-                ethics with focus group participants, for those who gather data on Elinor via a focus group
-                discussion. The Elinor Terms of Services and Collaboration Principles outline in detail how data is
-                stored and used on the platform.
+                Maadili ya data, haki, na faragha ni sehemu kuu ya kifaa na mfumo wa data wa Elinor.
+                Zana ya tathmini ya Elinor na hati ya itifaki hutoa mwongozo wa jinsi ya kujadili faragha ya data na
+                maadili na washiriki wa kikundi lengwa, kwa wale wanaokusanya data kwenye Elinor kupitia majadiliano
+                ya kikundi lengwa. Masharti ya Huduma ya Elinor na Kanuni za Ushirikiano zinaeleza kwa kina jinsi data
+                inavyohifadhiwa na kutumika kwenye jukwaa.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'Will I know how my data is being used?',
+    title: 'Je, nitajua jinsi data yangu inavyotumika?',
     text: `
             <p>
-                For data made publicly available, users will eventually be able to ‘opt in’ to notifications that
-                tell users where and when their assessment data is being downloaded to help users understand what
-                their assessment data is being used for.
+                Kwa data iliyofanywa kuwa ya umma, watumiaji hatimaye wataweza ‘kujiunga’ na arifa zinazowaambia
+                wapi na lini data yao ya tathmini inapakuliwa ili kuwasaidia watumiaji kuelewa
+                data yao ya tathmini inatumika kwa nini.
             </p>
         `,
   },
   {
     type: 'default',
     title:
-      'I already use the METT (or a modified version of the METT) in my projects - how does Elinor relate to the METT?',
+      'Tayari ninatumia METT (au toleo lililorekebishwa la METT) katika miradi yangu - Elinor inahusianaje na METT?',
     text: `
             <p>
-                Elinor builds directly off the years of experience project teams have using the METT assessment and
-                other tools designed to measure environmental governance. The Elinor assessment was designed to
-                mirror the METT as closely as possible, and pulls questions directly from the METT and uses the same
-                scale. Refer to this crosswalk between the METT, SAGE and Elinor to help users understand the
-                similarities and differences between the different tools.
+                Elinor inajengwa moja kwa moja juu ya miaka ya uzoefu ambayo timu za miradi zimekuwa nazo katika kutumia tathmini ya METT na
+                zana nyingine zilizoundwa kupima utawala wa mazingira. Tathmini ya Elinor iliundwa
+                kuakisi METT kadri inavyowezekana, na inachukua maswali moja kwa moja kutoka METT na kutumia
+                kipimo kile kile. Rejelea ulinganisho huu kati ya METT, SAGE na Elinor ili kuwasaidia watumiaji kuelewa
+                mfanano na tofauti kati ya zana tofauti.
             </p>
             <p>
-                If you use the METT currently, if you obtain informed consent from participants in your METT
-                assessment, you can enter the data gathered from the METT into the Elinor database. Pay careful
-                attention to the data privacy settings and ensure you have the rights to enter the data in the
-                ElinorData system.
+                Ikiwa unatumia METT kwa sasa, ukipata idhini ya kufahamishwa kutoka kwa washiriki katika tathmini yako ya
+                METT, unaweza kuingiza data iliyokusanywa kutoka METT katika hifadhidata ya Elinor. Zingatia kwa makini
+                mipangilio ya faragha ya data na hakikisha una haki za kuingiza data katika
+                mfumo wa ElinorData.
+            </p>
+            <p>
+                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Bofya hapa ili kuona ulinganisho wa zana za tathmini za utawala na usimamizi</a>
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'What are the specific things this tool will help me track?',
+    title: 'Ni mambo gani mahususi ambayo kifaa hiki kitanisaidia kufuatilia?',
     text: `
             <p>
-                 This tool focuses on compiling basic information about areas under management or protection, and
-                 assessing the status of <strong>nine attributes important for area-based conservation and
-                 management:</strong>
+                 Kifaa hiki kinazingatia kukusanya taarifa za msingi kuhusu maeneo yanayosimamiwa au kulindwa, na
+                 kutathmini hali ya <strong>sifa tisa muhimu kwa uhifadhi na
+                 usimamizi wa maeneo:</strong>
             </p>
             <ol>
-                <li>Resource boundaries</li>
-                <li>Monitoring and enforcement</li>
-                <li>Capacity for adaptive management</li>
-                <li>Operational capacity</li>
-                <li>Inclusive and equitable management</li>
-                <li> Clearly defined rights and decision making</li>
-                <li>Clear and congruent regulations</li>
-                <li>Transparency and accountability</li>
-                <li>Perceived outcomes</li>
+                <li>Mipaka ya rasilimali</li>
+                <li>Ufuatiliaji na uimarishaji</li>
+                <li>Uwezo wa usimamizi wa ukabilianaji</li>
+                <li>Uwezo wa utekelezaji</li>
+                <li>Usimamizi jumuishi na wenye usawa</li>
+                <li>Haki na maamuzi yaliyoelezwa wazi</li>
+                <li>Kanuni zilizo wazi na zinazolingana</li>
+                <li>Uwazi na uwajibikaji</li>
+                <li>Matokeo yanayotambuliwa</li>
             </ol>
             <p>
-                The data system will also allow tool users to append relevant documents like management plans and
-                geospatial files to facilitate knowledge management and sharing across spatial scales and access
-                decision-friendly visualizations of site-level data and aggregate data.
+                Mfumo wa data pia utawaruhusu watumiaji wa kifaa kuambatanisha hati muhimu kama mipango ya usimamizi na
+                faili za kijiografia ili kuwezesha usimamizi wa maarifa na kushiriki katika mizani mbalimbali za anga na kufikia
+                taswira rafiki kwa maamuzi za data ya kiwango cha eneo na data jumla.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'How will the data be analysed and presented?',
+    title: 'Data itachambuliwa na kuwasilishwaje?',
     text: `
             <p>
-                The Elinor database and web platform will provide simple visuals at a site, regional, and
-                international level that show trends over time, aggregated by the nine attributes listed above.
-                More robust analysis can be carried out on the data collected using the social science theories and
-                frameworks that underpin the questions in this tool - namely Elinor Ostrom’s theory of common pool
-                resource governance, equity in resource governance (e.g. Bennett and Satterfield 2018), and
-                resilience thinking. Depending on the data privacy settings chosen by users, data from across
-                regions will be available for public use.
+                Hifadhidata na jukwaa la wavuti la Elinor litatoa taswira rahisi katika kiwango cha eneo, kikanda, na
+                kimataifa zinazoonyesha mwelekeo baada ya muda, zilizojumlishwa kulingana na sifa tisa zilizoorodheshwa hapo juu.
+                Uchambuzi thabiti zaidi unaweza kufanywa kwenye data iliyokusanywa kwa kutumia nadharia na
+                mifumo ya sayansi ya jamii inayounga mkono maswali katika kifaa hiki - yaani nadharia ya Elinor Ostrom ya utawala wa
+                rasilimali za pamoja, usawa katika utawala wa rasilimali (k.m. Bennett and Satterfield 2018), na
+                mawazo ya ustahimilivu. Kulingana na mipangilio ya faragha ya data iliyochaguliwa na watumiaji, data kutoka
+                maeneo mbalimbali itapatikana kwa matumizi ya umma.
             </p>
         `,
   },
   {
     type: 'default',
     title:
-      'I already collect management and governance data through field-based surveys. Do I need to stop that and use this tool?',
+      'Tayari ninakusanya data ya usimamizi na utawala kupitia tafiti za uga. Je, ninahitaji kuacha hiyo na kutumia kifaa hiki?',
     text: `
             <p>
-                No! This tool was designed to complement in-depth, field-based data collection. If you currently
-                collect data using field-based surveys or focus groups, you can use the data you already collect to
-                inform the answers to the questions asked in Elinor - just make sure you have the rights and
-                permissions to do so. Conversely, information gathered using this tool can help you understand what
-                topics require more in-depth field-based surveys.
+                Hapana! Kifaa hiki kiliundwa kuongezea ukusanyaji wa data wa kina wa uga. Ikiwa kwa sasa
+                unakusanya data kwa kutumia tafiti za uga au vikundi lengwa, unaweza kutumia data unayokusanya tayari
+                kufahamisha majibu ya maswali yanayoulizwa katika Elinor - hakikisha tu una haki na
+                ruhusa za kufanya hivyo. Kinyume chake, taarifa zilizokusanywa kwa kutumia kifaa hiki zinaweza kukusaidia kuelewa
+                mada zipi zinahitaji tafiti za kina zaidi za uga.
             </p>
         `,
   },
   {
     type: 'default',
-    title: 'What are the main advantages to using this tool?',
+    title: 'Je, faida kuu za kutumia kifaa hiki ni zipi?',
     text: `
             <p>
-                The Elinor tool and data system was designed to streamline the data entry, storage, and
-                visualization process. By doing so, users gain three key advantages:
+                Kifaa na mfumo wa data wa Elinor viliundwa kurahisisha mchakato wa kuingiza data, kuhifadhi, na
+                kuonyesha taswira. Kwa kufanya hivyo, watumiaji hupata faida tatu kuu:
             </p>
             <ol>
                 <li>
-                    <strong>The data collection, entry and visualization process becomes streamlined.</strong>
-                    For users working across multiple sites, all data can be stored and organized in the same way,
-                    and outputted into forms that are useful for communicating results to key audiences.
-                </li
+                    <strong>Mchakato wa kukusanya, kuingiza na kuonyesha taswira ya data unarahisishwa.</strong>
+                    Kwa watumiaji wanaofanya kazi katika maeneo mengi, data yote inaweza kuhifadhiwa na kupangwa kwa njia ile ile,
+                    na kutolewa katika fomu zinazofaa kwa kuwasilisha matokeo kwa hadhira muhimu.
+                </li>
                 <li>
-                    <strong>Users are connected to a global community of conservationists striving to improve
-                    management and governance.</strong> Management and governance has long been an important topic
-                    in conservation, but gathering and sharing data on this subject has been difficult. One of the
-                    main barriers to data sharing is the time and energy that is often required to formalize and
-                    clean data for others to use: Elinor automates this, and allows users to selectively share data
-                    with individual users or the general public with a click of a button!
+                    <strong>Watumiaji wanaunganishwa na jumuiya ya kimataifa ya wahifadhi wanaojitahidi kuboresha
+                    usimamizi na utawala.</strong> Usimamizi na utawala kwa muda mrefu umekuwa mada muhimu
+                    katika uhifadhi, lakini kukusanya na kushiriki data kuhusu somo hili kumekuwa vigumu. Mojawapo ya
+                    vizuizi vikuu vya kushiriki data ni muda na nguvu ambayo mara nyingi inahitajika kurasimisha na
+                    kusafisha data ili wengine waitumie: Elinor inafanya hivi kiotomatiki, na inawaruhusu watumiaji kushiriki data kwa kuchagua
+                    na watumiaji binafsi au umma kwa ujumla kwa kubofya kitufe!
                 </li>
             </ol>
         `,
   },
   {
     type: 'default',
-    title: 'Where is my data stored?',
+    title: 'Data yangu inahifadhiwa wapi?',
     text: `
             <p>
-                ElinorData.org uses Amazon Web Services to store the data.
+                ElinorData.org inatumia Amazon Web Services kuhifadhi data.
             </p>
         `,
   },
   {
     type: 'default',
     title:
-      'What are some things I should keep in mind when I’m making my decision about using this tool?',
+      'Ni mambo gani ninapaswa kukumbuka ninapofanya uamuzi kuhusu kutumia kifaa hiki?',
     text: `
-            <p>No one tool does every job. It’s important to remember that:</p>
-            <ol class='list-inside list-disc'>
+            <p>Hakuna kifaa kimoja kinachofanya kila kazi. Ni muhimu kukumbuka kwamba:</p>
+            <ol>
                 <li>
-                    <strong>This tool does not gather in-depth data.</strong> This tool does not replace the need
-                    for working with communities on an in-depth assessment of the issues identified by the tool.
-                </li
+                    <strong>Kifaa hiki hakikusanyi data ya kina.</strong> Kifaa hiki hakibadilishi hitaji
+                    la kufanya kazi na jamii katika tathmini ya kina ya masuala yaliyotambuliwa na kifaa.
+                </li>
                 <li>
-                    <strong>This tool is agnostic to local laws and regulations.</strong> This tool was developed
-                    to track indicators commonly recognized as being important for management and governance of
-                    coastal managed and conserved areas. It does not measure specific changes in laws and
-                    regulations, which may have great impacts on conservation activities in any given place.
+                    <strong>Kifaa hiki hakitegemei sheria na kanuni za ndani.</strong> Kifaa hiki kiliundwa
+                    kufuatilia viashiria vinavyotambulika kwa kawaida kuwa muhimu kwa usimamizi na utawala wa
+                    maeneo ya pwani yanayosimamiwa na kuhifadhiwa. Hakipimi mabadiliko mahususi katika sheria na
+                    kanuni, ambayo yanaweza kuwa na athari kubwa kwa shughuli za uhifadhi katika sehemu yoyote.
                 </li>
             </ol>
         `,
@@ -243,23 +246,23 @@ export default [
   {
     type: 'default',
     title:
-      'OK, I’m using the tool. How do I decide what ‘counts’ as a managed or conserved area?',
+      'Sawa, ninatumia kifaa. Ninaamuaje nini ‘kinachohisabiwa’ kama eneo linalosimamiwa au kuhifadhiwa?',
     text: `
             <p>
-                This depends on your context. In this tool, we refer to the boundary of the area to be assessed as
-                the management area (MA). A management area refers to a site/location to which management actions
-                are directed. A management area (MA) can be one protected area, or one conserved area (see glossary
-                for definitions), or a broader area that encompasses several protected areas/conserved areas.
+                Hii inategemea muktadha wako. Katika kifaa hiki, tunarejelea mpaka wa eneo litakalotathminiwa kama
+                eneo la usimamizi (MA). Eneo la usimamizi linamaanisha mahali/eneo ambalo hatua za usimamizi
+                zinaelekezwa. Eneo la usimamizi (MA) linaweza kuwa eneo moja lililohifadhiwa, au eneo moja linalohifadhiwa (tazama kamusi
+                kwa fasili), au eneo pana linalojumuisha maeneo kadhaa yaliyohifadhiwa/yanayohifadhiwa.
             </p>
-            <p>Therefore, the user of this tool may decide to conduct this assessment on:</p>
-            <ol class='list-inside list-disc'>
+            <p>Kwa hivyo, mtumiaji wa kifaa hiki anaweza kuamua kufanya tathmini hii kwenye:</p>
+            <ol>
                 <li>
-                    An individual protected area or conserved area. For example, this could be an assessment of an
-                    area managed by a Beach Management Unit (BMU). Alternatively, it could be an assessment of a
-                    single Protected Area.</li><li>A broader sea/landscape with multiple conserved areas and
-                    protected areas and consider these as one management area, answering the questions with all of
-                    these areas in mind. For example, a Biosphere Reserve with multiple protected areas or
-                    conserved areas.
+                    Eneo moja lililohifadhiwa au linalohifadhiwa. Kwa mfano, hii inaweza kuwa tathmini ya
+                    eneo linalosimamiwa na Kitengo cha Usimamizi wa Pwani (BMU). Vinginevyo, inaweza kuwa tathmini ya
+                    Eneo moja Lililohifadhiwa.</li><li>Mandhari pana ya bahari/ardhi yenye maeneo mengi yanayohifadhiwa na
+                    yaliyohifadhiwa na kuyachukulia kama eneo moja la usimamizi, ukijibu maswali ukizingatia
+                    maeneo hayo yote. Kwa mfano, Hifadhi ya Biosphere yenye maeneo mengi yaliyohifadhiwa au
+                    yanayohifadhiwa.
                 </li>
             </ol>
         `,
@@ -267,18 +270,18 @@ export default [
   {
     type: 'default',
     title:
-      'I work for a national NGO - how do I decide which sites to use the Elinor assessment in?',
+      'Nafanya kazi katika NGO ya kitaifa - ninaamuaje ni maeneo gani ya kutumia tathmini ya Elinor?',
     text: `
             <p>
-                Refer to Part 1 of the Elinor assessment tool and protocol for guidance on how to conduct sampling.
+                Rejelea Sehemu ya 1 ya zana ya tathmini na itifaki ya Elinor kwa mwongozo wa jinsi ya kufanya sampuli.
             </p>`,
   },
   {
     type: 'default',
-    title: 'How are the scores shown in the site reports calculated?',
+    title: 'Alama zinazoonyeshwa katika ripoti za maeneo zinahesabiwaje?',
     text: `
             <p>
-                Elinor includes 35 indicators across 10 core attributes of governance and management. Scores are calculated for each indicator, each attribute, and each managed area in total. Each indicator is assigned a score between 0 and 3 (with 0 being the least desirable and 4 being most desirable) on a scale that is customized for each indicator. For example, the scale for awareness of boundaries, records whether boundaries are known by most (3), some (2), a few (1) or none (0) of the relevant groups, while clearly defined boundaries, meanwhile, record whether boundaries are well demarcated (3), demarcated with some deficiencies (2), demarcated with major deficiencies (1), or not demarcated at all (0). Attribute scores, meanwhile, are calculated using a points percentage (i.e., total number of points received/total number of points possible) of indicators associated with each attribute, which is adjusted to a score out of 10 for easy interpretation. Finally, the total score for the managed area is calculated as a percentage of all attribute points received out of all attributes possible. Indicator, attribute and MA scores are assigned an action-oriented assessment category (Plan, Build, Strengthen, Maintain) to enable action-oriented interpretation. <strong>Note that the scores given by Elinor should not alone be used to determine the strengths or needs of the area's governance and management.</strong> It may be that a lower score on some attribute or indicator is sufficient for one site, but not another. The scores should be interpreted alongside the qualitative explanations entered into Elinor in order for decision-makers to choose the appropriate next steps.
+                Elinor inajumuisha viashiria 35 katika sifa 10 kuu za utawala na usimamizi. Alama huhesabiwa kwa kila kiashiria, kila sifa, na kila eneo linalosimamiwa kwa jumla. Kila kiashiria kinapewa alama kati ya 0 na 3 (ambapo 0 ni isiyofaa zaidi na 4 ni inayofaa zaidi) kwenye kipimo kilichobinafsishwa kwa kila kiashiria. Kwa mfano, kipimo cha ufahamu wa mipaka kinarekodi kama mipaka inajulikana na wengi (3), baadhi (2), wachache (1) au hakuna (0) kati ya vikundi husika, huku mipaka iliyoelezwa wazi, kwa upande mwingine, ikirekodi kama mipaka imewekwa alama vizuri (3), imewekwa alama yenye upungufu fulani (2), imewekwa alama yenye upungufu mkubwa (1), au haijawekwa alama kabisa (0). Alama za sifa, kwa upande mwingine, huhesabiwa kwa kutumia asilimia ya pointi (yaani, jumla ya pointi zilizopokelewa/jumla ya pointi zinazowezekana) za viashiria vinavyohusiana na kila sifa, ambayo inarekebishwa kuwa alama kati ya 10 kwa urahisi wa tafsiri. Hatimaye, alama jumla ya eneo linalosimamiwa huhesabiwa kama asilimia ya pointi zote za sifa zilizopokelewa kati ya sifa zote zinazowezekana. Alama za kiashiria, sifa na MA hupewa kategoria ya tathmini inayoelekeza hatua (Panga, Jenga, Imarisha, Dumisha) ili kuwezesha tafsiri inayoelekeza hatua. <strong>Kumbuka kwamba alama zinazotolewa na Elinor hazipaswi kutumiwa peke yake kubainisha nguvu au mahitaji ya utawala na usimamizi wa eneo.</strong> Inawezekana alama ya chini katika sifa au kiashiria fulani inatosha kwa eneo moja, lakini si jingine. Alama zinapaswa kufasiriwa pamoja na maelezo ya kimaelezo yaliyoingizwa katika Elinor ili watoa maamuzi wachague hatua zinazofaa zijazo.
             </p>
 	`,
   } /*,

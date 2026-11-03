@@ -18,7 +18,7 @@
       <div @click="goToProfile" class="btn--opacity--child nav__main__link">
         <img
           src="~/assets/img/ico-users-access-turqy.svg"
-          alt="sign in"
+          :alt="$t('pages.home.public.signInButton')"
           class="w-6 h-6"
         />
         <span class="btn--opacity__target !text-turqy">{{
@@ -26,7 +26,7 @@
         }}</span>
       </div>
       <a @click="logout" class="btn--opacity--child nav__main__link">
-        <img src="~/assets/img/ico-signout-turqy.svg" alt="sign out" />
+        <img src="~/assets/img/ico-signout-turqy.svg" :alt="$t('pages.home.header.signOut')" />
         <span class="btn--opacity__target !text-turqy">{{
           $t('pages.home.header.signOut')
         }}</span>

@@ -4,115 +4,115 @@ export default `
         <table class="table-background">
             <tr>
                 <th>#</th>
-                <th>Questions</th>
+                <th>Perguntas</th>
             </tr>
             <tr>
                 <td>1.</td>
-                <td>Name of facilitator responsible for submitting the assessment</td>
+                <td>Nome do facilitador responsável pelo envio da avaliação</td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td>Name of institution associated with this MA</td>
+                <td>Nome da instituição associada a esta MA</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td>Role of facilitator responsible for submitting the assessment</td>
+                <td>Função do facilitador responsável pelo envio da avaliação</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td>Contact details of facilitator submitting the assessment</td>
+                <td>Dados de contato do facilitador que envia a avaliação</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td>Date of assessment (day/month/year)</td>
+                <td>Data da avaliação (dia/mês/ano)</td>
             </tr>
             <tr>
                 <td>6.</td>
-                <td>How was the information this assessment gathered?</td>
+                <td>Como as informações desta avaliação foram coletadas?</td>
             </tr>
             <tr>
                 <td>7.</td>
-                <td>Number of people engaged from key stakeholder groups</td>
+                <td>Número de pessoas envolvidas dos principais grupos de partes interessadas</td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td>Gender representation of stakeholders consulted</td>
+                <td>Representação de gênero das partes interessadas consultadas</td>
             </tr>
             <tr>
                 <td>9.</td>
-                <td>Rationale for assessment (e.g. annual monitoring, project baseline)</td>
+                <td>Justificativa da avaliação (ex.: monitoramento anual, linha de base do projeto)</td>
             </tr>
             <tr>
                 <td>10.</td>
-                <td>Name of MA</td>
+                <td>Nome da MA</td>
             </tr>
             <tr>
                 <td>11.</td>
-                <td>Country/Countries where MA is located</td>
+                <td>País/Países onde a MA está localizada</td>
             </tr>
             <tr>
                 <td>12.</td>
-                <td>State(s)/Province(s) where MA is located</td>
+                <td>Estado(s)/Província(s) onde a MA está localizada</td>
             </tr>
         </table>
     </div>
     <div class="background-grid__item">
         <table class="table-background">
             <tr>
-                <th>No</th>
-                <th>Questions</th>
+                <th>Nº</th>
+                <th>Perguntas</th>
             </tr>
             <tr>
                 <td>13.</td>
-                <td>Date of formal establishment (if applicable)</td>
+                <td>Data de estabelecimento formal (se aplicável)</td>
             </tr>
             <tr>
                 <td>14.</td>
-                <td>Are the rights of the MA authority formally recognized at the…</td>
+                <td>Os direitos da autoridade da MA são formalmente reconhecidos no/na…</td>
             </tr>
             <tr>
                 <td>15.</td>
-                <td>Size of MA (ha)</td>
+                <td>Tamanho da MA (ha)</td>
             </tr>
             <tr>
                 <td>16A.</td>
-                <td>GPS coordinates of MA</td>
+                <td>Coordenadas GPS da MA</td>
             </tr>
             <tr>
                 <td>16B.</td>
-                <td>Map or spatial file of MA</td>
+                <td>Mapa ou arquivo espacial da MA</td>
             </tr>
             <tr>
                 <td>17.</td>
-                <td>MA governance type</td>
+                <td>Tipo de governança da MA</td>
             </tr>
             <tr>
                 <td>18.</td>
-                <td>MA objectives</td>
+                <td>Objetivos da MA</td>
             </tr>
             <tr>
                 <td>19.</td>
-                <td>Name of management authority</td>
+                <td>Nome da autoridade de gestão</td>
             </tr>
             <tr>
                 <td>20.</td>
-                <td>Does the MA management authority receive technical, financial or other types of support from any of the following groups or organizations?</td>
+                <td>A autoridade de gestão da MA recebe apoio técnico, financeiro ou de outros tipos de algum dos seguintes grupos ou organizações?</td>
             </tr>
             <tr>
                 <td>21A.</td>
-                <td>Focal area within MA</td>
+                <td>Área focal dentro da MA</td>
             </tr>
             <tr>
                 <td>21B.</td>
-                <td>Name of larger PA/CA this focal area is contained within</td>
+                <td>Nome da PA/CA maior na qual esta área focal está contida</td>
             </tr>
             <tr>
                 <td>22.</td>
-                <td>Associated ID in World Database on Protected Areas</td>
+                <td>ID associado no World Database on Protected Areas</td>
             </tr>
             <tr>
                 <td>23.</td>
-                <td>Consent from MA authority</td>
+                <td>Consentimento da autoridade da MA</td>
             </tr>
         </table>
     </div>

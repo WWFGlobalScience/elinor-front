@@ -1,81 +1,82 @@
 export default [
   {
-    date: '2-28-2024',
-    title: 'Announcing new features in Elinor',
+    date: '7-05-2026',
+    title:
+      'Elinor utilisé pour évaluer l’état et les tendances de la gouvernance communautaire dans le sud-ouest de l’océan Indien',
     text: `
-              In a bid to make Elinor more usable, we are happy to announce three new features:
-              1. Aggregate Reports:
-              You can now generate an aggregate report for multiple assessments selections  by country, year or type of assessment. The Aggregate Report button is located on the assessments page.
-              2.Multiple languages: You can switch to your favorite language using the switcher at the top right of the page.  More languages will be uploaded soon.
-              3. Offline capability: This allows you to download a survey as an Excel file if you have an unstable Internet connection. This capability gives you the flexibility to complete a survey offline then upload it once you are connected to the internet .  More offline features will be added soon.
+  Une nouvelle étude publiée dans <em>Conservation Biology</em> s’appuie sur les données de la plateforme ElinorData.org pour évaluer l’état actuel de la gouvernance côtière communautaire dans 52 zones gérées par les communautés dans cinq pays du sud-ouest de l’océan Indien (SWIO). Les résultats révèlent qu’une gouvernance locale plus solide est significativement associée à de meilleurs résultats sociaux et écologiques perçus, bien que les progrès restent inégaux selon les attributs, notamment la capacité opérationnelle et la gestion adaptative. Cette nouvelle étude montre que les conservationnistes peuvent utiliser la plateforme Elinor pour identifier l’évolution des lacunes de gouvernance dans le temps, partager des innovations de gestion locales et concevoir des interventions plus ciblées et fondées sur des données probantes pour le succès de la conservation à long terme. Lisez l’étude complète ici - <a href="https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325">https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325</a>`,
+  },
+  {
+    date: '2-28-2024',
+    title: 'Annonce de nouvelles fonctionnalités dans Elinor',
+    text: `
+              Dans le but de rendre Elinor plus facile à utiliser, nous avons le plaisir d’annoncer trois nouvelles fonctionnalités :
+              1. Rapports agrégés :
+              Vous pouvez désormais générer un rapport agrégé pour plusieurs évaluations sélectionnées par pays, année ou type d’évaluation. Le bouton Rapport agrégé se trouve sur la page des évaluations.
+              2. Langues multiples : Vous pouvez passer à la langue de votre choix à l’aide du sélecteur en haut à droite de la page. D’autres langues seront bientôt ajoutées.
+              3. Fonctionnalité hors ligne : Elle vous permet de télécharger une enquête sous forme de fichier Excel si votre connexion Internet est instable. Cette fonctionnalité vous donne la flexibilité de remplir une enquête hors ligne, puis de la téléverser une fois connecté à Internet. D’autres fonctionnalités hors ligne seront bientôt ajoutées.
           `,
   },
   {
     date: '2-28-2024',
-    title: 'A comparison of governance and management assessment tools',
+    title: 'Comparaison des outils d’évaluation de la gouvernance et de la gestion',
     text: `
-              There are many tools designed to assess governance and management for area-based conservation. This knowledge
-              brief is designed to assist individuals in identifying and understanding the synergies and differences between
-              three conservation management and governance assessment tools: Elinor, the Management Effectiveness Tracking
-              Tool 4 (METT 4), and Site-level Assessment of Governance and Equity (SAGE). The first part of this document
-              compares the background/site information sections of Elinor, METT 4, and SAGE. The second part compares the
-              assessment questions in Elinor (35), METT 4 (38), and SAGE (50). Finally, the document ends with a guide to
-              help users determine which assessment to use based on their management and governance objectives.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Click here to view the comparison</a>
+              De nombreux outils sont conçus pour évaluer la gouvernance et la gestion de la conservation fondée sur les aires. Cette note de synthèse vise à aider les personnes à identifier et à comprendre les synergies et les différences entre trois outils d’évaluation de la gestion et de la gouvernance de la conservation : Elinor, le Management Effectiveness Tracking Tool 4 (METT 4) et le Site-level Assessment of Governance and Equity (SAGE). La première partie de ce document compare les sections d’informations générales/de site d’Elinor, du METT 4 et de SAGE. La deuxième partie compare les questions d’évaluation d’Elinor (35), du METT 4 (38) et de SAGE (50). Enfin, le document se termine par un guide destiné à aider les utilisateurs à déterminer quelle évaluation utiliser en fonction de leurs objectifs de gestion et de gouvernance.         <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Cliquez ici pour consulter la comparaison</a>
           `,
   },
   {
     date: '6-20-2022',
     title:
-      'New Elinor updates allow automated reporting and more user-friendly features',
+      'Les nouvelles mises à jour d’Elinor permettent des rapports automatisés et des fonctionnalités plus conviviales',
     text: `
-              We are happy to announce that the latest version of the Elinor tool (v2023.1) has been released and is ready for online use! This version contains several new exciting features. ElinorData.org can now automatically produce reports for completed assessments that provide high-level overviews of the results for easier learning and reporting. Users can also see their preliminary results update as they enter data into the system. We have made minor revisions to the assessment text, including fixing typos, edits for inclusive language, and improve clarity in question wording. Some questions have been reorganized under different attributes as well. None of these changes affect existing data already entered into the system. These features are the result of a year-long effort to continually improve the Elinor tool. We encourage you to try them out and send us any feedback you may have. Thanks so much for your continued use of ElinorData.org. We'll be back in August with more news after we present Elinor at the International Congress on Conservation Biology in Kigali, Rwanda!
+              Nous avons le plaisir d’annoncer que la dernière version de l’outil Elinor (v2023.1) a été publiée et est prête à être utilisée en ligne ! Cette version contient plusieurs nouvelles fonctionnalités intéressantes. ElinorData.org peut désormais produire automatiquement des rapports pour les évaluations terminées, offrant des aperçus de haut niveau des résultats pour faciliter l’apprentissage et l’établissement de rapports. Les utilisateurs peuvent également voir leurs résultats préliminaires se mettre à jour à mesure qu’ils saisissent des données dans le système. Nous avons apporté des révisions mineures au texte de l’évaluation, notamment la correction de fautes de frappe, des modifications pour un langage inclusif et une plus grande clarté dans le libellé des questions. Certaines questions ont également été réorganisées sous différents attributs. Aucun de ces changements n’affecte les données déjà saisies dans le système. Ces fonctionnalités sont le fruit d’un effort d’un an pour améliorer continuellement l’outil Elinor. Nous vous encourageons à les essayer et à nous envoyer vos commentaires. Merci beaucoup pour votre utilisation continue d’ElinorData.org. Nous reviendrons en août avec d’autres actualités après avoir présenté Elinor au International Congress on Conservation Biology à Kigali, au Rwanda !
           `,
   },
   {
     date: '7-21-2022',
-    title: 'Elinor 2022.1 released',
+    title: 'Elinor 2022.1 publié',
     text: `
-              We are glad to release the first version of Elinor - v2022.1. This is the culmination of two years of work
-              by both our social science and technology teams to enable users to creatively capture management and
-              governance information and optionally share with a wide audience in accordance to our collaboration
-              principles. This version enables users to create accounts and securely capture assessments data for
-              storage in our cloud system. Details of the protocol can be found here. We have made all efforts to make
-              the user interface easy and friendly to make the user focus on the main task of capturing management and
-              governance information. We encourage users to review the terms of use prior to creating accounts and
-              populating data. We hope that this will bring a pleasant experience and we welcome you to send us comments,
-              questions and ideas through the contact form on this website. In the next phase of the web application
-              we’ll bring to you reporting and visualization capabilities to enable you view and make sense of your data
-              and in future releases we shall incorporate spatial data to help broaden the context of managed area
-              management and governance.
+              Nous avons le plaisir de publier la première version d’Elinor - v2022.1. C’est l’aboutissement de deux années de travail
+              de nos équipes de sciences sociales et de technologie pour permettre aux utilisateurs de saisir de manière créative les informations
+              de gestion et de gouvernance et, éventuellement, de les partager avec un large public conformément à nos principes de
+              collaboration. Cette version permet aux utilisateurs de créer des comptes et de saisir en toute sécurité les données d’évaluation
+              pour les stocker dans notre système cloud. Les détails du protocole se trouvent ici. Nous avons tout mis en œuvre pour rendre
+              l’interface utilisateur simple et conviviale afin que l’utilisateur se concentre sur la tâche principale : saisir les informations
+              de gestion et de gouvernance. Nous encourageons les utilisateurs à consulter les conditions d’utilisation avant de créer des comptes
+              et de renseigner des données. Nous espérons que cela offrira une expérience agréable et nous vous invitons à nous envoyer vos
+              commentaires, questions et idées via le formulaire de contact de ce site. Dans la prochaine phase de l’application web,
+              nous vous apporterons des capacités de reporting et de visualisation pour vous permettre de consulter et de comprendre vos données,
+              et dans les versions futures, nous intégrerons des données spatiales pour élargir le contexte de la gestion et de la gouvernance
+              des zones gérées.
           `,
   },
   {
     date: '7-21-2022',
-    title: 'Elinor compliments other tools',
+    title: 'Elinor complète d’autres outils',
     text: `
-              There are many tools that can be used to assess governance and management of managed areas for area based
-              conservation. Two of such tools are METT 4 and SAGE. Elinor does not replace these tools but rather
-              provinces a lighter touch alternative that makes it easier to track trends over time and when fully
-              developed will bring spatial components for visualizing trends and regional coverage of assessments. All
-              the tools are ideally completed by focus groups by Elinor allows completion by an individual, making it
-              more flexible where there are resource constraints. Elinor provides modern cloud storage capability that
-              also enables easier backup and sharing of data. To determine when to use Elinor or select other tools,
-              read the <a href=”/background”>background information</a>.
+              De nombreux outils peuvent être utilisés pour évaluer la gouvernance et la gestion des zones gérées pour la conservation
+              fondée sur les aires. Deux de ces outils sont METT 4 et SAGE. Elinor ne remplace pas ces outils, mais offre plutôt
+              une alternative plus légère qui facilite le suivi des tendances dans le temps et, une fois pleinement
+              développé, apportera des composantes spatiales pour visualiser les tendances et la couverture régionale des évaluations. Tous
+              les outils sont idéalement remplis par des groupes de discussion, mais Elinor permet un remplissage par une personne, ce qui le
+              rend plus flexible en cas de contraintes de ressources. Elinor offre une capacité moderne de stockage cloud qui
+              facilite également la sauvegarde et le partage des données. Pour déterminer quand utiliser Elinor ou choisir d’autres outils,
+              lisez les <a href="/background">informations générales</a>.
           `,
   },
   {
     date: '7-21-2022',
-    title: 'How we built Elinor',
+    title: 'Comment nous avons conçu Elinor',
     text: `
-              Designing and architecting web based tools takes a lot of effort. Realizing the Elinor tool took time and
-              effort from three distinct groups: scientists who researched and developed the protocol, backend engineers
-              who designed the architecture to deliver a modern and stable structure and frontend developers and UX/UX
-              specialists who made the tool interface flexible, beautiful and easy to use. Part of the engineering in
-              based on past experience building similar tools like the MERMAID which brough efficiency and stability.
-              Taking an iterative approach, we continue to consult with various stakeholders and experts both on
-              engineering and science. We have made the code open source to promote collaboration and encourage all
-              users to open their data for sharing but we intentionally leave the decision to share with the data owners
-              while we provide a solid platform to facilitate the sharing.
+              Concevoir et architecturer des outils web demande beaucoup d’efforts. La réalisation de l’outil Elinor a nécessité du temps et
+              des efforts de trois groupes distincts : des scientifiques qui ont recherché et développé le protocole, des ingénieurs backend
+              qui ont conçu l’architecture pour livrer une structure moderne et stable, et des développeurs frontend et spécialistes UX/UI
+              qui ont rendu l’interface de l’outil flexible, belle et facile à utiliser. Une partie de l’ingénierie
+              s’appuie sur l’expérience passée de la construction d’outils similaires comme MERMAID, qui a apporté efficacité et stabilité.
+              En adoptant une approche itérative, nous continuons à consulter diverses parties prenantes et experts, tant en
+              ingénierie qu’en science. Nous avons rendu le code open source pour promouvoir la collaboration et encourageons tous
+              les utilisateurs à ouvrir leurs données au partage, mais nous laissons volontairement la décision de partager aux propriétaires des données,
+              tout en fournissant une plateforme solide pour faciliter ce partage.
           `,
   },
 ];

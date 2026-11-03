@@ -1,5 +1,12 @@
 export default [
   {
+    date: '7-05-2026',
+    title:
+      "Nampiasaina ny Elinor hanombanana ny satany sy ny fironan'ny fitantanana vondrom-piarahamonina ao amin'ny Ranomasimbe Indianina Atsimo-Andrefana",
+    text: `
+  Fikarohana vaovao navoaka ao amin'ny <em>Conservation Biology</em> dia mampiasa angona avy amin'ny sehatra ElinorData.org mba hanombanana ny satan'ny fitantanana morontsiraka mifototra amin'ny vondrom-piarahamonina ankehitriny manerana ny faritra 52 tantanan'ny vondrom-piarahamonina ao amin'ny firenena dimy ao amin'ny Ranomasimbe Indianina Atsimo-Andrefana (SWIO). Ny voka-pikarohana dia manambara fa ny fitantanana eo an-toerana matanjaka kokoa dia mifandray amin'ny fomba manan-danja amin'ny voka-tsoa sosialy sy ekolojika tsara kokoa, na dia tsy mitovy aza ny fandrosoana amin'ny toetra toy ny fahaiza-manao fampandehanana sy ny fitantanana mifanaraka. Ity fanadihadiana vaovao ity dia mampiseho fa ny mpiaro ny tontolo iainana dia afaka mampiasa ny sehatra Elinor hamantarana ny banga amin'ny fitantanana miovaova rehefa mandeha ny fotoana, hizara fanavaozana fitantanana eo an-toerana, ary hamolavola fidirana an-tsehatra mikendry kokoa sy mifototra amin'ny porofo ho an'ny fahombiazana maharitra amin'ny fiarovana. Vakio ny fanadihadiana feno eto - <a href="https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325">https://conbio.onlinelibrary.wiley.com/doi/epdf/10.1111/cobi.70325</a>`,
+  },
+  {
     date: '2-28-2024',
     title: "Fanambaram-baovao momba ny endri-javatra vaovao ao amin'i Elinor",
     text: `

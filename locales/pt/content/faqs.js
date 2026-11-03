@@ -45,7 +45,6 @@ export default [
             <ul>
                 <li>Prover uma visão geral ampla do status percebido e das tendências em gestão e governança</li>
                 <li>Iniciar conversas sobre gestão e governança equitativas em escalas nacionais e internacionais para inspirar mudanças em políticas e práticas</li>
-                 scales to inspire change in policy and practice</li>
                 <li>Identificar áreas que requerem mais pesquisa aprofundada</li>
             </ul>
         `,
@@ -74,9 +73,6 @@ export default [
                 <li>
                     Como uma avaliação <strong>baseada em mesa.</strong> Este caminho é para aqueles que têm tempo ou
                         recursos limitados para realizar um grupo focal participativo. Esta opção permite a geração de alguns dados sobre a área gerenciada, que podem fornecer uma avaliação muitas vezes adequada e útil sobre o status atual e as tendências na área, e podem ajudar os usuários a identificar quaisquer lacunas críticas de conhecimento que exigiriam mais pesquisa e investimento.
-                        generated on the managed area, which can provide an often adequate and helpful assessment on
-                        the current status and trends in the area, and can help users identify any critical knowledge
-                        gaps that would require further research and investment.
                 </li>
             </ol>
             <p>
@@ -106,7 +102,7 @@ export default [
     text: `
             <p>
                 Para dados tornados publicamente disponíveis, os usuários eventualmente poderão optar por receber notificações que
-                tell users where and when their assessment data is being downloaded to help users understand what
+                informem onde e quando seus dados de avaliação estão sendo baixados, para ajudar os usuários a entender para que
                 seus dados de avaliação estão sendo usados.
             </p>
         `,
@@ -126,8 +122,9 @@ export default [
             <p>
                 Se você atualmente usa o METT, se você obter consentimento informado dos participantes em sua avaliação METT,
                 você pode inserir os dados coletados do METT no banco de dados Elinor. Preste atenção cuidadosa às configurações de privacidade de dados e garanta que você tem os direitos para inserir os dados no sistema ElinorData.
-                attention to the data privacy settings and ensure you have the rights to enter the data in the
-                ElinorData system.
+            </p>
+            <p>
+                <a href="https://elinor-documentation.s3.amazonaws.com/A+comparison+of+governance+and+management+assessment+tools.pdf" target="_blank">Clique aqui para ver uma comparação de ferramentas de avaliação de governança e gestão</a>
             </p>
         `,
   },
@@ -142,15 +139,15 @@ export default [
                  gestão baseada em área:</strong>
             </p>
             <ol>
-                <li>Resource boundaries</li>
-                <li>Monitoring and enforcement</li>
-                <li>Capacity for adaptive management</li>
-                <li>Operational capacity</li>
                 <li>Fronteiras dos recursos</li>
                 <li>Monitoramento e aplicação da lei</li>
                 <li>Capacidade para gestão adaptativa</li>
-                <li>Transparency and accountability</li>
-				<li>Resultados percebidos</li>
+                <li>Capacidade operacional</li>
+                <li>Gestão inclusiva e equitativa</li>
+                <li>Direitos e tomada de decisão claramente definidos</li>
+                <li>Regulamentações claras e congruentes</li>
+                <li>Transparência e prestação de contas</li>
+                <li>Resultados percebidos</li>
             </ol>
             <p>
                 O sistema de dados também permitirá que os usuários da ferramenta anexem documentos relevantes como planos de gestão e
@@ -176,7 +173,8 @@ export default [
   },
   {
     type: 'default',
-    title: 'Já colet',
+    title:
+      'Já coleto dados de gestão e governança por meio de pesquisas de campo. Preciso parar isso e usar esta ferramenta?',
     text: `
             <p>
                 Não! Esta ferramenta foi projetada para complementar a coleta de dados em campo, detalhada. Se você atualmente
@@ -200,11 +198,10 @@ export default [
                     <strong>O processo de coleta, entrada e visualização de dados torna-se simplificado.</strong>
                     Para usuários que trabalham em vários sítios, todos os dados podem ser armazenados e organizados da mesma maneira,
                     e exportados em formatos que são úteis para comunicar resultados a públicos chave.
-                </li
+                </li>
                 <li>
                     <strong>Usuários são conectados a uma comunidade global de conservacionistas que lutam para melhorar
                     a gestão e governança.</strong> Gestão e governança têm sido temas importantes em conservação, mas coletar e compartilhar dados sobre este assunto tem sido difícil. Uma das
-                    in conservation, but gathering and sharing data on this subject has been difficult. One of the
                     principais barreiras para o compartilhamento de dados é o tempo e energia que muitas vezes são necessários para formalizar e
                     limpar dados para outros usarem: Elinor automatiza isso e permite que os usuários compartilhem dados
                     de forma seletiva com usuários individuais ou com o público geral com um clique de um botão!
@@ -231,7 +228,7 @@ export default [
                 <li>
                     <strong>Esta ferramenta não coleta dados aprofundados.</strong> Esta ferramenta não substitui a necessidade
                     de trabalhar com comunidades em uma avaliação aprofundada das questões identificadas pela ferramenta.
-                </li
+                </li>
                 <li>
                     <strong>Esta ferramenta é agnóstica às leis e regulamentos locais.</strong> Esta ferramenta foi desenvolvida
                     para acompanhar indicadores comumente reconhecidos como importantes para a gestão e governança de

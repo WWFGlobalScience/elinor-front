@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
 });
@@ -18,7 +20,7 @@ export const actions = {
 
       state.commit('setList', response.data.results);
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 };

@@ -16,17 +16,21 @@
           <button class="expand-all-btn" @click="toggleAllAttributes">
             <img
               src="~/assets/img/expand_all.svg"
-              alt="arrow"
+              :alt="$t('default.arrow')"
               v-if="!allAttributesExpanded"
               class="w-6 h-6"
             />
             <img
               src="~/assets/img/collapse_all.svg"
-              alt="arrow"
+              :alt="$t('default.arrow')"
               v-if="allAttributesExpanded"
               class="w-6 h-6"
             />
-            {{ allAttributesExpanded ? 'Collapse all' : 'Expand all' }}
+            {{
+              allAttributesExpanded
+                ? $t('pages.assessments.edit.tabs.survey.collapseAll')
+                : $t('pages.assessments.edit.tabs.survey.expandAll')
+            }}
           </button>
         </div>
         <template v-for="(attribute, index) in attributes">

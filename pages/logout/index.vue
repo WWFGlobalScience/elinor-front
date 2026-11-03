@@ -2,7 +2,7 @@
   <div
     class="fixed top-0 left-0 w-screen z-50 h-screen flex items-center justify-center"
   >
-    <h4 class="text-center">Logging out...</h4>
+    <h4 class="text-center">{{ $t('statusMessaging.loader.authentication.loggingOut') }}</h4>
   </div>
 </template>
 

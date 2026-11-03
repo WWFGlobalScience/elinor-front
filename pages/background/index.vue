@@ -14,7 +14,7 @@
             <table class="table-background">
               <thead>
                 <tr>
-                  <th>No</th>
+                  <th>{{ $t('default.table.no') }}</th>
                   <th>{{ $t('pages.background.attribute_title.name') }}</th>
                   <th>
                     {{ $t('pages.background.attribute_title.description') }}

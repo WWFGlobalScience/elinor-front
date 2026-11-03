@@ -56,7 +56,7 @@
                   >
                     <img
                       src="~/assets/img/ico-file-gray.svg"
-                      alt="file uploaded successfully"
+                      :alt="$t('pages.assessments.uploadSurveyFile.uploadSuccessAlt')"
                     />
                     <h4>
                       {{
@@ -92,7 +92,7 @@
                   >
                     <img
                       src="~/assets/img/ico-file-error.svg"
-                      alt="file error"
+                      :alt="$t('pages.assessments.uploadSurveyFile.uploadErrorAlt')"
                     />
                     <h4>
                       {{
@@ -151,7 +151,7 @@
         class="popup__map-img"
         style="top: 10rem !important"
       >
-        <h1>Success!!</h1>
+        <h1>{{ $t('pages.assessments.uploadSurveyFile.successTitle') }}</h1>
       </div>
       <!--//STEP 3 - SUCCESS-->
     </div>
