@@ -12,12 +12,12 @@
           <img
             src="~/assets/img/keyboard_arrow_right.svg"
             class="rotate-180"
-            alt="Previous"
+            :alt="$t('pagination.previous')"
           />
           <img
             src="~/assets/img/keyboard_arrow_right-white.svg"
             class="rotate-180"
-            alt="Previous"
+            :alt="$t('pagination.previous')"
           />
         </div>
         <span>{{ $t('pagination.previous') }}</span>
@@ -49,8 +49,8 @@
       >
         <span>{{ $t('pagination.next') }}</span>
         <div class="pagination-btn-icon">
-          <img src="~/assets/img/keyboard_arrow_right.svg" alt="Next" />
-          <img src="~/assets/img/keyboard_arrow_right-white.svg" alt="Next" />
+          <img src="~/assets/img/keyboard_arrow_right.svg" :alt="$t('pagination.next')" />
+          <img src="~/assets/img/keyboard_arrow_right-white.svg" :alt="$t('pagination.next')" />
         </div>
       </button>
     </div>

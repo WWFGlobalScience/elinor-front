@@ -1,6 +1,6 @@
 <template>
   <div class="title-border mt-12">
-    <h3 class="title">Protocols</h3>
+    <h3 class="title">{{ $t('pages.documentation.protocols.title') }}</h3>
 
     <div class="input input--multiselect input--order">
       <div class="multiselect__wrap">
@@ -11,12 +11,12 @@
               name=""
               type="text"
               autocomplete="nope"
-              placeholder="Select option"
+              :placeholder="$t('default.selectOption')"
               tabindex="0"
               class="multiselect__input"
               style="width: 0px; position: absolute; padding: 0px"
             />
-            <span class="multiselect__single">Order by</span>
+            <span class="multiselect__single">{{ $t('pages.documentation.orderBy') }}</span>
           </div>
           <div
             tabindex="-1"
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="multiselect__caret">
-          <img src="~/assets/img/ico-select-turqy.svg" alt="caret" />
+          <img src="~/assets/img/ico-select-turqy.svg" :alt="$t('default.caret')" />
         </div>
       </div>
       <input type="hidden" name="year" class="input__dummy" value="2019" />

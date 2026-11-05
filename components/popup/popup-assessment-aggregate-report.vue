@@ -4,7 +4,7 @@
       {{ $t('pages.assessments.list.aggregateReport.description') }}
     </p>
     <div class="flex flex-col gap-4">
-      <div class="font-bold">Select filters</div>
+      <div class="font-bold">{{ $t('default.selectFilter') }}</div>
       <form class="form form--assessment grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="input input--multiselect tags-nostyle">
           <div class="multiselect__wrap">
@@ -161,7 +161,7 @@
               class="icon"
               title="Delete"
             >
-              <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+              <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
               <span class="visually-hidden">{{ $t('default.delete') }}</span>
             </a>
           </li>
@@ -173,7 +173,7 @@
               class="icon"
               title="Delete"
             >
-              <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+              <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
               <span class="visually-hidden">{{ $t('default.delete') }}</span>
             </a>
           </li>
@@ -185,7 +185,7 @@
               class="icon"
               title="Delete"
             >
-              <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+              <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
               <span class="visually-hidden">{{ $t('default.delete') }}</span>
             </a>
           </li>
@@ -197,7 +197,7 @@
               class="icon"
               title="Delete"
             >
-              <img src="~/assets/img/ico-close-popup.svg" alt="Delete" />
+              <img src="~/assets/img/ico-close-popup.svg" :alt="$t('default.delete')" />
               <span class="visually-hidden">{{ $t('default.delete') }}</span>
             </a>
           </li>

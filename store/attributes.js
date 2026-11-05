@@ -8,6 +8,7 @@ export const mutations = {
   },
 };
 
+import { toastApiError } from '~/config/api-error';
 import { getOfflineModeFromStore } from '~/config/offline-mode';
 
 export const actions = {
@@ -28,7 +29,7 @@ export const actions = {
 
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching attributes...',
+      text: 'statusMessaging.loader.attributes.fetchingAttributes',
     });
 
     let hasError = false;
@@ -45,7 +46,7 @@ export const actions = {
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
       hasError = true;
-      console.error('[fetchAttributes] Error:', e);
+      toastApiError(this, e);
       // Error handling is done in axios plugin (onError interceptor)
       // which will show user-friendly error notification and forcefully deactivate loader
       // No need to deactivate loader here - axios interceptor already handled it via disableLoader

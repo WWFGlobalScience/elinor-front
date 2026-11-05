@@ -6,7 +6,7 @@
       role="button"
       class="btn btn--secondary"
       title="Download Data"
-      ><img src="~/assets/img/ico-download.svg" alt="Download Data" />
+      ><img src="~/assets/img/ico-download.svg" :alt="$t('default.downloadData')" />
       <span>{{ $t('default.downloadData') }}</span></a
     >
     <template v-if="$auth.loggedIn">
@@ -42,7 +42,7 @@
         role="button"
         class="btn btn--border-turqy btn--sm"
         title="Download survey"
-        ><img src="~/assets/img/ico-arrow-down.svg" alt="Download survey" />
+        ><img src="~/assets/img/ico-arrow-down.svg" :alt="$t('default.downloadSurveyFile')" />
         <span>{{ $t('default.downloadSurveyFile') }}</span></a
       >
       <a
@@ -55,7 +55,7 @@
         role="button"
         class="btn btn--border-turqy btn--sm"
         title="Upload survey"
-        ><img src="~/assets/img/ico-arrow-up.svg" alt="Upload survey" />
+        ><img src="~/assets/img/ico-arrow-up.svg" :alt="$t('default.uploadSurveyFile')" />
         <span>{{ $t('default.uploadSurveyFile') }}</span></a
       >
       <a
@@ -82,7 +82,7 @@
         title="Contact"
         ><img
           src="~/assets/img/mail.svg"
-          alt="Contact"
+          :alt="$t('pages.assessments.actions.contact.title')"
           class="!transform-none"
         />
         <span class="!ml-1 group-hover:underline">{{
@@ -96,7 +96,7 @@
         role="button"
         class="btn btn--border-turqy !border-0 !p-2 !m-0 group"
         title="Flag"
-        ><img src="~/assets/img/flag.svg" alt="Flag" class="!transform-none" />
+        ><img src="~/assets/img/flag.svg" :alt="$t('default.flag')" class="!transform-none" />
         <span class="!ml-1 group-hover:underline"
           >{{ $t('default.flag') }}
         </span></a
@@ -107,7 +107,7 @@
         role="button"
         class="btn btn--rounded"
         title="Delete"
-        ><img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+        ><img src="~/assets/img/ico-trash2.svg" :alt="$t('default.delete')" />
         <span class="visually-hidden">{{ $t('default.delete') }}</span></a
       >
       <a
@@ -116,7 +116,7 @@
         role="button"
         class="btn btn--rounded"
         title="Delete"
-        ><img src="~/assets/img/ico-trash2.svg" alt="Delete" />
+        ><img src="~/assets/img/ico-trash2.svg" :alt="$t('default.delete')" />
         <span class="visually-hidden">{{ $t('default.delete') }}</span></a
       >
     </template>

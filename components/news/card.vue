@@ -72,7 +72,7 @@ export default {
       this.popupState({
         active: true,
         component: 'popup-news-detail',
-        title: 'News Detail',
+        title: 'popup.newsDetail.title',
         type: 'news',
         props: {
           news: this.instance,

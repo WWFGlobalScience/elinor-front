@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
   pagination: { count: 0, next: 0 },
@@ -19,7 +21,7 @@ export const actions = {
   async fetchDocuments(state, { page, sortBy, sortOrder }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Fetching documents...',
+      text: 'statusMessaging.loader.documents.fetchingDocuments',
     });
 
     try {
@@ -39,13 +41,13 @@ export const actions = {
 
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
   async downloadDocument(state, document) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Downloading document...',
+      text: 'statusMessaging.loader.documents.downloadingDocument',
     });
 
     try {
@@ -68,7 +70,7 @@ export const actions = {
 
       this.dispatch('loader/loaderState', { active: false });
     } catch (e) {
-      console.error(e);
+      toastApiError(this, e);
     }
   },
 };

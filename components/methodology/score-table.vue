@@ -14,8 +14,8 @@
         style="min-width: 800px; width: max-content; display: table"
       >
         <tr>
-          <th class="text-left pl-4">Action</th>
-          <th class="text-left pl-4">Action Description</th>
+          <th class="text-left pl-4">{{ $t('pages.methodologyPage.scoreTable.action') }}</th>
+          <th class="text-left pl-4">{{ $t('pages.methodologyPage.scoreTable.actionDescription') }}</th>
           <th>
             {{ $t('pages.methodologyPage.scoreTable.indicator') }}<br />{{
               $t('pages.methodologyPage.scoreTable.value')

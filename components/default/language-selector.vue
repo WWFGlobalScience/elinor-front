@@ -10,7 +10,7 @@
             <div>
               <img
                 src="~/assets/img/nav-icons/ico-lang-white.svg"
-                alt="language"
+                :alt="$t('default.language')"
               />
               <span>{{ languageNames[currentLanguage.code] }}</span>
             </div>

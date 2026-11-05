@@ -5,12 +5,12 @@
 
       <!-- Logo centered -->
       <NuxtLink to="/" class="header__logo">
-        <img src="~/assets/img/elinor.svg" alt="ELINOR" />
+        <img src="~/assets/img/elinor.svg" :alt="$t('default.brandName')" />
       </NuxtLink>
       <button
         @click="toggleMobileMenu"
         class="header__mobile-menu-toggle"
-        aria-label="Toggle menu"
+        :aria-label="$t('default.toggleMenu')"
         type="button"
       >
         <svg

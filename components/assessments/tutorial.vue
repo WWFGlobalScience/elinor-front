@@ -12,7 +12,7 @@
         })
       "
     >
-      <span class="btn--opacity__target">Tutorial</span>
+      <span class="btn--opacity__target">{{ $t('pages.assessments.list.tutorialButton') }}</span>
     </button>
   </div>
 </template>

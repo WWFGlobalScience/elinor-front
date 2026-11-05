@@ -20,7 +20,7 @@ export const actions = {
   async contact(state, { name, subject, email, message, recaptcha }) {
     this.dispatch('loader/loaderState', {
       active: true,
-      text: 'Sending contact...',
+      text: 'statusMessaging.loader.contact.sendingContact',
     });
 
     try {
@@ -30,7 +30,7 @@ export const actions = {
       state.commit('setSent', true);
     } catch (error) {
       state.commit('setSent', false);
-      state.commit('setErrors', error.response.data);
+      state.commit('setErrors', (error.response && error.response.data) || {});
     } finally {
       this.dispatch('loader/loaderState', { active: false });
     }

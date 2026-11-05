@@ -6,7 +6,7 @@
       class="btn btn--border-turqy btn--sm absolute top-0 right-0 mr-8 mt-8 z-10 font-montserratBoldPdf"
       title="Report"
     >
-      <img src="~/assets/img/ico-download.png" alt="Download" />
+      <img src="~/assets/img/ico-download.png" :alt="$t('default.download')" />
       <span>Download Report</span></a
     >
     <div class="col-report">

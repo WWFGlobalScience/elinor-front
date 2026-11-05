@@ -1,3 +1,5 @@
+import { toastApiError } from '~/config/api-error';
+
 export const state = () => ({
   list: [],
   filters: { management_area_countries: undefined, attributes: undefined },
@@ -31,7 +33,7 @@ export const actions = {
     if (notHasParams) {
       this.dispatch('loader/loaderState', {
         active: true,
-        text: 'Getting assessments...',
+        text: 'statusMessaging.loader.reports.gettingAssessments',
       });
     }
 
@@ -39,6 +41,9 @@ export const actions = {
       .get('v2/reports/assessments/', { params })
       .then((response) => {
         state.commit('setList', response.data);
+      })
+      .catch((error) => {
+        toastApiError(this, error);
       })
       .finally(() => {
         if (notHasParams) {
@@ -59,7 +64,7 @@ export const actions = {
     if (notHasParams) {
       this.dispatch('loader/loaderState', {
         active: true,
-        text: 'Getting assessments...',
+        text: 'statusMessaging.loader.reports.gettingAssessments',
       });
     }
 
@@ -67,6 +72,9 @@ export const actions = {
       .get('v2/reports/assessments/geojson/', { params })
       .then((response) => {
         state.commit('setList', response.data.features);
+      })
+      .catch((error) => {
+        toastApiError(this, error);
       })
       .finally(() => {
         if (notHasParams) {

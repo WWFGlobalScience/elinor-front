@@ -135,7 +135,7 @@ export default {
 
       this.$store.dispatch('loader/loaderState', {
         active: true,
-        text: 'Generating report...',
+        text: 'popup.generateReport.btnGenerating',
       });
 
       try {

@@ -7,12 +7,12 @@
     <div class="attribute-checkbox-icon" v-if="!checkIsLoading()">
       <img
         src="~/assets/img/check_circle.svg"
-        alt="Checkbox checked"
+        :alt="$t('default.checkbox.checked')"
         v-if="isAttributeChecked(attribute)"
       />
       <img
         src="~/assets/img/radio_button_unchecked-gray.svg"
-        alt="Checkbox unchecked"
+        :alt="$t('default.checkbox.unchecked')"
         v-else
       />
     </div>
@@ -42,6 +42,10 @@ export default {
       type: Object,
       required: true,
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     ...mapState({
@@ -55,8 +59,7 @@ export default {
       popupState: 'popup/popupState',
     }),
     checkIsLoading() {
-      // console.log('isAttributeLoading', this.isAttributeLoading);
-      return this.isAttributeLoading;
+      return this.isAttributeLoading || this.loading;
     },
     isAttributeChecked(attribute) {
       setTimeout(() => {
