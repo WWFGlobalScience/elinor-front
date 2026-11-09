@@ -5,10 +5,10 @@
         <p>{{ index + 1 }}.</p>
       </td>
       <td>
-        <p class="font-bold">{{ attribute.name }}</p>
+        <p class="font-bold">{{ attributeName }}</p>
       </td>
       <td>
-        <p>{{ attribute.description }}</p>
+        <p>{{ attributeDescription }}</p>
       </td>
       <td>
         <p>{{ $t('pages.background.attribute_use.' + (index + 1)) }}</p>
@@ -95,6 +95,20 @@ export default {
       attributes: (state) => state.attributes.list,
       questions: (state) => state.surveyquestions.list,
     }),
+    attributeTranslationPrefix() {
+      return `pages.about.elinorAttributes.attribute${this.index + 1}`;
+    },
+    attributeName() {
+      const key = `${this.attributeTranslationPrefix}.name`;
+      if (!this.$te(key)) {
+        return this.attribute.name;
+      }
+      return this.$t(key).replace(/^\d+\.\s*/, '');
+    },
+    attributeDescription() {
+      const key = `${this.attributeTranslationPrefix}.description`;
+      return this.$te(key) ? this.$t(key) : this.attribute.description;
+    },
   },
   watch: {
     expandAll(newValue) {

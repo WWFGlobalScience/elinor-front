@@ -82,20 +82,24 @@ export default {
     formatDate(dateString) {
       if (!dateString) return '';
 
-      // Parse the date string (assuming format like "2-28-2024" or "6-20-2022")
       const date = new Date(dateString);
-
-      // Check if date is valid
       if (isNaN(date.getTime())) return dateString;
 
-      // Format as "4 July 2025"
-      const options = {
+      const localeMap = {
+        en: 'en-GB',
+        es: 'es',
+        id: 'id',
+        pt: 'pt',
+        sw: 'sw',
+        fr: 'fr',
+        mg: 'mg',
+      };
+
+      return date.toLocaleDateString(localeMap[this.$i18n.locale] || 'en-GB', {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
-      };
-
-      return date.toLocaleDateString('en-GB', options);
+      });
     },
   },
 };
