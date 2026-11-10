@@ -48,42 +48,16 @@ export default {
       loaded: false,
     };
   },
-  async mounted() {
-    // Check if offline mode feature flag is enabled
-    // Defaults to true unless explicitly set to false
-    let offlineModeEnabled = true;
-    if (this.$config && this.$config.offlineMode === false) {
-      offlineModeEnabled = false;
-    } else if (process.env.OFFLINE_MODE === 'false') {
-      offlineModeEnabled = false;
+  mounted() {
+    this.initAssessmentsPage();
+  },
+  activated() {
+    this.showOnboardingIfNeeded();
+  },
+  deactivated() {
+    if (this.$store.state.popup.popup.type === 'onboarding') {
+      this.$store.dispatch('popup/popupState', { active: false });
     }
-
-    if (this.isOffline && this.assessmentId) {
-      return this.$router.push(
-        `/assessments/edit/${this.assessmentId}/the-survey`,
-      );
-    }
-
-    // Skip fetching assessments if offline mode is enabled
-    // Use cached data from vuex-persist (localStorage) instead
-    if (offlineModeEnabled) {
-      // Don't clear assessments - let vuex-persist restore cached data from localStorage
-      this.loaded = true;
-      return;
-    }
-
-    if (localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {
-      this.$store.dispatch('popup/popupState', {
-        active: true,
-        type: 'onboarding',
-        component: 'popup-assessment-onboarding',
-        title: 'pages.assessments.list.create.popup.title',
-      });
-    }
-    // fetchAssessments handles loader activation/deactivation internally
-    // No need to activate/deactivate loader here to avoid counter mismatch
-    await this.$store.dispatch('assessments/fetchAssessments');
-    this.loaded = true;
   },
   fetchOnServer: false,
   computed: {
@@ -95,6 +69,40 @@ export default {
     }),
   },
   methods: {
+    showOnboardingIfNeeded() {
+      if (localStorage.getItem('onboarding') !== '0' && this.$auth.loggedIn) {
+        this.$store.dispatch('popup/popupState', {
+          active: true,
+          type: 'onboarding',
+          component: 'popup-assessment-onboarding',
+          title: 'pages.assessments.list.create.popup.title',
+        });
+      }
+    },
+    async initAssessmentsPage() {
+      let offlineModeEnabled = true;
+      if (this.$config && this.$config.offlineMode === false) {
+        offlineModeEnabled = false;
+      } else if (process.env.OFFLINE_MODE === 'false') {
+        offlineModeEnabled = false;
+      }
+
+      if (this.isOffline && this.assessmentId) {
+        return this.$router.push(
+          `/assessments/edit/${this.assessmentId}/the-survey`,
+        );
+      }
+
+      this.showOnboardingIfNeeded();
+
+      if (offlineModeEnabled) {
+        this.loaded = true;
+        return;
+      }
+
+      await this.$store.dispatch('assessments/fetchAssessments');
+      this.loaded = true;
+    },
     showFiltersModal() {
       this.$store.dispatch('popup/popupState', {
         active: true,
