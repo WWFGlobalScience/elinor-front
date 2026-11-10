@@ -10,6 +10,8 @@
     :dragRotate="false"
     :keyboard="false"
     :scrollZoom="true"
+    :renderWorldCopies="false"
+    :maxBounds="maxBounds"
     @load="onMapLoaded"
   >
     <MglNavigationControl position="top-right" />
@@ -138,6 +140,10 @@ export default {
       accessToken: null,
       mapStyle: 'mapbox://styles/mapbox/satellite-v9',
       coordinates: [0, 39.014],
+      maxBounds: [
+        [-180, -85],
+        [180, 85],
+      ],
       popup: {
         coordinates: [-122.9, 50.1],
         showed: false,
@@ -515,6 +521,8 @@ export default {
     },
     async onMapLoaded(e) {
       var map = (this.map = e.map);
+      map.setRenderWorldCopies(false);
+      map.setMaxBounds(this.maxBounds);
 
       map.loadImage('/img/marks/mark-grey.png', (error, image) => {
         if (error) {
