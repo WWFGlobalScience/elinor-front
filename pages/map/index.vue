@@ -8,13 +8,14 @@
     :max-zoom="16"
     :doubleClickZoom="false"
     :dragRotate="false"
+    :pitchWithRotate="false"
     :keyboard="false"
     :scrollZoom="true"
     :renderWorldCopies="false"
     :maxBounds="maxBounds"
     @load="onMapLoaded"
   >
-    <MglNavigationControl position="top-right" />
+    <MglNavigationControl position="top-right" :showCompass="false" />
 
     <MglMarker
       @click="refs.mapMarker.togglePopup()"
@@ -523,6 +524,8 @@ export default {
       var map = (this.map = e.map);
       map.setRenderWorldCopies(false);
       map.setMaxBounds(this.maxBounds);
+      map.dragRotate.disable();
+      map.touchZoomRotate.disableRotation();
 
       map.loadImage('/img/marks/mark-grey.png', (error, image) => {
         if (error) {
